@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetCatalogPrivateEndpoints(ctx *pulumi.Context, args *GetCatalogPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetCatalogPrivateEndpointsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCatalogPrivateEndpointsResult
 	err := ctx.Invoke("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", args, &rv, opts...)
 	if err != nil {

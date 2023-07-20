@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetJavaFamily(ctx *pulumi.Context, args *GetJavaFamilyArgs, opts ...pulumi.InvokeOption) (*GetJavaFamilyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJavaFamilyResult
 	err := ctx.Invoke("oci:Jms/getJavaFamily:getJavaFamily", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetCostTrackingTags(ctx *pulumi.Context, args *GetCostTrackingTagsArgs, opts ...pulumi.InvokeOption) (*GetCostTrackingTagsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCostTrackingTagsResult
 	err := ctx.Invoke("oci:Identity/getCostTrackingTags:getCostTrackingTags", args, &rv, opts...)
 	if err != nil {

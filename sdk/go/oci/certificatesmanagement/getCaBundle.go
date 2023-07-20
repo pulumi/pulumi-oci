@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupCaBundle(ctx *pulumi.Context, args *LookupCaBundleArgs, opts ...pulumi.InvokeOption) (*LookupCaBundleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCaBundleResult
 	err := ctx.Invoke("oci:CertificatesManagement/getCaBundle:getCaBundle", args, &rv, opts...)
 	if err != nil {

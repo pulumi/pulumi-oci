@@ -38,6 +38,18 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("launchDetails")]
         public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsArgs>? LaunchDetails { get; set; }
 
+        [Input("options")]
+        private InputList<Inputs.InstanceConfigurationInstanceDetailsOptionArgs>? _options;
+
+        /// <summary>
+        /// Multiple Compute Instance Configuration instance details.
+        /// </summary>
+        public InputList<Inputs.InstanceConfigurationInstanceDetailsOptionArgs> Options
+        {
+            get => _options ?? (_options = new InputList<Inputs.InstanceConfigurationInstanceDetailsOptionArgs>());
+            set => _options = value;
+        }
+
         [Input("secondaryVnics")]
         private InputList<Inputs.InstanceConfigurationInstanceDetailsSecondaryVnicArgs>? _secondaryVnics;
 

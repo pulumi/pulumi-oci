@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -131,6 +132,7 @@ func NewStorageObject(ctx *pulumi.Context,
 	if args.Object == nil {
 		return nil, errors.New("invalid value for required argument 'Object'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource StorageObject
 	err := ctx.RegisterResource("oci:ObjectStorage/storageObject:StorageObject", name, args, &resource, opts...)
 	if err != nil {

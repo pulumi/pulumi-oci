@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -114,6 +115,7 @@ func NewPluggableDatabasesLocalClone(ctx *pulumi.Context,
 		"targetTdeWalletPassword",
 	})
 	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource PluggableDatabasesLocalClone
 	err := ctx.RegisterResource("oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone", name, args, &resource, opts...)
 	if err != nil {

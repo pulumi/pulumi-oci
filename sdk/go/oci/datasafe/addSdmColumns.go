@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -27,6 +28,7 @@ func NewAddSdmColumns(ctx *pulumi.Context,
 	if args.MaskingPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'MaskingPolicyId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AddSdmColumns
 	err := ctx.RegisterResource("oci:DataSafe/addSdmColumns:AddSdmColumns", name, args, &resource, opts...)
 	if err != nil {

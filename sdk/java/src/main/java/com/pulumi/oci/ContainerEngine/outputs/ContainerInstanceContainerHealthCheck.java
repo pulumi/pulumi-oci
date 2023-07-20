@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceContainerHealthCheck {
     /**
-     * @return The list of strings which will be concatenated to a single command for checking container&#39;s status.
+     * @return The list of strings that will be simplified to a single command for checking the status of the container.
      * 
      */
     private @Nullable List<String> commands;
@@ -30,7 +30,7 @@ public final class ContainerInstanceContainerHealthCheck {
      */
     private @Nullable Integer failureThreshold;
     /**
-     * @return Container health check Http&#39;s headers.
+     * @return Container health check HTTP headers.
      * 
      */
     private @Nullable List<ContainerInstanceContainerHealthCheckHeader> headers;
@@ -50,7 +50,7 @@ public final class ContainerInstanceContainerHealthCheck {
      */
     private @Nullable Integer intervalInSeconds;
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     private @Nullable String name;
@@ -60,7 +60,7 @@ public final class ContainerInstanceContainerHealthCheck {
      */
     private @Nullable String path;
     /**
-     * @return Container health check Http&#39;s port.
+     * @return Container health check HTTP port.
      * 
      */
     private @Nullable Integer port;
@@ -79,7 +79,7 @@ public final class ContainerInstanceContainerHealthCheck {
 
     private ContainerInstanceContainerHealthCheck() {}
     /**
-     * @return The list of strings which will be concatenated to a single command for checking container&#39;s status.
+     * @return The list of strings that will be simplified to a single command for checking the status of the container.
      * 
      */
     public List<String> commands() {
@@ -100,7 +100,7 @@ public final class ContainerInstanceContainerHealthCheck {
         return Optional.ofNullable(this.failureThreshold);
     }
     /**
-     * @return Container health check Http&#39;s headers.
+     * @return Container health check HTTP headers.
      * 
      */
     public List<ContainerInstanceContainerHealthCheckHeader> headers() {
@@ -128,7 +128,7 @@ public final class ContainerInstanceContainerHealthCheck {
         return Optional.ofNullable(this.intervalInSeconds);
     }
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public Optional<String> name() {
@@ -142,7 +142,7 @@ public final class ContainerInstanceContainerHealthCheck {
         return Optional.ofNullable(this.path);
     }
     /**
-     * @return Container health check Http&#39;s port.
+     * @return Container health check HTTP port.
      * 
      */
     public Optional<Integer> port() {

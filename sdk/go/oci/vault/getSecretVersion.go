@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetSecretVersion(ctx *pulumi.Context, args *GetSecretVersionArgs, opts ...pulumi.InvokeOption) (*GetSecretVersionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecretVersionResult
 	err := ctx.Invoke("oci:Vault/getSecretVersion:getSecretVersion", args, &rv, opts...)
 	if err != nil {

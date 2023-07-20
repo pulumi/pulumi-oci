@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetApiContent(ctx *pulumi.Context, args *GetApiContentArgs, opts ...pulumi.InvokeOption) (*GetApiContentResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetApiContentResult
 	err := ctx.Invoke("oci:ApiGateway/getApiContent:getApiContent", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetManagedInstanceGroups(ctx *pulumi.Context, args *GetManagedInstanceGroupsArgs, opts ...pulumi.InvokeOption) (*GetManagedInstanceGroupsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedInstanceGroupsResult
 	err := ctx.Invoke("oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetListingTaxes(ctx *pulumi.Context, args *GetListingTaxesArgs, opts ...pulumi.InvokeOption) (*GetListingTaxesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetListingTaxesResult
 	err := ctx.Invoke("oci:Marketplace/getListingTaxes:getListingTaxes", args, &rv, opts...)
 	if err != nil {

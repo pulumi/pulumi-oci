@@ -18,7 +18,6 @@ class InstanceArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
-                 shape: pulumi.Input[str],
                  agent_config: Optional[pulumi.Input['InstanceAgentConfigArgs']] = None,
                  async_: Optional[pulumi.Input[bool]] = None,
                  availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
@@ -33,6 +32,7 @@ class InstanceArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  image: Optional[pulumi.Input[str]] = None,
+                 instance_configuration_id: Optional[pulumi.Input[str]] = None,
                  instance_options: Optional[pulumi.Input['InstanceInstanceOptionsArgs']] = None,
                  ipxe_script: Optional[pulumi.Input[str]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
@@ -41,6 +41,7 @@ class InstanceArgs:
                  platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
                  source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -49,10 +50,7 @@ class InstanceArgs:
         """
         The set of arguments for constructing a Instance resource.
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-               
-               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param pulumi.Input['InstanceAgentConfigArgs'] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         :param pulumi.Input['InstanceAvailabilityConfigArgs'] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
@@ -72,6 +70,7 @@ class InstanceArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
+        :param pulumi.Input[str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
         :param pulumi.Input['InstanceInstanceOptionsArgs'] instance_options: (Updatable) Optional mutable instance options
         :param pulumi.Input[str] ipxe_script: This is an advanced option.
                
@@ -129,6 +128,9 @@ class InstanceArgs:
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input['InstancePreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+               
+               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param pulumi.Input['InstanceShapeConfigArgs'] shape_config: (Updatable) The shape configuration requested for the instance.
                
                If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
@@ -143,7 +145,6 @@ class InstanceArgs:
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "shape", shape)
         if agent_config is not None:
             pulumi.set(__self__, "agent_config", agent_config)
         if async_ is not None:
@@ -178,6 +179,8 @@ class InstanceArgs:
             pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
         if image is not None:
             pulumi.set(__self__, "image", image)
+        if instance_configuration_id is not None:
+            pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
         if instance_options is not None:
             pulumi.set(__self__, "instance_options", instance_options)
         if ipxe_script is not None:
@@ -194,6 +197,8 @@ class InstanceArgs:
             pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
         if preserve_boot_volume is not None:
             pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
             pulumi.set(__self__, "shape_config", shape_config)
         if source_details is not None:
@@ -224,27 +229,13 @@ class InstanceArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The OCID of the compartment.
+        (Updatable) The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def shape(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-
-        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        """
-        return pulumi.get(self, "shape")
-
-    @shape.setter
-    def shape(self, value: pulumi.Input[str]):
-        pulumi.set(self, "shape", value)
 
     @property
     @pulumi.getter(name="agentConfig")
@@ -422,6 +413,18 @@ class InstanceArgs:
     @image.setter
     def image(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "image", value)
+
+    @property
+    @pulumi.getter(name="instanceConfigurationId")
+    def instance_configuration_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+        """
+        return pulumi.get(self, "instance_configuration_id")
+
+    @instance_configuration_id.setter
+    def instance_configuration_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_configuration_id", value)
 
     @property
     @pulumi.getter(name="instanceOptions")
@@ -569,6 +572,20 @@ class InstanceArgs:
         pulumi.set(self, "preserve_boot_volume", value)
 
     @property
+    @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "shape", value)
+
+    @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['InstanceShapeConfigArgs']]:
         """
@@ -656,6 +673,7 @@ class _InstanceState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  image: Optional[pulumi.Input[str]] = None,
+                 instance_configuration_id: Optional[pulumi.Input[str]] = None,
                  instance_options: Optional[pulumi.Input['InstanceInstanceOptionsArgs']] = None,
                  ipxe_script: Optional[pulumi.Input[str]] = None,
                  is_cross_numa_node: Optional[pulumi.Input[bool]] = None,
@@ -685,7 +703,7 @@ class _InstanceState:
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
@@ -702,6 +720,7 @@ class _InstanceState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
+        :param pulumi.Input[str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
         :param pulumi.Input['InstanceInstanceOptionsArgs'] instance_options: (Updatable) Optional mutable instance options
         :param pulumi.Input[str] ipxe_script: This is an advanced option.
                
@@ -826,6 +845,8 @@ class _InstanceState:
             pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
         if image is not None:
             pulumi.set(__self__, "image", image)
+        if instance_configuration_id is not None:
+            pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
         if instance_options is not None:
             pulumi.set(__self__, "instance_options", instance_options)
         if ipxe_script is not None:
@@ -947,7 +968,7 @@ class _InstanceState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment.
+        (Updatable) The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1086,6 +1107,18 @@ class _InstanceState:
     @image.setter
     def image(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "image", value)
+
+    @property
+    @pulumi.getter(name="instanceConfigurationId")
+    def instance_configuration_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+        """
+        return pulumi.get(self, "instance_configuration_id")
+
+    @instance_configuration_id.setter
+    def instance_configuration_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_configuration_id", value)
 
     @property
     @pulumi.getter(name="instanceOptions")
@@ -1435,6 +1468,7 @@ class Instance(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  image: Optional[pulumi.Input[str]] = None,
+                 instance_configuration_id: Optional[pulumi.Input[str]] = None,
                  instance_options: Optional[pulumi.Input[pulumi.InputType['InstanceInstanceOptionsArgs']]] = None,
                  ipxe_script: Optional[pulumi.Input[str]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1497,110 +1531,6 @@ class Instance(pulumi.CustomResource):
         use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
         operation.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance = oci.core.Instance("testInstance",
-            availability_domain=var["instance_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape=var["instance_shape"],
-            agent_config=oci.core.InstanceAgentConfigArgs(
-                are_all_plugins_disabled=var["instance_agent_config_are_all_plugins_disabled"],
-                is_management_disabled=var["instance_agent_config_is_management_disabled"],
-                is_monitoring_disabled=var["instance_agent_config_is_monitoring_disabled"],
-                plugins_configs=[oci.core.InstanceAgentConfigPluginsConfigArgs(
-                    desired_state=var["instance_agent_config_plugins_config_desired_state"],
-                    name=var["instance_agent_config_plugins_config_name"],
-                )],
-            ),
-            availability_config=oci.core.InstanceAvailabilityConfigArgs(
-                is_live_migration_preferred=var["instance_availability_config_is_live_migration_preferred"],
-                recovery_action=var["instance_availability_config_recovery_action"],
-            ),
-            compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
-            create_vnic_details=oci.core.InstanceCreateVnicDetailsArgs(
-                assign_private_dns_record=var["instance_create_vnic_details_assign_private_dns_record"],
-                assign_public_ip=var["instance_create_vnic_details_assign_public_ip"],
-                defined_tags={
-                    "Operations.CostCenter": "42",
-                },
-                display_name=var["instance_create_vnic_details_display_name"],
-                freeform_tags={
-                    "Department": "Finance",
-                },
-                hostname_label=var["instance_create_vnic_details_hostname_label"],
-                nsg_ids=var["instance_create_vnic_details_nsg_ids"],
-                private_ip=var["instance_create_vnic_details_private_ip"],
-                skip_source_dest_check=var["instance_create_vnic_details_skip_source_dest_check"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-            ),
-            dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["instance_display_name"],
-            extended_metadata={
-                "some_string": "stringA",
-                "nested_object": "{\\"some_string\\": \\"stringB\\", \\"object\\": {\\"some_string\\": \\"stringC\\"}}",
-            },
-            fault_domain=var["instance_fault_domain"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            hostname_label=var["instance_hostname_label"],
-            instance_options=oci.core.InstanceInstanceOptionsArgs(
-                are_legacy_imds_endpoints_disabled=var["instance_instance_options_are_legacy_imds_endpoints_disabled"],
-            ),
-            ipxe_script=var["instance_ipxe_script"],
-            is_pv_encryption_in_transit_enabled=var["instance_is_pv_encryption_in_transit_enabled"],
-            launch_options=oci.core.InstanceLaunchOptionsArgs(
-                boot_volume_type=var["instance_launch_options_boot_volume_type"],
-                firmware=var["instance_launch_options_firmware"],
-                is_consistent_volume_naming_enabled=var["instance_launch_options_is_consistent_volume_naming_enabled"],
-                is_pv_encryption_in_transit_enabled=var["instance_launch_options_is_pv_encryption_in_transit_enabled"],
-                network_type=var["instance_launch_options_network_type"],
-                remote_data_volume_type=var["instance_launch_options_remote_data_volume_type"],
-            ),
-            metadata=var["instance_metadata"],
-            platform_config=oci.core.InstancePlatformConfigArgs(
-                type=var["instance_platform_config_type"],
-                are_virtual_instructions_enabled=var["instance_platform_config_are_virtual_instructions_enabled"],
-                is_access_control_service_enabled=var["instance_platform_config_is_access_control_service_enabled"],
-                is_input_output_memory_management_unit_enabled=var["instance_platform_config_is_input_output_memory_management_unit_enabled"],
-                is_measured_boot_enabled=var["instance_platform_config_is_measured_boot_enabled"],
-                is_memory_encryption_enabled=var["instance_platform_config_is_memory_encryption_enabled"],
-                is_secure_boot_enabled=var["instance_platform_config_is_secure_boot_enabled"],
-                is_symmetric_multi_threading_enabled=var["instance_platform_config_is_symmetric_multi_threading_enabled"],
-                is_trusted_platform_module_enabled=var["instance_platform_config_is_trusted_platform_module_enabled"],
-                numa_nodes_per_socket=var["instance_platform_config_numa_nodes_per_socket"],
-                percentage_of_cores_enabled=var["instance_platform_config_percentage_of_cores_enabled"],
-            ),
-            preemptible_instance_config=oci.core.InstancePreemptibleInstanceConfigArgs(
-                preemption_action=oci.core.InstancePreemptibleInstanceConfigPreemptionActionArgs(
-                    type=var["instance_preemptible_instance_config_preemption_action_type"],
-                    preserve_boot_volume=var["instance_preemptible_instance_config_preemption_action_preserve_boot_volume"],
-                ),
-            ),
-            shape_config=oci.core.InstanceShapeConfigArgs(
-                baseline_ocpu_utilization=var["instance_shape_config_baseline_ocpu_utilization"],
-                memory_in_gbs=var["instance_shape_config_memory_in_gbs"],
-                nvmes=var["instance_shape_config_nvmes"],
-                ocpus=var["instance_shape_config_ocpus"],
-            ),
-            source_details=oci.core.InstanceSourceDetailsArgs(
-                source_id=oci_core_image["test_image"]["id"],
-                source_type="image",
-                boot_volume_size_in_gbs=var["instance_source_details_boot_volume_size_in_gbs"],
-                boot_volume_vpus_per_gb=var["instance_source_details_boot_volume_vpus_per_gb"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
-            ),
-            preserve_boot_volume=False)
-        ```
-
         ## Import
 
         Instances can be imported using the `id`, e.g.
@@ -1615,7 +1545,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['InstanceAvailabilityConfigArgs']] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
@@ -1632,6 +1562,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
+        :param pulumi.Input[str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
         :param pulumi.Input[pulumi.InputType['InstanceInstanceOptionsArgs']] instance_options: (Updatable) Optional mutable instance options
         :param pulumi.Input[str] ipxe_script: This is an advanced option.
                
@@ -1757,110 +1688,6 @@ class Instance(pulumi.CustomResource):
         use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
         operation.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance = oci.core.Instance("testInstance",
-            availability_domain=var["instance_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape=var["instance_shape"],
-            agent_config=oci.core.InstanceAgentConfigArgs(
-                are_all_plugins_disabled=var["instance_agent_config_are_all_plugins_disabled"],
-                is_management_disabled=var["instance_agent_config_is_management_disabled"],
-                is_monitoring_disabled=var["instance_agent_config_is_monitoring_disabled"],
-                plugins_configs=[oci.core.InstanceAgentConfigPluginsConfigArgs(
-                    desired_state=var["instance_agent_config_plugins_config_desired_state"],
-                    name=var["instance_agent_config_plugins_config_name"],
-                )],
-            ),
-            availability_config=oci.core.InstanceAvailabilityConfigArgs(
-                is_live_migration_preferred=var["instance_availability_config_is_live_migration_preferred"],
-                recovery_action=var["instance_availability_config_recovery_action"],
-            ),
-            compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
-            create_vnic_details=oci.core.InstanceCreateVnicDetailsArgs(
-                assign_private_dns_record=var["instance_create_vnic_details_assign_private_dns_record"],
-                assign_public_ip=var["instance_create_vnic_details_assign_public_ip"],
-                defined_tags={
-                    "Operations.CostCenter": "42",
-                },
-                display_name=var["instance_create_vnic_details_display_name"],
-                freeform_tags={
-                    "Department": "Finance",
-                },
-                hostname_label=var["instance_create_vnic_details_hostname_label"],
-                nsg_ids=var["instance_create_vnic_details_nsg_ids"],
-                private_ip=var["instance_create_vnic_details_private_ip"],
-                skip_source_dest_check=var["instance_create_vnic_details_skip_source_dest_check"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-            ),
-            dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["instance_display_name"],
-            extended_metadata={
-                "some_string": "stringA",
-                "nested_object": "{\\"some_string\\": \\"stringB\\", \\"object\\": {\\"some_string\\": \\"stringC\\"}}",
-            },
-            fault_domain=var["instance_fault_domain"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            hostname_label=var["instance_hostname_label"],
-            instance_options=oci.core.InstanceInstanceOptionsArgs(
-                are_legacy_imds_endpoints_disabled=var["instance_instance_options_are_legacy_imds_endpoints_disabled"],
-            ),
-            ipxe_script=var["instance_ipxe_script"],
-            is_pv_encryption_in_transit_enabled=var["instance_is_pv_encryption_in_transit_enabled"],
-            launch_options=oci.core.InstanceLaunchOptionsArgs(
-                boot_volume_type=var["instance_launch_options_boot_volume_type"],
-                firmware=var["instance_launch_options_firmware"],
-                is_consistent_volume_naming_enabled=var["instance_launch_options_is_consistent_volume_naming_enabled"],
-                is_pv_encryption_in_transit_enabled=var["instance_launch_options_is_pv_encryption_in_transit_enabled"],
-                network_type=var["instance_launch_options_network_type"],
-                remote_data_volume_type=var["instance_launch_options_remote_data_volume_type"],
-            ),
-            metadata=var["instance_metadata"],
-            platform_config=oci.core.InstancePlatformConfigArgs(
-                type=var["instance_platform_config_type"],
-                are_virtual_instructions_enabled=var["instance_platform_config_are_virtual_instructions_enabled"],
-                is_access_control_service_enabled=var["instance_platform_config_is_access_control_service_enabled"],
-                is_input_output_memory_management_unit_enabled=var["instance_platform_config_is_input_output_memory_management_unit_enabled"],
-                is_measured_boot_enabled=var["instance_platform_config_is_measured_boot_enabled"],
-                is_memory_encryption_enabled=var["instance_platform_config_is_memory_encryption_enabled"],
-                is_secure_boot_enabled=var["instance_platform_config_is_secure_boot_enabled"],
-                is_symmetric_multi_threading_enabled=var["instance_platform_config_is_symmetric_multi_threading_enabled"],
-                is_trusted_platform_module_enabled=var["instance_platform_config_is_trusted_platform_module_enabled"],
-                numa_nodes_per_socket=var["instance_platform_config_numa_nodes_per_socket"],
-                percentage_of_cores_enabled=var["instance_platform_config_percentage_of_cores_enabled"],
-            ),
-            preemptible_instance_config=oci.core.InstancePreemptibleInstanceConfigArgs(
-                preemption_action=oci.core.InstancePreemptibleInstanceConfigPreemptionActionArgs(
-                    type=var["instance_preemptible_instance_config_preemption_action_type"],
-                    preserve_boot_volume=var["instance_preemptible_instance_config_preemption_action_preserve_boot_volume"],
-                ),
-            ),
-            shape_config=oci.core.InstanceShapeConfigArgs(
-                baseline_ocpu_utilization=var["instance_shape_config_baseline_ocpu_utilization"],
-                memory_in_gbs=var["instance_shape_config_memory_in_gbs"],
-                nvmes=var["instance_shape_config_nvmes"],
-                ocpus=var["instance_shape_config_ocpus"],
-            ),
-            source_details=oci.core.InstanceSourceDetailsArgs(
-                source_id=oci_core_image["test_image"]["id"],
-                source_type="image",
-                boot_volume_size_in_gbs=var["instance_source_details_boot_volume_size_in_gbs"],
-                boot_volume_vpus_per_gb=var["instance_source_details_boot_volume_vpus_per_gb"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
-            ),
-            preserve_boot_volume=False)
-        ```
-
         ## Import
 
         Instances can be imported using the `id`, e.g.
@@ -1900,6 +1727,7 @@ class Instance(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  image: Optional[pulumi.Input[str]] = None,
+                 instance_configuration_id: Optional[pulumi.Input[str]] = None,
                  instance_options: Optional[pulumi.Input[pulumi.InputType['InstanceInstanceOptionsArgs']]] = None,
                  ipxe_script: Optional[pulumi.Input[str]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1949,6 +1777,7 @@ class Instance(pulumi.CustomResource):
                 warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
                 pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
             __props__.__dict__["image"] = image
+            __props__.__dict__["instance_configuration_id"] = instance_configuration_id
             __props__.__dict__["instance_options"] = instance_options
             __props__.__dict__["ipxe_script"] = ipxe_script
             __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
@@ -1957,8 +1786,6 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["platform_config"] = platform_config
             __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
             __props__.__dict__["preserve_boot_volume"] = preserve_boot_volume
-            if shape is None and not opts.urn:
-                raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
             __props__.__dict__["shape_config"] = shape_config
             __props__.__dict__["source_details"] = source_details
@@ -2004,6 +1831,7 @@ class Instance(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             hostname_label: Optional[pulumi.Input[str]] = None,
             image: Optional[pulumi.Input[str]] = None,
+            instance_configuration_id: Optional[pulumi.Input[str]] = None,
             instance_options: Optional[pulumi.Input[pulumi.InputType['InstanceInstanceOptionsArgs']]] = None,
             ipxe_script: Optional[pulumi.Input[str]] = None,
             is_cross_numa_node: Optional[pulumi.Input[bool]] = None,
@@ -2038,7 +1866,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
@@ -2055,6 +1883,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
+        :param pulumi.Input[str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
         :param pulumi.Input[pulumi.InputType['InstanceInstanceOptionsArgs']] instance_options: (Updatable) Optional mutable instance options
         :param pulumi.Input[str] ipxe_script: This is an advanced option.
                
@@ -2160,6 +1989,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["hostname_label"] = hostname_label
         __props__.__dict__["image"] = image
+        __props__.__dict__["instance_configuration_id"] = instance_configuration_id
         __props__.__dict__["instance_options"] = instance_options
         __props__.__dict__["ipxe_script"] = ipxe_script
         __props__.__dict__["is_cross_numa_node"] = is_cross_numa_node
@@ -2233,7 +2063,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the compartment.
+        (Updatable) The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2279,7 +2109,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def extended_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -2328,6 +2158,14 @@ class Instance(pulumi.CustomResource):
         pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
 
         return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="instanceConfigurationId")
+    def instance_configuration_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+        """
+        return pulumi.get(self, "instance_configuration_id")
 
     @property
     @pulumi.getter(name="instanceOptions")
@@ -2391,7 +2229,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def metadata(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -160,6 +161,7 @@ func NewAddressActionVerification(ctx *pulumi.Context,
 	if args.OspHomeRegion == nil {
 		return nil, errors.New("invalid value for required argument 'OspHomeRegion'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AddressActionVerification
 	err := ctx.RegisterResource("oci:OspGateway/addressActionVerification:AddressActionVerification", name, args, &resource, opts...)
 	if err != nil {

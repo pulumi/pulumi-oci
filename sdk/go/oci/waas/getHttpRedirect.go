@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupHttpRedirect(ctx *pulumi.Context, args *LookupHttpRedirectArgs, opts ...pulumi.InvokeOption) (*LookupHttpRedirectResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupHttpRedirectResult
 	err := ctx.Invoke("oci:Waas/getHttpRedirect:getHttpRedirect", args, &rv, opts...)
 	if err != nil {

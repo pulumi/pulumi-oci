@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class ContainerInstanceDnsConfig
     {
         /// <summary>
-        /// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+        /// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
         /// </summary>
         public readonly ImmutableArray<string> Nameservers;
         /// <summary>
-        /// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+        /// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
         /// </summary>
         public readonly ImmutableArray<string> Options;
         /// <summary>

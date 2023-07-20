@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -52,6 +53,7 @@ import (
 //
 // ```
 func GetDrgAttachments(ctx *pulumi.Context, args *GetDrgAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetDrgAttachmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrgAttachmentsResult
 	err := ctx.Invoke("oci:Core/getDrgAttachments:getDrgAttachments", args, &rv, opts...)
 	if err != nil {

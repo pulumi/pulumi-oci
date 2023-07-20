@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
-        /// The hostname for the VNIC's primary private IP.
+        /// The hostname for the VNIC's primary private IP. Used for DNS.
         /// </summary>
         [Input("hostnameLabel")]
         public Input<string>? HostnameLabel { get; set; }
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string> SubnetId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+        /// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         /// </summary>
         [Input("vnicId")]
         public Input<string>? VnicId { get; set; }

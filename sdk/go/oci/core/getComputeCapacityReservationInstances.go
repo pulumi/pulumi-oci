@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetComputeCapacityReservationInstances(ctx *pulumi.Context, args *GetComputeCapacityReservationInstancesArgs, opts ...pulumi.InvokeOption) (*GetComputeCapacityReservationInstancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputeCapacityReservationInstancesResult
 	err := ctx.Invoke("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", args, &rv, opts...)
 	if err != nil {

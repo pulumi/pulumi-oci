@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func LookupDomainsDynamicResourceGroup(ctx *pulumi.Context, args *LookupDomainsDynamicResourceGroupArgs, opts ...pulumi.InvokeOption) (*LookupDomainsDynamicResourceGroupResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsDynamicResourceGroupResult
 	err := ctx.Invoke("oci:Identity/getDomainsDynamicResourceGroup:getDomainsDynamicResourceGroup", args, &rv, opts...)
 	if err != nil {

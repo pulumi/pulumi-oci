@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -160,6 +161,7 @@ func NewModel(ctx *pulumi.Context,
 	if args.TrainingDataset == nil {
 		return nil, errors.New("invalid value for required argument 'TrainingDataset'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Model
 	err := ctx.RegisterResource("oci:AiVision/model:Model", name, args, &resource, opts...)
 	if err != nil {

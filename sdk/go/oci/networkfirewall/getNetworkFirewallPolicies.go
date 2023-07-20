@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetNetworkFirewallPolicies(ctx *pulumi.Context, args *GetNetworkFirewallPoliciesArgs, opts ...pulumi.InvokeOption) (*GetNetworkFirewallPoliciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNetworkFirewallPoliciesResult
 	err := ctx.Invoke("oci:NetworkFirewall/getNetworkFirewallPolicies:getNetworkFirewallPolicies", args, &rv, opts...)
 	if err != nil {

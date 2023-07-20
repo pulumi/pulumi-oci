@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDataMaskRule(ctx *pulumi.Context, args *LookupDataMaskRuleArgs, opts ...pulumi.InvokeOption) (*LookupDataMaskRuleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDataMaskRuleResult
 	err := ctx.Invoke("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args, &rv, opts...)
 	if err != nil {

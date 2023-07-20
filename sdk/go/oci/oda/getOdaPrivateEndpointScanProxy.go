@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupOdaPrivateEndpointScanProxy(ctx *pulumi.Context, args *LookupOdaPrivateEndpointScanProxyArgs, opts ...pulumi.InvokeOption) (*LookupOdaPrivateEndpointScanProxyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupOdaPrivateEndpointScanProxyResult
 	err := ctx.Invoke("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", args, &rv, opts...)
 	if err != nil {

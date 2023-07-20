@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupSensitiveType(ctx *pulumi.Context, args *LookupSensitiveTypeArgs, opts ...pulumi.InvokeOption) (*LookupSensitiveTypeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSensitiveTypeResult
 	err := ctx.Invoke("oci:DataSafe/getSensitiveType:getSensitiveType", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -54,6 +55,7 @@ import (
 //
 // ```
 func GetObjectVersions(ctx *pulumi.Context, args *GetObjectVersionsArgs, opts ...pulumi.InvokeOption) (*GetObjectVersionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetObjectVersionsResult
 	err := ctx.Invoke("oci:ObjectStorage/getObjectVersions:getObjectVersions", args, &rv, opts...)
 	if err != nil {

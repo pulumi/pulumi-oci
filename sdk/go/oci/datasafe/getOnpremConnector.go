@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetOnpremConnector(ctx *pulumi.Context, args *GetOnpremConnectorArgs, opts ...pulumi.InvokeOption) (*GetOnpremConnectorResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOnpremConnectorResult
 	err := ctx.Invoke("oci:DataSafe/getOnpremConnector:getOnpremConnector", args, &rv, opts...)
 	if err != nil {

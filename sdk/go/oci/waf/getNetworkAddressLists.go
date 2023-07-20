@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetNetworkAddressLists(ctx *pulumi.Context, args *GetNetworkAddressListsArgs, opts ...pulumi.InvokeOption) (*GetNetworkAddressListsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNetworkAddressListsResult
 	err := ctx.Invoke("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args, &rv, opts...)
 	if err != nil {

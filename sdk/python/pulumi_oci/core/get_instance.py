@@ -22,7 +22,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
+    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
         if agent_configs and not isinstance(agent_configs, list):
             raise TypeError("Expected argument 'agent_configs' to be a list")
         pulumi.set(__self__, "agent_configs", agent_configs)
@@ -77,6 +77,9 @@ class GetInstanceResult:
         if image and not isinstance(image, str):
             raise TypeError("Expected argument 'image' to be a str")
         pulumi.set(__self__, "image", image)
+        if instance_configuration_id and not isinstance(instance_configuration_id, str):
+            raise TypeError("Expected argument 'instance_configuration_id' to be a str")
+        pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
         if instance_id and not isinstance(instance_id, str):
             raise TypeError("Expected argument 'instance_id' to be a str")
         pulumi.set(__self__, "instance_id", instance_id)
@@ -196,7 +199,7 @@ class GetInstanceResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment that contains the instance.
+        The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
 
@@ -287,6 +290,14 @@ class GetInstanceResult:
         pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
 
         return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="instanceConfigurationId")
+    def instance_configuration_id(self) -> str:
+        """
+        The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+        """
+        return pulumi.get(self, "instance_configuration_id")
 
     @property
     @pulumi.getter(name="instanceId")
@@ -488,6 +499,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             hostname_label=self.hostname_label,
             id=self.id,
             image=self.image,
+            instance_configuration_id=self.instance_configuration_id,
             instance_id=self.instance_id,
             instance_options=self.instance_options,
             ipxe_script=self.ipxe_script,
@@ -559,6 +571,7 @@ def get_instance(instance_id: Optional[str] = None,
         hostname_label=pulumi.get(__ret__, 'hostname_label'),
         id=pulumi.get(__ret__, 'id'),
         image=pulumi.get(__ret__, 'image'),
+        instance_configuration_id=pulumi.get(__ret__, 'instance_configuration_id'),
         instance_id=pulumi.get(__ret__, 'instance_id'),
         instance_options=pulumi.get(__ret__, 'instance_options'),
         ipxe_script=pulumi.get(__ret__, 'ipxe_script'),

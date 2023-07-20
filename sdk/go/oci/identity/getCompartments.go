@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -61,6 +62,7 @@ import (
 //
 // ```
 func GetCompartments(ctx *pulumi.Context, args *GetCompartmentsArgs, opts ...pulumi.InvokeOption) (*GetCompartmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCompartmentsResult
 	err := ctx.Invoke("oci:Identity/getCompartments:getCompartments", args, &rv, opts...)
 	if err != nil {

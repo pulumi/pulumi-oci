@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetLogAnalyticsObjectCollectionRules(ctx *pulumi.Context, args *GetLogAnalyticsObjectCollectionRulesArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsObjectCollectionRulesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogAnalyticsObjectCollectionRulesResult
 	err := ctx.Invoke("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", args, &rv, opts...)
 	if err != nil {

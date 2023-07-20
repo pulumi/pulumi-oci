@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -52,6 +53,7 @@ import (
 //
 // ```
 func GetMysqlConfigurations(ctx *pulumi.Context, args *GetMysqlConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetMysqlConfigurationsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMysqlConfigurationsResult
 	err := ctx.Invoke("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", args, &rv, opts...)
 	if err != nil {

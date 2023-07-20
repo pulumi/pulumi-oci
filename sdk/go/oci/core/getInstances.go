@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -50,6 +51,7 @@ import (
 //
 // ```
 func GetInstances(ctx *pulumi.Context, args *GetInstancesArgs, opts ...pulumi.InvokeOption) (*GetInstancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstancesResult
 	err := ctx.Invoke("oci:Core/getInstances:getInstances", args, &rv, opts...)
 	if err != nil {
@@ -81,7 +83,7 @@ type GetInstancesResult struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
-	// The OCID of the compartment that contains the instance.
+	// The OCID of the compartment containing images to search
 	CompartmentId    string  `pulumi:"compartmentId"`
 	ComputeClusterId *string `pulumi:"computeClusterId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -154,7 +156,7 @@ func (o GetInstancesResultOutput) CapacityReservationId() pulumi.StringPtrOutput
 	return o.ApplyT(func(v GetInstancesResult) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the compartment that contains the instance.
+// The OCID of the compartment containing images to search
 func (o GetInstancesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

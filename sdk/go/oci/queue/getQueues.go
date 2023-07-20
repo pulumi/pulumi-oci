@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetQueues(ctx *pulumi.Context, args *GetQueuesArgs, opts ...pulumi.InvokeOption) (*GetQueuesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetQueuesResult
 	err := ctx.Invoke("oci:Queue/getQueues:getQueues", args, &rv, opts...)
 	if err != nil {

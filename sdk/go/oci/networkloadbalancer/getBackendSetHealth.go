@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetBackendSetHealth(ctx *pulumi.Context, args *GetBackendSetHealthArgs, opts ...pulumi.InvokeOption) (*GetBackendSetHealthResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBackendSetHealthResult
 	err := ctx.Invoke("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetAutonomousDatabaseDataguardAssociation(ctx *pulumi.Context, args *GetAutonomousDatabaseDataguardAssociationArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDatabaseDataguardAssociationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousDatabaseDataguardAssociationResult
 	err := ctx.Invoke("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", args, &rv, opts...)
 	if err != nil {

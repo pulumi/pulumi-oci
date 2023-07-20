@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetVolumes(ctx *pulumi.Context, args *GetVolumesArgs, opts ...pulumi.InvokeOption) (*GetVolumesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVolumesResult
 	err := ctx.Invoke("oci:Core/getVolumes:getVolumes", args, &rv, opts...)
 	if err != nil {

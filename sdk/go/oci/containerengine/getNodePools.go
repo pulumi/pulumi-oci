@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetNodePools(ctx *pulumi.Context, args *GetNodePoolsArgs, opts ...pulumi.InvokeOption) (*GetNodePoolsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNodePoolsResult
 	err := ctx.Invoke("oci:ContainerEngine/getNodePools:getNodePools", args, &rv, opts...)
 	if err != nil {

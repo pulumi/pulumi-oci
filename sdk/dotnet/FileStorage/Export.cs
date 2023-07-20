@@ -36,12 +36,15 @@ namespace Pulumi.Oci.FileStorage
     ///             {
     ///                 Source = @var.Export_export_options_source,
     ///                 Access = @var.Export_export_options_access,
+    ///                 AllowedAuths = @var.Export_export_options_allowed_auth,
     ///                 AnonymousGid = @var.Export_export_options_anonymous_gid,
     ///                 AnonymousUid = @var.Export_export_options_anonymous_uid,
     ///                 IdentitySquash = @var.Export_export_options_identity_squash,
+    ///                 IsAnonymousAccessAllowed = @var.Export_export_options_is_anonymous_access_allowed,
     ///                 RequirePrivilegedSourcePort = @var.Export_export_options_require_privileged_source_port,
     ///             },
     ///         },
+    ///         IsIdmapGroupsForSysAuth = @var.Export_is_idmap_groups_for_sys_auth,
     ///     });
     /// 
     /// });
@@ -82,6 +85,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("fileSystemId")]
         public Output<string> FileSystemId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+        /// </summary>
+        [Output("isIdmapGroupsForSysAuth")]
+        public Output<bool> IsIdmapGroupsForSysAuth { get; private set; } = null!;
 
         /// <summary>
         /// Path used to access the associated file system.
@@ -187,6 +196,12 @@ namespace Pulumi.Oci.FileStorage
         public Input<string> FileSystemId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+        /// </summary>
+        [Input("isIdmapGroupsForSysAuth")]
+        public Input<bool>? IsIdmapGroupsForSysAuth { get; set; }
+
+        /// <summary>
         /// Path used to access the associated file system.
         /// 
         /// Avoid entering confidential information.
@@ -238,6 +253,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("fileSystemId")]
         public Input<string>? FileSystemId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+        /// </summary>
+        [Input("isIdmapGroupsForSysAuth")]
+        public Input<bool>? IsIdmapGroupsForSysAuth { get; set; }
 
         /// <summary>
         /// Path used to access the associated file system.

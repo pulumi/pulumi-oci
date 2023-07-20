@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetDatasets(ctx *pulumi.Context, args *GetDatasetsArgs, opts ...pulumi.InvokeOption) (*GetDatasetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatasetsResult
 	err := ctx.Invoke("oci:DataLabellingService/getDatasets:getDatasets", args, &rv, opts...)
 	if err != nil {

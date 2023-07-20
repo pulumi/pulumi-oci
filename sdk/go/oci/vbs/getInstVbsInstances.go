@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetInstVbsInstances(ctx *pulumi.Context, args *GetInstVbsInstancesArgs, opts ...pulumi.InvokeOption) (*GetInstVbsInstancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstVbsInstancesResult
 	err := ctx.Invoke("oci:Vbs/getInstVbsInstances:getInstVbsInstances", args, &rv, opts...)
 	if err != nil {

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails
     {
         /// <summary>
-        /// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        /// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         /// </summary>
         public readonly bool? AssignPrivateDnsRecord;
         /// <summary>

@@ -4,7 +4,9 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.GetInstanceSourceDetailInstanceSourceImageFilterDetail;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -19,6 +21,11 @@ public final class GetInstanceSourceDetail {
      * 
      */
     private String bootVolumeVpusPerGb;
+    /**
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    private List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
     /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
@@ -49,6 +56,13 @@ public final class GetInstanceSourceDetail {
      */
     public String bootVolumeVpusPerGb() {
         return this.bootVolumeVpusPerGb;
+    }
+    /**
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    public List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails() {
+        return this.instanceSourceImageFilterDetails;
     }
     /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
@@ -83,6 +97,7 @@ public final class GetInstanceSourceDetail {
     public static final class Builder {
         private String bootVolumeSizeInGbs;
         private String bootVolumeVpusPerGb;
+        private List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
         private String kmsKeyId;
         private String sourceId;
         private String sourceType;
@@ -91,6 +106,7 @@ public final class GetInstanceSourceDetail {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
     	      this.bootVolumeVpusPerGb = defaults.bootVolumeVpusPerGb;
+    	      this.instanceSourceImageFilterDetails = defaults.instanceSourceImageFilterDetails;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sourceId = defaults.sourceId;
     	      this.sourceType = defaults.sourceType;
@@ -105,6 +121,14 @@ public final class GetInstanceSourceDetail {
         public Builder bootVolumeVpusPerGb(String bootVolumeVpusPerGb) {
             this.bootVolumeVpusPerGb = Objects.requireNonNull(bootVolumeVpusPerGb);
             return this;
+        }
+        @CustomType.Setter
+        public Builder instanceSourceImageFilterDetails(List<GetInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails) {
+            this.instanceSourceImageFilterDetails = Objects.requireNonNull(instanceSourceImageFilterDetails);
+            return this;
+        }
+        public Builder instanceSourceImageFilterDetails(GetInstanceSourceDetailInstanceSourceImageFilterDetail... instanceSourceImageFilterDetails) {
+            return instanceSourceImageFilterDetails(List.of(instanceSourceImageFilterDetails));
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
@@ -125,6 +149,7 @@ public final class GetInstanceSourceDetail {
             final var o = new GetInstanceSourceDetail();
             o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             o.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
+            o.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
             o.kmsKeyId = kmsKeyId;
             o.sourceId = sourceId;
             o.sourceType = sourceType;

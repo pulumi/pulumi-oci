@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -177,6 +178,7 @@ func NewBuildPipelineStage(ctx *pulumi.Context,
 	if args.BuildPipelineStageType == nil {
 		return nil, errors.New("invalid value for required argument 'BuildPipelineStageType'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BuildPipelineStage
 	err := ctx.RegisterResource("oci:DevOps/buildPipelineStage:BuildPipelineStage", name, args, &resource, opts...)
 	if err != nil {

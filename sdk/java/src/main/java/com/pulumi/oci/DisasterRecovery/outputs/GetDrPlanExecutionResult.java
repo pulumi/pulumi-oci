@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanExecutionResult {
     /**
-     * @return The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String compartmentId;
@@ -33,7 +33,7 @@ public final class GetDrPlanExecutionResult {
     private String displayName;
     private String drPlanExecutionId;
     /**
-     * @return The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String drProtectionGroupId;
@@ -58,7 +58,7 @@ public final class GetDrPlanExecutionResult {
      */
     private List<GetDrPlanExecutionGroupExecution> groupExecutions;
     /**
-     * @return The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String id;
@@ -73,7 +73,7 @@ public final class GetDrPlanExecutionResult {
      */
     private List<GetDrPlanExecutionLogLocation> logLocations;
     /**
-     * @return The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * @return The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String peerDrProtectionGroupId;
@@ -88,7 +88,7 @@ public final class GetDrPlanExecutionResult {
      */
     private String planExecutionType;
     /**
-     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String planId;
@@ -125,7 +125,7 @@ public final class GetDrPlanExecutionResult {
 
     private GetDrPlanExecutionResult() {}
     /**
-     * @return The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String compartmentId() {
@@ -149,7 +149,7 @@ public final class GetDrPlanExecutionResult {
         return this.drPlanExecutionId;
     }
     /**
-     * @return The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String drProtectionGroupId() {
@@ -184,7 +184,7 @@ public final class GetDrPlanExecutionResult {
         return this.groupExecutions;
     }
     /**
-     * @return The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String id() {
@@ -205,7 +205,7 @@ public final class GetDrPlanExecutionResult {
         return this.logLocations;
     }
     /**
-     * @return The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * @return The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String peerDrProtectionGroupId() {
@@ -226,7 +226,7 @@ public final class GetDrPlanExecutionResult {
         return this.planExecutionType;
     }
     /**
-     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String planId() {

@@ -20,17 +20,17 @@ import java.util.Objects;
 @CustomType
 public final class GetContainerInstanceResult {
     /**
-     * @return Availability Domain where the ContainerInstance is running.
+     * @return The availability domain to place the container instance.
      * 
      */
     private String availabilityDomain;
     /**
-     * @return Compartment Identifier
+     * @return The OCID of the compartment.
      * 
      */
     private String compartmentId;
     /**
-     * @return The number of containers on this Instance
+     * @return The number of containers on the container instance.
      * 
      */
     private Integer containerCount;
@@ -41,17 +41,17 @@ public final class GetContainerInstanceResult {
      */
     private String containerRestartPolicy;
     /**
-     * @return The Containers on this Instance
+     * @return The containers on the container instance.
      * 
      */
     private List<GetContainerInstanceContainer> containers;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Display name for the ContainerInstance. Can be renamed.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private String displayName;
@@ -61,7 +61,7 @@ public final class GetContainerInstanceResult {
      */
     private List<GetContainerInstanceDnsConfig> dnsConfigs;
     /**
-     * @return Fault Domain where the ContainerInstance is running.
+     * @return The fault domain to place the container instance.
      * 
      */
     private String faultDomain;
@@ -71,88 +71,88 @@ public final class GetContainerInstanceResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * @return The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
     private String gracefulShutdownTimeoutInSeconds;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return An OCID that cannot be changed.
      * 
      */
     private String id;
     /**
-     * @return The image pull secrets for accessing private registry to pull images for containers
+     * @return The image pulls secrets so you can access private registry to pull container images.
      * 
      */
     private List<GetContainerInstanceImagePullSecret> imagePullSecrets;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     private String lifecycleDetails;
     /**
-     * @return The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * @return The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      * 
      */
     private String shape;
     /**
-     * @return The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it&#39;s containers.
+     * @return The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
      * 
      */
     private List<GetContainerInstanceShapeConfig> shapeConfigs;
     /**
-     * @return The current state of the ContainerInstance.
+     * @return The current state of the container instance.
      * 
      */
     private String state;
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private String timeUpdated;
     /**
-     * @return The virtual networks available to containers running on this Container Instance.
+     * @return The virtual networks available to the containers in the container instance.
      * 
      */
     private List<GetContainerInstanceVnic> vnics;
     /**
-     * @return The number of volumes that attached to this Instance
+     * @return The number of volumes that are attached to the container instance.
      * 
      */
     private Integer volumeCount;
     /**
-     * @return A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+     * @return A volume is a directory with data that is accessible across multiple containers in a container instance.
      * 
      */
     private List<GetContainerInstanceVolume> volumes;
 
     private GetContainerInstanceResult() {}
     /**
-     * @return Availability Domain where the ContainerInstance is running.
+     * @return The availability domain to place the container instance.
      * 
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * @return Compartment Identifier
+     * @return The OCID of the compartment.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return The number of containers on this Instance
+     * @return The number of containers on the container instance.
      * 
      */
     public Integer containerCount() {
@@ -169,21 +169,21 @@ public final class GetContainerInstanceResult {
         return this.containerRestartPolicy;
     }
     /**
-     * @return The Containers on this Instance
+     * @return The containers on the container instance.
      * 
      */
     public List<GetContainerInstanceContainer> containers() {
         return this.containers;
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
     /**
-     * @return Display name for the ContainerInstance. Can be renamed.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public String displayName() {
@@ -197,7 +197,7 @@ public final class GetContainerInstanceResult {
         return this.dnsConfigs;
     }
     /**
-     * @return Fault Domain where the ContainerInstance is running.
+     * @return The fault domain to place the container instance.
      * 
      */
     public String faultDomain() {
@@ -211,91 +211,91 @@ public final class GetContainerInstanceResult {
         return this.freeformTags;
     }
     /**
-     * @return Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * @return The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
     public String gracefulShutdownTimeoutInSeconds() {
         return this.gracefulShutdownTimeoutInSeconds;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return An OCID that cannot be changed.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The image pull secrets for accessing private registry to pull images for containers
+     * @return The image pulls secrets so you can access private registry to pull container images.
      * 
      */
     public List<GetContainerInstanceImagePullSecret> imagePullSecrets() {
         return this.imagePullSecrets;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * @return The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * @return The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      * 
      */
     public String shape() {
         return this.shape;
     }
     /**
-     * @return The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it&#39;s containers.
+     * @return The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
      * 
      */
     public List<GetContainerInstanceShapeConfig> shapeConfigs() {
         return this.shapeConfigs;
     }
     /**
-     * @return The current state of the ContainerInstance.
+     * @return The current state of the container instance.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     public Map<String,Object> systemTags() {
         return this.systemTags;
     }
     /**
-     * @return The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return The virtual networks available to containers running on this Container Instance.
+     * @return The virtual networks available to the containers in the container instance.
      * 
      */
     public List<GetContainerInstanceVnic> vnics() {
         return this.vnics;
     }
     /**
-     * @return The number of volumes that attached to this Instance
+     * @return The number of volumes that are attached to the container instance.
      * 
      */
     public Integer volumeCount() {
         return this.volumeCount;
     }
     /**
-     * @return A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+     * @return A volume is a directory with data that is accessible across multiple containers in a container instance.
      * 
      */
     public List<GetContainerInstanceVolume> volumes() {

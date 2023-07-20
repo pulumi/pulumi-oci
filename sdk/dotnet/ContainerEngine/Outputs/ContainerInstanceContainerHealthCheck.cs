@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class ContainerInstanceContainerHealthCheck
     {
         /// <summary>
-        /// The list of strings which will be concatenated to a single command for checking container's status.
+        /// The list of strings that will be simplified to a single command for checking the status of the container.
         /// </summary>
         public readonly ImmutableArray<string> Commands;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly int? FailureThreshold;
         /// <summary>
-        /// Container health check Http's headers.
+        /// Container health check HTTP headers.
         /// </summary>
         public readonly ImmutableArray<Outputs.ContainerInstanceContainerHealthCheckHeader> Headers;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly int? IntervalInSeconds;
         /// <summary>
-        /// The name of the volume. This has be unique cross single ContainerInstance.
+        /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
         public readonly string? Name;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string? Path;
         /// <summary>
-        /// Container health check Http's port.
+        /// Container health check HTTP port.
         /// </summary>
         public readonly int? Port;
         public readonly string? Status;

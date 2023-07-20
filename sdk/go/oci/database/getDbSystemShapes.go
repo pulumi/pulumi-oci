@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetDbSystemShapes(ctx *pulumi.Context, args *GetDbSystemShapesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemShapesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbSystemShapesResult
 	err := ctx.Invoke("oci:Database/getDbSystemShapes:getDbSystemShapes", args, &rv, opts...)
 	if err != nil {

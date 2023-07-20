@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupTag(ctx *pulumi.Context, args *LookupTagArgs, opts ...pulumi.InvokeOption) (*LookupTagResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupTagResult
 	err := ctx.Invoke("oci:Identity/getTag:getTag", args, &rv, opts...)
 	if err != nil {

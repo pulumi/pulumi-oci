@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetFleetCryptoAnalysisResults(ctx *pulumi.Context, args *GetFleetCryptoAnalysisResultsArgs, opts ...pulumi.InvokeOption) (*GetFleetCryptoAnalysisResultsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetCryptoAnalysisResultsResult
 	err := ctx.Invoke("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", args, &rv, opts...)
 	if err != nil {

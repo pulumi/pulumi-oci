@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -108,6 +109,7 @@ func NewPreauthrequest(ctx *pulumi.Context,
 	if args.TimeExpires == nil {
 		return nil, errors.New("invalid value for required argument 'TimeExpires'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Preauthrequest
 	err := ctx.RegisterResource("oci:ObjectStorage/preauthrequest:Preauthrequest", name, args, &resource, opts...)
 	if err != nil {

@@ -968,8 +968,6 @@ class ContainerInstanceContainer(dict):
         suggest = None
         if key == "imageUrl":
             suggest = "image_url"
-        elif key == "additionalCapabilities":
-            suggest = "additional_capabilities"
         elif key == "availabilityDomain":
             suggest = "availability_domain"
         elif key == "compartmentId":
@@ -1024,7 +1022,6 @@ class ContainerInstanceContainer(dict):
 
     def __init__(__self__, *,
                  image_url: str,
-                 additional_capabilities: Optional[Sequence[str]] = None,
                  arguments: Optional[Sequence[str]] = None,
                  availability_domain: Optional[str] = None,
                  commands: Optional[Sequence[str]] = None,
@@ -1049,42 +1046,45 @@ class ContainerInstanceContainer(dict):
                  volume_mounts: Optional[Sequence['outputs.ContainerInstanceContainerVolumeMount']] = None,
                  working_directory: Optional[str] = None):
         """
-        :param str image_url: The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
-        :param Sequence[str] additional_capabilities: A list of additional capabilities for the container.
-        :param Sequence[str] arguments: A list of string arguments for a container's entrypoint process.
+        :param str image_url: A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
                
-               Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+               If no registry is provided, will default the registry to public docker hub `docker.io/library`.
                
-               All arguments together must be 64KB or smaller.
-        :param str availability_domain: Availability Domain where the ContainerInstance should be created.
-        :param Sequence[str] commands: The list of strings which will be concatenated to a single command for checking container's status.
-        :param str compartment_id: (Updatable) Compartment Identifier
-        :param str container_id: The ID of the Container on this Instance.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+               The registry used for container image must be reachable over the Container Instance's VNIC.
+        :param Sequence[str] arguments: A list of string arguments for a container's ENTRYPOINT process.
+               
+               Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
+               
+               The total size of all arguments combined must be 64 KB or smaller.
+        :param str availability_domain: The availability domain where the container instance runs.
+        :param Sequence[str] commands: The list of strings that will be simplified to a single command for checking the status of the container.
+        :param str compartment_id: (Updatable) The compartment OCID.
+        :param str container_id: The OCID of the container.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        :param Mapping[str, Any] environment_variables: A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+        :param Mapping[str, Any] environment_variables: A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
                
-               All environment variables together, name and values, must be 64KB or smaller.
-        :param str fault_domain: Fault Domain where the ContainerInstance should run.
+               The total size of all environment variables combined, name and values, must be 64 KB or smaller.
+        :param str fault_domain: The fault domain where the container instance runs.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param Sequence['ContainerInstanceContainerHealthCheckArgs'] health_checks: list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
-        :param bool is_resource_principal_disabled: Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param 'ContainerInstanceContainerResourceConfigArgs' resource_config: The size and amount of resources available to the Container.
+        :param bool is_resource_principal_disabled: Determines if the container will have access to the container instance resource principal.
+               
+               This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+        :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        :param 'ContainerInstanceContainerResourceConfigArgs' resource_config: The size and amount of resources available to the container.
         :param str state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the ContainerInstance was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param Sequence['ContainerInstanceContainerVolumeMountArgs'] volume_mounts: List of the volume mounts.
-        :param str working_directory: The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+        :param str working_directory: The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
         """
         pulumi.set(__self__, "image_url", image_url)
-        if additional_capabilities is not None:
-            pulumi.set(__self__, "additional_capabilities", additional_capabilities)
         if arguments is not None:
             pulumi.set(__self__, "arguments", arguments)
         if availability_domain is not None:
@@ -1136,27 +1136,23 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="imageUrl")
     def image_url(self) -> str:
         """
-        The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+        A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+
+        If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+
+        The registry used for container image must be reachable over the Container Instance's VNIC.
         """
         return pulumi.get(self, "image_url")
-
-    @property
-    @pulumi.getter(name="additionalCapabilities")
-    def additional_capabilities(self) -> Optional[Sequence[str]]:
-        """
-        A list of additional capabilities for the container.
-        """
-        return pulumi.get(self, "additional_capabilities")
 
     @property
     @pulumi.getter
     def arguments(self) -> Optional[Sequence[str]]:
         """
-        A list of string arguments for a container's entrypoint process.
+        A list of string arguments for a container's ENTRYPOINT process.
 
-        Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+        Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
 
-        All arguments together must be 64KB or smaller.
+        The total size of all arguments combined must be 64 KB or smaller.
         """
         return pulumi.get(self, "arguments")
 
@@ -1164,7 +1160,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        Availability Domain where the ContainerInstance should be created.
+        The availability domain where the container instance runs.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -1172,7 +1168,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter
     def commands(self) -> Optional[Sequence[str]]:
         """
-        The list of strings which will be concatenated to a single command for checking container's status.
+        The list of strings that will be simplified to a single command for checking the status of the container.
         """
         return pulumi.get(self, "commands")
 
@@ -1180,7 +1176,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The compartment OCID.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1188,7 +1184,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="containerId")
     def container_id(self) -> Optional[str]:
         """
-        The ID of the Container on this Instance.
+        The OCID of the container.
         """
         return pulumi.get(self, "container_id")
 
@@ -1201,7 +1197,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
@@ -1217,9 +1213,9 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
         """
-        A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+        A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 
-        All environment variables together, name and values, must be 64KB or smaller.
+        The total size of all environment variables combined, name and values, must be 64 KB or smaller.
         """
         return pulumi.get(self, "environment_variables")
 
@@ -1232,7 +1228,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[str]:
         """
-        Fault Domain where the ContainerInstance should run.
+        The fault domain where the container instance runs.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -1256,7 +1252,9 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="isResourcePrincipalDisabled")
     def is_resource_principal_disabled(self) -> Optional[bool]:
         """
-        Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+        Determines if the container will have access to the container instance resource principal.
+
+        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
         """
         return pulumi.get(self, "is_resource_principal_disabled")
 
@@ -1264,7 +1262,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[str]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -1272,7 +1270,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="resourceConfig")
     def resource_config(self) -> Optional['outputs.ContainerInstanceContainerResourceConfig']:
         """
-        The size and amount of resources available to the Container.
+        The size and amount of resources available to the container.
         """
         return pulumi.get(self, "resource_config")
 
@@ -1292,7 +1290,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
 
@@ -1300,7 +1298,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
         """
-        The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -1313,7 +1311,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[str]:
         """
-        The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
@@ -1329,7 +1327,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> Optional[str]:
         """
-        The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+        The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
         """
         return pulumi.get(self, "working_directory")
 
@@ -1384,15 +1382,15 @@ class ContainerInstanceContainerHealthCheck(dict):
                  timeout_in_seconds: Optional[int] = None):
         """
         :param str health_check_type: Container health check type.
-        :param Sequence[str] commands: The list of strings which will be concatenated to a single command for checking container's status.
+        :param Sequence[str] commands: The list of strings that will be simplified to a single command for checking the status of the container.
         :param str failure_action: The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
         :param int failure_threshold: Number of consecutive failures at which we consider the check failed.
-        :param Sequence['ContainerInstanceContainerHealthCheckHeaderArgs'] headers: Container health check Http's headers.
+        :param Sequence['ContainerInstanceContainerHealthCheckHeaderArgs'] headers: Container health check HTTP headers.
         :param int initial_delay_in_seconds: The initial delay in seconds before start checking container health status.
         :param int interval_in_seconds: Number of seconds between two consecutive runs for checking container health.
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
+        :param str name: The name of the volume. This must be unique within a single container instance.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        :param int port: Container health check Http's port.
+        :param int port: Container health check HTTP port.
         :param int success_threshold: Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
         :param int timeout_in_seconds: Length of waiting time in seconds before marking health check failed.
         """
@@ -1436,7 +1434,7 @@ class ContainerInstanceContainerHealthCheck(dict):
     @pulumi.getter
     def commands(self) -> Optional[Sequence[str]]:
         """
-        The list of strings which will be concatenated to a single command for checking container's status.
+        The list of strings that will be simplified to a single command for checking the status of the container.
         """
         return pulumi.get(self, "commands")
 
@@ -1460,7 +1458,7 @@ class ContainerInstanceContainerHealthCheck(dict):
     @pulumi.getter
     def headers(self) -> Optional[Sequence['outputs.ContainerInstanceContainerHealthCheckHeader']]:
         """
-        Container health check Http's headers.
+        Container health check HTTP headers.
         """
         return pulumi.get(self, "headers")
 
@@ -1484,7 +1482,7 @@ class ContainerInstanceContainerHealthCheck(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 
@@ -1500,7 +1498,7 @@ class ContainerInstanceContainerHealthCheck(dict):
     @pulumi.getter
     def port(self) -> Optional[int]:
         """
-        Container health check Http's port.
+        Container health check HTTP port.
         """
         return pulumi.get(self, "port")
 
@@ -1537,8 +1535,8 @@ class ContainerInstanceContainerHealthCheckHeader(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
-        :param str value: Container Http header value.
+        :param str name: The name of the volume. This must be unique within a single container instance.
+        :param str value: Container HTTP header value.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1549,7 +1547,7 @@ class ContainerInstanceContainerHealthCheckHeader(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 
@@ -1557,7 +1555,7 @@ class ContainerInstanceContainerHealthCheckHeader(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        Container Http header value.
+        Container HTTP header value.
         """
         return pulumi.get(self, "value")
 
@@ -1587,8 +1585,16 @@ class ContainerInstanceContainerResourceConfig(dict):
                  memory_limit_in_gbs: Optional[float] = None,
                  vcpus_limit: Optional[float] = None):
         """
-        :param float memory_limit_in_gbs: The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
-        :param float vcpus_limit: The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+        :param float memory_limit_in_gbs: The maximum amount of memory that can be consumed by the container's process.
+               
+               If you do not set a value, then the process may use all available memory on the instance.
+        :param float vcpus_limit: The maximum amount of CPUs that can be consumed by the container's process.
+               
+               If you do not set a value, then the process can use all available CPU resources on the instance.
+               
+               CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+               
+               A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
         """
         if memory_limit_in_gbs is not None:
             pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
@@ -1599,7 +1605,9 @@ class ContainerInstanceContainerResourceConfig(dict):
     @pulumi.getter(name="memoryLimitInGbs")
     def memory_limit_in_gbs(self) -> Optional[float]:
         """
-        The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+        The maximum amount of memory that can be consumed by the container's process.
+
+        If you do not set a value, then the process may use all available memory on the instance.
         """
         return pulumi.get(self, "memory_limit_in_gbs")
 
@@ -1607,7 +1615,13 @@ class ContainerInstanceContainerResourceConfig(dict):
     @pulumi.getter(name="vcpusLimit")
     def vcpus_limit(self) -> Optional[float]:
         """
-        The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+        The maximum amount of CPUs that can be consumed by the container's process.
+
+        If you do not set a value, then the process can use all available CPU resources on the instance.
+
+        CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+
+        A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
         """
         return pulumi.get(self, "vcpus_limit")
 
@@ -1644,11 +1658,11 @@ class ContainerInstanceContainerVolumeMount(dict):
                  partition: Optional[int] = None,
                  sub_path: Optional[str] = None):
         """
-        :param str mount_path: mountPath describes the volume access path.
-        :param str volume_name: The name of the volume.
-        :param bool is_read_only: Whether the volume was mounted in read-only mode. Defaults to false if not specified.
-        :param int partition: If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
-        :param str sub_path: specifies a sub-path inside the referenced volume instead of its root
+        :param str mount_path: The volume access path.
+        :param str volume_name: The name of the volume. Avoid entering confidential information.
+        :param bool is_read_only: Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
+        :param int partition: If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+        :param str sub_path: A subpath inside the referenced volume.
         """
         pulumi.set(__self__, "mount_path", mount_path)
         pulumi.set(__self__, "volume_name", volume_name)
@@ -1663,7 +1677,7 @@ class ContainerInstanceContainerVolumeMount(dict):
     @pulumi.getter(name="mountPath")
     def mount_path(self) -> str:
         """
-        mountPath describes the volume access path.
+        The volume access path.
         """
         return pulumi.get(self, "mount_path")
 
@@ -1671,7 +1685,7 @@ class ContainerInstanceContainerVolumeMount(dict):
     @pulumi.getter(name="volumeName")
     def volume_name(self) -> str:
         """
-        The name of the volume.
+        The name of the volume. Avoid entering confidential information.
         """
         return pulumi.get(self, "volume_name")
 
@@ -1679,7 +1693,7 @@ class ContainerInstanceContainerVolumeMount(dict):
     @pulumi.getter(name="isReadOnly")
     def is_read_only(self) -> Optional[bool]:
         """
-        Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+        Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
         """
         return pulumi.get(self, "is_read_only")
 
@@ -1687,7 +1701,7 @@ class ContainerInstanceContainerVolumeMount(dict):
     @pulumi.getter
     def partition(self) -> Optional[int]:
         """
-        If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+        If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
         """
         return pulumi.get(self, "partition")
 
@@ -1695,7 +1709,7 @@ class ContainerInstanceContainerVolumeMount(dict):
     @pulumi.getter(name="subPath")
     def sub_path(self) -> Optional[str]:
         """
-        specifies a sub-path inside the referenced volume instead of its root
+        A subpath inside the referenced volume.
         """
         return pulumi.get(self, "sub_path")
 
@@ -1707,8 +1721,8 @@ class ContainerInstanceDnsConfig(dict):
                  options: Optional[Sequence[str]] = None,
                  searches: Optional[Sequence[str]] = None):
         """
-        :param Sequence[str] nameservers: IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
-        :param Sequence[str] options: Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+        :param Sequence[str] nameservers: IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
+        :param Sequence[str] options: Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
         :param Sequence[str] searches: Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
         """
         if nameservers is not None:
@@ -1722,7 +1736,7 @@ class ContainerInstanceDnsConfig(dict):
     @pulumi.getter
     def nameservers(self) -> Optional[Sequence[str]]:
         """
-        IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+        IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
         """
         return pulumi.get(self, "nameservers")
 
@@ -1730,7 +1744,7 @@ class ContainerInstanceDnsConfig(dict):
     @pulumi.getter
     def options(self) -> Optional[Sequence[str]]:
         """
-        Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+        Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
         """
         return pulumi.get(self, "options")
 
@@ -1858,10 +1872,10 @@ class ContainerInstanceShapeConfig(dict):
                  networking_bandwidth_in_gbps: Optional[float] = None,
                  processor_description: Optional[str] = None):
         """
-        :param float ocpus: The total number of OCPUs available to the instance.
-        :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
-        :param float networking_bandwidth_in_gbps: The networking bandwidth available to the instance, in gigabits per second.
-        :param str processor_description: A short description of the instance's processor (CPU).
+        :param float ocpus: The total number of OCPUs available to the container instance.
+        :param float memory_in_gbs: The total amount of memory available to the container instance (GB).
+        :param float networking_bandwidth_in_gbps: The networking bandwidth available to the container instance, in gigabits per second.
+        :param str processor_description: A short description of the container instance's processor (CPU).
         """
         pulumi.set(__self__, "ocpus", ocpus)
         if memory_in_gbs is not None:
@@ -1875,7 +1889,7 @@ class ContainerInstanceShapeConfig(dict):
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        The total number of OCPUs available to the instance.
+        The total number of OCPUs available to the container instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1883,7 +1897,7 @@ class ContainerInstanceShapeConfig(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
         """
-        The total amount of memory available to the instance, in gigabytes.
+        The total amount of memory available to the container instance (GB).
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1891,7 +1905,7 @@ class ContainerInstanceShapeConfig(dict):
     @pulumi.getter(name="networkingBandwidthInGbps")
     def networking_bandwidth_in_gbps(self) -> Optional[float]:
         """
-        The networking bandwidth available to the instance, in gigabits per second.
+        The networking bandwidth available to the container instance, in gigabits per second.
         """
         return pulumi.get(self, "networking_bandwidth_in_gbps")
 
@@ -1899,7 +1913,7 @@ class ContainerInstanceShapeConfig(dict):
     @pulumi.getter(name="processorDescription")
     def processor_description(self) -> Optional[str]:
         """
-        A short description of the instance's processor (CPU).
+        A short description of the container instance's processor (CPU).
         """
         return pulumi.get(self, "processor_description")
 
@@ -1954,15 +1968,15 @@ class ContainerInstanceVnic(dict):
                  vnic_id: Optional[str] = None):
         """
         :param str subnet_id: The OCID of the subnet to create the VNIC in.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str hostname_label: The hostname for the VNIC's primary private IP.
+        :param str hostname_label: The hostname for the VNIC's primary private IP. Used for DNS.
         :param bool is_public_ip_assigned: Whether the VNIC should be assigned a public IP address.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to.
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR.
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC.
-        :param str vnic_id: The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+        :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if defined_tags is not None:
@@ -1996,7 +2010,7 @@ class ContainerInstanceVnic(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
@@ -2020,7 +2034,7 @@ class ContainerInstanceVnic(dict):
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[str]:
         """
-        The hostname for the VNIC's primary private IP.
+        The hostname for the VNIC's primary private IP. Used for DNS.
         """
         return pulumi.get(self, "hostname_label")
 
@@ -2060,7 +2074,7 @@ class ContainerInstanceVnic(dict):
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[str]:
         """
-        The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+        The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         return pulumi.get(self, "vnic_id")
 
@@ -2092,9 +2106,9 @@ class ContainerInstanceVolume(dict):
                  backing_store: Optional[str] = None,
                  configs: Optional[Sequence['outputs.ContainerInstanceVolumeConfig']] = None):
         """
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
+        :param str name: The name of the volume. This must be unique within a single container instance.
         :param str volume_type: The type of volume.
-        :param str backing_store: Volume type that we are using for empty dir where it could be either File Storage or Memory
+        :param str backing_store: The volume type of the empty directory, can be either File Storage or Memory.
         :param Sequence['ContainerInstanceVolumeConfigArgs'] configs: Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
         """
         pulumi.set(__self__, "name", name)
@@ -2108,7 +2122,7 @@ class ContainerInstanceVolume(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 
@@ -2124,7 +2138,7 @@ class ContainerInstanceVolume(dict):
     @pulumi.getter(name="backingStore")
     def backing_store(self) -> Optional[str]:
         """
-        Volume type that we are using for empty dir where it could be either File Storage or Memory
+        The volume type of the empty directory, can be either File Storage or Memory.
         """
         return pulumi.get(self, "backing_store")
 

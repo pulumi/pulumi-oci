@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetInstanceDevices(ctx *pulumi.Context, args *GetInstanceDevicesArgs, opts ...pulumi.InvokeOption) (*GetInstanceDevicesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstanceDevicesResult
 	err := ctx.Invoke("oci:Core/getInstanceDevices:getInstanceDevices", args, &rv, opts...)
 	if err != nil {

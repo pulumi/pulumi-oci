@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -130,6 +131,7 @@ func NewIpsecConnectionTunnelManagement(ctx *pulumi.Context,
 	if args.TunnelId == nil {
 		return nil, errors.New("invalid value for required argument 'TunnelId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IpsecConnectionTunnelManagement
 	err := ctx.RegisterResource("oci:Core/ipsecConnectionTunnelManagement:IpsecConnectionTunnelManagement", name, args, &resource, opts...)
 	if err != nil {

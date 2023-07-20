@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetModels(ctx *pulumi.Context, args *GetModelsArgs, opts ...pulumi.InvokeOption) (*GetModelsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetModelsResult
 	err := ctx.Invoke("oci:AiDocument/getModels:getModels", args, &rv, opts...)
 	if err != nil {

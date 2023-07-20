@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetExadataInfrastructureUnAllocatedResource(ctx *pulumi.Context, args *GetExadataInfrastructureUnAllocatedResourceArgs, opts ...pulumi.InvokeOption) (*GetExadataInfrastructureUnAllocatedResourceResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExadataInfrastructureUnAllocatedResourceResult
 	err := ctx.Invoke("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", args, &rv, opts...)
 	if err != nil {

@@ -50,14 +50,14 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -65,14 +65,14 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> id() {
@@ -95,14 +95,14 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+     * The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="memberId")
     private @Nullable Output<String> memberId;
 
     /**
-     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> memberId() {
@@ -235,7 +235,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memberId The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+         * @param memberId The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memberId The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+         * @param memberId The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 

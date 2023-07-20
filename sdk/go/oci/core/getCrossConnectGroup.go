@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupCrossConnectGroup(ctx *pulumi.Context, args *LookupCrossConnectGroupArgs, opts ...pulumi.InvokeOption) (*LookupCrossConnectGroupResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCrossConnectGroupResult
 	err := ctx.Invoke("oci:Core/getCrossConnectGroup:getCrossConnectGroup", args, &rv, opts...)
 	if err != nil {

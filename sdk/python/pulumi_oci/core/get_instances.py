@@ -72,7 +72,7 @@ class GetInstancesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment that contains the instance.
+        The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
 

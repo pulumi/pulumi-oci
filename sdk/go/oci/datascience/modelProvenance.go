@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -88,6 +89,7 @@ func NewModelProvenance(ctx *pulumi.Context,
 	if args.ModelId == nil {
 		return nil, errors.New("invalid value for required argument 'ModelId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ModelProvenance
 	err := ctx.RegisterResource("oci:DataScience/modelProvenance:ModelProvenance", name, args, &resource, opts...)
 	if err != nil {

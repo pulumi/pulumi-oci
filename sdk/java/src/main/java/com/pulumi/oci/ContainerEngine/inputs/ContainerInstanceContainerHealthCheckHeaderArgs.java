@@ -16,14 +16,14 @@ public final class ContainerInstanceContainerHealthCheckHeaderArgs extends com.p
     public static final ContainerInstanceContainerHealthCheckHeaderArgs Empty = new ContainerInstanceContainerHealthCheckHeaderArgs();
 
     /**
-     * The name of the volume. This has be unique cross single ContainerInstance.
+     * The name of the volume. This must be unique within a single container instance.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class ContainerInstanceContainerHealthCheckHeaderArgs extends com.p
     }
 
     /**
-     * Container Http header value.
+     * Container HTTP header value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return Container Http header value.
+     * @return Container HTTP header value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class ContainerInstanceContainerHealthCheckHeaderArgs extends com.p
         }
 
         /**
-         * @param name The name of the volume. This has be unique cross single ContainerInstance.
+         * @param name The name of the volume. This must be unique within a single container instance.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ContainerInstanceContainerHealthCheckHeaderArgs extends com.p
         }
 
         /**
-         * @param name The name of the volume. This has be unique cross single ContainerInstance.
+         * @param name The name of the volume. This must be unique within a single container instance.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ContainerInstanceContainerHealthCheckHeaderArgs extends com.p
         }
 
         /**
-         * @param value Container Http header value.
+         * @param value Container HTTP header value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ContainerInstanceContainerHealthCheckHeaderArgs extends com.p
         }
 
         /**
-         * @param value Container Http header value.
+         * @param value Container HTTP header value.
          * 
          * @return builder
          * 

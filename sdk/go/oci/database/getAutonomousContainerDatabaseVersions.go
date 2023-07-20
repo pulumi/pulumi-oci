@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetAutonomousContainerDatabaseVersions(ctx *pulumi.Context, args *GetAutonomousContainerDatabaseVersionsArgs, opts ...pulumi.InvokeOption) (*GetAutonomousContainerDatabaseVersionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousContainerDatabaseVersionsResult
 	err := ctx.Invoke("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", args, &rv, opts...)
 	if err != nil {

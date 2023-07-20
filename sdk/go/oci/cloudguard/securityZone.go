@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -109,6 +110,7 @@ func NewSecurityZone(ctx *pulumi.Context,
 	if args.SecurityZoneRecipeId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityZoneRecipeId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SecurityZone
 	err := ctx.RegisterResource("oci:CloudGuard/securityZone:SecurityZone", name, args, &resource, opts...)
 	if err != nil {

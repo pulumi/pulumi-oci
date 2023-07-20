@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetContainerInstanceShapesContainerInstanceShapeCollectionItem {
     /**
-     * @return For a flexible shape, the amount of memory available for instances that use this shape.
+     * @return For a flexible shape, the amount of memory available for container instances that use this shape.
      * 
      */
     private List<GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption> memoryOptions;
@@ -24,24 +24,24 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
      */
     private String name;
     /**
-     * @return For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+     * @return For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
      * 
      */
     private List<GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption> networkingBandwidthOptions;
     /**
-     * @return For a flexible shape, the number of OCPUs available for instances that use this shape.
+     * @return For a flexible shape, the number of OCPUs available for container instances that use this shape.
      * 
      */
     private List<GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption> ocpuOptions;
     /**
-     * @return A short description of the Instance&#39;s processor (CPU).
+     * @return A short description of the container instance&#39;s processor (CPU).
      * 
      */
     private String processorDescription;
 
     private GetContainerInstanceShapesContainerInstanceShapeCollectionItem() {}
     /**
-     * @return For a flexible shape, the amount of memory available for instances that use this shape.
+     * @return For a flexible shape, the amount of memory available for container instances that use this shape.
      * 
      */
     public List<GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption> memoryOptions() {
@@ -55,21 +55,21 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
         return this.name;
     }
     /**
-     * @return For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+     * @return For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
      * 
      */
     public List<GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption> networkingBandwidthOptions() {
         return this.networkingBandwidthOptions;
     }
     /**
-     * @return For a flexible shape, the number of OCPUs available for instances that use this shape.
+     * @return For a flexible shape, the number of OCPUs available for container instances that use this shape.
      * 
      */
     public List<GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption> ocpuOptions() {
         return this.ocpuOptions;
     }
     /**
-     * @return A short description of the Instance&#39;s processor (CPU).
+     * @return A short description of the container instance&#39;s processor (CPU).
      * 
      */
     public String processorDescription() {

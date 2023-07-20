@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -117,6 +118,7 @@ func NewSqlEndpoint(ctx *pulumi.Context,
 	if args.SqlEndpointVersion == nil {
 		return nil, errors.New("invalid value for required argument 'SqlEndpointVersion'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SqlEndpoint
 	err := ctx.RegisterResource("oci:DataFlow/sqlEndpoint:SqlEndpoint", name, args, &resource, opts...)
 	if err != nil {

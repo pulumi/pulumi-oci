@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetContainerInstanceShapeConfig {
     /**
-     * @return The total amount of memory available to the instance, in gigabytes.
+     * @return The total amount of memory available to the container instance, in gigabytes.
      * 
      */
     private Double memoryInGbs;
     /**
-     * @return The networking bandwidth available to the instance, in gigabits per second.
+     * @return The networking bandwidth available to the container instance, in gigabits per second.
      * 
      */
     private Double networkingBandwidthInGbps;
     /**
-     * @return The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the container instance.
      * 
      */
     private Double ocpus;
     /**
-     * @return A short description of the instance&#39;s processor (CPU).
+     * @return A short description of the container instance&#39;s processor (CPU).
      * 
      */
     private String processorDescription;
 
     private GetContainerInstanceShapeConfig() {}
     /**
-     * @return The total amount of memory available to the instance, in gigabytes.
+     * @return The total amount of memory available to the container instance, in gigabytes.
      * 
      */
     public Double memoryInGbs() {
         return this.memoryInGbs;
     }
     /**
-     * @return The networking bandwidth available to the instance, in gigabits per second.
+     * @return The networking bandwidth available to the container instance, in gigabits per second.
      * 
      */
     public Double networkingBandwidthInGbps() {
         return this.networkingBandwidthInGbps;
     }
     /**
-     * @return The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the container instance.
      * 
      */
     public Double ocpus() {
         return this.ocpus;
     }
     /**
-     * @return A short description of the instance&#39;s processor (CPU).
+     * @return A short description of the container instance&#39;s processor (CPU).
      * 
      */
     public String processorDescription() {

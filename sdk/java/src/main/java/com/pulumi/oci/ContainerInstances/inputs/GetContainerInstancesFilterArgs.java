@@ -18,14 +18,14 @@ public final class GetContainerInstancesFilterArgs extends com.pulumi.resources.
     public static final GetContainerInstancesFilterArgs Empty = new GetContainerInstancesFilterArgs();
 
     /**
-     * The name of the volume. This has be unique cross single ContainerInstance.
+     * The name of the volume. This must be unique within a single container instance.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public Output<String> name() {
@@ -73,7 +73,7 @@ public final class GetContainerInstancesFilterArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param name The name of the volume. This has be unique cross single ContainerInstance.
+         * @param name The name of the volume. This must be unique within a single container instance.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class GetContainerInstancesFilterArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param name The name of the volume. This has be unique cross single ContainerInstance.
+         * @param name The name of the volume. This must be unique within a single container instance.
          * 
          * @return builder
          * 

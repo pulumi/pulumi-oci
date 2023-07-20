@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -51,6 +52,7 @@ import (
 //
 // ```
 func GetMetricData(ctx *pulumi.Context, args *GetMetricDataArgs, opts ...pulumi.InvokeOption) (*GetMetricDataResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMetricDataResult
 	err := ctx.Invoke("oci:Monitoring/getMetricData:getMetricData", args, &rv, opts...)
 	if err != nil {

@@ -872,6 +872,7 @@ public final class DisasterRecoveryFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.dr_protection_group_display_name())
      *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .role(var_.dr_protection_group_role())
      *             .state(var_.dr_protection_group_state())
      *             .build());
      * 
@@ -914,6 +915,7 @@ public final class DisasterRecoveryFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.dr_protection_group_display_name())
      *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .role(var_.dr_protection_group_role())
      *             .state(var_.dr_protection_group_state())
      *             .build());
      * 
@@ -956,6 +958,7 @@ public final class DisasterRecoveryFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.dr_protection_group_display_name())
      *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .role(var_.dr_protection_group_role())
      *             .state(var_.dr_protection_group_state())
      *             .build());
      * 
@@ -998,6 +1001,7 @@ public final class DisasterRecoveryFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.dr_protection_group_display_name())
      *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .role(var_.dr_protection_group_role())
      *             .state(var_.dr_protection_group_state())
      *             .build());
      * 

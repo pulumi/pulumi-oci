@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetManagedDatabaseTableStatistics(ctx *pulumi.Context, args *GetManagedDatabaseTableStatisticsArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseTableStatisticsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseTableStatisticsResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args, &rv, opts...)
 	if err != nil {

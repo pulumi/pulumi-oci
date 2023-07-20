@@ -24,13 +24,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? BootVolumeVpusPerGb;
         /// <summary>
+        /// These are the criteria for selecting an image. This is required if imageId is not specified.
+        /// </summary>
+        public readonly Outputs.InstanceSourceDetailsInstanceSourceImageFilterDetails? InstanceSourceImageFilterDetails;
+        /// <summary>
         /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>
         /// The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         /// </summary>
-        public readonly string SourceId;
+        public readonly string? SourceId;
         /// <summary>
         /// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         /// </summary>
@@ -42,14 +46,17 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? bootVolumeVpusPerGb,
 
+            Outputs.InstanceSourceDetailsInstanceSourceImageFilterDetails? instanceSourceImageFilterDetails,
+
             string? kmsKeyId,
 
-            string sourceId,
+            string? sourceId,
 
             string sourceType)
         {
             BootVolumeSizeInGbs = bootVolumeSizeInGbs;
             BootVolumeVpusPerGb = bootVolumeVpusPerGb;
+            InstanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
             KmsKeyId = kmsKeyId;
             SourceId = sourceId;
             SourceType = sourceType;

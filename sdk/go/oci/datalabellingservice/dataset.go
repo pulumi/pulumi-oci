@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -159,6 +160,7 @@ func NewDataset(ctx *pulumi.Context,
 	if args.LabelSet == nil {
 		return nil, errors.New("invalid value for required argument 'LabelSet'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Dataset
 	err := ctx.RegisterResource("oci:DataLabellingService/dataset:Dataset", name, args, &resource, opts...)
 	if err != nil {

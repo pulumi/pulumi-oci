@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetFusionEnvironmentTimeAvailableForRefreshs(ctx *pulumi.Context, args *GetFusionEnvironmentTimeAvailableForRefreshsArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentTimeAvailableForRefreshsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentTimeAvailableForRefreshsResult
 	err := ctx.Invoke("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", args, &rv, opts...)
 	if err != nil {

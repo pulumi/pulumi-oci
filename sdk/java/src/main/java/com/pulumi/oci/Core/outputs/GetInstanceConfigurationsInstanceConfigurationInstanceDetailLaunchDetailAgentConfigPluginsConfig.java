@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig {
     /**
-     * @return Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+     * @return Whether the plugin should be enabled or disabled.
      * 
      */
     private String desiredState;
@@ -22,7 +22,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
 
     private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig() {}
     /**
-     * @return Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+     * @return Whether the plugin should be enabled or disabled.
      * 
      */
     public String desiredState() {

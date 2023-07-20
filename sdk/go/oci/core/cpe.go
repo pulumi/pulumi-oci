@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -114,6 +115,7 @@ func NewCpe(ctx *pulumi.Context,
 	if args.IpAddress == nil {
 		return nil, errors.New("invalid value for required argument 'IpAddress'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Cpe
 	err := ctx.RegisterResource("oci:Core/cpe:Cpe", name, args, &resource, opts...)
 	if err != nil {

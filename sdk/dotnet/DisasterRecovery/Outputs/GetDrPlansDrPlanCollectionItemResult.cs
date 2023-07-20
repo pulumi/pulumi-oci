@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrPlansDrPlanCollectionItemResult
     {
         /// <summary>
-        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string LifeCycleDetails;
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string PeerDrProtectionGroupId;
         /// <summary>

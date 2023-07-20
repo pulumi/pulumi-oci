@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -78,6 +79,7 @@ func NewGeneratedScopedAccessToken(ctx *pulumi.Context,
 	if args.Scope == nil {
 		return nil, errors.New("invalid value for required argument 'Scope'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource GeneratedScopedAccessToken
 	err := ctx.RegisterResource("oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken", name, args, &resource, opts...)
 	if err != nil {

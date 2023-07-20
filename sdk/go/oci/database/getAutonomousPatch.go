@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetAutonomousPatch(ctx *pulumi.Context, args *GetAutonomousPatchArgs, opts ...pulumi.InvokeOption) (*GetAutonomousPatchResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousPatchResult
 	err := ctx.Invoke("oci:Database/getAutonomousPatch:getAutonomousPatch", args, &rv, opts...)
 	if err != nil {

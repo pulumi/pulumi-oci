@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupSteeringPolicy(ctx *pulumi.Context, args *LookupSteeringPolicyArgs, opts ...pulumi.InvokeOption) (*LookupSteeringPolicyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSteeringPolicyResult
 	err := ctx.Invoke("oci:Dns/getSteeringPolicy:getSteeringPolicy", args, &rv, opts...)
 	if err != nil {

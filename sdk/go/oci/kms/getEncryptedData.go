@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func LookupEncryptedData(ctx *pulumi.Context, args *LookupEncryptedDataArgs, opts ...pulumi.InvokeOption) (*LookupEncryptedDataResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupEncryptedDataResult
 	err := ctx.Invoke("oci:Kms/getEncryptedData:getEncryptedData", args, &rv, opts...)
 	if err != nil {

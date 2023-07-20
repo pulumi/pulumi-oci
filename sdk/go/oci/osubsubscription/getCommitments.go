@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetCommitments(ctx *pulumi.Context, args *GetCommitmentsArgs, opts ...pulumi.InvokeOption) (*GetCommitmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCommitmentsResult
 	err := ctx.Invoke("oci:OsubSubscription/getCommitments:getCommitments", args, &rv, opts...)
 	if err != nil {

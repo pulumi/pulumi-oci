@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupNamespaceMetadata(ctx *pulumi.Context, args *LookupNamespaceMetadataArgs, opts ...pulumi.InvokeOption) (*LookupNamespaceMetadataResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNamespaceMetadataResult
 	err := ctx.Invoke("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", args, &rv, opts...)
 	if err != nil {

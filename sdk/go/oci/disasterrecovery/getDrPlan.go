@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDrPlan(ctx *pulumi.Context, args *LookupDrPlanArgs, opts ...pulumi.InvokeOption) (*LookupDrPlanResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDrPlanResult
 	err := ctx.Invoke("oci:DisasterRecovery/getDrPlan:getDrPlan", args, &rv, opts...)
 	if err != nil {
@@ -56,22 +58,22 @@ type LookupDrPlanArgs struct {
 
 // A collection of values returned by getDrPlan.
 type LookupDrPlanResult struct {
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
 	DisplayName string `pulumi:"displayName"`
 	DrPlanId    string `pulumi:"drPlanId"`
-	// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// A message describing the DR Plan's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
 	PeerRegion string `pulumi:"peerRegion"`
@@ -127,7 +129,7 @@ func (o LookupDrPlanResultOutput) ToLookupDrPlanResultOutputWithContext(ctx cont
 	return o
 }
 
-// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o LookupDrPlanResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -146,7 +148,7 @@ func (o LookupDrPlanResultOutput) DrPlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) string { return v.DrPlanId }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 func (o LookupDrPlanResultOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -156,7 +158,7 @@ func (o LookupDrPlanResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o LookupDrPlanResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -166,7 +168,7 @@ func (o LookupDrPlanResultOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 func (o LookupDrPlanResultOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }

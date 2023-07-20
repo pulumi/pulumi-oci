@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetVcns(ctx *pulumi.Context, args *GetVcnsArgs, opts ...pulumi.InvokeOption) (*GetVcnsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVcnsResult
 	err := ctx.Invoke("oci:Core/getVcns:getVcns", args, &rv, opts...)
 	if err != nil {

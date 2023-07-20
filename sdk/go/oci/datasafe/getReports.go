@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetReports(ctx *pulumi.Context, args *GetReportsArgs, opts ...pulumi.InvokeOption) (*GetReportsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetReportsResult
 	err := ctx.Invoke("oci:DataSafe/getReports:getReports", args, &rv, opts...)
 	if err != nil {

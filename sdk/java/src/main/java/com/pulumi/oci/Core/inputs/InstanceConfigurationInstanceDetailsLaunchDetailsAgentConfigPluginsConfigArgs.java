@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs extends com.pulumi.resources.ResourceArgs {
@@ -14,37 +16,37 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
     public static final InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs Empty = new InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs();
 
     /**
-     * Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+     * Whether the plugin should be enabled or disabled.
      * 
      * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
-    @Import(name="desiredState", required=true)
-    private Output<String> desiredState;
+    @Import(name="desiredState")
+    private @Nullable Output<String> desiredState;
 
     /**
-     * @return Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+     * @return Whether the plugin should be enabled or disabled.
      * 
      * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
-    public Output<String> desiredState() {
-        return this.desiredState;
+    public Optional<Output<String>> desiredState() {
+        return Optional.ofNullable(this.desiredState);
     }
 
     /**
      * The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     private InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs() {}
@@ -73,20 +75,20 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
         }
 
         /**
-         * @param desiredState Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+         * @param desiredState Whether the plugin should be enabled or disabled.
          * 
          * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          * 
          * @return builder
          * 
          */
-        public Builder desiredState(Output<String> desiredState) {
+        public Builder desiredState(@Nullable Output<String> desiredState) {
             $.desiredState = desiredState;
             return this;
         }
 
         /**
-         * @param desiredState Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+         * @param desiredState Whether the plugin should be enabled or disabled.
          * 
          * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          * 
@@ -103,7 +105,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -119,8 +121,6 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
         }
 
         public InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs build() {
-            $.desiredState = Objects.requireNonNull($.desiredState, "expected parameter 'desiredState' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }
     }

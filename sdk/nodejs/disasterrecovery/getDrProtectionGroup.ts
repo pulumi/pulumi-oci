@@ -46,7 +46,7 @@ export interface GetDrProtectionGroupArgs {
 export interface GetDrProtectionGroupResult {
     readonly associations: outputs.DisasterRecovery.GetDrProtectionGroupAssociation[];
     /**
-     * The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     readonly compartmentId: string;
     /**
@@ -64,7 +64,7 @@ export interface GetDrProtectionGroupResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
      */
     readonly id: string;
     /**
@@ -80,7 +80,7 @@ export interface GetDrProtectionGroupResult {
      */
     readonly members: outputs.DisasterRecovery.GetDrProtectionGroupMember[];
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
      */
     readonly peerId: string;
     /**

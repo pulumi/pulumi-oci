@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     public sealed class GetContainerInstanceDnsConfigResult
     {
         /// <summary>
-        /// Name server IP address
+        /// IP address of the name server..
         /// </summary>
         public readonly ImmutableArray<string> Nameservers;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Options;
         /// <summary>
-        /// Search list for host-name lookup.
+        /// Search list for hostname lookup.
         /// </summary>
         public readonly ImmutableArray<string> Searches;
 

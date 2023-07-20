@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetDatabasePdbConversionHistoryEntries(ctx *pulumi.Context, args *GetDatabasePdbConversionHistoryEntriesArgs, opts ...pulumi.InvokeOption) (*GetDatabasePdbConversionHistoryEntriesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatabasePdbConversionHistoryEntriesResult
 	err := ctx.Invoke("oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries", args, &rv, opts...)
 	if err != nil {

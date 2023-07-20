@@ -76,7 +76,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -105,7 +105,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> str:
         """
-        The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "dr_protection_group_id")
 
@@ -121,7 +121,7 @@ class GetDrPlanResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -137,7 +137,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> str:
         """
-        The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_dr_protection_group_id")
 

@@ -4,6 +4,7 @@
 package database
 
 import (
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,6 +36,7 @@ import (
 //
 // ```
 func LookupAutonomousDatabaseRegionalWalletManagement(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*LookupAutonomousDatabaseRegionalWalletManagementResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAutonomousDatabaseRegionalWalletManagementResult
 	err := ctx.Invoke("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", nil, &rv, opts...)
 	if err != nil {

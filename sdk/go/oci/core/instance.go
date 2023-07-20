@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -57,128 +58,6 @@ import (
 // use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
 // operation.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewInstance(ctx, "testInstance", &Core.InstanceArgs{
-//				AvailabilityDomain: pulumi.Any(_var.Instance_availability_domain),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				Shape:              pulumi.Any(_var.Instance_shape),
-//				AgentConfig: &core.InstanceAgentConfigArgs{
-//					AreAllPluginsDisabled: pulumi.Any(_var.Instance_agent_config_are_all_plugins_disabled),
-//					IsManagementDisabled:  pulumi.Any(_var.Instance_agent_config_is_management_disabled),
-//					IsMonitoringDisabled:  pulumi.Any(_var.Instance_agent_config_is_monitoring_disabled),
-//					PluginsConfigs: core.InstanceAgentConfigPluginsConfigArray{
-//						&core.InstanceAgentConfigPluginsConfigArgs{
-//							DesiredState: pulumi.Any(_var.Instance_agent_config_plugins_config_desired_state),
-//							Name:         pulumi.Any(_var.Instance_agent_config_plugins_config_name),
-//						},
-//					},
-//				},
-//				AvailabilityConfig: &core.InstanceAvailabilityConfigArgs{
-//					IsLiveMigrationPreferred: pulumi.Any(_var.Instance_availability_config_is_live_migration_preferred),
-//					RecoveryAction:           pulumi.Any(_var.Instance_availability_config_recovery_action),
-//				},
-//				ComputeClusterId: pulumi.Any(oci_core_compute_cluster.Test_compute_cluster.Id),
-//				CreateVnicDetails: &core.InstanceCreateVnicDetailsArgs{
-//					AssignPrivateDnsRecord: pulumi.Any(_var.Instance_create_vnic_details_assign_private_dns_record),
-//					AssignPublicIp:         pulumi.Any(_var.Instance_create_vnic_details_assign_public_ip),
-//					DefinedTags: pulumi.AnyMap{
-//						"Operations.CostCenter": pulumi.Any("42"),
-//					},
-//					DisplayName: pulumi.Any(_var.Instance_create_vnic_details_display_name),
-//					FreeformTags: pulumi.AnyMap{
-//						"Department": pulumi.Any("Finance"),
-//					},
-//					HostnameLabel:       pulumi.Any(_var.Instance_create_vnic_details_hostname_label),
-//					NsgIds:              pulumi.Any(_var.Instance_create_vnic_details_nsg_ids),
-//					PrivateIp:           pulumi.Any(_var.Instance_create_vnic_details_private_ip),
-//					SkipSourceDestCheck: pulumi.Any(_var.Instance_create_vnic_details_skip_source_dest_check),
-//					SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					VlanId:              pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//				},
-//				DedicatedVmHostId: pulumi.Any(oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id),
-//				DefinedTags: pulumi.AnyMap{
-//					"Operations.CostCenter": pulumi.Any("42"),
-//				},
-//				DisplayName: pulumi.Any(_var.Instance_display_name),
-//				ExtendedMetadata: pulumi.AnyMap{
-//					"some_string":   pulumi.Any("stringA"),
-//					"nested_object": pulumi.Any("{\"some_string\": \"stringB\", \"object\": {\"some_string\": \"stringC\"}}"),
-//				},
-//				FaultDomain: pulumi.Any(_var.Instance_fault_domain),
-//				FreeformTags: pulumi.AnyMap{
-//					"Department": pulumi.Any("Finance"),
-//				},
-//				HostnameLabel: pulumi.Any(_var.Instance_hostname_label),
-//				InstanceOptions: &core.InstanceInstanceOptionsArgs{
-//					AreLegacyImdsEndpointsDisabled: pulumi.Any(_var.Instance_instance_options_are_legacy_imds_endpoints_disabled),
-//				},
-//				IpxeScript:                     pulumi.Any(_var.Instance_ipxe_script),
-//				IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Instance_is_pv_encryption_in_transit_enabled),
-//				LaunchOptions: &core.InstanceLaunchOptionsArgs{
-//					BootVolumeType:                  pulumi.Any(_var.Instance_launch_options_boot_volume_type),
-//					Firmware:                        pulumi.Any(_var.Instance_launch_options_firmware),
-//					IsConsistentVolumeNamingEnabled: pulumi.Any(_var.Instance_launch_options_is_consistent_volume_naming_enabled),
-//					IsPvEncryptionInTransitEnabled:  pulumi.Any(_var.Instance_launch_options_is_pv_encryption_in_transit_enabled),
-//					NetworkType:                     pulumi.Any(_var.Instance_launch_options_network_type),
-//					RemoteDataVolumeType:            pulumi.Any(_var.Instance_launch_options_remote_data_volume_type),
-//				},
-//				Metadata: pulumi.Any(_var.Instance_metadata),
-//				PlatformConfig: &core.InstancePlatformConfigArgs{
-//					Type:                                     pulumi.Any(_var.Instance_platform_config_type),
-//					AreVirtualInstructionsEnabled:            pulumi.Any(_var.Instance_platform_config_are_virtual_instructions_enabled),
-//					IsAccessControlServiceEnabled:            pulumi.Any(_var.Instance_platform_config_is_access_control_service_enabled),
-//					IsInputOutputMemoryManagementUnitEnabled: pulumi.Any(_var.Instance_platform_config_is_input_output_memory_management_unit_enabled),
-//					IsMeasuredBootEnabled:                    pulumi.Any(_var.Instance_platform_config_is_measured_boot_enabled),
-//					IsMemoryEncryptionEnabled:                pulumi.Any(_var.Instance_platform_config_is_memory_encryption_enabled),
-//					IsSecureBootEnabled:                      pulumi.Any(_var.Instance_platform_config_is_secure_boot_enabled),
-//					IsSymmetricMultiThreadingEnabled:         pulumi.Any(_var.Instance_platform_config_is_symmetric_multi_threading_enabled),
-//					IsTrustedPlatformModuleEnabled:           pulumi.Any(_var.Instance_platform_config_is_trusted_platform_module_enabled),
-//					NumaNodesPerSocket:                       pulumi.Any(_var.Instance_platform_config_numa_nodes_per_socket),
-//					PercentageOfCoresEnabled:                 pulumi.Any(_var.Instance_platform_config_percentage_of_cores_enabled),
-//				},
-//				PreemptibleInstanceConfig: &core.InstancePreemptibleInstanceConfigArgs{
-//					PreemptionAction: &core.InstancePreemptibleInstanceConfigPreemptionActionArgs{
-//						Type:               pulumi.Any(_var.Instance_preemptible_instance_config_preemption_action_type),
-//						PreserveBootVolume: pulumi.Any(_var.Instance_preemptible_instance_config_preemption_action_preserve_boot_volume),
-//					},
-//				},
-//				ShapeConfig: &core.InstanceShapeConfigArgs{
-//					BaselineOcpuUtilization: pulumi.Any(_var.Instance_shape_config_baseline_ocpu_utilization),
-//					MemoryInGbs:             pulumi.Any(_var.Instance_shape_config_memory_in_gbs),
-//					Nvmes:                   pulumi.Any(_var.Instance_shape_config_nvmes),
-//					Ocpus:                   pulumi.Any(_var.Instance_shape_config_ocpus),
-//				},
-//				SourceDetails: &core.InstanceSourceDetailsArgs{
-//					SourceId:            pulumi.Any(oci_core_image.Test_image.Id),
-//					SourceType:          pulumi.String("image"),
-//					BootVolumeSizeInGbs: pulumi.Any(_var.Instance_source_details_boot_volume_size_in_gbs),
-//					BootVolumeVpusPerGb: pulumi.Any(_var.Instance_source_details_boot_volume_vpus_per_gb),
-//					KmsKeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
-//				},
-//				PreserveBootVolume: pulumi.Bool(false),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Instances can be imported using the `id`, e.g.
@@ -202,7 +81,7 @@ type Instance struct {
 	BootVolumeId pulumi.StringOutput `pulumi:"bootVolumeId"`
 	// (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 	CapacityReservationId pulumi.StringOutput `pulumi:"capacityReservationId"`
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment containing images to search
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
 	ComputeClusterId pulumi.StringOutput `pulumi:"computeClusterId"`
@@ -234,6 +113,8 @@ type Instance struct {
 	//
 	// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
 	Image pulumi.StringOutput `pulumi:"image"`
+	// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+	InstanceConfigurationId pulumi.StringOutput `pulumi:"instanceConfigurationId"`
 	// (Updatable) Optional mutable instance options
 	InstanceOptions InstanceInstanceOptionsOutput `pulumi:"instanceOptions"`
 	// This is an advanced option.
@@ -365,9 +246,7 @@ func NewInstance(ctx *pulumi.Context,
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
-	if args.Shape == nil {
-		return nil, errors.New("invalid value for required argument 'Shape'")
-	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Instance
 	err := ctx.RegisterResource("oci:Core/instance:Instance", name, args, &resource, opts...)
 	if err != nil {
@@ -401,7 +280,7 @@ type instanceState struct {
 	BootVolumeId *string `pulumi:"bootVolumeId"`
 	// (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment containing images to search
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
 	ComputeClusterId *string `pulumi:"computeClusterId"`
@@ -433,6 +312,8 @@ type instanceState struct {
 	//
 	// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
 	Image *string `pulumi:"image"`
+	// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+	InstanceConfigurationId *string `pulumi:"instanceConfigurationId"`
 	// (Updatable) Optional mutable instance options
 	InstanceOptions *InstanceInstanceOptions `pulumi:"instanceOptions"`
 	// This is an advanced option.
@@ -563,7 +444,7 @@ type InstanceState struct {
 	BootVolumeId pulumi.StringPtrInput
 	// (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 	CapacityReservationId pulumi.StringPtrInput
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment containing images to search
 	CompartmentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
 	ComputeClusterId pulumi.StringPtrInput
@@ -595,6 +476,8 @@ type InstanceState struct {
 	//
 	// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
 	Image pulumi.StringPtrInput
+	// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+	InstanceConfigurationId pulumi.StringPtrInput
 	// (Updatable) Optional mutable instance options
 	InstanceOptions InstanceInstanceOptionsPtrInput
 	// This is an advanced option.
@@ -727,7 +610,7 @@ type instanceArgs struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment containing images to search
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
 	ComputeClusterId *string `pulumi:"computeClusterId"`
@@ -759,6 +642,8 @@ type instanceArgs struct {
 	//
 	// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
 	Image *string `pulumi:"image"`
+	// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+	InstanceConfigurationId *string `pulumi:"instanceConfigurationId"`
 	// (Updatable) Optional mutable instance options
 	InstanceOptions *InstanceInstanceOptions `pulumi:"instanceOptions"`
 	// This is an advanced option.
@@ -836,7 +721,7 @@ type instanceArgs struct {
 	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	//
 	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// (Updatable) The shape configuration requested for the instance.
 	//
 	// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
@@ -868,7 +753,7 @@ type InstanceArgs struct {
 	AvailabilityDomain pulumi.StringInput
 	// (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 	CapacityReservationId pulumi.StringPtrInput
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment containing images to search
 	CompartmentId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
 	ComputeClusterId pulumi.StringPtrInput
@@ -900,6 +785,8 @@ type InstanceArgs struct {
 	//
 	// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
 	Image pulumi.StringPtrInput
+	// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+	InstanceConfigurationId pulumi.StringPtrInput
 	// (Updatable) Optional mutable instance options
 	InstanceOptions InstanceInstanceOptionsPtrInput
 	// This is an advanced option.
@@ -977,7 +864,7 @@ type InstanceArgs struct {
 	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	//
 	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-	Shape pulumi.StringInput
+	Shape pulumi.StringPtrInput
 	// (Updatable) The shape configuration requested for the instance.
 	//
 	// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
@@ -1114,7 +1001,7 @@ func (o InstanceOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the compartment.
+// (Updatable) The OCID of the compartment containing images to search
 func (o InstanceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -1177,6 +1064,11 @@ func (o InstanceOutput) HostnameLabel() pulumi.StringOutput {
 // Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
 func (o InstanceOutput) Image() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.Image }).(pulumi.StringOutput)
+}
+
+// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+func (o InstanceOutput) InstanceConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceConfigurationId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Optional mutable instance options

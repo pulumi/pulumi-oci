@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetDataSafePrivateEndpoints(ctx *pulumi.Context, args *GetDataSafePrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetDataSafePrivateEndpointsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDataSafePrivateEndpointsResult
 	err := ctx.Invoke("oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints", args, &rv, opts...)
 	if err != nil {

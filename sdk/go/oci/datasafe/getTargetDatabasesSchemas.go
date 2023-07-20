@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetTargetDatabasesSchemas(ctx *pulumi.Context, args *GetTargetDatabasesSchemasArgs, opts ...pulumi.InvokeOption) (*GetTargetDatabasesSchemasResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTargetDatabasesSchemasResult
 	err := ctx.Invoke("oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetSqlEndpoints(ctx *pulumi.Context, args *GetSqlEndpointsArgs, opts ...pulumi.InvokeOption) (*GetSqlEndpointsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSqlEndpointsResult
 	err := ctx.Invoke("oci:DataFlow/getSqlEndpoints:getSqlEndpoints", args, &rv, opts...)
 	if err != nil {

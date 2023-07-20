@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -14,6 +15,7 @@ import (
 //
 // List all the findings from all the targets in the specified assessment.
 func GetSecurityAssessmentFindings(ctx *pulumi.Context, args *GetSecurityAssessmentFindingsArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityAssessmentFindingsResult
 	err := ctx.Invoke("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args, &rv, opts...)
 	if err != nil {

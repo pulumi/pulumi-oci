@@ -92,7 +92,7 @@ def get_container_instance_shapes(availability_domain: Optional[str] = None,
     """
     This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
 
-    Get a list of shapes for creating Container Instances and their details.
+    Lists the shapes that can be used to create container instances.
 
     ## Example Usage
 
@@ -106,7 +106,7 @@ def get_container_instance_shapes(availability_domain: Optional[str] = None,
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -131,7 +131,7 @@ def get_container_instance_shapes_output(availability_domain: Optional[pulumi.In
     """
     This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
 
-    Get a list of shapes for creating Container Instances and their details.
+    Lists the shapes that can be used to create container instances.
 
     ## Example Usage
 
@@ -145,6 +145,6 @@ def get_container_instance_shapes_output(availability_domain: Optional[pulumi.In
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     """
     ...

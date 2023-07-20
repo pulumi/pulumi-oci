@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetTopUtilizedResources(ctx *pulumi.Context, args *GetTopUtilizedResourcesArgs, opts ...pulumi.InvokeOption) (*GetTopUtilizedResourcesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTopUtilizedResourcesResult
 	err := ctx.Invoke("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args, &rv, opts...)
 	if err != nil {

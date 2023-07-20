@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetListenerRules(ctx *pulumi.Context, args *GetListenerRulesArgs, opts ...pulumi.InvokeOption) (*GetListenerRulesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetListenerRulesResult
 	err := ctx.Invoke("oci:LoadBalancer/getListenerRules:getListenerRules", args, &rv, opts...)
 	if err != nil {

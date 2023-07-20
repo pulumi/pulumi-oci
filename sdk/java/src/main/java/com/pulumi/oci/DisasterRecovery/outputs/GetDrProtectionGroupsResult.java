@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDrProtectionGroupsResult {
     /**
-     * @return The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String compartmentId;
@@ -37,6 +37,11 @@ public final class GetDrProtectionGroupsResult {
      */
     private String id;
     /**
+     * @return The role of the DR Protection Group.
+     * 
+     */
+    private @Nullable String role;
+    /**
      * @return The current state of the DR Protection Group.
      * 
      */
@@ -44,7 +49,7 @@ public final class GetDrProtectionGroupsResult {
 
     private GetDrProtectionGroupsResult() {}
     /**
-     * @return The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String compartmentId() {
@@ -78,6 +83,13 @@ public final class GetDrProtectionGroupsResult {
         return this.id;
     }
     /**
+     * @return The role of the DR Protection Group.
+     * 
+     */
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
+    }
+    /**
      * @return The current state of the DR Protection Group.
      * 
      */
@@ -100,6 +112,7 @@ public final class GetDrProtectionGroupsResult {
         private @Nullable String drProtectionGroupId;
         private @Nullable List<GetDrProtectionGroupsFilter> filters;
         private String id;
+        private @Nullable String role;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDrProtectionGroupsResult defaults) {
@@ -110,6 +123,7 @@ public final class GetDrProtectionGroupsResult {
     	      this.drProtectionGroupId = defaults.drProtectionGroupId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.role = defaults.role;
     	      this.state = defaults.state;
         }
 
@@ -150,6 +164,11 @@ public final class GetDrProtectionGroupsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder role(@Nullable String role) {
+            this.role = role;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
@@ -162,6 +181,7 @@ public final class GetDrProtectionGroupsResult {
             o.drProtectionGroupId = drProtectionGroupId;
             o.filters = filters;
             o.id = id;
+            o.role = role;
             o.state = state;
             return o;
         }

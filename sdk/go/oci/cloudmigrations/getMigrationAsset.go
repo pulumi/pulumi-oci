@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupMigrationAsset(ctx *pulumi.Context, args *LookupMigrationAssetArgs, opts ...pulumi.InvokeOption) (*LookupMigrationAssetResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMigrationAssetResult
 	err := ctx.Invoke("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", args, &rv, opts...)
 	if err != nil {

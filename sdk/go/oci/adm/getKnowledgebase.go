@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetKnowledgebase(ctx *pulumi.Context, args *GetKnowledgebaseArgs, opts ...pulumi.InvokeOption) (*GetKnowledgebaseResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetKnowledgebaseResult
 	err := ctx.Invoke("oci:Adm/getKnowledgebase:getKnowledgebase", args, &rv, opts...)
 	if err != nil {

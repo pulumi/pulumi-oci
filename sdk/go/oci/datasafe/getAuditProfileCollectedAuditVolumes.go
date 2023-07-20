@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetAuditProfileCollectedAuditVolumes(ctx *pulumi.Context, args *GetAuditProfileCollectedAuditVolumesArgs, opts ...pulumi.InvokeOption) (*GetAuditProfileCollectedAuditVolumesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuditProfileCollectedAuditVolumesResult
 	err := ctx.Invoke("oci:DataSafe/getAuditProfileCollectedAuditVolumes:getAuditProfileCollectedAuditVolumes", args, &rv, opts...)
 	if err != nil {

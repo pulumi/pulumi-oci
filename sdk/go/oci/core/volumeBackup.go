@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -117,6 +118,7 @@ func NewVolumeBackup(ctx *pulumi.Context,
 		args = &VolumeBackupArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource VolumeBackup
 	err := ctx.RegisterResource("oci:Core/volumeBackup:VolumeBackup", name, args, &resource, opts...)
 	if err != nil {

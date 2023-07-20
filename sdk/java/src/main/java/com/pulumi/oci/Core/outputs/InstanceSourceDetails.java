@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.InstanceSourceDetailsInstanceSourceImageFilterDetails;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -24,6 +25,11 @@ public final class InstanceSourceDetails {
      */
     private @Nullable String bootVolumeVpusPerGb;
     /**
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    private @Nullable InstanceSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails;
+    /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
@@ -32,7 +38,7 @@ public final class InstanceSourceDetails {
      * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
      * 
      */
-    private String sourceId;
+    private @Nullable String sourceId;
     /**
      * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
@@ -57,6 +63,13 @@ public final class InstanceSourceDetails {
         return Optional.ofNullable(this.bootVolumeVpusPerGb);
     }
     /**
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    public Optional<InstanceSourceDetailsInstanceSourceImageFilterDetails> instanceSourceImageFilterDetails() {
+        return Optional.ofNullable(this.instanceSourceImageFilterDetails);
+    }
+    /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
@@ -67,8 +80,8 @@ public final class InstanceSourceDetails {
      * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
      * 
      */
-    public String sourceId() {
-        return this.sourceId;
+    public Optional<String> sourceId() {
+        return Optional.ofNullable(this.sourceId);
     }
     /**
      * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
@@ -89,14 +102,16 @@ public final class InstanceSourceDetails {
     public static final class Builder {
         private @Nullable String bootVolumeSizeInGbs;
         private @Nullable String bootVolumeVpusPerGb;
+        private @Nullable InstanceSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails;
         private @Nullable String kmsKeyId;
-        private String sourceId;
+        private @Nullable String sourceId;
         private String sourceType;
         public Builder() {}
         public Builder(InstanceSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
     	      this.bootVolumeVpusPerGb = defaults.bootVolumeVpusPerGb;
+    	      this.instanceSourceImageFilterDetails = defaults.instanceSourceImageFilterDetails;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sourceId = defaults.sourceId;
     	      this.sourceType = defaults.sourceType;
@@ -113,13 +128,18 @@ public final class InstanceSourceDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder instanceSourceImageFilterDetails(@Nullable InstanceSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails) {
+            this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+        public Builder sourceId(@Nullable String sourceId) {
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
@@ -131,6 +151,7 @@ public final class InstanceSourceDetails {
             final var o = new InstanceSourceDetails();
             o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             o.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
+            o.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
             o.kmsKeyId = kmsKeyId;
             o.sourceId = sourceId;
             o.sourceType = sourceType;

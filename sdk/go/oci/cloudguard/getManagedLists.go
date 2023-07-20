@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -59,6 +60,7 @@ import (
 //
 // ```
 func GetManagedLists(ctx *pulumi.Context, args *GetManagedListsArgs, opts ...pulumi.InvokeOption) (*GetManagedListsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedListsResult
 	err := ctx.Invoke("oci:CloudGuard/getManagedLists:getManagedLists", args, &rv, opts...)
 	if err != nil {

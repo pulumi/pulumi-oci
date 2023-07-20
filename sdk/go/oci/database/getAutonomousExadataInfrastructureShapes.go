@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetAutonomousExadataInfrastructureShapes(ctx *pulumi.Context, args *GetAutonomousExadataInfrastructureShapesArgs, opts ...pulumi.InvokeOption) (*GetAutonomousExadataInfrastructureShapesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousExadataInfrastructureShapesResult
 	err := ctx.Invoke("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", args, &rv, opts...)
 	if err != nil {

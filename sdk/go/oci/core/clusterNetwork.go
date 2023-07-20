@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -130,6 +131,7 @@ func NewClusterNetwork(ctx *pulumi.Context,
 	if args.PlacementConfiguration == nil {
 		return nil, errors.New("invalid value for required argument 'PlacementConfiguration'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ClusterNetwork
 	err := ctx.RegisterResource("oci:Core/clusterNetwork:ClusterNetwork", name, args, &resource, opts...)
 	if err != nil {

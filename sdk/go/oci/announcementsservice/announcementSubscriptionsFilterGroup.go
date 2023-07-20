@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -85,6 +86,7 @@ func NewAnnouncementSubscriptionsFilterGroup(ctx *pulumi.Context,
 	if args.Filters == nil {
 		return nil, errors.New("invalid value for required argument 'Filters'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AnnouncementSubscriptionsFilterGroup
 	err := ctx.RegisterResource("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", name, args, &resource, opts...)
 	if err != nil {

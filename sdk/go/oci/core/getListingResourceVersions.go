@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetListingResourceVersions(ctx *pulumi.Context, args *GetListingResourceVersionsArgs, opts ...pulumi.InvokeOption) (*GetListingResourceVersionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetListingResourceVersionsResult
 	err := ctx.Invoke("oci:Core/getListingResourceVersions:getListingResourceVersions", args, &rv, opts...)
 	if err != nil {

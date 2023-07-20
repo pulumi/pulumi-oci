@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func LookupOpsiConfiguration(ctx *pulumi.Context, args *LookupOpsiConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupOpsiConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupOpsiConfigurationResult
 	err := ctx.Invoke("oci:Opsi/getOpsiConfiguration:getOpsiConfiguration", args, &rv, opts...)
 	if err != nil {

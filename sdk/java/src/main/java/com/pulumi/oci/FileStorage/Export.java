@@ -10,6 +10,7 @@ import com.pulumi.oci.FileStorage.ExportArgs;
 import com.pulumi.oci.FileStorage.inputs.ExportState;
 import com.pulumi.oci.FileStorage.outputs.ExportExportOption;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -50,11 +51,14 @@ import javax.annotation.Nullable;
  *             .exportOptions(ExportExportOptionArgs.builder()
  *                 .source(var_.export_export_options_source())
  *                 .access(var_.export_export_options_access())
+ *                 .allowedAuths(var_.export_export_options_allowed_auth())
  *                 .anonymousGid(var_.export_export_options_anonymous_gid())
  *                 .anonymousUid(var_.export_export_options_anonymous_uid())
  *                 .identitySquash(var_.export_export_options_identity_squash())
+ *                 .isAnonymousAccessAllowed(var_.export_export_options_is_anonymous_access_allowed())
  *                 .requirePrivilegedSourcePort(var_.export_export_options_require_privileged_source_port())
  *                 .build())
+ *             .isIdmapGroupsForSysAuth(var_.export_is_idmap_groups_for_sys_auth())
  *             .build());
  * 
  *     }
@@ -127,6 +131,20 @@ public class Export extends com.pulumi.resources.CustomResource {
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
+    }
+    /**
+     * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     * 
+     */
+    @com.pulumi.core.annotations.Export(name="isIdmapGroupsForSysAuth", type=Boolean.class, parameters={})
+    private Output<Boolean> isIdmapGroupsForSysAuth;
+
+    /**
+     * @return (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     * 
+     */
+    public Output<Boolean> isIdmapGroupsForSysAuth() {
+        return this.isIdmapGroupsForSysAuth;
     }
     /**
      * Path used to access the associated file system.

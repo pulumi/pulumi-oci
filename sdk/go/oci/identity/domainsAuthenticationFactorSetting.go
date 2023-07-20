@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -519,6 +520,7 @@ func NewDomainsAuthenticationFactorSetting(ctx *pulumi.Context,
 	if args.TotpSettings == nil {
 		return nil, errors.New("invalid value for required argument 'TotpSettings'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DomainsAuthenticationFactorSetting
 	err := ctx.RegisterResource("oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting", name, args, &resource, opts...)
 	if err != nil {

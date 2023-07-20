@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetConfiguration(ctx *pulumi.Context, args *GetConfigurationArgs, opts ...pulumi.InvokeOption) (*GetConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetConfigurationResult
 	err := ctx.Invoke("oci:MeteringComputation/getConfiguration:getConfiguration", args, &rv, opts...)
 	if err != nil {

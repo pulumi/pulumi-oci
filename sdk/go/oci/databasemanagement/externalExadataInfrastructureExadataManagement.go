@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -74,6 +75,7 @@ func NewExternalExadataInfrastructureExadataManagement(ctx *pulumi.Context,
 	if args.ExternalExadataInfrastructureId == nil {
 		return nil, errors.New("invalid value for required argument 'ExternalExadataInfrastructureId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExternalExadataInfrastructureExadataManagement
 	err := ctx.RegisterResource("oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement", name, args, &resource, opts...)
 	if err != nil {

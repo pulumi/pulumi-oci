@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetDetectAnomalyJobs(ctx *pulumi.Context, args *GetDetectAnomalyJobsArgs, opts ...pulumi.InvokeOption) (*GetDetectAnomalyJobsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDetectAnomalyJobsResult
 	err := ctx.Invoke("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", args, &rv, opts...)
 	if err != nil {

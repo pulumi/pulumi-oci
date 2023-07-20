@@ -2902,6 +2902,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FileStorage/outboundConnector",
+  "fqn": "pulumi_oci.filestorage",
+  "classes": {
+   "oci:FileStorage/outboundConnector:OutboundConnector": "OutboundConnector"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "FileStorage/replication",
   "fqn": "pulumi_oci.filestorage",
   "classes": {

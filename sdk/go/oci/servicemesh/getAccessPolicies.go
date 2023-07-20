@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetAccessPolicies(ctx *pulumi.Context, args *GetAccessPoliciesArgs, opts ...pulumi.InvokeOption) (*GetAccessPoliciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAccessPoliciesResult
 	err := ctx.Invoke("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args, &rv, opts...)
 	if err != nil {

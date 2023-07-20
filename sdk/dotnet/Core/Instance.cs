@@ -56,137 +56,6 @@ namespace Pulumi.Oci.Core
     /// use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
     /// operation.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testInstance = new Oci.Core.Instance("testInstance", new()
-    ///     {
-    ///         AvailabilityDomain = @var.Instance_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Shape = @var.Instance_shape,
-    ///         AgentConfig = new Oci.Core.Inputs.InstanceAgentConfigArgs
-    ///         {
-    ///             AreAllPluginsDisabled = @var.Instance_agent_config_are_all_plugins_disabled,
-    ///             IsManagementDisabled = @var.Instance_agent_config_is_management_disabled,
-    ///             IsMonitoringDisabled = @var.Instance_agent_config_is_monitoring_disabled,
-    ///             PluginsConfigs = new[]
-    ///             {
-    ///                 new Oci.Core.Inputs.InstanceAgentConfigPluginsConfigArgs
-    ///                 {
-    ///                     DesiredState = @var.Instance_agent_config_plugins_config_desired_state,
-    ///                     Name = @var.Instance_agent_config_plugins_config_name,
-    ///                 },
-    ///             },
-    ///         },
-    ///         AvailabilityConfig = new Oci.Core.Inputs.InstanceAvailabilityConfigArgs
-    ///         {
-    ///             IsLiveMigrationPreferred = @var.Instance_availability_config_is_live_migration_preferred,
-    ///             RecoveryAction = @var.Instance_availability_config_recovery_action,
-    ///         },
-    ///         ComputeClusterId = oci_core_compute_cluster.Test_compute_cluster.Id,
-    ///         CreateVnicDetails = new Oci.Core.Inputs.InstanceCreateVnicDetailsArgs
-    ///         {
-    ///             AssignPrivateDnsRecord = @var.Instance_create_vnic_details_assign_private_dns_record,
-    ///             AssignPublicIp = @var.Instance_create_vnic_details_assign_public_ip,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Instance_create_vnic_details_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             HostnameLabel = @var.Instance_create_vnic_details_hostname_label,
-    ///             NsgIds = @var.Instance_create_vnic_details_nsg_ids,
-    ///             PrivateIp = @var.Instance_create_vnic_details_private_ip,
-    ///             SkipSourceDestCheck = @var.Instance_create_vnic_details_skip_source_dest_check,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VlanId = oci_core_vlan.Test_vlan.Id,
-    ///         },
-    ///         DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         DisplayName = @var.Instance_display_name,
-    ///         ExtendedMetadata = 
-    ///         {
-    ///             { "some_string", "stringA" },
-    ///             { "nested_object", "{\"some_string\": \"stringB\", \"object\": {\"some_string\": \"stringC\"}}" },
-    ///         },
-    ///         FaultDomain = @var.Instance_fault_domain,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         HostnameLabel = @var.Instance_hostname_label,
-    ///         InstanceOptions = new Oci.Core.Inputs.InstanceInstanceOptionsArgs
-    ///         {
-    ///             AreLegacyImdsEndpointsDisabled = @var.Instance_instance_options_are_legacy_imds_endpoints_disabled,
-    ///         },
-    ///         IpxeScript = @var.Instance_ipxe_script,
-    ///         IsPvEncryptionInTransitEnabled = @var.Instance_is_pv_encryption_in_transit_enabled,
-    ///         LaunchOptions = new Oci.Core.Inputs.InstanceLaunchOptionsArgs
-    ///         {
-    ///             BootVolumeType = @var.Instance_launch_options_boot_volume_type,
-    ///             Firmware = @var.Instance_launch_options_firmware,
-    ///             IsConsistentVolumeNamingEnabled = @var.Instance_launch_options_is_consistent_volume_naming_enabled,
-    ///             IsPvEncryptionInTransitEnabled = @var.Instance_launch_options_is_pv_encryption_in_transit_enabled,
-    ///             NetworkType = @var.Instance_launch_options_network_type,
-    ///             RemoteDataVolumeType = @var.Instance_launch_options_remote_data_volume_type,
-    ///         },
-    ///         Metadata = @var.Instance_metadata,
-    ///         PlatformConfig = new Oci.Core.Inputs.InstancePlatformConfigArgs
-    ///         {
-    ///             Type = @var.Instance_platform_config_type,
-    ///             AreVirtualInstructionsEnabled = @var.Instance_platform_config_are_virtual_instructions_enabled,
-    ///             IsAccessControlServiceEnabled = @var.Instance_platform_config_is_access_control_service_enabled,
-    ///             IsInputOutputMemoryManagementUnitEnabled = @var.Instance_platform_config_is_input_output_memory_management_unit_enabled,
-    ///             IsMeasuredBootEnabled = @var.Instance_platform_config_is_measured_boot_enabled,
-    ///             IsMemoryEncryptionEnabled = @var.Instance_platform_config_is_memory_encryption_enabled,
-    ///             IsSecureBootEnabled = @var.Instance_platform_config_is_secure_boot_enabled,
-    ///             IsSymmetricMultiThreadingEnabled = @var.Instance_platform_config_is_symmetric_multi_threading_enabled,
-    ///             IsTrustedPlatformModuleEnabled = @var.Instance_platform_config_is_trusted_platform_module_enabled,
-    ///             NumaNodesPerSocket = @var.Instance_platform_config_numa_nodes_per_socket,
-    ///             PercentageOfCoresEnabled = @var.Instance_platform_config_percentage_of_cores_enabled,
-    ///         },
-    ///         PreemptibleInstanceConfig = new Oci.Core.Inputs.InstancePreemptibleInstanceConfigArgs
-    ///         {
-    ///             PreemptionAction = new Oci.Core.Inputs.InstancePreemptibleInstanceConfigPreemptionActionArgs
-    ///             {
-    ///                 Type = @var.Instance_preemptible_instance_config_preemption_action_type,
-    ///                 PreserveBootVolume = @var.Instance_preemptible_instance_config_preemption_action_preserve_boot_volume,
-    ///             },
-    ///         },
-    ///         ShapeConfig = new Oci.Core.Inputs.InstanceShapeConfigArgs
-    ///         {
-    ///             BaselineOcpuUtilization = @var.Instance_shape_config_baseline_ocpu_utilization,
-    ///             MemoryInGbs = @var.Instance_shape_config_memory_in_gbs,
-    ///             Nvmes = @var.Instance_shape_config_nvmes,
-    ///             Ocpus = @var.Instance_shape_config_ocpus,
-    ///         },
-    ///         SourceDetails = new Oci.Core.Inputs.InstanceSourceDetailsArgs
-    ///         {
-    ///             SourceId = oci_core_image.Test_image.Id,
-    ///             SourceType = "image",
-    ///             BootVolumeSizeInGbs = @var.Instance_source_details_boot_volume_size_in_gbs,
-    ///             BootVolumeVpusPerGb = @var.Instance_source_details_boot_volume_vpus_per_gb,
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
-    ///         },
-    ///         PreserveBootVolume = false,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Instances can be imported using the `id`, e.g.
@@ -232,7 +101,7 @@ namespace Pulumi.Oci.Core
         public Output<string> CapacityReservationId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment containing images to search
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -271,7 +140,7 @@ namespace Pulumi.Oci.Core
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
         [Output("extendedMetadata")]
-        public Output<ImmutableDictionary<string, object>?> ExtendedMetadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>> ExtendedMetadata { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -302,6 +171,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("image")]
         public Output<string> Image { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+        /// </summary>
+        [Output("instanceConfigurationId")]
+        public Output<string> InstanceConfigurationId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional mutable instance options
@@ -390,7 +265,7 @@ namespace Pulumi.Oci.Core
         /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         [Output("metadata")]
-        public Output<ImmutableDictionary<string, object>?> Metadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// The platform configuration requested for the instance.
@@ -574,7 +449,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? CapacityReservationId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment containing images to search
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -662,6 +537,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("image")]
         public Input<string>? Image { get; set; }
+
+        /// <summary>
+        /// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+        /// </summary>
+        [Input("instanceConfigurationId")]
+        public Input<string>? InstanceConfigurationId { get; set; }
 
         /// <summary>
         /// (Updatable) Optional mutable instance options
@@ -777,8 +658,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
-        [Input("shape", required: true)]
-        public Input<string> Shape { get; set; } = null!;
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
@@ -856,7 +737,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? CapacityReservationId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment containing images to search
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -944,6 +825,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("image")]
         public Input<string>? Image { get; set; }
+
+        /// <summary>
+        /// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+        /// </summary>
+        [Input("instanceConfigurationId")]
+        public Input<string>? InstanceConfigurationId { get; set; }
 
         /// <summary>
         /// (Updatable) Optional mutable instance options

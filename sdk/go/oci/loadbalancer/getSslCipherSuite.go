@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupSslCipherSuite(ctx *pulumi.Context, args *LookupSslCipherSuiteArgs, opts ...pulumi.InvokeOption) (*LookupSslCipherSuiteResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSslCipherSuiteResult
 	err := ctx.Invoke("oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite", args, &rv, opts...)
 	if err != nil {

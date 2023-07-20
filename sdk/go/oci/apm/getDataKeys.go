@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetDataKeys(ctx *pulumi.Context, args *GetDataKeysArgs, opts ...pulumi.InvokeOption) (*GetDataKeysResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDataKeysResult
 	err := ctx.Invoke("oci:Apm/getDataKeys:getDataKeys", args, &rv, opts...)
 	if err != nil {

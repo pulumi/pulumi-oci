@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetDrPlanExecutions(ctx *pulumi.Context, args *GetDrPlanExecutionsArgs, opts ...pulumi.InvokeOption) (*GetDrPlanExecutionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrPlanExecutionsResult
 	err := ctx.Invoke("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", args, &rv, opts...)
 	if err != nil {
@@ -75,7 +77,7 @@ type GetDrPlanExecutionsResult struct {
 	DrPlanExecutionCollections []GetDrPlanExecutionsDrPlanExecutionCollection `pulumi:"drPlanExecutionCollections"`
 	DrPlanExecutionId          *string                                        `pulumi:"drPlanExecutionId"`
 	DrPlanExecutionType        *string                                        `pulumi:"drPlanExecutionType"`
-	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId string                      `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlanExecutionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -151,7 +153,7 @@ func (o GetDrPlanExecutionsResultOutput) DrPlanExecutionType() pulumi.StringPtrO
 	return o.ApplyT(func(v GetDrPlanExecutionsResult) *string { return v.DrPlanExecutionType }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o GetDrPlanExecutionsResultOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsResult) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }

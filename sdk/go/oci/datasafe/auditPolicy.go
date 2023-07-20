@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -80,6 +81,7 @@ func NewAuditPolicy(ctx *pulumi.Context,
 	if args.AuditPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'AuditPolicyId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AuditPolicy
 	err := ctx.RegisterResource("oci:DataSafe/auditPolicy:AuditPolicy", name, args, &resource, opts...)
 	if err != nil {

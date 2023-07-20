@@ -73,132 +73,6 @@ import javax.annotation.Nullable;
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
  * operation.
  * 
- * ## Example Usage
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Core.Instance;
- * import com.pulumi.oci.Core.InstanceArgs;
- * import com.pulumi.oci.Core.inputs.InstanceAgentConfigArgs;
- * import com.pulumi.oci.Core.inputs.InstanceAvailabilityConfigArgs;
- * import com.pulumi.oci.Core.inputs.InstanceCreateVnicDetailsArgs;
- * import com.pulumi.oci.Core.inputs.InstanceInstanceOptionsArgs;
- * import com.pulumi.oci.Core.inputs.InstanceLaunchOptionsArgs;
- * import com.pulumi.oci.Core.inputs.InstancePlatformConfigArgs;
- * import com.pulumi.oci.Core.inputs.InstancePreemptibleInstanceConfigArgs;
- * import com.pulumi.oci.Core.inputs.InstancePreemptibleInstanceConfigPreemptionActionArgs;
- * import com.pulumi.oci.Core.inputs.InstanceShapeConfigArgs;
- * import com.pulumi.oci.Core.inputs.InstanceSourceDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testInstance = new Instance(&#34;testInstance&#34;, InstanceArgs.builder()        
- *             .availabilityDomain(var_.instance_availability_domain())
- *             .compartmentId(var_.compartment_id())
- *             .shape(var_.instance_shape())
- *             .agentConfig(InstanceAgentConfigArgs.builder()
- *                 .areAllPluginsDisabled(var_.instance_agent_config_are_all_plugins_disabled())
- *                 .isManagementDisabled(var_.instance_agent_config_is_management_disabled())
- *                 .isMonitoringDisabled(var_.instance_agent_config_is_monitoring_disabled())
- *                 .pluginsConfigs(InstanceAgentConfigPluginsConfigArgs.builder()
- *                     .desiredState(var_.instance_agent_config_plugins_config_desired_state())
- *                     .name(var_.instance_agent_config_plugins_config_name())
- *                     .build())
- *                 .build())
- *             .availabilityConfig(InstanceAvailabilityConfigArgs.builder()
- *                 .isLiveMigrationPreferred(var_.instance_availability_config_is_live_migration_preferred())
- *                 .recoveryAction(var_.instance_availability_config_recovery_action())
- *                 .build())
- *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
- *             .createVnicDetails(InstanceCreateVnicDetailsArgs.builder()
- *                 .assignPrivateDnsRecord(var_.instance_create_vnic_details_assign_private_dns_record())
- *                 .assignPublicIp(var_.instance_create_vnic_details_assign_public_ip())
- *                 .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *                 .displayName(var_.instance_create_vnic_details_display_name())
- *                 .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *                 .hostnameLabel(var_.instance_create_vnic_details_hostname_label())
- *                 .nsgIds(var_.instance_create_vnic_details_nsg_ids())
- *                 .privateIp(var_.instance_create_vnic_details_private_ip())
- *                 .skipSourceDestCheck(var_.instance_create_vnic_details_skip_source_dest_check())
- *                 .subnetId(oci_core_subnet.test_subnet().id())
- *                 .vlanId(oci_core_vlan.test_vlan().id())
- *                 .build())
- *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.instance_display_name())
- *             .extendedMetadata(Map.ofEntries(
- *                 Map.entry(&#34;some_string&#34;, &#34;stringA&#34;),
- *                 Map.entry(&#34;nested_object&#34;, &#34;{\&#34;some_string\&#34;: \&#34;stringB\&#34;, \&#34;object\&#34;: {\&#34;some_string\&#34;: \&#34;stringC\&#34;}}&#34;)
- *             ))
- *             .faultDomain(var_.instance_fault_domain())
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .hostnameLabel(var_.instance_hostname_label())
- *             .instanceOptions(InstanceInstanceOptionsArgs.builder()
- *                 .areLegacyImdsEndpointsDisabled(var_.instance_instance_options_are_legacy_imds_endpoints_disabled())
- *                 .build())
- *             .ipxeScript(var_.instance_ipxe_script())
- *             .isPvEncryptionInTransitEnabled(var_.instance_is_pv_encryption_in_transit_enabled())
- *             .launchOptions(InstanceLaunchOptionsArgs.builder()
- *                 .bootVolumeType(var_.instance_launch_options_boot_volume_type())
- *                 .firmware(var_.instance_launch_options_firmware())
- *                 .isConsistentVolumeNamingEnabled(var_.instance_launch_options_is_consistent_volume_naming_enabled())
- *                 .isPvEncryptionInTransitEnabled(var_.instance_launch_options_is_pv_encryption_in_transit_enabled())
- *                 .networkType(var_.instance_launch_options_network_type())
- *                 .remoteDataVolumeType(var_.instance_launch_options_remote_data_volume_type())
- *                 .build())
- *             .metadata(var_.instance_metadata())
- *             .platformConfig(InstancePlatformConfigArgs.builder()
- *                 .type(var_.instance_platform_config_type())
- *                 .areVirtualInstructionsEnabled(var_.instance_platform_config_are_virtual_instructions_enabled())
- *                 .isAccessControlServiceEnabled(var_.instance_platform_config_is_access_control_service_enabled())
- *                 .isInputOutputMemoryManagementUnitEnabled(var_.instance_platform_config_is_input_output_memory_management_unit_enabled())
- *                 .isMeasuredBootEnabled(var_.instance_platform_config_is_measured_boot_enabled())
- *                 .isMemoryEncryptionEnabled(var_.instance_platform_config_is_memory_encryption_enabled())
- *                 .isSecureBootEnabled(var_.instance_platform_config_is_secure_boot_enabled())
- *                 .isSymmetricMultiThreadingEnabled(var_.instance_platform_config_is_symmetric_multi_threading_enabled())
- *                 .isTrustedPlatformModuleEnabled(var_.instance_platform_config_is_trusted_platform_module_enabled())
- *                 .numaNodesPerSocket(var_.instance_platform_config_numa_nodes_per_socket())
- *                 .percentageOfCoresEnabled(var_.instance_platform_config_percentage_of_cores_enabled())
- *                 .build())
- *             .preemptibleInstanceConfig(InstancePreemptibleInstanceConfigArgs.builder()
- *                 .preemptionAction(InstancePreemptibleInstanceConfigPreemptionActionArgs.builder()
- *                     .type(var_.instance_preemptible_instance_config_preemption_action_type())
- *                     .preserveBootVolume(var_.instance_preemptible_instance_config_preemption_action_preserve_boot_volume())
- *                     .build())
- *                 .build())
- *             .shapeConfig(InstanceShapeConfigArgs.builder()
- *                 .baselineOcpuUtilization(var_.instance_shape_config_baseline_ocpu_utilization())
- *                 .memoryInGbs(var_.instance_shape_config_memory_in_gbs())
- *                 .nvmes(var_.instance_shape_config_nvmes())
- *                 .ocpus(var_.instance_shape_config_ocpus())
- *                 .build())
- *             .sourceDetails(InstanceSourceDetailsArgs.builder()
- *                 .sourceId(oci_core_image.test_image().id())
- *                 .sourceType(&#34;image&#34;)
- *                 .bootVolumeSizeInGbs(var_.instance_source_details_boot_volume_size_in_gbs())
- *                 .bootVolumeVpusPerGb(var_.instance_source_details_boot_volume_vpus_per_gb())
- *                 .kmsKeyId(oci_kms_key.test_key().id())
- *                 .build())
- *             .preserveBootVolume(false)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
  * ## Import
  * 
  * Instances can be imported using the `id`, e.g.
@@ -287,14 +161,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.capacityReservationId;
     }
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment containing images to search
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Output<String> compartmentId() {
@@ -375,14 +249,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="extendedMetadata", type=Map.class, parameters={String.class, Object.class})
-    private Output</* @Nullable */ Map<String,Object>> extendedMetadata;
+    private Output<Map<String,Object>> extendedMetadata;
 
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Output<Optional<Map<String,Object>>> extendedMetadata() {
-        return Codegen.optional(this.extendedMetadata);
+    public Output<Map<String,Object>> extendedMetadata() {
+        return this.extendedMetadata;
     }
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -459,6 +333,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> image() {
         return this.image;
+    }
+    /**
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    @Export(name="instanceConfigurationId", type=String.class, parameters={})
+    private Output<String> instanceConfigurationId;
+
+    /**
+     * @return The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    public Output<String> instanceConfigurationId() {
+        return this.instanceConfigurationId;
     }
     /**
      * (Updatable) Optional mutable instance options
@@ -619,7 +507,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="metadata", type=Map.class, parameters={String.class, Object.class})
-    private Output</* @Nullable */ Map<String,Object>> metadata;
+    private Output<Map<String,Object>> metadata;
 
     /**
      * @return (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
@@ -671,8 +559,8 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
      * 
      */
-    public Output<Optional<Map<String,Object>>> metadata() {
-        return Codegen.optional(this.metadata);
+    public Output<Map<String,Object>> metadata() {
+        return this.metadata;
     }
     /**
      * The platform configuration requested for the instance.

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetDataSource(ctx *pulumi.Context, args *GetDataSourceArgs, opts ...pulumi.InvokeOption) (*GetDataSourceResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDataSourceResult
 	err := ctx.Invoke("oci:CloudGuard/getDataSource:getDataSource", args, &rv, opts...)
 	if err != nil {

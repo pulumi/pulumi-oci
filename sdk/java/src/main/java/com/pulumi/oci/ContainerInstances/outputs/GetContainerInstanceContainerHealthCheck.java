@@ -20,7 +20,7 @@ public final class GetContainerInstanceContainerHealthCheck {
     private Integer initialDelayInSeconds;
     private Integer intervalInSeconds;
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     private String name;
@@ -58,7 +58,7 @@ public final class GetContainerInstanceContainerHealthCheck {
         return this.intervalInSeconds;
     }
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public String name() {

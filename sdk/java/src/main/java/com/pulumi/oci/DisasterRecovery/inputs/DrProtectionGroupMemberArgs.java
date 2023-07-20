@@ -19,14 +19,29 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     public static final DrProtectionGroupMemberArgs Empty = new DrProtectionGroupMemberArgs();
 
     /**
-     * (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+     * 
+     */
+    @Import(name="destinationCapacityReservationId")
+    private @Nullable Output<String> destinationCapacityReservationId;
+
+    /**
+     * @return (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+     * 
+     */
+    public Optional<Output<String>> destinationCapacityReservationId() {
+        return Optional.ofNullable(this.destinationCapacityReservationId);
+    }
+
+    /**
+     * (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="destinationCompartmentId")
     private @Nullable Output<String> destinationCompartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> destinationCompartmentId() {
@@ -34,14 +49,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+     * (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="destinationDedicatedVmHostId")
     private @Nullable Output<String> destinationDedicatedVmHostId;
 
     /**
-     * @return (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+     * @return (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> destinationDedicatedVmHostId() {
@@ -64,14 +79,29 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+     * 
+     */
+    @Import(name="isRetainFaultDomain")
+    private @Nullable Output<Boolean> isRetainFaultDomain;
+
+    /**
+     * @return (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+     * 
+     */
+    public Optional<Output<Boolean>> isRetainFaultDomain() {
+        return Optional.ofNullable(this.isRetainFaultDomain);
+    }
+
+    /**
+     * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="memberId", required=true)
     private Output<String> memberId;
 
     /**
-     * @return (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * @return (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Output<String> memberId() {
@@ -94,18 +124,33 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+     * (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="passwordVaultSecretId")
     private @Nullable Output<String> passwordVaultSecretId;
 
     /**
-     * @return (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+     * @return (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> passwordVaultSecretId() {
         return Optional.ofNullable(this.passwordVaultSecretId);
+    }
+
+    /**
+     * (Updatable) A list of Compute Instance VNIC mappings.
+     * 
+     */
+    @Import(name="vnicMapping")
+    private @Nullable Output<List<DrProtectionGroupMemberVnicMappingArgs>> vnicMapping;
+
+    /**
+     * @return (Updatable) A list of Compute Instance VNIC mappings.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberVnicMappingArgs>>> vnicMapping() {
+        return Optional.ofNullable(this.vnicMapping);
     }
 
     /**
@@ -126,12 +171,15 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     private DrProtectionGroupMemberArgs() {}
 
     private DrProtectionGroupMemberArgs(DrProtectionGroupMemberArgs $) {
+        this.destinationCapacityReservationId = $.destinationCapacityReservationId;
         this.destinationCompartmentId = $.destinationCompartmentId;
         this.destinationDedicatedVmHostId = $.destinationDedicatedVmHostId;
         this.isMovable = $.isMovable;
+        this.isRetainFaultDomain = $.isRetainFaultDomain;
         this.memberId = $.memberId;
         this.memberType = $.memberType;
         this.passwordVaultSecretId = $.passwordVaultSecretId;
+        this.vnicMapping = $.vnicMapping;
         this.vnicMappings = $.vnicMappings;
     }
 
@@ -154,7 +202,28 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationCompartmentId (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param destinationCapacityReservationId (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationCapacityReservationId(@Nullable Output<String> destinationCapacityReservationId) {
+            $.destinationCapacityReservationId = destinationCapacityReservationId;
+            return this;
+        }
+
+        /**
+         * @param destinationCapacityReservationId (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationCapacityReservationId(String destinationCapacityReservationId) {
+            return destinationCapacityReservationId(Output.of(destinationCapacityReservationId));
+        }
+
+        /**
+         * @param destinationCompartmentId (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -165,7 +234,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationCompartmentId (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param destinationCompartmentId (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -175,7 +244,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationDedicatedVmHostId (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+         * @param destinationDedicatedVmHostId (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -186,7 +255,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationDedicatedVmHostId (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+         * @param destinationDedicatedVmHostId (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -217,7 +286,28 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param memberId (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+         * @param isRetainFaultDomain (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetainFaultDomain(@Nullable Output<Boolean> isRetainFaultDomain) {
+            $.isRetainFaultDomain = isRetainFaultDomain;
+            return this;
+        }
+
+        /**
+         * @param isRetainFaultDomain (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetainFaultDomain(Boolean isRetainFaultDomain) {
+            return isRetainFaultDomain(Output.of(isRetainFaultDomain));
+        }
+
+        /**
+         * @param memberId (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -228,7 +318,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param memberId (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+         * @param memberId (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -259,7 +349,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -270,13 +360,44 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
          */
         public Builder passwordVaultSecretId(String passwordVaultSecretId) {
             return passwordVaultSecretId(Output.of(passwordVaultSecretId));
+        }
+
+        /**
+         * @param vnicMapping (Updatable) A list of Compute Instance VNIC mappings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vnicMapping(@Nullable Output<List<DrProtectionGroupMemberVnicMappingArgs>> vnicMapping) {
+            $.vnicMapping = vnicMapping;
+            return this;
+        }
+
+        /**
+         * @param vnicMapping (Updatable) A list of Compute Instance VNIC mappings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vnicMapping(List<DrProtectionGroupMemberVnicMappingArgs> vnicMapping) {
+            return vnicMapping(Output.of(vnicMapping));
+        }
+
+        /**
+         * @param vnicMapping (Updatable) A list of Compute Instance VNIC mappings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vnicMapping(DrProtectionGroupMemberVnicMappingArgs... vnicMapping) {
+            return vnicMapping(List.of(vnicMapping));
         }
 
         /**

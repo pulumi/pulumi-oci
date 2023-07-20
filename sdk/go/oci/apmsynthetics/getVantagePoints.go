@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetVantagePoints(ctx *pulumi.Context, args *GetVantagePointsArgs, opts ...pulumi.InvokeOption) (*GetVantagePointsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVantagePointsResult
 	err := ctx.Invoke("oci:ApmSynthetics/getVantagePoints:getVantagePoints", args, &rv, opts...)
 	if err != nil {

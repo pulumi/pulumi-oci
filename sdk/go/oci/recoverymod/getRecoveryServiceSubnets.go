@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetRecoveryServiceSubnets(ctx *pulumi.Context, args *GetRecoveryServiceSubnetsArgs, opts ...pulumi.InvokeOption) (*GetRecoveryServiceSubnetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRecoveryServiceSubnetsResult
 	err := ctx.Invoke("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", args, &rv, opts...)
 	if err != nil {

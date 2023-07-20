@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetUsagePlans(ctx *pulumi.Context, args *GetUsagePlansArgs, opts ...pulumi.InvokeOption) (*GetUsagePlansResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUsagePlansResult
 	err := ctx.Invoke("oci:ApiGateway/getUsagePlans:getUsagePlans", args, &rv, opts...)
 	if err != nil {

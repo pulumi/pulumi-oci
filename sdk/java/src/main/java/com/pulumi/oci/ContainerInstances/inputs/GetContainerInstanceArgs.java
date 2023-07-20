@@ -14,14 +14,14 @@ public final class GetContainerInstanceArgs extends com.pulumi.resources.InvokeA
     public static final GetContainerInstanceArgs Empty = new GetContainerInstanceArgs();
 
     /**
-     * The system-generated unique identifier for the ContainerInstance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
      * 
      */
     @Import(name="containerInstanceId", required=true)
     private Output<String> containerInstanceId;
 
     /**
-     * @return The system-generated unique identifier for the ContainerInstance.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
      * 
      */
     public Output<String> containerInstanceId() {
@@ -53,7 +53,7 @@ public final class GetContainerInstanceArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param containerInstanceId The system-generated unique identifier for the ContainerInstance.
+         * @param containerInstanceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
          * 
          * @return builder
          * 
@@ -64,7 +64,7 @@ public final class GetContainerInstanceArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param containerInstanceId The system-generated unique identifier for the ContainerInstance.
+         * @param containerInstanceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
          * 
          * @return builder
          * 

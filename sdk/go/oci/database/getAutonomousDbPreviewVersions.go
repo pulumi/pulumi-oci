@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetAutonomousDbPreviewVersions(ctx *pulumi.Context, args *GetAutonomousDbPreviewVersionsArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDbPreviewVersionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousDbPreviewVersionsResult
 	err := ctx.Invoke("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args, &rv, opts...)
 	if err != nil {

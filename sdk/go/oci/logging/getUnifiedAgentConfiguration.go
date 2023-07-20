@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupUnifiedAgentConfiguration(ctx *pulumi.Context, args *LookupUnifiedAgentConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupUnifiedAgentConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupUnifiedAgentConfigurationResult
 	err := ctx.Invoke("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", args, &rv, opts...)
 	if err != nil {

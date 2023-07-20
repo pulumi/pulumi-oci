@@ -9,11 +9,14 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FileStorage.MountTargetArgs;
 import com.pulumi.oci.FileStorage.inputs.MountTargetState;
+import com.pulumi.oci.FileStorage.outputs.MountTargetKerberos;
+import com.pulumi.oci.FileStorage.outputs.MountTargetLdapIdmap;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -61,6 +64,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.FileStorage.MountTarget;
  * import com.pulumi.oci.FileStorage.MountTargetArgs;
+ * import com.pulumi.oci.FileStorage.inputs.MountTargetKerberosArgs;
+ * import com.pulumi.oci.FileStorage.inputs.MountTargetLdapIdmapArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -82,7 +87,25 @@ import javax.annotation.Nullable;
  *             .displayName(var_.mount_target_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .hostnameLabel(var_.mount_target_hostname_label())
+ *             .idmapType(var_.mount_target_idmap_type())
  *             .ipAddress(var_.mount_target_ip_address())
+ *             .kerberos(MountTargetKerberosArgs.builder()
+ *                 .kerberosRealm(var_.mount_target_kerberos_kerberos_realm())
+ *                 .backupKeyTabSecretVersion(var_.mount_target_kerberos_backup_key_tab_secret_version())
+ *                 .currentKeyTabSecretVersion(var_.mount_target_kerberos_current_key_tab_secret_version())
+ *                 .isKerberosEnabled(var_.mount_target_kerberos_is_kerberos_enabled())
+ *                 .keyTabSecretId(oci_vault_secret.test_secret().id())
+ *                 .build())
+ *             .ldapIdmap(MountTargetLdapIdmapArgs.builder()
+ *                 .cacheLifetimeSeconds(var_.mount_target_ldap_idmap_cache_lifetime_seconds())
+ *                 .cacheRefreshIntervalSeconds(var_.mount_target_ldap_idmap_cache_refresh_interval_seconds())
+ *                 .groupSearchBase(var_.mount_target_ldap_idmap_group_search_base())
+ *                 .negativeCacheLifetimeSeconds(var_.mount_target_ldap_idmap_negative_cache_lifetime_seconds())
+ *                 .outboundConnector1id(oci_file_storage_outbound_connector1.test_outbound_connector1().id())
+ *                 .outboundConnector2id(oci_file_storage_outbound_connector2.test_outbound_connector2().id())
+ *                 .schemaType(var_.mount_target_ldap_idmap_schema_type())
+ *                 .userSearchBase(var_.mount_target_ldap_idmap_user_search_base())
+ *                 .build())
  *             .nsgIds(var_.mount_target_nsg_ids())
  *             .build());
  * 
@@ -212,6 +235,20 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
         return this.hostnameLabel;
     }
     /**
+     * (Updatable) The method used to map a Unix UID to secondary groups, if any.
+     * 
+     */
+    @Export(name="idmapType", type=String.class, parameters={})
+    private Output<String> idmapType;
+
+    /**
+     * @return (Updatable) The method used to map a Unix UID to secondary groups, if any.
+     * 
+     */
+    public Output<String> idmapType() {
+        return this.idmapType;
+    }
+    /**
      * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
      * 
      * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
@@ -232,6 +269,34 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
+    }
+    /**
+     * (Updatable) Kerberos details needed to create configuration.
+     * 
+     */
+    @Export(name="kerberos", type=MountTargetKerberos.class, parameters={})
+    private Output</* @Nullable */ MountTargetKerberos> kerberos;
+
+    /**
+     * @return (Updatable) Kerberos details needed to create configuration.
+     * 
+     */
+    public Output<Optional<MountTargetKerberos>> kerberos() {
+        return Codegen.optional(this.kerberos);
+    }
+    /**
+     * (Updatable) Mount target details about the LDAP ID mapping configuration.
+     * 
+     */
+    @Export(name="ldapIdmap", type=MountTargetLdapIdmap.class, parameters={})
+    private Output</* @Nullable */ MountTargetLdapIdmap> ldapIdmap;
+
+    /**
+     * @return (Updatable) Mount target details about the LDAP ID mapping configuration.
+     * 
+     */
+    public Output<Optional<MountTargetLdapIdmap>> ldapIdmap() {
+        return Codegen.optional(this.ldapIdmap);
     }
     /**
      * Additional information about the current &#39;lifecycleState&#39;.

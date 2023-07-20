@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetCustomTables(ctx *pulumi.Context, args *GetCustomTablesArgs, opts ...pulumi.InvokeOption) (*GetCustomTablesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCustomTablesResult
 	err := ctx.Invoke("oci:MeteringComputation/getCustomTables:getCustomTables", args, &rv, opts...)
 	if err != nil {

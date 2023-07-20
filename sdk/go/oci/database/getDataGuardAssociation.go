@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupDataGuardAssociation(ctx *pulumi.Context, args *LookupDataGuardAssociationArgs, opts ...pulumi.InvokeOption) (*LookupDataGuardAssociationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDataGuardAssociationResult
 	err := ctx.Invoke("oci:Database/getDataGuardAssociation:getDataGuardAssociation", args, &rv, opts...)
 	if err != nil {

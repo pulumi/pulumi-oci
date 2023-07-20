@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetManagedDatabaseCursorCacheStatements(ctx *pulumi.Context, args *GetManagedDatabaseCursorCacheStatementsArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseCursorCacheStatementsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseCursorCacheStatementsResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", args, &rv, opts...)
 	if err != nil {

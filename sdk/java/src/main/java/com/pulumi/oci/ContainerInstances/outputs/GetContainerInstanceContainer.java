@@ -17,43 +17,42 @@ import java.util.Objects;
 
 @CustomType
 public final class GetContainerInstanceContainer {
-    private List<String> additionalCapabilities;
     private List<String> arguments;
     /**
-     * @return Availability Domain where the ContainerInstance is running.
+     * @return The availability domain to place the container instance.
      * 
      */
     private String availabilityDomain;
     private List<String> commands;
     /**
-     * @return Compartment Identifier
+     * @return The OCID of the compartment.
      * 
      */
     private String compartmentId;
     /**
-     * @return The ID of the Container on this Instance.
+     * @return The OCID of the container.
      * 
      */
     private String containerId;
     /**
-     * @return The system-generated unique identifier for the ContainerInstance.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
      * 
      */
     private String containerInstanceId;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Display name for the ContainerInstance. Can be renamed.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private String displayName;
     private Map<String,Object> environmentVariables;
     private Integer exitCode;
     /**
-     * @return Fault Domain where the ContainerInstance is running.
+     * @return The fault domain to place the container instance.
      * 
      */
     private String faultDomain;
@@ -66,29 +65,29 @@ public final class GetContainerInstanceContainer {
     private String imageUrl;
     private Boolean isResourcePrincipalDisabled;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     private String lifecycleDetails;
     private List<GetContainerInstanceContainerResourceConfig> resourceConfigs;
     /**
-     * @return The current state of the ContainerInstance.
+     * @return The current state of the container instance.
      * 
      */
     private String state;
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private String timeCreated;
     private String timeTerminated;
     /**
-     * @return The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private String timeUpdated;
@@ -96,14 +95,11 @@ public final class GetContainerInstanceContainer {
     private String workingDirectory;
 
     private GetContainerInstanceContainer() {}
-    public List<String> additionalCapabilities() {
-        return this.additionalCapabilities;
-    }
     public List<String> arguments() {
         return this.arguments;
     }
     /**
-     * @return Availability Domain where the ContainerInstance is running.
+     * @return The availability domain to place the container instance.
      * 
      */
     public String availabilityDomain() {
@@ -113,35 +109,35 @@ public final class GetContainerInstanceContainer {
         return this.commands;
     }
     /**
-     * @return Compartment Identifier
+     * @return The OCID of the compartment.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return The ID of the Container on this Instance.
+     * @return The OCID of the container.
      * 
      */
     public String containerId() {
         return this.containerId;
     }
     /**
-     * @return The system-generated unique identifier for the ContainerInstance.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
      * 
      */
     public String containerInstanceId() {
         return this.containerInstanceId;
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
     /**
-     * @return Display name for the ContainerInstance. Can be renamed.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public String displayName() {
@@ -154,7 +150,7 @@ public final class GetContainerInstanceContainer {
         return this.exitCode;
     }
     /**
-     * @return Fault Domain where the ContainerInstance is running.
+     * @return The fault domain to place the container instance.
      * 
      */
     public String faultDomain() {
@@ -177,7 +173,7 @@ public final class GetContainerInstanceContainer {
         return this.isResourcePrincipalDisabled;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     public String lifecycleDetails() {
@@ -187,21 +183,21 @@ public final class GetContainerInstanceContainer {
         return this.resourceConfigs;
     }
     /**
-     * @return The current state of the ContainerInstance.
+     * @return The current state of the container instance.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     public Map<String,Object> systemTags() {
         return this.systemTags;
     }
     /**
-     * @return The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public String timeCreated() {
@@ -211,7 +207,7 @@ public final class GetContainerInstanceContainer {
         return this.timeTerminated;
     }
     /**
-     * @return The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public String timeUpdated() {
@@ -233,7 +229,6 @@ public final class GetContainerInstanceContainer {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> additionalCapabilities;
         private List<String> arguments;
         private String availabilityDomain;
         private List<String> commands;
@@ -261,7 +256,6 @@ public final class GetContainerInstanceContainer {
         public Builder() {}
         public Builder(GetContainerInstanceContainer defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.additionalCapabilities = defaults.additionalCapabilities;
     	      this.arguments = defaults.arguments;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.commands = defaults.commands;
@@ -288,14 +282,6 @@ public final class GetContainerInstanceContainer {
     	      this.workingDirectory = defaults.workingDirectory;
         }
 
-        @CustomType.Setter
-        public Builder additionalCapabilities(List<String> additionalCapabilities) {
-            this.additionalCapabilities = Objects.requireNonNull(additionalCapabilities);
-            return this;
-        }
-        public Builder additionalCapabilities(String... additionalCapabilities) {
-            return additionalCapabilities(List.of(additionalCapabilities));
-        }
         @CustomType.Setter
         public Builder arguments(List<String> arguments) {
             this.arguments = Objects.requireNonNull(arguments);
@@ -433,7 +419,6 @@ public final class GetContainerInstanceContainer {
         }
         public GetContainerInstanceContainer build() {
             final var o = new GetContainerInstanceContainer();
-            o.additionalCapabilities = additionalCapabilities;
             o.arguments = arguments;
             o.availabilityDomain = availabilityDomain;
             o.commands = commands;

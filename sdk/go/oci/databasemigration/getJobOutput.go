@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetJobOutput(ctx *pulumi.Context, args *GetJobOutputArgs, opts ...pulumi.InvokeOption) (*GetJobOutputResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJobOutputResult
 	err := ctx.Invoke("oci:DatabaseMigration/getJobOutput:getJobOutput", args, &rv, opts...)
 	if err != nil {

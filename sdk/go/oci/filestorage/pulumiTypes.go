@@ -7,18 +7,25 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
+
+var _ = internal.GetEnvOrDefault
 
 type ExportExportOption struct {
 	// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 	Access *string `pulumi:"access"`
+	// (Updatable) Array of allowed NFS authentication types.
+	AllowedAuths []string `pulumi:"allowedAuths"`
 	// (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 	AnonymousGid *string `pulumi:"anonymousGid"`
 	// (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
 	AnonymousUid *string `pulumi:"anonymousUid"`
 	// (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
 	IdentitySquash *string `pulumi:"identitySquash"`
+	// (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+	IsAnonymousAccessAllowed *bool `pulumi:"isAnonymousAccessAllowed"`
 	// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort *bool `pulumi:"requirePrivilegedSourcePort"`
 	// (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
@@ -41,12 +48,16 @@ type ExportExportOptionInput interface {
 type ExportExportOptionArgs struct {
 	// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 	Access pulumi.StringPtrInput `pulumi:"access"`
+	// (Updatable) Array of allowed NFS authentication types.
+	AllowedAuths pulumi.StringArrayInput `pulumi:"allowedAuths"`
 	// (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 	AnonymousGid pulumi.StringPtrInput `pulumi:"anonymousGid"`
 	// (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
 	AnonymousUid pulumi.StringPtrInput `pulumi:"anonymousUid"`
 	// (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
 	IdentitySquash pulumi.StringPtrInput `pulumi:"identitySquash"`
+	// (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+	IsAnonymousAccessAllowed pulumi.BoolPtrInput `pulumi:"isAnonymousAccessAllowed"`
 	// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort pulumi.BoolPtrInput `pulumi:"requirePrivilegedSourcePort"`
 	// (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
@@ -111,6 +122,11 @@ func (o ExportExportOptionOutput) Access() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExportExportOption) *string { return v.Access }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Array of allowed NFS authentication types.
+func (o ExportExportOptionOutput) AllowedAuths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ExportExportOption) []string { return v.AllowedAuths }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 func (o ExportExportOptionOutput) AnonymousGid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExportExportOption) *string { return v.AnonymousGid }).(pulumi.StringPtrOutput)
@@ -124,6 +140,11 @@ func (o ExportExportOptionOutput) AnonymousUid() pulumi.StringPtrOutput {
 // (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
 func (o ExportExportOptionOutput) IdentitySquash() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExportExportOption) *string { return v.IdentitySquash }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+func (o ExportExportOptionOutput) IsAnonymousAccessAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ExportExportOption) *bool { return v.IsAnonymousAccessAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
@@ -442,6 +463,595 @@ func (o FilesystemSnapshotPolicyScheduleArrayOutput) Index(i pulumi.IntInput) Fi
 	}).(FilesystemSnapshotPolicyScheduleOutput)
 }
 
+type MountTargetKerberos struct {
+	// (Updatable) Version of the keytab Secret in the Vault to use as a backup.
+	BackupKeyTabSecretVersion *int `pulumi:"backupKeyTabSecretVersion"`
+	// (Updatable) Version of the keytab Secret in the Vault to use.
+	CurrentKeyTabSecretVersion *int `pulumi:"currentKeyTabSecretVersion"`
+	// (Updatable) Specifies whether to enable or disable Kerberos.
+	IsKerberosEnabled *bool `pulumi:"isKerberosEnabled"`
+	// (Updatable) The Kerberos realm that the mount target will join.
+	KerberosRealm string `pulumi:"kerberosRealm"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+	KeyTabSecretId *string `pulumi:"keyTabSecretId"`
+}
+
+// MountTargetKerberosInput is an input type that accepts MountTargetKerberosArgs and MountTargetKerberosOutput values.
+// You can construct a concrete instance of `MountTargetKerberosInput` via:
+//
+//	MountTargetKerberosArgs{...}
+type MountTargetKerberosInput interface {
+	pulumi.Input
+
+	ToMountTargetKerberosOutput() MountTargetKerberosOutput
+	ToMountTargetKerberosOutputWithContext(context.Context) MountTargetKerberosOutput
+}
+
+type MountTargetKerberosArgs struct {
+	// (Updatable) Version of the keytab Secret in the Vault to use as a backup.
+	BackupKeyTabSecretVersion pulumi.IntPtrInput `pulumi:"backupKeyTabSecretVersion"`
+	// (Updatable) Version of the keytab Secret in the Vault to use.
+	CurrentKeyTabSecretVersion pulumi.IntPtrInput `pulumi:"currentKeyTabSecretVersion"`
+	// (Updatable) Specifies whether to enable or disable Kerberos.
+	IsKerberosEnabled pulumi.BoolPtrInput `pulumi:"isKerberosEnabled"`
+	// (Updatable) The Kerberos realm that the mount target will join.
+	KerberosRealm pulumi.StringInput `pulumi:"kerberosRealm"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+	KeyTabSecretId pulumi.StringPtrInput `pulumi:"keyTabSecretId"`
+}
+
+func (MountTargetKerberosArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountTargetKerberos)(nil)).Elem()
+}
+
+func (i MountTargetKerberosArgs) ToMountTargetKerberosOutput() MountTargetKerberosOutput {
+	return i.ToMountTargetKerberosOutputWithContext(context.Background())
+}
+
+func (i MountTargetKerberosArgs) ToMountTargetKerberosOutputWithContext(ctx context.Context) MountTargetKerberosOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountTargetKerberosOutput)
+}
+
+func (i MountTargetKerberosArgs) ToMountTargetKerberosPtrOutput() MountTargetKerberosPtrOutput {
+	return i.ToMountTargetKerberosPtrOutputWithContext(context.Background())
+}
+
+func (i MountTargetKerberosArgs) ToMountTargetKerberosPtrOutputWithContext(ctx context.Context) MountTargetKerberosPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountTargetKerberosOutput).ToMountTargetKerberosPtrOutputWithContext(ctx)
+}
+
+// MountTargetKerberosPtrInput is an input type that accepts MountTargetKerberosArgs, MountTargetKerberosPtr and MountTargetKerberosPtrOutput values.
+// You can construct a concrete instance of `MountTargetKerberosPtrInput` via:
+//
+//	        MountTargetKerberosArgs{...}
+//
+//	or:
+//
+//	        nil
+type MountTargetKerberosPtrInput interface {
+	pulumi.Input
+
+	ToMountTargetKerberosPtrOutput() MountTargetKerberosPtrOutput
+	ToMountTargetKerberosPtrOutputWithContext(context.Context) MountTargetKerberosPtrOutput
+}
+
+type mountTargetKerberosPtrType MountTargetKerberosArgs
+
+func MountTargetKerberosPtr(v *MountTargetKerberosArgs) MountTargetKerberosPtrInput {
+	return (*mountTargetKerberosPtrType)(v)
+}
+
+func (*mountTargetKerberosPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MountTargetKerberos)(nil)).Elem()
+}
+
+func (i *mountTargetKerberosPtrType) ToMountTargetKerberosPtrOutput() MountTargetKerberosPtrOutput {
+	return i.ToMountTargetKerberosPtrOutputWithContext(context.Background())
+}
+
+func (i *mountTargetKerberosPtrType) ToMountTargetKerberosPtrOutputWithContext(ctx context.Context) MountTargetKerberosPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountTargetKerberosPtrOutput)
+}
+
+type MountTargetKerberosOutput struct{ *pulumi.OutputState }
+
+func (MountTargetKerberosOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountTargetKerberos)(nil)).Elem()
+}
+
+func (o MountTargetKerberosOutput) ToMountTargetKerberosOutput() MountTargetKerberosOutput {
+	return o
+}
+
+func (o MountTargetKerberosOutput) ToMountTargetKerberosOutputWithContext(ctx context.Context) MountTargetKerberosOutput {
+	return o
+}
+
+func (o MountTargetKerberosOutput) ToMountTargetKerberosPtrOutput() MountTargetKerberosPtrOutput {
+	return o.ToMountTargetKerberosPtrOutputWithContext(context.Background())
+}
+
+func (o MountTargetKerberosOutput) ToMountTargetKerberosPtrOutputWithContext(ctx context.Context) MountTargetKerberosPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MountTargetKerberos) *MountTargetKerberos {
+		return &v
+	}).(MountTargetKerberosPtrOutput)
+}
+
+// (Updatable) Version of the keytab Secret in the Vault to use as a backup.
+func (o MountTargetKerberosOutput) BackupKeyTabSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MountTargetKerberos) *int { return v.BackupKeyTabSecretVersion }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Version of the keytab Secret in the Vault to use.
+func (o MountTargetKerberosOutput) CurrentKeyTabSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MountTargetKerberos) *int { return v.CurrentKeyTabSecretVersion }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Specifies whether to enable or disable Kerberos.
+func (o MountTargetKerberosOutput) IsKerberosEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MountTargetKerberos) *bool { return v.IsKerberosEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The Kerberos realm that the mount target will join.
+func (o MountTargetKerberosOutput) KerberosRealm() pulumi.StringOutput {
+	return o.ApplyT(func(v MountTargetKerberos) string { return v.KerberosRealm }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+func (o MountTargetKerberosOutput) KeyTabSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountTargetKerberos) *string { return v.KeyTabSecretId }).(pulumi.StringPtrOutput)
+}
+
+type MountTargetKerberosPtrOutput struct{ *pulumi.OutputState }
+
+func (MountTargetKerberosPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MountTargetKerberos)(nil)).Elem()
+}
+
+func (o MountTargetKerberosPtrOutput) ToMountTargetKerberosPtrOutput() MountTargetKerberosPtrOutput {
+	return o
+}
+
+func (o MountTargetKerberosPtrOutput) ToMountTargetKerberosPtrOutputWithContext(ctx context.Context) MountTargetKerberosPtrOutput {
+	return o
+}
+
+func (o MountTargetKerberosPtrOutput) Elem() MountTargetKerberosOutput {
+	return o.ApplyT(func(v *MountTargetKerberos) MountTargetKerberos {
+		if v != nil {
+			return *v
+		}
+		var ret MountTargetKerberos
+		return ret
+	}).(MountTargetKerberosOutput)
+}
+
+// (Updatable) Version of the keytab Secret in the Vault to use as a backup.
+func (o MountTargetKerberosPtrOutput) BackupKeyTabSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MountTargetKerberos) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BackupKeyTabSecretVersion
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Version of the keytab Secret in the Vault to use.
+func (o MountTargetKerberosPtrOutput) CurrentKeyTabSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MountTargetKerberos) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CurrentKeyTabSecretVersion
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Specifies whether to enable or disable Kerberos.
+func (o MountTargetKerberosPtrOutput) IsKerberosEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MountTargetKerberos) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsKerberosEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The Kerberos realm that the mount target will join.
+func (o MountTargetKerberosPtrOutput) KerberosRealm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTargetKerberos) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.KerberosRealm
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+func (o MountTargetKerberosPtrOutput) KeyTabSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTargetKerberos) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyTabSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+type MountTargetLdapIdmap struct {
+	// (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
+	CacheLifetimeSeconds *int `pulumi:"cacheLifetimeSeconds"`
+	// (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+	CacheRefreshIntervalSeconds *int `pulumi:"cacheRefreshIntervalSeconds"`
+	// (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+	GroupSearchBase *string `pulumi:"groupSearchBase"`
+	// (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+	NegativeCacheLifetimeSeconds *int `pulumi:"negativeCacheLifetimeSeconds"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+	OutboundConnector1id *string `pulumi:"outboundConnector1id"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+	OutboundConnector2id *string `pulumi:"outboundConnector2id"`
+	// (Updatable) Schema type of the LDAP account.
+	SchemaType *string `pulumi:"schemaType"`
+	// (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+	UserSearchBase *string `pulumi:"userSearchBase"`
+}
+
+// MountTargetLdapIdmapInput is an input type that accepts MountTargetLdapIdmapArgs and MountTargetLdapIdmapOutput values.
+// You can construct a concrete instance of `MountTargetLdapIdmapInput` via:
+//
+//	MountTargetLdapIdmapArgs{...}
+type MountTargetLdapIdmapInput interface {
+	pulumi.Input
+
+	ToMountTargetLdapIdmapOutput() MountTargetLdapIdmapOutput
+	ToMountTargetLdapIdmapOutputWithContext(context.Context) MountTargetLdapIdmapOutput
+}
+
+type MountTargetLdapIdmapArgs struct {
+	// (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
+	CacheLifetimeSeconds pulumi.IntPtrInput `pulumi:"cacheLifetimeSeconds"`
+	// (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+	CacheRefreshIntervalSeconds pulumi.IntPtrInput `pulumi:"cacheRefreshIntervalSeconds"`
+	// (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+	GroupSearchBase pulumi.StringPtrInput `pulumi:"groupSearchBase"`
+	// (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+	NegativeCacheLifetimeSeconds pulumi.IntPtrInput `pulumi:"negativeCacheLifetimeSeconds"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+	OutboundConnector1id pulumi.StringPtrInput `pulumi:"outboundConnector1id"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+	OutboundConnector2id pulumi.StringPtrInput `pulumi:"outboundConnector2id"`
+	// (Updatable) Schema type of the LDAP account.
+	SchemaType pulumi.StringPtrInput `pulumi:"schemaType"`
+	// (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+	UserSearchBase pulumi.StringPtrInput `pulumi:"userSearchBase"`
+}
+
+func (MountTargetLdapIdmapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountTargetLdapIdmap)(nil)).Elem()
+}
+
+func (i MountTargetLdapIdmapArgs) ToMountTargetLdapIdmapOutput() MountTargetLdapIdmapOutput {
+	return i.ToMountTargetLdapIdmapOutputWithContext(context.Background())
+}
+
+func (i MountTargetLdapIdmapArgs) ToMountTargetLdapIdmapOutputWithContext(ctx context.Context) MountTargetLdapIdmapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountTargetLdapIdmapOutput)
+}
+
+func (i MountTargetLdapIdmapArgs) ToMountTargetLdapIdmapPtrOutput() MountTargetLdapIdmapPtrOutput {
+	return i.ToMountTargetLdapIdmapPtrOutputWithContext(context.Background())
+}
+
+func (i MountTargetLdapIdmapArgs) ToMountTargetLdapIdmapPtrOutputWithContext(ctx context.Context) MountTargetLdapIdmapPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountTargetLdapIdmapOutput).ToMountTargetLdapIdmapPtrOutputWithContext(ctx)
+}
+
+// MountTargetLdapIdmapPtrInput is an input type that accepts MountTargetLdapIdmapArgs, MountTargetLdapIdmapPtr and MountTargetLdapIdmapPtrOutput values.
+// You can construct a concrete instance of `MountTargetLdapIdmapPtrInput` via:
+//
+//	        MountTargetLdapIdmapArgs{...}
+//
+//	or:
+//
+//	        nil
+type MountTargetLdapIdmapPtrInput interface {
+	pulumi.Input
+
+	ToMountTargetLdapIdmapPtrOutput() MountTargetLdapIdmapPtrOutput
+	ToMountTargetLdapIdmapPtrOutputWithContext(context.Context) MountTargetLdapIdmapPtrOutput
+}
+
+type mountTargetLdapIdmapPtrType MountTargetLdapIdmapArgs
+
+func MountTargetLdapIdmapPtr(v *MountTargetLdapIdmapArgs) MountTargetLdapIdmapPtrInput {
+	return (*mountTargetLdapIdmapPtrType)(v)
+}
+
+func (*mountTargetLdapIdmapPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MountTargetLdapIdmap)(nil)).Elem()
+}
+
+func (i *mountTargetLdapIdmapPtrType) ToMountTargetLdapIdmapPtrOutput() MountTargetLdapIdmapPtrOutput {
+	return i.ToMountTargetLdapIdmapPtrOutputWithContext(context.Background())
+}
+
+func (i *mountTargetLdapIdmapPtrType) ToMountTargetLdapIdmapPtrOutputWithContext(ctx context.Context) MountTargetLdapIdmapPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountTargetLdapIdmapPtrOutput)
+}
+
+type MountTargetLdapIdmapOutput struct{ *pulumi.OutputState }
+
+func (MountTargetLdapIdmapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountTargetLdapIdmap)(nil)).Elem()
+}
+
+func (o MountTargetLdapIdmapOutput) ToMountTargetLdapIdmapOutput() MountTargetLdapIdmapOutput {
+	return o
+}
+
+func (o MountTargetLdapIdmapOutput) ToMountTargetLdapIdmapOutputWithContext(ctx context.Context) MountTargetLdapIdmapOutput {
+	return o
+}
+
+func (o MountTargetLdapIdmapOutput) ToMountTargetLdapIdmapPtrOutput() MountTargetLdapIdmapPtrOutput {
+	return o.ToMountTargetLdapIdmapPtrOutputWithContext(context.Background())
+}
+
+func (o MountTargetLdapIdmapOutput) ToMountTargetLdapIdmapPtrOutputWithContext(ctx context.Context) MountTargetLdapIdmapPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MountTargetLdapIdmap) *MountTargetLdapIdmap {
+		return &v
+	}).(MountTargetLdapIdmapPtrOutput)
+}
+
+// (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
+func (o MountTargetLdapIdmapOutput) CacheLifetimeSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MountTargetLdapIdmap) *int { return v.CacheLifetimeSeconds }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+func (o MountTargetLdapIdmapOutput) CacheRefreshIntervalSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MountTargetLdapIdmap) *int { return v.CacheRefreshIntervalSeconds }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+func (o MountTargetLdapIdmapOutput) GroupSearchBase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountTargetLdapIdmap) *string { return v.GroupSearchBase }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+func (o MountTargetLdapIdmapOutput) NegativeCacheLifetimeSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MountTargetLdapIdmap) *int { return v.NegativeCacheLifetimeSeconds }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+func (o MountTargetLdapIdmapOutput) OutboundConnector1id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountTargetLdapIdmap) *string { return v.OutboundConnector1id }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+func (o MountTargetLdapIdmapOutput) OutboundConnector2id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountTargetLdapIdmap) *string { return v.OutboundConnector2id }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Schema type of the LDAP account.
+func (o MountTargetLdapIdmapOutput) SchemaType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountTargetLdapIdmap) *string { return v.SchemaType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+func (o MountTargetLdapIdmapOutput) UserSearchBase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountTargetLdapIdmap) *string { return v.UserSearchBase }).(pulumi.StringPtrOutput)
+}
+
+type MountTargetLdapIdmapPtrOutput struct{ *pulumi.OutputState }
+
+func (MountTargetLdapIdmapPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MountTargetLdapIdmap)(nil)).Elem()
+}
+
+func (o MountTargetLdapIdmapPtrOutput) ToMountTargetLdapIdmapPtrOutput() MountTargetLdapIdmapPtrOutput {
+	return o
+}
+
+func (o MountTargetLdapIdmapPtrOutput) ToMountTargetLdapIdmapPtrOutputWithContext(ctx context.Context) MountTargetLdapIdmapPtrOutput {
+	return o
+}
+
+func (o MountTargetLdapIdmapPtrOutput) Elem() MountTargetLdapIdmapOutput {
+	return o.ApplyT(func(v *MountTargetLdapIdmap) MountTargetLdapIdmap {
+		if v != nil {
+			return *v
+		}
+		var ret MountTargetLdapIdmap
+		return ret
+	}).(MountTargetLdapIdmapOutput)
+}
+
+// (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
+func (o MountTargetLdapIdmapPtrOutput) CacheLifetimeSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MountTargetLdapIdmap) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CacheLifetimeSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+func (o MountTargetLdapIdmapPtrOutput) CacheRefreshIntervalSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MountTargetLdapIdmap) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CacheRefreshIntervalSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+func (o MountTargetLdapIdmapPtrOutput) GroupSearchBase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTargetLdapIdmap) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GroupSearchBase
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+func (o MountTargetLdapIdmapPtrOutput) NegativeCacheLifetimeSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MountTargetLdapIdmap) *int {
+		if v == nil {
+			return nil
+		}
+		return v.NegativeCacheLifetimeSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+func (o MountTargetLdapIdmapPtrOutput) OutboundConnector1id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTargetLdapIdmap) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OutboundConnector1id
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+func (o MountTargetLdapIdmapPtrOutput) OutboundConnector2id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTargetLdapIdmap) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OutboundConnector2id
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Schema type of the LDAP account.
+func (o MountTargetLdapIdmapPtrOutput) SchemaType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTargetLdapIdmap) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SchemaType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+func (o MountTargetLdapIdmapPtrOutput) UserSearchBase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTargetLdapIdmap) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UserSearchBase
+	}).(pulumi.StringPtrOutput)
+}
+
+type OutboundConnectorEndpoint struct {
+	// Name of the DNS server.
+	Hostname string `pulumi:"hostname"`
+	// Port of the DNS server.
+	Port string `pulumi:"port"`
+}
+
+// OutboundConnectorEndpointInput is an input type that accepts OutboundConnectorEndpointArgs and OutboundConnectorEndpointOutput values.
+// You can construct a concrete instance of `OutboundConnectorEndpointInput` via:
+//
+//	OutboundConnectorEndpointArgs{...}
+type OutboundConnectorEndpointInput interface {
+	pulumi.Input
+
+	ToOutboundConnectorEndpointOutput() OutboundConnectorEndpointOutput
+	ToOutboundConnectorEndpointOutputWithContext(context.Context) OutboundConnectorEndpointOutput
+}
+
+type OutboundConnectorEndpointArgs struct {
+	// Name of the DNS server.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Port of the DNS server.
+	Port pulumi.StringInput `pulumi:"port"`
+}
+
+func (OutboundConnectorEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (i OutboundConnectorEndpointArgs) ToOutboundConnectorEndpointOutput() OutboundConnectorEndpointOutput {
+	return i.ToOutboundConnectorEndpointOutputWithContext(context.Background())
+}
+
+func (i OutboundConnectorEndpointArgs) ToOutboundConnectorEndpointOutputWithContext(ctx context.Context) OutboundConnectorEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorEndpointOutput)
+}
+
+// OutboundConnectorEndpointArrayInput is an input type that accepts OutboundConnectorEndpointArray and OutboundConnectorEndpointArrayOutput values.
+// You can construct a concrete instance of `OutboundConnectorEndpointArrayInput` via:
+//
+//	OutboundConnectorEndpointArray{ OutboundConnectorEndpointArgs{...} }
+type OutboundConnectorEndpointArrayInput interface {
+	pulumi.Input
+
+	ToOutboundConnectorEndpointArrayOutput() OutboundConnectorEndpointArrayOutput
+	ToOutboundConnectorEndpointArrayOutputWithContext(context.Context) OutboundConnectorEndpointArrayOutput
+}
+
+type OutboundConnectorEndpointArray []OutboundConnectorEndpointInput
+
+func (OutboundConnectorEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (i OutboundConnectorEndpointArray) ToOutboundConnectorEndpointArrayOutput() OutboundConnectorEndpointArrayOutput {
+	return i.ToOutboundConnectorEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i OutboundConnectorEndpointArray) ToOutboundConnectorEndpointArrayOutputWithContext(ctx context.Context) OutboundConnectorEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorEndpointArrayOutput)
+}
+
+type OutboundConnectorEndpointOutput struct{ *pulumi.OutputState }
+
+func (OutboundConnectorEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (o OutboundConnectorEndpointOutput) ToOutboundConnectorEndpointOutput() OutboundConnectorEndpointOutput {
+	return o
+}
+
+func (o OutboundConnectorEndpointOutput) ToOutboundConnectorEndpointOutputWithContext(ctx context.Context) OutboundConnectorEndpointOutput {
+	return o
+}
+
+// Name of the DNS server.
+func (o OutboundConnectorEndpointOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v OutboundConnectorEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Port of the DNS server.
+func (o OutboundConnectorEndpointOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v OutboundConnectorEndpoint) string { return v.Port }).(pulumi.StringOutput)
+}
+
+type OutboundConnectorEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (OutboundConnectorEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (o OutboundConnectorEndpointArrayOutput) ToOutboundConnectorEndpointArrayOutput() OutboundConnectorEndpointArrayOutput {
+	return o
+}
+
+func (o OutboundConnectorEndpointArrayOutput) ToOutboundConnectorEndpointArrayOutputWithContext(ctx context.Context) OutboundConnectorEndpointArrayOutput {
+	return o
+}
+
+func (o OutboundConnectorEndpointArrayOutput) Index(i pulumi.IntInput) OutboundConnectorEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutboundConnectorEndpoint {
+		return vs[0].([]OutboundConnectorEndpoint)[vs[1].(int)]
+	}).(OutboundConnectorEndpointOutput)
+}
+
 type GetExportSetsExportSet struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
@@ -732,6 +1342,8 @@ type GetExportsExport struct {
 	FileSystemId string `pulumi:"fileSystemId"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id string `pulumi:"id"`
+	// Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+	IsIdmapGroupsForSysAuth bool `pulumi:"isIdmapGroupsForSysAuth"`
 	// Path used to access the associated file system.
 	Path string `pulumi:"path"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -760,6 +1372,8 @@ type GetExportsExportArgs struct {
 	FileSystemId pulumi.StringInput `pulumi:"fileSystemId"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+	IsIdmapGroupsForSysAuth pulumi.BoolInput `pulumi:"isIdmapGroupsForSysAuth"`
 	// Path used to access the associated file system.
 	Path pulumi.StringInput `pulumi:"path"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -839,6 +1453,11 @@ func (o GetExportsExportOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExportsExport) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+func (o GetExportsExportOutput) IsIdmapGroupsForSysAuth() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExportsExport) bool { return v.IsIdmapGroupsForSysAuth }).(pulumi.BoolOutput)
+}
+
 // Path used to access the associated file system.
 func (o GetExportsExportOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExportsExport) string { return v.Path }).(pulumi.StringOutput)
@@ -877,12 +1496,16 @@ func (o GetExportsExportArrayOutput) Index(i pulumi.IntInput) GetExportsExportOu
 type GetExportsExportExportOption struct {
 	// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 	Access string `pulumi:"access"`
+	// Array of allowed NFS authentication types.
+	AllowedAuths []string `pulumi:"allowedAuths"`
 	// GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 	AnonymousGid string `pulumi:"anonymousGid"`
 	// UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
 	AnonymousUid string `pulumi:"anonymousUid"`
 	// Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
 	IdentitySquash string `pulumi:"identitySquash"`
+	// Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+	IsAnonymousAccessAllowed bool `pulumi:"isAnonymousAccessAllowed"`
 	// If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort bool `pulumi:"requirePrivilegedSourcePort"`
 	// Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
@@ -903,12 +1526,16 @@ type GetExportsExportExportOptionInput interface {
 type GetExportsExportExportOptionArgs struct {
 	// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 	Access pulumi.StringInput `pulumi:"access"`
+	// Array of allowed NFS authentication types.
+	AllowedAuths pulumi.StringArrayInput `pulumi:"allowedAuths"`
 	// GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 	AnonymousGid pulumi.StringInput `pulumi:"anonymousGid"`
 	// UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
 	AnonymousUid pulumi.StringInput `pulumi:"anonymousUid"`
 	// Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
 	IdentitySquash pulumi.StringInput `pulumi:"identitySquash"`
+	// Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+	IsAnonymousAccessAllowed pulumi.BoolInput `pulumi:"isAnonymousAccessAllowed"`
 	// If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort pulumi.BoolInput `pulumi:"requirePrivilegedSourcePort"`
 	// Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
@@ -971,6 +1598,11 @@ func (o GetExportsExportExportOptionOutput) Access() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.Access }).(pulumi.StringOutput)
 }
 
+// Array of allowed NFS authentication types.
+func (o GetExportsExportExportOptionOutput) AllowedAuths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExportsExportExportOption) []string { return v.AllowedAuths }).(pulumi.StringArrayOutput)
+}
+
 // GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 func (o GetExportsExportExportOptionOutput) AnonymousGid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.AnonymousGid }).(pulumi.StringOutput)
@@ -984,6 +1616,11 @@ func (o GetExportsExportExportOptionOutput) AnonymousUid() pulumi.StringOutput {
 // Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
 func (o GetExportsExportExportOptionOutput) IdentitySquash() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.IdentitySquash }).(pulumi.StringOutput)
+}
+
+// Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+func (o GetExportsExportExportOptionOutput) IsAnonymousAccessAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExportsExportExportOption) bool { return v.IsAnonymousAccessAllowed }).(pulumi.BoolOutput)
 }
 
 // If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
@@ -1141,7 +1778,7 @@ type GetFileSystemsFileSystem struct {
 	IsCloneParent bool `pulumi:"isCloneParent"`
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
 	IsHydrated bool `pulumi:"isHydrated"`
-	// Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 	IsTargetable bool `pulumi:"isTargetable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId string `pulumi:"kmsKeyId"`
@@ -1191,7 +1828,7 @@ type GetFileSystemsFileSystemArgs struct {
 	IsCloneParent pulumi.BoolInput `pulumi:"isCloneParent"`
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
 	IsHydrated pulumi.BoolInput `pulumi:"isHydrated"`
-	// Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 	IsTargetable pulumi.BoolInput `pulumi:"isTargetable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
@@ -1307,7 +1944,7 @@ func (o GetFileSystemsFileSystemOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsHydrated }).(pulumi.BoolOutput)
 }
 
-// Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 func (o GetFileSystemsFileSystemOutput) IsTargetable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsTargetable }).(pulumi.BoolOutput)
 }
@@ -2337,8 +2974,14 @@ type GetMountTargetsMountTarget struct {
 	FreeformTags  map[string]interface{} `pulumi:"freeformTags"`
 	HostnameLabel string                 `pulumi:"hostnameLabel"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id        string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
+	IdmapType string `pulumi:"idmapType"`
 	IpAddress string `pulumi:"ipAddress"`
+	// Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
+	Kerberos []GetMountTargetsMountTargetKerbero `pulumi:"kerberos"`
+	// Mount target details about the LDAP ID mapping configuration.
+	LdapIdmaps []GetMountTargetsMountTargetLdapIdmap `pulumi:"ldapIdmaps"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -2379,8 +3022,14 @@ type GetMountTargetsMountTargetArgs struct {
 	FreeformTags  pulumi.MapInput    `pulumi:"freeformTags"`
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id        pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
+	IdmapType pulumi.StringInput `pulumi:"idmapType"`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
+	Kerberos GetMountTargetsMountTargetKerberoArrayInput `pulumi:"kerberos"`
+	// Mount target details about the LDAP ID mapping configuration.
+	LdapIdmaps GetMountTargetsMountTargetLdapIdmapArrayInput `pulumi:"ldapIdmaps"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -2485,8 +3134,23 @@ func (o GetMountTargetsMountTargetOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
+func (o GetMountTargetsMountTargetOutput) IdmapType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.IdmapType }).(pulumi.StringOutput)
+}
+
 func (o GetMountTargetsMountTargetOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
+func (o GetMountTargetsMountTargetOutput) Kerberos() GetMountTargetsMountTargetKerberoArrayOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) []GetMountTargetsMountTargetKerbero { return v.Kerberos }).(GetMountTargetsMountTargetKerberoArrayOutput)
+}
+
+// Mount target details about the LDAP ID mapping configuration.
+func (o GetMountTargetsMountTargetOutput) LdapIdmaps() GetMountTargetsMountTargetLdapIdmapArrayOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) []GetMountTargetsMountTargetLdapIdmap { return v.LdapIdmaps }).(GetMountTargetsMountTargetLdapIdmapArrayOutput)
 }
 
 // Additional information about the current 'lifecycleState'.
@@ -2537,6 +3201,824 @@ func (o GetMountTargetsMountTargetArrayOutput) Index(i pulumi.IntInput) GetMount
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountTargetsMountTarget {
 		return vs[0].([]GetMountTargetsMountTarget)[vs[1].(int)]
 	}).(GetMountTargetsMountTargetOutput)
+}
+
+type GetMountTargetsMountTargetKerbero struct {
+	// Version of the keytab secert in the Vault to use as a backup.
+	BackupKeyTabSecretVersion int `pulumi:"backupKeyTabSecretVersion"`
+	// Version of the keytab secret in the Vault to use.
+	CurrentKeyTabSecretVersion int `pulumi:"currentKeyTabSecretVersion"`
+	// Specifies whether to enable or disable Kerberos.
+	IsKerberosEnabled bool `pulumi:"isKerberosEnabled"`
+	// The Kerberos realm that the mount target will join.
+	KerberosRealm string `pulumi:"kerberosRealm"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
+	KeyTabSecretId string `pulumi:"keyTabSecretId"`
+}
+
+// GetMountTargetsMountTargetKerberoInput is an input type that accepts GetMountTargetsMountTargetKerberoArgs and GetMountTargetsMountTargetKerberoOutput values.
+// You can construct a concrete instance of `GetMountTargetsMountTargetKerberoInput` via:
+//
+//	GetMountTargetsMountTargetKerberoArgs{...}
+type GetMountTargetsMountTargetKerberoInput interface {
+	pulumi.Input
+
+	ToGetMountTargetsMountTargetKerberoOutput() GetMountTargetsMountTargetKerberoOutput
+	ToGetMountTargetsMountTargetKerberoOutputWithContext(context.Context) GetMountTargetsMountTargetKerberoOutput
+}
+
+type GetMountTargetsMountTargetKerberoArgs struct {
+	// Version of the keytab secert in the Vault to use as a backup.
+	BackupKeyTabSecretVersion pulumi.IntInput `pulumi:"backupKeyTabSecretVersion"`
+	// Version of the keytab secret in the Vault to use.
+	CurrentKeyTabSecretVersion pulumi.IntInput `pulumi:"currentKeyTabSecretVersion"`
+	// Specifies whether to enable or disable Kerberos.
+	IsKerberosEnabled pulumi.BoolInput `pulumi:"isKerberosEnabled"`
+	// The Kerberos realm that the mount target will join.
+	KerberosRealm pulumi.StringInput `pulumi:"kerberosRealm"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
+	KeyTabSecretId pulumi.StringInput `pulumi:"keyTabSecretId"`
+}
+
+func (GetMountTargetsMountTargetKerberoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountTargetsMountTargetKerbero)(nil)).Elem()
+}
+
+func (i GetMountTargetsMountTargetKerberoArgs) ToGetMountTargetsMountTargetKerberoOutput() GetMountTargetsMountTargetKerberoOutput {
+	return i.ToGetMountTargetsMountTargetKerberoOutputWithContext(context.Background())
+}
+
+func (i GetMountTargetsMountTargetKerberoArgs) ToGetMountTargetsMountTargetKerberoOutputWithContext(ctx context.Context) GetMountTargetsMountTargetKerberoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetKerberoOutput)
+}
+
+// GetMountTargetsMountTargetKerberoArrayInput is an input type that accepts GetMountTargetsMountTargetKerberoArray and GetMountTargetsMountTargetKerberoArrayOutput values.
+// You can construct a concrete instance of `GetMountTargetsMountTargetKerberoArrayInput` via:
+//
+//	GetMountTargetsMountTargetKerberoArray{ GetMountTargetsMountTargetKerberoArgs{...} }
+type GetMountTargetsMountTargetKerberoArrayInput interface {
+	pulumi.Input
+
+	ToGetMountTargetsMountTargetKerberoArrayOutput() GetMountTargetsMountTargetKerberoArrayOutput
+	ToGetMountTargetsMountTargetKerberoArrayOutputWithContext(context.Context) GetMountTargetsMountTargetKerberoArrayOutput
+}
+
+type GetMountTargetsMountTargetKerberoArray []GetMountTargetsMountTargetKerberoInput
+
+func (GetMountTargetsMountTargetKerberoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountTargetsMountTargetKerbero)(nil)).Elem()
+}
+
+func (i GetMountTargetsMountTargetKerberoArray) ToGetMountTargetsMountTargetKerberoArrayOutput() GetMountTargetsMountTargetKerberoArrayOutput {
+	return i.ToGetMountTargetsMountTargetKerberoArrayOutputWithContext(context.Background())
+}
+
+func (i GetMountTargetsMountTargetKerberoArray) ToGetMountTargetsMountTargetKerberoArrayOutputWithContext(ctx context.Context) GetMountTargetsMountTargetKerberoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetKerberoArrayOutput)
+}
+
+type GetMountTargetsMountTargetKerberoOutput struct{ *pulumi.OutputState }
+
+func (GetMountTargetsMountTargetKerberoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountTargetsMountTargetKerbero)(nil)).Elem()
+}
+
+func (o GetMountTargetsMountTargetKerberoOutput) ToGetMountTargetsMountTargetKerberoOutput() GetMountTargetsMountTargetKerberoOutput {
+	return o
+}
+
+func (o GetMountTargetsMountTargetKerberoOutput) ToGetMountTargetsMountTargetKerberoOutputWithContext(ctx context.Context) GetMountTargetsMountTargetKerberoOutput {
+	return o
+}
+
+// Version of the keytab secert in the Vault to use as a backup.
+func (o GetMountTargetsMountTargetKerberoOutput) BackupKeyTabSecretVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) int { return v.BackupKeyTabSecretVersion }).(pulumi.IntOutput)
+}
+
+// Version of the keytab secret in the Vault to use.
+func (o GetMountTargetsMountTargetKerberoOutput) CurrentKeyTabSecretVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) int { return v.CurrentKeyTabSecretVersion }).(pulumi.IntOutput)
+}
+
+// Specifies whether to enable or disable Kerberos.
+func (o GetMountTargetsMountTargetKerberoOutput) IsKerberosEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) bool { return v.IsKerberosEnabled }).(pulumi.BoolOutput)
+}
+
+// The Kerberos realm that the mount target will join.
+func (o GetMountTargetsMountTargetKerberoOutput) KerberosRealm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) string { return v.KerberosRealm }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
+func (o GetMountTargetsMountTargetKerberoOutput) KeyTabSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) string { return v.KeyTabSecretId }).(pulumi.StringOutput)
+}
+
+type GetMountTargetsMountTargetKerberoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMountTargetsMountTargetKerberoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountTargetsMountTargetKerbero)(nil)).Elem()
+}
+
+func (o GetMountTargetsMountTargetKerberoArrayOutput) ToGetMountTargetsMountTargetKerberoArrayOutput() GetMountTargetsMountTargetKerberoArrayOutput {
+	return o
+}
+
+func (o GetMountTargetsMountTargetKerberoArrayOutput) ToGetMountTargetsMountTargetKerberoArrayOutputWithContext(ctx context.Context) GetMountTargetsMountTargetKerberoArrayOutput {
+	return o
+}
+
+func (o GetMountTargetsMountTargetKerberoArrayOutput) Index(i pulumi.IntInput) GetMountTargetsMountTargetKerberoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountTargetsMountTargetKerbero {
+		return vs[0].([]GetMountTargetsMountTargetKerbero)[vs[1].(int)]
+	}).(GetMountTargetsMountTargetKerberoOutput)
+}
+
+type GetMountTargetsMountTargetLdapIdmap struct {
+	// The maximum amount of time the mount target is allowed to use a cached entry.
+	CacheLifetimeSeconds int `pulumi:"cacheLifetimeSeconds"`
+	// The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+	CacheRefreshIntervalSeconds int `pulumi:"cacheRefreshIntervalSeconds"`
+	// All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+	GroupSearchBase string `pulumi:"groupSearchBase"`
+	// The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+	NegativeCacheLifetimeSeconds int `pulumi:"negativeCacheLifetimeSeconds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+	OutboundConnector1id string `pulumi:"outboundConnector1id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+	OutboundConnector2id string `pulumi:"outboundConnector2id"`
+	// Schema type of the LDAP account.
+	SchemaType string `pulumi:"schemaType"`
+	// All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+	UserSearchBase string `pulumi:"userSearchBase"`
+}
+
+// GetMountTargetsMountTargetLdapIdmapInput is an input type that accepts GetMountTargetsMountTargetLdapIdmapArgs and GetMountTargetsMountTargetLdapIdmapOutput values.
+// You can construct a concrete instance of `GetMountTargetsMountTargetLdapIdmapInput` via:
+//
+//	GetMountTargetsMountTargetLdapIdmapArgs{...}
+type GetMountTargetsMountTargetLdapIdmapInput interface {
+	pulumi.Input
+
+	ToGetMountTargetsMountTargetLdapIdmapOutput() GetMountTargetsMountTargetLdapIdmapOutput
+	ToGetMountTargetsMountTargetLdapIdmapOutputWithContext(context.Context) GetMountTargetsMountTargetLdapIdmapOutput
+}
+
+type GetMountTargetsMountTargetLdapIdmapArgs struct {
+	// The maximum amount of time the mount target is allowed to use a cached entry.
+	CacheLifetimeSeconds pulumi.IntInput `pulumi:"cacheLifetimeSeconds"`
+	// The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+	CacheRefreshIntervalSeconds pulumi.IntInput `pulumi:"cacheRefreshIntervalSeconds"`
+	// All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+	GroupSearchBase pulumi.StringInput `pulumi:"groupSearchBase"`
+	// The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+	NegativeCacheLifetimeSeconds pulumi.IntInput `pulumi:"negativeCacheLifetimeSeconds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+	OutboundConnector1id pulumi.StringInput `pulumi:"outboundConnector1id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+	OutboundConnector2id pulumi.StringInput `pulumi:"outboundConnector2id"`
+	// Schema type of the LDAP account.
+	SchemaType pulumi.StringInput `pulumi:"schemaType"`
+	// All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+	UserSearchBase pulumi.StringInput `pulumi:"userSearchBase"`
+}
+
+func (GetMountTargetsMountTargetLdapIdmapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountTargetsMountTargetLdapIdmap)(nil)).Elem()
+}
+
+func (i GetMountTargetsMountTargetLdapIdmapArgs) ToGetMountTargetsMountTargetLdapIdmapOutput() GetMountTargetsMountTargetLdapIdmapOutput {
+	return i.ToGetMountTargetsMountTargetLdapIdmapOutputWithContext(context.Background())
+}
+
+func (i GetMountTargetsMountTargetLdapIdmapArgs) ToGetMountTargetsMountTargetLdapIdmapOutputWithContext(ctx context.Context) GetMountTargetsMountTargetLdapIdmapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetLdapIdmapOutput)
+}
+
+// GetMountTargetsMountTargetLdapIdmapArrayInput is an input type that accepts GetMountTargetsMountTargetLdapIdmapArray and GetMountTargetsMountTargetLdapIdmapArrayOutput values.
+// You can construct a concrete instance of `GetMountTargetsMountTargetLdapIdmapArrayInput` via:
+//
+//	GetMountTargetsMountTargetLdapIdmapArray{ GetMountTargetsMountTargetLdapIdmapArgs{...} }
+type GetMountTargetsMountTargetLdapIdmapArrayInput interface {
+	pulumi.Input
+
+	ToGetMountTargetsMountTargetLdapIdmapArrayOutput() GetMountTargetsMountTargetLdapIdmapArrayOutput
+	ToGetMountTargetsMountTargetLdapIdmapArrayOutputWithContext(context.Context) GetMountTargetsMountTargetLdapIdmapArrayOutput
+}
+
+type GetMountTargetsMountTargetLdapIdmapArray []GetMountTargetsMountTargetLdapIdmapInput
+
+func (GetMountTargetsMountTargetLdapIdmapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountTargetsMountTargetLdapIdmap)(nil)).Elem()
+}
+
+func (i GetMountTargetsMountTargetLdapIdmapArray) ToGetMountTargetsMountTargetLdapIdmapArrayOutput() GetMountTargetsMountTargetLdapIdmapArrayOutput {
+	return i.ToGetMountTargetsMountTargetLdapIdmapArrayOutputWithContext(context.Background())
+}
+
+func (i GetMountTargetsMountTargetLdapIdmapArray) ToGetMountTargetsMountTargetLdapIdmapArrayOutputWithContext(ctx context.Context) GetMountTargetsMountTargetLdapIdmapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetLdapIdmapArrayOutput)
+}
+
+type GetMountTargetsMountTargetLdapIdmapOutput struct{ *pulumi.OutputState }
+
+func (GetMountTargetsMountTargetLdapIdmapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountTargetsMountTargetLdapIdmap)(nil)).Elem()
+}
+
+func (o GetMountTargetsMountTargetLdapIdmapOutput) ToGetMountTargetsMountTargetLdapIdmapOutput() GetMountTargetsMountTargetLdapIdmapOutput {
+	return o
+}
+
+func (o GetMountTargetsMountTargetLdapIdmapOutput) ToGetMountTargetsMountTargetLdapIdmapOutputWithContext(ctx context.Context) GetMountTargetsMountTargetLdapIdmapOutput {
+	return o
+}
+
+// The maximum amount of time the mount target is allowed to use a cached entry.
+func (o GetMountTargetsMountTargetLdapIdmapOutput) CacheLifetimeSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) int { return v.CacheLifetimeSeconds }).(pulumi.IntOutput)
+}
+
+// The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+func (o GetMountTargetsMountTargetLdapIdmapOutput) CacheRefreshIntervalSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) int { return v.CacheRefreshIntervalSeconds }).(pulumi.IntOutput)
+}
+
+// All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+func (o GetMountTargetsMountTargetLdapIdmapOutput) GroupSearchBase() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.GroupSearchBase }).(pulumi.StringOutput)
+}
+
+// The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+func (o GetMountTargetsMountTargetLdapIdmapOutput) NegativeCacheLifetimeSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) int { return v.NegativeCacheLifetimeSeconds }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+func (o GetMountTargetsMountTargetLdapIdmapOutput) OutboundConnector1id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.OutboundConnector1id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+func (o GetMountTargetsMountTargetLdapIdmapOutput) OutboundConnector2id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.OutboundConnector2id }).(pulumi.StringOutput)
+}
+
+// Schema type of the LDAP account.
+func (o GetMountTargetsMountTargetLdapIdmapOutput) SchemaType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.SchemaType }).(pulumi.StringOutput)
+}
+
+// All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+func (o GetMountTargetsMountTargetLdapIdmapOutput) UserSearchBase() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.UserSearchBase }).(pulumi.StringOutput)
+}
+
+type GetMountTargetsMountTargetLdapIdmapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMountTargetsMountTargetLdapIdmapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountTargetsMountTargetLdapIdmap)(nil)).Elem()
+}
+
+func (o GetMountTargetsMountTargetLdapIdmapArrayOutput) ToGetMountTargetsMountTargetLdapIdmapArrayOutput() GetMountTargetsMountTargetLdapIdmapArrayOutput {
+	return o
+}
+
+func (o GetMountTargetsMountTargetLdapIdmapArrayOutput) ToGetMountTargetsMountTargetLdapIdmapArrayOutputWithContext(ctx context.Context) GetMountTargetsMountTargetLdapIdmapArrayOutput {
+	return o
+}
+
+func (o GetMountTargetsMountTargetLdapIdmapArrayOutput) Index(i pulumi.IntInput) GetMountTargetsMountTargetLdapIdmapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountTargetsMountTargetLdapIdmap {
+		return vs[0].([]GetMountTargetsMountTargetLdapIdmap)[vs[1].(int)]
+	}).(GetMountTargetsMountTargetLdapIdmapOutput)
+}
+
+type GetOutboundConnectorEndpoint struct {
+	// Name of the DNS server.
+	Hostname string `pulumi:"hostname"`
+	// Port of the DNS server.
+	Port string `pulumi:"port"`
+}
+
+// GetOutboundConnectorEndpointInput is an input type that accepts GetOutboundConnectorEndpointArgs and GetOutboundConnectorEndpointOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorEndpointInput` via:
+//
+//	GetOutboundConnectorEndpointArgs{...}
+type GetOutboundConnectorEndpointInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorEndpointOutput() GetOutboundConnectorEndpointOutput
+	ToGetOutboundConnectorEndpointOutputWithContext(context.Context) GetOutboundConnectorEndpointOutput
+}
+
+type GetOutboundConnectorEndpointArgs struct {
+	// Name of the DNS server.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Port of the DNS server.
+	Port pulumi.StringInput `pulumi:"port"`
+}
+
+func (GetOutboundConnectorEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorEndpointArgs) ToGetOutboundConnectorEndpointOutput() GetOutboundConnectorEndpointOutput {
+	return i.ToGetOutboundConnectorEndpointOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorEndpointArgs) ToGetOutboundConnectorEndpointOutputWithContext(ctx context.Context) GetOutboundConnectorEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorEndpointOutput)
+}
+
+// GetOutboundConnectorEndpointArrayInput is an input type that accepts GetOutboundConnectorEndpointArray and GetOutboundConnectorEndpointArrayOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorEndpointArrayInput` via:
+//
+//	GetOutboundConnectorEndpointArray{ GetOutboundConnectorEndpointArgs{...} }
+type GetOutboundConnectorEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorEndpointArrayOutput() GetOutboundConnectorEndpointArrayOutput
+	ToGetOutboundConnectorEndpointArrayOutputWithContext(context.Context) GetOutboundConnectorEndpointArrayOutput
+}
+
+type GetOutboundConnectorEndpointArray []GetOutboundConnectorEndpointInput
+
+func (GetOutboundConnectorEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorEndpointArray) ToGetOutboundConnectorEndpointArrayOutput() GetOutboundConnectorEndpointArrayOutput {
+	return i.ToGetOutboundConnectorEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorEndpointArray) ToGetOutboundConnectorEndpointArrayOutputWithContext(ctx context.Context) GetOutboundConnectorEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorEndpointArrayOutput)
+}
+
+type GetOutboundConnectorEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorEndpointOutput) ToGetOutboundConnectorEndpointOutput() GetOutboundConnectorEndpointOutput {
+	return o
+}
+
+func (o GetOutboundConnectorEndpointOutput) ToGetOutboundConnectorEndpointOutputWithContext(ctx context.Context) GetOutboundConnectorEndpointOutput {
+	return o
+}
+
+// Name of the DNS server.
+func (o GetOutboundConnectorEndpointOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Port of the DNS server.
+func (o GetOutboundConnectorEndpointOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorEndpoint) string { return v.Port }).(pulumi.StringOutput)
+}
+
+type GetOutboundConnectorEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorEndpointArrayOutput) ToGetOutboundConnectorEndpointArrayOutput() GetOutboundConnectorEndpointArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorEndpointArrayOutput) ToGetOutboundConnectorEndpointArrayOutputWithContext(ctx context.Context) GetOutboundConnectorEndpointArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorEndpointArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorEndpoint {
+		return vs[0].([]GetOutboundConnectorEndpoint)[vs[1].(int)]
+	}).(GetOutboundConnectorEndpointOutput)
+}
+
+type GetOutboundConnectorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOutboundConnectorsFilterInput is an input type that accepts GetOutboundConnectorsFilterArgs and GetOutboundConnectorsFilterOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorsFilterInput` via:
+//
+//	GetOutboundConnectorsFilterArgs{...}
+type GetOutboundConnectorsFilterInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorsFilterOutput() GetOutboundConnectorsFilterOutput
+	ToGetOutboundConnectorsFilterOutputWithContext(context.Context) GetOutboundConnectorsFilterOutput
+}
+
+type GetOutboundConnectorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOutboundConnectorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorsFilterArgs) ToGetOutboundConnectorsFilterOutput() GetOutboundConnectorsFilterOutput {
+	return i.ToGetOutboundConnectorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorsFilterArgs) ToGetOutboundConnectorsFilterOutputWithContext(ctx context.Context) GetOutboundConnectorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsFilterOutput)
+}
+
+// GetOutboundConnectorsFilterArrayInput is an input type that accepts GetOutboundConnectorsFilterArray and GetOutboundConnectorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorsFilterArrayInput` via:
+//
+//	GetOutboundConnectorsFilterArray{ GetOutboundConnectorsFilterArgs{...} }
+type GetOutboundConnectorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorsFilterArrayOutput() GetOutboundConnectorsFilterArrayOutput
+	ToGetOutboundConnectorsFilterArrayOutputWithContext(context.Context) GetOutboundConnectorsFilterArrayOutput
+}
+
+type GetOutboundConnectorsFilterArray []GetOutboundConnectorsFilterInput
+
+func (GetOutboundConnectorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorsFilterArray) ToGetOutboundConnectorsFilterArrayOutput() GetOutboundConnectorsFilterArrayOutput {
+	return i.ToGetOutboundConnectorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorsFilterArray) ToGetOutboundConnectorsFilterArrayOutputWithContext(ctx context.Context) GetOutboundConnectorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsFilterArrayOutput)
+}
+
+type GetOutboundConnectorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorsFilterOutput) ToGetOutboundConnectorsFilterOutput() GetOutboundConnectorsFilterOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsFilterOutput) ToGetOutboundConnectorsFilterOutputWithContext(ctx context.Context) GetOutboundConnectorsFilterOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOutboundConnectorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOutboundConnectorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOutboundConnectorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorsFilterArrayOutput) ToGetOutboundConnectorsFilterArrayOutput() GetOutboundConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsFilterArrayOutput) ToGetOutboundConnectorsFilterArrayOutputWithContext(ctx context.Context) GetOutboundConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsFilterArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorsFilter {
+		return vs[0].([]GetOutboundConnectorsFilter)[vs[1].(int)]
+	}).(GetOutboundConnectorsFilterOutput)
+}
+
+type GetOutboundConnectorsOutboundConnector struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The LDAP Distinguished Name of the account.
+	BindDistinguishedName string `pulumi:"bindDistinguishedName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The account type of this outbound connector.
+	ConnectorType string `pulumi:"connectorType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+	DisplayName string `pulumi:"displayName"`
+	// Array of server endpoints to use when connecting with the LDAP bind account.
+	Endpoints []GetOutboundConnectorsOutboundConnectorEndpoint `pulumi:"endpoints"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// Version of the password secret in the Vault to use.
+	PasswordSecretVersion int `pulumi:"passwordSecretVersion"`
+	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+	State string `pulumi:"state"`
+	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetOutboundConnectorsOutboundConnectorInput is an input type that accepts GetOutboundConnectorsOutboundConnectorArgs and GetOutboundConnectorsOutboundConnectorOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorsOutboundConnectorInput` via:
+//
+//	GetOutboundConnectorsOutboundConnectorArgs{...}
+type GetOutboundConnectorsOutboundConnectorInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorsOutboundConnectorOutput() GetOutboundConnectorsOutboundConnectorOutput
+	ToGetOutboundConnectorsOutboundConnectorOutputWithContext(context.Context) GetOutboundConnectorsOutboundConnectorOutput
+}
+
+type GetOutboundConnectorsOutboundConnectorArgs struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The LDAP Distinguished Name of the account.
+	BindDistinguishedName pulumi.StringInput `pulumi:"bindDistinguishedName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The account type of this outbound connector.
+	ConnectorType pulumi.StringInput `pulumi:"connectorType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Array of server endpoints to use when connecting with the LDAP bind account.
+	Endpoints GetOutboundConnectorsOutboundConnectorEndpointArrayInput `pulumi:"endpoints"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// Version of the password secret in the Vault to use.
+	PasswordSecretVersion pulumi.IntInput `pulumi:"passwordSecretVersion"`
+	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetOutboundConnectorsOutboundConnectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorsOutboundConnector)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorsOutboundConnectorArgs) ToGetOutboundConnectorsOutboundConnectorOutput() GetOutboundConnectorsOutboundConnectorOutput {
+	return i.ToGetOutboundConnectorsOutboundConnectorOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorsOutboundConnectorArgs) ToGetOutboundConnectorsOutboundConnectorOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorOutput)
+}
+
+// GetOutboundConnectorsOutboundConnectorArrayInput is an input type that accepts GetOutboundConnectorsOutboundConnectorArray and GetOutboundConnectorsOutboundConnectorArrayOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorsOutboundConnectorArrayInput` via:
+//
+//	GetOutboundConnectorsOutboundConnectorArray{ GetOutboundConnectorsOutboundConnectorArgs{...} }
+type GetOutboundConnectorsOutboundConnectorArrayInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorsOutboundConnectorArrayOutput() GetOutboundConnectorsOutboundConnectorArrayOutput
+	ToGetOutboundConnectorsOutboundConnectorArrayOutputWithContext(context.Context) GetOutboundConnectorsOutboundConnectorArrayOutput
+}
+
+type GetOutboundConnectorsOutboundConnectorArray []GetOutboundConnectorsOutboundConnectorInput
+
+func (GetOutboundConnectorsOutboundConnectorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorsOutboundConnector)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorsOutboundConnectorArray) ToGetOutboundConnectorsOutboundConnectorArrayOutput() GetOutboundConnectorsOutboundConnectorArrayOutput {
+	return i.ToGetOutboundConnectorsOutboundConnectorArrayOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorsOutboundConnectorArray) ToGetOutboundConnectorsOutboundConnectorArrayOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorArrayOutput)
+}
+
+type GetOutboundConnectorsOutboundConnectorOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorsOutboundConnectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorsOutboundConnector)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorsOutboundConnectorOutput) ToGetOutboundConnectorsOutboundConnectorOutput() GetOutboundConnectorsOutboundConnectorOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsOutboundConnectorOutput) ToGetOutboundConnectorsOutboundConnectorOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorOutput {
+	return o
+}
+
+// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+func (o GetOutboundConnectorsOutboundConnectorOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The LDAP Distinguished Name of the account.
+func (o GetOutboundConnectorsOutboundConnectorOutput) BindDistinguishedName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.BindDistinguishedName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetOutboundConnectorsOutboundConnectorOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The account type of this outbound connector.
+func (o GetOutboundConnectorsOutboundConnectorOutput) ConnectorType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.ConnectorType }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetOutboundConnectorsOutboundConnectorOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+func (o GetOutboundConnectorsOutboundConnectorOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Array of server endpoints to use when connecting with the LDAP bind account.
+func (o GetOutboundConnectorsOutboundConnectorOutput) Endpoints() GetOutboundConnectorsOutboundConnectorEndpointArrayOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) []GetOutboundConnectorsOutboundConnectorEndpoint {
+		return v.Endpoints
+	}).(GetOutboundConnectorsOutboundConnectorEndpointArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetOutboundConnectorsOutboundConnectorOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+func (o GetOutboundConnectorsOutboundConnectorOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
+func (o GetOutboundConnectorsOutboundConnectorOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+}
+
+// Version of the password secret in the Vault to use.
+func (o GetOutboundConnectorsOutboundConnectorOutput) PasswordSecretVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) int { return v.PasswordSecretVersion }).(pulumi.IntOutput)
+}
+
+// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+func (o GetOutboundConnectorsOutboundConnectorOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetOutboundConnectorsOutboundConnectorOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetOutboundConnectorsOutboundConnectorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorsOutboundConnectorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorsOutboundConnector)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorsOutboundConnectorArrayOutput) ToGetOutboundConnectorsOutboundConnectorArrayOutput() GetOutboundConnectorsOutboundConnectorArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsOutboundConnectorArrayOutput) ToGetOutboundConnectorsOutboundConnectorArrayOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsOutboundConnectorArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorsOutboundConnectorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorsOutboundConnector {
+		return vs[0].([]GetOutboundConnectorsOutboundConnector)[vs[1].(int)]
+	}).(GetOutboundConnectorsOutboundConnectorOutput)
+}
+
+type GetOutboundConnectorsOutboundConnectorEndpoint struct {
+	// Name of the DNS server.
+	Hostname string `pulumi:"hostname"`
+	// Port of the DNS server.
+	Port string `pulumi:"port"`
+}
+
+// GetOutboundConnectorsOutboundConnectorEndpointInput is an input type that accepts GetOutboundConnectorsOutboundConnectorEndpointArgs and GetOutboundConnectorsOutboundConnectorEndpointOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorsOutboundConnectorEndpointInput` via:
+//
+//	GetOutboundConnectorsOutboundConnectorEndpointArgs{...}
+type GetOutboundConnectorsOutboundConnectorEndpointInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorsOutboundConnectorEndpointOutput() GetOutboundConnectorsOutboundConnectorEndpointOutput
+	ToGetOutboundConnectorsOutboundConnectorEndpointOutputWithContext(context.Context) GetOutboundConnectorsOutboundConnectorEndpointOutput
+}
+
+type GetOutboundConnectorsOutboundConnectorEndpointArgs struct {
+	// Name of the DNS server.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Port of the DNS server.
+	Port pulumi.StringInput `pulumi:"port"`
+}
+
+func (GetOutboundConnectorsOutboundConnectorEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorsOutboundConnectorEndpointArgs) ToGetOutboundConnectorsOutboundConnectorEndpointOutput() GetOutboundConnectorsOutboundConnectorEndpointOutput {
+	return i.ToGetOutboundConnectorsOutboundConnectorEndpointOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorsOutboundConnectorEndpointArgs) ToGetOutboundConnectorsOutboundConnectorEndpointOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorEndpointOutput)
+}
+
+// GetOutboundConnectorsOutboundConnectorEndpointArrayInput is an input type that accepts GetOutboundConnectorsOutboundConnectorEndpointArray and GetOutboundConnectorsOutboundConnectorEndpointArrayOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorsOutboundConnectorEndpointArrayInput` via:
+//
+//	GetOutboundConnectorsOutboundConnectorEndpointArray{ GetOutboundConnectorsOutboundConnectorEndpointArgs{...} }
+type GetOutboundConnectorsOutboundConnectorEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorsOutboundConnectorEndpointArrayOutput() GetOutboundConnectorsOutboundConnectorEndpointArrayOutput
+	ToGetOutboundConnectorsOutboundConnectorEndpointArrayOutputWithContext(context.Context) GetOutboundConnectorsOutboundConnectorEndpointArrayOutput
+}
+
+type GetOutboundConnectorsOutboundConnectorEndpointArray []GetOutboundConnectorsOutboundConnectorEndpointInput
+
+func (GetOutboundConnectorsOutboundConnectorEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorsOutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorsOutboundConnectorEndpointArray) ToGetOutboundConnectorsOutboundConnectorEndpointArrayOutput() GetOutboundConnectorsOutboundConnectorEndpointArrayOutput {
+	return i.ToGetOutboundConnectorsOutboundConnectorEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorsOutboundConnectorEndpointArray) ToGetOutboundConnectorsOutboundConnectorEndpointArrayOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorEndpointArrayOutput)
+}
+
+type GetOutboundConnectorsOutboundConnectorEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorsOutboundConnectorEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) ToGetOutboundConnectorsOutboundConnectorEndpointOutput() GetOutboundConnectorsOutboundConnectorEndpointOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) ToGetOutboundConnectorsOutboundConnectorEndpointOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorEndpointOutput {
+	return o
+}
+
+// Name of the DNS server.
+func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Port of the DNS server.
+func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorEndpoint) string { return v.Port }).(pulumi.StringOutput)
+}
+
+type GetOutboundConnectorsOutboundConnectorEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorsOutboundConnectorEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorsOutboundConnectorEndpoint)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorsOutboundConnectorEndpointArrayOutput) ToGetOutboundConnectorsOutboundConnectorEndpointArrayOutput() GetOutboundConnectorsOutboundConnectorEndpointArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsOutboundConnectorEndpointArrayOutput) ToGetOutboundConnectorsOutboundConnectorEndpointArrayOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorEndpointArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsOutboundConnectorEndpointArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorsOutboundConnectorEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorsOutboundConnectorEndpoint {
+		return vs[0].([]GetOutboundConnectorsOutboundConnectorEndpoint)[vs[1].(int)]
+	}).(GetOutboundConnectorsOutboundConnectorEndpointOutput)
 }
 
 type GetReplicationTargetsFilter struct {
@@ -3563,6 +5045,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FileSystemSourceDetailArrayInput)(nil)).Elem(), FileSystemSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetKerberosInput)(nil)).Elem(), MountTargetKerberosArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetKerberosPtrInput)(nil)).Elem(), MountTargetKerberosArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetLdapIdmapInput)(nil)).Elem(), MountTargetLdapIdmapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetLdapIdmapPtrInput)(nil)).Elem(), MountTargetLdapIdmapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutboundConnectorEndpointInput)(nil)).Elem(), OutboundConnectorEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutboundConnectorEndpointArrayInput)(nil)).Elem(), OutboundConnectorEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsExportSetInput)(nil)).Elem(), GetExportSetsExportSetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsExportSetArrayInput)(nil)).Elem(), GetExportSetsExportSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsFilterInput)(nil)).Elem(), GetExportSetsFilterArgs{})
@@ -3591,6 +5079,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsFilterArrayInput)(nil)).Elem(), GetMountTargetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetInput)(nil)).Elem(), GetMountTargetsMountTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetArrayInput)(nil)).Elem(), GetMountTargetsMountTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetKerberoInput)(nil)).Elem(), GetMountTargetsMountTargetKerberoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetKerberoArrayInput)(nil)).Elem(), GetMountTargetsMountTargetKerberoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetLdapIdmapInput)(nil)).Elem(), GetMountTargetsMountTargetLdapIdmapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetLdapIdmapArrayInput)(nil)).Elem(), GetMountTargetsMountTargetLdapIdmapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorEndpointInput)(nil)).Elem(), GetOutboundConnectorEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorEndpointArrayInput)(nil)).Elem(), GetOutboundConnectorEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsFilterInput)(nil)).Elem(), GetOutboundConnectorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsFilterArrayInput)(nil)).Elem(), GetOutboundConnectorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorArrayInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorEndpointInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorEndpointArrayInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsFilterInput)(nil)).Elem(), GetReplicationTargetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsFilterArrayInput)(nil)).Elem(), GetReplicationTargetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsReplicationTargetInput)(nil)).Elem(), GetReplicationTargetsReplicationTargetArgs{})
@@ -3609,6 +5109,12 @@ func init() {
 	pulumi.RegisterOutputType(FileSystemSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleOutput{})
 	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(MountTargetKerberosOutput{})
+	pulumi.RegisterOutputType(MountTargetKerberosPtrOutput{})
+	pulumi.RegisterOutputType(MountTargetLdapIdmapOutput{})
+	pulumi.RegisterOutputType(MountTargetLdapIdmapPtrOutput{})
+	pulumi.RegisterOutputType(OutboundConnectorEndpointOutput{})
+	pulumi.RegisterOutputType(OutboundConnectorEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetExportSetsExportSetOutput{})
 	pulumi.RegisterOutputType(GetExportSetsExportSetArrayOutput{})
 	pulumi.RegisterOutputType(GetExportSetsFilterOutput{})
@@ -3637,6 +5143,18 @@ func init() {
 	pulumi.RegisterOutputType(GetMountTargetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsMountTargetOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsMountTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetMountTargetsMountTargetKerberoOutput{})
+	pulumi.RegisterOutputType(GetMountTargetsMountTargetKerberoArrayOutput{})
+	pulumi.RegisterOutputType(GetMountTargetsMountTargetLdapIdmapOutput{})
+	pulumi.RegisterOutputType(GetMountTargetsMountTargetLdapIdmapArrayOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorEndpointOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorsFilterOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorArrayOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorEndpointOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationTargetsFilterOutput{})
 	pulumi.RegisterOutputType(GetReplicationTargetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationTargetsReplicationTargetOutput{})

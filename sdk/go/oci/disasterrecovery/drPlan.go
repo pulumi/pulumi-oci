@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -61,19 +62,19 @@ import (
 type DrPlan struct {
 	pulumi.CustomResourceState
 
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId pulumi.StringOutput `pulumi:"drProtectionGroupId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the DR Plan's current state in more detail.
 	LifeCycleDetails pulumi.StringOutput `pulumi:"lifeCycleDetails"`
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId pulumi.StringOutput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
 	PeerRegion pulumi.StringOutput `pulumi:"peerRegion"`
@@ -110,6 +111,7 @@ func NewDrPlan(ctx *pulumi.Context,
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DrPlan
 	err := ctx.RegisterResource("oci:DisasterRecovery/drPlan:DrPlan", name, args, &resource, opts...)
 	if err != nil {
@@ -132,19 +134,19 @@ func GetDrPlan(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DrPlan resources.
 type drPlanState struct {
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName *string `pulumi:"displayName"`
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId *string `pulumi:"drProtectionGroupId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the DR Plan's current state in more detail.
 	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId *string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
 	PeerRegion *string `pulumi:"peerRegion"`
@@ -166,19 +168,19 @@ type drPlanState struct {
 }
 
 type DrPlanState struct {
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringPtrInput
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// A message describing the DR Plan's current state in more detail.
 	LifeCycleDetails pulumi.StringPtrInput
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId pulumi.StringPtrInput
 	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
 	PeerRegion pulumi.StringPtrInput
@@ -208,7 +210,7 @@ type drPlanArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName string `pulumi:"displayName"`
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -225,7 +227,7 @@ type DrPlanArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringInput
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -323,7 +325,7 @@ func (o DrPlanOutput) ToDrPlanOutputWithContext(ctx context.Context) DrPlanOutpu
 	return o
 }
 
-// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o DrPlanOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -338,7 +340,7 @@ func (o DrPlanOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o DrPlanOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -353,7 +355,7 @@ func (o DrPlanOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 func (o DrPlanOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }

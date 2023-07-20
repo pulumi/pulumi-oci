@@ -26,12 +26,12 @@ public final class DrPlanPlanGroupStep {
      */
     private @Nullable String errorMode;
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String groupId;
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String id;
@@ -41,7 +41,7 @@ public final class DrPlanPlanGroupStep {
      */
     private @Nullable Boolean isEnabled;
     /**
-     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String memberId;
@@ -80,14 +80,14 @@ public final class DrPlanPlanGroupStep {
         return Optional.ofNullable(this.errorMode);
     }
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> groupId() {
         return Optional.ofNullable(this.groupId);
     }
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> id() {
@@ -101,7 +101,7 @@ public final class DrPlanPlanGroupStep {
         return Optional.ofNullable(this.isEnabled);
     }
     /**
-     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> memberId() {

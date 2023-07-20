@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupFilesystemSnapshotPolicy(ctx *pulumi.Context, args *LookupFilesystemSnapshotPolicyArgs, opts ...pulumi.InvokeOption) (*LookupFilesystemSnapshotPolicyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupFilesystemSnapshotPolicyResult
 	err := ctx.Invoke("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", args, &rv, opts...)
 	if err != nil {

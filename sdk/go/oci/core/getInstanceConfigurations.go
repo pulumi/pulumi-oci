@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetInstanceConfigurations(ctx *pulumi.Context, args *GetInstanceConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetInstanceConfigurationsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstanceConfigurationsResult
 	err := ctx.Invoke("oci:Core/getInstanceConfigurations:getInstanceConfigurations", args, &rv, opts...)
 	if err != nil {
@@ -57,7 +59,7 @@ type GetInstanceConfigurationsArgs struct {
 
 // A collection of values returned by getInstanceConfigurations.
 type GetInstanceConfigurationsResult struct {
-	// The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment  as the instance that was used to create the instance configuration.
+	// The OCID of the compartment containing images to search
 	CompartmentId string                            `pulumi:"compartmentId"`
 	Filters       []GetInstanceConfigurationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -105,7 +107,7 @@ func (o GetInstanceConfigurationsResultOutput) ToGetInstanceConfigurationsResult
 	return o
 }
 
-// The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment  as the instance that was used to create the instance configuration.
+// The OCID of the compartment containing images to search
 func (o GetInstanceConfigurationsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupBlockchainPlatform(ctx *pulumi.Context, args *LookupBlockchainPlatformArgs, opts ...pulumi.InvokeOption) (*LookupBlockchainPlatformResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBlockchainPlatformResult
 	err := ctx.Invoke("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args, &rv, opts...)
 	if err != nil {

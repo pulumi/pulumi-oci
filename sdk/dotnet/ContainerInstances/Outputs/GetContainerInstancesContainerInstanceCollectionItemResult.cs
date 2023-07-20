@@ -18,11 +18,11 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The number of containers on this Instance
+        /// The number of containers on the container instance.
         /// </summary>
         public readonly int ContainerCount;
         /// <summary>
@@ -30,11 +30,11 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// </summary>
         public readonly string ContainerRestartPolicy;
         /// <summary>
-        /// The Containers on this Instance
+        /// The containers on the container instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult> Containers;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult> DnsConfigs;
         /// <summary>
-        /// Fault Domain where the ContainerInstance is running.
+        /// The fault domain to place the container instance.
         /// </summary>
         public readonly string FaultDomain;
         /// <summary>
@@ -54,55 +54,55 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        /// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         /// </summary>
         public readonly string GracefulShutdownTimeoutInSeconds;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// An OCID that cannot be changed.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The image pull secrets for accessing private registry to pull images for containers
+        /// The image pulls secrets so you can access private registry to pull container images.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult> ImagePullSecrets;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        /// The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
         /// </summary>
         public readonly string Shape;
         /// <summary>
-        /// The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it's containers.
+        /// The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult> ShapeConfigs;
         /// <summary>
-        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        /// A filter to only return resources that match the given lifecycle state.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        /// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The virtual networks available to containers running on this Container Instance.
+        /// The virtual networks available to the containers in the container instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult> Vnics;
         /// <summary>
-        /// The number of volumes that attached to this Instance
+        /// The number of volumes that are attached to the container instance.
         /// </summary>
         public readonly int VolumeCount;
         /// <summary>
-        /// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+        /// A volume is a directory with data that is accessible across multiple containers in a container instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult> Volumes;
 

@@ -18,6 +18,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string? Access;
         /// <summary>
+        /// (Updatable) Array of allowed NFS authentication types.
+        /// </summary>
+        public readonly ImmutableArray<string> AllowedAuths;
+        /// <summary>
         /// (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
         /// </summary>
         public readonly string? AnonymousGid;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
         /// </summary>
         public readonly string? IdentitySquash;
+        /// <summary>
+        /// (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+        /// </summary>
+        public readonly bool? IsAnonymousAccessAllowed;
         /// <summary>
         /// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
         /// </summary>
@@ -44,20 +52,26 @@ namespace Pulumi.Oci.FileStorage.Outputs
         private ExportExportOption(
             string? access,
 
+            ImmutableArray<string> allowedAuths,
+
             string? anonymousGid,
 
             string? anonymousUid,
 
             string? identitySquash,
 
+            bool? isAnonymousAccessAllowed,
+
             bool? requirePrivilegedSourcePort,
 
             string source)
         {
             Access = access;
+            AllowedAuths = allowedAuths;
             AnonymousGid = anonymousGid;
             AnonymousUid = anonymousUid;
             IdentitySquash = identitySquash;
+            IsAnonymousAccessAllowed = isAnonymousAccessAllowed;
             RequirePrivilegedSourcePort = requirePrivilegedSourcePort;
             Source = source;
         }

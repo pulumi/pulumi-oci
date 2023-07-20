@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetInstanceConsoleConnections(ctx *pulumi.Context, args *GetInstanceConsoleConnectionsArgs, opts ...pulumi.InvokeOption) (*GetInstanceConsoleConnectionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstanceConsoleConnectionsResult
 	err := ctx.Invoke("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args, &rv, opts...)
 	if err != nil {

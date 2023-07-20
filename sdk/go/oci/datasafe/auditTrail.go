@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -82,6 +83,7 @@ func NewAuditTrail(ctx *pulumi.Context,
 	if args.AuditTrailId == nil {
 		return nil, errors.New("invalid value for required argument 'AuditTrailId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AuditTrail
 	err := ctx.RegisterResource("oci:DataSafe/auditTrail:AuditTrail", name, args, &resource, opts...)
 	if err != nil {

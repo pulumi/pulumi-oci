@@ -25,13 +25,13 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? ErrorMode { get; set; }
 
         /// <summary>
-        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+        /// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("memberId")]
         public Input<string>? MemberId { get; set; }

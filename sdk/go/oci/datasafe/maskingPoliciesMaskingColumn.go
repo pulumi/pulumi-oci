@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -168,6 +169,7 @@ func NewMaskingPoliciesMaskingColumn(ctx *pulumi.Context,
 	if args.SchemaName == nil {
 		return nil, errors.New("invalid value for required argument 'SchemaName'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MaskingPoliciesMaskingColumn
 	err := ctx.RegisterResource("oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn", name, args, &resource, opts...)
 	if err != nil {

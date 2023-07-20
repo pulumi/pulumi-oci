@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupSuppression(ctx *pulumi.Context, args *LookupSuppressionArgs, opts ...pulumi.InvokeOption) (*LookupSuppressionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSuppressionResult
 	err := ctx.Invoke("oci:Email/getSuppression:getSuppression", args, &rv, opts...)
 	if err != nil {

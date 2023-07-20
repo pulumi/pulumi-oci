@@ -12,27 +12,15 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
 
     public sealed class ContainerInstanceContainerArgs : global::Pulumi.ResourceArgs
     {
-        [Input("additionalCapabilities")]
-        private InputList<string>? _additionalCapabilities;
-
-        /// <summary>
-        /// A list of additional capabilities for the container.
-        /// </summary>
-        public InputList<string> AdditionalCapabilities
-        {
-            get => _additionalCapabilities ?? (_additionalCapabilities = new InputList<string>());
-            set => _additionalCapabilities = value;
-        }
-
         [Input("arguments")]
         private InputList<string>? _arguments;
 
         /// <summary>
-        /// A list of string arguments for a container's entrypoint process.
+        /// A list of string arguments for a container's ENTRYPOINT process.
         /// 
-        /// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+        /// Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
         /// 
-        /// All arguments together must be 64KB or smaller.
+        /// The total size of all arguments combined must be 64 KB or smaller.
         /// </summary>
         public InputList<string> Arguments
         {
@@ -41,7 +29,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
-        /// Availability Domain where the ContainerInstance should be created.
+        /// The availability domain where the container instance runs.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -50,7 +38,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputList<string>? _commands;
 
         /// <summary>
-        /// The list of strings which will be concatenated to a single command for checking container's status.
+        /// The list of strings that will be simplified to a single command for checking the status of the container.
         /// </summary>
         public InputList<string> Commands
         {
@@ -59,13 +47,13 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The compartment OCID.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The ID of the Container on this Instance.
+        /// The OCID of the container.
         /// </summary>
         [Input("containerId")]
         public Input<string>? ContainerId { get; set; }
@@ -77,7 +65,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -95,9 +83,9 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputMap<object>? _environmentVariables;
 
         /// <summary>
-        /// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+        /// A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
         /// 
-        /// All environment variables together, name and values, must be 64KB or smaller.
+        /// The total size of all environment variables combined, name and values, must be 64 KB or smaller.
         /// </summary>
         public InputMap<object> EnvironmentVariables
         {
@@ -109,7 +97,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<int>? ExitCode { get; set; }
 
         /// <summary>
-        /// Fault Domain where the ContainerInstance should run.
+        /// The fault domain where the container instance runs.
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
@@ -139,25 +127,31 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
-        /// The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+        /// A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+        /// 
+        /// If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+        /// 
+        /// The registry used for container image must be reachable over the Container Instance's VNIC.
         /// </summary>
         [Input("imageUrl", required: true)]
         public Input<string> ImageUrl { get; set; } = null!;
 
         /// <summary>
-        /// Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+        /// Determines if the container will have access to the container instance resource principal.
+        /// 
+        /// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
         /// </summary>
         [Input("isResourcePrincipalDisabled")]
         public Input<bool>? IsResourcePrincipalDisabled { get; set; }
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The size and amount of resources available to the Container.
+        /// The size and amount of resources available to the container.
         /// </summary>
         [Input("resourceConfig")]
         public Input<Inputs.ContainerInstanceContainerResourceConfigArgs>? ResourceConfig { get; set; }
@@ -176,7 +170,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputMap<object>? _systemTags;
 
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
         public InputMap<object> SystemTags
         {
@@ -185,7 +179,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
-        /// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
@@ -194,7 +188,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string>? TimeTerminated { get; set; }
 
         /// <summary>
-        /// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        /// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
@@ -212,7 +206,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
-        /// The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+        /// The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
         /// </summary>
         [Input("workingDirectory")]
         public Input<string>? WorkingDirectory { get; set; }

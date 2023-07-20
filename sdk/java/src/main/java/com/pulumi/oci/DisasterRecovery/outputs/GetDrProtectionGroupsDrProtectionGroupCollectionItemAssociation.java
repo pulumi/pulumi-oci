@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation {
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String peerId;
@@ -20,14 +20,14 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociati
      */
     private String peerRegion;
     /**
-     * @return The role of the DR Protection Group.
+     * @return The DR Protection Group Role.
      * 
      */
     private String role;
 
     private GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation() {}
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String peerId() {
@@ -41,7 +41,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociati
         return this.peerRegion;
     }
     /**
-     * @return The role of the DR Protection Group.
+     * @return The DR Protection Group Role.
      * 
      */
     public String role() {

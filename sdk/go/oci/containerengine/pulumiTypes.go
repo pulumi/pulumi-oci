@@ -7,8 +7,11 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
+
+var _ = internal.GetEnvOrDefault
 
 type AddonAddonError struct {
 	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -2043,61 +2046,65 @@ func (o ClusterOptionsServiceLbConfigPtrOutput) FreeformTags() pulumi.MapOutput 
 }
 
 type ContainerInstanceContainer struct {
-	// A list of additional capabilities for the container.
-	AdditionalCapabilities []string `pulumi:"additionalCapabilities"`
-	// A list of string arguments for a container's entrypoint process.
+	// A list of string arguments for a container's ENTRYPOINT process.
 	//
-	// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+	// Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
 	//
-	// All arguments together must be 64KB or smaller.
+	// The total size of all arguments combined must be 64 KB or smaller.
 	Arguments []string `pulumi:"arguments"`
-	// Availability Domain where the ContainerInstance should be created.
+	// The availability domain where the container instance runs.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// The list of strings which will be concatenated to a single command for checking container's status.
+	// The list of strings that will be simplified to a single command for checking the status of the container.
 	Commands []string `pulumi:"commands"`
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment OCID.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The ID of the Container on this Instance.
+	// The OCID of the container.
 	ContainerId         *string `pulumi:"containerId"`
 	ContainerInstanceId *string `pulumi:"containerInstanceId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+	// A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 	//
-	// All environment variables together, name and values, must be 64KB or smaller.
+	// The total size of all environment variables combined, name and values, must be 64 KB or smaller.
 	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
 	ExitCode             *int                   `pulumi:"exitCode"`
-	// Fault Domain where the ContainerInstance should run.
+	// The fault domain where the container instance runs.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
 	HealthChecks []ContainerInstanceContainerHealthCheck `pulumi:"healthChecks"`
-	// The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+	// A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+	//
+	// If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+	//
+	// The registry used for container image must be reachable over the Container Instance's VNIC.
 	ImageUrl string `pulumi:"imageUrl"`
-	// Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+	// Determines if the container will have access to the container instance resource principal.
+	//
+	// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
 	IsResourcePrincipalDisabled *bool `pulumi:"isResourcePrincipalDisabled"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The size and amount of resources available to the Container.
+	// The size and amount of resources available to the container.
 	ResourceConfig *ContainerInstanceContainerResourceConfig `pulumi:"resourceConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    *string `pulumi:"timeCreated"`
 	TimeTerminated *string `pulumi:"timeTerminated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// List of the volume mounts.
 	VolumeMounts []ContainerInstanceContainerVolumeMount `pulumi:"volumeMounts"`
-	// The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+	// The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
 	WorkingDirectory *string `pulumi:"workingDirectory"`
 }
 
@@ -2113,61 +2120,65 @@ type ContainerInstanceContainerInput interface {
 }
 
 type ContainerInstanceContainerArgs struct {
-	// A list of additional capabilities for the container.
-	AdditionalCapabilities pulumi.StringArrayInput `pulumi:"additionalCapabilities"`
-	// A list of string arguments for a container's entrypoint process.
+	// A list of string arguments for a container's ENTRYPOINT process.
 	//
-	// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+	// Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
 	//
-	// All arguments together must be 64KB or smaller.
+	// The total size of all arguments combined must be 64 KB or smaller.
 	Arguments pulumi.StringArrayInput `pulumi:"arguments"`
-	// Availability Domain where the ContainerInstance should be created.
+	// The availability domain where the container instance runs.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
-	// The list of strings which will be concatenated to a single command for checking container's status.
+	// The list of strings that will be simplified to a single command for checking the status of the container.
 	Commands pulumi.StringArrayInput `pulumi:"commands"`
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment OCID.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// The ID of the Container on this Instance.
+	// The OCID of the container.
 	ContainerId         pulumi.StringPtrInput `pulumi:"containerId"`
 	ContainerInstanceId pulumi.StringPtrInput `pulumi:"containerInstanceId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+	// A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 	//
-	// All environment variables together, name and values, must be 64KB or smaller.
+	// The total size of all environment variables combined, name and values, must be 64 KB or smaller.
 	EnvironmentVariables pulumi.MapInput    `pulumi:"environmentVariables"`
 	ExitCode             pulumi.IntPtrInput `pulumi:"exitCode"`
-	// Fault Domain where the ContainerInstance should run.
+	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
 	HealthChecks ContainerInstanceContainerHealthCheckArrayInput `pulumi:"healthChecks"`
-	// The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+	// A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+	//
+	// If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+	//
+	// The registry used for container image must be reachable over the Container Instance's VNIC.
 	ImageUrl pulumi.StringInput `pulumi:"imageUrl"`
-	// Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+	// Determines if the container will have access to the container instance resource principal.
+	//
+	// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
 	IsResourcePrincipalDisabled pulumi.BoolPtrInput `pulumi:"isResourcePrincipalDisabled"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
-	// The size and amount of resources available to the Container.
+	// The size and amount of resources available to the container.
 	ResourceConfig ContainerInstanceContainerResourceConfigPtrInput `pulumi:"resourceConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    pulumi.StringPtrInput `pulumi:"timeCreated"`
 	TimeTerminated pulumi.StringPtrInput `pulumi:"timeTerminated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// List of the volume mounts.
 	VolumeMounts ContainerInstanceContainerVolumeMountArrayInput `pulumi:"volumeMounts"`
-	// The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+	// The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
 	WorkingDirectory pulumi.StringPtrInput `pulumi:"workingDirectory"`
 }
 
@@ -2222,36 +2233,31 @@ func (o ContainerInstanceContainerOutput) ToContainerInstanceContainerOutputWith
 	return o
 }
 
-// A list of additional capabilities for the container.
-func (o ContainerInstanceContainerOutput) AdditionalCapabilities() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v ContainerInstanceContainer) []string { return v.AdditionalCapabilities }).(pulumi.StringArrayOutput)
-}
-
-// A list of string arguments for a container's entrypoint process.
+// A list of string arguments for a container's ENTRYPOINT process.
 //
-// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+// Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
 //
-// All arguments together must be 64KB or smaller.
+// The total size of all arguments combined must be 64 KB or smaller.
 func (o ContainerInstanceContainerOutput) Arguments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) []string { return v.Arguments }).(pulumi.StringArrayOutput)
 }
 
-// Availability Domain where the ContainerInstance should be created.
+// The availability domain where the container instance runs.
 func (o ContainerInstanceContainerOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// The list of strings which will be concatenated to a single command for checking container's status.
+// The list of strings that will be simplified to a single command for checking the status of the container.
 func (o ContainerInstanceContainerOutput) Commands() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) []string { return v.Commands }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Compartment Identifier
+// (Updatable) The compartment OCID.
 func (o ContainerInstanceContainerOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// The ID of the Container on this Instance.
+// The OCID of the container.
 func (o ContainerInstanceContainerOutput) ContainerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.ContainerId }).(pulumi.StringPtrOutput)
 }
@@ -2260,7 +2266,7 @@ func (o ContainerInstanceContainerOutput) ContainerInstanceId() pulumi.StringPtr
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.ContainerInstanceId }).(pulumi.StringPtrOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 func (o ContainerInstanceContainerOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -2270,9 +2276,9 @@ func (o ContainerInstanceContainerOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+// A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 //
-// All environment variables together, name and values, must be 64KB or smaller.
+// The total size of all environment variables combined, name and values, must be 64 KB or smaller.
 func (o ContainerInstanceContainerOutput) EnvironmentVariables() pulumi.MapOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
 }
@@ -2281,7 +2287,7 @@ func (o ContainerInstanceContainerOutput) ExitCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *int { return v.ExitCode }).(pulumi.IntPtrOutput)
 }
 
-// Fault Domain where the ContainerInstance should run.
+// The fault domain where the container instance runs.
 func (o ContainerInstanceContainerOutput) FaultDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
@@ -2296,22 +2302,28 @@ func (o ContainerInstanceContainerOutput) HealthChecks() ContainerInstanceContai
 	return o.ApplyT(func(v ContainerInstanceContainer) []ContainerInstanceContainerHealthCheck { return v.HealthChecks }).(ContainerInstanceContainerHealthCheckArrayOutput)
 }
 
-// The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+// A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+//
+// If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+//
+// The registry used for container image must be reachable over the Container Instance's VNIC.
 func (o ContainerInstanceContainerOutput) ImageUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) string { return v.ImageUrl }).(pulumi.StringOutput)
 }
 
-// Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+// Determines if the container will have access to the container instance resource principal.
+//
+// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
 func (o ContainerInstanceContainerOutput) IsResourcePrincipalDisabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *bool { return v.IsResourcePrincipalDisabled }).(pulumi.BoolPtrOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 func (o ContainerInstanceContainerOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-// The size and amount of resources available to the Container.
+// The size and amount of resources available to the container.
 func (o ContainerInstanceContainerOutput) ResourceConfig() ContainerInstanceContainerResourceConfigPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *ContainerInstanceContainerResourceConfig { return v.ResourceConfig }).(ContainerInstanceContainerResourceConfigPtrOutput)
 }
@@ -2324,12 +2336,12 @@ func (o ContainerInstanceContainerOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 func (o ContainerInstanceContainerOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o ContainerInstanceContainerOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
@@ -2338,7 +2350,7 @@ func (o ContainerInstanceContainerOutput) TimeTerminated() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.TimeTerminated }).(pulumi.StringPtrOutput)
 }
 
-// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o ContainerInstanceContainerOutput) TimeUpdated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
@@ -2348,7 +2360,7 @@ func (o ContainerInstanceContainerOutput) VolumeMounts() ContainerInstanceContai
 	return o.ApplyT(func(v ContainerInstanceContainer) []ContainerInstanceContainerVolumeMount { return v.VolumeMounts }).(ContainerInstanceContainerVolumeMountArrayOutput)
 }
 
-// The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+// The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
 func (o ContainerInstanceContainerOutput) WorkingDirectory() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.WorkingDirectory }).(pulumi.StringPtrOutput)
 }
@@ -2374,13 +2386,13 @@ func (o ContainerInstanceContainerArrayOutput) Index(i pulumi.IntInput) Containe
 }
 
 type ContainerInstanceContainerHealthCheck struct {
-	// The list of strings which will be concatenated to a single command for checking container's status.
+	// The list of strings that will be simplified to a single command for checking the status of the container.
 	Commands []string `pulumi:"commands"`
 	// The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
 	FailureAction *string `pulumi:"failureAction"`
 	// Number of consecutive failures at which we consider the check failed.
 	FailureThreshold *int `pulumi:"failureThreshold"`
-	// Container health check Http's headers.
+	// Container health check HTTP headers.
 	Headers []ContainerInstanceContainerHealthCheckHeader `pulumi:"headers"`
 	// Container health check type.
 	HealthCheckType string `pulumi:"healthCheckType"`
@@ -2388,11 +2400,11 @@ type ContainerInstanceContainerHealthCheck struct {
 	InitialDelayInSeconds *int `pulumi:"initialDelayInSeconds"`
 	// Number of seconds between two consecutive runs for checking container health.
 	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name *string `pulumi:"name"`
 	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
 	Path *string `pulumi:"path"`
-	// Container health check Http's port.
+	// Container health check HTTP port.
 	Port          *int    `pulumi:"port"`
 	Status        *string `pulumi:"status"`
 	StatusDetails *string `pulumi:"statusDetails"`
@@ -2414,13 +2426,13 @@ type ContainerInstanceContainerHealthCheckInput interface {
 }
 
 type ContainerInstanceContainerHealthCheckArgs struct {
-	// The list of strings which will be concatenated to a single command for checking container's status.
+	// The list of strings that will be simplified to a single command for checking the status of the container.
 	Commands pulumi.StringArrayInput `pulumi:"commands"`
 	// The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
 	FailureAction pulumi.StringPtrInput `pulumi:"failureAction"`
 	// Number of consecutive failures at which we consider the check failed.
 	FailureThreshold pulumi.IntPtrInput `pulumi:"failureThreshold"`
-	// Container health check Http's headers.
+	// Container health check HTTP headers.
 	Headers ContainerInstanceContainerHealthCheckHeaderArrayInput `pulumi:"headers"`
 	// Container health check type.
 	HealthCheckType pulumi.StringInput `pulumi:"healthCheckType"`
@@ -2428,11 +2440,11 @@ type ContainerInstanceContainerHealthCheckArgs struct {
 	InitialDelayInSeconds pulumi.IntPtrInput `pulumi:"initialDelayInSeconds"`
 	// Number of seconds between two consecutive runs for checking container health.
 	IntervalInSeconds pulumi.IntPtrInput `pulumi:"intervalInSeconds"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
 	Path pulumi.StringPtrInput `pulumi:"path"`
-	// Container health check Http's port.
+	// Container health check HTTP port.
 	Port          pulumi.IntPtrInput    `pulumi:"port"`
 	Status        pulumi.StringPtrInput `pulumi:"status"`
 	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
@@ -2493,7 +2505,7 @@ func (o ContainerInstanceContainerHealthCheckOutput) ToContainerInstanceContaine
 	return o
 }
 
-// The list of strings which will be concatenated to a single command for checking container's status.
+// The list of strings that will be simplified to a single command for checking the status of the container.
 func (o ContainerInstanceContainerHealthCheckOutput) Commands() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) []string { return v.Commands }).(pulumi.StringArrayOutput)
 }
@@ -2508,7 +2520,7 @@ func (o ContainerInstanceContainerHealthCheckOutput) FailureThreshold() pulumi.I
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.FailureThreshold }).(pulumi.IntPtrOutput)
 }
 
-// Container health check Http's headers.
+// Container health check HTTP headers.
 func (o ContainerInstanceContainerHealthCheckOutput) Headers() ContainerInstanceContainerHealthCheckHeaderArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) []ContainerInstanceContainerHealthCheckHeader {
 		return v.Headers
@@ -2530,7 +2542,7 @@ func (o ContainerInstanceContainerHealthCheckOutput) IntervalInSeconds() pulumi.
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o ContainerInstanceContainerHealthCheckOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -2540,7 +2552,7 @@ func (o ContainerInstanceContainerHealthCheckOutput) Path() pulumi.StringPtrOutp
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
-// Container health check Http's port.
+// Container health check HTTP port.
 func (o ContainerInstanceContainerHealthCheckOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -2584,9 +2596,9 @@ func (o ContainerInstanceContainerHealthCheckArrayOutput) Index(i pulumi.IntInpu
 }
 
 type ContainerInstanceContainerHealthCheckHeader struct {
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name *string `pulumi:"name"`
-	// Container Http header value.
+	// Container HTTP header value.
 	Value *string `pulumi:"value"`
 }
 
@@ -2602,9 +2614,9 @@ type ContainerInstanceContainerHealthCheckHeaderInput interface {
 }
 
 type ContainerInstanceContainerHealthCheckHeaderArgs struct {
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Container Http header value.
+	// Container HTTP header value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2659,12 +2671,12 @@ func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToContainerInstanceCo
 	return o
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o ContainerInstanceContainerHealthCheckHeaderOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheckHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Container Http header value.
+// Container HTTP header value.
 func (o ContainerInstanceContainerHealthCheckHeaderOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheckHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2690,9 +2702,17 @@ func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) Index(i pulumi.I
 }
 
 type ContainerInstanceContainerResourceConfig struct {
-	// The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+	// The maximum amount of memory that can be consumed by the container's process.
+	//
+	// If you do not set a value, then the process may use all available memory on the instance.
 	MemoryLimitInGbs *float64 `pulumi:"memoryLimitInGbs"`
-	// The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+	// The maximum amount of CPUs that can be consumed by the container's process.
+	//
+	// If you do not set a value, then the process can use all available CPU resources on the instance.
+	//
+	// CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+	//
+	// A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
 	VcpusLimit *float64 `pulumi:"vcpusLimit"`
 }
 
@@ -2708,9 +2728,17 @@ type ContainerInstanceContainerResourceConfigInput interface {
 }
 
 type ContainerInstanceContainerResourceConfigArgs struct {
-	// The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+	// The maximum amount of memory that can be consumed by the container's process.
+	//
+	// If you do not set a value, then the process may use all available memory on the instance.
 	MemoryLimitInGbs pulumi.Float64PtrInput `pulumi:"memoryLimitInGbs"`
-	// The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+	// The maximum amount of CPUs that can be consumed by the container's process.
+	//
+	// If you do not set a value, then the process can use all available CPU resources on the instance.
+	//
+	// CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+	//
+	// A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
 	VcpusLimit pulumi.Float64PtrInput `pulumi:"vcpusLimit"`
 }
 
@@ -2791,12 +2819,20 @@ func (o ContainerInstanceContainerResourceConfigOutput) ToContainerInstanceConta
 	}).(ContainerInstanceContainerResourceConfigPtrOutput)
 }
 
-// The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+// The maximum amount of memory that can be consumed by the container's process.
+//
+// If you do not set a value, then the process may use all available memory on the instance.
 func (o ContainerInstanceContainerResourceConfigOutput) MemoryLimitInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerResourceConfig) *float64 { return v.MemoryLimitInGbs }).(pulumi.Float64PtrOutput)
 }
 
-// The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+// The maximum amount of CPUs that can be consumed by the container's process.
+//
+// If you do not set a value, then the process can use all available CPU resources on the instance.
+//
+// CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+//
+// A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
 func (o ContainerInstanceContainerResourceConfigOutput) VcpusLimit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerResourceConfig) *float64 { return v.VcpusLimit }).(pulumi.Float64PtrOutput)
 }
@@ -2825,7 +2861,9 @@ func (o ContainerInstanceContainerResourceConfigPtrOutput) Elem() ContainerInsta
 	}).(ContainerInstanceContainerResourceConfigOutput)
 }
 
-// The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+// The maximum amount of memory that can be consumed by the container's process.
+//
+// If you do not set a value, then the process may use all available memory on the instance.
 func (o ContainerInstanceContainerResourceConfigPtrOutput) MemoryLimitInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ContainerInstanceContainerResourceConfig) *float64 {
 		if v == nil {
@@ -2835,7 +2873,13 @@ func (o ContainerInstanceContainerResourceConfigPtrOutput) MemoryLimitInGbs() pu
 	}).(pulumi.Float64PtrOutput)
 }
 
-// The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+// The maximum amount of CPUs that can be consumed by the container's process.
+//
+// If you do not set a value, then the process can use all available CPU resources on the instance.
+//
+// CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+//
+// A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
 func (o ContainerInstanceContainerResourceConfigPtrOutput) VcpusLimit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ContainerInstanceContainerResourceConfig) *float64 {
 		if v == nil {
@@ -2846,15 +2890,15 @@ func (o ContainerInstanceContainerResourceConfigPtrOutput) VcpusLimit() pulumi.F
 }
 
 type ContainerInstanceContainerVolumeMount struct {
-	// Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+	// Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
 	IsReadOnly *bool `pulumi:"isReadOnly"`
-	// mountPath describes the volume access path.
+	// The volume access path.
 	MountPath string `pulumi:"mountPath"`
-	// If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+	// If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
 	Partition *int `pulumi:"partition"`
-	// specifies a sub-path inside the referenced volume instead of its root
+	// A subpath inside the referenced volume.
 	SubPath *string `pulumi:"subPath"`
-	// The name of the volume.
+	// The name of the volume. Avoid entering confidential information.
 	VolumeName string `pulumi:"volumeName"`
 }
 
@@ -2870,15 +2914,15 @@ type ContainerInstanceContainerVolumeMountInput interface {
 }
 
 type ContainerInstanceContainerVolumeMountArgs struct {
-	// Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+	// Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
 	IsReadOnly pulumi.BoolPtrInput `pulumi:"isReadOnly"`
-	// mountPath describes the volume access path.
+	// The volume access path.
 	MountPath pulumi.StringInput `pulumi:"mountPath"`
-	// If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+	// If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
 	Partition pulumi.IntPtrInput `pulumi:"partition"`
-	// specifies a sub-path inside the referenced volume instead of its root
+	// A subpath inside the referenced volume.
 	SubPath pulumi.StringPtrInput `pulumi:"subPath"`
-	// The name of the volume.
+	// The name of the volume. Avoid entering confidential information.
 	VolumeName pulumi.StringInput `pulumi:"volumeName"`
 }
 
@@ -2933,27 +2977,27 @@ func (o ContainerInstanceContainerVolumeMountOutput) ToContainerInstanceContaine
 	return o
 }
 
-// Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+// Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
 func (o ContainerInstanceContainerVolumeMountOutput) IsReadOnly() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) *bool { return v.IsReadOnly }).(pulumi.BoolPtrOutput)
 }
 
-// mountPath describes the volume access path.
+// The volume access path.
 func (o ContainerInstanceContainerVolumeMountOutput) MountPath() pulumi.StringOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) string { return v.MountPath }).(pulumi.StringOutput)
 }
 
-// If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+// If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
 func (o ContainerInstanceContainerVolumeMountOutput) Partition() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) *int { return v.Partition }).(pulumi.IntPtrOutput)
 }
 
-// specifies a sub-path inside the referenced volume instead of its root
+// A subpath inside the referenced volume.
 func (o ContainerInstanceContainerVolumeMountOutput) SubPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) *string { return v.SubPath }).(pulumi.StringPtrOutput)
 }
 
-// The name of the volume.
+// The name of the volume. Avoid entering confidential information.
 func (o ContainerInstanceContainerVolumeMountOutput) VolumeName() pulumi.StringOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerVolumeMount) string { return v.VolumeName }).(pulumi.StringOutput)
 }
@@ -2979,9 +3023,9 @@ func (o ContainerInstanceContainerVolumeMountArrayOutput) Index(i pulumi.IntInpu
 }
 
 type ContainerInstanceDnsConfig struct {
-	// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+	// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
 	Nameservers []string `pulumi:"nameservers"`
-	// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+	// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
 	Options []string `pulumi:"options"`
 	// Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
 	Searches []string `pulumi:"searches"`
@@ -2999,9 +3043,9 @@ type ContainerInstanceDnsConfigInput interface {
 }
 
 type ContainerInstanceDnsConfigArgs struct {
-	// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+	// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
 	Nameservers pulumi.StringArrayInput `pulumi:"nameservers"`
-	// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+	// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
 	Options pulumi.StringArrayInput `pulumi:"options"`
 	// Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
 	Searches pulumi.StringArrayInput `pulumi:"searches"`
@@ -3084,12 +3128,12 @@ func (o ContainerInstanceDnsConfigOutput) ToContainerInstanceDnsConfigPtrOutputW
 	}).(ContainerInstanceDnsConfigPtrOutput)
 }
 
-// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
 func (o ContainerInstanceDnsConfigOutput) Nameservers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceDnsConfig) []string { return v.Nameservers }).(pulumi.StringArrayOutput)
 }
 
-// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
 func (o ContainerInstanceDnsConfigOutput) Options() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceDnsConfig) []string { return v.Options }).(pulumi.StringArrayOutput)
 }
@@ -3123,7 +3167,7 @@ func (o ContainerInstanceDnsConfigPtrOutput) Elem() ContainerInstanceDnsConfigOu
 	}).(ContainerInstanceDnsConfigOutput)
 }
 
-// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
 func (o ContainerInstanceDnsConfigPtrOutput) Nameservers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ContainerInstanceDnsConfig) []string {
 		if v == nil {
@@ -3133,7 +3177,7 @@ func (o ContainerInstanceDnsConfigPtrOutput) Nameservers() pulumi.StringArrayOut
 	}).(pulumi.StringArrayOutput)
 }
 
-// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
 func (o ContainerInstanceDnsConfigPtrOutput) Options() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ContainerInstanceDnsConfig) []string {
 		if v == nil {
@@ -3287,13 +3331,13 @@ func (o ContainerInstanceImagePullSecretArrayOutput) Index(i pulumi.IntInput) Co
 }
 
 type ContainerInstanceShapeConfig struct {
-	// The total amount of memory available to the instance, in gigabytes.
+	// The total amount of memory available to the container instance (GB).
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
-	// The networking bandwidth available to the instance, in gigabits per second.
+	// The networking bandwidth available to the container instance, in gigabits per second.
 	NetworkingBandwidthInGbps *float64 `pulumi:"networkingBandwidthInGbps"`
-	// The total number of OCPUs available to the instance.
+	// The total number of OCPUs available to the container instance.
 	Ocpus float64 `pulumi:"ocpus"`
-	// A short description of the instance's processor (CPU).
+	// A short description of the container instance's processor (CPU).
 	ProcessorDescription *string `pulumi:"processorDescription"`
 }
 
@@ -3309,13 +3353,13 @@ type ContainerInstanceShapeConfigInput interface {
 }
 
 type ContainerInstanceShapeConfigArgs struct {
-	// The total amount of memory available to the instance, in gigabytes.
+	// The total amount of memory available to the container instance (GB).
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
-	// The networking bandwidth available to the instance, in gigabits per second.
+	// The networking bandwidth available to the container instance, in gigabits per second.
 	NetworkingBandwidthInGbps pulumi.Float64PtrInput `pulumi:"networkingBandwidthInGbps"`
-	// The total number of OCPUs available to the instance.
+	// The total number of OCPUs available to the container instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// A short description of the instance's processor (CPU).
+	// A short description of the container instance's processor (CPU).
 	ProcessorDescription pulumi.StringPtrInput `pulumi:"processorDescription"`
 }
 
@@ -3396,22 +3440,22 @@ func (o ContainerInstanceShapeConfigOutput) ToContainerInstanceShapeConfigPtrOut
 	}).(ContainerInstanceShapeConfigPtrOutput)
 }
 
-// The total amount of memory available to the instance, in gigabytes.
+// The total amount of memory available to the container instance (GB).
 func (o ContainerInstanceShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ContainerInstanceShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
-// The networking bandwidth available to the instance, in gigabits per second.
+// The networking bandwidth available to the container instance, in gigabits per second.
 func (o ContainerInstanceShapeConfigOutput) NetworkingBandwidthInGbps() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ContainerInstanceShapeConfig) *float64 { return v.NetworkingBandwidthInGbps }).(pulumi.Float64PtrOutput)
 }
 
-// The total number of OCPUs available to the instance.
+// The total number of OCPUs available to the container instance.
 func (o ContainerInstanceShapeConfigOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v ContainerInstanceShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
 }
 
-// A short description of the instance's processor (CPU).
+// A short description of the container instance's processor (CPU).
 func (o ContainerInstanceShapeConfigOutput) ProcessorDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceShapeConfig) *string { return v.ProcessorDescription }).(pulumi.StringPtrOutput)
 }
@@ -3440,7 +3484,7 @@ func (o ContainerInstanceShapeConfigPtrOutput) Elem() ContainerInstanceShapeConf
 	}).(ContainerInstanceShapeConfigOutput)
 }
 
-// The total amount of memory available to the instance, in gigabytes.
+// The total amount of memory available to the container instance (GB).
 func (o ContainerInstanceShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ContainerInstanceShapeConfig) *float64 {
 		if v == nil {
@@ -3450,7 +3494,7 @@ func (o ContainerInstanceShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOu
 	}).(pulumi.Float64PtrOutput)
 }
 
-// The networking bandwidth available to the instance, in gigabits per second.
+// The networking bandwidth available to the container instance, in gigabits per second.
 func (o ContainerInstanceShapeConfigPtrOutput) NetworkingBandwidthInGbps() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ContainerInstanceShapeConfig) *float64 {
 		if v == nil {
@@ -3460,7 +3504,7 @@ func (o ContainerInstanceShapeConfigPtrOutput) NetworkingBandwidthInGbps() pulum
 	}).(pulumi.Float64PtrOutput)
 }
 
-// The total number of OCPUs available to the instance.
+// The total number of OCPUs available to the container instance.
 func (o ContainerInstanceShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ContainerInstanceShapeConfig) *float64 {
 		if v == nil {
@@ -3470,7 +3514,7 @@ func (o ContainerInstanceShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
-// A short description of the instance's processor (CPU).
+// A short description of the container instance's processor (CPU).
 func (o ContainerInstanceShapeConfigPtrOutput) ProcessorDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ContainerInstanceShapeConfig) *string {
 		if v == nil {
@@ -3481,13 +3525,13 @@ func (o ContainerInstanceShapeConfigPtrOutput) ProcessorDescription() pulumi.Str
 }
 
 type ContainerInstanceVnic struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The hostname for the VNIC's primary private IP.
+	// The hostname for the VNIC's primary private IP. Used for DNS.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// Whether the VNIC should be assigned a public IP address.
 	IsPublicIpAssigned *bool `pulumi:"isPublicIpAssigned"`
@@ -3499,7 +3543,7 @@ type ContainerInstanceVnic struct {
 	SkipSourceDestCheck *bool `pulumi:"skipSourceDestCheck"`
 	// The OCID of the subnet to create the VNIC in.
 	SubnetId string `pulumi:"subnetId"`
-	// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+	// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 	VnicId *string `pulumi:"vnicId"`
 }
 
@@ -3515,13 +3559,13 @@ type ContainerInstanceVnicInput interface {
 }
 
 type ContainerInstanceVnicArgs struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The hostname for the VNIC's primary private IP.
+	// The hostname for the VNIC's primary private IP. Used for DNS.
 	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// Whether the VNIC should be assigned a public IP address.
 	IsPublicIpAssigned pulumi.BoolPtrInput `pulumi:"isPublicIpAssigned"`
@@ -3533,7 +3577,7 @@ type ContainerInstanceVnicArgs struct {
 	SkipSourceDestCheck pulumi.BoolPtrInput `pulumi:"skipSourceDestCheck"`
 	// The OCID of the subnet to create the VNIC in.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+	// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 	VnicId pulumi.StringPtrInput `pulumi:"vnicId"`
 }
 
@@ -3588,7 +3632,7 @@ func (o ContainerInstanceVnicOutput) ToContainerInstanceVnicOutputWithContext(ct
 	return o
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 func (o ContainerInstanceVnicOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v ContainerInstanceVnic) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -3603,7 +3647,7 @@ func (o ContainerInstanceVnicOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v ContainerInstanceVnic) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The hostname for the VNIC's primary private IP.
+// The hostname for the VNIC's primary private IP. Used for DNS.
 func (o ContainerInstanceVnicOutput) HostnameLabel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceVnic) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
@@ -3633,7 +3677,7 @@ func (o ContainerInstanceVnicOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v ContainerInstanceVnic) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 func (o ContainerInstanceVnicOutput) VnicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceVnic) *string { return v.VnicId }).(pulumi.StringPtrOutput)
 }
@@ -3659,11 +3703,11 @@ func (o ContainerInstanceVnicArrayOutput) Index(i pulumi.IntInput) ContainerInst
 }
 
 type ContainerInstanceVolume struct {
-	// Volume type that we are using for empty dir where it could be either File Storage or Memory
+	// The volume type of the empty directory, can be either File Storage or Memory.
 	BackingStore *string `pulumi:"backingStore"`
 	// Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
 	Configs []ContainerInstanceVolumeConfig `pulumi:"configs"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name string `pulumi:"name"`
 	// The type of volume.
 	VolumeType string `pulumi:"volumeType"`
@@ -3681,11 +3725,11 @@ type ContainerInstanceVolumeInput interface {
 }
 
 type ContainerInstanceVolumeArgs struct {
-	// Volume type that we are using for empty dir where it could be either File Storage or Memory
+	// The volume type of the empty directory, can be either File Storage or Memory.
 	BackingStore pulumi.StringPtrInput `pulumi:"backingStore"`
 	// Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
 	Configs ContainerInstanceVolumeConfigArrayInput `pulumi:"configs"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The type of volume.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
@@ -3742,7 +3786,7 @@ func (o ContainerInstanceVolumeOutput) ToContainerInstanceVolumeOutputWithContex
 	return o
 }
 
-// Volume type that we are using for empty dir where it could be either File Storage or Memory
+// The volume type of the empty directory, can be either File Storage or Memory.
 func (o ContainerInstanceVolumeOutput) BackingStore() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceVolume) *string { return v.BackingStore }).(pulumi.StringPtrOutput)
 }
@@ -3752,7 +3796,7 @@ func (o ContainerInstanceVolumeOutput) Configs() ContainerInstanceVolumeConfigAr
 	return o.ApplyT(func(v ContainerInstanceVolume) []ContainerInstanceVolumeConfig { return v.Configs }).(ContainerInstanceVolumeConfigArrayOutput)
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o ContainerInstanceVolumeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v ContainerInstanceVolume) string { return v.Name }).(pulumi.StringOutput)
 }

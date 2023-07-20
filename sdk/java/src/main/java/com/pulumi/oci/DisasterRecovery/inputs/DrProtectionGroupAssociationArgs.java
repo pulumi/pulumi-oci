@@ -16,14 +16,14 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
     public static final DrProtectionGroupAssociationArgs Empty = new DrProtectionGroupAssociationArgs();
 
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="peerId")
     private @Nullable Output<String> peerId;
 
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> peerId() {
@@ -87,7 +87,7 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 

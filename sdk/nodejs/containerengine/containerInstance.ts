@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
  *
- * Creates a new ContainerInstance.
+ * Creates a container instance and deploys the containers on it.
  *
  * ## Example Usage
  *
@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     containers: [{
  *         imageUrl: _var.container_instance_containers_image_url,
- *         additionalCapabilities: _var.container_instance_containers_additional_capabilities,
  *         arguments: _var.container_instance_containers_arguments,
  *         commands: _var.container_instance_containers_command,
  *         definedTags: _var.container_instance_containers_defined_tags,
@@ -148,15 +147,15 @@ export class ContainerInstance extends pulumi.CustomResource {
     }
 
     /**
-     * Availability Domain where the ContainerInstance should be created.
+     * The availability domain where the container instance runs.
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment OCID.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The number of containers on this Instance
+     * The number of containers on the container instance.
      */
     public /*out*/ readonly containerCount!: pulumi.Output<number>;
     /**
@@ -164,11 +163,11 @@ export class ContainerInstance extends pulumi.CustomResource {
      */
     public readonly containerRestartPolicy!: pulumi.Output<string>;
     /**
-     * The Containers to create on this Instance.
+     * The containers to create on this container instance.
      */
     public readonly containers!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceContainer[]>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -176,11 +175,11 @@ export class ContainerInstance extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+     * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      */
     public readonly dnsConfig!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceDnsConfig>;
     /**
-     * Fault Domain where the ContainerInstance should run.
+     * The fault domain where the container instance runs.
      */
     public readonly faultDomain!: pulumi.Output<string>;
     /**
@@ -188,23 +187,23 @@ export class ContainerInstance extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      */
     public readonly gracefulShutdownTimeoutInSeconds!: pulumi.Output<string>;
     /**
-     * The image pull secrets for accessing private registry to pull images for containers
+     * The image pulls secrets so you can access private registry to pull container images.
      */
     public readonly imagePullSecrets!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceImagePullSecret[]>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * The shape of the container instance. The shape determines the resources available to the container instance.
      */
     public readonly shape!: pulumi.Output<string>;
     /**
-     * The size and amount of resources available to the Container Instance.
+     * The size and amount of resources available to the container instance.
      */
     public readonly shapeConfig!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceShapeConfig>;
     /**
@@ -216,27 +215,29 @@ export class ContainerInstance extends pulumi.CustomResource {
      */
     public readonly state!: pulumi.Output<string>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * The networks to make available to containers on this Instance.
+     * The networks available to containers on this container instance.
      */
     public readonly vnics!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceVnic[]>;
     /**
-     * The number of volumes that attached to this Instance
+     * The number of volumes that are attached to the container instance.
      */
     public /*out*/ readonly volumeCount!: pulumi.Output<number>;
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+     * A volume is a directory with data that is accessible across multiple containers in a container instance.
+     *
+     * You can attach up to 32 volumes to single container instance.
      */
     public readonly volumes!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceVolume[]>;
 
@@ -328,15 +329,15 @@ export class ContainerInstance extends pulumi.CustomResource {
  */
 export interface ContainerInstanceState {
     /**
-     * Availability Domain where the ContainerInstance should be created.
+     * The availability domain where the container instance runs.
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment OCID.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The number of containers on this Instance
+     * The number of containers on the container instance.
      */
     containerCount?: pulumi.Input<number>;
     /**
@@ -344,11 +345,11 @@ export interface ContainerInstanceState {
      */
     containerRestartPolicy?: pulumi.Input<string>;
     /**
-     * The Containers to create on this Instance.
+     * The containers to create on this container instance.
      */
     containers?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainer>[]>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -356,11 +357,11 @@ export interface ContainerInstanceState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+     * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      */
     dnsConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceDnsConfig>;
     /**
-     * Fault Domain where the ContainerInstance should run.
+     * The fault domain where the container instance runs.
      */
     faultDomain?: pulumi.Input<string>;
     /**
@@ -368,23 +369,23 @@ export interface ContainerInstanceState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      */
     gracefulShutdownTimeoutInSeconds?: pulumi.Input<string>;
     /**
-     * The image pull secrets for accessing private registry to pull images for containers
+     * The image pulls secrets so you can access private registry to pull container images.
      */
     imagePullSecrets?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceImagePullSecret>[]>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * The shape of the container instance. The shape determines the resources available to the container instance.
      */
     shape?: pulumi.Input<string>;
     /**
-     * The size and amount of resources available to the Container Instance.
+     * The size and amount of resources available to the container instance.
      */
     shapeConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceShapeConfig>;
     /**
@@ -396,27 +397,29 @@ export interface ContainerInstanceState {
      */
     state?: pulumi.Input<string>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * The networks to make available to containers on this Instance.
+     * The networks available to containers on this container instance.
      */
     vnics?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVnic>[]>;
     /**
-     * The number of volumes that attached to this Instance
+     * The number of volumes that are attached to the container instance.
      */
     volumeCount?: pulumi.Input<number>;
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+     * A volume is a directory with data that is accessible across multiple containers in a container instance.
+     *
+     * You can attach up to 32 volumes to single container instance.
      */
     volumes?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVolume>[]>;
 }
@@ -426,11 +429,11 @@ export interface ContainerInstanceState {
  */
 export interface ContainerInstanceArgs {
     /**
-     * Availability Domain where the ContainerInstance should be created.
+     * The availability domain where the container instance runs.
      */
     availabilityDomain: pulumi.Input<string>;
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment OCID.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -438,11 +441,11 @@ export interface ContainerInstanceArgs {
      */
     containerRestartPolicy?: pulumi.Input<string>;
     /**
-     * The Containers to create on this Instance.
+     * The containers to create on this container instance.
      */
     containers: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainer>[]>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -450,11 +453,11 @@ export interface ContainerInstanceArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+     * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      */
     dnsConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceDnsConfig>;
     /**
-     * Fault Domain where the ContainerInstance should run.
+     * The fault domain where the container instance runs.
      */
     faultDomain?: pulumi.Input<string>;
     /**
@@ -462,19 +465,19 @@ export interface ContainerInstanceArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      */
     gracefulShutdownTimeoutInSeconds?: pulumi.Input<string>;
     /**
-     * The image pull secrets for accessing private registry to pull images for containers
+     * The image pulls secrets so you can access private registry to pull container images.
      */
     imagePullSecrets?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceImagePullSecret>[]>;
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * The shape of the container instance. The shape determines the resources available to the container instance.
      */
     shape: pulumi.Input<string>;
     /**
-     * The size and amount of resources available to the Container Instance.
+     * The size and amount of resources available to the container instance.
      */
     shapeConfig: pulumi.Input<inputs.ContainerEngine.ContainerInstanceShapeConfig>;
     /**
@@ -486,11 +489,13 @@ export interface ContainerInstanceArgs {
      */
     state?: pulumi.Input<string>;
     /**
-     * The networks to make available to containers on this Instance.
+     * The networks available to containers on this container instance.
      */
     vnics: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVnic>[]>;
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+     * A volume is a directory with data that is accessible across multiple containers in a container instance.
+     *
+     * You can attach up to 32 volumes to single container instance.
      */
     volumes?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVolume>[]>;
 }

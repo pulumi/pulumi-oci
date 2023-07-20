@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetLetterOfAuthority(ctx *pulumi.Context, args *GetLetterOfAuthorityArgs, opts ...pulumi.InvokeOption) (*GetLetterOfAuthorityResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLetterOfAuthorityResult
 	err := ctx.Invoke("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args, &rv, opts...)
 	if err != nil {

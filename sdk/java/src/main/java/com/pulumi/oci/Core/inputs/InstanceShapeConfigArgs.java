@@ -201,6 +201,21 @@ public final class InstanceShapeConfigArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.processorDescription);
     }
 
+    /**
+     * (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+     * 
+     */
+    @Import(name="vcpus")
+    private @Nullable Output<Integer> vcpus;
+
+    /**
+     * @return (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+     * 
+     */
+    public Optional<Output<Integer>> vcpus() {
+        return Optional.ofNullable(this.vcpus);
+    }
+
     private InstanceShapeConfigArgs() {}
 
     private InstanceShapeConfigArgs(InstanceShapeConfigArgs $) {
@@ -216,6 +231,7 @@ public final class InstanceShapeConfigArgs extends com.pulumi.resources.Resource
         this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
         this.processorDescription = $.processorDescription;
+        this.vcpus = $.vcpus;
     }
 
     public static Builder builder() {
@@ -490,6 +506,27 @@ public final class InstanceShapeConfigArgs extends com.pulumi.resources.Resource
          */
         public Builder processorDescription(String processorDescription) {
             return processorDescription(Output.of(processorDescription));
+        }
+
+        /**
+         * @param vcpus (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vcpus(@Nullable Output<Integer> vcpus) {
+            $.vcpus = vcpus;
+            return this;
+        }
+
+        /**
+         * @param vcpus (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vcpus(Integer vcpus) {
+            return vcpus(Output.of(vcpus));
         }
 
         public InstanceShapeConfigArgs build() {

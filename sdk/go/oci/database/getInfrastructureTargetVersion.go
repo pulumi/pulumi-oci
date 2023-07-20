@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetInfrastructureTargetVersion(ctx *pulumi.Context, args *GetInfrastructureTargetVersionArgs, opts ...pulumi.InvokeOption) (*GetInfrastructureTargetVersionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInfrastructureTargetVersionResult
 	err := ctx.Invoke("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args, &rv, opts...)
 	if err != nil {

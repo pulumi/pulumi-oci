@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -86,6 +87,7 @@ func NewLogAnalyticsImportCustomContent(ctx *pulumi.Context,
 	if args.Namespace == nil {
 		return nil, errors.New("invalid value for required argument 'Namespace'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogAnalyticsImportCustomContent
 	err := ctx.RegisterResource("oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent", name, args, &resource, opts...)
 	if err != nil {

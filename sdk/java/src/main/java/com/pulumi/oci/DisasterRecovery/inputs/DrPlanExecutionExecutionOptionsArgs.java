@@ -17,14 +17,14 @@ public final class DrPlanExecutionExecutionOptionsArgs extends com.pulumi.resour
     public static final DrPlanExecutionExecutionOptionsArgs Empty = new DrPlanExecutionExecutionOptionsArgs();
 
     /**
-     * A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+     * A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
      * 
      */
     @Import(name="arePrechecksEnabled")
     private @Nullable Output<Boolean> arePrechecksEnabled;
 
     /**
-     * @return A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+     * @return A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
      * 
      */
     public Optional<Output<Boolean>> arePrechecksEnabled() {
@@ -32,14 +32,14 @@ public final class DrPlanExecutionExecutionOptionsArgs extends com.pulumi.resour
     }
 
     /**
-     * A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+     * A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
      * 
      */
     @Import(name="areWarningsIgnored")
     private @Nullable Output<Boolean> areWarningsIgnored;
 
     /**
-     * @return A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+     * @return A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
      * 
      */
     public Optional<Output<Boolean>> areWarningsIgnored() {
@@ -88,7 +88,7 @@ public final class DrPlanExecutionExecutionOptionsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param arePrechecksEnabled A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+         * @param arePrechecksEnabled A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DrPlanExecutionExecutionOptionsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param arePrechecksEnabled A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+         * @param arePrechecksEnabled A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class DrPlanExecutionExecutionOptionsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param areWarningsIgnored A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+         * @param areWarningsIgnored A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DrPlanExecutionExecutionOptionsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param areWarningsIgnored A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+         * @param areWarningsIgnored A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
          * 
          * @return builder
          * 

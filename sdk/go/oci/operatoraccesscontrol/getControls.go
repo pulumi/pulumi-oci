@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetControls(ctx *pulumi.Context, args *GetControlsArgs, opts ...pulumi.InvokeOption) (*GetControlsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetControlsResult
 	err := ctx.Invoke("oci:OperatorAccessControl/getControls:getControls", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,6 +30,21 @@ public final class ExportExportOptionArgs extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<String>> access() {
         return Optional.ofNullable(this.access);
+    }
+
+    /**
+     * (Updatable) Array of allowed NFS authentication types.
+     * 
+     */
+    @Import(name="allowedAuths")
+    private @Nullable Output<List<String>> allowedAuths;
+
+    /**
+     * @return (Updatable) Array of allowed NFS authentication types.
+     * 
+     */
+    public Optional<Output<List<String>>> allowedAuths() {
+        return Optional.ofNullable(this.allowedAuths);
     }
 
     /**
@@ -77,6 +93,21 @@ public final class ExportExportOptionArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn&#39;t found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+     * 
+     */
+    @Import(name="isAnonymousAccessAllowed")
+    private @Nullable Output<Boolean> isAnonymousAccessAllowed;
+
+    /**
+     * @return (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn&#39;t found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+     * 
+     */
+    public Optional<Output<Boolean>> isAnonymousAccessAllowed() {
+        return Optional.ofNullable(this.isAnonymousAccessAllowed);
+    }
+
+    /**
      * (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
      * 
      */
@@ -114,9 +145,11 @@ public final class ExportExportOptionArgs extends com.pulumi.resources.ResourceA
 
     private ExportExportOptionArgs(ExportExportOptionArgs $) {
         this.access = $.access;
+        this.allowedAuths = $.allowedAuths;
         this.anonymousGid = $.anonymousGid;
         this.anonymousUid = $.anonymousUid;
         this.identitySquash = $.identitySquash;
+        this.isAnonymousAccessAllowed = $.isAnonymousAccessAllowed;
         this.requirePrivilegedSourcePort = $.requirePrivilegedSourcePort;
         this.source = $.source;
     }
@@ -158,6 +191,37 @@ public final class ExportExportOptionArgs extends com.pulumi.resources.ResourceA
          */
         public Builder access(String access) {
             return access(Output.of(access));
+        }
+
+        /**
+         * @param allowedAuths (Updatable) Array of allowed NFS authentication types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedAuths(@Nullable Output<List<String>> allowedAuths) {
+            $.allowedAuths = allowedAuths;
+            return this;
+        }
+
+        /**
+         * @param allowedAuths (Updatable) Array of allowed NFS authentication types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedAuths(List<String> allowedAuths) {
+            return allowedAuths(Output.of(allowedAuths));
+        }
+
+        /**
+         * @param allowedAuths (Updatable) Array of allowed NFS authentication types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedAuths(String... allowedAuths) {
+            return allowedAuths(List.of(allowedAuths));
         }
 
         /**
@@ -221,6 +285,27 @@ public final class ExportExportOptionArgs extends com.pulumi.resources.ResourceA
          */
         public Builder identitySquash(String identitySquash) {
             return identitySquash(Output.of(identitySquash));
+        }
+
+        /**
+         * @param isAnonymousAccessAllowed (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn&#39;t found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAnonymousAccessAllowed(@Nullable Output<Boolean> isAnonymousAccessAllowed) {
+            $.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
+            return this;
+        }
+
+        /**
+         * @param isAnonymousAccessAllowed (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn&#39;t found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAnonymousAccessAllowed(Boolean isAnonymousAccessAllowed) {
+            return isAnonymousAccessAllowed(Output.of(isAnonymousAccessAllowed));
         }
 
         /**

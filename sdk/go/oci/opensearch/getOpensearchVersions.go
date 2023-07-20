@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -65,6 +66,7 @@ import (
 //
 // ```
 func GetOpensearchVersions(ctx *pulumi.Context, args *GetOpensearchVersionsArgs, opts ...pulumi.InvokeOption) (*GetOpensearchVersionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOpensearchVersionsResult
 	err := ctx.Invoke("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", args, &rv, opts...)
 	if err != nil {

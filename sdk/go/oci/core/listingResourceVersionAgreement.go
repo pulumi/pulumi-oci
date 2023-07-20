@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,6 +36,7 @@ func NewListingResourceVersionAgreement(ctx *pulumi.Context,
 	if args.ListingResourceVersion == nil {
 		return nil, errors.New("invalid value for required argument 'ListingResourceVersion'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ListingResourceVersionAgreement
 	err := ctx.RegisterResource("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement", name, args, &resource, opts...)
 	if err != nil {

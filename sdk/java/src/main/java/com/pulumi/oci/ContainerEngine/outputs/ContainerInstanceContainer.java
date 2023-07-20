@@ -20,42 +20,37 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceContainer {
     /**
-     * @return A list of additional capabilities for the container.
+     * @return A list of string arguments for a container&#39;s ENTRYPOINT process.
      * 
-     */
-    private @Nullable List<String> additionalCapabilities;
-    /**
-     * @return A list of string arguments for a container&#39;s entrypoint process.
+     * Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
      * 
-     * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
-     * 
-     * All arguments together must be 64KB or smaller.
+     * The total size of all arguments combined must be 64 KB or smaller.
      * 
      */
     private @Nullable List<String> arguments;
     /**
-     * @return Availability Domain where the ContainerInstance should be created.
+     * @return The availability domain where the container instance runs.
      * 
      */
     private @Nullable String availabilityDomain;
     /**
-     * @return The list of strings which will be concatenated to a single command for checking container&#39;s status.
+     * @return The list of strings that will be simplified to a single command for checking the status of the container.
      * 
      */
     private @Nullable List<String> commands;
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The compartment OCID.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return The ID of the Container on this Instance.
+     * @return The OCID of the container.
      * 
      */
     private @Nullable String containerId;
     private @Nullable String containerInstanceId;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     private @Nullable Map<String,Object> definedTags;
@@ -65,15 +60,15 @@ public final class ContainerInstanceContainer {
      */
     private @Nullable String displayName;
     /**
-     * @return A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+     * @return A map of additional environment variables to set in the environment of the container&#39;s ENTRYPOINT process. These variables are in addition to any variables already defined in the container&#39;s image.
      * 
-     * All environment variables together, name and values, must be 64KB or smaller.
+     * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
      * 
      */
     private @Nullable Map<String,Object> environmentVariables;
     private @Nullable Integer exitCode;
     /**
-     * @return Fault Domain where the ContainerInstance should run.
+     * @return The fault domain where the container instance runs.
      * 
      */
     private @Nullable String faultDomain;
@@ -88,22 +83,28 @@ public final class ContainerInstanceContainer {
      */
     private @Nullable List<ContainerInstanceContainerHealthCheck> healthChecks;
     /**
-     * @return The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
+     * @return A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+     * 
+     * If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+     * 
+     * The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
      * 
      */
     private String imageUrl;
     /**
-     * @return Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+     * @return Determines if the container will have access to the container instance resource principal.
+     * 
+     * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      * 
      */
     private @Nullable Boolean isResourcePrincipalDisabled;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return The size and amount of resources available to the Container.
+     * @return The size and amount of resources available to the container.
      * 
      */
     private @Nullable ContainerInstanceContainerResourceConfig resourceConfig;
@@ -116,18 +117,18 @@ public final class ContainerInstanceContainer {
      */
     private @Nullable String state;
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     private @Nullable Map<String,Object> systemTags;
     /**
-     * @return The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private @Nullable String timeCreated;
     private @Nullable String timeTerminated;
     /**
-     * @return The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private @Nullable String timeUpdated;
@@ -137,53 +138,46 @@ public final class ContainerInstanceContainer {
      */
     private @Nullable List<ContainerInstanceContainerVolumeMount> volumeMounts;
     /**
-     * @return The working directory within the Container&#39;s filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+     * @return The working directory within the container&#39;s filesystem for the container process. If not specified, the default working directory from the image is used.
      * 
      */
     private @Nullable String workingDirectory;
 
     private ContainerInstanceContainer() {}
     /**
-     * @return A list of additional capabilities for the container.
+     * @return A list of string arguments for a container&#39;s ENTRYPOINT process.
      * 
-     */
-    public List<String> additionalCapabilities() {
-        return this.additionalCapabilities == null ? List.of() : this.additionalCapabilities;
-    }
-    /**
-     * @return A list of string arguments for a container&#39;s entrypoint process.
+     * Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
      * 
-     * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
-     * 
-     * All arguments together must be 64KB or smaller.
+     * The total size of all arguments combined must be 64 KB or smaller.
      * 
      */
     public List<String> arguments() {
         return this.arguments == null ? List.of() : this.arguments;
     }
     /**
-     * @return Availability Domain where the ContainerInstance should be created.
+     * @return The availability domain where the container instance runs.
      * 
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return The list of strings which will be concatenated to a single command for checking container&#39;s status.
+     * @return The list of strings that will be simplified to a single command for checking the status of the container.
      * 
      */
     public List<String> commands() {
         return this.commands == null ? List.of() : this.commands;
     }
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The compartment OCID.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return The ID of the Container on this Instance.
+     * @return The OCID of the container.
      * 
      */
     public Optional<String> containerId() {
@@ -193,7 +187,7 @@ public final class ContainerInstanceContainer {
         return Optional.ofNullable(this.containerInstanceId);
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Map<String,Object> definedTags() {
@@ -207,9 +201,9 @@ public final class ContainerInstanceContainer {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+     * @return A map of additional environment variables to set in the environment of the container&#39;s ENTRYPOINT process. These variables are in addition to any variables already defined in the container&#39;s image.
      * 
-     * All environment variables together, name and values, must be 64KB or smaller.
+     * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
      * 
      */
     public Map<String,Object> environmentVariables() {
@@ -219,7 +213,7 @@ public final class ContainerInstanceContainer {
         return Optional.ofNullable(this.exitCode);
     }
     /**
-     * @return Fault Domain where the ContainerInstance should run.
+     * @return The fault domain where the container instance runs.
      * 
      */
     public Optional<String> faultDomain() {
@@ -240,28 +234,34 @@ public final class ContainerInstanceContainer {
         return this.healthChecks == null ? List.of() : this.healthChecks;
     }
     /**
-     * @return The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
+     * @return A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+     * 
+     * If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+     * 
+     * The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
      * 
      */
     public String imageUrl() {
         return this.imageUrl;
     }
     /**
-     * @return Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+     * @return Determines if the container will have access to the container instance resource principal.
+     * 
+     * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      * 
      */
     public Optional<Boolean> isResourcePrincipalDisabled() {
         return Optional.ofNullable(this.isResourcePrincipalDisabled);
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     public Optional<String> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return The size and amount of resources available to the Container.
+     * @return The size and amount of resources available to the container.
      * 
      */
     public Optional<ContainerInstanceContainerResourceConfig> resourceConfig() {
@@ -278,14 +278,14 @@ public final class ContainerInstanceContainer {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     public Map<String,Object> systemTags() {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
-     * @return The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public Optional<String> timeCreated() {
@@ -295,7 +295,7 @@ public final class ContainerInstanceContainer {
         return Optional.ofNullable(this.timeTerminated);
     }
     /**
-     * @return The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public Optional<String> timeUpdated() {
@@ -309,7 +309,7 @@ public final class ContainerInstanceContainer {
         return this.volumeMounts == null ? List.of() : this.volumeMounts;
     }
     /**
-     * @return The working directory within the Container&#39;s filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+     * @return The working directory within the container&#39;s filesystem for the container process. If not specified, the default working directory from the image is used.
      * 
      */
     public Optional<String> workingDirectory() {
@@ -325,7 +325,6 @@ public final class ContainerInstanceContainer {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable List<String> additionalCapabilities;
         private @Nullable List<String> arguments;
         private @Nullable String availabilityDomain;
         private @Nullable List<String> commands;
@@ -353,7 +352,6 @@ public final class ContainerInstanceContainer {
         public Builder() {}
         public Builder(ContainerInstanceContainer defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.additionalCapabilities = defaults.additionalCapabilities;
     	      this.arguments = defaults.arguments;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.commands = defaults.commands;
@@ -380,14 +378,6 @@ public final class ContainerInstanceContainer {
     	      this.workingDirectory = defaults.workingDirectory;
         }
 
-        @CustomType.Setter
-        public Builder additionalCapabilities(@Nullable List<String> additionalCapabilities) {
-            this.additionalCapabilities = additionalCapabilities;
-            return this;
-        }
-        public Builder additionalCapabilities(String... additionalCapabilities) {
-            return additionalCapabilities(List.of(additionalCapabilities));
-        }
         @CustomType.Setter
         public Builder arguments(@Nullable List<String> arguments) {
             this.arguments = arguments;
@@ -522,7 +512,6 @@ public final class ContainerInstanceContainer {
         }
         public ContainerInstanceContainer build() {
             final var o = new ContainerInstanceContainer();
-            o.additionalCapabilities = additionalCapabilities;
             o.arguments = arguments;
             o.availabilityDomain = availabilityDomain;
             o.commands = commands;

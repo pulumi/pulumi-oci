@@ -20,14 +20,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     public static final DrPlanState Empty = new DrPlanState();
 
     /**
-     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -65,14 +65,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="drProtectionGroupId")
     private @Nullable Output<String> drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> drProtectionGroupId() {
@@ -110,14 +110,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="peerDrProtectionGroupId")
     private @Nullable Output<String> peerDrProtectionGroupId;
 
     /**
-     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> peerDrProtectionGroupId() {
@@ -273,7 +273,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param compartmentId The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param compartmentId The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param peerDrProtectionGroupId The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+         * @param peerDrProtectionGroupId The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param peerDrProtectionGroupId The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+         * @param peerDrProtectionGroupId The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupMysqlDbSystem(ctx *pulumi.Context, args *LookupMysqlDbSystemArgs, opts ...pulumi.InvokeOption) (*LookupMysqlDbSystemResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMysqlDbSystemResult
 	err := ctx.Invoke("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", args, &rv, opts...)
 	if err != nil {

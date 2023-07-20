@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetExternalListenerServices(ctx *pulumi.Context, args *GetExternalListenerServicesArgs, opts ...pulumi.InvokeOption) (*GetExternalListenerServicesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalListenerServicesResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices", args, &rv, opts...)
 	if err != nil {

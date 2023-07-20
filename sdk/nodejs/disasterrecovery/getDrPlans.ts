@@ -81,7 +81,7 @@ export interface GetDrPlansResult {
     readonly drPlanId?: string;
     readonly drPlanType?: string;
     /**
-     * The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
      */
     readonly drProtectionGroupId: string;
     readonly filters?: outputs.DisasterRecovery.GetDrPlansFilter[];

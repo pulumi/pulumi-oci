@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -111,6 +112,7 @@ func NewReplica(ctx *pulumi.Context,
 	if args.DbSystemId == nil {
 		return nil, errors.New("invalid value for required argument 'DbSystemId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Replica
 	err := ctx.RegisterResource("oci:Mysql/replica:Replica", name, args, &resource, opts...)
 	if err != nil {

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
     public sealed class ContainerInstanceVolumeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Volume type that we are using for empty dir where it could be either File Storage or Memory
+        /// The volume type of the empty directory, can be either File Storage or Memory.
         /// </summary>
         [Input("backingStore")]
         public Input<string>? BackingStore { get; set; }
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
-        /// The name of the volume. This has be unique cross single ContainerInstance.
+        /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

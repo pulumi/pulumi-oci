@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -133,6 +134,7 @@ func NewZone(ctx *pulumi.Context,
 	if args.ZoneType == nil {
 		return nil, errors.New("invalid value for required argument 'ZoneType'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Zone
 	err := ctx.RegisterResource("oci:Dns/zone:Zone", name, args, &resource, opts...)
 	if err != nil {

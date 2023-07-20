@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetContainerInstanceShape(ctx *pulumi.Context, args *GetContainerInstanceShapeArgs, opts ...pulumi.InvokeOption) (*GetContainerInstanceShapeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetContainerInstanceShapeResult
 	err := ctx.Invoke("oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape", args, &rv, opts...)
 	if err != nil {

@@ -14,23 +14,23 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     public sealed class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult
     {
         /// <summary>
-        /// The default amount of memory per OCPU available for this shape, in gigabytes.
+        /// The default amount of memory per OCPU available for this shape (GB).
         /// </summary>
         public readonly double DefaultPerOcpuInGbs;
         /// <summary>
-        /// The maximum amount of memory, in gigabytes.
+        /// The maximum amount of memory (GB).
         /// </summary>
         public readonly double MaxInGbs;
         /// <summary>
-        /// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+        /// The maximum amount of memory per OCPU available for this shape (GB).
         /// </summary>
         public readonly double MaxPerOcpuInGbs;
         /// <summary>
-        /// The minimum amount of memory, in gigabytes.
+        /// The minimum amount of memory (GB).
         /// </summary>
         public readonly double MinInGbs;
         /// <summary>
-        /// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+        /// The minimum amount of memory per OCPU available for this shape (GB).
         /// </summary>
         public readonly double MinPerOcpuInGbs;
 

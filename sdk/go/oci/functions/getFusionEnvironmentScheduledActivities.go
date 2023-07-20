@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetFusionEnvironmentScheduledActivities(ctx *pulumi.Context, args *GetFusionEnvironmentScheduledActivitiesArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentScheduledActivitiesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentScheduledActivitiesResult
 	err := ctx.Invoke("oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities", args, &rv, opts...)
 	if err != nil {

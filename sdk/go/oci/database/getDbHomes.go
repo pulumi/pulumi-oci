@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -14,6 +15,7 @@ import (
 //
 // Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
 func GetDbHomes(ctx *pulumi.Context, args *GetDbHomesArgs, opts ...pulumi.InvokeOption) (*GetDbHomesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbHomesResult
 	err := ctx.Invoke("oci:Database/getDbHomes:getDbHomes", args, &rv, opts...)
 	if err != nil {

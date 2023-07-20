@@ -12,26 +12,42 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceContainerResourceConfig {
     /**
-     * @return The maximum amount of memory which may be consumed by the Container&#39;s process.  If no value is provided, then the process may use all available memory on the Instance.
+     * @return The maximum amount of memory that can be consumed by the container&#39;s process.
+     * 
+     * If you do not set a value, then the process may use all available memory on the instance.
      * 
      */
     private @Nullable Double memoryLimitInGbs;
     /**
-     * @return The maximum amount of CPU utilization which may be consumed by the Container&#39;s process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of &#34;1.5&#34; means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+     * @return The maximum amount of CPUs that can be consumed by the container&#39;s process.
+     * 
+     * If you do not set a value, then the process can use all available CPU resources on the instance.
+     * 
+     * CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+     * 
+     * A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of &#34;1.5&#34; means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
      * 
      */
     private @Nullable Double vcpusLimit;
 
     private ContainerInstanceContainerResourceConfig() {}
     /**
-     * @return The maximum amount of memory which may be consumed by the Container&#39;s process.  If no value is provided, then the process may use all available memory on the Instance.
+     * @return The maximum amount of memory that can be consumed by the container&#39;s process.
+     * 
+     * If you do not set a value, then the process may use all available memory on the instance.
      * 
      */
     public Optional<Double> memoryLimitInGbs() {
         return Optional.ofNullable(this.memoryLimitInGbs);
     }
     /**
-     * @return The maximum amount of CPU utilization which may be consumed by the Container&#39;s process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of &#34;1.5&#34; means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+     * @return The maximum amount of CPUs that can be consumed by the container&#39;s process.
+     * 
+     * If you do not set a value, then the process can use all available CPU resources on the instance.
+     * 
+     * CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+     * 
+     * A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of &#34;1.5&#34; means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
      * 
      */
     public Optional<Double> vcpusLimit() {

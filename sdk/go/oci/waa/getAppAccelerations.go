@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetAppAccelerations(ctx *pulumi.Context, args *GetAppAccelerationsArgs, opts ...pulumi.InvokeOption) (*GetAppAccelerationsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppAccelerationsResult
 	err := ctx.Invoke("oci:Waa/getAppAccelerations:getAppAccelerations", args, &rv, opts...)
 	if err != nil {

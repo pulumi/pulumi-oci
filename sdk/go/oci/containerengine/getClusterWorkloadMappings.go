@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetClusterWorkloadMappings(ctx *pulumi.Context, args *GetClusterWorkloadMappingsArgs, opts ...pulumi.InvokeOption) (*GetClusterWorkloadMappingsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetClusterWorkloadMappingsResult
 	err := ctx.Invoke("oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings", args, &rv, opts...)
 	if err != nil {

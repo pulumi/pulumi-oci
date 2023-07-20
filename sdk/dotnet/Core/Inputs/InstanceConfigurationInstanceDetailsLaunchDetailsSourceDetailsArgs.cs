@@ -39,7 +39,13 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        /// These are the criteria for selecting an image. This is required if imageId is not specified.
+        /// </summary>
+        [Input("instanceSourceImageFilterDetails")]
+        public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs>? InstanceSourceImageFilterDetails { get; set; }
+
+        /// <summary>
+        /// The OCID of the Vault service key to assign as the master encryption key for the volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }

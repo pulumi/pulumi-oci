@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetOdaPrivateEndpoints(ctx *pulumi.Context, args *GetOdaPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetOdaPrivateEndpointsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOdaPrivateEndpointsResult
 	err := ctx.Invoke("oci:Oda/getOdaPrivateEndpoints:getOdaPrivateEndpoints", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupLogSavedSearch(ctx *pulumi.Context, args *LookupLogSavedSearchArgs, opts ...pulumi.InvokeOption) (*LookupLogSavedSearchResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupLogSavedSearchResult
 	err := ctx.Invoke("oci:Logging/getLogSavedSearch:getLogSavedSearch", args, &rv, opts...)
 	if err != nil {

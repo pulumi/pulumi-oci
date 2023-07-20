@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -114,6 +115,7 @@ func NewDynamicGroup(ctx *pulumi.Context,
 	if args.MatchingRule == nil {
 		return nil, errors.New("invalid value for required argument 'MatchingRule'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DynamicGroup
 	err := ctx.RegisterResource("oci:Identity/dynamicGroup:DynamicGroup", name, args, &resource, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetAwrHubs(ctx *pulumi.Context, args *GetAwrHubsArgs, opts ...pulumi.InvokeOption) (*GetAwrHubsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAwrHubsResult
 	err := ctx.Invoke("oci:Opsi/getAwrHubs:getAwrHubs", args, &rv, opts...)
 	if err != nil {

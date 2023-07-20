@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,6 +39,7 @@ import (
 //
 // ```
 func GetEdgeSubnets(ctx *pulumi.Context, args *GetEdgeSubnetsArgs, opts ...pulumi.InvokeOption) (*GetEdgeSubnetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEdgeSubnetsResult
 	err := ctx.Invoke("oci:Waas/getEdgeSubnets:getEdgeSubnets", args, &rv, opts...)
 	if err != nil {

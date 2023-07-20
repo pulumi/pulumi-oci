@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -271,6 +272,7 @@ func NewSddc(ctx *pulumi.Context,
 	if args.VsphereVlanId == nil {
 		return nil, errors.New("invalid value for required argument 'VsphereVlanId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Sddc
 	err := ctx.RegisterResource("oci:Ocvp/sddc:Sddc", name, args, &resource, opts...)
 	if err != nil {

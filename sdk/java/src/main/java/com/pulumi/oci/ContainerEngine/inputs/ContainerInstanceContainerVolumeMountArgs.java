@@ -18,14 +18,14 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
     public static final ContainerInstanceContainerVolumeMountArgs Empty = new ContainerInstanceContainerVolumeMountArgs();
 
     /**
-     * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+     * Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
      * 
      */
     @Import(name="isReadOnly")
     private @Nullable Output<Boolean> isReadOnly;
 
     /**
-     * @return Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+     * @return Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
      * 
      */
     public Optional<Output<Boolean>> isReadOnly() {
@@ -33,14 +33,14 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
     }
 
     /**
-     * mountPath describes the volume access path.
+     * The volume access path.
      * 
      */
     @Import(name="mountPath", required=true)
     private Output<String> mountPath;
 
     /**
-     * @return mountPath describes the volume access path.
+     * @return The volume access path.
      * 
      */
     public Output<String> mountPath() {
@@ -48,14 +48,14 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
     }
 
     /**
-     * If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+     * If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
      * 
      */
     @Import(name="partition")
     private @Nullable Output<Integer> partition;
 
     /**
-     * @return If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+     * @return If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
      * 
      */
     public Optional<Output<Integer>> partition() {
@@ -63,14 +63,14 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
     }
 
     /**
-     * specifies a sub-path inside the referenced volume instead of its root
+     * A subpath inside the referenced volume.
      * 
      */
     @Import(name="subPath")
     private @Nullable Output<String> subPath;
 
     /**
-     * @return specifies a sub-path inside the referenced volume instead of its root
+     * @return A subpath inside the referenced volume.
      * 
      */
     public Optional<Output<String>> subPath() {
@@ -78,14 +78,14 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
     }
 
     /**
-     * The name of the volume.
+     * The name of the volume. Avoid entering confidential information.
      * 
      */
     @Import(name="volumeName", required=true)
     private Output<String> volumeName;
 
     /**
-     * @return The name of the volume.
+     * @return The name of the volume. Avoid entering confidential information.
      * 
      */
     public Output<String> volumeName() {
@@ -121,7 +121,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param isReadOnly Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+         * @param isReadOnly Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param isReadOnly Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+         * @param isReadOnly Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param mountPath mountPath describes the volume access path.
+         * @param mountPath The volume access path.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param mountPath mountPath describes the volume access path.
+         * @param mountPath The volume access path.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param partition If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+         * @param partition If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param partition If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+         * @param partition If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param subPath specifies a sub-path inside the referenced volume instead of its root
+         * @param subPath A subpath inside the referenced volume.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param subPath specifies a sub-path inside the referenced volume instead of its root
+         * @param subPath A subpath inside the referenced volume.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param volumeName The name of the volume.
+         * @param volumeName The name of the volume. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class ContainerInstanceContainerVolumeMountArgs extends com.pulumi.
         }
 
         /**
-         * @param volumeName The name of the volume.
+         * @param volumeName The name of the volume. Avoid entering confidential information.
          * 
          * @return builder
          * 

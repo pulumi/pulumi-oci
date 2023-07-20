@@ -188,7 +188,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public readonly string? DrPlanId;
         public readonly string? DrPlanType;
         /// <summary>
-        /// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        /// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string DrProtectionGroupId;
         public readonly ImmutableArray<Outputs.GetDrPlansFilterResult> Filters;

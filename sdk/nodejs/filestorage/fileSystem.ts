@@ -132,7 +132,7 @@ export class FileSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly isHydrated!: pulumi.Output<boolean>;
     /**
-     * Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     * Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      */
     public /*out*/ readonly isTargetable!: pulumi.Output<boolean>;
     /**
@@ -272,7 +272,7 @@ export interface FileSystemState {
      */
     isHydrated?: pulumi.Input<boolean>;
     /**
-     * Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     * Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      */
     isTargetable?: pulumi.Input<boolean>;
     /**

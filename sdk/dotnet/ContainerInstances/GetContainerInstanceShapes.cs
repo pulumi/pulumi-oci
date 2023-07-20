@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
         /// 
-        /// Get a list of shapes for creating Container Instances and their details.
+        /// Lists the shapes that can be used to create container instances.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
         /// 
-        /// Get a list of shapes for creating Container Instances and their details.
+        /// Lists the shapes that can be used to create container instances.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.ContainerInstances
         public string? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.ContainerInstances
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;

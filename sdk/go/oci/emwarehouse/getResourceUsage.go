@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetResourceUsage(ctx *pulumi.Context, args *GetResourceUsageArgs, opts ...pulumi.InvokeOption) (*GetResourceUsageResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetResourceUsageResult
 	err := ctx.Invoke("oci:EmWarehouse/getResourceUsage:getResourceUsage", args, &rv, opts...)
 	if err != nil {

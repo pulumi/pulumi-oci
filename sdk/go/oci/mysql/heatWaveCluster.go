@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -95,6 +96,7 @@ func NewHeatWaveCluster(ctx *pulumi.Context,
 	if args.ShapeName == nil {
 		return nil, errors.New("invalid value for required argument 'ShapeName'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource HeatWaveCluster
 	err := ctx.RegisterResource("oci:Mysql/heatWaveCluster:HeatWaveCluster", name, args, &resource, opts...)
 	if err != nil {

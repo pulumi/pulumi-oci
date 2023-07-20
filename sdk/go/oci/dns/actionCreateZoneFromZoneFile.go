@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -112,6 +113,7 @@ func NewActionCreateZoneFromZoneFile(ctx *pulumi.Context,
 	if args.CreateZoneFromZoneFileDetails == nil {
 		return nil, errors.New("invalid value for required argument 'CreateZoneFromZoneFileDetails'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ActionCreateZoneFromZoneFile
 	err := ctx.RegisterResource("oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile", name, args, &resource, opts...)
 	if err != nil {

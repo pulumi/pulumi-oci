@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetAgentDependencies(ctx *pulumi.Context, args *GetAgentDependenciesArgs, opts ...pulumi.InvokeOption) (*GetAgentDependenciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAgentDependenciesResult
 	err := ctx.Invoke("oci:CloudBridge/getAgentDependencies:getAgentDependencies", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetManagementDashboardsExport(ctx *pulumi.Context, args *GetManagementDashboardsExportArgs, opts ...pulumi.InvokeOption) (*GetManagementDashboardsExportResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementDashboardsExportResult
 	err := ctx.Invoke("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args, &rv, opts...)
 	if err != nil {

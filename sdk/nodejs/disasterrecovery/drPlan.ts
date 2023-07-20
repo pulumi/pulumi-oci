@@ -67,7 +67,7 @@ export class DrPlan extends pulumi.CustomResource {
     }
 
     /**
-     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -79,7 +79,7 @@ export class DrPlan extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
      */
     public readonly drProtectionGroupId!: pulumi.Output<string>;
     /**
@@ -91,7 +91,7 @@ export class DrPlan extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string>;
     /**
-     * The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
      */
     public /*out*/ readonly peerDrProtectionGroupId!: pulumi.Output<string>;
     /**
@@ -190,7 +190,7 @@ export class DrPlan extends pulumi.CustomResource {
  */
 export interface DrPlanState {
     /**
-     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -202,7 +202,7 @@ export interface DrPlanState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
      */
     drProtectionGroupId?: pulumi.Input<string>;
     /**
@@ -214,7 +214,7 @@ export interface DrPlanState {
      */
     lifeCycleDetails?: pulumi.Input<string>;
     /**
-     * The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
      */
     peerDrProtectionGroupId?: pulumi.Input<string>;
     /**
@@ -264,7 +264,7 @@ export interface DrPlanArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
      */
     drProtectionGroupId: pulumi.Input<string>;
     /**

@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetBootVolumeAttachments(ctx *pulumi.Context, args *GetBootVolumeAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetBootVolumeAttachmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBootVolumeAttachmentsResult
 	err := ctx.Invoke("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args, &rv, opts...)
 	if err != nil {

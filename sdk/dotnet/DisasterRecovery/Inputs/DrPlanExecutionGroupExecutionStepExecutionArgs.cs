@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<int>? ExecutionDurationInSec { get; set; }
 
         /// <summary>
-        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? StatusDetails { get; set; }
 
         /// <summary>
-        /// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+        /// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("stepId")]
         public Input<string>? StepId { get; set; }

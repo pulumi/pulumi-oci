@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupProcessorJob(ctx *pulumi.Context, args *LookupProcessorJobArgs, opts ...pulumi.InvokeOption) (*LookupProcessorJobResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupProcessorJobResult
 	err := ctx.Invoke("oci:AiDocument/getProcessorJob:getProcessorJob", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetManagedDatabaseSqlTuningSets(ctx *pulumi.Context, args *GetManagedDatabaseSqlTuningSetsArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlTuningSetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseSqlTuningSetsResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", args, &rv, opts...)
 	if err != nil {

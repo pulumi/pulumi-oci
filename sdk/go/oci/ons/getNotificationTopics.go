@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetNotificationTopics(ctx *pulumi.Context, args *GetNotificationTopicsArgs, opts ...pulumi.InvokeOption) (*GetNotificationTopicsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNotificationTopicsResult
 	err := ctx.Invoke("oci:Ons/getNotificationTopics:getNotificationTopics", args, &rv, opts...)
 	if err != nil {

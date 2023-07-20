@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetDomainsUserDbCredentials(ctx *pulumi.Context, args *GetDomainsUserDbCredentialsArgs, opts ...pulumi.InvokeOption) (*GetDomainsUserDbCredentialsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsUserDbCredentialsResult
 	err := ctx.Invoke("oci:Identity/getDomainsUserDbCredentials:getDomainsUserDbCredentials", args, &rv, opts...)
 	if err != nil {

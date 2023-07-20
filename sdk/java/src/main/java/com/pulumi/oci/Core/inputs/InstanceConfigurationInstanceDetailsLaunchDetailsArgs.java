@@ -88,14 +88,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
     }
 
     /**
-     * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * (Updatable) The OCID of the compartment containing images to search
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -623,7 +623,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 

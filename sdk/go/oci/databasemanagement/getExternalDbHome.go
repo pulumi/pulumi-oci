@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetExternalDbHome(ctx *pulumi.Context, args *GetExternalDbHomeArgs, opts ...pulumi.InvokeOption) (*GetExternalDbHomeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalDbHomeResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args, &rv, opts...)
 	if err != nil {

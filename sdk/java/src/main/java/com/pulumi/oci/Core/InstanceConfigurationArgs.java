@@ -19,14 +19,14 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
     public static final InstanceConfigurationArgs Empty = new InstanceConfigurationArgs();
 
     /**
-     * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * (Updatable) The OCID of the compartment containing images to search
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Output<String> compartmentId() {
@@ -162,7 +162,7 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 

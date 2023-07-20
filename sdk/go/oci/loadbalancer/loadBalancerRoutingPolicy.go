@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -97,6 +98,7 @@ func NewLoadBalancerRoutingPolicy(ctx *pulumi.Context,
 	if args.Rules == nil {
 		return nil, errors.New("invalid value for required argument 'Rules'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LoadBalancerRoutingPolicy
 	err := ctx.RegisterResource("oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy", name, args, &resource, opts...)
 	if err != nil {

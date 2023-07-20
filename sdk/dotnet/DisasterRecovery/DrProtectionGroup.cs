@@ -53,15 +53,30 @@ namespace Pulumi.Oci.DisasterRecovery
     ///             {
     ///                 MemberId = oci_disaster_recovery_member.Test_member.Id,
     ///                 MemberType = @var.Dr_protection_group_members_member_type,
+    ///                 DestinationCapacityReservationId = oci_disaster_recovery_destination_capacity_reservation.Test_destination_capacity_reservation.Id,
     ///                 DestinationCompartmentId = oci_identity_compartment.Test_compartment.Id,
     ///                 DestinationDedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
     ///                 IsMovable = @var.Dr_protection_group_members_is_movable,
+    ///                 IsRetainFaultDomain = @var.Dr_protection_group_members_is_retain_fault_domain,
     ///                 PasswordVaultSecretId = oci_vault_secret.Test_secret.Id,
     ///                 VnicMappings = new[]
     ///                 {
     ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberVnicMappingArgs
     ///                     {
     ///                         DestinationNsgIdLists = @var.Dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
+    ///                         DestinationPrimaryPrivateIpAddress = @var.Dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
+    ///                         DestinationPrimaryPrivateIpHostnameLabel = @var.Dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
+    ///                         DestinationSubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                         SourceVnicId = oci_core_vnic.Test_vnic.Id,
+    ///                     },
+    ///                 },
+    ///                 VnicMappings = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberVnicMappingArgs
+    ///                     {
+    ///                         DestinationNsgIdLists = @var.Dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
+    ///                         DestinationPrimaryPrivateIpAddress = @var.Dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
+    ///                         DestinationPrimaryPrivateIpHostnameLabel = @var.Dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
     ///                         DestinationSubnetId = oci_core_subnet.Test_subnet.Id,
     ///                         SourceVnicId = oci_core_vnic.Test_vnic.Id,
     ///                     },
@@ -91,7 +106,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<Outputs.DrProtectionGroupAssociation> Association { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -143,7 +158,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<ImmutableArray<Outputs.DrProtectionGroupMember>> Members { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Output("peerId")]
         public Output<string> PeerId { get; private set; } = null!;
@@ -237,7 +252,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<Inputs.DrProtectionGroupAssociationArgs>? Association { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -315,7 +330,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<Inputs.DrProtectionGroupAssociationGetArgs>? Association { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -385,7 +400,7 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("peerId")]
         public Input<string>? PeerId { get; set; }

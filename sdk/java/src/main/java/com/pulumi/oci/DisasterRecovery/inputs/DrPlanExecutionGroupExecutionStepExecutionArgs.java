@@ -49,14 +49,14 @@ public final class DrPlanExecutionGroupExecutionStepExecutionArgs extends com.pu
     }
 
     /**
-     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -109,14 +109,14 @@ public final class DrPlanExecutionGroupExecutionStepExecutionArgs extends com.pu
     }
 
     /**
-     * The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+     * The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="stepId")
     private @Nullable Output<String> stepId;
 
     /**
-     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> stepId() {
@@ -244,7 +244,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionArgs extends com.pu
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionArgs extends com.pu
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionArgs extends com.pu
         }
 
         /**
-         * @param stepId The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+         * @param stepId The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionArgs extends com.pu
         }
 
         /**
-         * @param stepId The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+         * @param stepId The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetExternalAsmInstance(ctx *pulumi.Context, args *GetExternalAsmInstanceArgs, opts ...pulumi.InvokeOption) (*GetExternalAsmInstanceResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalAsmInstanceResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", args, &rv, opts...)
 	if err != nil {

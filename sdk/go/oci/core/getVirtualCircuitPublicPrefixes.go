@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetVirtualCircuitPublicPrefixes(ctx *pulumi.Context, args *GetVirtualCircuitPublicPrefixesArgs, opts ...pulumi.InvokeOption) (*GetVirtualCircuitPublicPrefixesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualCircuitPublicPrefixesResult
 	err := ctx.Invoke("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args, &rv, opts...)
 	if err != nil {

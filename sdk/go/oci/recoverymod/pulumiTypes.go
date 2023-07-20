@@ -7,8 +7,11 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
+
+var _ = internal.GetEnvOrDefault
 
 type ProtectedDatabaseMetric struct {
 	// The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.

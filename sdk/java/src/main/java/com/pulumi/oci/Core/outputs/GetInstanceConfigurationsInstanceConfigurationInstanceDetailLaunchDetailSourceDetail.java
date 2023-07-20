@@ -4,7 +4,9 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -30,7 +32,12 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     private String imageId;
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
+    /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     private String kmsKeyId;
@@ -70,7 +77,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         return this.imageId;
     }
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    public List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails() {
+        return this.instanceSourceImageFilterDetails;
+    }
+    /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public String kmsKeyId() {
@@ -97,6 +111,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         private String bootVolumeSizeInGbs;
         private String bootVolumeVpusPerGb;
         private String imageId;
+        private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
         private String kmsKeyId;
         private String sourceType;
         public Builder() {}
@@ -106,6 +121,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
     	      this.bootVolumeVpusPerGb = defaults.bootVolumeVpusPerGb;
     	      this.imageId = defaults.imageId;
+    	      this.instanceSourceImageFilterDetails = defaults.instanceSourceImageFilterDetails;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sourceType = defaults.sourceType;
         }
@@ -131,6 +147,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return this;
         }
         @CustomType.Setter
+        public Builder instanceSourceImageFilterDetails(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails) {
+            this.instanceSourceImageFilterDetails = Objects.requireNonNull(instanceSourceImageFilterDetails);
+            return this;
+        }
+        public Builder instanceSourceImageFilterDetails(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail... instanceSourceImageFilterDetails) {
+            return instanceSourceImageFilterDetails(List.of(instanceSourceImageFilterDetails));
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
@@ -146,6 +170,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             o.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             o.imageId = imageId;
+            o.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
             o.kmsKeyId = kmsKeyId;
             o.sourceType = sourceType;
             return o;

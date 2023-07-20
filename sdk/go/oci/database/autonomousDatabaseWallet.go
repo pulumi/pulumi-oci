@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -82,6 +83,7 @@ func NewAutonomousDatabaseWallet(ctx *pulumi.Context,
 		"password",
 	})
 	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AutonomousDatabaseWallet
 	err := ctx.RegisterResource("oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet", name, args, &resource, opts...)
 	if err != nil {

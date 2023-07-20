@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupAddon(ctx *pulumi.Context, args *LookupAddonArgs, opts ...pulumi.InvokeOption) (*LookupAddonResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAddonResult
 	err := ctx.Invoke("oci:ContainerEngine/getAddon:getAddon", args, &rv, opts...)
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -108,6 +109,7 @@ func NewTable(ctx *pulumi.Context,
 	if args.DdlStatement == nil {
 		return nil, errors.New("invalid value for required argument 'DdlStatement'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Table
 	err := ctx.RegisterResource("oci:Nosql/table:Table", name, args, &resource, opts...)
 	if err != nil {

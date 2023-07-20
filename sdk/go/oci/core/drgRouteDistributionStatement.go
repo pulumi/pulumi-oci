@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -92,6 +93,7 @@ func NewDrgRouteDistributionStatement(ctx *pulumi.Context,
 	if args.Priority == nil {
 		return nil, errors.New("invalid value for required argument 'Priority'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DrgRouteDistributionStatement
 	err := ctx.RegisterResource("oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement", name, args, &resource, opts...)
 	if err != nil {

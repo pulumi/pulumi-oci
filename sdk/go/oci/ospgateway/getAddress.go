@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetAddress(ctx *pulumi.Context, args *GetAddressArgs, opts ...pulumi.InvokeOption) (*GetAddressResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAddressResult
 	err := ctx.Invoke("oci:OspGateway/getAddress:getAddress", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupBackupDestination(ctx *pulumi.Context, args *LookupBackupDestinationArgs, opts ...pulumi.InvokeOption) (*LookupBackupDestinationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBackupDestinationResult
 	err := ctx.Invoke("oci:Database/getBackupDestination:getBackupDestination", args, &rv, opts...)
 	if err != nil {

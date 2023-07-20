@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetExternalExadataStorageServer(ctx *pulumi.Context, args *GetExternalExadataStorageServerArgs, opts ...pulumi.InvokeOption) (*GetExternalExadataStorageServerResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalExadataStorageServerResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", args, &rv, opts...)
 	if err != nil {

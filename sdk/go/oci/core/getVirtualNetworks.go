@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetVirtualNetworks(ctx *pulumi.Context, args *GetVirtualNetworksArgs, opts ...pulumi.InvokeOption) (*GetVirtualNetworksResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualNetworksResult
 	err := ctx.Invoke("oci:Core/getVirtualNetworks:getVirtualNetworks", args, &rv, opts...)
 	if err != nil {

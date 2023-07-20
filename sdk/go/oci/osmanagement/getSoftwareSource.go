@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupSoftwareSource(ctx *pulumi.Context, args *LookupSoftwareSourceArgs, opts ...pulumi.InvokeOption) (*LookupSoftwareSourceResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSoftwareSourceResult
 	err := ctx.Invoke("oci:OsManagement/getSoftwareSource:getSoftwareSource", args, &rv, opts...)
 	if err != nil {

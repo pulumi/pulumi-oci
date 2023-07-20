@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -75,6 +76,7 @@ func NewHostname(ctx *pulumi.Context,
 	if args.LoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'LoadBalancerId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Hostname
 	err := ctx.RegisterResource("oci:LoadBalancer/hostname:Hostname", name, args, &resource, opts...)
 	if err != nil {

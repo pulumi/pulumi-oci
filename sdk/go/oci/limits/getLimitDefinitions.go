@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetLimitDefinitions(ctx *pulumi.Context, args *GetLimitDefinitionsArgs, opts ...pulumi.InvokeOption) (*GetLimitDefinitionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLimitDefinitionsResult
 	err := ctx.Invoke("oci:Limits/getLimitDefinitions:getLimitDefinitions", args, &rv, opts...)
 	if err != nil {

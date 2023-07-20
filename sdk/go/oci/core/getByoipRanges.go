@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetByoipRanges(ctx *pulumi.Context, args *GetByoipRangesArgs, opts ...pulumi.InvokeOption) (*GetByoipRangesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetByoipRangesResult
 	err := ctx.Invoke("oci:Core/getByoipRanges:getByoipRanges", args, &rv, opts...)
 	if err != nil {

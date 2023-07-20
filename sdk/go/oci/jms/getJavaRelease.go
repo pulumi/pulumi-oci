@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetJavaRelease(ctx *pulumi.Context, args *GetJavaReleaseArgs, opts ...pulumi.InvokeOption) (*GetJavaReleaseResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJavaReleaseResult
 	err := ctx.Invoke("oci:Jms/getJavaRelease:getJavaRelease", args, &rv, opts...)
 	if err != nil {

@@ -7,8 +7,11 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
+
+var _ = internal.GetEnvOrDefault
 
 type AnnouncementSubscriptionFilterGroups struct {
 	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDbManagementPrivateEndpoint(ctx *pulumi.Context, args *LookupDbManagementPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupDbManagementPrivateEndpointResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDbManagementPrivateEndpointResult
 	err := ctx.Invoke("oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint", args, &rv, opts...)
 	if err != nil {

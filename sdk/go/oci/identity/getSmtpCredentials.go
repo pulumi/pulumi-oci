@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetSmtpCredentials(ctx *pulumi.Context, args *GetSmtpCredentialsArgs, opts ...pulumi.InvokeOption) (*GetSmtpCredentialsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSmtpCredentialsResult
 	err := ctx.Invoke("oci:Identity/getSmtpCredentials:getSmtpCredentials", args, &rv, opts...)
 	if err != nil {

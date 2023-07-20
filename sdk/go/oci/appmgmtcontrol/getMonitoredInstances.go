@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetMonitoredInstances(ctx *pulumi.Context, args *GetMonitoredInstancesArgs, opts ...pulumi.InvokeOption) (*GetMonitoredInstancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMonitoredInstancesResult
 	err := ctx.Invoke("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", args, &rv, opts...)
 	if err != nil {

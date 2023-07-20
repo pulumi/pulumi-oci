@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetEtlRun(ctx *pulumi.Context, args *GetEtlRunArgs, opts ...pulumi.InvokeOption) (*GetEtlRunResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEtlRunResult
 	err := ctx.Invoke("oci:EmWarehouse/getEtlRun:getEtlRun", args, &rv, opts...)
 	if err != nil {

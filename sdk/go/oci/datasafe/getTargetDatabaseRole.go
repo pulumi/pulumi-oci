@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetTargetDatabaseRole(ctx *pulumi.Context, args *GetTargetDatabaseRoleArgs, opts ...pulumi.InvokeOption) (*GetTargetDatabaseRoleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTargetDatabaseRoleResult
 	err := ctx.Invoke("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", args, &rv, opts...)
 	if err != nil {

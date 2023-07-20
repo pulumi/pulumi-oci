@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -15,6 +16,7 @@ import (
 // Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
 // To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
 func LookupExadataInfrastructure(ctx *pulumi.Context, args *LookupExadataInfrastructureArgs, opts ...pulumi.InvokeOption) (*LookupExadataInfrastructureResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExadataInfrastructureResult
 	err := ctx.Invoke("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args, &rv, opts...)
 	if err != nil {

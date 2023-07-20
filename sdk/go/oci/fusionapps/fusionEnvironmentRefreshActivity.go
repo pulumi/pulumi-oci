@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -97,6 +98,7 @@ func NewFusionEnvironmentRefreshActivity(ctx *pulumi.Context,
 	if args.SourceFusionEnvironmentId == nil {
 		return nil, errors.New("invalid value for required argument 'SourceFusionEnvironmentId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FusionEnvironmentRefreshActivity
 	err := ctx.RegisterResource("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity", name, args, &resource, opts...)
 	if err != nil {

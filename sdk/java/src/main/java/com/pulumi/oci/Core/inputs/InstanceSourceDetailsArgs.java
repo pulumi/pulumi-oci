@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -50,6 +51,21 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    @Import(name="instanceSourceImageFilterDetails")
+    private @Nullable Output<InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs> instanceSourceImageFilterDetails;
+
+    /**
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    public Optional<Output<InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs>> instanceSourceImageFilterDetails() {
+        return Optional.ofNullable(this.instanceSourceImageFilterDetails);
+    }
+
+    /**
      * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
@@ -68,15 +84,15 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
      * The OCID of an image or a boot volume to use, depending on the value of `source_type`.
      * 
      */
-    @Import(name="sourceId", required=true)
-    private Output<String> sourceId;
+    @Import(name="sourceId")
+    private @Nullable Output<String> sourceId;
 
     /**
      * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
      * 
      */
-    public Output<String> sourceId() {
-        return this.sourceId;
+    public Optional<Output<String>> sourceId() {
+        return Optional.ofNullable(this.sourceId);
     }
 
     /**
@@ -99,6 +115,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
     private InstanceSourceDetailsArgs(InstanceSourceDetailsArgs $) {
         this.bootVolumeSizeInGbs = $.bootVolumeSizeInGbs;
         this.bootVolumeVpusPerGb = $.bootVolumeVpusPerGb;
+        this.instanceSourceImageFilterDetails = $.instanceSourceImageFilterDetails;
         this.kmsKeyId = $.kmsKeyId;
         this.sourceId = $.sourceId;
         this.sourceType = $.sourceType;
@@ -169,6 +186,27 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
+         * @param instanceSourceImageFilterDetails These are the criteria for selecting an image. This is required if imageId is not specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceSourceImageFilterDetails(@Nullable Output<InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs> instanceSourceImageFilterDetails) {
+            $.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            return this;
+        }
+
+        /**
+         * @param instanceSourceImageFilterDetails These are the criteria for selecting an image. This is required if imageId is not specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceSourceImageFilterDetails(InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs instanceSourceImageFilterDetails) {
+            return instanceSourceImageFilterDetails(Output.of(instanceSourceImageFilterDetails));
+        }
+
+        /**
          * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
@@ -195,7 +233,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder sourceId(Output<String> sourceId) {
+        public Builder sourceId(@Nullable Output<String> sourceId) {
             $.sourceId = sourceId;
             return this;
         }
@@ -232,7 +270,6 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         public InstanceSourceDetailsArgs build() {
-            $.sourceId = Objects.requireNonNull($.sourceId, "expected parameter 'sourceId' to be non-null");
             $.sourceType = Objects.requireNonNull($.sourceType, "expected parameter 'sourceType' to be non-null");
             return $;
         }

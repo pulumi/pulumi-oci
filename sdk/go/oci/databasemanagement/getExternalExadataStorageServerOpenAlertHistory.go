@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetExternalExadataStorageServerOpenAlertHistory(ctx *pulumi.Context, args *GetExternalExadataStorageServerOpenAlertHistoryArgs, opts ...pulumi.InvokeOption) (*GetExternalExadataStorageServerOpenAlertHistoryResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalExadataStorageServerOpenAlertHistoryResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", args, &rv, opts...)
 	if err != nil {

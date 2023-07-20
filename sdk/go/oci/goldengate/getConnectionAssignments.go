@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetConnectionAssignments(ctx *pulumi.Context, args *GetConnectionAssignmentsArgs, opts ...pulumi.InvokeOption) (*GetConnectionAssignmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetConnectionAssignmentsResult
 	err := ctx.Invoke("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", args, &rv, opts...)
 	if err != nil {

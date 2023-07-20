@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -70,6 +71,7 @@ func NewExternalDbSystemDatabaseManagementsManagement(ctx *pulumi.Context,
 	if args.ExternalDbSystemId == nil {
 		return nil, errors.New("invalid value for required argument 'ExternalDbSystemId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExternalDbSystemDatabaseManagementsManagement
 	err := ctx.RegisterResource("oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement", name, args, &resource, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetFleetAdvancedFeatureConfiguration(ctx *pulumi.Context, args *GetFleetAdvancedFeatureConfigurationArgs, opts ...pulumi.InvokeOption) (*GetFleetAdvancedFeatureConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetAdvancedFeatureConfigurationResult
 	err := ctx.Invoke("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", args, &rv, opts...)
 	if err != nil {

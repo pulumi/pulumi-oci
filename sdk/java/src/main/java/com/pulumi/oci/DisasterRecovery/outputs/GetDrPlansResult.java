@@ -27,7 +27,7 @@ public final class GetDrPlansResult {
     private @Nullable String drPlanId;
     private @Nullable String drPlanType;
     /**
-     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String drProtectionGroupId;
@@ -65,7 +65,7 @@ public final class GetDrPlansResult {
         return Optional.ofNullable(this.drPlanType);
     }
     /**
-     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String drProtectionGroupId() {

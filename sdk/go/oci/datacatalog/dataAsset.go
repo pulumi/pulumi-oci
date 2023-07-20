@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -106,6 +107,7 @@ func NewDataAsset(ctx *pulumi.Context,
 	if args.TypeKey == nil {
 		return nil, errors.New("invalid value for required argument 'TypeKey'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DataAsset
 	err := ctx.RegisterResource("oci:DataCatalog/dataAsset:DataAsset", name, args, &resource, opts...)
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -115,6 +116,7 @@ func NewVirtualService(ctx *pulumi.Context,
 	if args.MeshId == nil {
 		return nil, errors.New("invalid value for required argument 'MeshId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource VirtualService
 	err := ctx.RegisterResource("oci:ServiceMesh/virtualService:VirtualService", name, args, &resource, opts...)
 	if err != nil {

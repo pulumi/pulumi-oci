@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,6 +33,7 @@ import (
 //				CompartmentId:       _var.Compartment_id,
 //				DisplayName:         pulumi.StringRef(_var.Dr_protection_group_display_name),
 //				DrProtectionGroupId: pulumi.StringRef(oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id),
+//				Role:                pulumi.StringRef(_var.Dr_protection_group_role),
 //				State:               pulumi.StringRef(_var.Dr_protection_group_state),
 //			}, nil)
 //			if err != nil {
@@ -43,6 +45,7 @@ import (
 //
 // ```
 func GetDrProtectionGroups(ctx *pulumi.Context, args *GetDrProtectionGroupsArgs, opts ...pulumi.InvokeOption) (*GetDrProtectionGroupsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrProtectionGroupsResult
 	err := ctx.Invoke("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", args, &rv, opts...)
 	if err != nil {
@@ -60,13 +63,15 @@ type GetDrProtectionGroupsArgs struct {
 	// The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
 	DrProtectionGroupId *string                       `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrProtectionGroupsFilter `pulumi:"filters"`
+	// The DR Protection Group Role.
+	Role *string `pulumi:"role"`
 	// A filter to return only DR Protection Groups that match the given lifecycleState.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getDrProtectionGroups.
 type GetDrProtectionGroupsResult struct {
-	// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId string `pulumi:"compartmentId"`
 	// The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
 	DisplayName *string `pulumi:"displayName"`
@@ -76,6 +81,8 @@ type GetDrProtectionGroupsResult struct {
 	Filters                      []GetDrProtectionGroupsFilter                      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// The role of the DR Protection Group.
+	Role *string `pulumi:"role"`
 	// The current state of the DR Protection Group.
 	State *string `pulumi:"state"`
 }
@@ -102,6 +109,8 @@ type GetDrProtectionGroupsOutputArgs struct {
 	// The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
 	DrProtectionGroupId pulumi.StringPtrInput                 `pulumi:"drProtectionGroupId"`
 	Filters             GetDrProtectionGroupsFilterArrayInput `pulumi:"filters"`
+	// The DR Protection Group Role.
+	Role pulumi.StringPtrInput `pulumi:"role"`
 	// A filter to return only DR Protection Groups that match the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -125,7 +134,7 @@ func (o GetDrProtectionGroupsResultOutput) ToGetDrProtectionGroupsResultOutputWi
 	return o
 }
 
-// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o GetDrProtectionGroupsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -153,6 +162,11 @@ func (o GetDrProtectionGroupsResultOutput) Filters() GetDrProtectionGroupsFilter
 // The provider-assigned unique ID for this managed resource.
 func (o GetDrProtectionGroupsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The role of the DR Protection Group.
+func (o GetDrProtectionGroupsResultOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsResult) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DR Protection Group.

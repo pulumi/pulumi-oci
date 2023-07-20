@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetComputeClusters(ctx *pulumi.Context, args *GetComputeClustersArgs, opts ...pulumi.InvokeOption) (*GetComputeClustersResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputeClustersResult
 	err := ctx.Invoke("oci:Core/getComputeClusters:getComputeClusters", args, &rv, opts...)
 	if err != nil {

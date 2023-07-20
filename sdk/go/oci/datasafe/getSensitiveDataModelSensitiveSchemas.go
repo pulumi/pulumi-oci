@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetSensitiveDataModelSensitiveSchemas(ctx *pulumi.Context, args *GetSensitiveDataModelSensitiveSchemasArgs, opts ...pulumi.InvokeOption) (*GetSensitiveDataModelSensitiveSchemasResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSensitiveDataModelSensitiveSchemasResult
 	err := ctx.Invoke("oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas", args, &rv, opts...)
 	if err != nil {

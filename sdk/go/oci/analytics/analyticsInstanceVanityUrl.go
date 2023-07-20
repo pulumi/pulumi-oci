@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -112,6 +113,7 @@ func NewAnalyticsInstanceVanityUrl(ctx *pulumi.Context,
 		"privateKey",
 	})
 	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AnalyticsInstanceVanityUrl
 	err := ctx.RegisterResource("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", name, args, &resource, opts...)
 	if err != nil {

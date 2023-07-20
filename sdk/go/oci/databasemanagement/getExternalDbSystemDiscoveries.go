@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetExternalDbSystemDiscoveries(ctx *pulumi.Context, args *GetExternalDbSystemDiscoveriesArgs, opts ...pulumi.InvokeOption) (*GetExternalDbSystemDiscoveriesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalDbSystemDiscoveriesResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", args, &rv, opts...)
 	if err != nil {

@@ -26,7 +26,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Gets a ContainerInstance by identifier
+     * Gets information about the specified container instance.
      * 
      * ## Example Usage
      * ```java
@@ -65,7 +65,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Gets a ContainerInstance by identifier
+     * Gets information about the specified container instance.
      * 
      * ## Example Usage
      * ```java
@@ -104,7 +104,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Gets a ContainerInstance by identifier
+     * Gets information about the specified container instance.
      * 
      * ## Example Usage
      * ```java
@@ -143,7 +143,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Gets a ContainerInstance by identifier
+     * Gets information about the specified container instance.
      * 
      * ## Example Usage
      * ```java
@@ -342,7 +342,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Get a list of shapes for creating Container Instances and their details.
+     * Lists the shapes that can be used to create container instances.
      * 
      * ## Example Usage
      * ```java
@@ -382,7 +382,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Get a list of shapes for creating Container Instances and their details.
+     * Lists the shapes that can be used to create container instances.
      * 
      * ## Example Usage
      * ```java
@@ -422,7 +422,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Get a list of shapes for creating Container Instances and their details.
+     * Lists the shapes that can be used to create container instances.
      * 
      * ## Example Usage
      * ```java
@@ -462,7 +462,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Get a list of shapes for creating Container Instances and their details.
+     * Lists the shapes that can be used to create container instances.
      * 
      * ## Example Usage
      * ```java
@@ -502,7 +502,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Returns a list of ContainerInstances.
+     * Returns a list of container instances.
      * 
      * ## Example Usage
      * ```java
@@ -544,7 +544,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Returns a list of ContainerInstances.
+     * Returns a list of container instances.
      * 
      * ## Example Usage
      * ```java
@@ -586,7 +586,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Returns a list of ContainerInstances.
+     * Returns a list of container instances.
      * 
      * ## Example Usage
      * ```java
@@ -628,7 +628,7 @@ public final class ContainerInstancesFunctions {
     /**
      * This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
      * 
-     * Returns a list of ContainerInstances.
+     * Returns a list of container instances.
      * 
      * ## Example Usage
      * ```java

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetAlarmStatuses(ctx *pulumi.Context, args *GetAlarmStatusesArgs, opts ...pulumi.InvokeOption) (*GetAlarmStatusesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAlarmStatusesResult
 	err := ctx.Invoke("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", args, &rv, opts...)
 	if err != nil {

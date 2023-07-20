@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetNotebookSessionShapes(ctx *pulumi.Context, args *GetNotebookSessionShapesArgs, opts ...pulumi.InvokeOption) (*GetNotebookSessionShapesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNotebookSessionShapesResult
 	err := ctx.Invoke("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", args, &rv, opts...)
 	if err != nil {

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class ContainerInstanceVnic
     {
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
-        /// The hostname for the VNIC's primary private IP.
+        /// The hostname for the VNIC's primary private IP. Used for DNS.
         /// </summary>
         public readonly string? HostnameLabel;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+        /// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         /// </summary>
         public readonly string? VnicId;
 

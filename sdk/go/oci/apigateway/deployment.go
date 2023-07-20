@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -613,6 +614,7 @@ func NewDeployment(ctx *pulumi.Context,
 	if args.Specification == nil {
 		return nil, errors.New("invalid value for required argument 'Specification'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Deployment
 	err := ctx.RegisterResource("oci:ApiGateway/deployment:Deployment", name, args, &resource, opts...)
 	if err != nil {

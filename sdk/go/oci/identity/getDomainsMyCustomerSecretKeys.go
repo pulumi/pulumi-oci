@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetDomainsMyCustomerSecretKeys(ctx *pulumi.Context, args *GetDomainsMyCustomerSecretKeysArgs, opts ...pulumi.InvokeOption) (*GetDomainsMyCustomerSecretKeysResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsMyCustomerSecretKeysResult
 	err := ctx.Invoke("oci:Identity/getDomainsMyCustomerSecretKeys:getDomainsMyCustomerSecretKeys", args, &rv, opts...)
 	if err != nil {

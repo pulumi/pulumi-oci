@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetTagStandardTagNamespaceTemplates(ctx *pulumi.Context, args *GetTagStandardTagNamespaceTemplatesArgs, opts ...pulumi.InvokeOption) (*GetTagStandardTagNamespaceTemplatesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTagStandardTagNamespaceTemplatesResult
 	err := ctx.Invoke("oci:Identity/getTagStandardTagNamespaceTemplates:getTagStandardTagNamespaceTemplates", args, &rv, opts...)
 	if err != nil {

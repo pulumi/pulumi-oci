@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -82,6 +83,7 @@ func NewOsn(ctx *pulumi.Context,
 	if args.BlockchainPlatformId == nil {
 		return nil, errors.New("invalid value for required argument 'BlockchainPlatformId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Osn
 	err := ctx.RegisterResource("oci:Blockchain/osn:Osn", name, args, &resource, opts...)
 	if err != nil {

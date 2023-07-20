@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class DrPlanExecutionExecutionOptions
     {
         /// <summary>
-        /// A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+        /// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
         /// </summary>
         public readonly bool? ArePrechecksEnabled;
         /// <summary>
-        /// A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+        /// A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
         /// </summary>
         public readonly bool? AreWarningsIgnored;
         /// <summary>

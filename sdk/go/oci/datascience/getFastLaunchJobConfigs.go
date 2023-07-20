@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetFastLaunchJobConfigs(ctx *pulumi.Context, args *GetFastLaunchJobConfigsArgs, opts ...pulumi.InvokeOption) (*GetFastLaunchJobConfigsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFastLaunchJobConfigsResult
 	err := ctx.Invoke("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args, &rv, opts...)
 	if err != nil {

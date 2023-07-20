@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -48,6 +49,7 @@ import (
 //
 // ```
 func GetIdentityProviders(ctx *pulumi.Context, args *GetIdentityProvidersArgs, opts ...pulumi.InvokeOption) (*GetIdentityProvidersResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIdentityProvidersResult
 	err := ctx.Invoke("oci:Identity/getIdentityProviders:getIdentityProviders", args, &rv, opts...)
 	if err != nil {

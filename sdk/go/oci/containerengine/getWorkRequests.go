@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetWorkRequests(ctx *pulumi.Context, args *GetWorkRequestsArgs, opts ...pulumi.InvokeOption) (*GetWorkRequestsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetWorkRequestsResult
 	err := ctx.Invoke("oci:ContainerEngine/getWorkRequests:getWorkRequests", args, &rv, opts...)
 	if err != nil {

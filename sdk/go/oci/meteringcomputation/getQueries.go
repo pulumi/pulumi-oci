@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetQueries(ctx *pulumi.Context, args *GetQueriesArgs, opts ...pulumi.InvokeOption) (*GetQueriesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetQueriesResult
 	err := ctx.Invoke("oci:MeteringComputation/getQueries:getQueries", args, &rv, opts...)
 	if err != nil {

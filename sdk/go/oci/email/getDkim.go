@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDkim(ctx *pulumi.Context, args *LookupDkimArgs, opts ...pulumi.InvokeOption) (*LookupDkimResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDkimResult
 	err := ctx.Invoke("oci:Email/getDkim:getDkim", args, &rv, opts...)
 	if err != nil {

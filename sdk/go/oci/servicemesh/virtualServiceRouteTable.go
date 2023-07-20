@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -125,6 +126,7 @@ func NewVirtualServiceRouteTable(ctx *pulumi.Context,
 	if args.VirtualServiceId == nil {
 		return nil, errors.New("invalid value for required argument 'VirtualServiceId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource VirtualServiceRouteTable
 	err := ctx.RegisterResource("oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable", name, args, &resource, opts...)
 	if err != nil {

@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrPlanExecutionExecutionOptions {
     /**
-     * @return A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+     * @return A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
      * 
      */
     private @Nullable Boolean arePrechecksEnabled;
     /**
-     * @return A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+     * @return A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
      * 
      */
     private @Nullable Boolean areWarningsIgnored;
@@ -30,14 +30,14 @@ public final class DrPlanExecutionExecutionOptions {
 
     private DrPlanExecutionExecutionOptions() {}
     /**
-     * @return A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+     * @return A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
      * 
      */
     public Optional<Boolean> arePrechecksEnabled() {
         return Optional.ofNullable(this.arePrechecksEnabled);
     }
     /**
-     * @return A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+     * @return A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
      * 
      */
     public Optional<Boolean> areWarningsIgnored() {

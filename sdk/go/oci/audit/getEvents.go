@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetEvents(ctx *pulumi.Context, args *GetEventsArgs, opts ...pulumi.InvokeOption) (*GetEventsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEventsResult
 	err := ctx.Invoke("oci:Audit/getEvents:getEvents", args, &rv, opts...)
 	if err != nil {

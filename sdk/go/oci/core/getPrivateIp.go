@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func LookupPrivateIp(ctx *pulumi.Context, args *LookupPrivateIpArgs, opts ...pulumi.InvokeOption) (*LookupPrivateIpResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPrivateIpResult
 	err := ctx.Invoke("oci:Core/getPrivateIp:getPrivateIp", args, &rv, opts...)
 	if err != nil {

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrPlanPlanGroupStepUserDefinedStepResult
     {
         /// <summary>
-        /// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        /// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string FunctionId;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string RunAsUser;
         /// <summary>
-        /// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        /// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string RunOnInstanceId;
         /// <summary>

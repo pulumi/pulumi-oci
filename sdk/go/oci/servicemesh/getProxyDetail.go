@@ -4,6 +4,7 @@
 package servicemesh
 
 import (
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,6 +36,7 @@ import (
 //
 // ```
 func GetProxyDetail(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetProxyDetailResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProxyDetailResult
 	err := ctx.Invoke("oci:ServiceMesh/getProxyDetail:getProxyDetail", nil, &rv, opts...)
 	if err != nil {

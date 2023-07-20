@@ -32,14 +32,14 @@ public final class GetContainerInstancesPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -69,14 +69,14 @@ public final class GetContainerInstancesPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     * A filter to only return resources that match the given lifecycle state.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     * @return A filter to only return resources that match the given lifecycle state.
      * 
      */
     public Optional<String> state() {
@@ -123,7 +123,7 @@ public final class GetContainerInstancesPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class GetContainerInstancesPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         * @param state A filter to only return resources that match the given lifecycle state.
          * 
          * @return builder
          * 

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupBdsInstanceMetastoreConfig(ctx *pulumi.Context, args *LookupBdsInstanceMetastoreConfigArgs, opts ...pulumi.InvokeOption) (*LookupBdsInstanceMetastoreConfigResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBdsInstanceMetastoreConfigResult
 	err := ctx.Invoke("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetBackendSets(ctx *pulumi.Context, args *GetBackendSetsArgs, opts ...pulumi.InvokeOption) (*GetBackendSetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBackendSetsResult
 	err := ctx.Invoke("oci:LoadBalancer/getBackendSets:getBackendSets", args, &rv, opts...)
 	if err != nil {

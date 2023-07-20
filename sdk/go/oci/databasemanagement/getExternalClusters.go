@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetExternalClusters(ctx *pulumi.Context, args *GetExternalClustersArgs, opts ...pulumi.InvokeOption) (*GetExternalClustersResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalClustersResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalClusters:getExternalClusters", args, &rv, opts...)
 	if err != nil {

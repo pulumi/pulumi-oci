@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupSession(ctx *pulumi.Context, args *LookupSessionArgs, opts ...pulumi.InvokeOption) (*LookupSessionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSessionResult
 	err := ctx.Invoke("oci:Bastion/getSession:getSession", args, &rv, opts...)
 	if err != nil {

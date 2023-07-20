@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupTargetAlertPolicyAssociation(ctx *pulumi.Context, args *LookupTargetAlertPolicyAssociationArgs, opts ...pulumi.InvokeOption) (*LookupTargetAlertPolicyAssociationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupTargetAlertPolicyAssociationResult
 	err := ctx.Invoke("oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation", args, &rv, opts...)
 	if err != nil {

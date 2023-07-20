@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -118,6 +119,7 @@ func NewManagementAgent(ctx *pulumi.Context,
 	if args.ManagedAgentId == nil {
 		return nil, errors.New("invalid value for required argument 'ManagedAgentId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ManagementAgent
 	err := ctx.RegisterResource("oci:ManagementAgent/managementAgent:ManagementAgent", name, args, &resource, opts...)
 	if err != nil {

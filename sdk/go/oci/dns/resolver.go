@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -81,6 +82,7 @@ func NewResolver(ctx *pulumi.Context,
 	if args.ResolverId == nil {
 		return nil, errors.New("invalid value for required argument 'ResolverId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Resolver
 	err := ctx.RegisterResource("oci:Dns/resolver:Resolver", name, args, &resource, opts...)
 	if err != nil {

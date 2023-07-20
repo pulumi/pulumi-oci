@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetProtectedDatabases(ctx *pulumi.Context, args *GetProtectedDatabasesArgs, opts ...pulumi.InvokeOption) (*GetProtectedDatabasesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectedDatabasesResult
 	err := ctx.Invoke("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args, &rv, opts...)
 	if err != nil {

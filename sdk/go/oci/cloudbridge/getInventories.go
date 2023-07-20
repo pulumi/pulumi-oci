@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetInventories(ctx *pulumi.Context, args *GetInventoriesArgs, opts ...pulumi.InvokeOption) (*GetInventoriesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInventoriesResult
 	err := ctx.Invoke("oci:CloudBridge/getInventories:getInventories", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetReplicationSchedules(ctx *pulumi.Context, args *GetReplicationSchedulesArgs, opts ...pulumi.InvokeOption) (*GetReplicationSchedulesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetReplicationSchedulesResult
 	err := ctx.Invoke("oci:CloudMigrations/getReplicationSchedules:getReplicationSchedules", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetAiPrivateEndpoints(ctx *pulumi.Context, args *GetAiPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetAiPrivateEndpointsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAiPrivateEndpointsResult
 	err := ctx.Invoke("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", args, &rv, opts...)
 	if err != nil {

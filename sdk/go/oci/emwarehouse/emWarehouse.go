@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -113,6 +114,7 @@ func NewEmWarehouse(ctx *pulumi.Context,
 	if args.OperationsInsightsWarehouseId == nil {
 		return nil, errors.New("invalid value for required argument 'OperationsInsightsWarehouseId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource EmWarehouse
 	err := ctx.RegisterResource("oci:EmWarehouse/emWarehouse:EmWarehouse", name, args, &resource, opts...)
 	if err != nil {

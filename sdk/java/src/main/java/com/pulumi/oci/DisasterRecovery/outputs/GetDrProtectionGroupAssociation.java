@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupAssociation {
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String peerId;
@@ -27,7 +27,7 @@ public final class GetDrProtectionGroupAssociation {
 
     private GetDrProtectionGroupAssociation() {}
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String peerId() {

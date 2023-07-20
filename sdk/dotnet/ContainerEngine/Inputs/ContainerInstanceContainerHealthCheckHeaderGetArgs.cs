@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
     public sealed class ContainerInstanceContainerHealthCheckHeaderGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the volume. This has be unique cross single ContainerInstance.
+        /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Container Http header value.
+        /// Container HTTP header value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

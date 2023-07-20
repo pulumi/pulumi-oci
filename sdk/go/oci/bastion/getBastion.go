@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupBastion(ctx *pulumi.Context, args *LookupBastionArgs, opts ...pulumi.InvokeOption) (*LookupBastionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBastionResult
 	err := ctx.Invoke("oci:Bastion/getBastion:getBastion", args, &rv, opts...)
 	if err != nil {

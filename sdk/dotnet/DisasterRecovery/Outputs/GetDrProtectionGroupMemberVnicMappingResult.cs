@@ -14,15 +14,23 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrProtectionGroupMemberVnicMappingResult
     {
         /// <summary>
-        /// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+        /// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
         /// </summary>
         public readonly ImmutableArray<string> DestinationNsgIdLists;
         /// <summary>
-        /// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+        /// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        /// </summary>
+        public readonly string DestinationPrimaryPrivateIpAddress;
+        /// <summary>
+        /// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        /// </summary>
+        public readonly string DestinationPrimaryPrivateIpHostnameLabel;
+        /// <summary>
+        /// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string DestinationSubnetId;
         /// <summary>
-        /// The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+        /// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string SourceVnicId;
 
@@ -30,11 +38,17 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         private GetDrProtectionGroupMemberVnicMappingResult(
             ImmutableArray<string> destinationNsgIdLists,
 
+            string destinationPrimaryPrivateIpAddress,
+
+            string destinationPrimaryPrivateIpHostnameLabel,
+
             string destinationSubnetId,
 
             string sourceVnicId)
         {
             DestinationNsgIdLists = destinationNsgIdLists;
+            DestinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
+            DestinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
             DestinationSubnetId = destinationSubnetId;
             SourceVnicId = sourceVnicId;
         }

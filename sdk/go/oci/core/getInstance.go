@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func LookupInstance(ctx *pulumi.Context, args *LookupInstanceArgs, opts ...pulumi.InvokeOption) (*LookupInstanceResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupInstanceResult
 	err := ctx.Invoke("oci:Core/getInstance:getInstance", args, &rv, opts...)
 	if err != nil {
@@ -70,7 +72,7 @@ type LookupInstanceResult struct {
 	BootVolumeId string `pulumi:"bootVolumeId"`
 	// The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 	CapacityReservationId string `pulumi:"capacityReservationId"`
-	// The OCID of the compartment that contains the instance.
+	// The OCID of the compartment containing images to search
 	CompartmentId     string                        `pulumi:"compartmentId"`
 	ComputeClusterId  string                        `pulumi:"computeClusterId"`
 	CreateVnicDetails []GetInstanceCreateVnicDetail `pulumi:"createVnicDetails"`
@@ -95,8 +97,10 @@ type LookupInstanceResult struct {
 	// Deprecated. Use `sourceDetails` instead.
 	//
 	// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
-	Image      string `pulumi:"image"`
-	InstanceId string `pulumi:"instanceId"`
+	Image string `pulumi:"image"`
+	// The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+	InstanceConfigurationId string `pulumi:"instanceConfigurationId"`
+	InstanceId              string `pulumi:"instanceId"`
 	// Optional mutable instance options
 	InstanceOptions []GetInstanceInstanceOption `pulumi:"instanceOptions"`
 	// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
@@ -208,7 +212,7 @@ func (o LookupInstanceResultOutput) CapacityReservationId() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
-// The OCID of the compartment that contains the instance.
+// The OCID of the compartment containing images to search
 func (o LookupInstanceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -268,6 +272,11 @@ func (o LookupInstanceResultOutput) Id() pulumi.StringOutput {
 // Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
 func (o LookupInstanceResultOutput) Image() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+func (o LookupInstanceResultOutput) InstanceConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceConfigurationId }).(pulumi.StringOutput)
 }
 
 func (o LookupInstanceResultOutput) InstanceId() pulumi.StringOutput {

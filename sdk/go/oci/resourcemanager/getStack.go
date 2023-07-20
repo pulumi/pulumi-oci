@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetStack(ctx *pulumi.Context, args *GetStackArgs, opts ...pulumi.InvokeOption) (*GetStackResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStackResult
 	err := ctx.Invoke("oci:ResourceManager/getStack:getStack", args, &rv, opts...)
 	if err != nil {

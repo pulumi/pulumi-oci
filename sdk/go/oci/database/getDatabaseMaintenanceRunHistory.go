@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetDatabaseMaintenanceRunHistory(ctx *pulumi.Context, args *GetDatabaseMaintenanceRunHistoryArgs, opts ...pulumi.InvokeOption) (*GetDatabaseMaintenanceRunHistoryResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatabaseMaintenanceRunHistoryResult
 	err := ctx.Invoke("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", args, &rv, opts...)
 	if err != nil {

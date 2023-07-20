@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanResult {
     /**
-     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String compartmentId;
@@ -30,7 +30,7 @@ public final class GetDrPlanResult {
     private String displayName;
     private String drPlanId;
     /**
-     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String drProtectionGroupId;
@@ -40,7 +40,7 @@ public final class GetDrPlanResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String id;
@@ -50,7 +50,7 @@ public final class GetDrPlanResult {
      */
     private String lifeCycleDetails;
     /**
-     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String peerDrProtectionGroupId;
@@ -92,7 +92,7 @@ public final class GetDrPlanResult {
 
     private GetDrPlanResult() {}
     /**
-     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String compartmentId() {
@@ -116,7 +116,7 @@ public final class GetDrPlanResult {
         return this.drPlanId;
     }
     /**
-     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String drProtectionGroupId() {
@@ -130,7 +130,7 @@ public final class GetDrPlanResult {
         return this.freeformTags;
     }
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String id() {
@@ -144,7 +144,7 @@ public final class GetDrPlanResult {
         return this.lifeCycleDetails;
     }
     /**
-     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String peerDrProtectionGroupId() {

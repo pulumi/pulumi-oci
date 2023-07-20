@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ContainerInstances.Inputs
     public sealed class GetContainerInstancesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the volume. This has be unique cross single ContainerInstance.
+        /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

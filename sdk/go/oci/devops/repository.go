@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -132,6 +133,7 @@ func NewRepository(ctx *pulumi.Context,
 	if args.RepositoryType == nil {
 		return nil, errors.New("invalid value for required argument 'RepositoryType'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Repository
 	err := ctx.RegisterResource("oci:DevOps/repository:Repository", name, args, &resource, opts...)
 	if err != nil {

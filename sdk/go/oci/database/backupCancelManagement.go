@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -67,6 +68,7 @@ func NewBackupCancelManagement(ctx *pulumi.Context,
 	if args.BackupId == nil {
 		return nil, errors.New("invalid value for required argument 'BackupId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BackupCancelManagement
 	err := ctx.RegisterResource("oci:Database/backupCancelManagement:BackupCancelManagement", name, args, &resource, opts...)
 	if err != nil {

@@ -4,6 +4,7 @@
 package datasafe
 
 import (
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetCompatibleFormatsForDataType(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetCompatibleFormatsForDataTypeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCompatibleFormatsForDataTypeResult
 	err := ctx.Invoke("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", nil, &rv, opts...)
 	if err != nil {

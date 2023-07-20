@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDeployPipeline(ctx *pulumi.Context, args *LookupDeployPipelineArgs, opts ...pulumi.InvokeOption) (*LookupDeployPipelineResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDeployPipelineResult
 	err := ctx.Invoke("oci:DevOps/getDeployPipeline:getDeployPipeline", args, &rv, opts...)
 	if err != nil {

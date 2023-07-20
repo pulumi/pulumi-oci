@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func LookupDomainsKmsiSetting(ctx *pulumi.Context, args *LookupDomainsKmsiSettingArgs, opts ...pulumi.InvokeOption) (*LookupDomainsKmsiSettingResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsKmsiSettingResult
 	err := ctx.Invoke("oci:Identity/getDomainsKmsiSetting:getDomainsKmsiSetting", args, &rv, opts...)
 	if err != nil {

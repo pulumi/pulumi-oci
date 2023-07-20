@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetExternalExadataStorageServerTopSqlCpuActivity(ctx *pulumi.Context, args *GetExternalExadataStorageServerTopSqlCpuActivityArgs, opts ...pulumi.InvokeOption) (*GetExternalExadataStorageServerTopSqlCpuActivityResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalExadataStorageServerTopSqlCpuActivityResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", args, &rv, opts...)
 	if err != nil {

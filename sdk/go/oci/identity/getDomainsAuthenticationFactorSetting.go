@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func LookupDomainsAuthenticationFactorSetting(ctx *pulumi.Context, args *LookupDomainsAuthenticationFactorSettingArgs, opts ...pulumi.InvokeOption) (*LookupDomainsAuthenticationFactorSettingResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsAuthenticationFactorSettingResult
 	err := ctx.Invoke("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", args, &rv, opts...)
 	if err != nil {

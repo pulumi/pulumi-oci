@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -54,6 +55,7 @@ import (
 //
 // ```
 func GetExsiHosts(ctx *pulumi.Context, args *GetExsiHostsArgs, opts ...pulumi.InvokeOption) (*GetExsiHostsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExsiHostsResult
 	err := ctx.Invoke("oci:Ocvp/getExsiHosts:getExsiHosts", args, &rv, opts...)
 	if err != nil {

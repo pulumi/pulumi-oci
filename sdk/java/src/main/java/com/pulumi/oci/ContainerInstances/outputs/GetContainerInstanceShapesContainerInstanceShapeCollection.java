@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetContainerInstanceShapesContainerInstanceShapeCollection {
     /**
-     * @return List of shapes.
+     * @return A list of shapes.
      * 
      */
     private List<GetContainerInstanceShapesContainerInstanceShapeCollectionItem> items;
 
     private GetContainerInstanceShapesContainerInstanceShapeCollection() {}
     /**
-     * @return List of shapes.
+     * @return A list of shapes.
      * 
      */
     public List<GetContainerInstanceShapesContainerInstanceShapeCollectionItem> items() {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetAutonomousCharacterSets(ctx *pulumi.Context, args *GetAutonomousCharacterSetsArgs, opts ...pulumi.InvokeOption) (*GetAutonomousCharacterSetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousCharacterSetsResult
 	err := ctx.Invoke("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", args, &rv, opts...)
 	if err != nil {

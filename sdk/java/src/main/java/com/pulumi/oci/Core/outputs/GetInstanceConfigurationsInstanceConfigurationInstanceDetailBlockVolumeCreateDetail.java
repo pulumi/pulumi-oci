@@ -62,7 +62,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
      */
     private Boolean isAutoTuneEnabled;
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     private String kmsKeyId;
@@ -143,7 +143,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
         return this.isAutoTuneEnabled;
     }
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public String kmsKeyId() {

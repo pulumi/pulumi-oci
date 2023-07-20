@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetAlertPolicy(ctx *pulumi.Context, args *GetAlertPolicyArgs, opts ...pulumi.InvokeOption) (*GetAlertPolicyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAlertPolicyResult
 	err := ctx.Invoke("oci:DataSafe/getAlertPolicy:getAlertPolicy", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetRuleSets(ctx *pulumi.Context, args *GetRuleSetsArgs, opts ...pulumi.InvokeOption) (*GetRuleSetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRuleSetsResult
 	err := ctx.Invoke("oci:LoadBalancer/getRuleSets:getRuleSets", args, &rv, opts...)
 	if err != nil {

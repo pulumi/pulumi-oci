@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -133,6 +134,7 @@ func NewPublicIp(ctx *pulumi.Context,
 	if args.Lifetime == nil {
 		return nil, errors.New("invalid value for required argument 'Lifetime'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource PublicIp
 	err := ctx.RegisterResource("oci:Core/publicIp:PublicIp", name, args, &resource, opts...)
 	if err != nil {

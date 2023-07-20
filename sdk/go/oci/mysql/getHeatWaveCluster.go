@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupHeatWaveCluster(ctx *pulumi.Context, args *LookupHeatWaveClusterArgs, opts ...pulumi.InvokeOption) (*LookupHeatWaveClusterResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupHeatWaveClusterResult
 	err := ctx.Invoke("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", args, &rv, opts...)
 	if err != nil {

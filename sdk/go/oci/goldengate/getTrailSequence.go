@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetTrailSequence(ctx *pulumi.Context, args *GetTrailSequenceArgs, opts ...pulumi.InvokeOption) (*GetTrailSequenceResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTrailSequenceResult
 	err := ctx.Invoke("oci:GoldenGate/getTrailSequence:getTrailSequence", args, &rv, opts...)
 	if err != nil {

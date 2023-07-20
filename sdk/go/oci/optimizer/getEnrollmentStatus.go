@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupEnrollmentStatus(ctx *pulumi.Context, args *LookupEnrollmentStatusArgs, opts ...pulumi.InvokeOption) (*LookupEnrollmentStatusResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupEnrollmentStatusResult
 	err := ctx.Invoke("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", args, &rv, opts...)
 	if err != nil {

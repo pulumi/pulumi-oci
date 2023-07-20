@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetDrPlans(ctx *pulumi.Context, args *GetDrPlansArgs, opts ...pulumi.InvokeOption) (*GetDrPlansResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrPlansResult
 	err := ctx.Invoke("oci:DisasterRecovery/getDrPlans:getDrPlans", args, &rv, opts...)
 	if err != nil {
@@ -75,7 +77,7 @@ type GetDrPlansResult struct {
 	DrPlanCollections []GetDrPlansDrPlanCollection `pulumi:"drPlanCollections"`
 	DrPlanId          *string                      `pulumi:"drPlanId"`
 	DrPlanType        *string                      `pulumi:"drPlanType"`
-	// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId string             `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlansFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -149,7 +151,7 @@ func (o GetDrPlansResultOutput) DrPlanType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrPlansResult) *string { return v.DrPlanType }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 func (o GetDrPlansResultOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansResult) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }

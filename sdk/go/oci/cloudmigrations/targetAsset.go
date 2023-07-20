@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -190,6 +191,7 @@ func NewTargetAsset(ctx *pulumi.Context,
 	if args.UserSpec == nil {
 		return nil, errors.New("invalid value for required argument 'UserSpec'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource TargetAsset
 	err := ctx.RegisterResource("oci:CloudMigrations/targetAsset:TargetAsset", name, args, &resource, opts...)
 	if err != nil {

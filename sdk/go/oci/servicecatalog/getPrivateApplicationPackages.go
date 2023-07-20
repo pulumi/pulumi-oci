@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetPrivateApplicationPackages(ctx *pulumi.Context, args *GetPrivateApplicationPackagesArgs, opts ...pulumi.InvokeOption) (*GetPrivateApplicationPackagesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPrivateApplicationPackagesResult
 	err := ctx.Invoke("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", args, &rv, opts...)
 	if err != nil {

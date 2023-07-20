@@ -8,12 +8,13 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
 //
-// Creates a new ContainerInstance.
+// Creates a container instance and deploys the containers on it.
 //
 // ## Example Usage
 //
@@ -34,14 +35,13 @@ import (
 //				CompartmentId:      pulumi.Any(_var.Compartment_id),
 //				Containers: containerengine.ContainerInstanceContainerArray{
 //					&containerengine.ContainerInstanceContainerArgs{
-//						ImageUrl:               pulumi.Any(_var.Container_instance_containers_image_url),
-//						AdditionalCapabilities: pulumi.Any(_var.Container_instance_containers_additional_capabilities),
-//						Arguments:              pulumi.Any(_var.Container_instance_containers_arguments),
-//						Commands:               pulumi.Any(_var.Container_instance_containers_command),
-//						DefinedTags:            pulumi.Any(_var.Container_instance_containers_defined_tags),
-//						DisplayName:            pulumi.Any(_var.Container_instance_containers_display_name),
-//						EnvironmentVariables:   pulumi.Any(_var.Container_instance_containers_environment_variables),
-//						FreeformTags:           pulumi.Any(_var.Container_instance_containers_freeform_tags),
+//						ImageUrl:             pulumi.Any(_var.Container_instance_containers_image_url),
+//						Arguments:            pulumi.Any(_var.Container_instance_containers_arguments),
+//						Commands:             pulumi.Any(_var.Container_instance_containers_command),
+//						DefinedTags:          pulumi.Any(_var.Container_instance_containers_defined_tags),
+//						DisplayName:          pulumi.Any(_var.Container_instance_containers_display_name),
+//						EnvironmentVariables: pulumi.Any(_var.Container_instance_containers_environment_variables),
+//						FreeformTags:         pulumi.Any(_var.Container_instance_containers_freeform_tags),
 //						HealthChecks: containerengine.ContainerInstanceContainerHealthCheckArray{
 //							&containerengine.ContainerInstanceContainerHealthCheckArgs{
 //								HealthCheckType:  pulumi.Any(_var.Container_instance_containers_health_checks_health_check_type),
@@ -158,52 +158,54 @@ import (
 type ContainerInstance struct {
 	pulumi.CustomResourceState
 
-	// Availability Domain where the ContainerInstance should be created.
+	// The availability domain where the container instance runs.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment OCID.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The number of containers on this Instance
+	// The number of containers on the container instance.
 	ContainerCount pulumi.IntOutput `pulumi:"containerCount"`
 	// Container restart policy
 	ContainerRestartPolicy pulumi.StringOutput `pulumi:"containerRestartPolicy"`
-	// The Containers to create on this Instance.
+	// The containers to create on this container instance.
 	Containers ContainerInstanceContainerArrayOutput `pulumi:"containers"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig ContainerInstanceDnsConfigOutput `pulumi:"dnsConfig"`
-	// Fault Domain where the ContainerInstance should run.
+	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringOutput `pulumi:"gracefulShutdownTimeoutInSeconds"`
-	// The image pull secrets for accessing private registry to pull images for containers
+	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets ContainerInstanceImagePullSecretArrayOutput `pulumi:"imagePullSecrets"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape pulumi.StringOutput `pulumi:"shape"`
-	// The size and amount of resources available to the Container Instance.
+	// The size and amount of resources available to the container instance.
 	ShapeConfig ContainerInstanceShapeConfigOutput `pulumi:"shapeConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// The networks to make available to containers on this Instance.
+	// The networks available to containers on this container instance.
 	Vnics ContainerInstanceVnicArrayOutput `pulumi:"vnics"`
-	// The number of volumes that attached to this Instance
+	// The number of volumes that are attached to the container instance.
 	VolumeCount pulumi.IntOutput `pulumi:"volumeCount"`
-	// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+	// A volume is a directory with data that is accessible across multiple containers in a container instance.
+	//
+	// You can attach up to 32 volumes to single container instance.
 	Volumes ContainerInstanceVolumeArrayOutput `pulumi:"volumes"`
 }
 
@@ -232,6 +234,7 @@ func NewContainerInstance(ctx *pulumi.Context,
 	if args.Vnics == nil {
 		return nil, errors.New("invalid value for required argument 'Vnics'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ContainerInstance
 	err := ctx.RegisterResource("oci:ContainerEngine/containerInstance:ContainerInstance", name, args, &resource, opts...)
 	if err != nil {
@@ -254,102 +257,106 @@ func GetContainerInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ContainerInstance resources.
 type containerInstanceState struct {
-	// Availability Domain where the ContainerInstance should be created.
+	// The availability domain where the container instance runs.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment OCID.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The number of containers on this Instance
+	// The number of containers on the container instance.
 	ContainerCount *int `pulumi:"containerCount"`
 	// Container restart policy
 	ContainerRestartPolicy *string `pulumi:"containerRestartPolicy"`
-	// The Containers to create on this Instance.
+	// The containers to create on this container instance.
 	Containers []ContainerInstanceContainer `pulumi:"containers"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig *ContainerInstanceDnsConfig `pulumi:"dnsConfig"`
-	// Fault Domain where the ContainerInstance should run.
+	// The fault domain where the container instance runs.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds *string `pulumi:"gracefulShutdownTimeoutInSeconds"`
-	// The image pull secrets for accessing private registry to pull images for containers
+	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets []ContainerInstanceImagePullSecret `pulumi:"imagePullSecrets"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape *string `pulumi:"shape"`
-	// The size and amount of resources available to the Container Instance.
+	// The size and amount of resources available to the container instance.
 	ShapeConfig *ContainerInstanceShapeConfig `pulumi:"shapeConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// The networks to make available to containers on this Instance.
+	// The networks available to containers on this container instance.
 	Vnics []ContainerInstanceVnic `pulumi:"vnics"`
-	// The number of volumes that attached to this Instance
+	// The number of volumes that are attached to the container instance.
 	VolumeCount *int `pulumi:"volumeCount"`
-	// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+	// A volume is a directory with data that is accessible across multiple containers in a container instance.
+	//
+	// You can attach up to 32 volumes to single container instance.
 	Volumes []ContainerInstanceVolume `pulumi:"volumes"`
 }
 
 type ContainerInstanceState struct {
-	// Availability Domain where the ContainerInstance should be created.
+	// The availability domain where the container instance runs.
 	AvailabilityDomain pulumi.StringPtrInput
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment OCID.
 	CompartmentId pulumi.StringPtrInput
-	// The number of containers on this Instance
+	// The number of containers on the container instance.
 	ContainerCount pulumi.IntPtrInput
 	// Container restart policy
 	ContainerRestartPolicy pulumi.StringPtrInput
-	// The Containers to create on this Instance.
+	// The containers to create on this container instance.
 	Containers ContainerInstanceContainerArrayInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig ContainerInstanceDnsConfigPtrInput
-	// Fault Domain where the ContainerInstance should run.
+	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringPtrInput
-	// The image pull secrets for accessing private registry to pull images for containers
+	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets ContainerInstanceImagePullSecretArrayInput
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails pulumi.StringPtrInput
-	// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape pulumi.StringPtrInput
-	// The size and amount of resources available to the Container Instance.
+	// The size and amount of resources available to the container instance.
 	ShapeConfig ContainerInstanceShapeConfigPtrInput
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags pulumi.MapInput
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringPtrInput
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
-	// The networks to make available to containers on this Instance.
+	// The networks available to containers on this container instance.
 	Vnics ContainerInstanceVnicArrayInput
-	// The number of volumes that attached to this Instance
+	// The number of volumes that are attached to the container instance.
 	VolumeCount pulumi.IntPtrInput
-	// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+	// A volume is a directory with data that is accessible across multiple containers in a container instance.
+	//
+	// You can attach up to 32 volumes to single container instance.
 	Volumes ContainerInstanceVolumeArrayInput
 }
 
@@ -358,79 +365,83 @@ func (ContainerInstanceState) ElementType() reflect.Type {
 }
 
 type containerInstanceArgs struct {
-	// Availability Domain where the ContainerInstance should be created.
+	// The availability domain where the container instance runs.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Container restart policy
 	ContainerRestartPolicy *string `pulumi:"containerRestartPolicy"`
-	// The Containers to create on this Instance.
+	// The containers to create on this container instance.
 	Containers []ContainerInstanceContainer `pulumi:"containers"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig *ContainerInstanceDnsConfig `pulumi:"dnsConfig"`
-	// Fault Domain where the ContainerInstance should run.
+	// The fault domain where the container instance runs.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds *string `pulumi:"gracefulShutdownTimeoutInSeconds"`
-	// The image pull secrets for accessing private registry to pull images for containers
+	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets []ContainerInstanceImagePullSecret `pulumi:"imagePullSecrets"`
-	// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape string `pulumi:"shape"`
-	// The size and amount of resources available to the Container Instance.
+	// The size and amount of resources available to the container instance.
 	ShapeConfig ContainerInstanceShapeConfig `pulumi:"shapeConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
-	// The networks to make available to containers on this Instance.
+	// The networks available to containers on this container instance.
 	Vnics []ContainerInstanceVnic `pulumi:"vnics"`
-	// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+	// A volume is a directory with data that is accessible across multiple containers in a container instance.
+	//
+	// You can attach up to 32 volumes to single container instance.
 	Volumes []ContainerInstanceVolume `pulumi:"volumes"`
 }
 
 // The set of arguments for constructing a ContainerInstance resource.
 type ContainerInstanceArgs struct {
-	// Availability Domain where the ContainerInstance should be created.
+	// The availability domain where the container instance runs.
 	AvailabilityDomain pulumi.StringInput
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment OCID.
 	CompartmentId pulumi.StringInput
 	// Container restart policy
 	ContainerRestartPolicy pulumi.StringPtrInput
-	// The Containers to create on this Instance.
+	// The containers to create on this container instance.
 	Containers ContainerInstanceContainerArrayInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig ContainerInstanceDnsConfigPtrInput
-	// Fault Domain where the ContainerInstance should run.
+	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringPtrInput
-	// The image pull secrets for accessing private registry to pull images for containers
+	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets ContainerInstanceImagePullSecretArrayInput
-	// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape pulumi.StringInput
-	// The size and amount of resources available to the Container Instance.
+	// The size and amount of resources available to the container instance.
 	ShapeConfig ContainerInstanceShapeConfigInput
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
-	// The networks to make available to containers on this Instance.
+	// The networks available to containers on this container instance.
 	Vnics ContainerInstanceVnicArrayInput
-	// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+	// A volume is a directory with data that is accessible across multiple containers in a container instance.
+	//
+	// You can attach up to 32 volumes to single container instance.
 	Volumes ContainerInstanceVolumeArrayInput
 }
 
@@ -521,17 +532,17 @@ func (o ContainerInstanceOutput) ToContainerInstanceOutputWithContext(ctx contex
 	return o
 }
 
-// Availability Domain where the ContainerInstance should be created.
+// The availability domain where the container instance runs.
 func (o ContainerInstanceOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// (Updatable) Compartment Identifier
+// (Updatable) The compartment OCID.
 func (o ContainerInstanceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The number of containers on this Instance
+// The number of containers on the container instance.
 func (o ContainerInstanceOutput) ContainerCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.IntOutput { return v.ContainerCount }).(pulumi.IntOutput)
 }
@@ -541,12 +552,12 @@ func (o ContainerInstanceOutput) ContainerRestartPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.ContainerRestartPolicy }).(pulumi.StringOutput)
 }
 
-// The Containers to create on this Instance.
+// The containers to create on this container instance.
 func (o ContainerInstanceOutput) Containers() ContainerInstanceContainerArrayOutput {
 	return o.ApplyT(func(v *ContainerInstance) ContainerInstanceContainerArrayOutput { return v.Containers }).(ContainerInstanceContainerArrayOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 func (o ContainerInstanceOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -556,12 +567,12 @@ func (o ContainerInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 func (o ContainerInstanceOutput) DnsConfig() ContainerInstanceDnsConfigOutput {
 	return o.ApplyT(func(v *ContainerInstance) ContainerInstanceDnsConfigOutput { return v.DnsConfig }).(ContainerInstanceDnsConfigOutput)
 }
 
-// Fault Domain where the ContainerInstance should run.
+// The fault domain where the container instance runs.
 func (o ContainerInstanceOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.FaultDomain }).(pulumi.StringOutput)
 }
@@ -571,27 +582,27 @@ func (o ContainerInstanceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 func (o ContainerInstanceOutput) GracefulShutdownTimeoutInSeconds() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.GracefulShutdownTimeoutInSeconds }).(pulumi.StringOutput)
 }
 
-// The image pull secrets for accessing private registry to pull images for containers
+// The image pulls secrets so you can access private registry to pull container images.
 func (o ContainerInstanceOutput) ImagePullSecrets() ContainerInstanceImagePullSecretArrayOutput {
 	return o.ApplyT(func(v *ContainerInstance) ContainerInstanceImagePullSecretArrayOutput { return v.ImagePullSecrets }).(ContainerInstanceImagePullSecretArrayOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 func (o ContainerInstanceOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+// The shape of the container instance. The shape determines the resources available to the container instance.
 func (o ContainerInstanceOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The size and amount of resources available to the Container Instance.
+// The size and amount of resources available to the container instance.
 func (o ContainerInstanceOutput) ShapeConfig() ContainerInstanceShapeConfigOutput {
 	return o.ApplyT(func(v *ContainerInstance) ContainerInstanceShapeConfigOutput { return v.ShapeConfig }).(ContainerInstanceShapeConfigOutput)
 }
@@ -604,32 +615,34 @@ func (o ContainerInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 func (o ContainerInstanceOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o ContainerInstanceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o ContainerInstanceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The networks to make available to containers on this Instance.
+// The networks available to containers on this container instance.
 func (o ContainerInstanceOutput) Vnics() ContainerInstanceVnicArrayOutput {
 	return o.ApplyT(func(v *ContainerInstance) ContainerInstanceVnicArrayOutput { return v.Vnics }).(ContainerInstanceVnicArrayOutput)
 }
 
-// The number of volumes that attached to this Instance
+// The number of volumes that are attached to the container instance.
 func (o ContainerInstanceOutput) VolumeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.IntOutput { return v.VolumeCount }).(pulumi.IntOutput)
 }
 
-// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+// A volume is a directory with data that is accessible across multiple containers in a container instance.
+//
+// You can attach up to 32 volumes to single container instance.
 func (o ContainerInstanceOutput) Volumes() ContainerInstanceVolumeArrayOutput {
 	return o.ApplyT(func(v *ContainerInstance) ContainerInstanceVolumeArrayOutput { return v.Volumes }).(ContainerInstanceVolumeArrayOutput)
 }

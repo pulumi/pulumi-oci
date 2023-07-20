@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,6 +39,7 @@ import (
 //
 // ```
 func GetMigrationObjectTypes(ctx *pulumi.Context, args *GetMigrationObjectTypesArgs, opts ...pulumi.InvokeOption) (*GetMigrationObjectTypesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMigrationObjectTypesResult
 	err := ctx.Invoke("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args, &rv, opts...)
 	if err != nil {

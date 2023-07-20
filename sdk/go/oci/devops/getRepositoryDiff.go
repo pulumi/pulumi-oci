@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetRepositoryDiff(ctx *pulumi.Context, args *GetRepositoryDiffArgs, opts ...pulumi.InvokeOption) (*GetRepositoryDiffResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRepositoryDiffResult
 	err := ctx.Invoke("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args, &rv, opts...)
 	if err != nil {

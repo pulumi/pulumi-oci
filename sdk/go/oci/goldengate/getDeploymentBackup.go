@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDeploymentBackup(ctx *pulumi.Context, args *LookupDeploymentBackupArgs, opts ...pulumi.InvokeOption) (*LookupDeploymentBackupResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDeploymentBackupResult
 	err := ctx.Invoke("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args, &rv, opts...)
 	if err != nil {

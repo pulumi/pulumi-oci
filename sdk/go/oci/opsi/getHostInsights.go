@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -48,6 +49,7 @@ import (
 //
 // ```
 func GetHostInsights(ctx *pulumi.Context, args *GetHostInsightsArgs, opts ...pulumi.InvokeOption) (*GetHostInsightsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostInsightsResult
 	err := ctx.Invoke("oci:Opsi/getHostInsights:getHostInsights", args, &rv, opts...)
 	if err != nil {

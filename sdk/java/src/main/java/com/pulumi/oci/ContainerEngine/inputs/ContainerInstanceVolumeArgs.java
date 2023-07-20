@@ -18,14 +18,14 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
     public static final ContainerInstanceVolumeArgs Empty = new ContainerInstanceVolumeArgs();
 
     /**
-     * Volume type that we are using for empty dir where it could be either File Storage or Memory
+     * The volume type of the empty directory, can be either File Storage or Memory.
      * 
      */
     @Import(name="backingStore")
     private @Nullable Output<String> backingStore;
 
     /**
-     * @return Volume type that we are using for empty dir where it could be either File Storage or Memory
+     * @return The volume type of the empty directory, can be either File Storage or Memory.
      * 
      */
     public Optional<Output<String>> backingStore() {
@@ -48,14 +48,14 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * The name of the volume. This has be unique cross single ContainerInstance.
+     * The name of the volume. This must be unique within a single container instance.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public Output<String> name() {
@@ -105,7 +105,7 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param backingStore Volume type that we are using for empty dir where it could be either File Storage or Memory
+         * @param backingStore The volume type of the empty directory, can be either File Storage or Memory.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param backingStore Volume type that we are using for empty dir where it could be either File Storage or Memory
+         * @param backingStore The volume type of the empty directory, can be either File Storage or Memory.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param name The name of the volume. This has be unique cross single ContainerInstance.
+         * @param name The name of the volume. This must be unique within a single container instance.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param name The name of the volume. This has be unique cross single ContainerInstance.
+         * @param name The name of the volume. This must be unique within a single container instance.
          * 
          * @return builder
          * 

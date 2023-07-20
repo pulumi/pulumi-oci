@@ -90,7 +90,7 @@ export interface GetInstancesResult {
      */
     readonly capacityReservationId?: string;
     /**
-     * The OCID of the compartment that contains the instance.
+     * The OCID of the compartment containing images to search
      */
     readonly compartmentId: string;
     readonly computeClusterId?: string;

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetMetastores(ctx *pulumi.Context, args *GetMetastoresArgs, opts ...pulumi.InvokeOption) (*GetMetastoresResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMetastoresResult
 	err := ctx.Invoke("oci:DataCatalog/getMetastores:getMetastores", args, &rv, opts...)
 	if err != nil {

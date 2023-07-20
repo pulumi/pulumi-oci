@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupKeyStore(ctx *pulumi.Context, args *LookupKeyStoreArgs, opts ...pulumi.InvokeOption) (*LookupKeyStoreResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupKeyStoreResult
 	err := ctx.Invoke("oci:Database/getKeyStore:getKeyStore", args, &rv, opts...)
 	if err != nil {

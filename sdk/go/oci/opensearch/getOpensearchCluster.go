@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -65,6 +66,7 @@ import (
 //
 // ```
 func GetOpensearchCluster(ctx *pulumi.Context, args *GetOpensearchClusterArgs, opts ...pulumi.InvokeOption) (*GetOpensearchClusterResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOpensearchClusterResult
 	err := ctx.Invoke("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", args, &rv, opts...)
 	if err != nil {

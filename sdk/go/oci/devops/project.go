@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -102,6 +103,7 @@ func NewProject(ctx *pulumi.Context,
 	if args.NotificationConfig == nil {
 		return nil, errors.New("invalid value for required argument 'NotificationConfig'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Project
 	err := ctx.RegisterResource("oci:DevOps/project:Project", name, args, &resource, opts...)
 	if err != nil {

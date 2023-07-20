@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetFusionEnvironmentFamilies(ctx *pulumi.Context, args *GetFusionEnvironmentFamiliesArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentFamiliesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentFamiliesResult
 	err := ctx.Invoke("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", args, &rv, opts...)
 	if err != nil {

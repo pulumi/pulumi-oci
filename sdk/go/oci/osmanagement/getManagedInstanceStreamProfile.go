@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -68,6 +69,7 @@ import (
 //
 // ```
 func GetManagedInstanceStreamProfile(ctx *pulumi.Context, args *GetManagedInstanceStreamProfileArgs, opts ...pulumi.InvokeOption) (*GetManagedInstanceStreamProfileResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedInstanceStreamProfileResult
 	err := ctx.Invoke("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args, &rv, opts...)
 	if err != nil {

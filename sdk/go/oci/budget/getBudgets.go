@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -50,6 +51,7 @@ import (
 //
 // ```
 func GetBudgets(ctx *pulumi.Context, args *GetBudgetsArgs, opts ...pulumi.InvokeOption) (*GetBudgetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBudgetsResult
 	err := ctx.Invoke("oci:Budget/getBudgets:getBudgets", args, &rv, opts...)
 	if err != nil {

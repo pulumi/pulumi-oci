@@ -26,7 +26,7 @@ class DrProtectionGroupArgs:
                  members: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]] = None):
         """
         The set of arguments for constructing a DrProtectionGroup resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
         :param pulumi.Input['DrProtectionGroupLogLocationArgs'] log_location: (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
         :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
@@ -57,7 +57,7 @@ class DrProtectionGroupArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -176,7 +176,7 @@ class _DrProtectionGroupState:
         """
         Input properties used for looking up and filtering DrProtectionGroup resources.
         :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
@@ -188,7 +188,7 @@ class _DrProtectionGroupState:
         :param pulumi.Input[str] life_cycle_details: A message describing the DR Protection Group's current state in more detail.
         :param pulumi.Input['DrProtectionGroupLogLocationArgs'] log_location: (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]] members: (Updatable) A list of DR Protection Group members.
-        :param pulumi.Input[str] peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param pulumi.Input[str] peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         :param pulumi.Input[str] role: The role of this DR Protection Group.
         :param pulumi.Input[str] state: The current state of the DR Protection Group.
@@ -245,7 +245,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -345,7 +345,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="peerId")
     def peer_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_id")
 
@@ -472,12 +472,23 @@ class DrProtectionGroup(pulumi.CustomResource):
             members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
                 member_id=oci_disaster_recovery_member["test_member"]["id"],
                 member_type=var["dr_protection_group_members_member_type"],
+                destination_capacity_reservation_id=oci_disaster_recovery_destination_capacity_reservation["test_destination_capacity_reservation"]["id"],
                 destination_compartment_id=oci_identity_compartment["test_compartment"]["id"],
                 destination_dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
                 is_movable=var["dr_protection_group_members_is_movable"],
+                is_retain_fault_domain=var["dr_protection_group_members_is_retain_fault_domain"],
                 password_vault_secret_id=oci_vault_secret["test_secret"]["id"],
                 vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
                     destination_nsg_id_lists=var["dr_protection_group_members_vnic_mapping_destination_nsg_id_list"],
+                    destination_primary_private_ip_address=var["dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address"],
+                    destination_primary_private_ip_hostname_label=var["dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label"],
+                    destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    source_vnic_id=oci_core_vnic["test_vnic"]["id"],
+                )],
+                vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
+                    destination_nsg_id_lists=var["dr_protection_group_members_vnic_mappings_destination_nsg_id_list"],
+                    destination_primary_private_ip_address=var["dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address"],
+                    destination_primary_private_ip_hostname_label=var["dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label"],
                     destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
                     source_vnic_id=oci_core_vnic["test_vnic"]["id"],
                 )],
@@ -495,7 +506,7 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']] association: The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
@@ -545,12 +556,23 @@ class DrProtectionGroup(pulumi.CustomResource):
             members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
                 member_id=oci_disaster_recovery_member["test_member"]["id"],
                 member_type=var["dr_protection_group_members_member_type"],
+                destination_capacity_reservation_id=oci_disaster_recovery_destination_capacity_reservation["test_destination_capacity_reservation"]["id"],
                 destination_compartment_id=oci_identity_compartment["test_compartment"]["id"],
                 destination_dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
                 is_movable=var["dr_protection_group_members_is_movable"],
+                is_retain_fault_domain=var["dr_protection_group_members_is_retain_fault_domain"],
                 password_vault_secret_id=oci_vault_secret["test_secret"]["id"],
                 vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
                     destination_nsg_id_lists=var["dr_protection_group_members_vnic_mapping_destination_nsg_id_list"],
+                    destination_primary_private_ip_address=var["dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address"],
+                    destination_primary_private_ip_hostname_label=var["dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label"],
+                    destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    source_vnic_id=oci_core_vnic["test_vnic"]["id"],
+                )],
+                vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
+                    destination_nsg_id_lists=var["dr_protection_group_members_vnic_mappings_destination_nsg_id_list"],
+                    destination_primary_private_ip_address=var["dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address"],
+                    destination_primary_private_ip_hostname_label=var["dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label"],
                     destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
                     source_vnic_id=oci_core_vnic["test_vnic"]["id"],
                 )],
@@ -653,7 +675,7 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']] association: The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
@@ -665,7 +687,7 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param pulumi.Input[str] life_cycle_details: A message describing the DR Protection Group's current state in more detail.
         :param pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']] log_location: (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]] members: (Updatable) A list of DR Protection Group members.
-        :param pulumi.Input[str] peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param pulumi.Input[str] peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         :param pulumi.Input[str] role: The role of this DR Protection Group.
         :param pulumi.Input[str] state: The current state of the DR Protection Group.
@@ -707,7 +729,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -775,7 +797,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="peerId")
     def peer_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_id")
 

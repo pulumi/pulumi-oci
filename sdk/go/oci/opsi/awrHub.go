@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -111,6 +112,7 @@ func NewAwrHub(ctx *pulumi.Context,
 	if args.OperationsInsightsWarehouseId == nil {
 		return nil, errors.New("invalid value for required argument 'OperationsInsightsWarehouseId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AwrHub
 	err := ctx.RegisterResource("oci:Opsi/awrHub:AwrHub", name, args, &resource, opts...)
 	if err != nil {

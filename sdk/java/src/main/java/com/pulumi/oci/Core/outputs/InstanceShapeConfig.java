@@ -75,6 +75,11 @@ public final class InstanceShapeConfig {
      * 
      */
     private @Nullable String processorDescription;
+    /**
+     * @return (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+     * 
+     */
+    private @Nullable Integer vcpus;
 
     private InstanceShapeConfig() {}
     /**
@@ -163,6 +168,13 @@ public final class InstanceShapeConfig {
     public Optional<String> processorDescription() {
         return Optional.ofNullable(this.processorDescription);
     }
+    /**
+     * @return (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+     * 
+     */
+    public Optional<Integer> vcpus() {
+        return Optional.ofNullable(this.vcpus);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -185,6 +197,7 @@ public final class InstanceShapeConfig {
         private @Nullable Integer nvmes;
         private @Nullable Double ocpus;
         private @Nullable String processorDescription;
+        private @Nullable Integer vcpus;
         public Builder() {}
         public Builder(InstanceShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -200,6 +213,7 @@ public final class InstanceShapeConfig {
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
     	      this.processorDescription = defaults.processorDescription;
+    	      this.vcpus = defaults.vcpus;
         }
 
         @CustomType.Setter
@@ -262,6 +276,11 @@ public final class InstanceShapeConfig {
             this.processorDescription = processorDescription;
             return this;
         }
+        @CustomType.Setter
+        public Builder vcpus(@Nullable Integer vcpus) {
+            this.vcpus = vcpus;
+            return this;
+        }
         public InstanceShapeConfig build() {
             final var o = new InstanceShapeConfig();
             o.baselineOcpuUtilization = baselineOcpuUtilization;
@@ -276,6 +295,7 @@ public final class InstanceShapeConfig {
             o.nvmes = nvmes;
             o.ocpus = ocpus;
             o.processorDescription = processorDescription;
+            o.vcpus = vcpus;
             return o;
         }
     }

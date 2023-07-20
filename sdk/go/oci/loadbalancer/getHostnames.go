@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetHostnames(ctx *pulumi.Context, args *GetHostnamesArgs, opts ...pulumi.InvokeOption) (*GetHostnamesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostnamesResult
 	err := ctx.Invoke("oci:LoadBalancer/getHostnames:getHostnames", args, &rv, opts...)
 	if err != nil {

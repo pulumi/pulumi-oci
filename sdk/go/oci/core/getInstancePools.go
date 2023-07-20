@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetInstancePools(ctx *pulumi.Context, args *GetInstancePoolsArgs, opts ...pulumi.InvokeOption) (*GetInstancePoolsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstancePoolsResult
 	err := ctx.Invoke("oci:Core/getInstancePools:getInstancePools", args, &rv, opts...)
 	if err != nil {

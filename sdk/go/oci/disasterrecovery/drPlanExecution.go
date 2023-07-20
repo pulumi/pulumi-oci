@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -65,13 +66,13 @@ import (
 type DrPlanExecution struct {
 	pulumi.CustomResourceState
 
-	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId pulumi.StringOutput `pulumi:"drProtectionGroupId"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntOutput `pulumi:"executionDurationInSec"`
@@ -85,13 +86,13 @@ type DrPlanExecution struct {
 	LifeCycleDetails pulumi.StringOutput `pulumi:"lifeCycleDetails"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations DrPlanExecutionLogLocationArrayOutput `pulumi:"logLocations"`
-	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId pulumi.StringOutput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringOutput `pulumi:"peerRegion"`
 	// The type of the plan execution.
 	PlanExecutionType pulumi.StringOutput `pulumi:"planExecutionType"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -123,6 +124,7 @@ func NewDrPlanExecution(ctx *pulumi.Context,
 	if args.PlanId == nil {
 		return nil, errors.New("invalid value for required argument 'PlanId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DrPlanExecution
 	err := ctx.RegisterResource("oci:DisasterRecovery/drPlanExecution:DrPlanExecution", name, args, &resource, opts...)
 	if err != nil {
@@ -145,13 +147,13 @@ func GetDrPlanExecution(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DrPlanExecution resources.
 type drPlanExecutionState struct {
-	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
 	DisplayName *string `pulumi:"displayName"`
-	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId *string `pulumi:"drProtectionGroupId"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
@@ -165,13 +167,13 @@ type drPlanExecutionState struct {
 	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations []DrPlanExecutionLogLocation `pulumi:"logLocations"`
-	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId *string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion *string `pulumi:"peerRegion"`
 	// The type of the plan execution.
 	PlanExecutionType *string `pulumi:"planExecutionType"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -191,13 +193,13 @@ type drPlanExecutionState struct {
 }
 
 type DrPlanExecutionState struct {
-	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringPtrInput
-	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId pulumi.StringPtrInput
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntPtrInput
@@ -211,13 +213,13 @@ type DrPlanExecutionState struct {
 	LifeCycleDetails pulumi.StringPtrInput
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations DrPlanExecutionLogLocationArrayInput
-	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId pulumi.StringPtrInput
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringPtrInput
 	// The type of the plan execution.
 	PlanExecutionType pulumi.StringPtrInput
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -249,7 +251,7 @@ type drPlanExecutionArgs struct {
 	ExecutionOptions DrPlanExecutionExecutionOptions `pulumi:"executionOptions"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -266,7 +268,7 @@ type DrPlanExecutionArgs struct {
 	ExecutionOptions DrPlanExecutionExecutionOptionsInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -360,7 +362,7 @@ func (o DrPlanExecutionOutput) ToDrPlanExecutionOutputWithContext(ctx context.Co
 	return o
 }
 
-// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o DrPlanExecutionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -375,7 +377,7 @@ func (o DrPlanExecutionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o DrPlanExecutionOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -410,7 +412,7 @@ func (o DrPlanExecutionOutput) LogLocations() DrPlanExecutionLogLocationArrayOut
 	return o.ApplyT(func(v *DrPlanExecution) DrPlanExecutionLogLocationArrayOutput { return v.LogLocations }).(DrPlanExecutionLogLocationArrayOutput)
 }
 
-// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 func (o DrPlanExecutionOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -425,7 +427,7 @@ func (o DrPlanExecutionOutput) PlanExecutionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.PlanExecutionType }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

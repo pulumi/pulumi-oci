@@ -6,38 +6,40 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig {
     /**
-     * @return Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+     * @return Whether the plugin should be enabled or disabled.
      * 
      * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
-    private String desiredState;
+    private @Nullable String desiredState;
     /**
      * @return The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig() {}
     /**
-     * @return Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+     * @return Whether the plugin should be enabled or disabled.
      * 
      * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
-    public String desiredState() {
-        return this.desiredState;
+    public Optional<String> desiredState() {
+        return Optional.ofNullable(this.desiredState);
     }
     /**
      * @return The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -49,8 +51,8 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
     }
     @CustomType.Builder
     public static final class Builder {
-        private String desiredState;
-        private String name;
+        private @Nullable String desiredState;
+        private @Nullable String name;
         public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -59,13 +61,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
         }
 
         @CustomType.Setter
-        public Builder desiredState(String desiredState) {
-            this.desiredState = Objects.requireNonNull(desiredState);
+        public Builder desiredState(@Nullable String desiredState) {
+            this.desiredState = desiredState;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig build() {

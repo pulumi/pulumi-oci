@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -51,6 +52,7 @@ import (
 //
 // ```
 func GetInstallationSite(ctx *pulumi.Context, args *GetInstallationSiteArgs, opts ...pulumi.InvokeOption) (*GetInstallationSiteResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstallationSiteResult
 	err := ctx.Invoke("oci:Jms/getInstallationSite:getInstallationSite", args, &rv, opts...)
 	if err != nil {

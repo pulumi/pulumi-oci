@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs>? BlockVolumeReplicas { get; set; }
 
         /// <summary>
-        /// The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        /// (Updatable) The OCID of the compartment containing images to search
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsAutoTuneEnabled { get; set; }
 
         /// <summary>
-        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        /// The OCID of the Vault service key to assign as the master encryption key for the volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }

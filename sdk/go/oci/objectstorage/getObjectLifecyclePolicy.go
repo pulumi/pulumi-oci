@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupObjectLifecyclePolicy(ctx *pulumi.Context, args *LookupObjectLifecyclePolicyArgs, opts ...pulumi.InvokeOption) (*LookupObjectLifecyclePolicyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupObjectLifecyclePolicyResult
 	err := ctx.Invoke("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args, &rv, opts...)
 	if err != nil {

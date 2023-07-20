@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -67,6 +68,7 @@ func NewAutonomousDatabaseRegionalWalletManagement(ctx *pulumi.Context,
 		args = &AutonomousDatabaseRegionalWalletManagementArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AutonomousDatabaseRegionalWalletManagement
 	err := ctx.RegisterResource("oci:Database/autonomousDatabaseRegionalWalletManagement:AutonomousDatabaseRegionalWalletManagement", name, args, &resource, opts...)
 	if err != nil {

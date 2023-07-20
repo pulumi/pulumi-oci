@@ -13,37 +13,36 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     [OutputType]
     public sealed class GetContainerInstanceContainerResult
     {
-        public readonly ImmutableArray<string> AdditionalCapabilities;
         public readonly ImmutableArray<string> Arguments;
         /// <summary>
-        /// Availability Domain where the ContainerInstance is running.
+        /// The availability domain to place the container instance.
         /// </summary>
         public readonly string AvailabilityDomain;
         public readonly ImmutableArray<string> Commands;
         /// <summary>
-        /// Compartment Identifier
+        /// The OCID of the compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The ID of the Container on this Instance.
+        /// The OCID of the container.
         /// </summary>
         public readonly string ContainerId;
         /// <summary>
-        /// The system-generated unique identifier for the ContainerInstance.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
         /// </summary>
         public readonly string ContainerInstanceId;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Display name for the ContainerInstance. Can be renamed.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
         public readonly ImmutableDictionary<string, object> EnvironmentVariables;
         public readonly int ExitCode;
         /// <summary>
-        /// Fault Domain where the ContainerInstance is running.
+        /// The fault domain to place the container instance.
         /// </summary>
         public readonly string FaultDomain;
         /// <summary>
@@ -54,25 +53,25 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         public readonly string ImageUrl;
         public readonly bool IsResourcePrincipalDisabled;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
         public readonly string LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetContainerInstanceContainerResourceConfigResult> ResourceConfigs;
         /// <summary>
-        /// The current state of the ContainerInstance.
+        /// The current state of the container instance.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeCreated;
         public readonly string TimeTerminated;
         /// <summary>
-        /// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        /// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
         public readonly ImmutableArray<Outputs.GetContainerInstanceContainerVolumeMountResult> VolumeMounts;
@@ -80,8 +79,6 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
         [OutputConstructor]
         private GetContainerInstanceContainerResult(
-            ImmutableArray<string> additionalCapabilities,
-
             ImmutableArray<string> arguments,
 
             string availabilityDomain,
@@ -130,7 +127,6 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
             string workingDirectory)
         {
-            AdditionalCapabilities = additionalCapabilities;
             Arguments = arguments;
             AvailabilityDomain = availabilityDomain;
             Commands = commands;

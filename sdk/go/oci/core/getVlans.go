@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetVlans(ctx *pulumi.Context, args *GetVlansArgs, opts ...pulumi.InvokeOption) (*GetVlansResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVlansResult
 	err := ctx.Invoke("oci:Core/getVlans:getVlans", args, &rv, opts...)
 	if err != nil {

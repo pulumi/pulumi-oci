@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -114,6 +115,7 @@ func NewExternalNonContainerDatabase(ctx *pulumi.Context,
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExternalNonContainerDatabase
 	err := ctx.RegisterResource("oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase", name, args, &resource, opts...)
 	if err != nil {

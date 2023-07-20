@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetDbHomePatches(ctx *pulumi.Context, args *GetDbHomePatchesArgs, opts ...pulumi.InvokeOption) (*GetDbHomePatchesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbHomePatchesResult
 	err := ctx.Invoke("oci:Database/getDbHomePatches:getDbHomePatches", args, &rv, opts...)
 	if err != nil {

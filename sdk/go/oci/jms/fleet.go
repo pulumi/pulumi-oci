@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -126,6 +127,7 @@ func NewFleet(ctx *pulumi.Context,
 	if args.InventoryLog == nil {
 		return nil, errors.New("invalid value for required argument 'InventoryLog'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Fleet
 	err := ctx.RegisterResource("oci:Jms/fleet:Fleet", name, args, &resource, opts...)
 	if err != nil {

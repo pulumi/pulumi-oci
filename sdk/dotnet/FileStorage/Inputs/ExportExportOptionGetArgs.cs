@@ -18,6 +18,18 @@ namespace Pulumi.Oci.FileStorage.Inputs
         [Input("access")]
         public Input<string>? Access { get; set; }
 
+        [Input("allowedAuths")]
+        private InputList<string>? _allowedAuths;
+
+        /// <summary>
+        /// (Updatable) Array of allowed NFS authentication types.
+        /// </summary>
+        public InputList<string> AllowedAuths
+        {
+            get => _allowedAuths ?? (_allowedAuths = new InputList<string>());
+            set => _allowedAuths = value;
+        }
+
         /// <summary>
         /// (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
         /// </summary>
@@ -35,6 +47,12 @@ namespace Pulumi.Oci.FileStorage.Inputs
         /// </summary>
         [Input("identitySquash")]
         public Input<string>? IdentitySquash { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+        /// </summary>
+        [Input("isAnonymousAccessAllowed")]
+        public Input<bool>? IsAnonymousAccessAllowed { get; set; }
 
         /// <summary>
         /// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.

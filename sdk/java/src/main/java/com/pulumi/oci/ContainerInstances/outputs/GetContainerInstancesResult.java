@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetContainerInstancesResult {
     /**
-     * @return Availability Domain where the ContainerInstance is running.
+     * @return The availability domain to place the container instance.
      * 
      */
     private @Nullable String availabilityDomain;
     /**
-     * @return Compartment Identifier
+     * @return The OCID of the compartment.
      * 
      */
     private String compartmentId;
@@ -30,7 +30,7 @@ public final class GetContainerInstancesResult {
      */
     private List<GetContainerInstancesContainerInstanceCollection> containerInstanceCollections;
     /**
-     * @return Display name for the ContainerInstance. Can be renamed.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -41,21 +41,21 @@ public final class GetContainerInstancesResult {
      */
     private String id;
     /**
-     * @return The current state of the ContainerInstance.
+     * @return The current state of the container instance.
      * 
      */
     private @Nullable String state;
 
     private GetContainerInstancesResult() {}
     /**
-     * @return Availability Domain where the ContainerInstance is running.
+     * @return The availability domain to place the container instance.
      * 
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return Compartment Identifier
+     * @return The OCID of the compartment.
      * 
      */
     public String compartmentId() {
@@ -69,7 +69,7 @@ public final class GetContainerInstancesResult {
         return this.containerInstanceCollections;
     }
     /**
-     * @return Display name for the ContainerInstance. Can be renamed.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -86,7 +86,7 @@ public final class GetContainerInstancesResult {
         return this.id;
     }
     /**
-     * @return The current state of the ContainerInstance.
+     * @return The current state of the container instance.
      * 
      */
     public Optional<String> state() {

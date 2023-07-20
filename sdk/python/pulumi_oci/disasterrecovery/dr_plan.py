@@ -24,7 +24,7 @@ class DrPlanArgs:
         """
         The set of arguments for constructing a DrPlan resource.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param pulumi.Input[str] type: The type of DR Plan to be created. 
                
                
@@ -57,7 +57,7 @@ class DrPlanArgs:
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> pulumi.Input[str]:
         """
-        The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "dr_protection_group_id")
 
@@ -125,13 +125,13 @@ class _DrPlanState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DrPlan resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] life_cycle_details: A message describing the DR Plan's current state in more detail.
-        :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         :param pulumi.Input[str] peer_region: The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupArgs']]] plan_groups: The list of groups in this DR Plan.
         :param pulumi.Input[str] state: The current state of the DR Plan.
@@ -177,7 +177,7 @@ class _DrPlanState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -213,7 +213,7 @@ class _DrPlanState:
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "dr_protection_group_id")
 
@@ -249,7 +249,7 @@ class _DrPlanState:
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_dr_protection_group_id")
 
@@ -392,7 +392,7 @@ class DrPlan(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] type: The type of DR Plan to be created. 
                
@@ -517,13 +517,13 @@ class DrPlan(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] life_cycle_details: A message describing the DR Plan's current state in more detail.
-        :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         :param pulumi.Input[str] peer_region: The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrPlanPlanGroupArgs']]]] plan_groups: The list of groups in this DR Plan.
         :param pulumi.Input[str] state: The current state of the DR Plan.
@@ -560,7 +560,7 @@ class DrPlan(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -584,7 +584,7 @@ class DrPlan(pulumi.CustomResource):
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "dr_protection_group_id")
 
@@ -608,7 +608,7 @@ class DrPlan(pulumi.CustomResource):
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_dr_protection_group_id")
 

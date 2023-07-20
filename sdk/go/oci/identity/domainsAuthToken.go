@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -244,6 +245,7 @@ func NewDomainsAuthToken(ctx *pulumi.Context,
 	if args.Schemas == nil {
 		return nil, errors.New("invalid value for required argument 'Schemas'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DomainsAuthToken
 	err := ctx.RegisterResource("oci:Identity/domainsAuthToken:DomainsAuthToken", name, args, &resource, opts...)
 	if err != nil {

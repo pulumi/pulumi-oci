@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -78,6 +79,7 @@ func NewImportStandardTagsManagement(ctx *pulumi.Context,
 	if args.StandardTagNamespaceName == nil {
 		return nil, errors.New("invalid value for required argument 'StandardTagNamespaceName'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ImportStandardTagsManagement
 	err := ctx.RegisterResource("oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement", name, args, &resource, opts...)
 	if err != nil {

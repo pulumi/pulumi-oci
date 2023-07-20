@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -109,6 +110,7 @@ func NewDiscoveryJobsResult(ctx *pulumi.Context,
 	if args.DiscoveryJobId == nil {
 		return nil, errors.New("invalid value for required argument 'DiscoveryJobId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DiscoveryJobsResult
 	err := ctx.RegisterResource("oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult", name, args, &resource, opts...)
 	if err != nil {

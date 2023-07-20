@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -86,6 +87,7 @@ func NewConnectionAssignment(ctx *pulumi.Context,
 	if args.DeploymentId == nil {
 		return nil, errors.New("invalid value for required argument 'DeploymentId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ConnectionAssignment
 	err := ctx.RegisterResource("oci:GoldenGate/connectionAssignment:ConnectionAssignment", name, args, &resource, opts...)
 	if err != nil {

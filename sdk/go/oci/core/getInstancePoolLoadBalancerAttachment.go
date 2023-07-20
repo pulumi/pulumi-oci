@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetInstancePoolLoadBalancerAttachment(ctx *pulumi.Context, args *GetInstancePoolLoadBalancerAttachmentArgs, opts ...pulumi.InvokeOption) (*GetInstancePoolLoadBalancerAttachmentResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstancePoolLoadBalancerAttachmentResult
 	err := ctx.Invoke("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", args, &rv, opts...)
 	if err != nil {

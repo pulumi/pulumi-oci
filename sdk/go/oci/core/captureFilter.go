@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -133,6 +134,7 @@ func NewCaptureFilter(ctx *pulumi.Context,
 	if args.FilterType == nil {
 		return nil, errors.New("invalid value for required argument 'FilterType'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CaptureFilter
 	err := ctx.RegisterResource("oci:Core/captureFilter:CaptureFilter", name, args, &resource, opts...)
 	if err != nil {

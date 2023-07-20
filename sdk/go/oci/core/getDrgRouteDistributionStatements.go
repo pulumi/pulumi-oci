@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetDrgRouteDistributionStatements(ctx *pulumi.Context, args *GetDrgRouteDistributionStatementsArgs, opts ...pulumi.InvokeOption) (*GetDrgRouteDistributionStatementsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrgRouteDistributionStatementsResult
 	err := ctx.Invoke("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", args, &rv, opts...)
 	if err != nil {

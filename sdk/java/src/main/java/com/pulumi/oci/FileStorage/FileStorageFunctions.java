@@ -19,6 +19,10 @@ import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPolicyArgs;
 import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPolicyPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetMountTargetsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetMountTargetsPlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorArgs;
+import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorPlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorsArgs;
+import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorsPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetReplicationArgs;
 import com.pulumi.oci.FileStorage.inputs.GetReplicationPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetArgs;
@@ -37,6 +41,8 @@ import com.pulumi.oci.FileStorage.outputs.GetFileSystemsResult;
 import com.pulumi.oci.FileStorage.outputs.GetFilesystemSnapshotPoliciesResult;
 import com.pulumi.oci.FileStorage.outputs.GetFilesystemSnapshotPolicyResult;
 import com.pulumi.oci.FileStorage.outputs.GetMountTargetsResult;
+import com.pulumi.oci.FileStorage.outputs.GetOutboundConnectorResult;
+import com.pulumi.oci.FileStorage.outputs.GetOutboundConnectorsResult;
 import com.pulumi.oci.FileStorage.outputs.GetReplicationResult;
 import com.pulumi.oci.FileStorage.outputs.GetReplicationTargetResult;
 import com.pulumi.oci.FileStorage.outputs.GetReplicationTargetsResult;
@@ -1182,6 +1188,334 @@ public final class FileStorageFunctions {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getMountTargets:getMountTargets", TypeShape.of(GetMountTargetsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified outbound connector&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
+     *             .outboundConnectorId(oci_file_storage_outbound_connector.test_outbound_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOutboundConnectorResult> getOutboundConnector(GetOutboundConnectorArgs args) {
+        return getOutboundConnector(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified outbound connector&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
+     *             .outboundConnectorId(oci_file_storage_outbound_connector.test_outbound_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOutboundConnectorResult> getOutboundConnectorPlain(GetOutboundConnectorPlainArgs args) {
+        return getOutboundConnectorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified outbound connector&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
+     *             .outboundConnectorId(oci_file_storage_outbound_connector.test_outbound_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOutboundConnectorResult> getOutboundConnector(GetOutboundConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getOutboundConnector:getOutboundConnector", TypeShape.of(GetOutboundConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified outbound connector&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
+     *             .outboundConnectorId(oci_file_storage_outbound_connector.test_outbound_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOutboundConnectorResult> getOutboundConnectorPlain(GetOutboundConnectorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getOutboundConnector:getOutboundConnector", TypeShape.of(GetOutboundConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Outbound Connectors in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the outbound connector resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnectors = FileStorageFunctions.getOutboundConnectors(GetOutboundConnectorsArgs.builder()
+     *             .availabilityDomain(var_.outbound_connector_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.outbound_connector_display_name())
+     *             .id(var_.outbound_connector_id())
+     *             .state(var_.outbound_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOutboundConnectorsResult> getOutboundConnectors(GetOutboundConnectorsArgs args) {
+        return getOutboundConnectors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Outbound Connectors in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the outbound connector resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnectors = FileStorageFunctions.getOutboundConnectors(GetOutboundConnectorsArgs.builder()
+     *             .availabilityDomain(var_.outbound_connector_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.outbound_connector_display_name())
+     *             .id(var_.outbound_connector_id())
+     *             .state(var_.outbound_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOutboundConnectorsResult> getOutboundConnectorsPlain(GetOutboundConnectorsPlainArgs args) {
+        return getOutboundConnectorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Outbound Connectors in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the outbound connector resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnectors = FileStorageFunctions.getOutboundConnectors(GetOutboundConnectorsArgs.builder()
+     *             .availabilityDomain(var_.outbound_connector_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.outbound_connector_display_name())
+     *             .id(var_.outbound_connector_id())
+     *             .state(var_.outbound_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOutboundConnectorsResult> getOutboundConnectors(GetOutboundConnectorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getOutboundConnectors:getOutboundConnectors", TypeShape.of(GetOutboundConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Outbound Connectors in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the outbound connector resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnectors = FileStorageFunctions.getOutboundConnectors(GetOutboundConnectorsArgs.builder()
+     *             .availabilityDomain(var_.outbound_connector_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.outbound_connector_display_name())
+     *             .id(var_.outbound_connector_id())
+     *             .state(var_.outbound_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOutboundConnectorsResult> getOutboundConnectorsPlain(GetOutboundConnectorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getOutboundConnectors:getOutboundConnectors", TypeShape.of(GetOutboundConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Replication resource in Oracle Cloud Infrastructure File Storage service.
      * 
      * Gets the specified replication&#39;s information.
@@ -2005,6 +2339,9 @@ public final class FileStorageFunctions {
      * 
      * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
      * 
+     * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+     * (sort by name is NOT supported for listing snapshots by policy and compartment).
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -2050,6 +2387,9 @@ public final class FileStorageFunctions {
      * or by file system snapshot policy and file system.
      * 
      * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+     * 
+     * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+     * (sort by name is NOT supported for listing snapshots by policy and compartment).
      * 
      * ## Example Usage
      * ```java
@@ -2097,6 +2437,9 @@ public final class FileStorageFunctions {
      * 
      * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
      * 
+     * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+     * (sort by name is NOT supported for listing snapshots by policy and compartment).
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -2142,6 +2485,9 @@ public final class FileStorageFunctions {
      * or by file system snapshot policy and file system.
      * 
      * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+     * 
+     * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+     * (sort by name is NOT supported for listing snapshots by policy and compartment).
      * 
      * ## Example Usage
      * ```java
@@ -2189,6 +2535,9 @@ public final class FileStorageFunctions {
      * 
      * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
      * 
+     * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+     * (sort by name is NOT supported for listing snapshots by policy and compartment).
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -2234,6 +2583,9 @@ public final class FileStorageFunctions {
      * or by file system snapshot policy and file system.
      * 
      * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+     * 
+     * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+     * (sort by name is NOT supported for listing snapshots by policy and compartment).
      * 
      * ## Example Usage
      * ```java

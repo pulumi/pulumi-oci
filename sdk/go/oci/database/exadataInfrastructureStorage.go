@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -95,6 +96,7 @@ func NewExadataInfrastructureStorage(ctx *pulumi.Context,
 	if args.TimeZone == nil {
 		return nil, errors.New("invalid value for required argument 'TimeZone'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExadataInfrastructureStorage
 	err := ctx.RegisterResource("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage", name, args, &resource, opts...)
 	if err != nil {

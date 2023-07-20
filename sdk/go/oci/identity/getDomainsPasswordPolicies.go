@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetDomainsPasswordPolicies(ctx *pulumi.Context, args *GetDomainsPasswordPoliciesArgs, opts ...pulumi.InvokeOption) (*GetDomainsPasswordPoliciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsPasswordPoliciesResult
 	err := ctx.Invoke("oci:Identity/getDomainsPasswordPolicies:getDomainsPasswordPolicies", args, &rv, opts...)
 	if err != nil {

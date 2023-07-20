@@ -7,12 +7,13 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
 //
-// Get a list of shapes for creating Container Instances and their details.
+// Lists the shapes that can be used to create container instances.
 //
 // ## Example Usage
 //
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetContainerInstanceShapes(ctx *pulumi.Context, args *GetContainerInstanceShapesArgs, opts ...pulumi.InvokeOption) (*GetContainerInstanceShapesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetContainerInstanceShapesResult
 	err := ctx.Invoke("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", args, &rv, opts...)
 	if err != nil {
@@ -53,7 +55,7 @@ func GetContainerInstanceShapes(ctx *pulumi.Context, args *GetContainerInstanceS
 type GetContainerInstanceShapesArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string                             `pulumi:"compartmentId"`
 	Filters       []GetContainerInstanceShapesFilter `pulumi:"filters"`
 }
@@ -86,7 +88,7 @@ func GetContainerInstanceShapesOutput(ctx *pulumi.Context, args GetContainerInst
 type GetContainerInstanceShapesOutputArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput                         `pulumi:"compartmentId"`
 	Filters       GetContainerInstanceShapesFilterArrayInput `pulumi:"filters"`
 }

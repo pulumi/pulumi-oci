@@ -7,45 +7,47 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+var _ = internal.GetEnvOrDefault
+
 type GetContainerInstanceContainer struct {
-	AdditionalCapabilities []string `pulumi:"additionalCapabilities"`
-	Arguments              []string `pulumi:"arguments"`
-	// Availability Domain where the ContainerInstance is running.
+	Arguments []string `pulumi:"arguments"`
+	// The availability domain to place the container instance.
 	AvailabilityDomain string   `pulumi:"availabilityDomain"`
 	Commands           []string `pulumi:"commands"`
-	// Compartment Identifier
+	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The ID of the Container on this Instance.
+	// The OCID of the container.
 	ContainerId string `pulumi:"containerId"`
-	// The system-generated unique identifier for the ContainerInstance.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
 	ContainerInstanceId string `pulumi:"containerInstanceId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Display name for the ContainerInstance. Can be renamed.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName          string                 `pulumi:"displayName"`
 	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
 	ExitCode             int                    `pulumi:"exitCode"`
-	// Fault Domain where the ContainerInstance is running.
+	// The fault domain to place the container instance.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags                map[string]interface{}                     `pulumi:"freeformTags"`
 	HealthChecks                []GetContainerInstanceContainerHealthCheck `pulumi:"healthChecks"`
 	ImageUrl                    string                                     `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled bool                                       `pulumi:"isResourcePrincipalDisabled"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails string                                        `pulumi:"lifecycleDetails"`
 	ResourceConfigs  []GetContainerInstanceContainerResourceConfig `pulumi:"resourceConfigs"`
-	// The current state of the ContainerInstance.
+	// The current state of the container instance.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    string `pulumi:"timeCreated"`
 	TimeTerminated string `pulumi:"timeTerminated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated      string                                     `pulumi:"timeUpdated"`
 	VolumeMounts     []GetContainerInstanceContainerVolumeMount `pulumi:"volumeMounts"`
 	WorkingDirectory string                                     `pulumi:"workingDirectory"`
@@ -63,41 +65,40 @@ type GetContainerInstanceContainerInput interface {
 }
 
 type GetContainerInstanceContainerArgs struct {
-	AdditionalCapabilities pulumi.StringArrayInput `pulumi:"additionalCapabilities"`
-	Arguments              pulumi.StringArrayInput `pulumi:"arguments"`
-	// Availability Domain where the ContainerInstance is running.
+	Arguments pulumi.StringArrayInput `pulumi:"arguments"`
+	// The availability domain to place the container instance.
 	AvailabilityDomain pulumi.StringInput      `pulumi:"availabilityDomain"`
 	Commands           pulumi.StringArrayInput `pulumi:"commands"`
-	// Compartment Identifier
+	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The ID of the Container on this Instance.
+	// The OCID of the container.
 	ContainerId pulumi.StringInput `pulumi:"containerId"`
-	// The system-generated unique identifier for the ContainerInstance.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
 	ContainerInstanceId pulumi.StringInput `pulumi:"containerInstanceId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// Display name for the ContainerInstance. Can be renamed.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName          pulumi.StringInput `pulumi:"displayName"`
 	EnvironmentVariables pulumi.MapInput    `pulumi:"environmentVariables"`
 	ExitCode             pulumi.IntInput    `pulumi:"exitCode"`
-	// Fault Domain where the ContainerInstance is running.
+	// The fault domain to place the container instance.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags                pulumi.MapInput                                    `pulumi:"freeformTags"`
 	HealthChecks                GetContainerInstanceContainerHealthCheckArrayInput `pulumi:"healthChecks"`
 	ImageUrl                    pulumi.StringInput                                 `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled pulumi.BoolInput                                   `pulumi:"isResourcePrincipalDisabled"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails pulumi.StringInput                                    `pulumi:"lifecycleDetails"`
 	ResourceConfigs  GetContainerInstanceContainerResourceConfigArrayInput `pulumi:"resourceConfigs"`
-	// The current state of the ContainerInstance.
+	// The current state of the container instance.
 	State pulumi.StringInput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    pulumi.StringInput `pulumi:"timeCreated"`
 	TimeTerminated pulumi.StringInput `pulumi:"timeTerminated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated      pulumi.StringInput                                 `pulumi:"timeUpdated"`
 	VolumeMounts     GetContainerInstanceContainerVolumeMountArrayInput `pulumi:"volumeMounts"`
 	WorkingDirectory pulumi.StringInput                                 `pulumi:"workingDirectory"`
@@ -154,15 +155,11 @@ func (o GetContainerInstanceContainerOutput) ToGetContainerInstanceContainerOutp
 	return o
 }
 
-func (o GetContainerInstanceContainerOutput) AdditionalCapabilities() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetContainerInstanceContainer) []string { return v.AdditionalCapabilities }).(pulumi.StringArrayOutput)
-}
-
 func (o GetContainerInstanceContainerOutput) Arguments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) []string { return v.Arguments }).(pulumi.StringArrayOutput)
 }
 
-// Availability Domain where the ContainerInstance is running.
+// The availability domain to place the container instance.
 func (o GetContainerInstanceContainerOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -171,27 +168,27 @@ func (o GetContainerInstanceContainerOutput) Commands() pulumi.StringArrayOutput
 	return o.ApplyT(func(v GetContainerInstanceContainer) []string { return v.Commands }).(pulumi.StringArrayOutput)
 }
 
-// Compartment Identifier
+// The OCID of the compartment.
 func (o GetContainerInstanceContainerOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The ID of the Container on this Instance.
+// The OCID of the container.
 func (o GetContainerInstanceContainerOutput) ContainerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.ContainerId }).(pulumi.StringOutput)
 }
 
-// The system-generated unique identifier for the ContainerInstance.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
 func (o GetContainerInstanceContainerOutput) ContainerInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.ContainerInstanceId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 func (o GetContainerInstanceContainerOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Display name for the ContainerInstance. Can be renamed.
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetContainerInstanceContainerOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -204,7 +201,7 @@ func (o GetContainerInstanceContainerOutput) ExitCode() pulumi.IntOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) int { return v.ExitCode }).(pulumi.IntOutput)
 }
 
-// Fault Domain where the ContainerInstance is running.
+// The fault domain to place the container instance.
 func (o GetContainerInstanceContainerOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.FaultDomain }).(pulumi.StringOutput)
 }
@@ -228,7 +225,7 @@ func (o GetContainerInstanceContainerOutput) IsResourcePrincipalDisabled() pulum
 	return o.ApplyT(func(v GetContainerInstanceContainer) bool { return v.IsResourcePrincipalDisabled }).(pulumi.BoolOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 func (o GetContainerInstanceContainerOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -239,17 +236,17 @@ func (o GetContainerInstanceContainerOutput) ResourceConfigs() GetContainerInsta
 	}).(GetContainerInstanceContainerResourceConfigArrayOutput)
 }
 
-// The current state of the ContainerInstance.
+// The current state of the container instance.
 func (o GetContainerInstanceContainerOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 func (o GetContainerInstanceContainerOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o GetContainerInstanceContainerOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -258,7 +255,7 @@ func (o GetContainerInstanceContainerOutput) TimeTerminated() pulumi.StringOutpu
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.TimeTerminated }).(pulumi.StringOutput)
 }
 
-// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o GetContainerInstanceContainerOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -301,7 +298,7 @@ type GetContainerInstanceContainerHealthCheck struct {
 	HealthCheckType       string                                           `pulumi:"healthCheckType"`
 	InitialDelayInSeconds int                                              `pulumi:"initialDelayInSeconds"`
 	IntervalInSeconds     int                                              `pulumi:"intervalInSeconds"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name string `pulumi:"name"`
 	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
 	Path             string `pulumi:"path"`
@@ -331,7 +328,7 @@ type GetContainerInstanceContainerHealthCheckArgs struct {
 	HealthCheckType       pulumi.StringInput                                       `pulumi:"healthCheckType"`
 	InitialDelayInSeconds pulumi.IntInput                                          `pulumi:"initialDelayInSeconds"`
 	IntervalInSeconds     pulumi.IntInput                                          `pulumi:"intervalInSeconds"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
 	Path             pulumi.StringInput `pulumi:"path"`
@@ -423,7 +420,7 @@ func (o GetContainerInstanceContainerHealthCheckOutput) IntervalInSeconds() pulu
 	return o.ApplyT(func(v GetContainerInstanceContainerHealthCheck) int { return v.IntervalInSeconds }).(pulumi.IntOutput)
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o GetContainerInstanceContainerHealthCheckOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainerHealthCheck) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -474,7 +471,7 @@ func (o GetContainerInstanceContainerHealthCheckArrayOutput) Index(i pulumi.IntI
 }
 
 type GetContainerInstanceContainerHealthCheckHeader struct {
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name  string `pulumi:"name"`
 	Value string `pulumi:"value"`
 }
@@ -491,7 +488,7 @@ type GetContainerInstanceContainerHealthCheckHeaderInput interface {
 }
 
 type GetContainerInstanceContainerHealthCheckHeaderArgs struct {
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name  pulumi.StringInput `pulumi:"name"`
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -547,7 +544,7 @@ func (o GetContainerInstanceContainerHealthCheckHeaderOutput) ToGetContainerInst
 	return o
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o GetContainerInstanceContainerHealthCheckHeaderOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainerHealthCheckHeader) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -795,11 +792,11 @@ func (o GetContainerInstanceContainerVolumeMountArrayOutput) Index(i pulumi.IntI
 }
 
 type GetContainerInstanceDnsConfig struct {
-	// Name server IP address
+	// IP address of the name server..
 	Nameservers []string `pulumi:"nameservers"`
 	// Options allows certain internal resolver variables to be modified.
 	Options []string `pulumi:"options"`
-	// Search list for host-name lookup.
+	// Search list for hostname lookup.
 	Searches []string `pulumi:"searches"`
 }
 
@@ -815,11 +812,11 @@ type GetContainerInstanceDnsConfigInput interface {
 }
 
 type GetContainerInstanceDnsConfigArgs struct {
-	// Name server IP address
+	// IP address of the name server..
 	Nameservers pulumi.StringArrayInput `pulumi:"nameservers"`
 	// Options allows certain internal resolver variables to be modified.
 	Options pulumi.StringArrayInput `pulumi:"options"`
-	// Search list for host-name lookup.
+	// Search list for hostname lookup.
 	Searches pulumi.StringArrayInput `pulumi:"searches"`
 }
 
@@ -874,7 +871,7 @@ func (o GetContainerInstanceDnsConfigOutput) ToGetContainerInstanceDnsConfigOutp
 	return o
 }
 
-// Name server IP address
+// IP address of the name server..
 func (o GetContainerInstanceDnsConfigOutput) Nameservers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetContainerInstanceDnsConfig) []string { return v.Nameservers }).(pulumi.StringArrayOutput)
 }
@@ -884,7 +881,7 @@ func (o GetContainerInstanceDnsConfigOutput) Options() pulumi.StringArrayOutput 
 	return o.ApplyT(func(v GetContainerInstanceDnsConfig) []string { return v.Options }).(pulumi.StringArrayOutput)
 }
 
-// Search list for host-name lookup.
+// Search list for hostname lookup.
 func (o GetContainerInstanceDnsConfigOutput) Searches() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetContainerInstanceDnsConfig) []string { return v.Searches }).(pulumi.StringArrayOutput)
 }
@@ -1037,13 +1034,13 @@ func (o GetContainerInstanceImagePullSecretArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetContainerInstanceShapeConfig struct {
-	// The total amount of memory available to the instance, in gigabytes.
+	// The total amount of memory available to the container instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The networking bandwidth available to the instance, in gigabits per second.
+	// The networking bandwidth available to the container instance, in gigabits per second.
 	NetworkingBandwidthInGbps float64 `pulumi:"networkingBandwidthInGbps"`
-	// The total number of OCPUs available to the instance.
+	// The total number of OCPUs available to the container instance.
 	Ocpus float64 `pulumi:"ocpus"`
-	// A short description of the instance's processor (CPU).
+	// A short description of the container instance's processor (CPU).
 	ProcessorDescription string `pulumi:"processorDescription"`
 }
 
@@ -1059,13 +1056,13 @@ type GetContainerInstanceShapeConfigInput interface {
 }
 
 type GetContainerInstanceShapeConfigArgs struct {
-	// The total amount of memory available to the instance, in gigabytes.
+	// The total amount of memory available to the container instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The networking bandwidth available to the instance, in gigabits per second.
+	// The networking bandwidth available to the container instance, in gigabits per second.
 	NetworkingBandwidthInGbps pulumi.Float64Input `pulumi:"networkingBandwidthInGbps"`
-	// The total number of OCPUs available to the instance.
+	// The total number of OCPUs available to the container instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// A short description of the instance's processor (CPU).
+	// A short description of the container instance's processor (CPU).
 	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
 }
 
@@ -1120,22 +1117,22 @@ func (o GetContainerInstanceShapeConfigOutput) ToGetContainerInstanceShapeConfig
 	return o
 }
 
-// The total amount of memory available to the instance, in gigabytes.
+// The total amount of memory available to the container instance, in gigabytes.
 func (o GetContainerInstanceShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstanceShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
 }
 
-// The networking bandwidth available to the instance, in gigabits per second.
+// The networking bandwidth available to the container instance, in gigabits per second.
 func (o GetContainerInstanceShapeConfigOutput) NetworkingBandwidthInGbps() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstanceShapeConfig) float64 { return v.NetworkingBandwidthInGbps }).(pulumi.Float64Output)
 }
 
-// The total number of OCPUs available to the instance.
+// The total number of OCPUs available to the container instance.
 func (o GetContainerInstanceShapeConfigOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstanceShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
 }
 
-// A short description of the instance's processor (CPU).
+// A short description of the container instance's processor (CPU).
 func (o GetContainerInstanceShapeConfigOutput) ProcessorDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceShapeConfig) string { return v.ProcessorDescription }).(pulumi.StringOutput)
 }
@@ -1652,7 +1649,7 @@ func (o GetContainerInstanceShapeItemOcpuOptionArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetContainerInstanceShapesContainerInstanceShapeCollection struct {
-	// List of shapes.
+	// A list of shapes.
 	Items []GetContainerInstanceShapesContainerInstanceShapeCollectionItem `pulumi:"items"`
 }
 
@@ -1668,7 +1665,7 @@ type GetContainerInstanceShapesContainerInstanceShapeCollectionInput interface {
 }
 
 type GetContainerInstanceShapesContainerInstanceShapeCollectionArgs struct {
-	// List of shapes.
+	// A list of shapes.
 	Items GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -1723,7 +1720,7 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionOutput) ToGetC
 	return o
 }
 
-// List of shapes.
+// A list of shapes.
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionOutput) Items() GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollection) []GetContainerInstanceShapesContainerInstanceShapeCollectionItem {
 		return v.Items
@@ -1751,15 +1748,15 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutput) I
 }
 
 type GetContainerInstanceShapesContainerInstanceShapeCollectionItem struct {
-	// For a flexible shape, the amount of memory available for instances that use this shape.
+	// For a flexible shape, the amount of memory available for container instances that use this shape.
 	MemoryOptions []GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption `pulumi:"memoryOptions"`
 	// The name identifying the shape.
 	Name string `pulumi:"name"`
-	// For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+	// For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
 	NetworkingBandwidthOptions []GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption `pulumi:"networkingBandwidthOptions"`
-	// For a flexible shape, the number of OCPUs available for instances that use this shape.
+	// For a flexible shape, the number of OCPUs available for container instances that use this shape.
 	OcpuOptions []GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption `pulumi:"ocpuOptions"`
-	// A short description of the Instance's processor (CPU).
+	// A short description of the container instance's processor (CPU).
 	ProcessorDescription string `pulumi:"processorDescription"`
 }
 
@@ -1775,15 +1772,15 @@ type GetContainerInstanceShapesContainerInstanceShapeCollectionItemInput interfa
 }
 
 type GetContainerInstanceShapesContainerInstanceShapeCollectionItemArgs struct {
-	// For a flexible shape, the amount of memory available for instances that use this shape.
+	// For a flexible shape, the amount of memory available for container instances that use this shape.
 	MemoryOptions GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArrayInput `pulumi:"memoryOptions"`
 	// The name identifying the shape.
 	Name pulumi.StringInput `pulumi:"name"`
-	// For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+	// For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
 	NetworkingBandwidthOptions GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayInput `pulumi:"networkingBandwidthOptions"`
-	// For a flexible shape, the number of OCPUs available for instances that use this shape.
+	// For a flexible shape, the number of OCPUs available for container instances that use this shape.
 	OcpuOptions GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayInput `pulumi:"ocpuOptions"`
-	// A short description of the Instance's processor (CPU).
+	// A short description of the container instance's processor (CPU).
 	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
 }
 
@@ -1838,7 +1835,7 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) To
 	return o
 }
 
-// For a flexible shape, the amount of memory available for instances that use this shape.
+// For a flexible shape, the amount of memory available for container instances that use this shape.
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) MemoryOptions() GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArrayOutput {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItem) []GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption {
 		return v.MemoryOptions
@@ -1850,21 +1847,21 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) Na
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+// For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) NetworkingBandwidthOptions() GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutput {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItem) []GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption {
 		return v.NetworkingBandwidthOptions
 	}).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutput)
 }
 
-// For a flexible shape, the number of OCPUs available for instances that use this shape.
+// For a flexible shape, the number of OCPUs available for container instances that use this shape.
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) OcpuOptions() GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutput {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItem) []GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption {
 		return v.OcpuOptions
 	}).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutput)
 }
 
-// A short description of the Instance's processor (CPU).
+// A short description of the container instance's processor (CPU).
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) ProcessorDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItem) string {
 		return v.ProcessorDescription
@@ -1892,15 +1889,15 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutpu
 }
 
 type GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption struct {
-	// The default amount of memory per OCPU available for this shape, in gigabytes.
+	// The default amount of memory per OCPU available for this shape (GB).
 	DefaultPerOcpuInGbs float64 `pulumi:"defaultPerOcpuInGbs"`
-	// The maximum amount of memory, in gigabytes.
+	// The maximum amount of memory (GB).
 	MaxInGbs float64 `pulumi:"maxInGbs"`
-	// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+	// The maximum amount of memory per OCPU available for this shape (GB).
 	MaxPerOcpuInGbs float64 `pulumi:"maxPerOcpuInGbs"`
-	// The minimum amount of memory, in gigabytes.
+	// The minimum amount of memory (GB).
 	MinInGbs float64 `pulumi:"minInGbs"`
-	// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+	// The minimum amount of memory per OCPU available for this shape (GB).
 	MinPerOcpuInGbs float64 `pulumi:"minPerOcpuInGbs"`
 }
 
@@ -1916,15 +1913,15 @@ type GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionI
 }
 
 type GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArgs struct {
-	// The default amount of memory per OCPU available for this shape, in gigabytes.
+	// The default amount of memory per OCPU available for this shape (GB).
 	DefaultPerOcpuInGbs pulumi.Float64Input `pulumi:"defaultPerOcpuInGbs"`
-	// The maximum amount of memory, in gigabytes.
+	// The maximum amount of memory (GB).
 	MaxInGbs pulumi.Float64Input `pulumi:"maxInGbs"`
-	// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+	// The maximum amount of memory per OCPU available for this shape (GB).
 	MaxPerOcpuInGbs pulumi.Float64Input `pulumi:"maxPerOcpuInGbs"`
-	// The minimum amount of memory, in gigabytes.
+	// The minimum amount of memory (GB).
 	MinInGbs pulumi.Float64Input `pulumi:"minInGbs"`
-	// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+	// The minimum amount of memory per OCPU available for this shape (GB).
 	MinPerOcpuInGbs pulumi.Float64Input `pulumi:"minPerOcpuInGbs"`
 }
 
@@ -1979,35 +1976,35 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOpti
 	return o
 }
 
-// The default amount of memory per OCPU available for this shape, in gigabytes.
+// The default amount of memory per OCPU available for this shape (GB).
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput) DefaultPerOcpuInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption) float64 {
 		return v.DefaultPerOcpuInGbs
 	}).(pulumi.Float64Output)
 }
 
-// The maximum amount of memory, in gigabytes.
+// The maximum amount of memory (GB).
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput) MaxInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption) float64 {
 		return v.MaxInGbs
 	}).(pulumi.Float64Output)
 }
 
-// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+// The maximum amount of memory per OCPU available for this shape (GB).
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput) MaxPerOcpuInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption) float64 {
 		return v.MaxPerOcpuInGbs
 	}).(pulumi.Float64Output)
 }
 
-// The minimum amount of memory, in gigabytes.
+// The minimum amount of memory (GB).
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput) MinInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption) float64 {
 		return v.MinInGbs
 	}).(pulumi.Float64Output)
 }
 
-// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+// The minimum amount of memory per OCPU available for this shape (GB).
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput) MinPerOcpuInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption) float64 {
 		return v.MinPerOcpuInGbs
@@ -2371,9 +2368,9 @@ func (o GetContainerInstanceShapesFilterArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetContainerInstanceVnic struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Display name for the ContainerInstance. Can be renamed.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags        map[string]interface{} `pulumi:"freeformTags"`
@@ -2383,7 +2380,7 @@ type GetContainerInstanceVnic struct {
 	PrivateIp           string                 `pulumi:"privateIp"`
 	SkipSourceDestCheck bool                   `pulumi:"skipSourceDestCheck"`
 	SubnetId            string                 `pulumi:"subnetId"`
-	// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+	// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 	VnicId string `pulumi:"vnicId"`
 }
 
@@ -2399,9 +2396,9 @@ type GetContainerInstanceVnicInput interface {
 }
 
 type GetContainerInstanceVnicArgs struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// Display name for the ContainerInstance. Can be renamed.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags        pulumi.MapInput         `pulumi:"freeformTags"`
@@ -2411,7 +2408,7 @@ type GetContainerInstanceVnicArgs struct {
 	PrivateIp           pulumi.StringInput      `pulumi:"privateIp"`
 	SkipSourceDestCheck pulumi.BoolInput        `pulumi:"skipSourceDestCheck"`
 	SubnetId            pulumi.StringInput      `pulumi:"subnetId"`
-	// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+	// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 	VnicId pulumi.StringInput `pulumi:"vnicId"`
 }
 
@@ -2466,12 +2463,12 @@ func (o GetContainerInstanceVnicOutput) ToGetContainerInstanceVnicOutputWithCont
 	return o
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 func (o GetContainerInstanceVnicOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetContainerInstanceVnic) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Display name for the ContainerInstance. Can be renamed.
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetContainerInstanceVnicOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceVnic) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -2505,7 +2502,7 @@ func (o GetContainerInstanceVnicOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceVnic) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 func (o GetContainerInstanceVnicOutput) VnicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceVnic) string { return v.VnicId }).(pulumi.StringOutput)
 }
@@ -2531,11 +2528,11 @@ func (o GetContainerInstanceVnicArrayOutput) Index(i pulumi.IntInput) GetContain
 }
 
 type GetContainerInstanceVolume struct {
-	// Volume type that we are using for empty dir where it could be either File Storage or Memory
+	// The volume type of the empty directory, can be either File Storage or Memory.
 	BackingStore string `pulumi:"backingStore"`
 	// Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
 	Configs []GetContainerInstanceVolumeConfig `pulumi:"configs"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name string `pulumi:"name"`
 	// The type of volume.
 	VolumeType string `pulumi:"volumeType"`
@@ -2553,11 +2550,11 @@ type GetContainerInstanceVolumeInput interface {
 }
 
 type GetContainerInstanceVolumeArgs struct {
-	// Volume type that we are using for empty dir where it could be either File Storage or Memory
+	// The volume type of the empty directory, can be either File Storage or Memory.
 	BackingStore pulumi.StringInput `pulumi:"backingStore"`
 	// Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
 	Configs GetContainerInstanceVolumeConfigArrayInput `pulumi:"configs"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The type of volume.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
@@ -2614,7 +2611,7 @@ func (o GetContainerInstanceVolumeOutput) ToGetContainerInstanceVolumeOutputWith
 	return o
 }
 
-// Volume type that we are using for empty dir where it could be either File Storage or Memory
+// The volume type of the empty directory, can be either File Storage or Memory.
 func (o GetContainerInstanceVolumeOutput) BackingStore() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceVolume) string { return v.BackingStore }).(pulumi.StringOutput)
 }
@@ -2624,7 +2621,7 @@ func (o GetContainerInstanceVolumeOutput) Configs() GetContainerInstanceVolumeCo
 	return o.ApplyT(func(v GetContainerInstanceVolume) []GetContainerInstanceVolumeConfig { return v.Configs }).(GetContainerInstanceVolumeConfigArrayOutput)
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o GetContainerInstanceVolumeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceVolume) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2868,49 +2865,49 @@ func (o GetContainerInstancesContainerInstanceCollectionArrayOutput) Index(i pul
 type GetContainerInstancesContainerInstanceCollectionItem struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The number of containers on this Instance
+	// The number of containers on the container instance.
 	ContainerCount int `pulumi:"containerCount"`
 	// The container restart policy is applied for all containers in container instance.
 	ContainerRestartPolicy string `pulumi:"containerRestartPolicy"`
-	// The Containers on this Instance
+	// The containers on the container instance.
 	Containers []GetContainerInstancesContainerInstanceCollectionItemContainer `pulumi:"containers"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// DNS settings for containers.
 	DnsConfigs []GetContainerInstancesContainerInstanceCollectionItemDnsConfig `pulumi:"dnsConfigs"`
-	// Fault Domain where the ContainerInstance is running.
+	// The fault domain to place the container instance.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds string `pulumi:"gracefulShutdownTimeoutInSeconds"`
-	// Unique identifier that is immutable on creation
+	// An OCID that cannot be changed.
 	Id string `pulumi:"id"`
-	// The image pull secrets for accessing private registry to pull images for containers
+	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets []GetContainerInstancesContainerInstanceCollectionItemImagePullSecret `pulumi:"imagePullSecrets"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+	// The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
 	Shape string `pulumi:"shape"`
-	// The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it's containers.
+	// The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
 	ShapeConfigs []GetContainerInstancesContainerInstanceCollectionItemShapeConfig `pulumi:"shapeConfigs"`
-	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+	// A filter to only return resources that match the given lifecycle state.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The virtual networks available to containers running on this Container Instance.
+	// The virtual networks available to the containers in the container instance.
 	Vnics []GetContainerInstancesContainerInstanceCollectionItemVnic `pulumi:"vnics"`
-	// The number of volumes that attached to this Instance
+	// The number of volumes that are attached to the container instance.
 	VolumeCount int `pulumi:"volumeCount"`
-	// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+	// A volume is a directory with data that is accessible across multiple containers in a container instance.
 	Volumes []GetContainerInstancesContainerInstanceCollectionItemVolume `pulumi:"volumes"`
 }
 
@@ -2928,49 +2925,49 @@ type GetContainerInstancesContainerInstanceCollectionItemInput interface {
 type GetContainerInstancesContainerInstanceCollectionItemArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The number of containers on this Instance
+	// The number of containers on the container instance.
 	ContainerCount pulumi.IntInput `pulumi:"containerCount"`
 	// The container restart policy is applied for all containers in container instance.
 	ContainerRestartPolicy pulumi.StringInput `pulumi:"containerRestartPolicy"`
-	// The Containers on this Instance
+	// The containers on the container instance.
 	Containers GetContainerInstancesContainerInstanceCollectionItemContainerArrayInput `pulumi:"containers"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// DNS settings for containers.
 	DnsConfigs GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayInput `pulumi:"dnsConfigs"`
-	// Fault Domain where the ContainerInstance is running.
+	// The fault domain to place the container instance.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringInput `pulumi:"gracefulShutdownTimeoutInSeconds"`
-	// Unique identifier that is immutable on creation
+	// An OCID that cannot be changed.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The image pull secrets for accessing private registry to pull images for containers
+	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayInput `pulumi:"imagePullSecrets"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+	// The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it's containers.
+	// The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
 	ShapeConfigs GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayInput `pulumi:"shapeConfigs"`
-	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+	// A filter to only return resources that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The virtual networks available to containers running on this Container Instance.
+	// The virtual networks available to the containers in the container instance.
 	Vnics GetContainerInstancesContainerInstanceCollectionItemVnicArrayInput `pulumi:"vnics"`
-	// The number of volumes that attached to this Instance
+	// The number of volumes that are attached to the container instance.
 	VolumeCount pulumi.IntInput `pulumi:"volumeCount"`
-	// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+	// A volume is a directory with data that is accessible across multiple containers in a container instance.
 	Volumes GetContainerInstancesContainerInstanceCollectionItemVolumeArrayInput `pulumi:"volumes"`
 }
 
@@ -3030,12 +3027,12 @@ func (o GetContainerInstancesContainerInstanceCollectionItemOutput) Availability
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// The ID of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The number of containers on this Instance
+// The number of containers on the container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) ContainerCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) int { return v.ContainerCount }).(pulumi.IntOutput)
 }
@@ -3045,14 +3042,14 @@ func (o GetContainerInstancesContainerInstanceCollectionItemOutput) ContainerRes
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.ContainerRestartPolicy }).(pulumi.StringOutput)
 }
 
-// The Containers on this Instance
+// The containers on the container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) Containers() GetContainerInstancesContainerInstanceCollectionItemContainerArrayOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) []GetContainerInstancesContainerInstanceCollectionItemContainer {
 		return v.Containers
 	}).(GetContainerInstancesContainerInstanceCollectionItemContainerArrayOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) map[string]interface{} {
 		return v.DefinedTags
@@ -3071,7 +3068,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemOutput) DnsConfigs()
 	}).(GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutput)
 }
 
-// Fault Domain where the ContainerInstance is running.
+// The fault domain to place the container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.FaultDomain }).(pulumi.StringOutput)
 }
@@ -3083,77 +3080,77 @@ func (o GetContainerInstancesContainerInstanceCollectionItemOutput) FreeformTags
 	}).(pulumi.MapOutput)
 }
 
-// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) GracefulShutdownTimeoutInSeconds() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string {
 		return v.GracefulShutdownTimeoutInSeconds
 	}).(pulumi.StringOutput)
 }
 
-// Unique identifier that is immutable on creation
+// An OCID that cannot be changed.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The image pull secrets for accessing private registry to pull images for containers
+// The image pulls secrets so you can access private registry to pull container images.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) ImagePullSecrets() GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) []GetContainerInstancesContainerInstanceCollectionItemImagePullSecret {
 		return v.ImagePullSecrets
 	}).(GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+// The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it's containers.
+// The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) ShapeConfigs() GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) []GetContainerInstancesContainerInstanceCollectionItemShapeConfig {
 		return v.ShapeConfigs
 	}).(GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutput)
 }
 
-// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+// A filter to only return resources that match the given lifecycle state.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) map[string]interface{} {
 		return v.SystemTags
 	}).(pulumi.MapOutput)
 }
 
-// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The virtual networks available to containers running on this Container Instance.
+// The virtual networks available to the containers in the container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) Vnics() GetContainerInstancesContainerInstanceCollectionItemVnicArrayOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) []GetContainerInstancesContainerInstanceCollectionItemVnic {
 		return v.Vnics
 	}).(GetContainerInstancesContainerInstanceCollectionItemVnicArrayOutput)
 }
 
-// The number of volumes that attached to this Instance
+// The number of volumes that are attached to the container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) VolumeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) int { return v.VolumeCount }).(pulumi.IntOutput)
 }
 
-// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+// A volume is a directory with data that is accessible across multiple containers in a container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) Volumes() GetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) []GetContainerInstancesContainerInstanceCollectionItemVolume {
 		return v.Volumes
@@ -3181,40 +3178,39 @@ func (o GetContainerInstancesContainerInstanceCollectionItemArrayOutput) Index(i
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemContainer struct {
-	AdditionalCapabilities []string `pulumi:"additionalCapabilities"`
-	Arguments              []string `pulumi:"arguments"`
+	Arguments []string `pulumi:"arguments"`
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string   `pulumi:"availabilityDomain"`
 	Commands           []string `pulumi:"commands"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The ID of the Container on this Instance.
+	// The OCID of the container.
 	ContainerId         string `pulumi:"containerId"`
 	ContainerInstanceId string `pulumi:"containerInstanceId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName          string                 `pulumi:"displayName"`
 	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
 	ExitCode             int                    `pulumi:"exitCode"`
-	// Fault Domain where the ContainerInstance is running.
+	// The fault domain to place the container instance.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags                map[string]interface{}                                                     `pulumi:"freeformTags"`
 	HealthChecks                []GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck `pulumi:"healthChecks"`
 	ImageUrl                    string                                                                     `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled bool                                                                       `pulumi:"isResourcePrincipalDisabled"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails string                                                                        `pulumi:"lifecycleDetails"`
 	ResourceConfigs  []GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig `pulumi:"resourceConfigs"`
-	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+	// A filter to only return resources that match the given lifecycle state.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    string `pulumi:"timeCreated"`
 	TimeTerminated string `pulumi:"timeTerminated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated      string                                                                     `pulumi:"timeUpdated"`
 	VolumeMounts     []GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount `pulumi:"volumeMounts"`
 	WorkingDirectory string                                                                     `pulumi:"workingDirectory"`
@@ -3232,40 +3228,39 @@ type GetContainerInstancesContainerInstanceCollectionItemContainerInput interfac
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemContainerArgs struct {
-	AdditionalCapabilities pulumi.StringArrayInput `pulumi:"additionalCapabilities"`
-	Arguments              pulumi.StringArrayInput `pulumi:"arguments"`
+	Arguments pulumi.StringArrayInput `pulumi:"arguments"`
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput      `pulumi:"availabilityDomain"`
 	Commands           pulumi.StringArrayInput `pulumi:"commands"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The ID of the Container on this Instance.
+	// The OCID of the container.
 	ContainerId         pulumi.StringInput `pulumi:"containerId"`
 	ContainerInstanceId pulumi.StringInput `pulumi:"containerInstanceId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName          pulumi.StringInput `pulumi:"displayName"`
 	EnvironmentVariables pulumi.MapInput    `pulumi:"environmentVariables"`
 	ExitCode             pulumi.IntInput    `pulumi:"exitCode"`
-	// Fault Domain where the ContainerInstance is running.
+	// The fault domain to place the container instance.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags                pulumi.MapInput                                                                    `pulumi:"freeformTags"`
 	HealthChecks                GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayInput `pulumi:"healthChecks"`
 	ImageUrl                    pulumi.StringInput                                                                 `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled pulumi.BoolInput                                                                   `pulumi:"isResourcePrincipalDisabled"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails pulumi.StringInput                                                                    `pulumi:"lifecycleDetails"`
 	ResourceConfigs  GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayInput `pulumi:"resourceConfigs"`
-	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+	// A filter to only return resources that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    pulumi.StringInput `pulumi:"timeCreated"`
 	TimeTerminated pulumi.StringInput `pulumi:"timeTerminated"`
-	// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated      pulumi.StringInput                                                                 `pulumi:"timeUpdated"`
 	VolumeMounts     GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayInput `pulumi:"volumeMounts"`
 	WorkingDirectory pulumi.StringInput                                                                 `pulumi:"workingDirectory"`
@@ -3322,12 +3317,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) ToG
 	return o
 }
 
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) AdditionalCapabilities() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) []string {
-		return v.AdditionalCapabilities
-	}).(pulumi.StringArrayOutput)
-}
-
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Arguments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) []string { return v.Arguments }).(pulumi.StringArrayOutput)
 }
@@ -3343,12 +3332,12 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Com
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) []string { return v.Commands }).(pulumi.StringArrayOutput)
 }
 
-// The ID of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The ID of the Container on this Instance.
+// The OCID of the container.
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) ContainerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) string { return v.ContainerId }).(pulumi.StringOutput)
 }
@@ -3359,7 +3348,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Con
 	}).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]interface{} {
 		return v.DefinedTags
@@ -3381,7 +3370,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Exi
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) int { return v.ExitCode }).(pulumi.IntOutput)
 }
 
-// Fault Domain where the ContainerInstance is running.
+// The fault domain to place the container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) string { return v.FaultDomain }).(pulumi.StringOutput)
 }
@@ -3409,7 +3398,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) IsR
 	}).(pulumi.BoolOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) string {
 		return v.LifecycleDetails
@@ -3422,19 +3411,19 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Res
 	}).(GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutput)
 }
 
-// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+// A filter to only return resources that match the given lifecycle state.
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]interface{} {
 		return v.SystemTags
 	}).(pulumi.MapOutput)
 }
 
-// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -3443,7 +3432,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Tim
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) string { return v.TimeTerminated }).(pulumi.StringOutput)
 }
 
-// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -3488,7 +3477,7 @@ type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck st
 	HealthCheckType       string                                                                           `pulumi:"healthCheckType"`
 	InitialDelayInSeconds int                                                                              `pulumi:"initialDelayInSeconds"`
 	IntervalInSeconds     int                                                                              `pulumi:"intervalInSeconds"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name string `pulumi:"name"`
 	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
 	Path             string `pulumi:"path"`
@@ -3518,7 +3507,7 @@ type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArg
 	HealthCheckType       pulumi.StringInput                                                                       `pulumi:"healthCheckType"`
 	InitialDelayInSeconds pulumi.IntInput                                                                          `pulumi:"initialDelayInSeconds"`
 	IntervalInSeconds     pulumi.IntInput                                                                          `pulumi:"intervalInSeconds"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
 	Path             pulumi.StringInput `pulumi:"path"`
@@ -3622,7 +3611,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 	}).(pulumi.IntOutput)
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -3681,7 +3670,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader struct {
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name  string `pulumi:"name"`
 	Value string `pulumi:"value"`
 }
@@ -3698,7 +3687,7 @@ type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHea
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArgs struct {
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name  pulumi.StringInput `pulumi:"name"`
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -3754,7 +3743,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 	return o
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader) string {
 		return v.Name
@@ -4020,11 +4009,11 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemDnsConfig struct {
-	// Name server IP address
+	// IP address of the name server..
 	Nameservers []string `pulumi:"nameservers"`
 	// Options allows certain internal resolver variables to be modified.
 	Options []string `pulumi:"options"`
-	// Search list for host-name lookup.
+	// Search list for hostname lookup.
 	Searches []string `pulumi:"searches"`
 }
 
@@ -4040,11 +4029,11 @@ type GetContainerInstancesContainerInstanceCollectionItemDnsConfigInput interfac
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemDnsConfigArgs struct {
-	// Name server IP address
+	// IP address of the name server..
 	Nameservers pulumi.StringArrayInput `pulumi:"nameservers"`
 	// Options allows certain internal resolver variables to be modified.
 	Options pulumi.StringArrayInput `pulumi:"options"`
-	// Search list for host-name lookup.
+	// Search list for hostname lookup.
 	Searches pulumi.StringArrayInput `pulumi:"searches"`
 }
 
@@ -4099,7 +4088,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput) ToG
 	return o
 }
 
-// Name server IP address
+// IP address of the name server..
 func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput) Nameservers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemDnsConfig) []string { return v.Nameservers }).(pulumi.StringArrayOutput)
 }
@@ -4109,7 +4098,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput) Opt
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemDnsConfig) []string { return v.Options }).(pulumi.StringArrayOutput)
 }
 
-// Search list for host-name lookup.
+// Search list for hostname lookup.
 func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput) Searches() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemDnsConfig) []string { return v.Searches }).(pulumi.StringArrayOutput)
 }
@@ -4266,13 +4255,13 @@ func (o GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArray
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemShapeConfig struct {
-	// The total amount of memory available to the instance, in gigabytes.
+	// The total amount of memory available to the container instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The networking bandwidth available to the instance, in gigabits per second.
+	// The networking bandwidth available to the container instance, in gigabits per second.
 	NetworkingBandwidthInGbps float64 `pulumi:"networkingBandwidthInGbps"`
-	// The total number of OCPUs available to the instance.
+	// The total number of OCPUs available to the container instance.
 	Ocpus float64 `pulumi:"ocpus"`
-	// A short description of the instance's processor (CPU).
+	// A short description of the container instance's processor (CPU).
 	ProcessorDescription string `pulumi:"processorDescription"`
 }
 
@@ -4288,13 +4277,13 @@ type GetContainerInstancesContainerInstanceCollectionItemShapeConfigInput interf
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemShapeConfigArgs struct {
-	// The total amount of memory available to the instance, in gigabytes.
+	// The total amount of memory available to the container instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The networking bandwidth available to the instance, in gigabits per second.
+	// The networking bandwidth available to the container instance, in gigabits per second.
 	NetworkingBandwidthInGbps pulumi.Float64Input `pulumi:"networkingBandwidthInGbps"`
-	// The total number of OCPUs available to the instance.
+	// The total number of OCPUs available to the container instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// A short description of the instance's processor (CPU).
+	// A short description of the container instance's processor (CPU).
 	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
 }
 
@@ -4349,24 +4338,24 @@ func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput) T
 	return o
 }
 
-// The total amount of memory available to the instance, in gigabytes.
+// The total amount of memory available to the container instance, in gigabytes.
 func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
 }
 
-// The networking bandwidth available to the instance, in gigabits per second.
+// The networking bandwidth available to the container instance, in gigabits per second.
 func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput) NetworkingBandwidthInGbps() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemShapeConfig) float64 {
 		return v.NetworkingBandwidthInGbps
 	}).(pulumi.Float64Output)
 }
 
-// The total number of OCPUs available to the instance.
+// The total number of OCPUs available to the container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
 }
 
-// A short description of the instance's processor (CPU).
+// A short description of the container instance's processor (CPU).
 func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput) ProcessorDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemShapeConfig) string {
 		return v.ProcessorDescription
@@ -4394,7 +4383,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutp
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemVnic struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
@@ -4406,7 +4395,7 @@ type GetContainerInstancesContainerInstanceCollectionItemVnic struct {
 	PrivateIp           string                 `pulumi:"privateIp"`
 	SkipSourceDestCheck bool                   `pulumi:"skipSourceDestCheck"`
 	SubnetId            string                 `pulumi:"subnetId"`
-	// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+	// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 	VnicId string `pulumi:"vnicId"`
 }
 
@@ -4422,7 +4411,7 @@ type GetContainerInstancesContainerInstanceCollectionItemVnicInput interface {
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemVnicArgs struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -4434,7 +4423,7 @@ type GetContainerInstancesContainerInstanceCollectionItemVnicArgs struct {
 	PrivateIp           pulumi.StringInput      `pulumi:"privateIp"`
 	SkipSourceDestCheck pulumi.BoolInput        `pulumi:"skipSourceDestCheck"`
 	SubnetId            pulumi.StringInput      `pulumi:"subnetId"`
-	// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+	// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 	VnicId pulumi.StringInput `pulumi:"vnicId"`
 }
 
@@ -4489,7 +4478,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) ToGetCon
 	return o
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemVnic) map[string]interface{} {
 		return v.DefinedTags
@@ -4532,7 +4521,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) SubnetId
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemVnic) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) VnicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemVnic) string { return v.VnicId }).(pulumi.StringOutput)
 }
@@ -4558,11 +4547,11 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVnicArrayOutput) Ind
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemVolume struct {
-	// Volume type that we are using for empty dir where it could be either File Storage or Memory
+	// The volume type of the empty directory, can be either File Storage or Memory.
 	BackingStore string `pulumi:"backingStore"`
 	// Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
 	Configs []GetContainerInstancesContainerInstanceCollectionItemVolumeConfig `pulumi:"configs"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name string `pulumi:"name"`
 	// The type of volume.
 	VolumeType string `pulumi:"volumeType"`
@@ -4580,11 +4569,11 @@ type GetContainerInstancesContainerInstanceCollectionItemVolumeInput interface {
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemVolumeArgs struct {
-	// Volume type that we are using for empty dir where it could be either File Storage or Memory
+	// The volume type of the empty directory, can be either File Storage or Memory.
 	BackingStore pulumi.StringInput `pulumi:"backingStore"`
 	// Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
 	Configs GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayInput `pulumi:"configs"`
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The type of volume.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
@@ -4641,7 +4630,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVolumeOutput) ToGetC
 	return o
 }
 
-// Volume type that we are using for empty dir where it could be either File Storage or Memory
+// The volume type of the empty directory, can be either File Storage or Memory.
 func (o GetContainerInstancesContainerInstanceCollectionItemVolumeOutput) BackingStore() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemVolume) string { return v.BackingStore }).(pulumi.StringOutput)
 }
@@ -4653,7 +4642,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVolumeOutput) Config
 	}).(GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOutput)
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o GetContainerInstancesContainerInstanceCollectionItemVolumeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemVolume) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -4799,7 +4788,7 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOut
 }
 
 type GetContainerInstancesFilter struct {
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -4817,7 +4806,7 @@ type GetContainerInstancesFilterInput interface {
 }
 
 type GetContainerInstancesFilterArgs struct {
-	// The name of the volume. This has be unique cross single ContainerInstance.
+	// The name of the volume. This must be unique within a single container instance.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -4874,7 +4863,7 @@ func (o GetContainerInstancesFilterOutput) ToGetContainerInstancesFilterOutputWi
 	return o
 }
 
-// The name of the volume. This has be unique cross single ContainerInstance.
+// The name of the volume. This must be unique within a single container instance.
 func (o GetContainerInstancesFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
 }

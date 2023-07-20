@@ -23,7 +23,7 @@ class GetDrProtectionGroupsResult:
     """
     A collection of values returned by getDrProtectionGroups.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, dr_protection_group_collections=None, dr_protection_group_id=None, filters=None, id=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, dr_protection_group_collections=None, dr_protection_group_id=None, filters=None, id=None, role=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,6 +42,9 @@ class GetDrProtectionGroupsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if role and not isinstance(role, str):
+            raise TypeError("Expected argument 'role' to be a str")
+        pulumi.set(__self__, "role", role)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -50,7 +53,7 @@ class GetDrProtectionGroupsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -90,6 +93,14 @@ class GetDrProtectionGroupsResult:
 
     @property
     @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        The role of the DR Protection Group.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[str]:
         """
         The current state of the DR Protection Group.
@@ -109,6 +120,7 @@ class AwaitableGetDrProtectionGroupsResult(GetDrProtectionGroupsResult):
             dr_protection_group_id=self.dr_protection_group_id,
             filters=self.filters,
             id=self.id,
+            role=self.role,
             state=self.state)
 
 
@@ -116,6 +128,7 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
                              display_name: Optional[str] = None,
                              dr_protection_group_id: Optional[str] = None,
                              filters: Optional[Sequence[pulumi.InputType['GetDrProtectionGroupsFilterArgs']]] = None,
+                             role: Optional[str] = None,
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrProtectionGroupsResult:
     """
@@ -132,6 +145,7 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
     test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=var["compartment_id"],
         display_name=var["dr_protection_group_display_name"],
         dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
+        role=var["dr_protection_group_role"],
         state=var["dr_protection_group_state"])
     ```
 
@@ -139,6 +153,7 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
     :param str compartment_id: The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
     :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
     :param str dr_protection_group_id: The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+    :param str role: The DR Protection Group Role.
     :param str state: A filter to return only DR Protection Groups that match the given lifecycleState.
     """
     __args__ = dict()
@@ -146,6 +161,7 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
     __args__['displayName'] = display_name
     __args__['drProtectionGroupId'] = dr_protection_group_id
     __args__['filters'] = filters
+    __args__['role'] = role
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups', __args__, opts=opts, typ=GetDrProtectionGroupsResult).value
@@ -157,6 +173,7 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
         dr_protection_group_id=pulumi.get(__ret__, 'dr_protection_group_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        role=pulumi.get(__ret__, 'role'),
         state=pulumi.get(__ret__, 'state'))
 
 
@@ -165,6 +182,7 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     dr_protection_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDrProtectionGroupsFilterArgs']]]]] = None,
+                                    role: Optional[pulumi.Input[Optional[str]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrProtectionGroupsResult]:
     """
@@ -181,6 +199,7 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
     test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=var["compartment_id"],
         display_name=var["dr_protection_group_display_name"],
         dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
+        role=var["dr_protection_group_role"],
         state=var["dr_protection_group_state"])
     ```
 
@@ -188,6 +207,7 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
     :param str compartment_id: The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
     :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
     :param str dr_protection_group_id: The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+    :param str role: The DR Protection Group Role.
     :param str state: A filter to return only DR Protection Groups that match the given lifecycleState.
     """
     ...

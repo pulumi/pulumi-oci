@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceVolume {
     /**
-     * @return Volume type that we are using for empty dir where it could be either File Storage or Memory
+     * @return The volume type of the empty directory, can be either File Storage or Memory.
      * 
      */
     private @Nullable String backingStore;
@@ -24,7 +24,7 @@ public final class ContainerInstanceVolume {
      */
     private @Nullable List<ContainerInstanceVolumeConfig> configs;
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     private String name;
@@ -36,7 +36,7 @@ public final class ContainerInstanceVolume {
 
     private ContainerInstanceVolume() {}
     /**
-     * @return Volume type that we are using for empty dir where it could be either File Storage or Memory
+     * @return The volume type of the empty directory, can be either File Storage or Memory.
      * 
      */
     public Optional<String> backingStore() {
@@ -50,7 +50,7 @@ public final class ContainerInstanceVolume {
         return this.configs == null ? List.of() : this.configs;
     }
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public String name() {

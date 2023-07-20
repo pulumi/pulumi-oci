@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,6 +39,7 @@ import (
 //
 // ```
 func GetAgentImages(ctx *pulumi.Context, args *GetAgentImagesArgs, opts ...pulumi.InvokeOption) (*GetAgentImagesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAgentImagesResult
 	err := ctx.Invoke("oci:DatabaseMigration/getAgentImages:getAgentImages", args, &rv, opts...)
 	if err != nil {

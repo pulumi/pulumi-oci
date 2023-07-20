@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -77,6 +78,7 @@ func NewExternalPluggableDatabaseOperationsInsightsManagement(ctx *pulumi.Contex
 	if args.ExternalPluggableDatabaseId == nil {
 		return nil, errors.New("invalid value for required argument 'ExternalPluggableDatabaseId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExternalPluggableDatabaseOperationsInsightsManagement
 	err := ctx.RegisterResource("oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement", name, args, &resource, opts...)
 	if err != nil {

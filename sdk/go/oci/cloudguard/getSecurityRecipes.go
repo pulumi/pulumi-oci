@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetSecurityRecipes(ctx *pulumi.Context, args *GetSecurityRecipesArgs, opts ...pulumi.InvokeOption) (*GetSecurityRecipesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityRecipesResult
 	err := ctx.Invoke("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", args, &rv, opts...)
 	if err != nil {

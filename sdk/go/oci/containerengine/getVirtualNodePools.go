@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -14,6 +15,7 @@ import (
 //
 // List all the virtual node pools in a compartment, and optionally filter by cluster.
 func GetVirtualNodePools(ctx *pulumi.Context, args *GetVirtualNodePoolsArgs, opts ...pulumi.InvokeOption) (*GetVirtualNodePoolsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualNodePoolsResult
 	err := ctx.Invoke("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args, &rv, opts...)
 	if err != nil {

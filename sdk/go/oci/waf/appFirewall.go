@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -112,6 +113,7 @@ func NewAppFirewall(ctx *pulumi.Context,
 	if args.WebAppFirewallPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'WebAppFirewallPolicyId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppFirewall
 	err := ctx.RegisterResource("oci:Waf/appFirewall:AppFirewall", name, args, &resource, opts...)
 	if err != nil {

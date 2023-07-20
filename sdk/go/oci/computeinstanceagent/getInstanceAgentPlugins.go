@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetInstanceAgentPlugins(ctx *pulumi.Context, args *GetInstanceAgentPluginsArgs, opts ...pulumi.InvokeOption) (*GetInstanceAgentPluginsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstanceAgentPluginsResult
 	err := ctx.Invoke("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", args, &rv, opts...)
 	if err != nil {

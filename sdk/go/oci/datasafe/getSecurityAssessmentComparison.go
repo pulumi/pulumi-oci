@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetSecurityAssessmentComparison(ctx *pulumi.Context, args *GetSecurityAssessmentComparisonArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentComparisonResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityAssessmentComparisonResult
 	err := ctx.Invoke("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", args, &rv, opts...)
 	if err != nil {

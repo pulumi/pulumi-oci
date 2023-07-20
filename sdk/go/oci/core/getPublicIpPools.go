@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetPublicIpPools(ctx *pulumi.Context, args *GetPublicIpPoolsArgs, opts ...pulumi.InvokeOption) (*GetPublicIpPoolsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPublicIpPoolsResult
 	err := ctx.Invoke("oci:Core/getPublicIpPools:getPublicIpPools", args, &rv, opts...)
 	if err != nil {

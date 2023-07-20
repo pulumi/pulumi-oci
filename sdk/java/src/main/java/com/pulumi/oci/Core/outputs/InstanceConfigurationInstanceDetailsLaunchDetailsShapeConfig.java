@@ -35,6 +35,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
      * 
      */
     private @Nullable Double ocpus;
+    /**
+     * @return The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+     * 
+     */
+    private @Nullable Integer vcpus;
 
     private InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig() {}
     /**
@@ -67,6 +72,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
     public Optional<Double> ocpus() {
         return Optional.ofNullable(this.ocpus);
     }
+    /**
+     * @return The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+     * 
+     */
+    public Optional<Integer> vcpus() {
+        return Optional.ofNullable(this.vcpus);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -81,6 +93,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
         private @Nullable Double memoryInGbs;
         private @Nullable Integer nvmes;
         private @Nullable Double ocpus;
+        private @Nullable Integer vcpus;
         public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -88,6 +101,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
+    	      this.vcpus = defaults.vcpus;
         }
 
         @CustomType.Setter
@@ -110,12 +124,18 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
             this.ocpus = ocpus;
             return this;
         }
+        @CustomType.Setter
+        public Builder vcpus(@Nullable Integer vcpus) {
+            this.vcpus = vcpus;
+            return this;
+        }
         public InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig build() {
             final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig();
             o.baselineOcpuUtilization = baselineOcpuUtilization;
             o.memoryInGbs = memoryInGbs;
             o.nvmes = nvmes;
             o.ocpus = ocpus;
+            o.vcpus = vcpus;
             return o;
         }
     }

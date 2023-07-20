@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetVaults(ctx *pulumi.Context, args *GetVaultsArgs, opts ...pulumi.InvokeOption) (*GetVaultsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVaultsResult
 	err := ctx.Invoke("oci:Kms/getVaults:getVaults", args, &rv, opts...)
 	if err != nil {

@@ -58,6 +58,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// A short description of the instance's processor (CPU).
         /// </summary>
         public readonly string ProcessorDescription;
+        /// <summary>
+        /// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        /// </summary>
+        public readonly int Vcpus;
 
         [OutputConstructor]
         private GetInstancesInstanceShapeConfigResult(
@@ -83,7 +87,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             double ocpus,
 
-            string processorDescription)
+            string processorDescription,
+
+            int vcpus)
         {
             BaselineOcpuUtilization = baselineOcpuUtilization;
             GpuDescription = gpuDescription;
@@ -97,6 +103,7 @@ namespace Pulumi.Oci.Core.Outputs
             Nvmes = nvmes;
             Ocpus = ocpus;
             ProcessorDescription = processorDescription;
+            Vcpus = vcpus;
         }
     }
 }

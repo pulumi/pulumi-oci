@@ -7,12 +7,13 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
 //
-// Returns a list of ContainerInstances.
+// Returns a list of container instances.
 //
 // ## Example Usage
 //
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetContainerInstances(ctx *pulumi.Context, args *GetContainerInstancesArgs, opts ...pulumi.InvokeOption) (*GetContainerInstancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetContainerInstancesResult
 	err := ctx.Invoke("oci:ContainerInstances/getContainerInstances:getContainerInstances", args, &rv, opts...)
 	if err != nil {
@@ -55,29 +57,29 @@ func GetContainerInstances(ctx *pulumi.Context, args *GetContainerInstancesArgs,
 type GetContainerInstancesArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetContainerInstancesFilter `pulumi:"filters"`
-	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+	// A filter to only return resources that match the given lifecycle state.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getContainerInstances.
 type GetContainerInstancesResult struct {
-	// Availability Domain where the ContainerInstance is running.
+	// The availability domain to place the container instance.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// Compartment Identifier
+	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of container_instance_collection.
 	ContainerInstanceCollections []GetContainerInstancesContainerInstanceCollection `pulumi:"containerInstanceCollections"`
-	// Display name for the ContainerInstance. Can be renamed.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetContainerInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The current state of the ContainerInstance.
+	// The current state of the container instance.
 	State *string `pulumi:"state"`
 }
 
@@ -98,12 +100,12 @@ func GetContainerInstancesOutput(ctx *pulumi.Context, args GetContainerInstances
 type GetContainerInstancesOutputArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput                 `pulumi:"displayName"`
 	Filters     GetContainerInstancesFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+	// A filter to only return resources that match the given lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -126,12 +128,12 @@ func (o GetContainerInstancesResultOutput) ToGetContainerInstancesResultOutputWi
 	return o
 }
 
-// Availability Domain where the ContainerInstance is running.
+// The availability domain to place the container instance.
 func (o GetContainerInstancesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetContainerInstancesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Identifier
+// The OCID of the compartment.
 func (o GetContainerInstancesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -143,7 +145,7 @@ func (o GetContainerInstancesResultOutput) ContainerInstanceCollections() GetCon
 	}).(GetContainerInstancesContainerInstanceCollectionArrayOutput)
 }
 
-// Display name for the ContainerInstance. Can be renamed.
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetContainerInstancesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetContainerInstancesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -157,7 +159,7 @@ func (o GetContainerInstancesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstancesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The current state of the ContainerInstance.
+// The current state of the container instance.
 func (o GetContainerInstancesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetContainerInstancesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetVtaps(ctx *pulumi.Context, args *GetVtapsArgs, opts ...pulumi.InvokeOption) (*GetVtapsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVtapsResult
 	err := ctx.Invoke("oci:Core/getVtaps:getVtaps", args, &rv, opts...)
 	if err != nil {

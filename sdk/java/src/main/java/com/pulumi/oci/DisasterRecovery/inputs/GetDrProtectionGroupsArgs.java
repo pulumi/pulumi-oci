@@ -70,6 +70,21 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
+     * The DR Protection Group Role.
+     * 
+     */
+    @Import(name="role")
+    private @Nullable Output<String> role;
+
+    /**
+     * @return The DR Protection Group Role.
+     * 
+     */
+    public Optional<Output<String>> role() {
+        return Optional.ofNullable(this.role);
+    }
+
+    /**
      * A filter to return only DR Protection Groups that match the given lifecycleState.
      * 
      */
@@ -91,6 +106,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         this.displayName = $.displayName;
         this.drProtectionGroupId = $.drProtectionGroupId;
         this.filters = $.filters;
+        this.role = $.role;
         this.state = $.state;
     }
 
@@ -186,6 +202,27 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
 
         public Builder filters(GetDrProtectionGroupsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param role The DR Protection Group Role.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder role(@Nullable Output<String> role) {
+            $.role = role;
+            return this;
+        }
+
+        /**
+         * @param role The DR Protection Group Role.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder role(String role) {
+            return role(Output.of(role));
         }
 
         /**

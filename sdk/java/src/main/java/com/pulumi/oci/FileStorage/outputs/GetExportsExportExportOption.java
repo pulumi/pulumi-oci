@@ -6,6 +6,7 @@ package com.pulumi.oci.FileStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -15,6 +16,11 @@ public final class GetExportsExportExportOption {
      * 
      */
     private String access;
+    /**
+     * @return Array of allowed NFS authentication types.
+     * 
+     */
+    private List<String> allowedAuths;
     /**
      * @return GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
      * 
@@ -30,6 +36,11 @@ public final class GetExportsExportExportOption {
      * 
      */
     private String identitySquash;
+    /**
+     * @return Whether or not to enable anonymous access to the file system through this export in cases where a user isn&#39;t found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+     * 
+     */
+    private Boolean isAnonymousAccessAllowed;
     /**
      * @return If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
      * 
@@ -48,6 +59,13 @@ public final class GetExportsExportExportOption {
      */
     public String access() {
         return this.access;
+    }
+    /**
+     * @return Array of allowed NFS authentication types.
+     * 
+     */
+    public List<String> allowedAuths() {
+        return this.allowedAuths;
     }
     /**
      * @return GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
@@ -69,6 +87,13 @@ public final class GetExportsExportExportOption {
      */
     public String identitySquash() {
         return this.identitySquash;
+    }
+    /**
+     * @return Whether or not to enable anonymous access to the file system through this export in cases where a user isn&#39;t found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+     * 
+     */
+    public Boolean isAnonymousAccessAllowed() {
+        return this.isAnonymousAccessAllowed;
     }
     /**
      * @return If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
@@ -95,18 +120,22 @@ public final class GetExportsExportExportOption {
     @CustomType.Builder
     public static final class Builder {
         private String access;
+        private List<String> allowedAuths;
         private String anonymousGid;
         private String anonymousUid;
         private String identitySquash;
+        private Boolean isAnonymousAccessAllowed;
         private Boolean requirePrivilegedSourcePort;
         private String source;
         public Builder() {}
         public Builder(GetExportsExportExportOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.access = defaults.access;
+    	      this.allowedAuths = defaults.allowedAuths;
     	      this.anonymousGid = defaults.anonymousGid;
     	      this.anonymousUid = defaults.anonymousUid;
     	      this.identitySquash = defaults.identitySquash;
+    	      this.isAnonymousAccessAllowed = defaults.isAnonymousAccessAllowed;
     	      this.requirePrivilegedSourcePort = defaults.requirePrivilegedSourcePort;
     	      this.source = defaults.source;
         }
@@ -115,6 +144,14 @@ public final class GetExportsExportExportOption {
         public Builder access(String access) {
             this.access = Objects.requireNonNull(access);
             return this;
+        }
+        @CustomType.Setter
+        public Builder allowedAuths(List<String> allowedAuths) {
+            this.allowedAuths = Objects.requireNonNull(allowedAuths);
+            return this;
+        }
+        public Builder allowedAuths(String... allowedAuths) {
+            return allowedAuths(List.of(allowedAuths));
         }
         @CustomType.Setter
         public Builder anonymousGid(String anonymousGid) {
@@ -132,6 +169,11 @@ public final class GetExportsExportExportOption {
             return this;
         }
         @CustomType.Setter
+        public Builder isAnonymousAccessAllowed(Boolean isAnonymousAccessAllowed) {
+            this.isAnonymousAccessAllowed = Objects.requireNonNull(isAnonymousAccessAllowed);
+            return this;
+        }
+        @CustomType.Setter
         public Builder requirePrivilegedSourcePort(Boolean requirePrivilegedSourcePort) {
             this.requirePrivilegedSourcePort = Objects.requireNonNull(requirePrivilegedSourcePort);
             return this;
@@ -144,9 +186,11 @@ public final class GetExportsExportExportOption {
         public GetExportsExportExportOption build() {
             final var o = new GetExportsExportExportOption();
             o.access = access;
+            o.allowedAuths = allowedAuths;
             o.anonymousGid = anonymousGid;
             o.anonymousUid = anonymousUid;
             o.identitySquash = identitySquash;
+            o.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
             o.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
             o.source = source;
             return o;

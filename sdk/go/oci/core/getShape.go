@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetShape(ctx *pulumi.Context, args *GetShapeArgs, opts ...pulumi.InvokeOption) (*GetShapeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetShapeResult
 	err := ctx.Invoke("oci:Core/getShape:getShape", args, &rv, opts...)
 	if err != nil {

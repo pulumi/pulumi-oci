@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.FileStorage.outputs.GetExportsExportExportOption;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -31,6 +32,11 @@ public final class GetExportsExport {
      * 
      */
     private String id;
+    /**
+     * @return Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     * 
+     */
+    private Boolean isIdmapGroupsForSysAuth;
     /**
      * @return Path used to access the associated file system.
      * 
@@ -77,6 +83,13 @@ public final class GetExportsExport {
         return this.id;
     }
     /**
+     * @return Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     * 
+     */
+    public Boolean isIdmapGroupsForSysAuth() {
+        return this.isIdmapGroupsForSysAuth;
+    }
+    /**
      * @return Path used to access the associated file system.
      * 
      */
@@ -111,6 +124,7 @@ public final class GetExportsExport {
         private String exportSetId;
         private String fileSystemId;
         private String id;
+        private Boolean isIdmapGroupsForSysAuth;
         private String path;
         private String state;
         private String timeCreated;
@@ -121,6 +135,7 @@ public final class GetExportsExport {
     	      this.exportSetId = defaults.exportSetId;
     	      this.fileSystemId = defaults.fileSystemId;
     	      this.id = defaults.id;
+    	      this.isIdmapGroupsForSysAuth = defaults.isIdmapGroupsForSysAuth;
     	      this.path = defaults.path;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -150,6 +165,11 @@ public final class GetExportsExport {
             return this;
         }
         @CustomType.Setter
+        public Builder isIdmapGroupsForSysAuth(Boolean isIdmapGroupsForSysAuth) {
+            this.isIdmapGroupsForSysAuth = Objects.requireNonNull(isIdmapGroupsForSysAuth);
+            return this;
+        }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
@@ -170,6 +190,7 @@ public final class GetExportsExport {
             o.exportSetId = exportSetId;
             o.fileSystemId = fileSystemId;
             o.id = id;
+            o.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
             o.path = path;
             o.state = state;
             o.timeCreated = timeCreated;

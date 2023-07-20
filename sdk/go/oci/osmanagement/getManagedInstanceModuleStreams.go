@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -64,6 +65,7 @@ import (
 //
 // ```
 func GetManagedInstanceModuleStreams(ctx *pulumi.Context, args *GetManagedInstanceModuleStreamsArgs, opts ...pulumi.InvokeOption) (*GetManagedInstanceModuleStreamsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedInstanceModuleStreamsResult
 	err := ctx.Invoke("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetProfiles(ctx *pulumi.Context, args *GetProfilesArgs, opts ...pulumi.InvokeOption) (*GetProfilesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProfilesResult
 	err := ctx.Invoke("oci:Optimizer/getProfiles:getProfiles", args, &rv, opts...)
 	if err != nil {

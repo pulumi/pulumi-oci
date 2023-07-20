@@ -69,7 +69,7 @@ export interface GetInstanceResult {
      */
     readonly capacityReservationId: string;
     /**
-     * The OCID of the compartment that contains the instance.
+     * The OCID of the compartment containing images to search
      */
     readonly compartmentId: string;
     readonly computeClusterId: string;
@@ -114,6 +114,10 @@ export interface GetInstanceResult {
      * @deprecated The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
      */
     readonly image: string;
+    /**
+     * The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+     */
+    readonly instanceConfigurationId: string;
     readonly instanceId: string;
     /**
      * Optional mutable instance options

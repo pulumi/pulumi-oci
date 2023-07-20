@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetManagedDatabaseAttentionLogCount(ctx *pulumi.Context, args *GetManagedDatabaseAttentionLogCountArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseAttentionLogCountResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseAttentionLogCountResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", args, &rv, opts...)
 	if err != nil {

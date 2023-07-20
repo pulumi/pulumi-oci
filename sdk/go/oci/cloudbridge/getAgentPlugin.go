@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupAgentPlugin(ctx *pulumi.Context, args *LookupAgentPluginArgs, opts ...pulumi.InvokeOption) (*LookupAgentPluginResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAgentPluginResult
 	err := ctx.Invoke("oci:CloudBridge/getAgentPlugin:getAgentPlugin", args, &rv, opts...)
 	if err != nil {

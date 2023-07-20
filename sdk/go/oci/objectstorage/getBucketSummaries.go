@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,6 +50,7 @@ import (
 //
 // ```
 func GetBucketSummaries(ctx *pulumi.Context, args *GetBucketSummariesArgs, opts ...pulumi.InvokeOption) (*GetBucketSummariesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBucketSummariesResult
 	err := ctx.Invoke("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args, &rv, opts...)
 	if err != nil {

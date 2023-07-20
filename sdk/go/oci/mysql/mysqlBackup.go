@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -114,6 +115,7 @@ func NewMysqlBackup(ctx *pulumi.Context,
 	if args.DbSystemId == nil {
 		return nil, errors.New("invalid value for required argument 'DbSystemId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MysqlBackup
 	err := ctx.RegisterResource("oci:Mysql/mysqlBackup:MysqlBackup", name, args, &resource, opts...)
 	if err != nil {

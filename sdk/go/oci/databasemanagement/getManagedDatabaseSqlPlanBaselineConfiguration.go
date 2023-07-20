@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetManagedDatabaseSqlPlanBaselineConfiguration(ctx *pulumi.Context, args *GetManagedDatabaseSqlPlanBaselineConfigurationArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlPlanBaselineConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseSqlPlanBaselineConfigurationResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration", args, &rv, opts...)
 	if err != nil {

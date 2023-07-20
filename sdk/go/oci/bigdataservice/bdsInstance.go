@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -225,6 +226,7 @@ func NewBdsInstance(ctx *pulumi.Context,
 		"clusterAdminPassword",
 	})
 	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BdsInstance
 	err := ctx.RegisterResource("oci:BigDataService/bdsInstance:BdsInstance", name, args, &resource, opts...)
 	if err != nil {

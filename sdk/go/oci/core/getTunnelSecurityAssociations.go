@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetTunnelSecurityAssociations(ctx *pulumi.Context, args *GetTunnelSecurityAssociationsArgs, opts ...pulumi.InvokeOption) (*GetTunnelSecurityAssociationsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTunnelSecurityAssociationsResult
 	err := ctx.Invoke("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args, &rv, opts...)
 	if err != nil {

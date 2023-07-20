@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -73,6 +74,7 @@ func NewNetworkFirewallPolicy(ctx *pulumi.Context,
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource NetworkFirewallPolicy
 	err := ctx.RegisterResource("oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy", name, args, &resource, opts...)
 	if err != nil {

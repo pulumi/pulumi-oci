@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetEnvironments(ctx *pulumi.Context, args *GetEnvironmentsArgs, opts ...pulumi.InvokeOption) (*GetEnvironmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEnvironmentsResult
 	err := ctx.Invoke("oci:CloudBridge/getEnvironments:getEnvironments", args, &rv, opts...)
 	if err != nil {

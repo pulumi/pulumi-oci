@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetAuthTokens(ctx *pulumi.Context, args *GetAuthTokensArgs, opts ...pulumi.InvokeOption) (*GetAuthTokensResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuthTokensResult
 	err := ctx.Invoke("oci:Identity/getAuthTokens:getAuthTokens", args, &rv, opts...)
 	if err != nil {

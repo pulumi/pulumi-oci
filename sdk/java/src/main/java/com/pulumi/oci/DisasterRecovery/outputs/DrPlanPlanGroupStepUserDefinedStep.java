@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrPlanPlanGroupStepUserDefinedStep {
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String functionId;
@@ -39,7 +39,7 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
      */
     private @Nullable String runAsUser;
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String runOnInstanceId;
@@ -61,7 +61,7 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
 
     private DrPlanPlanGroupStepUserDefinedStep() {}
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> functionId() {
@@ -96,7 +96,7 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
         return Optional.ofNullable(this.runAsUser);
     }
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> runOnInstanceId() {

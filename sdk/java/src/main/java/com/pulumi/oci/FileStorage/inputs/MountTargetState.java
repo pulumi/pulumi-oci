@@ -5,6 +5,8 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.FileStorage.inputs.MountTargetKerberosArgs;
+import com.pulumi.oci.FileStorage.inputs.MountTargetLdapIdmapArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -136,6 +138,21 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The method used to map a Unix UID to secondary groups, if any.
+     * 
+     */
+    @Import(name="idmapType")
+    private @Nullable Output<String> idmapType;
+
+    /**
+     * @return (Updatable) The method used to map a Unix UID to secondary groups, if any.
+     * 
+     */
+    public Optional<Output<String>> idmapType() {
+        return Optional.ofNullable(this.idmapType);
+    }
+
+    /**
      * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
      * 
      * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
@@ -156,6 +173,36 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
+    }
+
+    /**
+     * (Updatable) Kerberos details needed to create configuration.
+     * 
+     */
+    @Import(name="kerberos")
+    private @Nullable Output<MountTargetKerberosArgs> kerberos;
+
+    /**
+     * @return (Updatable) Kerberos details needed to create configuration.
+     * 
+     */
+    public Optional<Output<MountTargetKerberosArgs>> kerberos() {
+        return Optional.ofNullable(this.kerberos);
+    }
+
+    /**
+     * (Updatable) Mount target details about the LDAP ID mapping configuration.
+     * 
+     */
+    @Import(name="ldapIdmap")
+    private @Nullable Output<MountTargetLdapIdmapArgs> ldapIdmap;
+
+    /**
+     * @return (Updatable) Mount target details about the LDAP ID mapping configuration.
+     * 
+     */
+    public Optional<Output<MountTargetLdapIdmapArgs>> ldapIdmap() {
+        return Optional.ofNullable(this.ldapIdmap);
     }
 
     /**
@@ -264,7 +311,10 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
         this.exportSetId = $.exportSetId;
         this.freeformTags = $.freeformTags;
         this.hostnameLabel = $.hostnameLabel;
+        this.idmapType = $.idmapType;
         this.ipAddress = $.ipAddress;
+        this.kerberos = $.kerberos;
+        this.ldapIdmap = $.ldapIdmap;
         this.lifecycleDetails = $.lifecycleDetails;
         this.nsgIds = $.nsgIds;
         this.privateIpIds = $.privateIpIds;
@@ -451,6 +501,27 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param idmapType (Updatable) The method used to map a Unix UID to secondary groups, if any.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idmapType(@Nullable Output<String> idmapType) {
+            $.idmapType = idmapType;
+            return this;
+        }
+
+        /**
+         * @param idmapType (Updatable) The method used to map a Unix UID to secondary groups, if any.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idmapType(String idmapType) {
+            return idmapType(Output.of(idmapType));
+        }
+
+        /**
          * @param ipAddress A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet.
          * 
          * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
@@ -477,6 +548,48 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
+        }
+
+        /**
+         * @param kerberos (Updatable) Kerberos details needed to create configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kerberos(@Nullable Output<MountTargetKerberosArgs> kerberos) {
+            $.kerberos = kerberos;
+            return this;
+        }
+
+        /**
+         * @param kerberos (Updatable) Kerberos details needed to create configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kerberos(MountTargetKerberosArgs kerberos) {
+            return kerberos(Output.of(kerberos));
+        }
+
+        /**
+         * @param ldapIdmap (Updatable) Mount target details about the LDAP ID mapping configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ldapIdmap(@Nullable Output<MountTargetLdapIdmapArgs> ldapIdmap) {
+            $.ldapIdmap = ldapIdmap;
+            return this;
+        }
+
+        /**
+         * @param ldapIdmap (Updatable) Mount target details about the LDAP ID mapping configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ldapIdmap(MountTargetLdapIdmapArgs ldapIdmap) {
+            return ldapIdmap(Output.of(ldapIdmap));
         }
 
         /**

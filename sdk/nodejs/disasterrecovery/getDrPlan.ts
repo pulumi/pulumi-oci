@@ -45,7 +45,7 @@ export interface GetDrPlanArgs {
  */
 export interface GetDrPlanResult {
     /**
-     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     readonly compartmentId: string;
     /**
@@ -58,7 +58,7 @@ export interface GetDrPlanResult {
     readonly displayName: string;
     readonly drPlanId: string;
     /**
-     * The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
      */
     readonly drProtectionGroupId: string;
     /**
@@ -66,7 +66,7 @@ export interface GetDrPlanResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
      */
     readonly id: string;
     /**
@@ -74,7 +74,7 @@ export interface GetDrPlanResult {
      */
     readonly lifeCycleDetails: string;
     /**
-     * The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
      */
     readonly peerDrProtectionGroupId: string;
     /**

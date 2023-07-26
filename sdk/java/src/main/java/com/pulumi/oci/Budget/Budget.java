@@ -53,8 +53,10 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.budget_description())
  *             .displayName(var_.budget_display_name())
+ *             .endDate(var_.budget_end_date())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .processingPeriodType(var_.budget_processing_period_type())
+ *             .startDate(var_.budget_start_date())
  *             .targetCompartmentId(oci_identity_compartment.test_compartment().id())
  *             .targetType(var_.budget_target_type())
  *             .targets(var_.budget_targets())
@@ -188,6 +190,20 @@ public class Budget extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    @Export(name="endDate", type=String.class, parameters={})
+    private Output<String> endDate;
+
+    /**
+     * @return (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    public Output<String> endDate() {
+        return this.endDate;
+    }
+    /**
      * The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
@@ -216,14 +232,14 @@ public class Budget extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      * 
      */
     @Export(name="processingPeriodType", type=String.class, parameters={})
     private Output<String> processingPeriodType;
 
     /**
-     * @return (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * @return (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      * 
      */
     public Output<String> processingPeriodType() {
@@ -244,6 +260,20 @@ public class Budget extends com.pulumi.resources.CustomResource {
         return this.resetPeriod;
     }
     /**
+     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    @Export(name="startDate", type=String.class, parameters={})
+    private Output<String> startDate;
+
+    /**
+     * @return (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    public Output<String> startDate() {
+        return this.startDate;
+    }
+    /**
      * The current state of the budget.
      * 
      */
@@ -261,10 +291,10 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
+     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead. */
+    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
     @Export(name="targetCompartmentId", type=String.class, parameters={})
     private Output<String> targetCompartmentId;
 

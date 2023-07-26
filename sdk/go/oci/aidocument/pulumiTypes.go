@@ -13,6 +13,103 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ModelComponentModel struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId *string `pulumi:"modelId"`
+}
+
+// ModelComponentModelInput is an input type that accepts ModelComponentModelArgs and ModelComponentModelOutput values.
+// You can construct a concrete instance of `ModelComponentModelInput` via:
+//
+//	ModelComponentModelArgs{...}
+type ModelComponentModelInput interface {
+	pulumi.Input
+
+	ToModelComponentModelOutput() ModelComponentModelOutput
+	ToModelComponentModelOutputWithContext(context.Context) ModelComponentModelOutput
+}
+
+type ModelComponentModelArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
+}
+
+func (ModelComponentModelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelComponentModel)(nil)).Elem()
+}
+
+func (i ModelComponentModelArgs) ToModelComponentModelOutput() ModelComponentModelOutput {
+	return i.ToModelComponentModelOutputWithContext(context.Background())
+}
+
+func (i ModelComponentModelArgs) ToModelComponentModelOutputWithContext(ctx context.Context) ModelComponentModelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelComponentModelOutput)
+}
+
+// ModelComponentModelArrayInput is an input type that accepts ModelComponentModelArray and ModelComponentModelArrayOutput values.
+// You can construct a concrete instance of `ModelComponentModelArrayInput` via:
+//
+//	ModelComponentModelArray{ ModelComponentModelArgs{...} }
+type ModelComponentModelArrayInput interface {
+	pulumi.Input
+
+	ToModelComponentModelArrayOutput() ModelComponentModelArrayOutput
+	ToModelComponentModelArrayOutputWithContext(context.Context) ModelComponentModelArrayOutput
+}
+
+type ModelComponentModelArray []ModelComponentModelInput
+
+func (ModelComponentModelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelComponentModel)(nil)).Elem()
+}
+
+func (i ModelComponentModelArray) ToModelComponentModelArrayOutput() ModelComponentModelArrayOutput {
+	return i.ToModelComponentModelArrayOutputWithContext(context.Background())
+}
+
+func (i ModelComponentModelArray) ToModelComponentModelArrayOutputWithContext(ctx context.Context) ModelComponentModelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelComponentModelArrayOutput)
+}
+
+type ModelComponentModelOutput struct{ *pulumi.OutputState }
+
+func (ModelComponentModelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelComponentModel)(nil)).Elem()
+}
+
+func (o ModelComponentModelOutput) ToModelComponentModelOutput() ModelComponentModelOutput {
+	return o
+}
+
+func (o ModelComponentModelOutput) ToModelComponentModelOutputWithContext(ctx context.Context) ModelComponentModelOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+func (o ModelComponentModelOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelComponentModel) *string { return v.ModelId }).(pulumi.StringPtrOutput)
+}
+
+type ModelComponentModelArrayOutput struct{ *pulumi.OutputState }
+
+func (ModelComponentModelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelComponentModel)(nil)).Elem()
+}
+
+func (o ModelComponentModelArrayOutput) ToModelComponentModelArrayOutput() ModelComponentModelArrayOutput {
+	return o
+}
+
+func (o ModelComponentModelArrayOutput) ToModelComponentModelArrayOutputWithContext(ctx context.Context) ModelComponentModelArrayOutput {
+	return o
+}
+
+func (o ModelComponentModelArrayOutput) Index(i pulumi.IntInput) ModelComponentModelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelComponentModel {
+		return vs[0].([]ModelComponentModel)[vs[1].(int)]
+	}).(ModelComponentModelOutput)
+}
+
 type ModelMetric struct {
 	// Summary of count of samples used during model training.
 	DatasetSummaries []ModelMetricDatasetSummary `pulumi:"datasetSummaries"`
@@ -2135,6 +2232,8 @@ type ProcessorJobProcessorConfigFeature struct {
 	MaxResults *int `pulumi:"maxResults"`
 	// The custom model ID.
 	ModelId *string `pulumi:"modelId"`
+	// The custom model tenancy ID when modelId represents aliasName.
+	TenancyId *string `pulumi:"tenancyId"`
 }
 
 // ProcessorJobProcessorConfigFeatureInput is an input type that accepts ProcessorJobProcessorConfigFeatureArgs and ProcessorJobProcessorConfigFeatureOutput values.
@@ -2157,6 +2256,8 @@ type ProcessorJobProcessorConfigFeatureArgs struct {
 	MaxResults pulumi.IntPtrInput `pulumi:"maxResults"`
 	// The custom model ID.
 	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
+	// The custom model tenancy ID when modelId represents aliasName.
+	TenancyId pulumi.StringPtrInput `pulumi:"tenancyId"`
 }
 
 func (ProcessorJobProcessorConfigFeatureArgs) ElementType() reflect.Type {
@@ -2230,6 +2331,11 @@ func (o ProcessorJobProcessorConfigFeatureOutput) ModelId() pulumi.StringPtrOutp
 	return o.ApplyT(func(v ProcessorJobProcessorConfigFeature) *string { return v.ModelId }).(pulumi.StringPtrOutput)
 }
 
+// The custom model tenancy ID when modelId represents aliasName.
+func (o ProcessorJobProcessorConfigFeatureOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProcessorJobProcessorConfigFeature) *string { return v.TenancyId }).(pulumi.StringPtrOutput)
+}
+
 type ProcessorJobProcessorConfigFeatureArrayOutput struct{ *pulumi.OutputState }
 
 func (ProcessorJobProcessorConfigFeatureArrayOutput) ElementType() reflect.Type {
@@ -2248,6 +2354,103 @@ func (o ProcessorJobProcessorConfigFeatureArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProcessorJobProcessorConfigFeature {
 		return vs[0].([]ProcessorJobProcessorConfigFeature)[vs[1].(int)]
 	}).(ProcessorJobProcessorConfigFeatureOutput)
+}
+
+type GetModelComponentModel struct {
+	// A unique model identifier.
+	ModelId string `pulumi:"modelId"`
+}
+
+// GetModelComponentModelInput is an input type that accepts GetModelComponentModelArgs and GetModelComponentModelOutput values.
+// You can construct a concrete instance of `GetModelComponentModelInput` via:
+//
+//	GetModelComponentModelArgs{...}
+type GetModelComponentModelInput interface {
+	pulumi.Input
+
+	ToGetModelComponentModelOutput() GetModelComponentModelOutput
+	ToGetModelComponentModelOutputWithContext(context.Context) GetModelComponentModelOutput
+}
+
+type GetModelComponentModelArgs struct {
+	// A unique model identifier.
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (GetModelComponentModelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelComponentModel)(nil)).Elem()
+}
+
+func (i GetModelComponentModelArgs) ToGetModelComponentModelOutput() GetModelComponentModelOutput {
+	return i.ToGetModelComponentModelOutputWithContext(context.Background())
+}
+
+func (i GetModelComponentModelArgs) ToGetModelComponentModelOutputWithContext(ctx context.Context) GetModelComponentModelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelComponentModelOutput)
+}
+
+// GetModelComponentModelArrayInput is an input type that accepts GetModelComponentModelArray and GetModelComponentModelArrayOutput values.
+// You can construct a concrete instance of `GetModelComponentModelArrayInput` via:
+//
+//	GetModelComponentModelArray{ GetModelComponentModelArgs{...} }
+type GetModelComponentModelArrayInput interface {
+	pulumi.Input
+
+	ToGetModelComponentModelArrayOutput() GetModelComponentModelArrayOutput
+	ToGetModelComponentModelArrayOutputWithContext(context.Context) GetModelComponentModelArrayOutput
+}
+
+type GetModelComponentModelArray []GetModelComponentModelInput
+
+func (GetModelComponentModelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelComponentModel)(nil)).Elem()
+}
+
+func (i GetModelComponentModelArray) ToGetModelComponentModelArrayOutput() GetModelComponentModelArrayOutput {
+	return i.ToGetModelComponentModelArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelComponentModelArray) ToGetModelComponentModelArrayOutputWithContext(ctx context.Context) GetModelComponentModelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelComponentModelArrayOutput)
+}
+
+type GetModelComponentModelOutput struct{ *pulumi.OutputState }
+
+func (GetModelComponentModelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelComponentModel)(nil)).Elem()
+}
+
+func (o GetModelComponentModelOutput) ToGetModelComponentModelOutput() GetModelComponentModelOutput {
+	return o
+}
+
+func (o GetModelComponentModelOutput) ToGetModelComponentModelOutputWithContext(ctx context.Context) GetModelComponentModelOutput {
+	return o
+}
+
+// A unique model identifier.
+func (o GetModelComponentModelOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelComponentModel) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+type GetModelComponentModelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelComponentModelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelComponentModel)(nil)).Elem()
+}
+
+func (o GetModelComponentModelArrayOutput) ToGetModelComponentModelArrayOutput() GetModelComponentModelArrayOutput {
+	return o
+}
+
+func (o GetModelComponentModelArrayOutput) ToGetModelComponentModelArrayOutputWithContext(ctx context.Context) GetModelComponentModelArrayOutput {
+	return o
+}
+
+func (o GetModelComponentModelArrayOutput) Index(i pulumi.IntInput) GetModelComponentModelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelComponentModel {
+		return vs[0].([]GetModelComponentModel)[vs[1].(int)]
+	}).(GetModelComponentModelOutput)
 }
 
 type GetModelMetric struct {
@@ -3600,6 +3803,8 @@ func (o GetModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetModelsM
 type GetModelsModelCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+	ComponentModels []GetModelsModelCollectionItemComponentModel `pulumi:"componentModels"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// An optional description of the model.
@@ -3610,6 +3815,8 @@ type GetModelsModelCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The filter to find the model with the given identifier.
 	Id string `pulumi:"id"`
+	// Set to true when the model is created by using multiple key value extraction models.
+	IsComposedModel bool `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode bool `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
@@ -3620,6 +3827,8 @@ type GetModelsModelCollectionItem struct {
 	MaxTrainingTimeInHours float64 `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics []GetModelsModelCollectionItemMetric `pulumi:"metrics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId string `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType string `pulumi:"modelType"`
 	// The version of the model.
@@ -3630,6 +3839,8 @@ type GetModelsModelCollectionItem struct {
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The tenancy id of the model.
+	TenancyId string `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
 	TestingDatasets []GetModelsModelCollectionItemTestingDataset `pulumi:"testingDatasets"`
 	// When the model was created, as an RFC3339 datetime string.
@@ -3658,6 +3869,8 @@ type GetModelsModelCollectionItemInput interface {
 type GetModelsModelCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+	ComponentModels GetModelsModelCollectionItemComponentModelArrayInput `pulumi:"componentModels"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// An optional description of the model.
@@ -3668,6 +3881,8 @@ type GetModelsModelCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The filter to find the model with the given identifier.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Set to true when the model is created by using multiple key value extraction models.
+	IsComposedModel pulumi.BoolInput `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolInput `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
@@ -3678,6 +3893,8 @@ type GetModelsModelCollectionItemArgs struct {
 	MaxTrainingTimeInHours pulumi.Float64Input `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics GetModelsModelCollectionItemMetricArrayInput `pulumi:"metrics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The version of the model.
@@ -3688,6 +3905,8 @@ type GetModelsModelCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The tenancy id of the model.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
 	TestingDatasets GetModelsModelCollectionItemTestingDatasetArrayInput `pulumi:"testingDatasets"`
 	// When the model was created, as an RFC3339 datetime string.
@@ -3758,6 +3977,13 @@ func (o GetModelsModelCollectionItemOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+func (o GetModelsModelCollectionItemOutput) ComponentModels() GetModelsModelCollectionItemComponentModelArrayOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) []GetModelsModelCollectionItemComponentModel {
+		return v.ComponentModels
+	}).(GetModelsModelCollectionItemComponentModelArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 func (o GetModelsModelCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -3781,6 +4007,11 @@ func (o GetModelsModelCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 // The filter to find the model with the given identifier.
 func (o GetModelsModelCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Set to true when the model is created by using multiple key value extraction models.
+func (o GetModelsModelCollectionItemOutput) IsComposedModel() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) bool { return v.IsComposedModel }).(pulumi.BoolOutput)
 }
 
 // Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
@@ -3808,6 +4039,11 @@ func (o GetModelsModelCollectionItemOutput) Metrics() GetModelsModelCollectionIt
 	return o.ApplyT(func(v GetModelsModelCollectionItem) []GetModelsModelCollectionItemMetric { return v.Metrics }).(GetModelsModelCollectionItemMetricArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+func (o GetModelsModelCollectionItemOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
 // The type of the Document model.
 func (o GetModelsModelCollectionItemOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
@@ -3831,6 +4067,11 @@ func (o GetModelsModelCollectionItemOutput) State() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 func (o GetModelsModelCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The tenancy id of the model.
+func (o GetModelsModelCollectionItemOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.TenancyId }).(pulumi.StringOutput)
 }
 
 // The base entity which is the input for creating and training a model.
@@ -3887,6 +4128,103 @@ func (o GetModelsModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMod
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollectionItem {
 		return vs[0].([]GetModelsModelCollectionItem)[vs[1].(int)]
 	}).(GetModelsModelCollectionItemOutput)
+}
+
+type GetModelsModelCollectionItemComponentModel struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId string `pulumi:"modelId"`
+}
+
+// GetModelsModelCollectionItemComponentModelInput is an input type that accepts GetModelsModelCollectionItemComponentModelArgs and GetModelsModelCollectionItemComponentModelOutput values.
+// You can construct a concrete instance of `GetModelsModelCollectionItemComponentModelInput` via:
+//
+//	GetModelsModelCollectionItemComponentModelArgs{...}
+type GetModelsModelCollectionItemComponentModelInput interface {
+	pulumi.Input
+
+	ToGetModelsModelCollectionItemComponentModelOutput() GetModelsModelCollectionItemComponentModelOutput
+	ToGetModelsModelCollectionItemComponentModelOutputWithContext(context.Context) GetModelsModelCollectionItemComponentModelOutput
+}
+
+type GetModelsModelCollectionItemComponentModelArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (GetModelsModelCollectionItemComponentModelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelCollectionItemComponentModel)(nil)).Elem()
+}
+
+func (i GetModelsModelCollectionItemComponentModelArgs) ToGetModelsModelCollectionItemComponentModelOutput() GetModelsModelCollectionItemComponentModelOutput {
+	return i.ToGetModelsModelCollectionItemComponentModelOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelCollectionItemComponentModelArgs) ToGetModelsModelCollectionItemComponentModelOutputWithContext(ctx context.Context) GetModelsModelCollectionItemComponentModelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemComponentModelOutput)
+}
+
+// GetModelsModelCollectionItemComponentModelArrayInput is an input type that accepts GetModelsModelCollectionItemComponentModelArray and GetModelsModelCollectionItemComponentModelArrayOutput values.
+// You can construct a concrete instance of `GetModelsModelCollectionItemComponentModelArrayInput` via:
+//
+//	GetModelsModelCollectionItemComponentModelArray{ GetModelsModelCollectionItemComponentModelArgs{...} }
+type GetModelsModelCollectionItemComponentModelArrayInput interface {
+	pulumi.Input
+
+	ToGetModelsModelCollectionItemComponentModelArrayOutput() GetModelsModelCollectionItemComponentModelArrayOutput
+	ToGetModelsModelCollectionItemComponentModelArrayOutputWithContext(context.Context) GetModelsModelCollectionItemComponentModelArrayOutput
+}
+
+type GetModelsModelCollectionItemComponentModelArray []GetModelsModelCollectionItemComponentModelInput
+
+func (GetModelsModelCollectionItemComponentModelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelCollectionItemComponentModel)(nil)).Elem()
+}
+
+func (i GetModelsModelCollectionItemComponentModelArray) ToGetModelsModelCollectionItemComponentModelArrayOutput() GetModelsModelCollectionItemComponentModelArrayOutput {
+	return i.ToGetModelsModelCollectionItemComponentModelArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelCollectionItemComponentModelArray) ToGetModelsModelCollectionItemComponentModelArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemComponentModelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemComponentModelArrayOutput)
+}
+
+type GetModelsModelCollectionItemComponentModelOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelCollectionItemComponentModelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelCollectionItemComponentModel)(nil)).Elem()
+}
+
+func (o GetModelsModelCollectionItemComponentModelOutput) ToGetModelsModelCollectionItemComponentModelOutput() GetModelsModelCollectionItemComponentModelOutput {
+	return o
+}
+
+func (o GetModelsModelCollectionItemComponentModelOutput) ToGetModelsModelCollectionItemComponentModelOutputWithContext(ctx context.Context) GetModelsModelCollectionItemComponentModelOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+func (o GetModelsModelCollectionItemComponentModelOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemComponentModel) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+type GetModelsModelCollectionItemComponentModelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelCollectionItemComponentModelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelCollectionItemComponentModel)(nil)).Elem()
+}
+
+func (o GetModelsModelCollectionItemComponentModelArrayOutput) ToGetModelsModelCollectionItemComponentModelArrayOutput() GetModelsModelCollectionItemComponentModelArrayOutput {
+	return o
+}
+
+func (o GetModelsModelCollectionItemComponentModelArrayOutput) ToGetModelsModelCollectionItemComponentModelArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemComponentModelArrayOutput {
+	return o
+}
+
+func (o GetModelsModelCollectionItemComponentModelArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemComponentModelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollectionItemComponentModel {
+		return vs[0].([]GetModelsModelCollectionItemComponentModel)[vs[1].(int)]
+	}).(GetModelsModelCollectionItemComponentModelOutput)
 }
 
 type GetModelsModelCollectionItemMetric struct {
@@ -5543,6 +5881,8 @@ type GetProcessorJobProcessorConfigFeature struct {
 	MaxResults int `pulumi:"maxResults"`
 	// The custom model ID.
 	ModelId string `pulumi:"modelId"`
+	// The custom model tenancy ID when modelId represents aliasName.
+	TenancyId string `pulumi:"tenancyId"`
 }
 
 // GetProcessorJobProcessorConfigFeatureInput is an input type that accepts GetProcessorJobProcessorConfigFeatureArgs and GetProcessorJobProcessorConfigFeatureOutput values.
@@ -5565,6 +5905,8 @@ type GetProcessorJobProcessorConfigFeatureArgs struct {
 	MaxResults pulumi.IntInput `pulumi:"maxResults"`
 	// The custom model ID.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// The custom model tenancy ID when modelId represents aliasName.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
 }
 
 func (GetProcessorJobProcessorConfigFeatureArgs) ElementType() reflect.Type {
@@ -5636,6 +5978,11 @@ func (o GetProcessorJobProcessorConfigFeatureOutput) MaxResults() pulumi.IntOutp
 // The custom model ID.
 func (o GetProcessorJobProcessorConfigFeatureOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobProcessorConfigFeature) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// The custom model tenancy ID when modelId represents aliasName.
+func (o GetProcessorJobProcessorConfigFeatureOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessorJobProcessorConfigFeature) string { return v.TenancyId }).(pulumi.StringOutput)
 }
 
 type GetProcessorJobProcessorConfigFeatureArrayOutput struct{ *pulumi.OutputState }
@@ -6046,6 +6393,8 @@ func (o GetProjectsProjectCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelComponentModelInput)(nil)).Elem(), ModelComponentModelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelComponentModelArrayInput)(nil)).Elem(), ModelComponentModelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelMetricInput)(nil)).Elem(), ModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelMetricArrayInput)(nil)).Elem(), ModelMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelMetricDatasetSummaryInput)(nil)).Elem(), ModelMetricDatasetSummaryArgs{})
@@ -6074,6 +6423,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigPtrInput)(nil)).Elem(), ProcessorJobProcessorConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigFeatureInput)(nil)).Elem(), ProcessorJobProcessorConfigFeatureArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigFeatureArrayInput)(nil)).Elem(), ProcessorJobProcessorConfigFeatureArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelComponentModelInput)(nil)).Elem(), GetModelComponentModelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelComponentModelArrayInput)(nil)).Elem(), GetModelComponentModelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelMetricInput)(nil)).Elem(), GetModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelMetricArrayInput)(nil)).Elem(), GetModelMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelMetricDatasetSummaryInput)(nil)).Elem(), GetModelMetricDatasetSummaryArgs{})
@@ -6098,6 +6449,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionArrayInput)(nil)).Elem(), GetModelsModelCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemInput)(nil)).Elem(), GetModelsModelCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemArrayInput)(nil)).Elem(), GetModelsModelCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemComponentModelInput)(nil)).Elem(), GetModelsModelCollectionItemComponentModelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemComponentModelArrayInput)(nil)).Elem(), GetModelsModelCollectionItemComponentModelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemMetricInput)(nil)).Elem(), GetModelsModelCollectionItemMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemMetricArrayInput)(nil)).Elem(), GetModelsModelCollectionItemMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemMetricDatasetSummaryInput)(nil)).Elem(), GetModelsModelCollectionItemMetricDatasetSummaryArgs{})
@@ -6132,6 +6485,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionArrayInput)(nil)).Elem(), GetProjectsProjectCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemInput)(nil)).Elem(), GetProjectsProjectCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemArrayInput)(nil)).Elem(), GetProjectsProjectCollectionItemArray{})
+	pulumi.RegisterOutputType(ModelComponentModelOutput{})
+	pulumi.RegisterOutputType(ModelComponentModelArrayOutput{})
 	pulumi.RegisterOutputType(ModelMetricOutput{})
 	pulumi.RegisterOutputType(ModelMetricArrayOutput{})
 	pulumi.RegisterOutputType(ModelMetricDatasetSummaryOutput{})
@@ -6160,6 +6515,8 @@ func init() {
 	pulumi.RegisterOutputType(ProcessorJobProcessorConfigPtrOutput{})
 	pulumi.RegisterOutputType(ProcessorJobProcessorConfigFeatureOutput{})
 	pulumi.RegisterOutputType(ProcessorJobProcessorConfigFeatureArrayOutput{})
+	pulumi.RegisterOutputType(GetModelComponentModelOutput{})
+	pulumi.RegisterOutputType(GetModelComponentModelArrayOutput{})
 	pulumi.RegisterOutputType(GetModelMetricOutput{})
 	pulumi.RegisterOutputType(GetModelMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetModelMetricDatasetSummaryOutput{})
@@ -6184,6 +6541,8 @@ func init() {
 	pulumi.RegisterOutputType(GetModelsModelCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetModelsModelCollectionItemComponentModelOutput{})
+	pulumi.RegisterOutputType(GetModelsModelCollectionItemComponentModelArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemMetricOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemMetricDatasetSummaryOutput{})

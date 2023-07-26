@@ -36,6 +36,12 @@ namespace Pulumi.Oci.AiDocument.Inputs
         [Input("modelId")]
         public Input<string>? ModelId { get; set; }
 
+        /// <summary>
+        /// The custom model tenancy ID when modelId represents aliasName.
+        /// </summary>
+        [Input("tenancyId")]
+        public Input<string>? TenancyId { get; set; }
+
         public ProcessorJobProcessorConfigFeatureGetArgs()
         {
         }

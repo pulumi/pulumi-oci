@@ -23,6 +23,8 @@ class InstancePoolArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
+                 instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
                  load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None):
         """
@@ -36,6 +38,8 @@ class InstancePoolArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool.
         :param pulumi.Input[str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
                
@@ -53,6 +57,10 @@ class InstancePoolArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if instance_display_name_formatter is not None:
+            pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+        if instance_hostname_formatter is not None:
+            pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         if load_balancers is not None:
             pulumi.set(__self__, "load_balancers", load_balancers)
         if state is not None:
@@ -145,6 +153,30 @@ class InstancePoolArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="instanceDisplayNameFormatter")
+    def instance_display_name_formatter(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        """
+        return pulumi.get(self, "instance_display_name_formatter")
+
+    @instance_display_name_formatter.setter
+    def instance_display_name_formatter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_display_name_formatter", value)
+
+    @property
+    @pulumi.getter(name="instanceHostnameFormatter")
+    def instance_hostname_formatter(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        """
+        return pulumi.get(self, "instance_hostname_formatter")
+
+    @instance_hostname_formatter.setter
+    def instance_hostname_formatter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_hostname_formatter", value)
+
+    @property
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
         """
@@ -182,6 +214,8 @@ class _InstancePoolState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  instance_configuration_id: Optional[pulumi.Input[str]] = None,
+                 instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
+                 instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
                  load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
                  placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]] = None,
                  size: Optional[pulumi.Input[int]] = None,
@@ -195,6 +229,8 @@ class _InstancePoolState:
         :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
+        :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
@@ -219,6 +255,10 @@ class _InstancePoolState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if instance_configuration_id is not None:
             pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        if instance_display_name_formatter is not None:
+            pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+        if instance_hostname_formatter is not None:
+            pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         if load_balancers is not None:
             pulumi.set(__self__, "load_balancers", load_balancers)
         if placement_configurations is not None:
@@ -303,6 +343,30 @@ class _InstancePoolState:
         pulumi.set(self, "instance_configuration_id", value)
 
     @property
+    @pulumi.getter(name="instanceDisplayNameFormatter")
+    def instance_display_name_formatter(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        """
+        return pulumi.get(self, "instance_display_name_formatter")
+
+    @instance_display_name_formatter.setter
+    def instance_display_name_formatter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_display_name_formatter", value)
+
+    @property
+    @pulumi.getter(name="instanceHostnameFormatter")
+    def instance_hostname_formatter(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        """
+        return pulumi.get(self, "instance_hostname_formatter")
+
+    @instance_hostname_formatter.setter
+    def instance_hostname_formatter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_hostname_formatter", value)
+
+    @property
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
         """
@@ -379,6 +443,8 @@ class InstancePool(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  instance_configuration_id: Optional[pulumi.Input[str]] = None,
+                 instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
+                 instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
                  load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]]] = None,
                  placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]]] = None,
                  size: Optional[pulumi.Input[int]] = None,
@@ -419,6 +485,8 @@ class InstancePool(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            instance_display_name_formatter=var["instance_pool_instance_display_name_formatter"],
+            instance_hostname_formatter=var["instance_pool_instance_hostname_formatter"],
             load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
                 backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
                 load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
@@ -442,6 +510,8 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
+        :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]] load_balancers: The load balancers to attach to the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
@@ -494,6 +564,8 @@ class InstancePool(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            instance_display_name_formatter=var["instance_pool_instance_display_name_formatter"],
+            instance_hostname_formatter=var["instance_pool_instance_hostname_formatter"],
             load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
                 backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
                 load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
@@ -530,6 +602,8 @@ class InstancePool(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  instance_configuration_id: Optional[pulumi.Input[str]] = None,
+                 instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
+                 instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
                  load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]]] = None,
                  placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]]] = None,
                  size: Optional[pulumi.Input[int]] = None,
@@ -552,6 +626,8 @@ class InstancePool(pulumi.CustomResource):
             if instance_configuration_id is None and not opts.urn:
                 raise TypeError("Missing required property 'instance_configuration_id'")
             __props__.__dict__["instance_configuration_id"] = instance_configuration_id
+            __props__.__dict__["instance_display_name_formatter"] = instance_display_name_formatter
+            __props__.__dict__["instance_hostname_formatter"] = instance_hostname_formatter
             __props__.__dict__["load_balancers"] = load_balancers
             if placement_configurations is None and not opts.urn:
                 raise TypeError("Missing required property 'placement_configurations'")
@@ -578,6 +654,8 @@ class InstancePool(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             instance_configuration_id: Optional[pulumi.Input[str]] = None,
+            instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
+            instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
             load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]]] = None,
             placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]]] = None,
             size: Optional[pulumi.Input[int]] = None,
@@ -596,6 +674,8 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
+        :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]] load_balancers: The load balancers to attach to the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
@@ -618,6 +698,8 @@ class InstancePool(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["instance_configuration_id"] = instance_configuration_id
+        __props__.__dict__["instance_display_name_formatter"] = instance_display_name_formatter
+        __props__.__dict__["instance_hostname_formatter"] = instance_hostname_formatter
         __props__.__dict__["load_balancers"] = load_balancers
         __props__.__dict__["placement_configurations"] = placement_configurations
         __props__.__dict__["size"] = size
@@ -672,6 +754,22 @@ class InstancePool(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         """
         return pulumi.get(self, "instance_configuration_id")
+
+    @property
+    @pulumi.getter(name="instanceDisplayNameFormatter")
+    def instance_display_name_formatter(self) -> pulumi.Output[str]:
+        """
+        (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        """
+        return pulumi.get(self, "instance_display_name_formatter")
+
+    @property
+    @pulumi.getter(name="instanceHostnameFormatter")
+    def instance_hostname_formatter(self) -> pulumi.Output[str]:
+        """
+        (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        """
+        return pulumi.get(self, "instance_hostname_formatter")
 
     @property
     @pulumi.getter(name="loadBalancers")

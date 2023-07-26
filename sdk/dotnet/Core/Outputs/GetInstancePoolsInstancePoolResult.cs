@@ -39,6 +39,14 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string InstanceConfigurationId;
         /// <summary>
+        /// A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        /// </summary>
+        public readonly string InstanceDisplayNameFormatter;
+        /// <summary>
+        /// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        /// </summary>
+        public readonly string InstanceHostnameFormatter;
+        /// <summary>
         /// The load balancers attached to the instance pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstancePoolsInstancePoolLoadBalancerResult> LoadBalancers;
@@ -75,6 +83,10 @@ namespace Pulumi.Oci.Core.Outputs
 
             string instanceConfigurationId,
 
+            string instanceDisplayNameFormatter,
+
+            string instanceHostnameFormatter,
+
             ImmutableArray<Outputs.GetInstancePoolsInstancePoolLoadBalancerResult> loadBalancers,
 
             ImmutableArray<Outputs.GetInstancePoolsInstancePoolPlacementConfigurationResult> placementConfigurations,
@@ -92,6 +104,8 @@ namespace Pulumi.Oci.Core.Outputs
             FreeformTags = freeformTags;
             Id = id;
             InstanceConfigurationId = instanceConfigurationId;
+            InstanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            InstanceHostnameFormatter = instanceHostnameFormatter;
             LoadBalancers = loadBalancers;
             PlacementConfigurations = placementConfigurations;
             Size = size;

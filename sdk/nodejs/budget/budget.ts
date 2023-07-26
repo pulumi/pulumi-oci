@@ -25,10 +25,12 @@ import * as utilities from "../utilities";
  *     },
  *     description: _var.budget_description,
  *     displayName: _var.budget_display_name,
+ *     endDate: _var.budget_end_date,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     processingPeriodType: _var.budget_processing_period_type,
+ *     startDate: _var.budget_start_date,
  *     targetCompartmentId: oci_identity_compartment.test_compartment.id,
  *     targetType: _var.budget_target_type,
  *     targets: _var.budget_targets,
@@ -104,6 +106,10 @@ export class Budget extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     */
+    public readonly endDate!: pulumi.Output<string>;
+    /**
      * The forecasted spend in currency by the end of the current budget cycle.
      */
     public /*out*/ readonly forecastedSpend!: pulumi.Output<number>;
@@ -112,7 +118,7 @@ export class Budget extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      */
     public readonly processingPeriodType!: pulumi.Output<string>;
     /**
@@ -120,13 +126,17 @@ export class Budget extends pulumi.CustomResource {
      */
     public readonly resetPeriod!: pulumi.Output<string>;
     /**
+     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     */
+    public readonly startDate!: pulumi.Output<string>;
+    /**
      * The current state of the budget.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
-     * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+     * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
      */
     public readonly targetCompartmentId!: pulumi.Output<string>;
     /**
@@ -179,10 +189,12 @@ export class Budget extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["endDate"] = state ? state.endDate : undefined;
             resourceInputs["forecastedSpend"] = state ? state.forecastedSpend : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["processingPeriodType"] = state ? state.processingPeriodType : undefined;
             resourceInputs["resetPeriod"] = state ? state.resetPeriod : undefined;
+            resourceInputs["startDate"] = state ? state.startDate : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["targetCompartmentId"] = state ? state.targetCompartmentId : undefined;
             resourceInputs["targetType"] = state ? state.targetType : undefined;
@@ -208,9 +220,11 @@ export class Budget extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["endDate"] = args ? args.endDate : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["processingPeriodType"] = args ? args.processingPeriodType : undefined;
             resourceInputs["resetPeriod"] = args ? args.resetPeriod : undefined;
+            resourceInputs["startDate"] = args ? args.startDate : undefined;
             resourceInputs["targetCompartmentId"] = args ? args.targetCompartmentId : undefined;
             resourceInputs["targetType"] = args ? args.targetType : undefined;
             resourceInputs["targets"] = args ? args.targets : undefined;
@@ -265,6 +279,10 @@ export interface BudgetState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     */
+    endDate?: pulumi.Input<string>;
+    /**
      * The forecasted spend in currency by the end of the current budget cycle.
      */
     forecastedSpend?: pulumi.Input<number>;
@@ -273,7 +291,7 @@ export interface BudgetState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      */
     processingPeriodType?: pulumi.Input<string>;
     /**
@@ -281,13 +299,17 @@ export interface BudgetState {
      */
     resetPeriod?: pulumi.Input<string>;
     /**
+     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     */
+    startDate?: pulumi.Input<string>;
+    /**
      * The current state of the budget.
      */
     state?: pulumi.Input<string>;
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
-     * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+     * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
      */
     targetCompartmentId?: pulumi.Input<string>;
     /**
@@ -349,11 +371,15 @@ export interface BudgetArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     */
+    endDate?: pulumi.Input<string>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      */
     processingPeriodType?: pulumi.Input<string>;
     /**
@@ -361,9 +387,13 @@ export interface BudgetArgs {
      */
     resetPeriod: pulumi.Input<string>;
     /**
+     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     */
+    startDate?: pulumi.Input<string>;
+    /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
-     * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+     * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
      */
     targetCompartmentId?: pulumi.Input<string>;
     /**

@@ -55,6 +55,11 @@ public final class GetBudgetsBudget {
      */
     private String displayName;
     /**
+     * @return The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    private String endDate;
+    /**
      * @return The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
@@ -70,7 +75,7 @@ public final class GetBudgetsBudget {
      */
     private String id;
     /**
-     * @return The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * @return The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      * 
      */
     private String processingPeriodType;
@@ -80,6 +85,11 @@ public final class GetBudgetsBudget {
      */
     private String resetPeriod;
     /**
+     * @return The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    private String startDate;
+    /**
      * @return The current state of the resource to filter by.
      * 
      */
@@ -88,10 +98,10 @@ public final class GetBudgetsBudget {
      * @return This is DEPRECATED. For backwards compatability, the property is populated when the targetType is &#34;COMPARTMENT&#34;, and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      * 
      * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
+     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead. */
+    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
     private String targetCompartmentId;
     /**
      * @return The type of target to filter by:
@@ -185,6 +195,13 @@ public final class GetBudgetsBudget {
         return this.displayName;
     }
     /**
+     * @return The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    public String endDate() {
+        return this.endDate;
+    }
+    /**
      * @return The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
@@ -206,7 +223,7 @@ public final class GetBudgetsBudget {
         return this.id;
     }
     /**
-     * @return The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * @return The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      * 
      */
     public String processingPeriodType() {
@@ -220,6 +237,13 @@ public final class GetBudgetsBudget {
         return this.resetPeriod;
     }
     /**
+     * @return The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    public String startDate() {
+        return this.startDate;
+    }
+    /**
      * @return The current state of the resource to filter by.
      * 
      */
@@ -230,10 +254,10 @@ public final class GetBudgetsBudget {
      * @return This is DEPRECATED. For backwards compatability, the property is populated when the targetType is &#34;COMPARTMENT&#34;, and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      * 
      * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
+     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead. */
+    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
     public String targetCompartmentId() {
         return this.targetCompartmentId;
     }
@@ -300,11 +324,13 @@ public final class GetBudgetsBudget {
         private Map<String,Object> definedTags;
         private String description;
         private String displayName;
+        private String endDate;
         private Double forecastedSpend;
         private Map<String,Object> freeformTags;
         private String id;
         private String processingPeriodType;
         private String resetPeriod;
+        private String startDate;
         private String state;
         private String targetCompartmentId;
         private String targetType;
@@ -324,11 +350,13 @@ public final class GetBudgetsBudget {
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.endDate = defaults.endDate;
     	      this.forecastedSpend = defaults.forecastedSpend;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.processingPeriodType = defaults.processingPeriodType;
     	      this.resetPeriod = defaults.resetPeriod;
+    	      this.startDate = defaults.startDate;
     	      this.state = defaults.state;
     	      this.targetCompartmentId = defaults.targetCompartmentId;
     	      this.targetType = defaults.targetType;
@@ -380,6 +408,11 @@ public final class GetBudgetsBudget {
             return this;
         }
         @CustomType.Setter
+        public Builder endDate(String endDate) {
+            this.endDate = Objects.requireNonNull(endDate);
+            return this;
+        }
+        @CustomType.Setter
         public Builder forecastedSpend(Double forecastedSpend) {
             this.forecastedSpend = Objects.requireNonNull(forecastedSpend);
             return this;
@@ -402,6 +435,11 @@ public final class GetBudgetsBudget {
         @CustomType.Setter
         public Builder resetPeriod(String resetPeriod) {
             this.resetPeriod = Objects.requireNonNull(resetPeriod);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder startDate(String startDate) {
+            this.startDate = Objects.requireNonNull(startDate);
             return this;
         }
         @CustomType.Setter
@@ -457,11 +495,13 @@ public final class GetBudgetsBudget {
             o.definedTags = definedTags;
             o.description = description;
             o.displayName = displayName;
+            o.endDate = endDate;
             o.forecastedSpend = forecastedSpend;
             o.freeformTags = freeformTags;
             o.id = id;
             o.processingPeriodType = processingPeriodType;
             o.resetPeriod = resetPeriod;
+            o.startDate = startDate;
             o.state = state;
             o.targetCompartmentId = targetCompartmentId;
             o.targetType = targetType;

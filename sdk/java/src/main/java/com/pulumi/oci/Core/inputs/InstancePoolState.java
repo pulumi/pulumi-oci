@@ -112,6 +112,36 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
+     * 
+     */
+    @Import(name="instanceDisplayNameFormatter")
+    private @Nullable Output<String> instanceDisplayNameFormatter;
+
+    /**
+     * @return (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
+     * 
+     */
+    public Optional<Output<String>> instanceDisplayNameFormatter() {
+        return Optional.ofNullable(this.instanceDisplayNameFormatter);
+    }
+
+    /**
+     * (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
+     * 
+     */
+    @Import(name="instanceHostnameFormatter")
+    private @Nullable Output<String> instanceHostnameFormatter;
+
+    /**
+     * @return (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
+     * 
+     */
+    public Optional<Output<String>> instanceHostnameFormatter() {
+        return Optional.ofNullable(this.instanceHostnameFormatter);
+    }
+
+    /**
      * The load balancers to attach to the instance pool.
      * 
      */
@@ -205,6 +235,8 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.instanceConfigurationId = $.instanceConfigurationId;
+        this.instanceDisplayNameFormatter = $.instanceDisplayNameFormatter;
+        this.instanceHostnameFormatter = $.instanceHostnameFormatter;
         this.loadBalancers = $.loadBalancers;
         this.placementConfigurations = $.placementConfigurations;
         this.size = $.size;
@@ -354,6 +386,48 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             return instanceConfigurationId(Output.of(instanceConfigurationId));
+        }
+
+        /**
+         * @param instanceDisplayNameFormatter (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceDisplayNameFormatter(@Nullable Output<String> instanceDisplayNameFormatter) {
+            $.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            return this;
+        }
+
+        /**
+         * @param instanceDisplayNameFormatter (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceDisplayNameFormatter(String instanceDisplayNameFormatter) {
+            return instanceDisplayNameFormatter(Output.of(instanceDisplayNameFormatter));
+        }
+
+        /**
+         * @param instanceHostnameFormatter (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceHostnameFormatter(@Nullable Output<String> instanceHostnameFormatter) {
+            $.instanceHostnameFormatter = instanceHostnameFormatter;
+            return this;
+        }
+
+        /**
+         * @param instanceHostnameFormatter (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
+            return instanceHostnameFormatter(Output.of(instanceHostnameFormatter));
         }
 
         /**

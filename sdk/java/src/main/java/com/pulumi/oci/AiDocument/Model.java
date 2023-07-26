@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.AiDocument.ModelArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelState;
+import com.pulumi.oci.AiDocument.outputs.ModelComponentModel;
 import com.pulumi.oci.AiDocument.outputs.ModelMetric;
 import com.pulumi.oci.AiDocument.outputs.ModelTestingDataset;
 import com.pulumi.oci.AiDocument.outputs.ModelTrainingDataset;
@@ -20,6 +21,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -27,68 +29,7 @@ import javax.annotation.Nullable;
  * 
  * Create a new model.
  * 
- * ## Example Usage
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.AiDocument.Model;
- * import com.pulumi.oci.AiDocument.ModelArgs;
- * import com.pulumi.oci.AiDocument.inputs.ModelTrainingDatasetArgs;
- * import com.pulumi.oci.AiDocument.inputs.ModelTestingDatasetArgs;
- * import com.pulumi.oci.AiDocument.inputs.ModelValidationDatasetArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testModel = new Model(&#34;testModel&#34;, ModelArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .modelType(var_.model_model_type())
- *             .projectId(oci_ai_document_project.test_project().id())
- *             .trainingDataset(ModelTrainingDatasetArgs.builder()
- *                 .datasetType(var_.model_training_dataset_dataset_type())
- *                 .bucket(var_.model_training_dataset_bucket())
- *                 .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
- *                 .namespace(var_.model_training_dataset_namespace())
- *                 .object(var_.model_training_dataset_object())
- *                 .build())
- *             .definedTags(var_.model_defined_tags())
- *             .description(var_.model_description())
- *             .displayName(var_.model_display_name())
- *             .freeformTags(var_.model_freeform_tags())
- *             .isQuickMode(var_.model_is_quick_mode())
- *             .maxTrainingTimeInHours(var_.model_max_training_time_in_hours())
- *             .modelVersion(var_.model_model_version())
- *             .testingDataset(ModelTestingDatasetArgs.builder()
- *                 .datasetType(var_.model_testing_dataset_dataset_type())
- *                 .bucket(var_.model_testing_dataset_bucket())
- *                 .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
- *                 .namespace(var_.model_testing_dataset_namespace())
- *                 .object(var_.model_testing_dataset_object())
- *                 .build())
- *             .validationDataset(ModelValidationDatasetArgs.builder()
- *                 .datasetType(var_.model_validation_dataset_dataset_type())
- *                 .bucket(var_.model_validation_dataset_bucket())
- *                 .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
- *                 .namespace(var_.model_validation_dataset_namespace())
- *                 .object(var_.model_validation_dataset_object())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * ```
+ *   Updates the model metadata only selected path parameter.
  * 
  * ## Import
  * 
@@ -114,6 +55,20 @@ public class Model extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     * 
+     */
+    @Export(name="componentModels", type=List.class, parameters={ModelComponentModel.class})
+    private Output<List<ModelComponentModel>> componentModels;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     * 
+     */
+    public Output<List<ModelComponentModel>> componentModels() {
+        return this.componentModels;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
@@ -170,6 +125,20 @@ public class Model extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * Set to true when the model is created by using multiple key value extraction models.
+     * 
+     */
+    @Export(name="isComposedModel", type=Boolean.class, parameters={})
+    private Output<Boolean> isComposedModel;
+
+    /**
+     * @return Set to true when the model is created by using multiple key value extraction models.
+     * 
+     */
+    public Output<Boolean> isComposedModel() {
+        return this.isComposedModel;
     }
     /**
      * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
@@ -242,6 +211,20 @@ public class Model extends com.pulumi.resources.CustomResource {
         return this.metrics;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     * 
+     */
+    @Export(name="modelId", type=String.class, parameters={})
+    private Output</* @Nullable */ String> modelId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     * 
+     */
+    public Output<Optional<String>> modelId() {
+        return Codegen.optional(this.modelId);
+    }
+    /**
      * The type of the Document model.
      * 
      */
@@ -310,6 +293,20 @@ public class Model extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * The tenancy id of the model.
+     * 
+     */
+    @Export(name="tenancyId", type=String.class, parameters={})
+    private Output<String> tenancyId;
+
+    /**
+     * @return The tenancy id of the model.
+     * 
+     */
+    public Output<String> tenancyId() {
+        return this.tenancyId;
     }
     /**
      * The base entity which is the input for creating and training a model.

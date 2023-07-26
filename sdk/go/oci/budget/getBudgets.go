@@ -19,8 +19,7 @@ import (
 //
 // To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
 //
-// Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
-// or upgrade to the latest version of the client SDK to handle new targetTypes.
+// Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
 //
 // ## Example Usage
 //

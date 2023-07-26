@@ -49,6 +49,10 @@ export interface GetModelResult {
      */
     readonly compartmentId: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+     */
+    readonly componentModels: outputs.AiDocument.GetModelComponentModel[];
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     readonly definedTags: {[key: string]: any};
@@ -69,6 +73,10 @@ export interface GetModelResult {
      */
     readonly id: string;
     /**
+     * Set to true when the model is created by using multiple key value extraction models.
+     */
+    readonly isComposedModel: boolean;
+    /**
      * Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
      */
     readonly isQuickMode: boolean;
@@ -88,6 +96,9 @@ export interface GetModelResult {
      * Trained Model Metrics.
      */
     readonly metrics: outputs.AiDocument.GetModelMetric[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     */
     readonly modelId: string;
     /**
      * The type of the Document model.
@@ -109,6 +120,10 @@ export interface GetModelResult {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
     readonly systemTags: {[key: string]: any};
+    /**
+     * The tenancy id of the model.
+     */
+    readonly tenancyId: string;
     /**
      * The base entity which is the input for creating and training a model.
      */

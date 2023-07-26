@@ -55,6 +55,7 @@ import (
 //							GenerateSearchablePdf: pulumi.Any(_var.Processor_job_processor_config_features_generate_searchable_pdf),
 //							MaxResults:            pulumi.Any(_var.Processor_job_processor_config_features_max_results),
 //							ModelId:               pulumi.Any(oci_ai_document_model.Test_model.Id),
+//							TenancyId:             pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
 //						},
 //					},
 //					ProcessorType:      pulumi.Any(_var.Processor_job_processor_config_processor_type),
@@ -93,7 +94,7 @@ type ProcessorJob struct {
 	InputLocation ProcessorJobInputLocationOutput `pulumi:"inputLocation"`
 	// The detailed status of FAILED state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The Object Storage Location.
+	// The object storage location where to store analysis results.
 	OutputLocation ProcessorJobOutputLocationOutput `pulumi:"outputLocation"`
 	// How much progress the operation has made, compared to the total amount of work to be performed.
 	PercentComplete pulumi.Float64Output `pulumi:"percentComplete"`
@@ -159,7 +160,7 @@ type processorJobState struct {
 	InputLocation *ProcessorJobInputLocation `pulumi:"inputLocation"`
 	// The detailed status of FAILED state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The Object Storage Location.
+	// The object storage location where to store analysis results.
 	OutputLocation *ProcessorJobOutputLocation `pulumi:"outputLocation"`
 	// How much progress the operation has made, compared to the total amount of work to be performed.
 	PercentComplete *float64 `pulumi:"percentComplete"`
@@ -184,7 +185,7 @@ type ProcessorJobState struct {
 	InputLocation ProcessorJobInputLocationPtrInput
 	// The detailed status of FAILED state.
 	LifecycleDetails pulumi.StringPtrInput
-	// The Object Storage Location.
+	// The object storage location where to store analysis results.
 	OutputLocation ProcessorJobOutputLocationPtrInput
 	// How much progress the operation has made, compared to the total amount of work to be performed.
 	PercentComplete pulumi.Float64PtrInput
@@ -211,7 +212,7 @@ type processorJobArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The location of the inputs.
 	InputLocation ProcessorJobInputLocation `pulumi:"inputLocation"`
-	// The Object Storage Location.
+	// The object storage location where to store analysis results.
 	OutputLocation ProcessorJobOutputLocation `pulumi:"outputLocation"`
 	// The configuration of a processor.
 	ProcessorConfig ProcessorJobProcessorConfig `pulumi:"processorConfig"`
@@ -225,7 +226,7 @@ type ProcessorJobArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// The location of the inputs.
 	InputLocation ProcessorJobInputLocationInput
-	// The Object Storage Location.
+	// The object storage location where to store analysis results.
 	OutputLocation ProcessorJobOutputLocationInput
 	// The configuration of a processor.
 	ProcessorConfig ProcessorJobProcessorConfigInput
@@ -338,7 +339,7 @@ func (o ProcessorJobOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProcessorJob) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The Object Storage Location.
+// The object storage location where to store analysis results.
 func (o ProcessorJobOutput) OutputLocation() ProcessorJobOutputLocationOutput {
 	return o.ApplyT(func(v *ProcessorJob) ProcessorJobOutputLocationOutput { return v.OutputLocation }).(ProcessorJobOutputLocationOutput)
 }

@@ -60,6 +60,8 @@ type LookupModelArgs struct {
 type LookupModelResult struct {
 	// The compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+	ComponentModels []GetModelComponentModel `pulumi:"componentModels"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// An optional description of the model.
@@ -70,6 +72,8 @@ type LookupModelResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A unique identifier that is immutable after creation.
 	Id string `pulumi:"id"`
+	// Set to true when the model is created by using multiple key value extraction models.
+	IsComposedModel bool `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode bool `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
@@ -80,7 +84,8 @@ type LookupModelResult struct {
 	MaxTrainingTimeInHours float64 `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics []GetModelMetric `pulumi:"metrics"`
-	ModelId string           `pulumi:"modelId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId string `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType string `pulumi:"modelType"`
 	// The version of the model.
@@ -91,6 +96,8 @@ type LookupModelResult struct {
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The tenancy id of the model.
+	TenancyId string `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
 	TestingDatasets []GetModelTestingDataset `pulumi:"testingDatasets"`
 	// When the model was created, as an RFC3339 datetime string.
@@ -148,6 +155,11 @@ func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+func (o LookupModelResultOutput) ComponentModels() GetModelComponentModelArrayOutput {
+	return o.ApplyT(func(v LookupModelResult) []GetModelComponentModel { return v.ComponentModels }).(GetModelComponentModelArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 func (o LookupModelResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -171,6 +183,11 @@ func (o LookupModelResultOutput) FreeformTags() pulumi.MapOutput {
 // A unique identifier that is immutable after creation.
 func (o LookupModelResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Set to true when the model is created by using multiple key value extraction models.
+func (o LookupModelResultOutput) IsComposedModel() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupModelResult) bool { return v.IsComposedModel }).(pulumi.BoolOutput)
 }
 
 // Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
@@ -198,6 +215,7 @@ func (o LookupModelResultOutput) Metrics() GetModelMetricArrayOutput {
 	return o.ApplyT(func(v LookupModelResult) []GetModelMetric { return v.Metrics }).(GetModelMetricArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.ModelId }).(pulumi.StringOutput)
 }
@@ -225,6 +243,11 @@ func (o LookupModelResultOutput) State() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 func (o LookupModelResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The tenancy id of the model.
+func (o LookupModelResultOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupModelResult) string { return v.TenancyId }).(pulumi.StringOutput)
 }
 
 // The base entity which is the input for creating and training a model.

@@ -21,8 +21,10 @@ class BudgetArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 end_date: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  processing_period_type: Optional[pulumi.Input[str]] = None,
+                 start_date: Optional[pulumi.Input[str]] = None,
                  target_compartment_id: Optional[pulumi.Input[str]] = None,
                  target_type: Optional[pulumi.Input[str]] = None,
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
@@ -35,8 +37,10 @@ class BudgetArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the budget.
         :param pulumi.Input[str] display_name: (Updatable) The displayName of the budget. Avoid entering confidential information.
+        :param pulumi.Input[str] end_date: (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
+        :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
@@ -56,13 +60,17 @@ class BudgetArgs:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if end_date is not None:
+            pulumi.set(__self__, "end_date", end_date)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if processing_period_type is not None:
             pulumi.set(__self__, "processing_period_type", processing_period_type)
+        if start_date is not None:
+            pulumi.set(__self__, "start_date", start_date)
         if target_compartment_id is not None:
-            warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
-            pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+            warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
+            pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
         if target_compartment_id is not None:
             pulumi.set(__self__, "target_compartment_id", target_compartment_id)
         if target_type is not None:
@@ -155,6 +163,18 @@ class BudgetArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "end_date")
+
+    @end_date.setter
+    def end_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "end_date", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -170,7 +190,7 @@ class BudgetArgs:
     @pulumi.getter(name="processingPeriodType")
     def processing_period_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         """
         return pulumi.get(self, "processing_period_type")
 
@@ -179,13 +199,25 @@ class BudgetArgs:
         pulumi.set(self, "processing_period_type", value)
 
     @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "start_date")
+
+    @start_date.setter
+    def start_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "start_date", value)
+
+    @property
     @pulumi.getter(name="targetCompartmentId")
     def target_compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
-        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
-        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
 
         return pulumi.get(self, "target_compartment_id")
 
@@ -233,10 +265,12 @@ class _BudgetState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 end_date: Optional[pulumi.Input[str]] = None,
                  forecasted_spend: Optional[pulumi.Input[float]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  processing_period_type: Optional[pulumi.Input[str]] = None,
                  reset_period: Optional[pulumi.Input[str]] = None,
+                 start_date: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  target_compartment_id: Optional[pulumi.Input[str]] = None,
                  target_type: Optional[pulumi.Input[str]] = None,
@@ -255,10 +289,12 @@ class _BudgetState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the budget.
         :param pulumi.Input[str] display_name: (Updatable) The displayName of the budget. Avoid entering confidential information.
+        :param pulumi.Input[str] end_date: (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[float] forecasted_spend: The forecasted spend in currency by the end of the current budget cycle.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         :param pulumi.Input[str] reset_period: (Updatable) The reset period for the budget. Valid value is MONTHLY.
+        :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[str] state: The current state of the budget.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
@@ -288,6 +324,8 @@ class _BudgetState:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if end_date is not None:
+            pulumi.set(__self__, "end_date", end_date)
         if forecasted_spend is not None:
             pulumi.set(__self__, "forecasted_spend", forecasted_spend)
         if freeform_tags is not None:
@@ -296,11 +334,13 @@ class _BudgetState:
             pulumi.set(__self__, "processing_period_type", processing_period_type)
         if reset_period is not None:
             pulumi.set(__self__, "reset_period", reset_period)
+        if start_date is not None:
+            pulumi.set(__self__, "start_date", start_date)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if target_compartment_id is not None:
-            warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
-            pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+            warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
+            pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
         if target_compartment_id is not None:
             pulumi.set(__self__, "target_compartment_id", target_compartment_id)
         if target_type is not None:
@@ -413,6 +453,18 @@ class _BudgetState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "end_date")
+
+    @end_date.setter
+    def end_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "end_date", value)
+
+    @property
     @pulumi.getter(name="forecastedSpend")
     def forecasted_spend(self) -> Optional[pulumi.Input[float]]:
         """
@@ -440,7 +492,7 @@ class _BudgetState:
     @pulumi.getter(name="processingPeriodType")
     def processing_period_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         """
         return pulumi.get(self, "processing_period_type")
 
@@ -461,6 +513,18 @@ class _BudgetState:
         pulumi.set(self, "reset_period", value)
 
     @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "start_date")
+
+    @start_date.setter
+    def start_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "start_date", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -478,8 +542,8 @@ class _BudgetState:
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
-        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
-        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
 
         return pulumi.get(self, "target_compartment_id")
 
@@ -575,9 +639,11 @@ class Budget(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 end_date: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  processing_period_type: Optional[pulumi.Input[str]] = None,
                  reset_period: Optional[pulumi.Input[str]] = None,
+                 start_date: Optional[pulumi.Input[str]] = None,
                  target_compartment_id: Optional[pulumi.Input[str]] = None,
                  target_type: Optional[pulumi.Input[str]] = None,
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -603,10 +669,12 @@ class Budget(pulumi.CustomResource):
             },
             description=var["budget_description"],
             display_name=var["budget_display_name"],
+            end_date=var["budget_end_date"],
             freeform_tags={
                 "Department": "Finance",
             },
             processing_period_type=var["budget_processing_period_type"],
+            start_date=var["budget_start_date"],
             target_compartment_id=oci_identity_compartment["test_compartment"]["id"],
             target_type=var["budget_target_type"],
             targets=var["budget_targets"])
@@ -628,9 +696,11 @@ class Budget(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the budget.
         :param pulumi.Input[str] display_name: (Updatable) The displayName of the budget. Avoid entering confidential information.
+        :param pulumi.Input[str] end_date: (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         :param pulumi.Input[str] reset_period: (Updatable) The reset period for the budget. Valid value is MONTHLY.
+        :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
@@ -666,10 +736,12 @@ class Budget(pulumi.CustomResource):
             },
             description=var["budget_description"],
             display_name=var["budget_display_name"],
+            end_date=var["budget_end_date"],
             freeform_tags={
                 "Department": "Finance",
             },
             processing_period_type=var["budget_processing_period_type"],
+            start_date=var["budget_start_date"],
             target_compartment_id=oci_identity_compartment["test_compartment"]["id"],
             target_type=var["budget_target_type"],
             targets=var["budget_targets"])
@@ -704,9 +776,11 @@ class Budget(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 end_date: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  processing_period_type: Optional[pulumi.Input[str]] = None,
                  reset_period: Optional[pulumi.Input[str]] = None,
+                 start_date: Optional[pulumi.Input[str]] = None,
                  target_compartment_id: Optional[pulumi.Input[str]] = None,
                  target_type: Optional[pulumi.Input[str]] = None,
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -729,14 +803,16 @@ class Budget(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["end_date"] = end_date
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["processing_period_type"] = processing_period_type
             if reset_period is None and not opts.urn:
                 raise TypeError("Missing required property 'reset_period'")
             __props__.__dict__["reset_period"] = reset_period
+            __props__.__dict__["start_date"] = start_date
             if target_compartment_id is not None and not opts.urn:
-                warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
-                pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+                warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
+                pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
             __props__.__dict__["target_compartment_id"] = target_compartment_id
             __props__.__dict__["target_type"] = target_type
             __props__.__dict__["targets"] = targets
@@ -766,10 +842,12 @@ class Budget(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            end_date: Optional[pulumi.Input[str]] = None,
             forecasted_spend: Optional[pulumi.Input[float]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             processing_period_type: Optional[pulumi.Input[str]] = None,
             reset_period: Optional[pulumi.Input[str]] = None,
+            start_date: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             target_compartment_id: Optional[pulumi.Input[str]] = None,
             target_type: Optional[pulumi.Input[str]] = None,
@@ -793,10 +871,12 @@ class Budget(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the budget.
         :param pulumi.Input[str] display_name: (Updatable) The displayName of the budget. Avoid entering confidential information.
+        :param pulumi.Input[str] end_date: (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[float] forecasted_spend: The forecasted spend in currency by the end of the current budget cycle.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         :param pulumi.Input[str] reset_period: (Updatable) The reset period for the budget. Valid value is MONTHLY.
+        :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param pulumi.Input[str] state: The current state of the budget.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
@@ -822,10 +902,12 @@ class Budget(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["end_date"] = end_date
         __props__.__dict__["forecasted_spend"] = forecasted_spend
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["processing_period_type"] = processing_period_type
         __props__.__dict__["reset_period"] = reset_period
+        __props__.__dict__["start_date"] = start_date
         __props__.__dict__["state"] = state
         __props__.__dict__["target_compartment_id"] = target_compartment_id
         __props__.__dict__["target_type"] = target_type
@@ -901,6 +983,14 @@ class Budget(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "end_date")
+
+    @property
     @pulumi.getter(name="forecastedSpend")
     def forecasted_spend(self) -> pulumi.Output[float]:
         """
@@ -920,7 +1010,7 @@ class Budget(pulumi.CustomResource):
     @pulumi.getter(name="processingPeriodType")
     def processing_period_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         """
         return pulumi.get(self, "processing_period_type")
 
@@ -931,6 +1021,14 @@ class Budget(pulumi.CustomResource):
         (Updatable) The reset period for the budget. Valid value is MONTHLY.
         """
         return pulumi.get(self, "reset_period")
+
+    @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "start_date")
 
     @property
     @pulumi.getter
@@ -946,8 +1044,8 @@ class Budget(pulumi.CustomResource):
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
-        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
-        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
 
         return pulumi.get(self, "target_compartment_id")
 

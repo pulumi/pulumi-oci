@@ -107,7 +107,7 @@ class GetProcessorJobResult:
     @pulumi.getter(name="outputLocations")
     def output_locations(self) -> Sequence['outputs.GetProcessorJobOutputLocationResult']:
         """
-        The Object Storage Location.
+        The object storage location where to store analysis results.
         """
         return pulumi.get(self, "output_locations")
 

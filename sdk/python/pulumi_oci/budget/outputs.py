@@ -226,11 +226,13 @@ class GetBudgetsBudgetResult(dict):
                  defined_tags: Mapping[str, Any],
                  description: str,
                  display_name: str,
+                 end_date: str,
                  forecasted_spend: float,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  processing_period_type: str,
                  reset_period: str,
+                 start_date: str,
                  state: str,
                  target_compartment_id: str,
                  target_type: str,
@@ -248,11 +250,13 @@ class GetBudgetsBudgetResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the budget.
         :param str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
+        :param str end_date: The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param float forecasted_spend: The forecasted spend in currency by the end of the current budget cycle.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the budget.
-        :param str processing_period_type: The type of the budget processing period. Valid values are INVOICE and MONTH.
+        :param str processing_period_type: The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         :param str reset_period: The reset period for the budget.
+        :param str start_date: The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param str state: The current state of the resource to filter by.
         :param str target_compartment_id: This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         :param str target_type: The type of target to filter by:
@@ -273,11 +277,13 @@ class GetBudgetsBudgetResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "end_date", end_date)
         pulumi.set(__self__, "forecasted_spend", forecasted_spend)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "processing_period_type", processing_period_type)
         pulumi.set(__self__, "reset_period", reset_period)
+        pulumi.set(__self__, "start_date", start_date)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target_compartment_id", target_compartment_id)
         pulumi.set(__self__, "target_type", target_type)
@@ -352,6 +358,14 @@ class GetBudgetsBudgetResult(dict):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> str:
+        """
+        The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "end_date")
+
+    @property
     @pulumi.getter(name="forecastedSpend")
     def forecasted_spend(self) -> float:
         """
@@ -379,7 +393,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="processingPeriodType")
     def processing_period_type(self) -> str:
         """
-        The type of the budget processing period. Valid values are INVOICE and MONTH.
+        The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         """
         return pulumi.get(self, "processing_period_type")
 
@@ -390,6 +404,14 @@ class GetBudgetsBudgetResult(dict):
         The reset period for the budget.
         """
         return pulumi.get(self, "reset_period")
+
+    @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> str:
+        """
+        The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "start_date")
 
     @property
     @pulumi.getter
@@ -405,8 +427,8 @@ class GetBudgetsBudgetResult(dict):
         """
         This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         """
-        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
-        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
 
         return pulumi.get(self, "target_compartment_id")
 

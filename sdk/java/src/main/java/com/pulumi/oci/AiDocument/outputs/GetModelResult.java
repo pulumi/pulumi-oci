@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.AiDocument.outputs.GetModelComponentModel;
 import com.pulumi.oci.AiDocument.outputs.GetModelMetric;
 import com.pulumi.oci.AiDocument.outputs.GetModelTestingDataset;
 import com.pulumi.oci.AiDocument.outputs.GetModelTrainingDataset;
@@ -23,6 +24,11 @@ public final class GetModelResult {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+     * 
+     */
+    private List<GetModelComponentModel> componentModels;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
@@ -49,6 +55,11 @@ public final class GetModelResult {
      */
     private String id;
     /**
+     * @return Set to true when the model is created by using multiple key value extraction models.
+     * 
+     */
+    private Boolean isComposedModel;
+    /**
      * @return Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
      * 
      */
@@ -73,6 +84,10 @@ public final class GetModelResult {
      * 
      */
     private List<GetModelMetric> metrics;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     * 
+     */
     private String modelId;
     /**
      * @return The type of the Document model.
@@ -99,6 +114,11 @@ public final class GetModelResult {
      * 
      */
     private Map<String,Object> systemTags;
+    /**
+     * @return The tenancy id of the model.
+     * 
+     */
+    private String tenancyId;
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
@@ -139,6 +159,13 @@ public final class GetModelResult {
         return this.compartmentId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+     * 
+     */
+    public List<GetModelComponentModel> componentModels() {
+        return this.componentModels;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
@@ -172,6 +199,13 @@ public final class GetModelResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Set to true when the model is created by using multiple key value extraction models.
+     * 
+     */
+    public Boolean isComposedModel() {
+        return this.isComposedModel;
     }
     /**
      * @return Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
@@ -208,6 +242,10 @@ public final class GetModelResult {
     public List<GetModelMetric> metrics() {
         return this.metrics;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     * 
+     */
     public String modelId() {
         return this.modelId;
     }
@@ -245,6 +283,13 @@ public final class GetModelResult {
      */
     public Map<String,Object> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return The tenancy id of the model.
+     * 
+     */
+    public String tenancyId() {
+        return this.tenancyId;
     }
     /**
      * @return The base entity which is the input for creating and training a model.
@@ -299,11 +344,13 @@ public final class GetModelResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private List<GetModelComponentModel> componentModels;
         private Map<String,Object> definedTags;
         private String description;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isComposedModel;
         private Boolean isQuickMode;
         private List<String> labels;
         private String lifecycleDetails;
@@ -315,6 +362,7 @@ public final class GetModelResult {
         private String projectId;
         private String state;
         private Map<String,Object> systemTags;
+        private String tenancyId;
         private List<GetModelTestingDataset> testingDatasets;
         private String timeCreated;
         private String timeUpdated;
@@ -325,11 +373,13 @@ public final class GetModelResult {
         public Builder(GetModelResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.componentModels = defaults.componentModels;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isComposedModel = defaults.isComposedModel;
     	      this.isQuickMode = defaults.isQuickMode;
     	      this.labels = defaults.labels;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -341,6 +391,7 @@ public final class GetModelResult {
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.tenancyId = defaults.tenancyId;
     	      this.testingDatasets = defaults.testingDatasets;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -353,6 +404,14 @@ public final class GetModelResult {
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder componentModels(List<GetModelComponentModel> componentModels) {
+            this.componentModels = Objects.requireNonNull(componentModels);
+            return this;
+        }
+        public Builder componentModels(GetModelComponentModel... componentModels) {
+            return componentModels(List.of(componentModels));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -377,6 +436,11 @@ public final class GetModelResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isComposedModel(Boolean isComposedModel) {
+            this.isComposedModel = Objects.requireNonNull(isComposedModel);
             return this;
         }
         @CustomType.Setter
@@ -441,6 +505,11 @@ public final class GetModelResult {
             return this;
         }
         @CustomType.Setter
+        public Builder tenancyId(String tenancyId) {
+            this.tenancyId = Objects.requireNonNull(tenancyId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder testingDatasets(List<GetModelTestingDataset> testingDatasets) {
             this.testingDatasets = Objects.requireNonNull(testingDatasets);
             return this;
@@ -482,11 +551,13 @@ public final class GetModelResult {
         public GetModelResult build() {
             final var o = new GetModelResult();
             o.compartmentId = compartmentId;
+            o.componentModels = componentModels;
             o.definedTags = definedTags;
             o.description = description;
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.isComposedModel = isComposedModel;
             o.isQuickMode = isQuickMode;
             o.labels = labels;
             o.lifecycleDetails = lifecycleDetails;
@@ -498,6 +569,7 @@ public final class GetModelResult {
             o.projectId = projectId;
             o.state = state;
             o.systemTags = systemTags;
+            o.tenancyId = tenancyId;
             o.testingDatasets = testingDatasets;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;

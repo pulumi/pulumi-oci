@@ -70,6 +70,14 @@ export interface GetInstancePoolResult {
      */
     readonly instanceConfigurationId: string;
     /**
+     * A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+     */
+    readonly instanceDisplayNameFormatter: string;
+    /**
+     * A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+     */
+    readonly instanceHostnameFormatter: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      */
     readonly instancePoolId: string;

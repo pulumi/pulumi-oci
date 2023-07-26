@@ -69,6 +69,7 @@ import javax.annotation.Nullable;
  *                     .generateSearchablePdf(var_.processor_job_processor_config_features_generate_searchable_pdf())
  *                     .maxResults(var_.processor_job_processor_config_features_max_results())
  *                     .modelId(oci_ai_document_model.test_model().id())
+ *                     .tenancyId(oci_identity_tenancy.test_tenancy().id())
  *                     .build())
  *                 .processorType(var_.processor_job_processor_config_processor_type())
  *                 .documentType(var_.processor_job_processor_config_document_type())
@@ -150,14 +151,14 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The Object Storage Location.
+     * The object storage location where to store analysis results.
      * 
      */
     @Export(name="outputLocation", type=ProcessorJobOutputLocation.class, parameters={})
     private Output<ProcessorJobOutputLocation> outputLocation;
 
     /**
-     * @return The Object Storage Location.
+     * @return The object storage location where to store analysis results.
      * 
      */
     public Output<ProcessorJobOutputLocation> outputLocation() {

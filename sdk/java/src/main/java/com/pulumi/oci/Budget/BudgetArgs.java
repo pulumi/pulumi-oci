@@ -110,6 +110,21 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    @Import(name="endDate")
+    private @Nullable Output<String> endDate;
+
+    /**
+     * @return (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    public Optional<Output<String>> endDate() {
+        return Optional.ofNullable(this.endDate);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -125,14 +140,14 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      * 
      */
     @Import(name="processingPeriodType")
     private @Nullable Output<String> processingPeriodType;
 
     /**
-     * @return (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * @return (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      * 
      */
     public Optional<Output<String>> processingPeriodType() {
@@ -155,13 +170,28 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    @Import(name="startDate")
+    private @Nullable Output<String> startDate;
+
+    /**
+     * @return (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * 
+     */
+    public Optional<Output<String>> startDate() {
+        return Optional.ofNullable(this.startDate);
+    }
+
+    /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
+     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead. */
+    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
     @Import(name="targetCompartmentId")
     private @Nullable Output<String> targetCompartmentId;
 
@@ -169,10 +199,10 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
      * @return This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
+     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead. */
+    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
     public Optional<Output<String>> targetCompartmentId() {
         return Optional.ofNullable(this.targetCompartmentId);
     }
@@ -222,9 +252,11 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.endDate = $.endDate;
         this.freeformTags = $.freeformTags;
         this.processingPeriodType = $.processingPeriodType;
         this.resetPeriod = $.resetPeriod;
+        this.startDate = $.startDate;
         this.targetCompartmentId = $.targetCompartmentId;
         this.targetType = $.targetType;
         this.targets = $.targets;
@@ -375,6 +407,27 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param endDate (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endDate(@Nullable Output<String> endDate) {
+            $.endDate = endDate;
+            return this;
+        }
+
+        /**
+         * @param endDate (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endDate(String endDate) {
+            return endDate(Output.of(endDate));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -396,7 +449,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param processingPeriodType (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+         * @param processingPeriodType (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
          * 
          * @return builder
          * 
@@ -407,7 +460,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param processingPeriodType (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+         * @param processingPeriodType (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
          * 
          * @return builder
          * 
@@ -438,15 +491,36 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param startDate (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder startDate(@Nullable Output<String> startDate) {
+            $.startDate = startDate;
+            return this;
+        }
+
+        /**
+         * @param startDate (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder startDate(String startDate) {
+            return startDate(Output.of(startDate));
+        }
+
+        /**
          * @param targetCompartmentId This is DEPRECATED. Set the target compartment ID in targets instead.
          * 
          * @return builder
          * 
          * @deprecated
-         * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
+         * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
          * 
          */
-        @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead. */
+        @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
         public Builder targetCompartmentId(@Nullable Output<String> targetCompartmentId) {
             $.targetCompartmentId = targetCompartmentId;
             return this;
@@ -458,10 +532,10 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
+         * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
          * 
          */
-        @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead. */
+        @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
         public Builder targetCompartmentId(String targetCompartmentId) {
             return targetCompartmentId(Output.of(targetCompartmentId));
         }

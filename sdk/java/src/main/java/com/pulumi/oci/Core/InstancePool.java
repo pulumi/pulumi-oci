@@ -68,6 +68,8 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.instance_pool_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .instanceDisplayNameFormatter(var_.instance_pool_instance_display_name_formatter())
+ *             .instanceHostnameFormatter(var_.instance_pool_instance_hostname_formatter())
  *             .loadBalancers(InstancePoolLoadBalancerArgs.builder()
  *                 .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
  *                 .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
@@ -174,6 +176,34 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      */
     public Output<String> instanceConfigurationId() {
         return this.instanceConfigurationId;
+    }
+    /**
+     * (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
+     * 
+     */
+    @Export(name="instanceDisplayNameFormatter", type=String.class, parameters={})
+    private Output<String> instanceDisplayNameFormatter;
+
+    /**
+     * @return (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
+     * 
+     */
+    public Output<String> instanceDisplayNameFormatter() {
+        return this.instanceDisplayNameFormatter;
+    }
+    /**
+     * (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
+     * 
+     */
+    @Export(name="instanceHostnameFormatter", type=String.class, parameters={})
+    private Output<String> instanceHostnameFormatter;
+
+    /**
+     * @return (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
+     * 
+     */
+    public Output<String> instanceHostnameFormatter() {
+        return this.instanceHostnameFormatter;
     }
     /**
      * The load balancers to attach to the instance pool.

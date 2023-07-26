@@ -47,6 +47,16 @@ public final class GetInstancePoolResult {
      */
     private String instanceConfigurationId;
     /**
+     * @return A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
+     * 
+     */
+    private String instanceDisplayNameFormatter;
+    /**
+     * @return A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
+     * 
+     */
+    private String instanceHostnameFormatter;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      * 
      */
@@ -124,6 +134,20 @@ public final class GetInstancePoolResult {
         return this.instanceConfigurationId;
     }
     /**
+     * @return A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
+     * 
+     */
+    public String instanceDisplayNameFormatter() {
+        return this.instanceDisplayNameFormatter;
+    }
+    /**
+     * @return A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
+     * 
+     */
+    public String instanceHostnameFormatter() {
+        return this.instanceHostnameFormatter;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      * 
      */
@@ -182,6 +206,8 @@ public final class GetInstancePoolResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String instanceConfigurationId;
+        private String instanceDisplayNameFormatter;
+        private String instanceHostnameFormatter;
         private String instancePoolId;
         private List<GetInstancePoolLoadBalancer> loadBalancers;
         private List<GetInstancePoolPlacementConfiguration> placementConfigurations;
@@ -198,6 +224,8 @@ public final class GetInstancePoolResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.instanceConfigurationId = defaults.instanceConfigurationId;
+    	      this.instanceDisplayNameFormatter = defaults.instanceDisplayNameFormatter;
+    	      this.instanceHostnameFormatter = defaults.instanceHostnameFormatter;
     	      this.instancePoolId = defaults.instancePoolId;
     	      this.loadBalancers = defaults.loadBalancers;
     	      this.placementConfigurations = defaults.placementConfigurations;
@@ -239,6 +267,16 @@ public final class GetInstancePoolResult {
         @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder instanceDisplayNameFormatter(String instanceDisplayNameFormatter) {
+            this.instanceDisplayNameFormatter = Objects.requireNonNull(instanceDisplayNameFormatter);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
+            this.instanceHostnameFormatter = Objects.requireNonNull(instanceHostnameFormatter);
             return this;
         }
         @CustomType.Setter
@@ -286,6 +324,8 @@ public final class GetInstancePoolResult {
             o.freeformTags = freeformTags;
             o.id = id;
             o.instanceConfigurationId = instanceConfigurationId;
+            o.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            o.instanceHostnameFormatter = instanceHostnameFormatter;
             o.instancePoolId = instancePoolId;
             o.loadBalancers = loadBalancers;
             o.placementConfigurations = placementConfigurations;

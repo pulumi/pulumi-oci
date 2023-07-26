@@ -57,6 +57,7 @@ namespace Pulumi.Oci.AiDocument
     ///                     GenerateSearchablePdf = @var.Processor_job_processor_config_features_generate_searchable_pdf,
     ///                     MaxResults = @var.Processor_job_processor_config_features_max_results,
     ///                     ModelId = oci_ai_document_model.Test_model.Id,
+    ///                     TenancyId = oci_identity_tenancy.Test_tenancy.Id,
     ///                 },
     ///             },
     ///             ProcessorType = @var.Processor_job_processor_config_processor_type,
@@ -106,7 +107,7 @@ namespace Pulumi.Oci.AiDocument
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The Object Storage Location.
+        /// The object storage location where to store analysis results.
         /// </summary>
         [Output("outputLocation")]
         public Output<Outputs.ProcessorJobOutputLocation> OutputLocation { get; private set; } = null!;
@@ -212,7 +213,7 @@ namespace Pulumi.Oci.AiDocument
         public Input<Inputs.ProcessorJobInputLocationArgs> InputLocation { get; set; } = null!;
 
         /// <summary>
-        /// The Object Storage Location.
+        /// The object storage location where to store analysis results.
         /// </summary>
         [Input("outputLocation", required: true)]
         public Input<Inputs.ProcessorJobOutputLocationArgs> OutputLocation { get; set; } = null!;
@@ -256,7 +257,7 @@ namespace Pulumi.Oci.AiDocument
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The Object Storage Location.
+        /// The object storage location where to store analysis results.
         /// </summary>
         [Input("outputLocation")]
         public Input<Inputs.ProcessorJobOutputLocationGetArgs>? OutputLocation { get; set; }

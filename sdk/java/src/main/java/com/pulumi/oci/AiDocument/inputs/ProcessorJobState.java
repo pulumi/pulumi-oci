@@ -80,14 +80,14 @@ public final class ProcessorJobState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Object Storage Location.
+     * The object storage location where to store analysis results.
      * 
      */
     @Import(name="outputLocation")
     private @Nullable Output<ProcessorJobOutputLocationArgs> outputLocation;
 
     /**
-     * @return The Object Storage Location.
+     * @return The object storage location where to store analysis results.
      * 
      */
     public Optional<Output<ProcessorJobOutputLocationArgs>> outputLocation() {
@@ -303,7 +303,7 @@ public final class ProcessorJobState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param outputLocation The Object Storage Location.
+         * @param outputLocation The object storage location where to store analysis results.
          * 
          * @return builder
          * 
@@ -314,7 +314,7 @@ public final class ProcessorJobState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param outputLocation The Object Storage Location.
+         * @param outputLocation The object storage location where to store analysis results.
          * 
          * @return builder
          * 

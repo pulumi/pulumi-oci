@@ -5,6 +5,7 @@ package com.pulumi.oci.AiDocument;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.AiDocument.inputs.ModelComponentModelArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelTestingDatasetArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelTrainingDatasetArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelValidationDatasetArgs;
@@ -12,6 +13,7 @@ import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -35,6 +37,21 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     * 
+     */
+    @Import(name="componentModels")
+    private @Nullable Output<List<ModelComponentModelArgs>> componentModels;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     * 
+     */
+    public Optional<Output<List<ModelComponentModelArgs>>> componentModels() {
+        return Optional.ofNullable(this.componentModels);
     }
 
     /**
@@ -128,6 +145,21 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     * 
+     */
+    @Import(name="modelId")
+    private @Nullable Output<String> modelId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     * 
+     */
+    public Optional<Output<String>> modelId() {
+        return Optional.ofNullable(this.modelId);
+    }
+
+    /**
      * The type of the Document model.
      * 
      */
@@ -191,15 +223,15 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
      * The base entity which is the input for creating and training a model.
      * 
      */
-    @Import(name="trainingDataset", required=true)
-    private Output<ModelTrainingDatasetArgs> trainingDataset;
+    @Import(name="trainingDataset")
+    private @Nullable Output<ModelTrainingDatasetArgs> trainingDataset;
 
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
-    public Output<ModelTrainingDatasetArgs> trainingDataset() {
-        return this.trainingDataset;
+    public Optional<Output<ModelTrainingDatasetArgs>> trainingDataset() {
+        return Optional.ofNullable(this.trainingDataset);
     }
 
     /**
@@ -221,12 +253,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
 
     private ModelArgs(ModelArgs $) {
         this.compartmentId = $.compartmentId;
+        this.componentModels = $.componentModels;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isQuickMode = $.isQuickMode;
         this.maxTrainingTimeInHours = $.maxTrainingTimeInHours;
+        this.modelId = $.modelId;
         this.modelType = $.modelType;
         this.modelVersion = $.modelVersion;
         this.projectId = $.projectId;
@@ -272,6 +306,37 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param componentModels The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder componentModels(@Nullable Output<List<ModelComponentModelArgs>> componentModels) {
+            $.componentModels = componentModels;
+            return this;
+        }
+
+        /**
+         * @param componentModels The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder componentModels(List<ModelComponentModelArgs> componentModels) {
+            return componentModels(Output.of(componentModels));
+        }
+
+        /**
+         * @param componentModels The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder componentModels(ModelComponentModelArgs... componentModels) {
+            return componentModels(List.of(componentModels));
         }
 
         /**
@@ -401,6 +466,27 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param modelId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelId(@Nullable Output<String> modelId) {
+            $.modelId = modelId;
+            return this;
+        }
+
+        /**
+         * @param modelId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelId(String modelId) {
+            return modelId(Output.of(modelId));
+        }
+
+        /**
          * @param modelType The type of the Document model.
          * 
          * @return builder
@@ -490,7 +576,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder trainingDataset(Output<ModelTrainingDatasetArgs> trainingDataset) {
+        public Builder trainingDataset(@Nullable Output<ModelTrainingDatasetArgs> trainingDataset) {
             $.trainingDataset = trainingDataset;
             return this;
         }
@@ -530,7 +616,6 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.modelType = Objects.requireNonNull($.modelType, "expected parameter 'modelType' to be non-null");
             $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
-            $.trainingDataset = Objects.requireNonNull($.trainingDataset, "expected parameter 'trainingDataset' to be non-null");
             return $;
         }
     }

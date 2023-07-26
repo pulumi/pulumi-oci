@@ -76,6 +76,10 @@ export interface GetBudgetResult {
      */
     readonly displayName: string;
     /**
+     * The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     */
+    readonly endDate: string;
+    /**
      * The forecasted spend in currency by the end of the current budget cycle.
      */
     readonly forecastedSpend: number;
@@ -88,7 +92,7 @@ export interface GetBudgetResult {
      */
     readonly id: string;
     /**
-     * The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      */
     readonly processingPeriodType: string;
     /**
@@ -96,13 +100,17 @@ export interface GetBudgetResult {
      */
     readonly resetPeriod: string;
     /**
+     * The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     */
+    readonly startDate: string;
+    /**
      * The current state of the budget.
      */
     readonly state: string;
     /**
      * This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      *
-     * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+     * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
      */
     readonly targetCompartmentId: string;
     /**

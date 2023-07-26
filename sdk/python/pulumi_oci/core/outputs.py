@@ -1258,6 +1258,10 @@ class ClusterNetworkInstancePool(dict):
             suggest = "display_name"
         elif key == "freeformTags":
             suggest = "freeform_tags"
+        elif key == "instanceDisplayNameFormatter":
+            suggest = "instance_display_name_formatter"
+        elif key == "instanceHostnameFormatter":
+            suggest = "instance_hostname_formatter"
         elif key == "loadBalancers":
             suggest = "load_balancers"
         elif key == "placementConfigurations":
@@ -1284,6 +1288,8 @@ class ClusterNetworkInstancePool(dict):
                  display_name: Optional[str] = None,
                  freeform_tags: Optional[Mapping[str, Any]] = None,
                  id: Optional[str] = None,
+                 instance_display_name_formatter: Optional[str] = None,
+                 instance_hostname_formatter: Optional[str] = None,
                  load_balancers: Optional[Sequence['outputs.ClusterNetworkInstancePoolLoadBalancer']] = None,
                  placement_configurations: Optional[Sequence['outputs.ClusterNetworkInstancePoolPlacementConfiguration']] = None,
                  state: Optional[str] = None,
@@ -1313,6 +1319,10 @@ class ClusterNetworkInstancePool(dict):
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if instance_display_name_formatter is not None:
+            pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+        if instance_hostname_formatter is not None:
+            pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         if load_balancers is not None:
             pulumi.set(__self__, "load_balancers", load_balancers)
         if placement_configurations is not None:
@@ -1377,6 +1387,16 @@ class ClusterNetworkInstancePool(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="instanceDisplayNameFormatter")
+    def instance_display_name_formatter(self) -> Optional[str]:
+        return pulumi.get(self, "instance_display_name_formatter")
+
+    @property
+    @pulumi.getter(name="instanceHostnameFormatter")
+    def instance_hostname_formatter(self) -> Optional[str]:
+        return pulumi.get(self, "instance_hostname_formatter")
 
     @property
     @pulumi.getter(name="loadBalancers")
@@ -15606,6 +15626,8 @@ class GetClusterNetworkInstancePoolResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  instance_configuration_id: str,
+                 instance_display_name_formatter: str,
+                 instance_hostname_formatter: str,
                  load_balancers: Sequence['outputs.GetClusterNetworkInstancePoolLoadBalancerResult'],
                  placement_configurations: Sequence['outputs.GetClusterNetworkInstancePoolPlacementConfigurationResult'],
                  size: int,
@@ -15630,6 +15652,8 @@ class GetClusterNetworkInstancePoolResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+        pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         pulumi.set(__self__, "load_balancers", load_balancers)
         pulumi.set(__self__, "placement_configurations", placement_configurations)
         pulumi.set(__self__, "size", size)
@@ -15683,6 +15707,16 @@ class GetClusterNetworkInstancePoolResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         """
         return pulumi.get(self, "instance_configuration_id")
+
+    @property
+    @pulumi.getter(name="instanceDisplayNameFormatter")
+    def instance_display_name_formatter(self) -> str:
+        return pulumi.get(self, "instance_display_name_formatter")
+
+    @property
+    @pulumi.getter(name="instanceHostnameFormatter")
+    def instance_hostname_formatter(self) -> str:
+        return pulumi.get(self, "instance_hostname_formatter")
 
     @property
     @pulumi.getter(name="loadBalancers")
@@ -16323,6 +16357,8 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  instance_configuration_id: str,
+                 instance_display_name_formatter: str,
+                 instance_hostname_formatter: str,
                  load_balancers: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolLoadBalancerResult'],
                  placement_configurations: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationResult'],
                  size: int,
@@ -16347,6 +16383,8 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+        pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         pulumi.set(__self__, "load_balancers", load_balancers)
         pulumi.set(__self__, "placement_configurations", placement_configurations)
         pulumi.set(__self__, "size", size)
@@ -16400,6 +16438,16 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         """
         return pulumi.get(self, "instance_configuration_id")
+
+    @property
+    @pulumi.getter(name="instanceDisplayNameFormatter")
+    def instance_display_name_formatter(self) -> str:
+        return pulumi.get(self, "instance_display_name_formatter")
+
+    @property
+    @pulumi.getter(name="instanceHostnameFormatter")
+    def instance_hostname_formatter(self) -> str:
+        return pulumi.get(self, "instance_hostname_formatter")
 
     @property
     @pulumi.getter(name="loadBalancers")
@@ -29043,6 +29091,8 @@ class GetInstancePoolsInstancePoolResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  instance_configuration_id: str,
+                 instance_display_name_formatter: str,
+                 instance_hostname_formatter: str,
                  load_balancers: Sequence['outputs.GetInstancePoolsInstancePoolLoadBalancerResult'],
                  placement_configurations: Sequence['outputs.GetInstancePoolsInstancePoolPlacementConfigurationResult'],
                  size: int,
@@ -29055,6 +29105,8 @@ class GetInstancePoolsInstancePoolResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param str instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
+        :param str instance_display_name_formatter: A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        :param str instance_hostname_formatter: A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param Sequence['GetInstancePoolsInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
         :param Sequence['GetInstancePoolsInstancePoolPlacementConfigurationArgs'] placement_configurations: The placement configurations for the instance pool.
         :param int size: The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
@@ -29068,6 +29120,8 @@ class GetInstancePoolsInstancePoolResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+        pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         pulumi.set(__self__, "load_balancers", load_balancers)
         pulumi.set(__self__, "placement_configurations", placement_configurations)
         pulumi.set(__self__, "size", size)
@@ -29126,6 +29180,22 @@ class GetInstancePoolsInstancePoolResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         """
         return pulumi.get(self, "instance_configuration_id")
+
+    @property
+    @pulumi.getter(name="instanceDisplayNameFormatter")
+    def instance_display_name_formatter(self) -> str:
+        """
+        A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        """
+        return pulumi.get(self, "instance_display_name_formatter")
+
+    @property
+    @pulumi.getter(name="instanceHostnameFormatter")
+    def instance_hostname_formatter(self) -> str:
+        """
+        A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        """
+        return pulumi.get(self, "instance_hostname_formatter")
 
     @property
     @pulumi.getter(name="loadBalancers")

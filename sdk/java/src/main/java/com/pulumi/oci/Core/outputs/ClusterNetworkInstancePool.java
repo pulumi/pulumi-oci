@@ -47,6 +47,8 @@ public final class ClusterNetworkInstancePool {
      * 
      */
     private String instanceConfigurationId;
+    private @Nullable String instanceDisplayNameFormatter;
+    private @Nullable String instanceHostnameFormatter;
     /**
      * @return The load balancers attached to the instance pool.
      * 
@@ -116,6 +118,12 @@ public final class ClusterNetworkInstancePool {
     public String instanceConfigurationId() {
         return this.instanceConfigurationId;
     }
+    public Optional<String> instanceDisplayNameFormatter() {
+        return Optional.ofNullable(this.instanceDisplayNameFormatter);
+    }
+    public Optional<String> instanceHostnameFormatter() {
+        return Optional.ofNullable(this.instanceHostnameFormatter);
+    }
     /**
      * @return The load balancers attached to the instance pool.
      * 
@@ -167,6 +175,8 @@ public final class ClusterNetworkInstancePool {
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable String id;
         private String instanceConfigurationId;
+        private @Nullable String instanceDisplayNameFormatter;
+        private @Nullable String instanceHostnameFormatter;
         private @Nullable List<ClusterNetworkInstancePoolLoadBalancer> loadBalancers;
         private @Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
         private Integer size;
@@ -181,6 +191,8 @@ public final class ClusterNetworkInstancePool {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.instanceConfigurationId = defaults.instanceConfigurationId;
+    	      this.instanceDisplayNameFormatter = defaults.instanceDisplayNameFormatter;
+    	      this.instanceHostnameFormatter = defaults.instanceHostnameFormatter;
     	      this.loadBalancers = defaults.loadBalancers;
     	      this.placementConfigurations = defaults.placementConfigurations;
     	      this.size = defaults.size;
@@ -216,6 +228,16 @@ public final class ClusterNetworkInstancePool {
         @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder instanceDisplayNameFormatter(@Nullable String instanceDisplayNameFormatter) {
+            this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder instanceHostnameFormatter(@Nullable String instanceHostnameFormatter) {
+            this.instanceHostnameFormatter = instanceHostnameFormatter;
             return this;
         }
         @CustomType.Setter
@@ -257,6 +279,8 @@ public final class ClusterNetworkInstancePool {
             o.freeformTags = freeformTags;
             o.id = id;
             o.instanceConfigurationId = instanceConfigurationId;
+            o.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            o.instanceHostnameFormatter = instanceHostnameFormatter;
             o.loadBalancers = loadBalancers;
             o.placementConfigurations = placementConfigurations;
             o.size = size;

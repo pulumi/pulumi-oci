@@ -58,6 +58,8 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
+//				InstanceDisplayNameFormatter: pulumi.Any(_var.Instance_pool_instance_display_name_formatter),
+//				InstanceHostnameFormatter:    pulumi.Any(_var.Instance_pool_instance_hostname_formatter),
 //				LoadBalancers: core.InstancePoolLoadBalancerArray{
 //					&core.InstancePoolLoadBalancerArgs{
 //						BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
@@ -100,6 +102,10 @@ type InstancePool struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
 	InstanceConfigurationId pulumi.StringOutput `pulumi:"instanceConfigurationId"`
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+	InstanceDisplayNameFormatter pulumi.StringOutput `pulumi:"instanceDisplayNameFormatter"`
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+	InstanceHostnameFormatter pulumi.StringOutput `pulumi:"instanceHostnameFormatter"`
 	// The load balancers to attach to the instance pool.
 	LoadBalancers InstancePoolLoadBalancerArrayOutput `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
@@ -171,6 +177,10 @@ type instancePoolState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
 	InstanceConfigurationId *string `pulumi:"instanceConfigurationId"`
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+	InstanceDisplayNameFormatter *string `pulumi:"instanceDisplayNameFormatter"`
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+	InstanceHostnameFormatter *string `pulumi:"instanceHostnameFormatter"`
 	// The load balancers to attach to the instance pool.
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
@@ -201,6 +211,10 @@ type InstancePoolState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
 	InstanceConfigurationId pulumi.StringPtrInput
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+	InstanceDisplayNameFormatter pulumi.StringPtrInput
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+	InstanceHostnameFormatter pulumi.StringPtrInput
 	// The load balancers to attach to the instance pool.
 	LoadBalancers InstancePoolLoadBalancerArrayInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
@@ -233,6 +247,10 @@ type instancePoolArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
 	InstanceConfigurationId string `pulumi:"instanceConfigurationId"`
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+	InstanceDisplayNameFormatter *string `pulumi:"instanceDisplayNameFormatter"`
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+	InstanceHostnameFormatter *string `pulumi:"instanceHostnameFormatter"`
 	// The load balancers to attach to the instance pool.
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
@@ -260,6 +278,10 @@ type InstancePoolArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
 	InstanceConfigurationId pulumi.StringInput
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+	InstanceDisplayNameFormatter pulumi.StringPtrInput
+	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+	InstanceHostnameFormatter pulumi.StringPtrInput
 	// The load balancers to attach to the instance pool.
 	LoadBalancers InstancePoolLoadBalancerArrayInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
@@ -390,6 +412,16 @@ func (o InstancePoolOutput) FreeformTags() pulumi.MapOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
 func (o InstancePoolOutput) InstanceConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.InstanceConfigurationId }).(pulumi.StringOutput)
+}
+
+// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+func (o InstancePoolOutput) InstanceDisplayNameFormatter() pulumi.StringOutput {
+	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.InstanceDisplayNameFormatter }).(pulumi.StringOutput)
+}
+
+// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+func (o InstancePoolOutput) InstanceHostnameFormatter() pulumi.StringOutput {
+	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.InstanceHostnameFormatter }).(pulumi.StringOutput)
 }
 
 // The load balancers to attach to the instance pool.

@@ -36,11 +36,13 @@ namespace Pulumi.Oci.Budget
     ///         },
     ///         Description = @var.Budget_description,
     ///         DisplayName = @var.Budget_display_name,
+    ///         EndDate = @var.Budget_end_date,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         ProcessingPeriodType = @var.Budget_processing_period_type,
+    ///         StartDate = @var.Budget_start_date,
     ///         TargetCompartmentId = oci_identity_compartment.Test_compartment.Id,
     ///         TargetType = @var.Budget_target_type,
     ///         Targets = @var.Budget_targets,
@@ -109,6 +111,12 @@ namespace Pulumi.Oci.Budget
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// </summary>
+        [Output("endDate")]
+        public Output<string> EndDate { get; private set; } = null!;
+
+        /// <summary>
         /// The forecasted spend in currency by the end of the current budget cycle.
         /// </summary>
         [Output("forecastedSpend")]
@@ -121,7 +129,7 @@ namespace Pulumi.Oci.Budget
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        /// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         /// </summary>
         [Output("processingPeriodType")]
         public Output<string> ProcessingPeriodType { get; private set; } = null!;
@@ -131,6 +139,12 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         [Output("resetPeriod")]
         public Output<string> ResetPeriod { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// </summary>
+        [Output("startDate")]
+        public Output<string> StartDate { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the budget.
@@ -272,6 +286,12 @@ namespace Pulumi.Oci.Budget
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// </summary>
+        [Input("endDate")]
+        public Input<string>? EndDate { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -285,7 +305,7 @@ namespace Pulumi.Oci.Budget
         }
 
         /// <summary>
-        /// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        /// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         /// </summary>
         [Input("processingPeriodType")]
         public Input<string>? ProcessingPeriodType { get; set; }
@@ -295,6 +315,12 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         [Input("resetPeriod", required: true)]
         public Input<string> ResetPeriod { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// </summary>
+        [Input("startDate")]
+        public Input<string>? StartDate { get; set; }
 
         /// <summary>
         /// This is DEPRECATED. Set the target compartment ID in targets instead.
@@ -387,6 +413,12 @@ namespace Pulumi.Oci.Budget
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// </summary>
+        [Input("endDate")]
+        public Input<string>? EndDate { get; set; }
+
+        /// <summary>
         /// The forecasted spend in currency by the end of the current budget cycle.
         /// </summary>
         [Input("forecastedSpend")]
@@ -405,7 +437,7 @@ namespace Pulumi.Oci.Budget
         }
 
         /// <summary>
-        /// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        /// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         /// </summary>
         [Input("processingPeriodType")]
         public Input<string>? ProcessingPeriodType { get; set; }
@@ -415,6 +447,12 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         [Input("resetPeriod")]
         public Input<string>? ResetPeriod { get; set; }
+
+        /// <summary>
+        /// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// </summary>
+        [Input("startDate")]
+        public Input<string>? StartDate { get; set; }
 
         /// <summary>
         /// The current state of the budget.

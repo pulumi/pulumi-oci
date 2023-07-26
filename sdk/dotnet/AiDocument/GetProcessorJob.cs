@@ -128,7 +128,7 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The Object Storage Location.
+        /// The object storage location where to store analysis results.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProcessorJobOutputLocationResult> OutputLocations;
         /// <summary>

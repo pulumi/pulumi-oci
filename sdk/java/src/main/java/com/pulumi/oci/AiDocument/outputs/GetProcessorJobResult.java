@@ -40,7 +40,7 @@ public final class GetProcessorJobResult {
      */
     private String lifecycleDetails;
     /**
-     * @return The Object Storage Location.
+     * @return The object storage location where to store analysis results.
      * 
      */
     private List<GetProcessorJobOutputLocation> outputLocations;
@@ -113,7 +113,7 @@ public final class GetProcessorJobResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return The Object Storage Location.
+     * @return The object storage location where to store analysis results.
      * 
      */
     public List<GetProcessorJobOutputLocation> outputLocations() {

@@ -139,6 +139,10 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// </summary>
+        public readonly string EndDate;
+        /// <summary>
         /// The forecasted spend in currency by the end of the current budget cycle.
         /// </summary>
         public readonly double ForecastedSpend;
@@ -151,13 +155,17 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The type of the budget processing period. Valid values are INVOICE and MONTH.
+        /// The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         /// </summary>
         public readonly string ProcessingPeriodType;
         /// <summary>
         /// The reset period for the budget.
         /// </summary>
         public readonly string ResetPeriod;
+        /// <summary>
+        /// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// </summary>
+        public readonly string StartDate;
         /// <summary>
         /// The current state of the budget.
         /// </summary>
@@ -211,6 +219,8 @@ namespace Pulumi.Oci.Budget
 
             string displayName,
 
+            string endDate,
+
             double forecastedSpend,
 
             ImmutableDictionary<string, object> freeformTags,
@@ -220,6 +230,8 @@ namespace Pulumi.Oci.Budget
             string processingPeriodType,
 
             string resetPeriod,
+
+            string startDate,
 
             string state,
 
@@ -246,11 +258,13 @@ namespace Pulumi.Oci.Budget
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            EndDate = endDate;
             ForecastedSpend = forecastedSpend;
             FreeformTags = freeformTags;
             Id = id;
             ProcessingPeriodType = processingPeriodType;
             ResetPeriod = resetPeriod;
+            StartDate = startDate;
             State = state;
             TargetCompartmentId = targetCompartmentId;
             TargetType = targetType;

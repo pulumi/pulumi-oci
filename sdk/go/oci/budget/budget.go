@@ -40,10 +40,12 @@ import (
 //				},
 //				Description: pulumi.Any(_var.Budget_description),
 //				DisplayName: pulumi.Any(_var.Budget_display_name),
+//				EndDate:     pulumi.Any(_var.Budget_end_date),
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				ProcessingPeriodType: pulumi.Any(_var.Budget_processing_period_type),
+//				StartDate:            pulumi.Any(_var.Budget_start_date),
 //				TargetCompartmentId:  pulumi.Any(oci_identity_compartment.Test_compartment.Id),
 //				TargetType:           pulumi.Any(_var.Budget_target_type),
 //				Targets:              pulumi.Any(_var.Budget_targets),
@@ -85,19 +87,23 @@ type Budget struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	EndDate pulumi.StringOutput `pulumi:"endDate"`
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend pulumi.Float64Output `pulumi:"forecastedSpend"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType pulumi.StringOutput `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod pulumi.StringOutput `pulumi:"resetPeriod"`
+	// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	StartDate pulumi.StringOutput `pulumi:"startDate"`
 	// The current state of the budget.
 	State pulumi.StringOutput `pulumi:"state"`
 	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
-	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
 	TargetCompartmentId pulumi.StringOutput `pulumi:"targetCompartmentId"`
 	// The type of target on which the budget is applied.
 	TargetType pulumi.StringOutput `pulumi:"targetType"`
@@ -171,19 +177,23 @@ type budgetState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	EndDate *string `pulumi:"endDate"`
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend *float64 `pulumi:"forecastedSpend"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType *string `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod *string `pulumi:"resetPeriod"`
+	// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	StartDate *string `pulumi:"startDate"`
 	// The current state of the budget.
 	State *string `pulumi:"state"`
 	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
-	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
 	TargetCompartmentId *string `pulumi:"targetCompartmentId"`
 	// The type of target on which the budget is applied.
 	TargetType *string `pulumi:"targetType"`
@@ -219,19 +229,23 @@ type BudgetState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	EndDate pulumi.StringPtrInput
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend pulumi.Float64PtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType pulumi.StringPtrInput
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod pulumi.StringPtrInput
+	// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	StartDate pulumi.StringPtrInput
 	// The current state of the budget.
 	State pulumi.StringPtrInput
 	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
-	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
 	TargetCompartmentId pulumi.StringPtrInput
 	// The type of target on which the budget is applied.
 	TargetType pulumi.StringPtrInput
@@ -267,15 +281,19 @@ type budgetArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	EndDate *string `pulumi:"endDate"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType *string `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod string `pulumi:"resetPeriod"`
+	// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	StartDate *string `pulumi:"startDate"`
 	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
-	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
 	TargetCompartmentId *string `pulumi:"targetCompartmentId"`
 	// The type of target on which the budget is applied.
 	TargetType *string `pulumi:"targetType"`
@@ -300,15 +318,19 @@ type BudgetArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	EndDate pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType pulumi.StringPtrInput
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod pulumi.StringInput
+	// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	StartDate pulumi.StringPtrInput
 	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
-	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
 	TargetCompartmentId pulumi.StringPtrInput
 	// The type of target on which the budget is applied.
 	TargetType pulumi.StringPtrInput
@@ -446,6 +468,11 @@ func (o BudgetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+func (o BudgetOutput) EndDate() pulumi.StringOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.EndDate }).(pulumi.StringOutput)
+}
+
 // The forecasted spend in currency by the end of the current budget cycle.
 func (o BudgetOutput) ForecastedSpend() pulumi.Float64Output {
 	return o.ApplyT(func(v *Budget) pulumi.Float64Output { return v.ForecastedSpend }).(pulumi.Float64Output)
@@ -456,7 +483,7 @@ func (o BudgetOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Budget) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 func (o BudgetOutput) ProcessingPeriodType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.ProcessingPeriodType }).(pulumi.StringOutput)
 }
@@ -466,6 +493,11 @@ func (o BudgetOutput) ResetPeriod() pulumi.StringOutput {
 	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.ResetPeriod }).(pulumi.StringOutput)
 }
 
+// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+func (o BudgetOutput) StartDate() pulumi.StringOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.StartDate }).(pulumi.StringOutput)
+}
+
 // The current state of the budget.
 func (o BudgetOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
@@ -473,7 +505,7 @@ func (o BudgetOutput) State() pulumi.StringOutput {
 
 // This is DEPRECATED. Set the target compartment ID in targets instead.
 //
-// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
 func (o BudgetOutput) TargetCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.TargetCompartmentId }).(pulumi.StringOutput)
 }

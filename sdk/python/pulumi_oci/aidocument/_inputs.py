@@ -10,6 +10,7 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'ModelComponentModelArgs',
     'ModelMetricArgs',
     'ModelMetricDatasetSummaryArgs',
     'ModelMetricLabelMetricsReportArgs',
@@ -27,6 +28,29 @@ __all__ = [
     'GetModelsFilterArgs',
     'GetProjectsFilterArgs',
 ]
+
+@pulumi.input_type
+class ModelComponentModelArgs:
+    def __init__(__self__, *,
+                 model_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+
+    @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "model_id", value)
+
 
 @pulumi.input_type
 class ModelMetricArgs:
@@ -996,12 +1020,14 @@ class ProcessorJobProcessorConfigFeatureArgs:
                  feature_type: pulumi.Input[str],
                  generate_searchable_pdf: Optional[pulumi.Input[bool]] = None,
                  max_results: Optional[pulumi.Input[int]] = None,
-                 model_id: Optional[pulumi.Input[str]] = None):
+                 model_id: Optional[pulumi.Input[str]] = None,
+                 tenancy_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] feature_type: The type of document analysis requested. The allowed values are:
         :param pulumi.Input[bool] generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param pulumi.Input[int] max_results: The maximum number of results to return.
         :param pulumi.Input[str] model_id: The custom model ID.
+        :param pulumi.Input[str] tenancy_id: The custom model tenancy ID when modelId represents aliasName.
         """
         pulumi.set(__self__, "feature_type", feature_type)
         if generate_searchable_pdf is not None:
@@ -1010,6 +1036,8 @@ class ProcessorJobProcessorConfigFeatureArgs:
             pulumi.set(__self__, "max_results", max_results)
         if model_id is not None:
             pulumi.set(__self__, "model_id", model_id)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
 
     @property
     @pulumi.getter(name="featureType")
@@ -1058,6 +1086,18 @@ class ProcessorJobProcessorConfigFeatureArgs:
     @model_id.setter
     def model_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "model_id", value)
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The custom model tenancy ID when modelId represents aliasName.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @tenancy_id.setter
+    def tenancy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tenancy_id", value)
 
 
 @pulumi.input_type

@@ -75,21 +75,25 @@ type LookupBudgetResult struct {
 	Description string `pulumi:"description"`
 	// The display name of the budget. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	EndDate string `pulumi:"endDate"`
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend float64 `pulumi:"forecastedSpend"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the budget.
 	Id string `pulumi:"id"`
-	// The type of the budget processing period. Valid values are INVOICE and MONTH.
+	// The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType string `pulumi:"processingPeriodType"`
 	// The reset period for the budget.
 	ResetPeriod string `pulumi:"resetPeriod"`
+	// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	StartDate string `pulumi:"startDate"`
 	// The current state of the budget.
 	State string `pulumi:"state"`
 	// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
 	//
-	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
 	TargetCompartmentId string `pulumi:"targetCompartmentId"`
 	// The type of target on which the budget is applied.
 	TargetType string `pulumi:"targetType"`
@@ -187,6 +191,11 @@ func (o LookupBudgetResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+func (o LookupBudgetResultOutput) EndDate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBudgetResult) string { return v.EndDate }).(pulumi.StringOutput)
+}
+
 // The forecasted spend in currency by the end of the current budget cycle.
 func (o LookupBudgetResultOutput) ForecastedSpend() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupBudgetResult) float64 { return v.ForecastedSpend }).(pulumi.Float64Output)
@@ -202,7 +211,7 @@ func (o LookupBudgetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The type of the budget processing period. Valid values are INVOICE and MONTH.
+// The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 func (o LookupBudgetResultOutput) ProcessingPeriodType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.ProcessingPeriodType }).(pulumi.StringOutput)
 }
@@ -212,6 +221,11 @@ func (o LookupBudgetResultOutput) ResetPeriod() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.ResetPeriod }).(pulumi.StringOutput)
 }
 
+// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+func (o LookupBudgetResultOutput) StartDate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBudgetResult) string { return v.StartDate }).(pulumi.StringOutput)
+}
+
 // The current state of the budget.
 func (o LookupBudgetResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.State }).(pulumi.StringOutput)
@@ -219,7 +233,7 @@ func (o LookupBudgetResultOutput) State() pulumi.StringOutput {
 
 // This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
 //
-// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
+// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
 func (o LookupBudgetResultOutput) TargetCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.TargetCompartmentId }).(pulumi.StringOutput)
 }

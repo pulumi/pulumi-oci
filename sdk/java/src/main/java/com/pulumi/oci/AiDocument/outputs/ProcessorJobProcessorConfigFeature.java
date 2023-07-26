@@ -33,6 +33,11 @@ public final class ProcessorJobProcessorConfigFeature {
      * 
      */
     private @Nullable String modelId;
+    /**
+     * @return The custom model tenancy ID when modelId represents aliasName.
+     * 
+     */
+    private @Nullable String tenancyId;
 
     private ProcessorJobProcessorConfigFeature() {}
     /**
@@ -63,6 +68,13 @@ public final class ProcessorJobProcessorConfigFeature {
     public Optional<String> modelId() {
         return Optional.ofNullable(this.modelId);
     }
+    /**
+     * @return The custom model tenancy ID when modelId represents aliasName.
+     * 
+     */
+    public Optional<String> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -77,6 +89,7 @@ public final class ProcessorJobProcessorConfigFeature {
         private @Nullable Boolean generateSearchablePdf;
         private @Nullable Integer maxResults;
         private @Nullable String modelId;
+        private @Nullable String tenancyId;
         public Builder() {}
         public Builder(ProcessorJobProcessorConfigFeature defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,6 +97,7 @@ public final class ProcessorJobProcessorConfigFeature {
     	      this.generateSearchablePdf = defaults.generateSearchablePdf;
     	      this.maxResults = defaults.maxResults;
     	      this.modelId = defaults.modelId;
+    	      this.tenancyId = defaults.tenancyId;
         }
 
         @CustomType.Setter
@@ -106,12 +120,18 @@ public final class ProcessorJobProcessorConfigFeature {
             this.modelId = modelId;
             return this;
         }
+        @CustomType.Setter
+        public Builder tenancyId(@Nullable String tenancyId) {
+            this.tenancyId = tenancyId;
+            return this;
+        }
         public ProcessorJobProcessorConfigFeature build() {
             final var o = new ProcessorJobProcessorConfigFeature();
             o.featureType = featureType;
             o.generateSearchablePdf = generateSearchablePdf;
             o.maxResults = maxResults;
             o.modelId = modelId;
+            o.tenancyId = tenancyId;
             return o;
         }
     }

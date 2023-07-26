@@ -131,6 +131,14 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string InstanceConfigurationId;
         /// <summary>
+        /// A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        /// </summary>
+        public readonly string InstanceDisplayNameFormatter;
+        /// <summary>
+        /// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        /// </summary>
+        public readonly string InstanceHostnameFormatter;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
         /// </summary>
         public readonly string InstancePoolId;
@@ -171,6 +179,10 @@ namespace Pulumi.Oci.Core
 
             string instanceConfigurationId,
 
+            string instanceDisplayNameFormatter,
+
+            string instanceHostnameFormatter,
+
             string instancePoolId,
 
             ImmutableArray<Outputs.GetInstancePoolLoadBalancerResult> loadBalancers,
@@ -190,6 +202,8 @@ namespace Pulumi.Oci.Core
             FreeformTags = freeformTags;
             Id = id;
             InstanceConfigurationId = instanceConfigurationId;
+            InstanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            InstanceHostnameFormatter = instanceHostnameFormatter;
             InstancePoolId = instancePoolId;
             LoadBalancers = loadBalancers;
             PlacementConfigurations = placementConfigurations;

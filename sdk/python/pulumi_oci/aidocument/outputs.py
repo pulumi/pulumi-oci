@@ -11,6 +11,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ModelComponentModel',
     'ModelMetric',
     'ModelMetricDatasetSummary',
     'ModelMetricLabelMetricsReport',
@@ -25,6 +26,7 @@ __all__ = [
     'ProcessorJobOutputLocation',
     'ProcessorJobProcessorConfig',
     'ProcessorJobProcessorConfigFeature',
+    'GetModelComponentModelResult',
     'GetModelMetricResult',
     'GetModelMetricDatasetSummaryResult',
     'GetModelMetricLabelMetricsReportResult',
@@ -37,6 +39,7 @@ __all__ = [
     'GetModelsFilterResult',
     'GetModelsModelCollectionResult',
     'GetModelsModelCollectionItemResult',
+    'GetModelsModelCollectionItemComponentModelResult',
     'GetModelsModelCollectionItemMetricResult',
     'GetModelsModelCollectionItemMetricDatasetSummaryResult',
     'GetModelsModelCollectionItemMetricLabelMetricsReportResult',
@@ -55,6 +58,42 @@ __all__ = [
     'GetProjectsProjectCollectionResult',
     'GetProjectsProjectCollectionItemResult',
 ]
+
+@pulumi.output_type
+class ModelComponentModel(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelId":
+            suggest = "model_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelComponentModel. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelComponentModel.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelComponentModel.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 model_id: Optional[str] = None):
+        """
+        :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+
+    @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        return pulumi.get(self, "model_id")
+
 
 @pulumi.output_type
 class ModelMetric(dict):
@@ -1002,6 +1041,8 @@ class ProcessorJobProcessorConfigFeature(dict):
             suggest = "max_results"
         elif key == "modelId":
             suggest = "model_id"
+        elif key == "tenancyId":
+            suggest = "tenancy_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ProcessorJobProcessorConfigFeature. Access the value via the '{suggest}' property getter instead.")
@@ -1018,12 +1059,14 @@ class ProcessorJobProcessorConfigFeature(dict):
                  feature_type: str,
                  generate_searchable_pdf: Optional[bool] = None,
                  max_results: Optional[int] = None,
-                 model_id: Optional[str] = None):
+                 model_id: Optional[str] = None,
+                 tenancy_id: Optional[str] = None):
         """
         :param str feature_type: The type of document analysis requested. The allowed values are:
         :param bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param int max_results: The maximum number of results to return.
         :param str model_id: The custom model ID.
+        :param str tenancy_id: The custom model tenancy ID when modelId represents aliasName.
         """
         pulumi.set(__self__, "feature_type", feature_type)
         if generate_searchable_pdf is not None:
@@ -1032,6 +1075,8 @@ class ProcessorJobProcessorConfigFeature(dict):
             pulumi.set(__self__, "max_results", max_results)
         if model_id is not None:
             pulumi.set(__self__, "model_id", model_id)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
 
     @property
     @pulumi.getter(name="featureType")
@@ -1062,6 +1107,32 @@ class ProcessorJobProcessorConfigFeature(dict):
     def model_id(self) -> Optional[str]:
         """
         The custom model ID.
+        """
+        return pulumi.get(self, "model_id")
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> Optional[str]:
+        """
+        The custom model tenancy ID when modelId represents aliasName.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+
+@pulumi.output_type
+class GetModelComponentModelResult(dict):
+    def __init__(__self__, *,
+                 model_id: str):
+        """
+        :param str model_id: A unique model identifier.
+        """
+        pulumi.set(__self__, "model_id", model_id)
+
+    @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> str:
+        """
+        A unique model identifier.
         """
         return pulumi.get(self, "model_id")
 
@@ -1601,21 +1672,25 @@ class GetModelsModelCollectionResult(dict):
 class GetModelsModelCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
+                 component_models: Sequence['outputs.GetModelsModelCollectionItemComponentModelResult'],
                  defined_tags: Mapping[str, Any],
                  description: str,
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_composed_model: bool,
                  is_quick_mode: bool,
                  labels: Sequence[str],
                  lifecycle_details: str,
                  max_training_time_in_hours: float,
                  metrics: Sequence['outputs.GetModelsModelCollectionItemMetricResult'],
+                 model_id: str,
                  model_type: str,
                  model_version: str,
                  project_id: str,
                  state: str,
                  system_tags: Mapping[str, Any],
+                 tenancy_id: str,
                  testing_datasets: Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult'],
                  time_created: str,
                  time_updated: str,
@@ -1624,21 +1699,25 @@ class GetModelsModelCollectionItemResult(dict):
                  validation_datasets: Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Sequence['GetModelsModelCollectionItemComponentModelArgs'] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param str description: An optional description of the model.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param str id: The filter to find the model with the given identifier.
+        :param bool is_composed_model: Set to true when the model is created by using multiple key value extraction models.
         :param bool is_quick_mode: Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
         :param Sequence[str] labels: The collection of labels used to train the custom model.
         :param str lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
         :param float max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
         :param Sequence['GetModelsModelCollectionItemMetricArgs'] metrics: Trained Model Metrics.
+        :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         :param str model_type: The type of the Document model.
         :param str model_version: The version of the model.
         :param str project_id: The ID of the project for which to list the objects.
         :param str state: The filter to match models with the given lifecycleState.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param str tenancy_id: The tenancy id of the model.
         :param Sequence['GetModelsModelCollectionItemTestingDatasetArgs'] testing_datasets: The base entity which is the input for creating and training a model.
         :param str time_created: When the model was created, as an RFC3339 datetime string.
         :param str time_updated: When the model was updated, as an RFC3339 datetime string.
@@ -1647,21 +1726,25 @@ class GetModelsModelCollectionItemResult(dict):
         :param Sequence['GetModelsModelCollectionItemValidationDatasetArgs'] validation_datasets: The base entity which is the input for creating and training a model.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_models", component_models)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_composed_model", is_composed_model)
         pulumi.set(__self__, "is_quick_mode", is_quick_mode)
         pulumi.set(__self__, "labels", labels)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
         pulumi.set(__self__, "metrics", metrics)
+        pulumi.set(__self__, "model_id", model_id)
         pulumi.set(__self__, "model_type", model_type)
         pulumi.set(__self__, "model_version", model_version)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
         pulumi.set(__self__, "testing_datasets", testing_datasets)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -1676,6 +1759,14 @@ class GetModelsModelCollectionItemResult(dict):
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="componentModels")
+    def component_models(self) -> Sequence['outputs.GetModelsModelCollectionItemComponentModelResult']:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+        """
+        return pulumi.get(self, "component_models")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1718,6 +1809,14 @@ class GetModelsModelCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isComposedModel")
+    def is_composed_model(self) -> bool:
+        """
+        Set to true when the model is created by using multiple key value extraction models.
+        """
+        return pulumi.get(self, "is_composed_model")
+
+    @property
     @pulumi.getter(name="isQuickMode")
     def is_quick_mode(self) -> bool:
         """
@@ -1758,6 +1857,14 @@ class GetModelsModelCollectionItemResult(dict):
         return pulumi.get(self, "metrics")
 
     @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        return pulumi.get(self, "model_id")
+
+    @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
@@ -1796,6 +1903,14 @@ class GetModelsModelCollectionItemResult(dict):
         Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> str:
+        """
+        The tenancy id of the model.
+        """
+        return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="testingDatasets")
@@ -1844,6 +1959,24 @@ class GetModelsModelCollectionItemResult(dict):
         The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "validation_datasets")
+
+
+@pulumi.output_type
+class GetModelsModelCollectionItemComponentModelResult(dict):
+    def __init__(__self__, *,
+                 model_id: str):
+        """
+        :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        pulumi.set(__self__, "model_id", model_id)
+
+    @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        return pulumi.get(self, "model_id")
 
 
 @pulumi.output_type
@@ -2526,17 +2659,20 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
                  feature_type: str,
                  generate_searchable_pdf: bool,
                  max_results: int,
-                 model_id: str):
+                 model_id: str,
+                 tenancy_id: str):
         """
         :param str feature_type: The type of document analysis requested. The allowed values are:
         :param bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param int max_results: The maximum number of results to return.
         :param str model_id: The custom model ID.
+        :param str tenancy_id: The custom model tenancy ID when modelId represents aliasName.
         """
         pulumi.set(__self__, "feature_type", feature_type)
         pulumi.set(__self__, "generate_searchable_pdf", generate_searchable_pdf)
         pulumi.set(__self__, "max_results", max_results)
         pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
 
     @property
     @pulumi.getter(name="featureType")
@@ -2569,6 +2705,14 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
         The custom model ID.
         """
         return pulumi.get(self, "model_id")
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> str:
+        """
+        The custom model tenancy ID when modelId represents aliasName.
+        """
+        return pulumi.get(self, "tenancy_id")
 
 
 @pulumi.output_type

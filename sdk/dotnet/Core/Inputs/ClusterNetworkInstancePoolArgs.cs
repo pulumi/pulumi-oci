@@ -60,6 +60,12 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("instanceConfigurationId", required: true)]
         public Input<string> InstanceConfigurationId { get; set; } = null!;
 
+        [Input("instanceDisplayNameFormatter")]
+        public Input<string>? InstanceDisplayNameFormatter { get; set; }
+
+        [Input("instanceHostnameFormatter")]
+        public Input<string>? InstanceHostnameFormatter { get; set; }
+
         [Input("loadBalancers")]
         private InputList<Inputs.ClusterNetworkInstancePoolLoadBalancerArgs>? _loadBalancers;
 

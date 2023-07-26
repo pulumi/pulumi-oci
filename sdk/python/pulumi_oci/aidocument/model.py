@@ -19,36 +19,41 @@ class ModelArgs:
                  compartment_id: pulumi.Input[str],
                  model_type: pulumi.Input[str],
                  project_id: pulumi.Input[str],
-                 training_dataset: pulumi.Input['ModelTrainingDatasetArgs'],
+                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_quick_mode: Optional[pulumi.Input[bool]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
+                 model_id: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
                  testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
+                 training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
                  validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None):
         """
         The set of arguments for constructing a Model resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment identifier.
         :param pulumi.Input[str] model_type: The type of the Document model.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
-        :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
+        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         :param pulumi.Input[str] model_version: The model version
         :param pulumi.Input['ModelTestingDatasetArgs'] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input['ModelValidationDatasetArgs'] validation_dataset: The base entity which is the input for creating and training a model.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "model_type", model_type)
         pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "training_dataset", training_dataset)
+        if component_models is not None:
+            pulumi.set(__self__, "component_models", component_models)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -61,10 +66,14 @@ class ModelArgs:
             pulumi.set(__self__, "is_quick_mode", is_quick_mode)
         if max_training_time_in_hours is not None:
             pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
         if model_version is not None:
             pulumi.set(__self__, "model_version", model_version)
         if testing_dataset is not None:
             pulumi.set(__self__, "testing_dataset", testing_dataset)
+        if training_dataset is not None:
+            pulumi.set(__self__, "training_dataset", training_dataset)
         if validation_dataset is not None:
             pulumi.set(__self__, "validation_dataset", validation_dataset)
 
@@ -105,16 +114,16 @@ class ModelArgs:
         pulumi.set(self, "project_id", value)
 
     @property
-    @pulumi.getter(name="trainingDataset")
-    def training_dataset(self) -> pulumi.Input['ModelTrainingDatasetArgs']:
+    @pulumi.getter(name="componentModels")
+    def component_models(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]]:
         """
-        The base entity which is the input for creating and training a model.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         """
-        return pulumi.get(self, "training_dataset")
+        return pulumi.get(self, "component_models")
 
-    @training_dataset.setter
-    def training_dataset(self, value: pulumi.Input['ModelTrainingDatasetArgs']):
-        pulumi.set(self, "training_dataset", value)
+    @component_models.setter
+    def component_models(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]]):
+        pulumi.set(self, "component_models", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -189,6 +198,18 @@ class ModelArgs:
         pulumi.set(self, "max_training_time_in_hours", value)
 
     @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "model_id", value)
+
+    @property
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -213,6 +234,18 @@ class ModelArgs:
         pulumi.set(self, "testing_dataset", value)
 
     @property
+    @pulumi.getter(name="trainingDataset")
+    def training_dataset(self) -> Optional[pulumi.Input['ModelTrainingDatasetArgs']]:
+        """
+        The base entity which is the input for creating and training a model.
+        """
+        return pulumi.get(self, "training_dataset")
+
+    @training_dataset.setter
+    def training_dataset(self, value: Optional[pulumi.Input['ModelTrainingDatasetArgs']]):
+        pulumi.set(self, "training_dataset", value)
+
+    @property
     @pulumi.getter(name="validationDataset")
     def validation_dataset(self) -> Optional[pulumi.Input['ModelValidationDatasetArgs']]:
         """
@@ -229,20 +262,24 @@ class ModelArgs:
 class _ModelState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_composed_model: Optional[pulumi.Input[bool]] = None,
                  is_quick_mode: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricArgs']]]] = None,
+                 model_id: Optional[pulumi.Input[str]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 tenancy_id: Optional[pulumi.Input[str]] = None,
                  testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -252,20 +289,24 @@ class _ModelState:
         """
         Input properties used for looking up and filtering Model resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_composed_model: Set to true when the model is created by using multiple key value extraction models.
         :param pulumi.Input[bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: The collection of labels used to train the custom model.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
         :param pulumi.Input[float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
         :param pulumi.Input[Sequence[pulumi.Input['ModelMetricArgs']]] metrics: Trained Model Metrics.
+        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         :param pulumi.Input[str] model_type: The type of the Document model.
         :param pulumi.Input[str] model_version: The model version
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         :param pulumi.Input[str] state: The current state of the model.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param pulumi.Input[str] tenancy_id: The tenancy id of the model.
         :param pulumi.Input['ModelTestingDatasetArgs'] testing_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input[str] time_created: When the model was created, as an RFC3339 datetime string.
         :param pulumi.Input[str] time_updated: When the model was updated, as an RFC3339 datetime string.
@@ -275,6 +316,8 @@ class _ModelState:
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if component_models is not None:
+            pulumi.set(__self__, "component_models", component_models)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -283,6 +326,8 @@ class _ModelState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_composed_model is not None:
+            pulumi.set(__self__, "is_composed_model", is_composed_model)
         if is_quick_mode is not None:
             pulumi.set(__self__, "is_quick_mode", is_quick_mode)
         if labels is not None:
@@ -293,6 +338,8 @@ class _ModelState:
             pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
         if metrics is not None:
             pulumi.set(__self__, "metrics", metrics)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
         if model_type is not None:
             pulumi.set(__self__, "model_type", model_type)
         if model_version is not None:
@@ -303,6 +350,8 @@ class _ModelState:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
         if testing_dataset is not None:
             pulumi.set(__self__, "testing_dataset", testing_dataset)
         if time_created is not None:
@@ -327,6 +376,18 @@ class _ModelState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="componentModels")
+    def component_models(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+        """
+        return pulumi.get(self, "component_models")
+
+    @component_models.setter
+    def component_models(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]]):
+        pulumi.set(self, "component_models", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -375,6 +436,18 @@ class _ModelState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isComposedModel")
+    def is_composed_model(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Set to true when the model is created by using multiple key value extraction models.
+        """
+        return pulumi.get(self, "is_composed_model")
+
+    @is_composed_model.setter
+    def is_composed_model(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_composed_model", value)
 
     @property
     @pulumi.getter(name="isQuickMode")
@@ -437,6 +510,18 @@ class _ModelState:
         pulumi.set(self, "metrics", value)
 
     @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "model_id", value)
+
+    @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -495,6 +580,18 @@ class _ModelState:
     @system_tags.setter
     def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "system_tags", value)
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The tenancy id of the model.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @tenancy_id.setter
+    def tenancy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tenancy_id", value)
 
     @property
     @pulumi.getter(name="testingDataset")
@@ -575,12 +672,14 @@ class Model(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_quick_mode: Optional[pulumi.Input[bool]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
+                 model_id: Optional[pulumi.Input[str]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
@@ -593,45 +692,7 @@ class Model(pulumi.CustomResource):
 
         Create a new model.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_model = oci.ai_document.Model("testModel",
-            compartment_id=var["compartment_id"],
-            model_type=var["model_model_type"],
-            project_id=oci_ai_document_project["test_project"]["id"],
-            training_dataset=oci.ai_document.ModelTrainingDatasetArgs(
-                dataset_type=var["model_training_dataset_dataset_type"],
-                bucket=var["model_training_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_training_dataset_namespace"],
-                object=var["model_training_dataset_object"],
-            ),
-            defined_tags=var["model_defined_tags"],
-            description=var["model_description"],
-            display_name=var["model_display_name"],
-            freeform_tags=var["model_freeform_tags"],
-            is_quick_mode=var["model_is_quick_mode"],
-            max_training_time_in_hours=var["model_max_training_time_in_hours"],
-            model_version=var["model_model_version"],
-            testing_dataset=oci.ai_document.ModelTestingDatasetArgs(
-                dataset_type=var["model_testing_dataset_dataset_type"],
-                bucket=var["model_testing_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_testing_dataset_namespace"],
-                object=var["model_testing_dataset_object"],
-            ),
-            validation_dataset=oci.ai_document.ModelValidationDatasetArgs(
-                dataset_type=var["model_validation_dataset_dataset_type"],
-                bucket=var["model_validation_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_validation_dataset_namespace"],
-                object=var["model_validation_dataset_object"],
-            ))
-        ```
+          Updates the model metadata only selected path parameter.
 
         ## Import
 
@@ -644,12 +705,14 @@ class Model(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
+        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         :param pulumi.Input[str] model_type: The type of the Document model.
         :param pulumi.Input[str] model_version: The model version
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
@@ -668,45 +731,7 @@ class Model(pulumi.CustomResource):
 
         Create a new model.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_model = oci.ai_document.Model("testModel",
-            compartment_id=var["compartment_id"],
-            model_type=var["model_model_type"],
-            project_id=oci_ai_document_project["test_project"]["id"],
-            training_dataset=oci.ai_document.ModelTrainingDatasetArgs(
-                dataset_type=var["model_training_dataset_dataset_type"],
-                bucket=var["model_training_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_training_dataset_namespace"],
-                object=var["model_training_dataset_object"],
-            ),
-            defined_tags=var["model_defined_tags"],
-            description=var["model_description"],
-            display_name=var["model_display_name"],
-            freeform_tags=var["model_freeform_tags"],
-            is_quick_mode=var["model_is_quick_mode"],
-            max_training_time_in_hours=var["model_max_training_time_in_hours"],
-            model_version=var["model_model_version"],
-            testing_dataset=oci.ai_document.ModelTestingDatasetArgs(
-                dataset_type=var["model_testing_dataset_dataset_type"],
-                bucket=var["model_testing_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_testing_dataset_namespace"],
-                object=var["model_testing_dataset_object"],
-            ),
-            validation_dataset=oci.ai_document.ModelValidationDatasetArgs(
-                dataset_type=var["model_validation_dataset_dataset_type"],
-                bucket=var["model_validation_dataset_bucket"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_validation_dataset_namespace"],
-                object=var["model_validation_dataset_object"],
-            ))
-        ```
+          Updates the model metadata only selected path parameter.
 
         ## Import
 
@@ -732,12 +757,14 @@ class Model(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_quick_mode: Optional[pulumi.Input[bool]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
+                 model_id: Optional[pulumi.Input[str]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
@@ -756,12 +783,14 @@ class Model(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["component_models"] = component_models
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_quick_mode"] = is_quick_mode
             __props__.__dict__["max_training_time_in_hours"] = max_training_time_in_hours
+            __props__.__dict__["model_id"] = model_id
             if model_type is None and not opts.urn:
                 raise TypeError("Missing required property 'model_type'")
             __props__.__dict__["model_type"] = model_type
@@ -770,15 +799,15 @@ class Model(pulumi.CustomResource):
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
             __props__.__dict__["testing_dataset"] = testing_dataset
-            if training_dataset is None and not opts.urn:
-                raise TypeError("Missing required property 'training_dataset'")
             __props__.__dict__["training_dataset"] = training_dataset
             __props__.__dict__["validation_dataset"] = validation_dataset
+            __props__.__dict__["is_composed_model"] = None
             __props__.__dict__["labels"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["metrics"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
+            __props__.__dict__["tenancy_id"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["trained_time_in_hours"] = None
@@ -793,20 +822,24 @@ class Model(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            component_models: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_composed_model: Optional[pulumi.Input[bool]] = None,
             is_quick_mode: Optional[pulumi.Input[bool]] = None,
             labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
             metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelMetricArgs']]]]] = None,
+            model_id: Optional[pulumi.Input[str]] = None,
             model_type: Optional[pulumi.Input[str]] = None,
             model_version: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            tenancy_id: Optional[pulumi.Input[str]] = None,
             testing_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -821,20 +854,24 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_composed_model: Set to true when the model is created by using multiple key value extraction models.
         :param pulumi.Input[bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: The collection of labels used to train the custom model.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
         :param pulumi.Input[float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelMetricArgs']]]] metrics: Trained Model Metrics.
+        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         :param pulumi.Input[str] model_type: The type of the Document model.
         :param pulumi.Input[str] model_version: The model version
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         :param pulumi.Input[str] state: The current state of the model.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param pulumi.Input[str] tenancy_id: The tenancy id of the model.
         :param pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']] testing_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input[str] time_created: When the model was created, as an RFC3339 datetime string.
         :param pulumi.Input[str] time_updated: When the model was updated, as an RFC3339 datetime string.
@@ -847,20 +884,24 @@ class Model(pulumi.CustomResource):
         __props__ = _ModelState.__new__(_ModelState)
 
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["component_models"] = component_models
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_composed_model"] = is_composed_model
         __props__.__dict__["is_quick_mode"] = is_quick_mode
         __props__.__dict__["labels"] = labels
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["max_training_time_in_hours"] = max_training_time_in_hours
         __props__.__dict__["metrics"] = metrics
+        __props__.__dict__["model_id"] = model_id
         __props__.__dict__["model_type"] = model_type
         __props__.__dict__["model_version"] = model_version
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["tenancy_id"] = tenancy_id
         __props__.__dict__["testing_dataset"] = testing_dataset
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -876,6 +917,14 @@ class Model(pulumi.CustomResource):
         (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="componentModels")
+    def component_models(self) -> pulumi.Output[Sequence['outputs.ModelComponentModel']]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+        """
+        return pulumi.get(self, "component_models")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -908,6 +957,14 @@ class Model(pulumi.CustomResource):
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isComposedModel")
+    def is_composed_model(self) -> pulumi.Output[bool]:
+        """
+        Set to true when the model is created by using multiple key value extraction models.
+        """
+        return pulumi.get(self, "is_composed_model")
 
     @property
     @pulumi.getter(name="isQuickMode")
@@ -950,6 +1007,14 @@ class Model(pulumi.CustomResource):
         return pulumi.get(self, "metrics")
 
     @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
+        return pulumi.get(self, "model_id")
+
+    @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Output[str]:
         """
@@ -988,6 +1053,14 @@ class Model(pulumi.CustomResource):
         Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> pulumi.Output[str]:
+        """
+        The tenancy id of the model.
+        """
+        return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="testingDataset")

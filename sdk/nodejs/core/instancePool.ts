@@ -41,6 +41,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     instanceDisplayNameFormatter: _var.instance_pool_instance_display_name_formatter,
+ *     instanceHostnameFormatter: _var.instance_pool_instance_hostname_formatter,
  *     loadBalancers: [{
  *         backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
  *         loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
@@ -111,6 +113,14 @@ export class InstancePool extends pulumi.CustomResource {
      */
     public readonly instanceConfigurationId!: pulumi.Output<string>;
     /**
+     * (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+     */
+    public readonly instanceDisplayNameFormatter!: pulumi.Output<string>;
+    /**
+     * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+     */
+    public readonly instanceHostnameFormatter!: pulumi.Output<string>;
+    /**
      * The load balancers to attach to the instance pool.
      */
     public readonly loadBalancers!: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[]>;
@@ -156,6 +166,8 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["instanceConfigurationId"] = state ? state.instanceConfigurationId : undefined;
+            resourceInputs["instanceDisplayNameFormatter"] = state ? state.instanceDisplayNameFormatter : undefined;
+            resourceInputs["instanceHostnameFormatter"] = state ? state.instanceHostnameFormatter : undefined;
             resourceInputs["loadBalancers"] = state ? state.loadBalancers : undefined;
             resourceInputs["placementConfigurations"] = state ? state.placementConfigurations : undefined;
             resourceInputs["size"] = state ? state.size : undefined;
@@ -180,6 +192,8 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["instanceConfigurationId"] = args ? args.instanceConfigurationId : undefined;
+            resourceInputs["instanceDisplayNameFormatter"] = args ? args.instanceDisplayNameFormatter : undefined;
+            resourceInputs["instanceHostnameFormatter"] = args ? args.instanceHostnameFormatter : undefined;
             resourceInputs["loadBalancers"] = args ? args.loadBalancers : undefined;
             resourceInputs["placementConfigurations"] = args ? args.placementConfigurations : undefined;
             resourceInputs["size"] = args ? args.size : undefined;
@@ -220,6 +234,14 @@ export interface InstancePoolState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      */
     instanceConfigurationId?: pulumi.Input<string>;
+    /**
+     * (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+     */
+    instanceDisplayNameFormatter?: pulumi.Input<string>;
+    /**
+     * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+     */
+    instanceHostnameFormatter?: pulumi.Input<string>;
     /**
      * The load balancers to attach to the instance pool.
      */
@@ -272,6 +294,14 @@ export interface InstancePoolArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      */
     instanceConfigurationId: pulumi.Input<string>;
+    /**
+     * (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+     */
+    instanceDisplayNameFormatter?: pulumi.Input<string>;
+    /**
+     * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+     */
+    instanceHostnameFormatter?: pulumi.Input<string>;
     /**
      * The load balancers to attach to the instance pool.
      */

@@ -37,6 +37,8 @@ namespace Pulumi.Oci.Core.Outputs
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         /// </summary>
         public readonly string InstanceConfigurationId;
+        public readonly string? InstanceDisplayNameFormatter;
+        public readonly string? InstanceHostnameFormatter;
         /// <summary>
         /// The load balancers attached to the instance pool.
         /// </summary>
@@ -72,6 +74,10 @@ namespace Pulumi.Oci.Core.Outputs
 
             string instanceConfigurationId,
 
+            string? instanceDisplayNameFormatter,
+
+            string? instanceHostnameFormatter,
+
             ImmutableArray<Outputs.ClusterNetworkInstancePoolLoadBalancer> loadBalancers,
 
             ImmutableArray<Outputs.ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations,
@@ -88,6 +94,8 @@ namespace Pulumi.Oci.Core.Outputs
             FreeformTags = freeformTags;
             Id = id;
             InstanceConfigurationId = instanceConfigurationId;
+            InstanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            InstanceHostnameFormatter = instanceHostnameFormatter;
             LoadBalancers = loadBalancers;
             PlacementConfigurations = placementConfigurations;
             Size = size;

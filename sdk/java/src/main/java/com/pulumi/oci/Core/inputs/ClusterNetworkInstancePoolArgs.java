@@ -111,6 +111,20 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
         return this.instanceConfigurationId;
     }
 
+    @Import(name="instanceDisplayNameFormatter")
+    private @Nullable Output<String> instanceDisplayNameFormatter;
+
+    public Optional<Output<String>> instanceDisplayNameFormatter() {
+        return Optional.ofNullable(this.instanceDisplayNameFormatter);
+    }
+
+    @Import(name="instanceHostnameFormatter")
+    private @Nullable Output<String> instanceHostnameFormatter;
+
+    public Optional<Output<String>> instanceHostnameFormatter() {
+        return Optional.ofNullable(this.instanceHostnameFormatter);
+    }
+
     /**
      * The load balancers attached to the instance pool.
      * 
@@ -195,6 +209,8 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
         this.freeformTags = $.freeformTags;
         this.id = $.id;
         this.instanceConfigurationId = $.instanceConfigurationId;
+        this.instanceDisplayNameFormatter = $.instanceDisplayNameFormatter;
+        this.instanceHostnameFormatter = $.instanceHostnameFormatter;
         this.loadBalancers = $.loadBalancers;
         this.placementConfigurations = $.placementConfigurations;
         this.size = $.size;
@@ -344,6 +360,24 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
          */
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             return instanceConfigurationId(Output.of(instanceConfigurationId));
+        }
+
+        public Builder instanceDisplayNameFormatter(@Nullable Output<String> instanceDisplayNameFormatter) {
+            $.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            return this;
+        }
+
+        public Builder instanceDisplayNameFormatter(String instanceDisplayNameFormatter) {
+            return instanceDisplayNameFormatter(Output.of(instanceDisplayNameFormatter));
+        }
+
+        public Builder instanceHostnameFormatter(@Nullable Output<String> instanceHostnameFormatter) {
+            $.instanceHostnameFormatter = instanceHostnameFormatter;
+            return this;
+        }
+
+        public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
+            return instanceHostnameFormatter(Output.of(instanceHostnameFormatter));
         }
 
         /**

@@ -22,7 +22,7 @@ class GetInstancePoolResult:
     """
     A collection of values returned by getInstancePool.
     """
-    def __init__(__self__, actual_size=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_pool_id=None, load_balancers=None, placement_configurations=None, size=None, state=None, time_created=None):
+    def __init__(__self__, actual_size=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_display_name_formatter=None, instance_hostname_formatter=None, instance_pool_id=None, load_balancers=None, placement_configurations=None, size=None, state=None, time_created=None):
         if actual_size and not isinstance(actual_size, int):
             raise TypeError("Expected argument 'actual_size' to be a int")
         pulumi.set(__self__, "actual_size", actual_size)
@@ -44,6 +44,12 @@ class GetInstancePoolResult:
         if instance_configuration_id and not isinstance(instance_configuration_id, str):
             raise TypeError("Expected argument 'instance_configuration_id' to be a str")
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        if instance_display_name_formatter and not isinstance(instance_display_name_formatter, str):
+            raise TypeError("Expected argument 'instance_display_name_formatter' to be a str")
+        pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+        if instance_hostname_formatter and not isinstance(instance_hostname_formatter, str):
+            raise TypeError("Expected argument 'instance_hostname_formatter' to be a str")
+        pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         if instance_pool_id and not isinstance(instance_pool_id, str):
             raise TypeError("Expected argument 'instance_pool_id' to be a str")
         pulumi.set(__self__, "instance_pool_id", instance_pool_id)
@@ -117,6 +123,22 @@ class GetInstancePoolResult:
         return pulumi.get(self, "instance_configuration_id")
 
     @property
+    @pulumi.getter(name="instanceDisplayNameFormatter")
+    def instance_display_name_formatter(self) -> str:
+        """
+        A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        """
+        return pulumi.get(self, "instance_display_name_formatter")
+
+    @property
+    @pulumi.getter(name="instanceHostnameFormatter")
+    def instance_hostname_formatter(self) -> str:
+        """
+        A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        """
+        return pulumi.get(self, "instance_hostname_formatter")
+
+    @property
     @pulumi.getter(name="instancePoolId")
     def instance_pool_id(self) -> str:
         """
@@ -178,6 +200,8 @@ class AwaitableGetInstancePoolResult(GetInstancePoolResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             instance_configuration_id=self.instance_configuration_id,
+            instance_display_name_formatter=self.instance_display_name_formatter,
+            instance_hostname_formatter=self.instance_hostname_formatter,
             instance_pool_id=self.instance_pool_id,
             load_balancers=self.load_balancers,
             placement_configurations=self.placement_configurations,
@@ -218,6 +242,8 @@ def get_instance_pool(instance_pool_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         instance_configuration_id=pulumi.get(__ret__, 'instance_configuration_id'),
+        instance_display_name_formatter=pulumi.get(__ret__, 'instance_display_name_formatter'),
+        instance_hostname_formatter=pulumi.get(__ret__, 'instance_hostname_formatter'),
         instance_pool_id=pulumi.get(__ret__, 'instance_pool_id'),
         load_balancers=pulumi.get(__ret__, 'load_balancers'),
         placement_configurations=pulumi.get(__ret__, 'placement_configurations'),

@@ -110,6 +110,10 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelComponentModelResult> ComponentModels;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -130,6 +134,10 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Set to true when the model is created by using multiple key value extraction models.
+        /// </summary>
+        public readonly bool IsComposedModel;
+        /// <summary>
         /// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
         /// </summary>
         public readonly bool IsQuickMode;
@@ -149,6 +157,9 @@ namespace Pulumi.Oci.AiDocument
         /// Trained Model Metrics.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelMetricResult> Metrics;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        /// </summary>
         public readonly string ModelId;
         /// <summary>
         /// The type of the Document model.
@@ -170,6 +181,10 @@ namespace Pulumi.Oci.AiDocument
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
+        /// The tenancy id of the model.
+        /// </summary>
+        public readonly string TenancyId;
         /// <summary>
         /// The base entity which is the input for creating and training a model.
         /// </summary>
@@ -199,6 +214,8 @@ namespace Pulumi.Oci.AiDocument
         private GetModelResult(
             string compartmentId,
 
+            ImmutableArray<Outputs.GetModelComponentModelResult> componentModels,
+
             ImmutableDictionary<string, object> definedTags,
 
             string description,
@@ -208,6 +225,8 @@ namespace Pulumi.Oci.AiDocument
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
+
+            bool isComposedModel,
 
             bool isQuickMode,
 
@@ -231,6 +250,8 @@ namespace Pulumi.Oci.AiDocument
 
             ImmutableDictionary<string, object> systemTags,
 
+            string tenancyId,
+
             ImmutableArray<Outputs.GetModelTestingDatasetResult> testingDatasets,
 
             string timeCreated,
@@ -244,11 +265,13 @@ namespace Pulumi.Oci.AiDocument
             ImmutableArray<Outputs.GetModelValidationDatasetResult> validationDatasets)
         {
             CompartmentId = compartmentId;
+            ComponentModels = componentModels;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsComposedModel = isComposedModel;
             IsQuickMode = isQuickMode;
             Labels = labels;
             LifecycleDetails = lifecycleDetails;
@@ -260,6 +283,7 @@ namespace Pulumi.Oci.AiDocument
             ProjectId = projectId;
             State = state;
             SystemTags = systemTags;
+            TenancyId = tenancyId;
             TestingDatasets = testingDatasets;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

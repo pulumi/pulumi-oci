@@ -29,6 +29,10 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// The custom model ID.
         /// </summary>
         public readonly string ModelId;
+        /// <summary>
+        /// The custom model tenancy ID when modelId represents aliasName.
+        /// </summary>
+        public readonly string TenancyId;
 
         [OutputConstructor]
         private GetProcessorJobProcessorConfigFeatureResult(
@@ -38,12 +42,15 @@ namespace Pulumi.Oci.AiDocument.Outputs
 
             int maxResults,
 
-            string modelId)
+            string modelId,
+
+            string tenancyId)
         {
             FeatureType = featureType;
             GenerateSearchablePdf = generateSearchablePdf;
             MaxResults = maxResults;
             ModelId = modelId;
+            TenancyId = tenancyId;
         }
     }
 }

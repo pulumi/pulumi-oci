@@ -25,7 +25,7 @@ class ProcessorJobArgs:
         The set of arguments for constructing a ProcessorJob resource.
         :param pulumi.Input[str] compartment_id: The compartment identifier.
         :param pulumi.Input['ProcessorJobInputLocationArgs'] input_location: The location of the inputs.
-        :param pulumi.Input['ProcessorJobOutputLocationArgs'] output_location: The Object Storage Location.
+        :param pulumi.Input['ProcessorJobOutputLocationArgs'] output_location: The object storage location where to store analysis results.
         :param pulumi.Input['ProcessorJobProcessorConfigArgs'] processor_config: The configuration of a processor.
         :param pulumi.Input[str] display_name: The display name of the processor job.
         """
@@ -64,7 +64,7 @@ class ProcessorJobArgs:
     @pulumi.getter(name="outputLocation")
     def output_location(self) -> pulumi.Input['ProcessorJobOutputLocationArgs']:
         """
-        The Object Storage Location.
+        The object storage location where to store analysis results.
         """
         return pulumi.get(self, "output_location")
 
@@ -117,7 +117,7 @@ class _ProcessorJobState:
         :param pulumi.Input[str] display_name: The display name of the processor job.
         :param pulumi.Input['ProcessorJobInputLocationArgs'] input_location: The location of the inputs.
         :param pulumi.Input[str] lifecycle_details: The detailed status of FAILED state.
-        :param pulumi.Input['ProcessorJobOutputLocationArgs'] output_location: The Object Storage Location.
+        :param pulumi.Input['ProcessorJobOutputLocationArgs'] output_location: The object storage location where to store analysis results.
         :param pulumi.Input[float] percent_complete: How much progress the operation has made, compared to the total amount of work to be performed.
         :param pulumi.Input['ProcessorJobProcessorConfigArgs'] processor_config: The configuration of a processor.
         :param pulumi.Input[str] state: The current state of the processor job.
@@ -200,7 +200,7 @@ class _ProcessorJobState:
     @pulumi.getter(name="outputLocation")
     def output_location(self) -> Optional[pulumi.Input['ProcessorJobOutputLocationArgs']]:
         """
-        The Object Storage Location.
+        The object storage location where to store analysis results.
         """
         return pulumi.get(self, "output_location")
 
@@ -325,6 +325,7 @@ class ProcessorJob(pulumi.CustomResource):
                     generate_searchable_pdf=var["processor_job_processor_config_features_generate_searchable_pdf"],
                     max_results=var["processor_job_processor_config_features_max_results"],
                     model_id=oci_ai_document_model["test_model"]["id"],
+                    tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
                 )],
                 processor_type=var["processor_job_processor_config_processor_type"],
                 document_type=var["processor_job_processor_config_document_type"],
@@ -347,7 +348,7 @@ class ProcessorJob(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The compartment identifier.
         :param pulumi.Input[str] display_name: The display name of the processor job.
         :param pulumi.Input[pulumi.InputType['ProcessorJobInputLocationArgs']] input_location: The location of the inputs.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']] output_location: The Object Storage Location.
+        :param pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']] output_location: The object storage location where to store analysis results.
         :param pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']] processor_config: The configuration of a processor.
         """
         ...
@@ -389,6 +390,7 @@ class ProcessorJob(pulumi.CustomResource):
                     generate_searchable_pdf=var["processor_job_processor_config_features_generate_searchable_pdf"],
                     max_results=var["processor_job_processor_config_features_max_results"],
                     model_id=oci_ai_document_model["test_model"]["id"],
+                    tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
                 )],
                 processor_type=var["processor_job_processor_config_processor_type"],
                 document_type=var["processor_job_processor_config_document_type"],
@@ -486,7 +488,7 @@ class ProcessorJob(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: The display name of the processor job.
         :param pulumi.Input[pulumi.InputType['ProcessorJobInputLocationArgs']] input_location: The location of the inputs.
         :param pulumi.Input[str] lifecycle_details: The detailed status of FAILED state.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']] output_location: The Object Storage Location.
+        :param pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']] output_location: The object storage location where to store analysis results.
         :param pulumi.Input[float] percent_complete: How much progress the operation has made, compared to the total amount of work to be performed.
         :param pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']] processor_config: The configuration of a processor.
         :param pulumi.Input[str] state: The current state of the processor job.
@@ -547,7 +549,7 @@ class ProcessorJob(pulumi.CustomResource):
     @pulumi.getter(name="outputLocation")
     def output_location(self) -> pulumi.Output['outputs.ProcessorJobOutputLocation']:
         """
-        The Object Storage Location.
+        The object storage location where to store analysis results.
         """
         return pulumi.get(self, "output_location")
 

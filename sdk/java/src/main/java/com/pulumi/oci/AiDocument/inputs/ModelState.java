@@ -5,6 +5,7 @@ package com.pulumi.oci.AiDocument.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.AiDocument.inputs.ModelComponentModelArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelMetricArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelTestingDatasetArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelTrainingDatasetArgs;
@@ -37,6 +38,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     * 
+     */
+    @Import(name="componentModels")
+    private @Nullable Output<List<ModelComponentModelArgs>> componentModels;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     * 
+     */
+    public Optional<Output<List<ModelComponentModelArgs>>> componentModels() {
+        return Optional.ofNullable(this.componentModels);
     }
 
     /**
@@ -97,6 +113,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * Set to true when the model is created by using multiple key value extraction models.
+     * 
+     */
+    @Import(name="isComposedModel")
+    private @Nullable Output<Boolean> isComposedModel;
+
+    /**
+     * @return Set to true when the model is created by using multiple key value extraction models.
+     * 
+     */
+    public Optional<Output<Boolean>> isComposedModel() {
+        return Optional.ofNullable(this.isComposedModel);
     }
 
     /**
@@ -175,6 +206,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     * 
+     */
+    @Import(name="modelId")
+    private @Nullable Output<String> modelId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     * 
+     */
+    public Optional<Output<String>> modelId() {
+        return Optional.ofNullable(this.modelId);
+    }
+
+    /**
      * The type of the Document model.
      * 
      */
@@ -247,6 +293,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
+     * The tenancy id of the model.
+     * 
+     */
+    @Import(name="tenancyId")
+    private @Nullable Output<String> tenancyId;
+
+    /**
+     * @return The tenancy id of the model.
+     * 
+     */
+    public Optional<Output<String>> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
     }
 
     /**
@@ -343,20 +404,24 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
 
     private ModelState(ModelState $) {
         this.compartmentId = $.compartmentId;
+        this.componentModels = $.componentModels;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isComposedModel = $.isComposedModel;
         this.isQuickMode = $.isQuickMode;
         this.labels = $.labels;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maxTrainingTimeInHours = $.maxTrainingTimeInHours;
         this.metrics = $.metrics;
+        this.modelId = $.modelId;
         this.modelType = $.modelType;
         this.modelVersion = $.modelVersion;
         this.projectId = $.projectId;
         this.state = $.state;
         this.systemTags = $.systemTags;
+        this.tenancyId = $.tenancyId;
         this.testingDataset = $.testingDataset;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -402,6 +467,37 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param componentModels The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder componentModels(@Nullable Output<List<ModelComponentModelArgs>> componentModels) {
+            $.componentModels = componentModels;
+            return this;
+        }
+
+        /**
+         * @param componentModels The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder componentModels(List<ModelComponentModelArgs> componentModels) {
+            return componentModels(Output.of(componentModels));
+        }
+
+        /**
+         * @param componentModels The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder componentModels(ModelComponentModelArgs... componentModels) {
+            return componentModels(List.of(componentModels));
         }
 
         /**
@@ -486,6 +582,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isComposedModel Set to true when the model is created by using multiple key value extraction models.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isComposedModel(@Nullable Output<Boolean> isComposedModel) {
+            $.isComposedModel = isComposedModel;
+            return this;
+        }
+
+        /**
+         * @param isComposedModel Set to true when the model is created by using multiple key value extraction models.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isComposedModel(Boolean isComposedModel) {
+            return isComposedModel(Output.of(isComposedModel));
         }
 
         /**
@@ -614,6 +731,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param modelId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelId(@Nullable Output<String> modelId) {
+            $.modelId = modelId;
+            return this;
+        }
+
+        /**
+         * @param modelId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelId(String modelId) {
+            return modelId(Output.of(modelId));
+        }
+
+        /**
          * @param modelType The type of the Document model.
          * 
          * @return builder
@@ -716,6 +854,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder systemTags(Map<String,Object> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param tenancyId The tenancy id of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenancyId(@Nullable Output<String> tenancyId) {
+            $.tenancyId = tenancyId;
+            return this;
+        }
+
+        /**
+         * @param tenancyId The tenancy id of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenancyId(String tenancyId) {
+            return tenancyId(Output.of(tenancyId));
         }
 
         /**

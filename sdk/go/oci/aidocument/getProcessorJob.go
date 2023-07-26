@@ -68,7 +68,7 @@ type LookupProcessorJobResult struct {
 	InputLocations []GetProcessorJobInputLocation `pulumi:"inputLocations"`
 	// The detailed status of FAILED state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The Object Storage Location.
+	// The object storage location where to store analysis results.
 	OutputLocations []GetProcessorJobOutputLocation `pulumi:"outputLocations"`
 	// How much progress the operation has made, compared to the total amount of work to be performed.
 	PercentComplete float64 `pulumi:"percentComplete"`
@@ -148,7 +148,7 @@ func (o LookupProcessorJobResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProcessorJobResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The Object Storage Location.
+// The object storage location where to store analysis results.
 func (o LookupProcessorJobResultOutput) OutputLocations() GetProcessorJobOutputLocationArrayOutput {
 	return o.ApplyT(func(v LookupProcessorJobResult) []GetProcessorJobOutputLocation { return v.OutputLocations }).(GetProcessorJobOutputLocationArrayOutput)
 }

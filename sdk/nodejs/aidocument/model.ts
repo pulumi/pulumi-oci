@@ -11,46 +11,7 @@ import * as utilities from "../utilities";
  *
  * Create a new model.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testModel = new oci.aidocument.Model("testModel", {
- *     compartmentId: _var.compartment_id,
- *     modelType: _var.model_model_type,
- *     projectId: oci_ai_document_project.test_project.id,
- *     trainingDataset: {
- *         datasetType: _var.model_training_dataset_dataset_type,
- *         bucket: _var.model_training_dataset_bucket,
- *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
- *         namespace: _var.model_training_dataset_namespace,
- *         object: _var.model_training_dataset_object,
- *     },
- *     definedTags: _var.model_defined_tags,
- *     description: _var.model_description,
- *     displayName: _var.model_display_name,
- *     freeformTags: _var.model_freeform_tags,
- *     isQuickMode: _var.model_is_quick_mode,
- *     maxTrainingTimeInHours: _var.model_max_training_time_in_hours,
- *     modelVersion: _var.model_model_version,
- *     testingDataset: {
- *         datasetType: _var.model_testing_dataset_dataset_type,
- *         bucket: _var.model_testing_dataset_bucket,
- *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
- *         namespace: _var.model_testing_dataset_namespace,
- *         object: _var.model_testing_dataset_object,
- *     },
- *     validationDataset: {
- *         datasetType: _var.model_validation_dataset_dataset_type,
- *         bucket: _var.model_validation_dataset_bucket,
- *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
- *         namespace: _var.model_validation_dataset_namespace,
- *         object: _var.model_validation_dataset_object,
- *     },
- * });
- * ```
+ *   Updates the model metadata only selected path parameter.
  *
  * ## Import
  *
@@ -93,6 +54,10 @@ export class Model extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     */
+    public readonly componentModels!: pulumi.Output<outputs.AiDocument.ModelComponentModel[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
@@ -108,6 +73,10 @@ export class Model extends pulumi.CustomResource {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * Set to true when the model is created by using multiple key value extraction models.
+     */
+    public /*out*/ readonly isComposedModel!: pulumi.Output<boolean>;
     /**
      * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      */
@@ -129,6 +98,10 @@ export class Model extends pulumi.CustomResource {
      */
     public /*out*/ readonly metrics!: pulumi.Output<outputs.AiDocument.ModelMetric[]>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     */
+    public readonly modelId!: pulumi.Output<string | undefined>;
+    /**
      * The type of the Document model.
      */
     public readonly modelType!: pulumi.Output<string>;
@@ -148,6 +121,10 @@ export class Model extends pulumi.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * The tenancy id of the model.
+     */
+    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
     /**
      * The base entity which is the input for creating and training a model.
      */
@@ -187,20 +164,24 @@ export class Model extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ModelState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["componentModels"] = state ? state.componentModels : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isComposedModel"] = state ? state.isComposedModel : undefined;
             resourceInputs["isQuickMode"] = state ? state.isQuickMode : undefined;
             resourceInputs["labels"] = state ? state.labels : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maxTrainingTimeInHours"] = state ? state.maxTrainingTimeInHours : undefined;
             resourceInputs["metrics"] = state ? state.metrics : undefined;
+            resourceInputs["modelId"] = state ? state.modelId : undefined;
             resourceInputs["modelType"] = state ? state.modelType : undefined;
             resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
             resourceInputs["testingDataset"] = state ? state.testingDataset : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -218,27 +199,28 @@ export class Model extends pulumi.CustomResource {
             if ((!args || args.projectId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            if ((!args || args.trainingDataset === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'trainingDataset'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["componentModels"] = args ? args.componentModels : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isQuickMode"] = args ? args.isQuickMode : undefined;
             resourceInputs["maxTrainingTimeInHours"] = args ? args.maxTrainingTimeInHours : undefined;
+            resourceInputs["modelId"] = args ? args.modelId : undefined;
             resourceInputs["modelType"] = args ? args.modelType : undefined;
             resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["testingDataset"] = args ? args.testingDataset : undefined;
             resourceInputs["trainingDataset"] = args ? args.trainingDataset : undefined;
             resourceInputs["validationDataset"] = args ? args.validationDataset : undefined;
+            resourceInputs["isComposedModel"] = undefined /*out*/;
             resourceInputs["labels"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["metrics"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
+            resourceInputs["tenancyId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["trainedTimeInHours"] = undefined /*out*/;
@@ -257,6 +239,10 @@ export interface ModelState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     */
+    componentModels?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelComponentModel>[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -272,6 +258,10 @@ export interface ModelState {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Set to true when the model is created by using multiple key value extraction models.
+     */
+    isComposedModel?: pulumi.Input<boolean>;
     /**
      * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      */
@@ -293,6 +283,10 @@ export interface ModelState {
      */
     metrics?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelMetric>[]>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     */
+    modelId?: pulumi.Input<string>;
+    /**
      * The type of the Document model.
      */
     modelType?: pulumi.Input<string>;
@@ -312,6 +306,10 @@ export interface ModelState {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * The tenancy id of the model.
+     */
+    tenancyId?: pulumi.Input<string>;
     /**
      * The base entity which is the input for creating and training a model.
      */
@@ -347,6 +345,10 @@ export interface ModelArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     */
+    componentModels?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelComponentModel>[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -371,6 +373,10 @@ export interface ModelArgs {
      */
     maxTrainingTimeInHours?: pulumi.Input<number>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+     */
+    modelId?: pulumi.Input<string>;
+    /**
      * The type of the Document model.
      */
     modelType: pulumi.Input<string>;
@@ -389,7 +395,7 @@ export interface ModelArgs {
     /**
      * The base entity which is the input for creating and training a model.
      */
-    trainingDataset: pulumi.Input<inputs.AiDocument.ModelTrainingDataset>;
+    trainingDataset?: pulumi.Input<inputs.AiDocument.ModelTrainingDataset>;
     /**
      * The base entity which is the input for creating and training a model.
      */

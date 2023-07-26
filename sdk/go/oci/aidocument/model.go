@@ -16,61 +16,7 @@ import (
 //
 // Create a new model.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiDocument"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiDocument.NewModel(ctx, "testModel", &AiDocument.ModelArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ModelType:     pulumi.Any(_var.Model_model_type),
-//				ProjectId:     pulumi.Any(oci_ai_document_project.Test_project.Id),
-//				TrainingDataset: &aidocument.ModelTrainingDatasetArgs{
-//					DatasetType: pulumi.Any(_var.Model_training_dataset_dataset_type),
-//					Bucket:      pulumi.Any(_var.Model_training_dataset_bucket),
-//					DatasetId:   pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
-//					Namespace:   pulumi.Any(_var.Model_training_dataset_namespace),
-//					Object:      pulumi.Any(_var.Model_training_dataset_object),
-//				},
-//				DefinedTags:            pulumi.Any(_var.Model_defined_tags),
-//				Description:            pulumi.Any(_var.Model_description),
-//				DisplayName:            pulumi.Any(_var.Model_display_name),
-//				FreeformTags:           pulumi.Any(_var.Model_freeform_tags),
-//				IsQuickMode:            pulumi.Any(_var.Model_is_quick_mode),
-//				MaxTrainingTimeInHours: pulumi.Any(_var.Model_max_training_time_in_hours),
-//				ModelVersion:           pulumi.Any(_var.Model_model_version),
-//				TestingDataset: &aidocument.ModelTestingDatasetArgs{
-//					DatasetType: pulumi.Any(_var.Model_testing_dataset_dataset_type),
-//					Bucket:      pulumi.Any(_var.Model_testing_dataset_bucket),
-//					DatasetId:   pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
-//					Namespace:   pulumi.Any(_var.Model_testing_dataset_namespace),
-//					Object:      pulumi.Any(_var.Model_testing_dataset_object),
-//				},
-//				ValidationDataset: &aidocument.ModelValidationDatasetArgs{
-//					DatasetType: pulumi.Any(_var.Model_validation_dataset_dataset_type),
-//					Bucket:      pulumi.Any(_var.Model_validation_dataset_bucket),
-//					DatasetId:   pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
-//					Namespace:   pulumi.Any(_var.Model_validation_dataset_namespace),
-//					Object:      pulumi.Any(_var.Model_validation_dataset_object),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
+//	Updates the model metadata only selected path parameter.
 //
 // ## Import
 //
@@ -86,6 +32,8 @@ type Model struct {
 
 	// (Updatable) The compartment identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+	ComponentModels ModelComponentModelArrayOutput `pulumi:"componentModels"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
@@ -94,6 +42,8 @@ type Model struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// Set to true when the model is created by using multiple key value extraction models.
+	IsComposedModel pulumi.BoolOutput `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolOutput `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
@@ -104,6 +54,8 @@ type Model struct {
 	MaxTrainingTimeInHours pulumi.Float64Output `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics ModelMetricArrayOutput `pulumi:"metrics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId pulumi.StringPtrOutput `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
 	// The model version
@@ -114,6 +66,8 @@ type Model struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	// The tenancy id of the model.
+	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
 	TestingDataset ModelTestingDatasetOutput `pulumi:"testingDataset"`
 	// When the model was created, as an RFC3339 datetime string.
@@ -144,9 +98,6 @@ func NewModel(ctx *pulumi.Context,
 	if args.ProjectId == nil {
 		return nil, errors.New("invalid value for required argument 'ProjectId'")
 	}
-	if args.TrainingDataset == nil {
-		return nil, errors.New("invalid value for required argument 'TrainingDataset'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Model
 	err := ctx.RegisterResource("oci:AiDocument/model:Model", name, args, &resource, opts...)
@@ -172,6 +123,8 @@ func GetModel(ctx *pulumi.Context,
 type modelState struct {
 	// (Updatable) The compartment identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+	ComponentModels []ModelComponentModel `pulumi:"componentModels"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
@@ -180,6 +133,8 @@ type modelState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Set to true when the model is created by using multiple key value extraction models.
+	IsComposedModel *bool `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode *bool `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
@@ -190,6 +145,8 @@ type modelState struct {
 	MaxTrainingTimeInHours *float64 `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics []ModelMetric `pulumi:"metrics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId *string `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType *string `pulumi:"modelType"`
 	// The model version
@@ -200,6 +157,8 @@ type modelState struct {
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The tenancy id of the model.
+	TenancyId *string `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
 	TestingDataset *ModelTestingDataset `pulumi:"testingDataset"`
 	// When the model was created, as an RFC3339 datetime string.
@@ -217,6 +176,8 @@ type modelState struct {
 type ModelState struct {
 	// (Updatable) The compartment identifier.
 	CompartmentId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+	ComponentModels ModelComponentModelArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) An optional description of the model.
@@ -225,6 +186,8 @@ type ModelState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// Set to true when the model is created by using multiple key value extraction models.
+	IsComposedModel pulumi.BoolPtrInput
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolPtrInput
 	// The collection of labels used to train the custom model.
@@ -235,6 +198,8 @@ type ModelState struct {
 	MaxTrainingTimeInHours pulumi.Float64PtrInput
 	// Trained Model Metrics.
 	Metrics ModelMetricArrayInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId pulumi.StringPtrInput
 	// The type of the Document model.
 	ModelType pulumi.StringPtrInput
 	// The model version
@@ -245,6 +210,8 @@ type ModelState struct {
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.MapInput
+	// The tenancy id of the model.
+	TenancyId pulumi.StringPtrInput
 	// The base entity which is the input for creating and training a model.
 	TestingDataset ModelTestingDatasetPtrInput
 	// When the model was created, as an RFC3339 datetime string.
@@ -266,6 +233,8 @@ func (ModelState) ElementType() reflect.Type {
 type modelArgs struct {
 	// (Updatable) The compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+	ComponentModels []ModelComponentModel `pulumi:"componentModels"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
@@ -278,6 +247,8 @@ type modelArgs struct {
 	IsQuickMode *bool `pulumi:"isQuickMode"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours *float64 `pulumi:"maxTrainingTimeInHours"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId *string `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType string `pulumi:"modelType"`
 	// The model version
@@ -287,7 +258,7 @@ type modelArgs struct {
 	// The base entity which is the input for creating and training a model.
 	TestingDataset *ModelTestingDataset `pulumi:"testingDataset"`
 	// The base entity which is the input for creating and training a model.
-	TrainingDataset ModelTrainingDataset `pulumi:"trainingDataset"`
+	TrainingDataset *ModelTrainingDataset `pulumi:"trainingDataset"`
 	// The base entity which is the input for creating and training a model.
 	ValidationDataset *ModelValidationDataset `pulumi:"validationDataset"`
 }
@@ -296,6 +267,8 @@ type modelArgs struct {
 type ModelArgs struct {
 	// (Updatable) The compartment identifier.
 	CompartmentId pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+	ComponentModels ModelComponentModelArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) An optional description of the model.
@@ -308,6 +281,8 @@ type ModelArgs struct {
 	IsQuickMode pulumi.BoolPtrInput
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours pulumi.Float64PtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+	ModelId pulumi.StringPtrInput
 	// The type of the Document model.
 	ModelType pulumi.StringInput
 	// The model version
@@ -317,7 +292,7 @@ type ModelArgs struct {
 	// The base entity which is the input for creating and training a model.
 	TestingDataset ModelTestingDatasetPtrInput
 	// The base entity which is the input for creating and training a model.
-	TrainingDataset ModelTrainingDatasetInput
+	TrainingDataset ModelTrainingDatasetPtrInput
 	// The base entity which is the input for creating and training a model.
 	ValidationDataset ModelValidationDatasetPtrInput
 }
@@ -414,6 +389,11 @@ func (o ModelOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+func (o ModelOutput) ComponentModels() ModelComponentModelArrayOutput {
+	return o.ApplyT(func(v *Model) ModelComponentModelArrayOutput { return v.ComponentModels }).(ModelComponentModelArrayOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 func (o ModelOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
@@ -432,6 +412,11 @@ func (o ModelOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 func (o ModelOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Set to true when the model is created by using multiple key value extraction models.
+func (o ModelOutput) IsComposedModel() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Model) pulumi.BoolOutput { return v.IsComposedModel }).(pulumi.BoolOutput)
 }
 
 // Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
@@ -459,6 +444,11 @@ func (o ModelOutput) Metrics() ModelMetricArrayOutput {
 	return o.ApplyT(func(v *Model) ModelMetricArrayOutput { return v.Metrics }).(ModelMetricArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+func (o ModelOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.ModelId }).(pulumi.StringPtrOutput)
+}
+
 // The type of the Document model.
 func (o ModelOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelType }).(pulumi.StringOutput)
@@ -482,6 +472,11 @@ func (o ModelOutput) State() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 func (o ModelOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The tenancy id of the model.
+func (o ModelOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.TenancyId }).(pulumi.StringOutput)
 }
 
 // The base entity which is the input for creating and training a model.

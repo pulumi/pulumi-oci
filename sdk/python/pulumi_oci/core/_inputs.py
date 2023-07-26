@@ -883,6 +883,8 @@ class ClusterNetworkInstancePoolArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
+                 instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
+                 instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
                  load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]]] = None,
                  placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -912,6 +914,10 @@ class ClusterNetworkInstancePoolArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if instance_display_name_formatter is not None:
+            pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+        if instance_hostname_formatter is not None:
+            pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         if load_balancers is not None:
             pulumi.set(__self__, "load_balancers", load_balancers)
         if placement_configurations is not None:
@@ -1004,6 +1010,24 @@ class ClusterNetworkInstancePoolArgs:
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="instanceDisplayNameFormatter")
+    def instance_display_name_formatter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "instance_display_name_formatter")
+
+    @instance_display_name_formatter.setter
+    def instance_display_name_formatter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_display_name_formatter", value)
+
+    @property
+    @pulumi.getter(name="instanceHostnameFormatter")
+    def instance_hostname_formatter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "instance_hostname_formatter")
+
+    @instance_hostname_formatter.setter
+    def instance_hostname_formatter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_hostname_formatter", value)
 
     @property
     @pulumi.getter(name="loadBalancers")

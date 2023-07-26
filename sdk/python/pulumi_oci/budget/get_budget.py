@@ -21,7 +21,7 @@ class GetBudgetResult:
     """
     A collection of values returned by getBudget.
     """
-    def __init__(__self__, actual_spend=None, alert_rule_count=None, amount=None, budget_id=None, budget_processing_period_start_offset=None, compartment_id=None, defined_tags=None, description=None, display_name=None, forecasted_spend=None, freeform_tags=None, id=None, processing_period_type=None, reset_period=None, state=None, target_compartment_id=None, target_type=None, targets=None, time_created=None, time_spend_computed=None, time_updated=None, version=None):
+    def __init__(__self__, actual_spend=None, alert_rule_count=None, amount=None, budget_id=None, budget_processing_period_start_offset=None, compartment_id=None, defined_tags=None, description=None, display_name=None, end_date=None, forecasted_spend=None, freeform_tags=None, id=None, processing_period_type=None, reset_period=None, start_date=None, state=None, target_compartment_id=None, target_type=None, targets=None, time_created=None, time_spend_computed=None, time_updated=None, version=None):
         if actual_spend and not isinstance(actual_spend, float):
             raise TypeError("Expected argument 'actual_spend' to be a float")
         pulumi.set(__self__, "actual_spend", actual_spend)
@@ -49,6 +49,9 @@ class GetBudgetResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if end_date and not isinstance(end_date, str):
+            raise TypeError("Expected argument 'end_date' to be a str")
+        pulumi.set(__self__, "end_date", end_date)
         if forecasted_spend and not isinstance(forecasted_spend, float):
             raise TypeError("Expected argument 'forecasted_spend' to be a float")
         pulumi.set(__self__, "forecasted_spend", forecasted_spend)
@@ -64,6 +67,9 @@ class GetBudgetResult:
         if reset_period and not isinstance(reset_period, str):
             raise TypeError("Expected argument 'reset_period' to be a str")
         pulumi.set(__self__, "reset_period", reset_period)
+        if start_date and not isinstance(start_date, str):
+            raise TypeError("Expected argument 'start_date' to be a str")
+        pulumi.set(__self__, "start_date", start_date)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -159,6 +165,14 @@ class GetBudgetResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> str:
+        """
+        The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "end_date")
+
+    @property
     @pulumi.getter(name="forecastedSpend")
     def forecasted_spend(self) -> float:
         """
@@ -186,7 +200,7 @@ class GetBudgetResult:
     @pulumi.getter(name="processingPeriodType")
     def processing_period_type(self) -> str:
         """
-        The type of the budget processing period. Valid values are INVOICE and MONTH.
+        The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         """
         return pulumi.get(self, "processing_period_type")
 
@@ -197,6 +211,14 @@ class GetBudgetResult:
         The reset period for the budget.
         """
         return pulumi.get(self, "reset_period")
+
+    @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> str:
+        """
+        The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        """
+        return pulumi.get(self, "start_date")
 
     @property
     @pulumi.getter
@@ -212,8 +234,8 @@ class GetBudgetResult:
         """
         This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         """
-        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
-        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
 
         return pulumi.get(self, "target_compartment_id")
 
@@ -281,11 +303,13 @@ class AwaitableGetBudgetResult(GetBudgetResult):
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
+            end_date=self.end_date,
             forecasted_spend=self.forecasted_spend,
             freeform_tags=self.freeform_tags,
             id=self.id,
             processing_period_type=self.processing_period_type,
             reset_period=self.reset_period,
+            start_date=self.start_date,
             state=self.state,
             target_compartment_id=self.target_compartment_id,
             target_type=self.target_type,
@@ -330,11 +354,13 @@ def get_budget(budget_id: Optional[str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        end_date=pulumi.get(__ret__, 'end_date'),
         forecasted_spend=pulumi.get(__ret__, 'forecasted_spend'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         processing_period_type=pulumi.get(__ret__, 'processing_period_type'),
         reset_period=pulumi.get(__ret__, 'reset_period'),
+        start_date=pulumi.get(__ret__, 'start_date'),
         state=pulumi.get(__ret__, 'state'),
         target_compartment_id=pulumi.get(__ret__, 'target_compartment_id'),
         target_type=pulumi.get(__ret__, 'target_type'),

@@ -14,56 +14,7 @@ namespace Pulumi.Oci.AiDocument
     /// 
     /// Create a new model.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testModel = new Oci.AiDocument.Model("testModel", new()
-    ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ModelType = @var.Model_model_type,
-    ///         ProjectId = oci_ai_document_project.Test_project.Id,
-    ///         TrainingDataset = new Oci.AiDocument.Inputs.ModelTrainingDatasetArgs
-    ///         {
-    ///             DatasetType = @var.Model_training_dataset_dataset_type,
-    ///             Bucket = @var.Model_training_dataset_bucket,
-    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///             Namespace = @var.Model_training_dataset_namespace,
-    ///             Object = @var.Model_training_dataset_object,
-    ///         },
-    ///         DefinedTags = @var.Model_defined_tags,
-    ///         Description = @var.Model_description,
-    ///         DisplayName = @var.Model_display_name,
-    ///         FreeformTags = @var.Model_freeform_tags,
-    ///         IsQuickMode = @var.Model_is_quick_mode,
-    ///         MaxTrainingTimeInHours = @var.Model_max_training_time_in_hours,
-    ///         ModelVersion = @var.Model_model_version,
-    ///         TestingDataset = new Oci.AiDocument.Inputs.ModelTestingDatasetArgs
-    ///         {
-    ///             DatasetType = @var.Model_testing_dataset_dataset_type,
-    ///             Bucket = @var.Model_testing_dataset_bucket,
-    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///             Namespace = @var.Model_testing_dataset_namespace,
-    ///             Object = @var.Model_testing_dataset_object,
-    ///         },
-    ///         ValidationDataset = new Oci.AiDocument.Inputs.ModelValidationDatasetArgs
-    ///         {
-    ///             DatasetType = @var.Model_validation_dataset_dataset_type,
-    ///             Bucket = @var.Model_validation_dataset_bucket,
-    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///             Namespace = @var.Model_validation_dataset_namespace,
-    ///             Object = @var.Model_validation_dataset_object,
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
+    ///   Updates the model metadata only selected path parameter.
     /// 
     /// ## Import
     /// 
@@ -81,6 +32,12 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+        /// </summary>
+        [Output("componentModels")]
+        public Output<ImmutableArray<Outputs.ModelComponentModel>> ComponentModels { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
@@ -105,6 +62,12 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Set to true when the model is created by using multiple key value extraction models.
+        /// </summary>
+        [Output("isComposedModel")]
+        public Output<bool> IsComposedModel { get; private set; } = null!;
 
         /// <summary>
         /// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
@@ -137,6 +100,12 @@ namespace Pulumi.Oci.AiDocument
         public Output<ImmutableArray<Outputs.ModelMetric>> Metrics { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        /// </summary>
+        [Output("modelId")]
+        public Output<string?> ModelId { get; private set; } = null!;
+
+        /// <summary>
         /// The type of the Document model.
         /// </summary>
         [Output("modelType")]
@@ -165,6 +134,12 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The tenancy id of the model.
+        /// </summary>
+        [Output("tenancyId")]
+        public Output<string> TenancyId { get; private set; } = null!;
 
         /// <summary>
         /// The base entity which is the input for creating and training a model.
@@ -254,6 +229,18 @@ namespace Pulumi.Oci.AiDocument
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("componentModels")]
+        private InputList<Inputs.ModelComponentModelArgs>? _componentModels;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+        /// </summary>
+        public InputList<Inputs.ModelComponentModelArgs> ComponentModels
+        {
+            get => _componentModels ?? (_componentModels = new InputList<Inputs.ModelComponentModelArgs>());
+            set => _componentModels = value;
+        }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -303,6 +290,12 @@ namespace Pulumi.Oci.AiDocument
         public Input<double>? MaxTrainingTimeInHours { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        /// </summary>
+        [Input("modelId")]
+        public Input<string>? ModelId { get; set; }
+
+        /// <summary>
         /// The type of the Document model.
         /// </summary>
         [Input("modelType", required: true)]
@@ -329,8 +322,8 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// The base entity which is the input for creating and training a model.
         /// </summary>
-        [Input("trainingDataset", required: true)]
-        public Input<Inputs.ModelTrainingDatasetArgs> TrainingDataset { get; set; } = null!;
+        [Input("trainingDataset")]
+        public Input<Inputs.ModelTrainingDatasetArgs>? TrainingDataset { get; set; }
 
         /// <summary>
         /// The base entity which is the input for creating and training a model.
@@ -351,6 +344,18 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("componentModels")]
+        private InputList<Inputs.ModelComponentModelGetArgs>? _componentModels;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+        /// </summary>
+        public InputList<Inputs.ModelComponentModelGetArgs> ComponentModels
+        {
+            get => _componentModels ?? (_componentModels = new InputList<Inputs.ModelComponentModelGetArgs>());
+            set => _componentModels = value;
+        }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -387,6 +392,12 @@ namespace Pulumi.Oci.AiDocument
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Set to true when the model is created by using multiple key value extraction models.
+        /// </summary>
+        [Input("isComposedModel")]
+        public Input<bool>? IsComposedModel { get; set; }
 
         /// <summary>
         /// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
@@ -431,6 +442,12 @@ namespace Pulumi.Oci.AiDocument
         }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        /// </summary>
+        [Input("modelId")]
+        public Input<string>? ModelId { get; set; }
+
+        /// <summary>
         /// The type of the Document model.
         /// </summary>
         [Input("modelType")]
@@ -465,6 +482,12 @@ namespace Pulumi.Oci.AiDocument
             get => _systemTags ?? (_systemTags = new InputMap<object>());
             set => _systemTags = value;
         }
+
+        /// <summary>
+        /// The tenancy id of the model.
+        /// </summary>
+        [Input("tenancyId")]
+        public Input<string>? TenancyId { get; set; }
 
         /// <summary>
         /// The base entity which is the input for creating and training a model.

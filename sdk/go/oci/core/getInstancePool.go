@@ -71,6 +71,10 @@ type LookupInstancePoolResult struct {
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
 	InstanceConfigurationId string `pulumi:"instanceConfigurationId"`
+	// A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+	InstanceDisplayNameFormatter string `pulumi:"instanceDisplayNameFormatter"`
+	// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+	InstanceHostnameFormatter string `pulumi:"instanceHostnameFormatter"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
 	InstancePoolId string `pulumi:"instancePoolId"`
 	// The load balancers attached to the instance pool.
@@ -155,6 +159,16 @@ func (o LookupInstancePoolResultOutput) Id() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
 func (o LookupInstancePoolResultOutput) InstanceConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.InstanceConfigurationId }).(pulumi.StringOutput)
+}
+
+// A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+func (o LookupInstancePoolResultOutput) InstanceDisplayNameFormatter() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.InstanceDisplayNameFormatter }).(pulumi.StringOutput)
+}
+
+// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+func (o LookupInstancePoolResultOutput) InstanceHostnameFormatter() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.InstanceHostnameFormatter }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.

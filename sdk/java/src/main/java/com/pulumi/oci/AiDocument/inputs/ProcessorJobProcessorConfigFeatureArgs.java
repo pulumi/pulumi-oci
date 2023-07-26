@@ -77,6 +77,21 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
         return Optional.ofNullable(this.modelId);
     }
 
+    /**
+     * The custom model tenancy ID when modelId represents aliasName.
+     * 
+     */
+    @Import(name="tenancyId")
+    private @Nullable Output<String> tenancyId;
+
+    /**
+     * @return The custom model tenancy ID when modelId represents aliasName.
+     * 
+     */
+    public Optional<Output<String>> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
+    }
+
     private ProcessorJobProcessorConfigFeatureArgs() {}
 
     private ProcessorJobProcessorConfigFeatureArgs(ProcessorJobProcessorConfigFeatureArgs $) {
@@ -84,6 +99,7 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
         this.generateSearchablePdf = $.generateSearchablePdf;
         this.maxResults = $.maxResults;
         this.modelId = $.modelId;
+        this.tenancyId = $.tenancyId;
     }
 
     public static Builder builder() {
@@ -186,6 +202,27 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
          */
         public Builder modelId(String modelId) {
             return modelId(Output.of(modelId));
+        }
+
+        /**
+         * @param tenancyId The custom model tenancy ID when modelId represents aliasName.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenancyId(@Nullable Output<String> tenancyId) {
+            $.tenancyId = tenancyId;
+            return this;
+        }
+
+        /**
+         * @param tenancyId The custom model tenancy ID when modelId represents aliasName.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenancyId(String tenancyId) {
+            return tenancyId(Output.of(tenancyId));
         }
 
         public ProcessorJobProcessorConfigFeatureArgs build() {

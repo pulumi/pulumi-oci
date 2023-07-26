@@ -490,6 +490,13 @@ export namespace AiDocument {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface ModelComponentModel {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+         */
+        modelId?: pulumi.Input<string>;
+    }
+
     export interface ModelMetric {
         /**
          * Summary of count of samples used during model training.
@@ -774,6 +781,10 @@ export namespace AiDocument {
          * The custom model ID.
          */
         modelId?: pulumi.Input<string>;
+        /**
+         * The custom model tenancy ID when modelId represents aliasName.
+         */
+        tenancyId?: pulumi.Input<string>;
     }
 }
 
@@ -10497,6 +10508,8 @@ export namespace Core {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
          */
         instanceConfigurationId: pulumi.Input<string>;
+        instanceDisplayNameFormatter?: pulumi.Input<string>;
+        instanceHostnameFormatter?: pulumi.Input<string>;
         /**
          * The load balancers attached to the instance pool.
          */

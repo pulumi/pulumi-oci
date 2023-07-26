@@ -59,6 +59,8 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         InstanceDisplayNameFormatter = @var.Instance_pool_instance_display_name_formatter,
+    ///         InstanceHostnameFormatter = @var.Instance_pool_instance_hostname_formatter,
     ///         LoadBalancers = new[]
     ///         {
     ///             new Oci.Core.Inputs.InstancePoolLoadBalancerArgs
@@ -120,6 +122,18 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("instanceConfigurationId")]
         public Output<string> InstanceConfigurationId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        /// </summary>
+        [Output("instanceDisplayNameFormatter")]
+        public Output<string> InstanceDisplayNameFormatter { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        /// </summary>
+        [Output("instanceHostnameFormatter")]
+        public Output<string> InstanceHostnameFormatter { get; private set; } = null!;
 
         /// <summary>
         /// The load balancers to attach to the instance pool.
@@ -245,6 +259,18 @@ namespace Pulumi.Oci.Core
         [Input("instanceConfigurationId", required: true)]
         public Input<string> InstanceConfigurationId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        /// </summary>
+        [Input("instanceDisplayNameFormatter")]
+        public Input<string>? InstanceDisplayNameFormatter { get; set; }
+
+        /// <summary>
+        /// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        /// </summary>
+        [Input("instanceHostnameFormatter")]
+        public Input<string>? InstanceHostnameFormatter { get; set; }
+
         [Input("loadBalancers")]
         private InputList<Inputs.InstancePoolLoadBalancerArgs>? _loadBalancers;
 
@@ -342,6 +368,18 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("instanceConfigurationId")]
         public Input<string>? InstanceConfigurationId { get; set; }
+
+        /// <summary>
+        /// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+        /// </summary>
+        [Input("instanceDisplayNameFormatter")]
+        public Input<string>? InstanceDisplayNameFormatter { get; set; }
+
+        /// <summary>
+        /// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        /// </summary>
+        [Input("instanceHostnameFormatter")]
+        public Input<string>? InstanceHostnameFormatter { get; set; }
 
         [Input("loadBalancers")]
         private InputList<Inputs.InstancePoolLoadBalancerGetArgs>? _loadBalancers;

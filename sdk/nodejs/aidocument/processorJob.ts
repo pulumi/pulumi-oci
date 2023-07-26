@@ -39,6 +39,7 @@ import * as utilities from "../utilities";
  *             generateSearchablePdf: _var.processor_job_processor_config_features_generate_searchable_pdf,
  *             maxResults: _var.processor_job_processor_config_features_max_results,
  *             modelId: oci_ai_document_model.test_model.id,
+ *             tenancyId: oci_identity_tenancy.test_tenancy.id,
  *         }],
  *         processorType: _var.processor_job_processor_config_processor_type,
  *         documentType: _var.processor_job_processor_config_document_type,
@@ -102,7 +103,7 @@ export class ProcessorJob extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * The Object Storage Location.
+     * The object storage location where to store analysis results.
      */
     public readonly outputLocation!: pulumi.Output<outputs.AiDocument.ProcessorJobOutputLocation>;
     /**
@@ -206,7 +207,7 @@ export interface ProcessorJobState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The Object Storage Location.
+     * The object storage location where to store analysis results.
      */
     outputLocation?: pulumi.Input<inputs.AiDocument.ProcessorJobOutputLocation>;
     /**
@@ -252,7 +253,7 @@ export interface ProcessorJobArgs {
      */
     inputLocation: pulumi.Input<inputs.AiDocument.ProcessorJobInputLocation>;
     /**
-     * The Object Storage Location.
+     * The object storage location where to store analysis results.
      */
     outputLocation: pulumi.Input<inputs.AiDocument.ProcessorJobOutputLocation>;
     /**

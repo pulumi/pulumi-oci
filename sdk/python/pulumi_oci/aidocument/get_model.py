@@ -22,10 +22,13 @@ class GetModelResult:
     """
     A collection of values returned by getModel.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_quick_mode=None, labels=None, lifecycle_details=None, max_training_time_in_hours=None, metrics=None, model_id=None, model_type=None, model_version=None, project_id=None, state=None, system_tags=None, testing_datasets=None, time_created=None, time_updated=None, trained_time_in_hours=None, training_datasets=None, validation_datasets=None):
+    def __init__(__self__, compartment_id=None, component_models=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_composed_model=None, is_quick_mode=None, labels=None, lifecycle_details=None, max_training_time_in_hours=None, metrics=None, model_id=None, model_type=None, model_version=None, project_id=None, state=None, system_tags=None, tenancy_id=None, testing_datasets=None, time_created=None, time_updated=None, trained_time_in_hours=None, training_datasets=None, validation_datasets=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if component_models and not isinstance(component_models, list):
+            raise TypeError("Expected argument 'component_models' to be a list")
+        pulumi.set(__self__, "component_models", component_models)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -41,6 +44,9 @@ class GetModelResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_composed_model and not isinstance(is_composed_model, bool):
+            raise TypeError("Expected argument 'is_composed_model' to be a bool")
+        pulumi.set(__self__, "is_composed_model", is_composed_model)
         if is_quick_mode and not isinstance(is_quick_mode, bool):
             raise TypeError("Expected argument 'is_quick_mode' to be a bool")
         pulumi.set(__self__, "is_quick_mode", is_quick_mode)
@@ -74,6 +80,9 @@ class GetModelResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if tenancy_id and not isinstance(tenancy_id, str):
+            raise TypeError("Expected argument 'tenancy_id' to be a str")
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
         if testing_datasets and not isinstance(testing_datasets, list):
             raise TypeError("Expected argument 'testing_datasets' to be a list")
         pulumi.set(__self__, "testing_datasets", testing_datasets)
@@ -100,6 +109,14 @@ class GetModelResult:
         The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="componentModels")
+    def component_models(self) -> Sequence['outputs.GetModelComponentModelResult']:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
+        """
+        return pulumi.get(self, "component_models")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -140,6 +157,14 @@ class GetModelResult:
         A unique identifier that is immutable after creation.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isComposedModel")
+    def is_composed_model(self) -> bool:
+        """
+        Set to true when the model is created by using multiple key value extraction models.
+        """
+        return pulumi.get(self, "is_composed_model")
 
     @property
     @pulumi.getter(name="isQuickMode")
@@ -184,6 +209,9 @@ class GetModelResult:
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
         return pulumi.get(self, "model_id")
 
     @property
@@ -225,6 +253,14 @@ class GetModelResult:
         Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> str:
+        """
+        The tenancy id of the model.
+        """
+        return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="testingDatasets")
@@ -282,11 +318,13 @@ class AwaitableGetModelResult(GetModelResult):
             yield self
         return GetModelResult(
             compartment_id=self.compartment_id,
+            component_models=self.component_models,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_composed_model=self.is_composed_model,
             is_quick_mode=self.is_quick_mode,
             labels=self.labels,
             lifecycle_details=self.lifecycle_details,
@@ -298,6 +336,7 @@ class AwaitableGetModelResult(GetModelResult):
             project_id=self.project_id,
             state=self.state,
             system_tags=self.system_tags,
+            tenancy_id=self.tenancy_id,
             testing_datasets=self.testing_datasets,
             time_created=self.time_created,
             time_updated=self.time_updated,
@@ -332,11 +371,13 @@ def get_model(model_id: Optional[str] = None,
 
     return AwaitableGetModelResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        component_models=pulumi.get(__ret__, 'component_models'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_composed_model=pulumi.get(__ret__, 'is_composed_model'),
         is_quick_mode=pulumi.get(__ret__, 'is_quick_mode'),
         labels=pulumi.get(__ret__, 'labels'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
@@ -348,6 +389,7 @@ def get_model(model_id: Optional[str] = None,
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         testing_datasets=pulumi.get(__ret__, 'testing_datasets'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),

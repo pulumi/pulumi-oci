@@ -31,6 +31,11 @@ public final class GetProcessorJobProcessorConfigFeature {
      * 
      */
     private String modelId;
+    /**
+     * @return The custom model tenancy ID when modelId represents aliasName.
+     * 
+     */
+    private String tenancyId;
 
     private GetProcessorJobProcessorConfigFeature() {}
     /**
@@ -61,6 +66,13 @@ public final class GetProcessorJobProcessorConfigFeature {
     public String modelId() {
         return this.modelId;
     }
+    /**
+     * @return The custom model tenancy ID when modelId represents aliasName.
+     * 
+     */
+    public String tenancyId() {
+        return this.tenancyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -75,6 +87,7 @@ public final class GetProcessorJobProcessorConfigFeature {
         private Boolean generateSearchablePdf;
         private Integer maxResults;
         private String modelId;
+        private String tenancyId;
         public Builder() {}
         public Builder(GetProcessorJobProcessorConfigFeature defaults) {
     	      Objects.requireNonNull(defaults);
@@ -82,6 +95,7 @@ public final class GetProcessorJobProcessorConfigFeature {
     	      this.generateSearchablePdf = defaults.generateSearchablePdf;
     	      this.maxResults = defaults.maxResults;
     	      this.modelId = defaults.modelId;
+    	      this.tenancyId = defaults.tenancyId;
         }
 
         @CustomType.Setter
@@ -104,12 +118,18 @@ public final class GetProcessorJobProcessorConfigFeature {
             this.modelId = Objects.requireNonNull(modelId);
             return this;
         }
+        @CustomType.Setter
+        public Builder tenancyId(String tenancyId) {
+            this.tenancyId = Objects.requireNonNull(tenancyId);
+            return this;
+        }
         public GetProcessorJobProcessorConfigFeature build() {
             final var o = new GetProcessorJobProcessorConfigFeature();
             o.featureType = featureType;
             o.generateSearchablePdf = generateSearchablePdf;
             o.maxResults = maxResults;
             o.modelId = modelId;
+            o.tenancyId = tenancyId;
             return o;
         }
     }

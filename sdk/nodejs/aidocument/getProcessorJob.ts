@@ -65,7 +65,7 @@ export interface GetProcessorJobResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * The Object Storage Location.
+     * The object storage location where to store analysis results.
      */
     readonly outputLocations: outputs.AiDocument.GetProcessorJobOutputLocation[];
     /**

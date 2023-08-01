@@ -19457,6 +19457,8 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  scan_listener_port_tls: int,
                  state: str,
                  time_created: str,
+                 time_database_ssl_certificate_expires: str,
+                 time_ords_certificate_expires: str,
                  time_zone: str,
                  total_container_databases: int,
                  vm_cluster_network_id: str):
@@ -19497,6 +19499,8 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param int scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time that the Autonomous VM cluster was created.
+        :param str time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
+        :param str time_ords_certificate_expires: The date and time of ORDS certificate expiration.
         :param str time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param int total_container_databases: The total number of Autonomous Container Databases that can be created.
         :param str vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -19536,6 +19540,8 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_database_ssl_certificate_expires", time_database_ssl_certificate_expires)
+        pulumi.set(__self__, "time_ords_certificate_expires", time_ords_certificate_expires)
         pulumi.set(__self__, "time_zone", time_zone)
         pulumi.set(__self__, "total_container_databases", total_container_databases)
         pulumi.set(__self__, "vm_cluster_network_id", vm_cluster_network_id)
@@ -19818,6 +19824,22 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         The date and time that the Autonomous VM cluster was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeDatabaseSslCertificateExpires")
+    def time_database_ssl_certificate_expires(self) -> str:
+        """
+        The date and time of Database SSL certificate expiration.
+        """
+        return pulumi.get(self, "time_database_ssl_certificate_expires")
+
+    @property
+    @pulumi.getter(name="timeOrdsCertificateExpires")
+    def time_ords_certificate_expires(self) -> str:
+        """
+        The date and time of ORDS certificate expiration.
+        """
+        return pulumi.get(self, "time_ords_certificate_expires")
 
     @property
     @pulumi.getter(name="timeZone")

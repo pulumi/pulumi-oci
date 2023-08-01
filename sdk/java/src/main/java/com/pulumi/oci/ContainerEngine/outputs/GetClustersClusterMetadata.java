@@ -35,6 +35,11 @@ public final class GetClustersClusterMetadata {
      */
     private String timeCreated;
     /**
+     * @return The time until which the cluster credential is valid.
+     * 
+     */
+    private String timeCredentialExpiration;
+    /**
      * @return The time the cluster was deleted.
      * 
      */
@@ -92,6 +97,13 @@ public final class GetClustersClusterMetadata {
         return this.timeCreated;
     }
     /**
+     * @return The time until which the cluster credential is valid.
+     * 
+     */
+    public String timeCredentialExpiration() {
+        return this.timeCredentialExpiration;
+    }
+    /**
      * @return The time the cluster was deleted.
      * 
      */
@@ -134,6 +146,7 @@ public final class GetClustersClusterMetadata {
         private String deletedByUserId;
         private String deletedByWorkRequestId;
         private String timeCreated;
+        private String timeCredentialExpiration;
         private String timeDeleted;
         private String timeUpdated;
         private String updatedByUserId;
@@ -146,6 +159,7 @@ public final class GetClustersClusterMetadata {
     	      this.deletedByUserId = defaults.deletedByUserId;
     	      this.deletedByWorkRequestId = defaults.deletedByWorkRequestId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeCredentialExpiration = defaults.timeCredentialExpiration;
     	      this.timeDeleted = defaults.timeDeleted;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.updatedByUserId = defaults.updatedByUserId;
@@ -178,6 +192,11 @@ public final class GetClustersClusterMetadata {
             return this;
         }
         @CustomType.Setter
+        public Builder timeCredentialExpiration(String timeCredentialExpiration) {
+            this.timeCredentialExpiration = Objects.requireNonNull(timeCredentialExpiration);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeDeleted(String timeDeleted) {
             this.timeDeleted = Objects.requireNonNull(timeDeleted);
             return this;
@@ -204,6 +223,7 @@ public final class GetClustersClusterMetadata {
             o.deletedByUserId = deletedByUserId;
             o.deletedByWorkRequestId = deletedByWorkRequestId;
             o.timeCreated = timeCreated;
+            o.timeCredentialExpiration = timeCredentialExpiration;
             o.timeDeleted = timeDeleted;
             o.timeUpdated = timeUpdated;
             o.updatedByUserId = updatedByUserId;

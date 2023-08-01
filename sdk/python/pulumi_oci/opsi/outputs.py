@@ -20,6 +20,7 @@ __all__ = [
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails',
+    'NewsReportContentTypes',
     'OpsiConfigurationConfigItem',
     'OpsiConfigurationConfigItemMetadata',
     'OpsiConfigurationConfigItemMetadataUnitDetail',
@@ -67,6 +68,11 @@ __all__ = [
     'GetImportableAgentEntityItemResult',
     'GetImportableComputeEntitiesItemResult',
     'GetImportableComputeEntityItemResult',
+    'GetNewsReportContentTypeResult',
+    'GetNewsReportsFilterResult',
+    'GetNewsReportsNewsReportCollectionResult',
+    'GetNewsReportsNewsReportCollectionItemResult',
+    'GetNewsReportsNewsReportCollectionItemContentTypeResult',
     'GetOperationsInsightsPrivateEndpointsFilterResult',
     'GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionResult',
     'GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult',
@@ -939,6 +945,41 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails(d
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
         return pulumi.get(self, "wallet_secret_id")
+
+
+@pulumi.output_type
+class NewsReportContentTypes(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "capacityPlanningResources":
+            suggest = "capacity_planning_resources"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NewsReportContentTypes. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NewsReportContentTypes.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NewsReportContentTypes.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capacity_planning_resources: Sequence[str]):
+        """
+        :param Sequence[str] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
+        """
+        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+
+    @property
+    @pulumi.getter(name="capacityPlanningResources")
+    def capacity_planning_resources(self) -> Sequence[str]:
+        """
+        (Updatable) Supported resources for capacity planning content type.
+        """
+        return pulumi.get(self, "capacity_planning_resources")
 
 
 @pulumi.output_type
@@ -4351,6 +4392,270 @@ class GetImportableComputeEntityItemResult(dict):
         Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
         return pulumi.get(self, "platform_type")
+
+
+@pulumi.output_type
+class GetNewsReportContentTypeResult(dict):
+    def __init__(__self__, *,
+                 capacity_planning_resources: Sequence[str]):
+        """
+        :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
+        """
+        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+
+    @property
+    @pulumi.getter(name="capacityPlanningResources")
+    def capacity_planning_resources(self) -> Sequence[str]:
+        """
+        Supported resources for capacity planning content type.
+        """
+        return pulumi.get(self, "capacity_planning_resources")
+
+
+@pulumi.output_type
+class GetNewsReportsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The news report name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The news report name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNewsReportsNewsReportCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNewsReportsNewsReportCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNewsReportsNewsReportCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNewsReportsNewsReportCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 content_types: Sequence['outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult'],
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 locale: str,
+                 name: str,
+                 news_frequency: str,
+                 ons_topic_id: str,
+                 state: str,
+                 status: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetNewsReportsNewsReportCollectionItemContentTypeArgs'] content_types: Content types that the news report can handle.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: The description of the news report.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param str locale: Language of the news report.
+        :param str name: The news report name.
+        :param str news_frequency: News report frequency.
+        :param str ons_topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
+        :param str state: Lifecycle states
+        :param str status: Resource Status
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
+        :param str time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "content_types", content_types)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locale", locale)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "news_frequency", news_frequency)
+        pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="contentTypes")
+    def content_types(self) -> Sequence['outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult']:
+        """
+        Content types that the news report can handle.
+        """
+        return pulumi.get(self, "content_types")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the news report.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locale(self) -> str:
+        """
+        Language of the news report.
+        """
+        return pulumi.get(self, "locale")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The news report name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="newsFrequency")
+    def news_frequency(self) -> str:
+        """
+        News report frequency.
+        """
+        return pulumi.get(self, "news_frequency")
+
+    @property
+    @pulumi.getter(name="onsTopicId")
+    def ons_topic_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
+        """
+        return pulumi.get(self, "ons_topic_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Lifecycle states
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Resource Status
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the the news report was first enabled. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the news report was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
+    def __init__(__self__, *,
+                 capacity_planning_resources: Sequence[str]):
+        """
+        :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
+        """
+        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+
+    @property
+    @pulumi.getter(name="capacityPlanningResources")
+    def capacity_planning_resources(self) -> Sequence[str]:
+        """
+        Supported resources for capacity planning content type.
+        """
+        return pulumi.get(self, "capacity_planning_resources")
 
 
 @pulumi.output_type

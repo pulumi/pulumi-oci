@@ -22,7 +22,7 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, ocpus_enabled=None, reclaimable_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, ocpus_enabled=None, reclaimable_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
@@ -131,6 +131,12 @@ class GetAutonomousVmClusterResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_database_ssl_certificate_expires and not isinstance(time_database_ssl_certificate_expires, str):
+            raise TypeError("Expected argument 'time_database_ssl_certificate_expires' to be a str")
+        pulumi.set(__self__, "time_database_ssl_certificate_expires", time_database_ssl_certificate_expires)
+        if time_ords_certificate_expires and not isinstance(time_ords_certificate_expires, str):
+            raise TypeError("Expected argument 'time_ords_certificate_expires' to be a str")
+        pulumi.set(__self__, "time_ords_certificate_expires", time_ords_certificate_expires)
         if time_zone and not isinstance(time_zone, str):
             raise TypeError("Expected argument 'time_zone' to be a str")
         pulumi.set(__self__, "time_zone", time_zone)
@@ -426,6 +432,22 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeDatabaseSslCertificateExpires")
+    def time_database_ssl_certificate_expires(self) -> str:
+        """
+        The date and time of Database SSL certificate expiration.
+        """
+        return pulumi.get(self, "time_database_ssl_certificate_expires")
+
+    @property
+    @pulumi.getter(name="timeOrdsCertificateExpires")
+    def time_ords_certificate_expires(self) -> str:
+        """
+        The date and time of ORDS certificate expiration.
+        """
+        return pulumi.get(self, "time_ords_certificate_expires")
+
+    @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> str:
         """
@@ -492,6 +514,8 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             scan_listener_port_tls=self.scan_listener_port_tls,
             state=self.state,
             time_created=self.time_created,
+            time_database_ssl_certificate_expires=self.time_database_ssl_certificate_expires,
+            time_ords_certificate_expires=self.time_ords_certificate_expires,
             time_zone=self.time_zone,
             total_container_databases=self.total_container_databases,
             vm_cluster_network_id=self.vm_cluster_network_id)
@@ -558,6 +582,8 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         scan_listener_port_tls=pulumi.get(__ret__, 'scan_listener_port_tls'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_database_ssl_certificate_expires=pulumi.get(__ret__, 'time_database_ssl_certificate_expires'),
+        time_ords_certificate_expires=pulumi.get(__ret__, 'time_ords_certificate_expires'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         total_container_databases=pulumi.get(__ret__, 'total_container_databases'),
         vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'))

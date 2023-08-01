@@ -45,6 +45,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AutonomousExadataInfrastructure{}
 	case "oci:Database/autonomousVmCluster:AutonomousVmCluster":
 		r = &AutonomousVmCluster{}
+	case "oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement":
+		r = &AutonomousVmClusterOrdsCertificateManagement{}
+	case "oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement":
+		r = &AutonomousVmClusterSslCertificateManagement{}
 	case "oci:Database/backup:Backup":
 		r = &Backup{}
 	case "oci:Database/backupCancelManagement:BackupCancelManagement":
@@ -202,6 +206,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/autonomousVmCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/autonomousVmClusterOrdsCertificateManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/autonomousVmClusterSslCertificateManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

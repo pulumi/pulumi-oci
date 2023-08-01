@@ -7,11 +7,14 @@ import typing
 # Export this package's modules as members:
 from .addon import *
 from .cluster import *
+from .cluster_complete_credential_rotation_management import *
+from .cluster_start_credential_rotation_management import *
 from .cluster_workload_mapping import *
 from .container_instance import *
 from .get_addon import *
 from .get_addon_options import *
 from .get_addons import *
+from .get_cluster_credential_rotation_status import *
 from .get_cluster_kube_config import *
 from .get_cluster_option import *
 from .get_cluster_workload_mapping import *

@@ -292,6 +292,18 @@ namespace Pulumi.Oci.Database
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
+        /// The date and time of Database SSL certificate expiration.
+        /// </summary>
+        [Output("timeDatabaseSslCertificateExpires")]
+        public Output<string> TimeDatabaseSslCertificateExpires { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time of ORDS certificate expiration.
+        /// </summary>
+        [Output("timeOrdsCertificateExpires")]
+        public Output<string> TimeOrdsCertificateExpires { get; private set; } = null!;
+
+        /// <summary>
         /// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         [Output("timeZone")]
@@ -741,6 +753,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The date and time of Database SSL certificate expiration.
+        /// </summary>
+        [Input("timeDatabaseSslCertificateExpires")]
+        public Input<string>? TimeDatabaseSslCertificateExpires { get; set; }
+
+        /// <summary>
+        /// The date and time of ORDS certificate expiration.
+        /// </summary>
+        [Input("timeOrdsCertificateExpires")]
+        public Input<string>? TimeOrdsCertificateExpires { get; set; }
 
         /// <summary>
         /// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).

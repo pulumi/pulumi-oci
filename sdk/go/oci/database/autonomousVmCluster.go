@@ -161,6 +161,10 @@ type AutonomousVmCluster struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires pulumi.StringOutput `pulumi:"timeDatabaseSslCertificateExpires"`
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires pulumi.StringOutput `pulumi:"timeOrdsCertificateExpires"`
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
 	// The total number of Autonomous Container Databases that can be created.
@@ -283,6 +287,10 @@ type autonomousVmClusterState struct {
 	State *string `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires *string `pulumi:"timeDatabaseSslCertificateExpires"`
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires *string `pulumi:"timeOrdsCertificateExpires"`
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
 	// The total number of Autonomous Container Databases that can be created.
@@ -364,6 +372,10 @@ type AutonomousVmClusterState struct {
 	State pulumi.StringPtrInput
 	// The date and time that the Autonomous VM cluster was created.
 	TimeCreated pulumi.StringPtrInput
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires pulumi.StringPtrInput
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires pulumi.StringPtrInput
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
 	// The total number of Autonomous Container Databases that can be created.
@@ -728,6 +740,16 @@ func (o AutonomousVmClusterOutput) State() pulumi.StringOutput {
 // The date and time that the Autonomous VM cluster was created.
 func (o AutonomousVmClusterOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of Database SSL certificate expiration.
+func (o AutonomousVmClusterOutput) TimeDatabaseSslCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.TimeDatabaseSslCertificateExpires }).(pulumi.StringOutput)
+}
+
+// The date and time of ORDS certificate expiration.
+func (o AutonomousVmClusterOutput) TimeOrdsCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.TimeOrdsCertificateExpires }).(pulumi.StringOutput)
 }
 
 // The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).

@@ -41,6 +41,10 @@ import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
 import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
 import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
+import com.pulumi.oci.Opsi.inputs.GetNewsReportPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
+import com.pulumi.oci.Opsi.inputs.GetNewsReportsPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
 import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
@@ -78,6 +82,8 @@ import com.pulumi.oci.Opsi.outputs.GetImportableAgentEntitiesResult;
 import com.pulumi.oci.Opsi.outputs.GetImportableAgentEntityResult;
 import com.pulumi.oci.Opsi.outputs.GetImportableComputeEntitiesResult;
 import com.pulumi.oci.Opsi.outputs.GetImportableComputeEntityResult;
+import com.pulumi.oci.Opsi.outputs.GetNewsReportResult;
+import com.pulumi.oci.Opsi.outputs.GetNewsReportsResult;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsPrivateEndpointResult;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsPrivateEndpointsResult;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehouseResourceUsageSummaryResult;
@@ -3377,6 +3383,420 @@ public final class OpsiFunctions {
      */
     public static CompletableFuture<GetImportableComputeEntityResult> getImportableComputeEntityPlain(GetImportableComputeEntityPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", TypeShape.of(GetImportableComputeEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of a news report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNewsReportResult> getNewsReport(GetNewsReportArgs args) {
+        return getNewsReport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of a news report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNewsReportResult> getNewsReportPlain(GetNewsReportPlainArgs args) {
+        return getNewsReportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of a news report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNewsReportResult> getNewsReport(GetNewsReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getNewsReport:getNewsReport", TypeShape.of(GetNewsReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of a news report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNewsReportResult> getNewsReportPlain(GetNewsReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getNewsReport:getNewsReport", TypeShape.of(GetNewsReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.news_report_compartment_id_in_subtree())
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .states(var_.news_report_state())
+     *             .statuses(var_.news_report_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNewsReportsResult> getNewsReports() {
+        return getNewsReports(GetNewsReportsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.news_report_compartment_id_in_subtree())
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .states(var_.news_report_state())
+     *             .statuses(var_.news_report_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNewsReportsResult> getNewsReportsPlain() {
+        return getNewsReportsPlain(GetNewsReportsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.news_report_compartment_id_in_subtree())
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .states(var_.news_report_state())
+     *             .statuses(var_.news_report_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNewsReportsResult> getNewsReports(GetNewsReportsArgs args) {
+        return getNewsReports(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.news_report_compartment_id_in_subtree())
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .states(var_.news_report_state())
+     *             .statuses(var_.news_report_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNewsReportsResult> getNewsReportsPlain(GetNewsReportsPlainArgs args) {
+        return getNewsReportsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.news_report_compartment_id_in_subtree())
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .states(var_.news_report_state())
+     *             .statuses(var_.news_report_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNewsReportsResult> getNewsReports(GetNewsReportsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getNewsReports:getNewsReports", TypeShape.of(GetNewsReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.news_report_compartment_id_in_subtree())
+     *             .newsReportId(oci_opsi_news_report.test_news_report().id())
+     *             .states(var_.news_report_state())
+     *             .statuses(var_.news_report_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNewsReportsResult> getNewsReportsPlain(GetNewsReportsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getNewsReports:getNewsReports", TypeShape.of(GetNewsReportsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.

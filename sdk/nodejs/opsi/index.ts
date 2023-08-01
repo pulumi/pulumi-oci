@@ -110,6 +110,16 @@ export const getImportableComputeEntity: typeof import("./getImportableComputeEn
 export const getImportableComputeEntityOutput: typeof import("./getImportableComputeEntity").getImportableComputeEntityOutput = null as any;
 utilities.lazyLoad(exports, ["getImportableComputeEntity","getImportableComputeEntityOutput"], () => require("./getImportableComputeEntity"));
 
+export { GetNewsReportArgs, GetNewsReportResult, GetNewsReportOutputArgs } from "./getNewsReport";
+export const getNewsReport: typeof import("./getNewsReport").getNewsReport = null as any;
+export const getNewsReportOutput: typeof import("./getNewsReport").getNewsReportOutput = null as any;
+utilities.lazyLoad(exports, ["getNewsReport","getNewsReportOutput"], () => require("./getNewsReport"));
+
+export { GetNewsReportsArgs, GetNewsReportsResult, GetNewsReportsOutputArgs } from "./getNewsReports";
+export const getNewsReports: typeof import("./getNewsReports").getNewsReports = null as any;
+export const getNewsReportsOutput: typeof import("./getNewsReports").getNewsReportsOutput = null as any;
+utilities.lazyLoad(exports, ["getNewsReports","getNewsReportsOutput"], () => require("./getNewsReports"));
+
 export { GetOperationsInsightsPrivateEndpointArgs, GetOperationsInsightsPrivateEndpointResult, GetOperationsInsightsPrivateEndpointOutputArgs } from "./getOperationsInsightsPrivateEndpoint";
 export const getOperationsInsightsPrivateEndpoint: typeof import("./getOperationsInsightsPrivateEndpoint").getOperationsInsightsPrivateEndpoint = null as any;
 export const getOperationsInsightsPrivateEndpointOutput: typeof import("./getOperationsInsightsPrivateEndpoint").getOperationsInsightsPrivateEndpointOutput = null as any;
@@ -165,6 +175,11 @@ export type HostInsight = import("./hostInsight").HostInsight;
 export const HostInsight: typeof import("./hostInsight").HostInsight = null as any;
 utilities.lazyLoad(exports, ["HostInsight"], () => require("./hostInsight"));
 
+export { NewsReportArgs, NewsReportState } from "./newsReport";
+export type NewsReport = import("./newsReport").NewsReport;
+export const NewsReport: typeof import("./newsReport").NewsReport = null as any;
+utilities.lazyLoad(exports, ["NewsReport"], () => require("./newsReport"));
+
 export { OperationsInsightsPrivateEndpointArgs, OperationsInsightsPrivateEndpointState } from "./operationsInsightsPrivateEndpoint";
 export type OperationsInsightsPrivateEndpoint = import("./operationsInsightsPrivateEndpoint").OperationsInsightsPrivateEndpoint;
 export const OperationsInsightsPrivateEndpoint: typeof import("./operationsInsightsPrivateEndpoint").OperationsInsightsPrivateEndpoint = null as any;
@@ -210,6 +225,8 @@ const _module = {
                 return new ExadataInsight(name, <any>undefined, { urn })
             case "oci:Opsi/hostInsight:HostInsight":
                 return new HostInsight(name, <any>undefined, { urn })
+            case "oci:Opsi/newsReport:NewsReport":
+                return new NewsReport(name, <any>undefined, { urn })
             case "oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint":
                 return new OperationsInsightsPrivateEndpoint(name, <any>undefined, { urn })
             case "oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse":
@@ -232,6 +249,7 @@ pulumi.runtime.registerResourceModule("oci", "Opsi/databaseInsight", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/enterpriseManagerBridge", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/exadataInsight", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/hostInsight", _module)
+pulumi.runtime.registerResourceModule("oci", "Opsi/newsReport", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/operationsInsightsPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/operationsInsightsWarehouse", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/operationsInsightsWarehouseDownloadWarehouseWallet", _module)

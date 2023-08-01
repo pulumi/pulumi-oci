@@ -530,6 +530,36 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * The date and time of Database SSL certificate expiration.
+     * 
+     */
+    @Import(name="timeDatabaseSslCertificateExpires")
+    private @Nullable Output<String> timeDatabaseSslCertificateExpires;
+
+    /**
+     * @return The date and time of Database SSL certificate expiration.
+     * 
+     */
+    public Optional<Output<String>> timeDatabaseSslCertificateExpires() {
+        return Optional.ofNullable(this.timeDatabaseSslCertificateExpires);
+    }
+
+    /**
+     * The date and time of ORDS certificate expiration.
+     * 
+     */
+    @Import(name="timeOrdsCertificateExpires")
+    private @Nullable Output<String> timeOrdsCertificateExpires;
+
+    /**
+     * @return The date and time of ORDS certificate expiration.
+     * 
+     */
+    public Optional<Output<String>> timeOrdsCertificateExpires() {
+        return Optional.ofNullable(this.timeOrdsCertificateExpires);
+    }
+
+    /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
@@ -617,6 +647,8 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.scanListenerPortTls = $.scanListenerPortTls;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
+        this.timeDatabaseSslCertificateExpires = $.timeDatabaseSslCertificateExpires;
+        this.timeOrdsCertificateExpires = $.timeOrdsCertificateExpires;
         this.timeZone = $.timeZone;
         this.totalContainerDatabases = $.totalContainerDatabases;
         this.vmClusterNetworkId = $.vmClusterNetworkId;
@@ -1374,6 +1406,48 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeDatabaseSslCertificateExpires The date and time of Database SSL certificate expiration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDatabaseSslCertificateExpires(@Nullable Output<String> timeDatabaseSslCertificateExpires) {
+            $.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+            return this;
+        }
+
+        /**
+         * @param timeDatabaseSslCertificateExpires The date and time of Database SSL certificate expiration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDatabaseSslCertificateExpires(String timeDatabaseSslCertificateExpires) {
+            return timeDatabaseSslCertificateExpires(Output.of(timeDatabaseSslCertificateExpires));
+        }
+
+        /**
+         * @param timeOrdsCertificateExpires The date and time of ORDS certificate expiration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOrdsCertificateExpires(@Nullable Output<String> timeOrdsCertificateExpires) {
+            $.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
+            return this;
+        }
+
+        /**
+         * @param timeOrdsCertificateExpires The date and time of ORDS certificate expiration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOrdsCertificateExpires(String timeOrdsCertificateExpires) {
+            return timeOrdsCertificateExpires(Output.of(timeOrdsCertificateExpires));
         }
 
         /**

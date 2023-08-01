@@ -91,6 +91,21 @@ public final class ClusterMetadataArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The time until which the cluster credential is valid.
+     * 
+     */
+    @Import(name="timeCredentialExpiration")
+    private @Nullable Output<String> timeCredentialExpiration;
+
+    /**
+     * @return The time until which the cluster credential is valid.
+     * 
+     */
+    public Optional<Output<String>> timeCredentialExpiration() {
+        return Optional.ofNullable(this.timeCredentialExpiration);
+    }
+
+    /**
      * The time the cluster was deleted.
      * 
      */
@@ -158,6 +173,7 @@ public final class ClusterMetadataArgs extends com.pulumi.resources.ResourceArgs
         this.deletedByUserId = $.deletedByUserId;
         this.deletedByWorkRequestId = $.deletedByWorkRequestId;
         this.timeCreated = $.timeCreated;
+        this.timeCredentialExpiration = $.timeCredentialExpiration;
         this.timeDeleted = $.timeDeleted;
         this.timeUpdated = $.timeUpdated;
         this.updatedByUserId = $.updatedByUserId;
@@ -285,6 +301,27 @@ public final class ClusterMetadataArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeCredentialExpiration The time until which the cluster credential is valid.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCredentialExpiration(@Nullable Output<String> timeCredentialExpiration) {
+            $.timeCredentialExpiration = timeCredentialExpiration;
+            return this;
+        }
+
+        /**
+         * @param timeCredentialExpiration The time until which the cluster credential is valid.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCredentialExpiration(String timeCredentialExpiration) {
+            return timeCredentialExpiration(Output.of(timeCredentialExpiration));
         }
 
         /**

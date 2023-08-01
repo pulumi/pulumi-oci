@@ -43,6 +43,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
+        /// The time until which the cluster credential is valid.
+        /// </summary>
+        [Input("timeCredentialExpiration")]
+        public Input<string>? TimeCredentialExpiration { get; set; }
+
+        /// <summary>
         /// The time the cluster was deleted.
         /// </summary>
         [Input("timeDeleted")]

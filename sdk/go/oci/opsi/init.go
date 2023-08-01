@@ -31,6 +31,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExadataInsight{}
 	case "oci:Opsi/hostInsight:HostInsight":
 		r = &HostInsight{}
+	case "oci:Opsi/newsReport:NewsReport":
+		r = &NewsReport{}
 	case "oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint":
 		r = &OperationsInsightsPrivateEndpoint{}
 	case "oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse":
@@ -79,6 +81,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Opsi/hostInsight",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Opsi/newsReport",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

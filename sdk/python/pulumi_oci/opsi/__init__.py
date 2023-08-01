@@ -26,6 +26,8 @@ from .get_importable_agent_entities import *
 from .get_importable_agent_entity import *
 from .get_importable_compute_entities import *
 from .get_importable_compute_entity import *
+from .get_news_report import *
+from .get_news_reports import *
 from .get_operations_insights_private_endpoint import *
 from .get_operations_insights_private_endpoints import *
 from .get_operations_insights_warehouse import *
@@ -37,6 +39,7 @@ from .get_opsi_configuration import *
 from .get_opsi_configuration_configuration_item import *
 from .get_opsi_configurations import *
 from .host_insight import *
+from .news_report import *
 from .operations_insights_private_endpoint import *
 from .operations_insights_warehouse import *
 from .operations_insights_warehouse_download_warehouse_wallet import *

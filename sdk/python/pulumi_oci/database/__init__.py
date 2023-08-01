@@ -17,6 +17,8 @@ from .autonomous_database_regional_wallet_management import *
 from .autonomous_database_wallet import *
 from .autonomous_exadata_infrastructure import *
 from .autonomous_vm_cluster import *
+from .autonomous_vm_cluster_ords_certificate_management import *
+from .autonomous_vm_cluster_ssl_certificate_management import *
 from .backup import *
 from .backup_cancel_management import *
 from .backup_destination import *

@@ -25,6 +25,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Addon{}
 	case "oci:ContainerEngine/cluster:Cluster":
 		r = &Cluster{}
+	case "oci:ContainerEngine/clusterCompleteCredentialRotationManagement:ClusterCompleteCredentialRotationManagement":
+		r = &ClusterCompleteCredentialRotationManagement{}
+	case "oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement":
+		r = &ClusterStartCredentialRotationManagement{}
 	case "oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping":
 		r = &ClusterWorkloadMapping{}
 	case "oci:ContainerEngine/containerInstance:ContainerInstance":
@@ -54,6 +58,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"ContainerEngine/cluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ContainerEngine/clusterCompleteCredentialRotationManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ContainerEngine/clusterStartCredentialRotationManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

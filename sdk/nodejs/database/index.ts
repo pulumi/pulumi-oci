@@ -65,6 +65,16 @@ export type AutonomousVmCluster = import("./autonomousVmCluster").AutonomousVmCl
 export const AutonomousVmCluster: typeof import("./autonomousVmCluster").AutonomousVmCluster = null as any;
 utilities.lazyLoad(exports, ["AutonomousVmCluster"], () => require("./autonomousVmCluster"));
 
+export { AutonomousVmClusterOrdsCertificateManagementArgs, AutonomousVmClusterOrdsCertificateManagementState } from "./autonomousVmClusterOrdsCertificateManagement";
+export type AutonomousVmClusterOrdsCertificateManagement = import("./autonomousVmClusterOrdsCertificateManagement").AutonomousVmClusterOrdsCertificateManagement;
+export const AutonomousVmClusterOrdsCertificateManagement: typeof import("./autonomousVmClusterOrdsCertificateManagement").AutonomousVmClusterOrdsCertificateManagement = null as any;
+utilities.lazyLoad(exports, ["AutonomousVmClusterOrdsCertificateManagement"], () => require("./autonomousVmClusterOrdsCertificateManagement"));
+
+export { AutonomousVmClusterSslCertificateManagementArgs, AutonomousVmClusterSslCertificateManagementState } from "./autonomousVmClusterSslCertificateManagement";
+export type AutonomousVmClusterSslCertificateManagement = import("./autonomousVmClusterSslCertificateManagement").AutonomousVmClusterSslCertificateManagement;
+export const AutonomousVmClusterSslCertificateManagement: typeof import("./autonomousVmClusterSslCertificateManagement").AutonomousVmClusterSslCertificateManagement = null as any;
+utilities.lazyLoad(exports, ["AutonomousVmClusterSslCertificateManagement"], () => require("./autonomousVmClusterSslCertificateManagement"));
+
 export { BackupArgs, BackupState } from "./backup";
 export type Backup = import("./backup").Backup;
 export const Backup: typeof import("./backup").Backup = null as any;
@@ -873,6 +883,10 @@ const _module = {
                 return new AutonomousExadataInfrastructure(name, <any>undefined, { urn })
             case "oci:Database/autonomousVmCluster:AutonomousVmCluster":
                 return new AutonomousVmCluster(name, <any>undefined, { urn })
+            case "oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement":
+                return new AutonomousVmClusterOrdsCertificateManagement(name, <any>undefined, { urn })
+            case "oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement":
+                return new AutonomousVmClusterSslCertificateManagement(name, <any>undefined, { urn })
             case "oci:Database/backup:Backup":
                 return new Backup(name, <any>undefined, { urn })
             case "oci:Database/backupCancelManagement:BackupCancelManagement":
@@ -976,6 +990,8 @@ pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseRegiona
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseWallet", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousExadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmClusterOrdsCertificateManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmClusterSslCertificateManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/backup", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/backupCancelManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/backupDestination", _module)

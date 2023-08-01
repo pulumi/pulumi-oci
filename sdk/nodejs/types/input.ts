@@ -9348,6 +9348,10 @@ export namespace ContainerEngine {
          */
         timeCreated?: pulumi.Input<string>;
         /**
+         * The time until which the cluster credential is valid.
+         */
+        timeCredentialExpiration?: pulumi.Input<string>;
+        /**
          * The time the cluster was deleted.
          */
         timeDeleted?: pulumi.Input<string>;
@@ -47983,6 +47987,24 @@ export namespace Opsi {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetNewsReportsFilter {
+        /**
+         * The news report name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNewsReportsFilterArgs {
+        /**
+         * The news report name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetOperationsInsightsPrivateEndpointsFilter {
         name: string;
         regex?: boolean;
@@ -48041,6 +48063,13 @@ export namespace Opsi {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface NewsReportContentTypes {
+        /**
+         * (Updatable) Supported resources for capacity planning content type.
+         */
+        capacityPlanningResources: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface OpsiConfigurationConfigItem {

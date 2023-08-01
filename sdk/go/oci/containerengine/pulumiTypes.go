@@ -894,6 +894,8 @@ type ClusterMetadata struct {
 	DeletedByWorkRequestId *string `pulumi:"deletedByWorkRequestId"`
 	// The time the cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The time until which the cluster credential is valid.
+	TimeCredentialExpiration *string `pulumi:"timeCredentialExpiration"`
 	// The time the cluster was deleted.
 	TimeDeleted *string `pulumi:"timeDeleted"`
 	// The time the cluster was updated.
@@ -926,6 +928,8 @@ type ClusterMetadataArgs struct {
 	DeletedByWorkRequestId pulumi.StringPtrInput `pulumi:"deletedByWorkRequestId"`
 	// The time the cluster was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The time until which the cluster credential is valid.
+	TimeCredentialExpiration pulumi.StringPtrInput `pulumi:"timeCredentialExpiration"`
 	// The time the cluster was deleted.
 	TimeDeleted pulumi.StringPtrInput `pulumi:"timeDeleted"`
 	// The time the cluster was updated.
@@ -1010,6 +1014,11 @@ func (o ClusterMetadataOutput) DeletedByWorkRequestId() pulumi.StringPtrOutput {
 // The time the cluster was created.
 func (o ClusterMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The time until which the cluster credential is valid.
+func (o ClusterMetadataOutput) TimeCredentialExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterMetadata) *string { return v.TimeCredentialExpiration }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was deleted.
@@ -9315,6 +9324,8 @@ type GetClustersClusterMetadata struct {
 	DeletedByWorkRequestId string `pulumi:"deletedByWorkRequestId"`
 	// The time the cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The time until which the cluster credential is valid.
+	TimeCredentialExpiration string `pulumi:"timeCredentialExpiration"`
 	// The time the cluster was deleted.
 	TimeDeleted string `pulumi:"timeDeleted"`
 	// The time the cluster was updated.
@@ -9347,6 +9358,8 @@ type GetClustersClusterMetadataArgs struct {
 	DeletedByWorkRequestId pulumi.StringInput `pulumi:"deletedByWorkRequestId"`
 	// The time the cluster was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time until which the cluster credential is valid.
+	TimeCredentialExpiration pulumi.StringInput `pulumi:"timeCredentialExpiration"`
 	// The time the cluster was deleted.
 	TimeDeleted pulumi.StringInput `pulumi:"timeDeleted"`
 	// The time the cluster was updated.
@@ -9431,6 +9444,11 @@ func (o GetClustersClusterMetadataOutput) DeletedByWorkRequestId() pulumi.String
 // The time the cluster was created.
 func (o GetClustersClusterMetadataOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time until which the cluster credential is valid.
+func (o GetClustersClusterMetadataOutput) TimeCredentialExpiration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.TimeCredentialExpiration }).(pulumi.StringOutput)
 }
 
 // The time the cluster was deleted.

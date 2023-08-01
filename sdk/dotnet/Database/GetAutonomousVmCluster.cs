@@ -248,6 +248,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time of Database SSL certificate expiration.
+        /// </summary>
+        public readonly string TimeDatabaseSslCertificateExpires;
+        /// <summary>
+        /// The date and time of ORDS certificate expiration.
+        /// </summary>
+        public readonly string TimeOrdsCertificateExpires;
+        /// <summary>
         /// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         public readonly string TimeZone;
@@ -334,6 +342,10 @@ namespace Pulumi.Oci.Database
 
             string timeCreated,
 
+            string timeDatabaseSslCertificateExpires,
+
+            string timeOrdsCertificateExpires,
+
             string timeZone,
 
             int totalContainerDatabases,
@@ -376,6 +388,8 @@ namespace Pulumi.Oci.Database
             ScanListenerPortTls = scanListenerPortTls;
             State = state;
             TimeCreated = timeCreated;
+            TimeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+            TimeOrdsCertificateExpires = timeOrdsCertificateExpires;
             TimeZone = timeZone;
             TotalContainerDatabases = totalContainerDatabases;
             VmClusterNetworkId = vmClusterNetworkId;

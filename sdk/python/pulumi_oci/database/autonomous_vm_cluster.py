@@ -366,6 +366,8 @@ class _AutonomousVmClusterState:
                  scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_database_ssl_certificate_expires: Optional[pulumi.Input[str]] = None,
+                 time_ords_certificate_expires: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  total_container_databases: Optional[pulumi.Input[int]] = None,
                  vm_cluster_network_id: Optional[pulumi.Input[str]] = None):
@@ -406,6 +408,8 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param pulumi.Input[str] state: The current state of the Autonomous VM cluster.
         :param pulumi.Input[str] time_created: The date and time that the Autonomous VM cluster was created.
+        :param pulumi.Input[str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
+        :param pulumi.Input[str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
         :param pulumi.Input[str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[int] total_container_databases: The total number of Autonomous Container Databases that can be created.
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -482,6 +486,10 @@ class _AutonomousVmClusterState:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_database_ssl_certificate_expires is not None:
+            pulumi.set(__self__, "time_database_ssl_certificate_expires", time_database_ssl_certificate_expires)
+        if time_ords_certificate_expires is not None:
+            pulumi.set(__self__, "time_ords_certificate_expires", time_ords_certificate_expires)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
         if total_container_databases is not None:
@@ -897,6 +905,30 @@ class _AutonomousVmClusterState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeDatabaseSslCertificateExpires")
+    def time_database_ssl_certificate_expires(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time of Database SSL certificate expiration.
+        """
+        return pulumi.get(self, "time_database_ssl_certificate_expires")
+
+    @time_database_ssl_certificate_expires.setter
+    def time_database_ssl_certificate_expires(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_database_ssl_certificate_expires", value)
+
+    @property
+    @pulumi.getter(name="timeOrdsCertificateExpires")
+    def time_ords_certificate_expires(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time of ORDS certificate expiration.
+        """
+        return pulumi.get(self, "time_ords_certificate_expires")
+
+    @time_ords_certificate_expires.setter
+    def time_ords_certificate_expires(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_ords_certificate_expires", value)
+
+    @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1192,6 +1224,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["reclaimable_cpus"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_database_ssl_certificate_expires"] = None
+            __props__.__dict__["time_ords_certificate_expires"] = None
         super(AutonomousVmCluster, __self__).__init__(
             'oci:Database/autonomousVmCluster:AutonomousVmCluster',
             resource_name,
@@ -1236,6 +1270,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
             scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_database_ssl_certificate_expires: Optional[pulumi.Input[str]] = None,
+            time_ords_certificate_expires: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None,
             total_container_databases: Optional[pulumi.Input[int]] = None,
             vm_cluster_network_id: Optional[pulumi.Input[str]] = None) -> 'AutonomousVmCluster':
@@ -1281,6 +1317,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param pulumi.Input[str] state: The current state of the Autonomous VM cluster.
         :param pulumi.Input[str] time_created: The date and time that the Autonomous VM cluster was created.
+        :param pulumi.Input[str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
+        :param pulumi.Input[str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
         :param pulumi.Input[str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[int] total_container_databases: The total number of Autonomous Container Databases that can be created.
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -1327,6 +1365,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_database_ssl_certificate_expires"] = time_database_ssl_certificate_expires
+        __props__.__dict__["time_ords_certificate_expires"] = time_ords_certificate_expires
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["total_container_databases"] = total_container_databases
         __props__.__dict__["vm_cluster_network_id"] = vm_cluster_network_id
@@ -1602,6 +1642,22 @@ class AutonomousVmCluster(pulumi.CustomResource):
         The date and time that the Autonomous VM cluster was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeDatabaseSslCertificateExpires")
+    def time_database_ssl_certificate_expires(self) -> pulumi.Output[str]:
+        """
+        The date and time of Database SSL certificate expiration.
+        """
+        return pulumi.get(self, "time_database_ssl_certificate_expires")
+
+    @property
+    @pulumi.getter(name="timeOrdsCertificateExpires")
+    def time_ords_certificate_expires(self) -> pulumi.Output[str]:
+        """
+        The date and time of ORDS certificate expiration.
+        """
+        return pulumi.get(self, "time_ords_certificate_expires")
 
     @property
     @pulumi.getter(name="timeZone")

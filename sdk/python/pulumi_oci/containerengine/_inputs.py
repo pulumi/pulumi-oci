@@ -376,6 +376,7 @@ class ClusterMetadataArgs:
                  deleted_by_user_id: Optional[pulumi.Input[str]] = None,
                  deleted_by_work_request_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_credential_expiration: Optional[pulumi.Input[str]] = None,
                  time_deleted: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  updated_by_user_id: Optional[pulumi.Input[str]] = None,
@@ -386,6 +387,7 @@ class ClusterMetadataArgs:
         :param pulumi.Input[str] deleted_by_user_id: The user who deleted the cluster.
         :param pulumi.Input[str] deleted_by_work_request_id: The OCID of the work request which deleted the cluster.
         :param pulumi.Input[str] time_created: The time the cluster was created.
+        :param pulumi.Input[str] time_credential_expiration: The time until which the cluster credential is valid.
         :param pulumi.Input[str] time_deleted: The time the cluster was deleted.
         :param pulumi.Input[str] time_updated: The time the cluster was updated.
         :param pulumi.Input[str] updated_by_user_id: The user who updated the cluster.
@@ -401,6 +403,8 @@ class ClusterMetadataArgs:
             pulumi.set(__self__, "deleted_by_work_request_id", deleted_by_work_request_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_credential_expiration is not None:
+            pulumi.set(__self__, "time_credential_expiration", time_credential_expiration)
         if time_deleted is not None:
             pulumi.set(__self__, "time_deleted", time_deleted)
         if time_updated is not None:
@@ -469,6 +473,18 @@ class ClusterMetadataArgs:
     @time_created.setter
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeCredentialExpiration")
+    def time_credential_expiration(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time until which the cluster credential is valid.
+        """
+        return pulumi.get(self, "time_credential_expiration")
+
+    @time_credential_expiration.setter
+    def time_credential_expiration(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_credential_expiration", value)
 
     @property
     @pulumi.getter(name="timeDeleted")

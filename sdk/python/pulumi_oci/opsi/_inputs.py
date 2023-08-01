@@ -19,6 +19,7 @@ __all__ = [
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs',
+    'NewsReportContentTypesArgs',
     'OpsiConfigurationConfigItemArgs',
     'OpsiConfigurationConfigItemMetadataArgs',
     'OpsiConfigurationConfigItemMetadataUnitDetailArgs',
@@ -29,6 +30,7 @@ __all__ = [
     'GetEnterpriseManagerBridgesFilterArgs',
     'GetExadataInsightsFilterArgs',
     'GetHostInsightsFilterArgs',
+    'GetNewsReportsFilterArgs',
     'GetOperationsInsightsPrivateEndpointsFilterArgs',
     'GetOperationsInsightsWarehouseUsersFilterArgs',
     'GetOperationsInsightsWarehousesFilterArgs',
@@ -865,6 +867,28 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
 
 
 @pulumi.input_type
+class NewsReportContentTypesArgs:
+    def __init__(__self__, *,
+                 capacity_planning_resources: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
+        """
+        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+
+    @property
+    @pulumi.getter(name="capacityPlanningResources")
+    def capacity_planning_resources(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) Supported resources for capacity planning content type.
+        """
+        return pulumi.get(self, "capacity_planning_resources")
+
+    @capacity_planning_resources.setter
+    def capacity_planning_resources(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "capacity_planning_resources", value)
+
+
+@pulumi.input_type
 class OpsiConfigurationConfigItemArgs:
     def __init__(__self__, *,
                  config_item_type: pulumi.Input[str],
@@ -1388,6 +1412,51 @@ class GetHostInsightsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetNewsReportsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The news report name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The news report name.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

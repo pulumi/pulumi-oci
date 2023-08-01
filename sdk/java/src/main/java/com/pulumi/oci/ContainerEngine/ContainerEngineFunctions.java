@@ -13,6 +13,8 @@ import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetAddonPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetAddonsPlainArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
@@ -46,6 +48,7 @@ import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsPlainArgs;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonsResult;
+import com.pulumi.oci.ContainerEngine.outputs.GetClusterCredentialRotationStatusResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterKubeConfigResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterWorkloadMappingResult;
@@ -540,6 +543,162 @@ public final class ContainerEngineFunctions {
      */
     public static CompletableFuture<GetAddonsResult> getAddonsPlain(GetAddonsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getAddons:getAddons", TypeShape.of(GetAddonsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster credential rotation status.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs args) {
+        return getClusterCredentialRotationStatus(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster credential rotation status.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatusPlain(GetClusterCredentialRotationStatusPlainArgs args) {
+        return getClusterCredentialRotationStatusPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster credential rotation status.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", TypeShape.of(GetClusterCredentialRotationStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster credential rotation status.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatusPlain(GetClusterCredentialRotationStatusPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", TypeShape.of(GetClusterCredentialRotationStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.

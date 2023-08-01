@@ -37,6 +37,11 @@ public final class ClusterMetadata {
      */
     private @Nullable String timeCreated;
     /**
+     * @return The time until which the cluster credential is valid.
+     * 
+     */
+    private @Nullable String timeCredentialExpiration;
+    /**
      * @return The time the cluster was deleted.
      * 
      */
@@ -94,6 +99,13 @@ public final class ClusterMetadata {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
+     * @return The time until which the cluster credential is valid.
+     * 
+     */
+    public Optional<String> timeCredentialExpiration() {
+        return Optional.ofNullable(this.timeCredentialExpiration);
+    }
+    /**
      * @return The time the cluster was deleted.
      * 
      */
@@ -136,6 +148,7 @@ public final class ClusterMetadata {
         private @Nullable String deletedByUserId;
         private @Nullable String deletedByWorkRequestId;
         private @Nullable String timeCreated;
+        private @Nullable String timeCredentialExpiration;
         private @Nullable String timeDeleted;
         private @Nullable String timeUpdated;
         private @Nullable String updatedByUserId;
@@ -148,6 +161,7 @@ public final class ClusterMetadata {
     	      this.deletedByUserId = defaults.deletedByUserId;
     	      this.deletedByWorkRequestId = defaults.deletedByWorkRequestId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeCredentialExpiration = defaults.timeCredentialExpiration;
     	      this.timeDeleted = defaults.timeDeleted;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.updatedByUserId = defaults.updatedByUserId;
@@ -180,6 +194,11 @@ public final class ClusterMetadata {
             return this;
         }
         @CustomType.Setter
+        public Builder timeCredentialExpiration(@Nullable String timeCredentialExpiration) {
+            this.timeCredentialExpiration = timeCredentialExpiration;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeDeleted(@Nullable String timeDeleted) {
             this.timeDeleted = timeDeleted;
             return this;
@@ -206,6 +225,7 @@ public final class ClusterMetadata {
             o.deletedByUserId = deletedByUserId;
             o.deletedByWorkRequestId = deletedByWorkRequestId;
             o.timeCreated = timeCreated;
+            o.timeCredentialExpiration = timeCredentialExpiration;
             o.timeDeleted = timeDeleted;
             o.timeUpdated = timeUpdated;
             o.updatedByUserId = updatedByUserId;

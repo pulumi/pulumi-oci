@@ -15,6 +15,16 @@ export type Cluster = import("./cluster").Cluster;
 export const Cluster: typeof import("./cluster").Cluster = null as any;
 utilities.lazyLoad(exports, ["Cluster"], () => require("./cluster"));
 
+export { ClusterCompleteCredentialRotationManagementArgs, ClusterCompleteCredentialRotationManagementState } from "./clusterCompleteCredentialRotationManagement";
+export type ClusterCompleteCredentialRotationManagement = import("./clusterCompleteCredentialRotationManagement").ClusterCompleteCredentialRotationManagement;
+export const ClusterCompleteCredentialRotationManagement: typeof import("./clusterCompleteCredentialRotationManagement").ClusterCompleteCredentialRotationManagement = null as any;
+utilities.lazyLoad(exports, ["ClusterCompleteCredentialRotationManagement"], () => require("./clusterCompleteCredentialRotationManagement"));
+
+export { ClusterStartCredentialRotationManagementArgs, ClusterStartCredentialRotationManagementState } from "./clusterStartCredentialRotationManagement";
+export type ClusterStartCredentialRotationManagement = import("./clusterStartCredentialRotationManagement").ClusterStartCredentialRotationManagement;
+export const ClusterStartCredentialRotationManagement: typeof import("./clusterStartCredentialRotationManagement").ClusterStartCredentialRotationManagement = null as any;
+utilities.lazyLoad(exports, ["ClusterStartCredentialRotationManagement"], () => require("./clusterStartCredentialRotationManagement"));
+
 export { ClusterWorkloadMappingArgs, ClusterWorkloadMappingState } from "./clusterWorkloadMapping";
 export type ClusterWorkloadMapping = import("./clusterWorkloadMapping").ClusterWorkloadMapping;
 export const ClusterWorkloadMapping: typeof import("./clusterWorkloadMapping").ClusterWorkloadMapping = null as any;
@@ -39,6 +49,11 @@ export { GetAddonsArgs, GetAddonsResult, GetAddonsOutputArgs } from "./getAddons
 export const getAddons: typeof import("./getAddons").getAddons = null as any;
 export const getAddonsOutput: typeof import("./getAddons").getAddonsOutput = null as any;
 utilities.lazyLoad(exports, ["getAddons","getAddonsOutput"], () => require("./getAddons"));
+
+export { GetClusterCredentialRotationStatusArgs, GetClusterCredentialRotationStatusResult, GetClusterCredentialRotationStatusOutputArgs } from "./getClusterCredentialRotationStatus";
+export const getClusterCredentialRotationStatus: typeof import("./getClusterCredentialRotationStatus").getClusterCredentialRotationStatus = null as any;
+export const getClusterCredentialRotationStatusOutput: typeof import("./getClusterCredentialRotationStatus").getClusterCredentialRotationStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterCredentialRotationStatus","getClusterCredentialRotationStatusOutput"], () => require("./getClusterCredentialRotationStatus"));
 
 export { GetClusterKubeConfigArgs, GetClusterKubeConfigResult, GetClusterKubeConfigOutputArgs } from "./getClusterKubeConfig";
 export const getClusterKubeConfig: typeof import("./getClusterKubeConfig").getClusterKubeConfig = null as any;
@@ -134,6 +149,10 @@ const _module = {
                 return new Addon(name, <any>undefined, { urn })
             case "oci:ContainerEngine/cluster:Cluster":
                 return new Cluster(name, <any>undefined, { urn })
+            case "oci:ContainerEngine/clusterCompleteCredentialRotationManagement:ClusterCompleteCredentialRotationManagement":
+                return new ClusterCompleteCredentialRotationManagement(name, <any>undefined, { urn })
+            case "oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement":
+                return new ClusterStartCredentialRotationManagement(name, <any>undefined, { urn })
             case "oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping":
                 return new ClusterWorkloadMapping(name, <any>undefined, { urn })
             case "oci:ContainerEngine/containerInstance:ContainerInstance":
@@ -149,6 +168,8 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/addon", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/cluster", _module)
+pulumi.runtime.registerResourceModule("oci", "ContainerEngine/clusterCompleteCredentialRotationManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "ContainerEngine/clusterStartCredentialRotationManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/clusterWorkloadMapping", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/containerInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/nodePool", _module)

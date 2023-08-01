@@ -34,6 +34,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The time until which the cluster credential is valid.
+        /// </summary>
+        public readonly string TimeCredentialExpiration;
+        /// <summary>
         /// The time the cluster was deleted.
         /// </summary>
         public readonly string TimeDeleted;
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string timeCreated,
 
+            string timeCredentialExpiration,
+
             string timeDeleted,
 
             string timeUpdated,
@@ -75,6 +81,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             DeletedByUserId = deletedByUserId;
             DeletedByWorkRequestId = deletedByWorkRequestId;
             TimeCreated = timeCreated;
+            TimeCredentialExpiration = timeCredentialExpiration;
             TimeDeleted = timeDeleted;
             TimeUpdated = timeUpdated;
             UpdatedByUserId = updatedByUserId;

@@ -130,6 +130,10 @@ type LookupAutonomousVmClusterResult struct {
 	State string `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires string `pulumi:"timeDatabaseSslCertificateExpires"`
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires string `pulumi:"timeOrdsCertificateExpires"`
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone string `pulumi:"timeZone"`
 	// The total number of Autonomous Container Databases that can be created.
@@ -358,6 +362,16 @@ func (o LookupAutonomousVmClusterResultOutput) State() pulumi.StringOutput {
 // The date and time that the Autonomous VM cluster was created.
 func (o LookupAutonomousVmClusterResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of Database SSL certificate expiration.
+func (o LookupAutonomousVmClusterResultOutput) TimeDatabaseSslCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.TimeDatabaseSslCertificateExpires }).(pulumi.StringOutput)
+}
+
+// The date and time of ORDS certificate expiration.
+func (o LookupAutonomousVmClusterResultOutput) TimeOrdsCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.TimeOrdsCertificateExpires }).(pulumi.StringOutput)
 }
 
 // The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).

@@ -185,6 +185,14 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly timeCreated: string;
     /**
+     * The date and time of Database SSL certificate expiration.
+     */
+    readonly timeDatabaseSslCertificateExpires: string;
+    /**
+     * The date and time of ORDS certificate expiration.
+     */
+    readonly timeOrdsCertificateExpires: string;
+    /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     readonly timeZone: string;

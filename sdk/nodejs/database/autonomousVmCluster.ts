@@ -226,6 +226,14 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The date and time of Database SSL certificate expiration.
+     */
+    public /*out*/ readonly timeDatabaseSslCertificateExpires!: pulumi.Output<string>;
+    /**
+     * The date and time of ORDS certificate expiration.
+     */
+    public /*out*/ readonly timeOrdsCertificateExpires!: pulumi.Output<string>;
+    /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     public readonly timeZone!: pulumi.Output<string>;
@@ -289,6 +297,8 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["scanListenerPortTls"] = state ? state.scanListenerPortTls : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeDatabaseSslCertificateExpires"] = state ? state.timeDatabaseSslCertificateExpires : undefined;
+            resourceInputs["timeOrdsCertificateExpires"] = state ? state.timeOrdsCertificateExpires : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
             resourceInputs["totalContainerDatabases"] = state ? state.totalContainerDatabases : undefined;
             resourceInputs["vmClusterNetworkId"] = state ? state.vmClusterNetworkId : undefined;
@@ -343,6 +353,8 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["reclaimableCpus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeDatabaseSslCertificateExpires"] = undefined /*out*/;
+            resourceInputs["timeOrdsCertificateExpires"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutonomousVmCluster.__pulumiType, name, resourceInputs, opts);
@@ -488,6 +500,14 @@ export interface AutonomousVmClusterState {
      * The date and time that the Autonomous VM cluster was created.
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The date and time of Database SSL certificate expiration.
+     */
+    timeDatabaseSslCertificateExpires?: pulumi.Input<string>;
+    /**
+     * The date and time of ORDS certificate expiration.
+     */
+    timeOrdsCertificateExpires?: pulumi.Input<string>;
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */

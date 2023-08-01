@@ -1683,6 +1683,143 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	}).(pulumi.StringPtrOutput)
 }
 
+type NewsReportContentTypes struct {
+	// (Updatable) Supported resources for capacity planning content type.
+	CapacityPlanningResources []string `pulumi:"capacityPlanningResources"`
+}
+
+// NewsReportContentTypesInput is an input type that accepts NewsReportContentTypesArgs and NewsReportContentTypesOutput values.
+// You can construct a concrete instance of `NewsReportContentTypesInput` via:
+//
+//	NewsReportContentTypesArgs{...}
+type NewsReportContentTypesInput interface {
+	pulumi.Input
+
+	ToNewsReportContentTypesOutput() NewsReportContentTypesOutput
+	ToNewsReportContentTypesOutputWithContext(context.Context) NewsReportContentTypesOutput
+}
+
+type NewsReportContentTypesArgs struct {
+	// (Updatable) Supported resources for capacity planning content type.
+	CapacityPlanningResources pulumi.StringArrayInput `pulumi:"capacityPlanningResources"`
+}
+
+func (NewsReportContentTypesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NewsReportContentTypes)(nil)).Elem()
+}
+
+func (i NewsReportContentTypesArgs) ToNewsReportContentTypesOutput() NewsReportContentTypesOutput {
+	return i.ToNewsReportContentTypesOutputWithContext(context.Background())
+}
+
+func (i NewsReportContentTypesArgs) ToNewsReportContentTypesOutputWithContext(ctx context.Context) NewsReportContentTypesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NewsReportContentTypesOutput)
+}
+
+func (i NewsReportContentTypesArgs) ToNewsReportContentTypesPtrOutput() NewsReportContentTypesPtrOutput {
+	return i.ToNewsReportContentTypesPtrOutputWithContext(context.Background())
+}
+
+func (i NewsReportContentTypesArgs) ToNewsReportContentTypesPtrOutputWithContext(ctx context.Context) NewsReportContentTypesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NewsReportContentTypesOutput).ToNewsReportContentTypesPtrOutputWithContext(ctx)
+}
+
+// NewsReportContentTypesPtrInput is an input type that accepts NewsReportContentTypesArgs, NewsReportContentTypesPtr and NewsReportContentTypesPtrOutput values.
+// You can construct a concrete instance of `NewsReportContentTypesPtrInput` via:
+//
+//	        NewsReportContentTypesArgs{...}
+//
+//	or:
+//
+//	        nil
+type NewsReportContentTypesPtrInput interface {
+	pulumi.Input
+
+	ToNewsReportContentTypesPtrOutput() NewsReportContentTypesPtrOutput
+	ToNewsReportContentTypesPtrOutputWithContext(context.Context) NewsReportContentTypesPtrOutput
+}
+
+type newsReportContentTypesPtrType NewsReportContentTypesArgs
+
+func NewsReportContentTypesPtr(v *NewsReportContentTypesArgs) NewsReportContentTypesPtrInput {
+	return (*newsReportContentTypesPtrType)(v)
+}
+
+func (*newsReportContentTypesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NewsReportContentTypes)(nil)).Elem()
+}
+
+func (i *newsReportContentTypesPtrType) ToNewsReportContentTypesPtrOutput() NewsReportContentTypesPtrOutput {
+	return i.ToNewsReportContentTypesPtrOutputWithContext(context.Background())
+}
+
+func (i *newsReportContentTypesPtrType) ToNewsReportContentTypesPtrOutputWithContext(ctx context.Context) NewsReportContentTypesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NewsReportContentTypesPtrOutput)
+}
+
+type NewsReportContentTypesOutput struct{ *pulumi.OutputState }
+
+func (NewsReportContentTypesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NewsReportContentTypes)(nil)).Elem()
+}
+
+func (o NewsReportContentTypesOutput) ToNewsReportContentTypesOutput() NewsReportContentTypesOutput {
+	return o
+}
+
+func (o NewsReportContentTypesOutput) ToNewsReportContentTypesOutputWithContext(ctx context.Context) NewsReportContentTypesOutput {
+	return o
+}
+
+func (o NewsReportContentTypesOutput) ToNewsReportContentTypesPtrOutput() NewsReportContentTypesPtrOutput {
+	return o.ToNewsReportContentTypesPtrOutputWithContext(context.Background())
+}
+
+func (o NewsReportContentTypesOutput) ToNewsReportContentTypesPtrOutputWithContext(ctx context.Context) NewsReportContentTypesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NewsReportContentTypes) *NewsReportContentTypes {
+		return &v
+	}).(NewsReportContentTypesPtrOutput)
+}
+
+// (Updatable) Supported resources for capacity planning content type.
+func (o NewsReportContentTypesOutput) CapacityPlanningResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.CapacityPlanningResources }).(pulumi.StringArrayOutput)
+}
+
+type NewsReportContentTypesPtrOutput struct{ *pulumi.OutputState }
+
+func (NewsReportContentTypesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NewsReportContentTypes)(nil)).Elem()
+}
+
+func (o NewsReportContentTypesPtrOutput) ToNewsReportContentTypesPtrOutput() NewsReportContentTypesPtrOutput {
+	return o
+}
+
+func (o NewsReportContentTypesPtrOutput) ToNewsReportContentTypesPtrOutputWithContext(ctx context.Context) NewsReportContentTypesPtrOutput {
+	return o
+}
+
+func (o NewsReportContentTypesPtrOutput) Elem() NewsReportContentTypesOutput {
+	return o.ApplyT(func(v *NewsReportContentTypes) NewsReportContentTypes {
+		if v != nil {
+			return *v
+		}
+		var ret NewsReportContentTypes
+		return ret
+	}).(NewsReportContentTypesOutput)
+}
+
+// (Updatable) Supported resources for capacity planning content type.
+func (o NewsReportContentTypesPtrOutput) CapacityPlanningResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NewsReportContentTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityPlanningResources
+	}).(pulumi.StringArrayOutput)
+}
+
 type OpsiConfigurationConfigItem struct {
 	// List of contexts in Operations Insights where this configuration item is applicable.
 	ApplicableContexts []string `pulumi:"applicableContexts"`
@@ -8492,6 +8629,637 @@ func (o GetImportableComputeEntityItemArrayOutput) Index(i pulumi.IntInput) GetI
 	}).(GetImportableComputeEntityItemOutput)
 }
 
+type GetNewsReportContentType struct {
+	// Supported resources for capacity planning content type.
+	CapacityPlanningResources []string `pulumi:"capacityPlanningResources"`
+}
+
+// GetNewsReportContentTypeInput is an input type that accepts GetNewsReportContentTypeArgs and GetNewsReportContentTypeOutput values.
+// You can construct a concrete instance of `GetNewsReportContentTypeInput` via:
+//
+//	GetNewsReportContentTypeArgs{...}
+type GetNewsReportContentTypeInput interface {
+	pulumi.Input
+
+	ToGetNewsReportContentTypeOutput() GetNewsReportContentTypeOutput
+	ToGetNewsReportContentTypeOutputWithContext(context.Context) GetNewsReportContentTypeOutput
+}
+
+type GetNewsReportContentTypeArgs struct {
+	// Supported resources for capacity planning content type.
+	CapacityPlanningResources pulumi.StringArrayInput `pulumi:"capacityPlanningResources"`
+}
+
+func (GetNewsReportContentTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportContentType)(nil)).Elem()
+}
+
+func (i GetNewsReportContentTypeArgs) ToGetNewsReportContentTypeOutput() GetNewsReportContentTypeOutput {
+	return i.ToGetNewsReportContentTypeOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportContentTypeArgs) ToGetNewsReportContentTypeOutputWithContext(ctx context.Context) GetNewsReportContentTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportContentTypeOutput)
+}
+
+// GetNewsReportContentTypeArrayInput is an input type that accepts GetNewsReportContentTypeArray and GetNewsReportContentTypeArrayOutput values.
+// You can construct a concrete instance of `GetNewsReportContentTypeArrayInput` via:
+//
+//	GetNewsReportContentTypeArray{ GetNewsReportContentTypeArgs{...} }
+type GetNewsReportContentTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetNewsReportContentTypeArrayOutput() GetNewsReportContentTypeArrayOutput
+	ToGetNewsReportContentTypeArrayOutputWithContext(context.Context) GetNewsReportContentTypeArrayOutput
+}
+
+type GetNewsReportContentTypeArray []GetNewsReportContentTypeInput
+
+func (GetNewsReportContentTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportContentType)(nil)).Elem()
+}
+
+func (i GetNewsReportContentTypeArray) ToGetNewsReportContentTypeArrayOutput() GetNewsReportContentTypeArrayOutput {
+	return i.ToGetNewsReportContentTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportContentTypeArray) ToGetNewsReportContentTypeArrayOutputWithContext(ctx context.Context) GetNewsReportContentTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportContentTypeArrayOutput)
+}
+
+type GetNewsReportContentTypeOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportContentTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportContentType)(nil)).Elem()
+}
+
+func (o GetNewsReportContentTypeOutput) ToGetNewsReportContentTypeOutput() GetNewsReportContentTypeOutput {
+	return o
+}
+
+func (o GetNewsReportContentTypeOutput) ToGetNewsReportContentTypeOutputWithContext(ctx context.Context) GetNewsReportContentTypeOutput {
+	return o
+}
+
+// Supported resources for capacity planning content type.
+func (o GetNewsReportContentTypeOutput) CapacityPlanningResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportContentType) []string { return v.CapacityPlanningResources }).(pulumi.StringArrayOutput)
+}
+
+type GetNewsReportContentTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportContentTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportContentType)(nil)).Elem()
+}
+
+func (o GetNewsReportContentTypeArrayOutput) ToGetNewsReportContentTypeArrayOutput() GetNewsReportContentTypeArrayOutput {
+	return o
+}
+
+func (o GetNewsReportContentTypeArrayOutput) ToGetNewsReportContentTypeArrayOutputWithContext(ctx context.Context) GetNewsReportContentTypeArrayOutput {
+	return o
+}
+
+func (o GetNewsReportContentTypeArrayOutput) Index(i pulumi.IntInput) GetNewsReportContentTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNewsReportContentType {
+		return vs[0].([]GetNewsReportContentType)[vs[1].(int)]
+	}).(GetNewsReportContentTypeOutput)
+}
+
+type GetNewsReportsFilter struct {
+	// The news report name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNewsReportsFilterInput is an input type that accepts GetNewsReportsFilterArgs and GetNewsReportsFilterOutput values.
+// You can construct a concrete instance of `GetNewsReportsFilterInput` via:
+//
+//	GetNewsReportsFilterArgs{...}
+type GetNewsReportsFilterInput interface {
+	pulumi.Input
+
+	ToGetNewsReportsFilterOutput() GetNewsReportsFilterOutput
+	ToGetNewsReportsFilterOutputWithContext(context.Context) GetNewsReportsFilterOutput
+}
+
+type GetNewsReportsFilterArgs struct {
+	// The news report name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNewsReportsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportsFilter)(nil)).Elem()
+}
+
+func (i GetNewsReportsFilterArgs) ToGetNewsReportsFilterOutput() GetNewsReportsFilterOutput {
+	return i.ToGetNewsReportsFilterOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportsFilterArgs) ToGetNewsReportsFilterOutputWithContext(ctx context.Context) GetNewsReportsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsFilterOutput)
+}
+
+// GetNewsReportsFilterArrayInput is an input type that accepts GetNewsReportsFilterArray and GetNewsReportsFilterArrayOutput values.
+// You can construct a concrete instance of `GetNewsReportsFilterArrayInput` via:
+//
+//	GetNewsReportsFilterArray{ GetNewsReportsFilterArgs{...} }
+type GetNewsReportsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNewsReportsFilterArrayOutput() GetNewsReportsFilterArrayOutput
+	ToGetNewsReportsFilterArrayOutputWithContext(context.Context) GetNewsReportsFilterArrayOutput
+}
+
+type GetNewsReportsFilterArray []GetNewsReportsFilterInput
+
+func (GetNewsReportsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportsFilter)(nil)).Elem()
+}
+
+func (i GetNewsReportsFilterArray) ToGetNewsReportsFilterArrayOutput() GetNewsReportsFilterArrayOutput {
+	return i.ToGetNewsReportsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportsFilterArray) ToGetNewsReportsFilterArrayOutputWithContext(ctx context.Context) GetNewsReportsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsFilterArrayOutput)
+}
+
+type GetNewsReportsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportsFilter)(nil)).Elem()
+}
+
+func (o GetNewsReportsFilterOutput) ToGetNewsReportsFilterOutput() GetNewsReportsFilterOutput {
+	return o
+}
+
+func (o GetNewsReportsFilterOutput) ToGetNewsReportsFilterOutputWithContext(ctx context.Context) GetNewsReportsFilterOutput {
+	return o
+}
+
+// The news report name.
+func (o GetNewsReportsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNewsReportsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNewsReportsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNewsReportsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNewsReportsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportsFilter)(nil)).Elem()
+}
+
+func (o GetNewsReportsFilterArrayOutput) ToGetNewsReportsFilterArrayOutput() GetNewsReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetNewsReportsFilterArrayOutput) ToGetNewsReportsFilterArrayOutputWithContext(ctx context.Context) GetNewsReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetNewsReportsFilterArrayOutput) Index(i pulumi.IntInput) GetNewsReportsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNewsReportsFilter {
+		return vs[0].([]GetNewsReportsFilter)[vs[1].(int)]
+	}).(GetNewsReportsFilterOutput)
+}
+
+type GetNewsReportsNewsReportCollection struct {
+	Items []GetNewsReportsNewsReportCollectionItem `pulumi:"items"`
+}
+
+// GetNewsReportsNewsReportCollectionInput is an input type that accepts GetNewsReportsNewsReportCollectionArgs and GetNewsReportsNewsReportCollectionOutput values.
+// You can construct a concrete instance of `GetNewsReportsNewsReportCollectionInput` via:
+//
+//	GetNewsReportsNewsReportCollectionArgs{...}
+type GetNewsReportsNewsReportCollectionInput interface {
+	pulumi.Input
+
+	ToGetNewsReportsNewsReportCollectionOutput() GetNewsReportsNewsReportCollectionOutput
+	ToGetNewsReportsNewsReportCollectionOutputWithContext(context.Context) GetNewsReportsNewsReportCollectionOutput
+}
+
+type GetNewsReportsNewsReportCollectionArgs struct {
+	Items GetNewsReportsNewsReportCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNewsReportsNewsReportCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportsNewsReportCollection)(nil)).Elem()
+}
+
+func (i GetNewsReportsNewsReportCollectionArgs) ToGetNewsReportsNewsReportCollectionOutput() GetNewsReportsNewsReportCollectionOutput {
+	return i.ToGetNewsReportsNewsReportCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportsNewsReportCollectionArgs) ToGetNewsReportsNewsReportCollectionOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionOutput)
+}
+
+// GetNewsReportsNewsReportCollectionArrayInput is an input type that accepts GetNewsReportsNewsReportCollectionArray and GetNewsReportsNewsReportCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNewsReportsNewsReportCollectionArrayInput` via:
+//
+//	GetNewsReportsNewsReportCollectionArray{ GetNewsReportsNewsReportCollectionArgs{...} }
+type GetNewsReportsNewsReportCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNewsReportsNewsReportCollectionArrayOutput() GetNewsReportsNewsReportCollectionArrayOutput
+	ToGetNewsReportsNewsReportCollectionArrayOutputWithContext(context.Context) GetNewsReportsNewsReportCollectionArrayOutput
+}
+
+type GetNewsReportsNewsReportCollectionArray []GetNewsReportsNewsReportCollectionInput
+
+func (GetNewsReportsNewsReportCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportsNewsReportCollection)(nil)).Elem()
+}
+
+func (i GetNewsReportsNewsReportCollectionArray) ToGetNewsReportsNewsReportCollectionArrayOutput() GetNewsReportsNewsReportCollectionArrayOutput {
+	return i.ToGetNewsReportsNewsReportCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportsNewsReportCollectionArray) ToGetNewsReportsNewsReportCollectionArrayOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionArrayOutput)
+}
+
+type GetNewsReportsNewsReportCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportsNewsReportCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportsNewsReportCollection)(nil)).Elem()
+}
+
+func (o GetNewsReportsNewsReportCollectionOutput) ToGetNewsReportsNewsReportCollectionOutput() GetNewsReportsNewsReportCollectionOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionOutput) ToGetNewsReportsNewsReportCollectionOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionOutput) Items() GetNewsReportsNewsReportCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollection) []GetNewsReportsNewsReportCollectionItem { return v.Items }).(GetNewsReportsNewsReportCollectionItemArrayOutput)
+}
+
+type GetNewsReportsNewsReportCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportsNewsReportCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportsNewsReportCollection)(nil)).Elem()
+}
+
+func (o GetNewsReportsNewsReportCollectionArrayOutput) ToGetNewsReportsNewsReportCollectionArrayOutput() GetNewsReportsNewsReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionArrayOutput) ToGetNewsReportsNewsReportCollectionArrayOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionArrayOutput) Index(i pulumi.IntInput) GetNewsReportsNewsReportCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNewsReportsNewsReportCollection {
+		return vs[0].([]GetNewsReportsNewsReportCollection)[vs[1].(int)]
+	}).(GetNewsReportsNewsReportCollectionOutput)
+}
+
+type GetNewsReportsNewsReportCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Content types that the news report can handle.
+	ContentTypes []GetNewsReportsNewsReportCollectionItemContentType `pulumi:"contentTypes"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the news report.
+	Description string `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Language of the news report.
+	Locale string `pulumi:"locale"`
+	// The news report name.
+	Name string `pulumi:"name"`
+	// News report frequency.
+	NewsFrequency string `pulumi:"newsFrequency"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
+	OnsTopicId string `pulumi:"onsTopicId"`
+	// Lifecycle states
+	State string `pulumi:"state"`
+	// Resource Status
+	Status string `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the news report was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetNewsReportsNewsReportCollectionItemInput is an input type that accepts GetNewsReportsNewsReportCollectionItemArgs and GetNewsReportsNewsReportCollectionItemOutput values.
+// You can construct a concrete instance of `GetNewsReportsNewsReportCollectionItemInput` via:
+//
+//	GetNewsReportsNewsReportCollectionItemArgs{...}
+type GetNewsReportsNewsReportCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNewsReportsNewsReportCollectionItemOutput() GetNewsReportsNewsReportCollectionItemOutput
+	ToGetNewsReportsNewsReportCollectionItemOutputWithContext(context.Context) GetNewsReportsNewsReportCollectionItemOutput
+}
+
+type GetNewsReportsNewsReportCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Content types that the news report can handle.
+	ContentTypes GetNewsReportsNewsReportCollectionItemContentTypeArrayInput `pulumi:"contentTypes"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the news report.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Language of the news report.
+	Locale pulumi.StringInput `pulumi:"locale"`
+	// The news report name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// News report frequency.
+	NewsFrequency pulumi.StringInput `pulumi:"newsFrequency"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
+	OnsTopicId pulumi.StringInput `pulumi:"onsTopicId"`
+	// Lifecycle states
+	State pulumi.StringInput `pulumi:"state"`
+	// Resource Status
+	Status pulumi.StringInput `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the news report was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetNewsReportsNewsReportCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportsNewsReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetNewsReportsNewsReportCollectionItemArgs) ToGetNewsReportsNewsReportCollectionItemOutput() GetNewsReportsNewsReportCollectionItemOutput {
+	return i.ToGetNewsReportsNewsReportCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportsNewsReportCollectionItemArgs) ToGetNewsReportsNewsReportCollectionItemOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionItemOutput)
+}
+
+// GetNewsReportsNewsReportCollectionItemArrayInput is an input type that accepts GetNewsReportsNewsReportCollectionItemArray and GetNewsReportsNewsReportCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNewsReportsNewsReportCollectionItemArrayInput` via:
+//
+//	GetNewsReportsNewsReportCollectionItemArray{ GetNewsReportsNewsReportCollectionItemArgs{...} }
+type GetNewsReportsNewsReportCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNewsReportsNewsReportCollectionItemArrayOutput() GetNewsReportsNewsReportCollectionItemArrayOutput
+	ToGetNewsReportsNewsReportCollectionItemArrayOutputWithContext(context.Context) GetNewsReportsNewsReportCollectionItemArrayOutput
+}
+
+type GetNewsReportsNewsReportCollectionItemArray []GetNewsReportsNewsReportCollectionItemInput
+
+func (GetNewsReportsNewsReportCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportsNewsReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetNewsReportsNewsReportCollectionItemArray) ToGetNewsReportsNewsReportCollectionItemArrayOutput() GetNewsReportsNewsReportCollectionItemArrayOutput {
+	return i.ToGetNewsReportsNewsReportCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportsNewsReportCollectionItemArray) ToGetNewsReportsNewsReportCollectionItemArrayOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionItemArrayOutput)
+}
+
+type GetNewsReportsNewsReportCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportsNewsReportCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportsNewsReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetNewsReportsNewsReportCollectionItemOutput) ToGetNewsReportsNewsReportCollectionItemOutput() GetNewsReportsNewsReportCollectionItemOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionItemOutput) ToGetNewsReportsNewsReportCollectionItemOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetNewsReportsNewsReportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Content types that the news report can handle.
+func (o GetNewsReportsNewsReportCollectionItemOutput) ContentTypes() GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) []GetNewsReportsNewsReportCollectionItemContentType {
+		return v.ContentTypes
+	}).(GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetNewsReportsNewsReportCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description of the news report.
+func (o GetNewsReportsNewsReportCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetNewsReportsNewsReportCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
+func (o GetNewsReportsNewsReportCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetNewsReportsNewsReportCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Language of the news report.
+func (o GetNewsReportsNewsReportCollectionItemOutput) Locale() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Locale }).(pulumi.StringOutput)
+}
+
+// The news report name.
+func (o GetNewsReportsNewsReportCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// News report frequency.
+func (o GetNewsReportsNewsReportCollectionItemOutput) NewsFrequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.NewsFrequency }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
+func (o GetNewsReportsNewsReportCollectionItemOutput) OnsTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.OnsTopicId }).(pulumi.StringOutput)
+}
+
+// Lifecycle states
+func (o GetNewsReportsNewsReportCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Resource Status
+func (o GetNewsReportsNewsReportCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetNewsReportsNewsReportCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the the news report was first enabled. An RFC3339 formatted datetime string.
+func (o GetNewsReportsNewsReportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the news report was updated. An RFC3339 formatted datetime string.
+func (o GetNewsReportsNewsReportCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetNewsReportsNewsReportCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportsNewsReportCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportsNewsReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetNewsReportsNewsReportCollectionItemArrayOutput) ToGetNewsReportsNewsReportCollectionItemArrayOutput() GetNewsReportsNewsReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionItemArrayOutput) ToGetNewsReportsNewsReportCollectionItemArrayOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNewsReportsNewsReportCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNewsReportsNewsReportCollectionItem {
+		return vs[0].([]GetNewsReportsNewsReportCollectionItem)[vs[1].(int)]
+	}).(GetNewsReportsNewsReportCollectionItemOutput)
+}
+
+type GetNewsReportsNewsReportCollectionItemContentType struct {
+	// Supported resources for capacity planning content type.
+	CapacityPlanningResources []string `pulumi:"capacityPlanningResources"`
+}
+
+// GetNewsReportsNewsReportCollectionItemContentTypeInput is an input type that accepts GetNewsReportsNewsReportCollectionItemContentTypeArgs and GetNewsReportsNewsReportCollectionItemContentTypeOutput values.
+// You can construct a concrete instance of `GetNewsReportsNewsReportCollectionItemContentTypeInput` via:
+//
+//	GetNewsReportsNewsReportCollectionItemContentTypeArgs{...}
+type GetNewsReportsNewsReportCollectionItemContentTypeInput interface {
+	pulumi.Input
+
+	ToGetNewsReportsNewsReportCollectionItemContentTypeOutput() GetNewsReportsNewsReportCollectionItemContentTypeOutput
+	ToGetNewsReportsNewsReportCollectionItemContentTypeOutputWithContext(context.Context) GetNewsReportsNewsReportCollectionItemContentTypeOutput
+}
+
+type GetNewsReportsNewsReportCollectionItemContentTypeArgs struct {
+	// Supported resources for capacity planning content type.
+	CapacityPlanningResources pulumi.StringArrayInput `pulumi:"capacityPlanningResources"`
+}
+
+func (GetNewsReportsNewsReportCollectionItemContentTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportsNewsReportCollectionItemContentType)(nil)).Elem()
+}
+
+func (i GetNewsReportsNewsReportCollectionItemContentTypeArgs) ToGetNewsReportsNewsReportCollectionItemContentTypeOutput() GetNewsReportsNewsReportCollectionItemContentTypeOutput {
+	return i.ToGetNewsReportsNewsReportCollectionItemContentTypeOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportsNewsReportCollectionItemContentTypeArgs) ToGetNewsReportsNewsReportCollectionItemContentTypeOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemContentTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionItemContentTypeOutput)
+}
+
+// GetNewsReportsNewsReportCollectionItemContentTypeArrayInput is an input type that accepts GetNewsReportsNewsReportCollectionItemContentTypeArray and GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput values.
+// You can construct a concrete instance of `GetNewsReportsNewsReportCollectionItemContentTypeArrayInput` via:
+//
+//	GetNewsReportsNewsReportCollectionItemContentTypeArray{ GetNewsReportsNewsReportCollectionItemContentTypeArgs{...} }
+type GetNewsReportsNewsReportCollectionItemContentTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetNewsReportsNewsReportCollectionItemContentTypeArrayOutput() GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput
+	ToGetNewsReportsNewsReportCollectionItemContentTypeArrayOutputWithContext(context.Context) GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput
+}
+
+type GetNewsReportsNewsReportCollectionItemContentTypeArray []GetNewsReportsNewsReportCollectionItemContentTypeInput
+
+func (GetNewsReportsNewsReportCollectionItemContentTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportsNewsReportCollectionItemContentType)(nil)).Elem()
+}
+
+func (i GetNewsReportsNewsReportCollectionItemContentTypeArray) ToGetNewsReportsNewsReportCollectionItemContentTypeArrayOutput() GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput {
+	return i.ToGetNewsReportsNewsReportCollectionItemContentTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNewsReportsNewsReportCollectionItemContentTypeArray) ToGetNewsReportsNewsReportCollectionItemContentTypeArrayOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput)
+}
+
+type GetNewsReportsNewsReportCollectionItemContentTypeOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportsNewsReportCollectionItemContentTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNewsReportsNewsReportCollectionItemContentType)(nil)).Elem()
+}
+
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) ToGetNewsReportsNewsReportCollectionItemContentTypeOutput() GetNewsReportsNewsReportCollectionItemContentTypeOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) ToGetNewsReportsNewsReportCollectionItemContentTypeOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemContentTypeOutput {
+	return o
+}
+
+// Supported resources for capacity planning content type.
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) CapacityPlanningResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItemContentType) []string { return v.CapacityPlanningResources }).(pulumi.StringArrayOutput)
+}
+
+type GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNewsReportsNewsReportCollectionItemContentType)(nil)).Elem()
+}
+
+func (o GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput) ToGetNewsReportsNewsReportCollectionItemContentTypeArrayOutput() GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput) ToGetNewsReportsNewsReportCollectionItemContentTypeArrayOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput {
+	return o
+}
+
+func (o GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput) Index(i pulumi.IntInput) GetNewsReportsNewsReportCollectionItemContentTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNewsReportsNewsReportCollectionItemContentType {
+		return vs[0].([]GetNewsReportsNewsReportCollectionItemContentType)[vs[1].(int)]
+	}).(GetNewsReportsNewsReportCollectionItemContentTypeOutput)
+}
+
 type GetOperationsInsightsPrivateEndpointsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -11957,6 +12725,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NewsReportContentTypesInput)(nil)).Elem(), NewsReportContentTypesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NewsReportContentTypesPtrInput)(nil)).Elem(), NewsReportContentTypesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemInput)(nil)).Elem(), OpsiConfigurationConfigItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemArrayInput)(nil)).Elem(), OpsiConfigurationConfigItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpsiConfigurationConfigItemMetadataInput)(nil)).Elem(), OpsiConfigurationConfigItemMetadataArgs{})
@@ -12051,6 +12821,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableComputeEntitiesItemArrayInput)(nil)).Elem(), GetImportableComputeEntitiesItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableComputeEntityItemInput)(nil)).Elem(), GetImportableComputeEntityItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableComputeEntityItemArrayInput)(nil)).Elem(), GetImportableComputeEntityItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportContentTypeInput)(nil)).Elem(), GetNewsReportContentTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportContentTypeArrayInput)(nil)).Elem(), GetNewsReportContentTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportsFilterInput)(nil)).Elem(), GetNewsReportsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportsFilterArrayInput)(nil)).Elem(), GetNewsReportsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportsNewsReportCollectionInput)(nil)).Elem(), GetNewsReportsNewsReportCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportsNewsReportCollectionArrayInput)(nil)).Elem(), GetNewsReportsNewsReportCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportsNewsReportCollectionItemInput)(nil)).Elem(), GetNewsReportsNewsReportCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportsNewsReportCollectionItemArrayInput)(nil)).Elem(), GetNewsReportsNewsReportCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportsNewsReportCollectionItemContentTypeInput)(nil)).Elem(), GetNewsReportsNewsReportCollectionItemContentTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNewsReportsNewsReportCollectionItemContentTypeArrayInput)(nil)).Elem(), GetNewsReportsNewsReportCollectionItemContentTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsInsightsPrivateEndpointsFilterInput)(nil)).Elem(), GetOperationsInsightsPrivateEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsInsightsPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetOperationsInsightsPrivateEndpointsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionInput)(nil)).Elem(), GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArgs{})
@@ -12117,6 +12897,8 @@ func init() {
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput{})
+	pulumi.RegisterOutputType(NewsReportContentTypesOutput{})
+	pulumi.RegisterOutputType(NewsReportContentTypesPtrOutput{})
 	pulumi.RegisterOutputType(OpsiConfigurationConfigItemOutput{})
 	pulumi.RegisterOutputType(OpsiConfigurationConfigItemArrayOutput{})
 	pulumi.RegisterOutputType(OpsiConfigurationConfigItemMetadataOutput{})
@@ -12211,6 +12993,16 @@ func init() {
 	pulumi.RegisterOutputType(GetImportableComputeEntitiesItemArrayOutput{})
 	pulumi.RegisterOutputType(GetImportableComputeEntityItemOutput{})
 	pulumi.RegisterOutputType(GetImportableComputeEntityItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNewsReportContentTypeOutput{})
+	pulumi.RegisterOutputType(GetNewsReportContentTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetNewsReportsFilterOutput{})
+	pulumi.RegisterOutputType(GetNewsReportsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNewsReportsNewsReportCollectionOutput{})
+	pulumi.RegisterOutputType(GetNewsReportsNewsReportCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNewsReportsNewsReportCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNewsReportsNewsReportCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNewsReportsNewsReportCollectionItemContentTypeOutput{})
+	pulumi.RegisterOutputType(GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetOperationsInsightsPrivateEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetOperationsInsightsPrivateEndpointsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput{})

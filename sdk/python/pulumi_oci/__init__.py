@@ -942,6 +942,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ContainerEngine/clusterCompleteCredentialRotationManagement",
+  "fqn": "pulumi_oci.containerengine",
+  "classes": {
+   "oci:ContainerEngine/clusterCompleteCredentialRotationManagement:ClusterCompleteCredentialRotationManagement": "ClusterCompleteCredentialRotationManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ContainerEngine/clusterStartCredentialRotationManagement",
+  "fqn": "pulumi_oci.containerengine",
+  "classes": {
+   "oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement": "ClusterStartCredentialRotationManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ContainerEngine/clusterWorkloadMapping",
   "fqn": "pulumi_oci.containerengine",
   "classes": {
@@ -2066,6 +2082,22 @@ _utilities.register(
   "fqn": "pulumi_oci.database",
   "classes": {
    "oci:Database/autonomousVmCluster:AutonomousVmCluster": "AutonomousVmCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/autonomousVmClusterOrdsCertificateManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement": "AutonomousVmClusterOrdsCertificateManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/autonomousVmClusterSslCertificateManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement": "AutonomousVmClusterSslCertificateManagement"
   }
  },
  {
@@ -4202,6 +4234,14 @@ _utilities.register(
   "fqn": "pulumi_oci.opsi",
   "classes": {
    "oci:Opsi/hostInsight:HostInsight": "HostInsight"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Opsi/newsReport",
+  "fqn": "pulumi_oci.opsi",
+  "classes": {
+   "oci:Opsi/newsReport:NewsReport": "NewsReport"
   }
  },
  {

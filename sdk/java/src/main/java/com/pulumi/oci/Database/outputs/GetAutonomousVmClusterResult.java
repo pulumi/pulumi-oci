@@ -192,6 +192,16 @@ public final class GetAutonomousVmClusterResult {
      */
     private String timeCreated;
     /**
+     * @return The date and time of Database SSL certificate expiration.
+     * 
+     */
+    private String timeDatabaseSslCertificateExpires;
+    /**
+     * @return The date and time of ORDS certificate expiration.
+     * 
+     */
+    private String timeOrdsCertificateExpires;
+    /**
      * @return The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
@@ -455,6 +465,20 @@ public final class GetAutonomousVmClusterResult {
         return this.timeCreated;
     }
     /**
+     * @return The date and time of Database SSL certificate expiration.
+     * 
+     */
+    public String timeDatabaseSslCertificateExpires() {
+        return this.timeDatabaseSslCertificateExpires;
+    }
+    /**
+     * @return The date and time of ORDS certificate expiration.
+     * 
+     */
+    public String timeOrdsCertificateExpires() {
+        return this.timeOrdsCertificateExpires;
+    }
+    /**
      * @return The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
@@ -521,6 +545,8 @@ public final class GetAutonomousVmClusterResult {
         private Integer scanListenerPortTls;
         private String state;
         private String timeCreated;
+        private String timeDatabaseSslCertificateExpires;
+        private String timeOrdsCertificateExpires;
         private String timeZone;
         private Integer totalContainerDatabases;
         private String vmClusterNetworkId;
@@ -563,6 +589,8 @@ public final class GetAutonomousVmClusterResult {
     	      this.scanListenerPortTls = defaults.scanListenerPortTls;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeDatabaseSslCertificateExpires = defaults.timeDatabaseSslCertificateExpires;
+    	      this.timeOrdsCertificateExpires = defaults.timeOrdsCertificateExpires;
     	      this.timeZone = defaults.timeZone;
     	      this.totalContainerDatabases = defaults.totalContainerDatabases;
     	      this.vmClusterNetworkId = defaults.vmClusterNetworkId;
@@ -758,6 +786,16 @@ public final class GetAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeDatabaseSslCertificateExpires(String timeDatabaseSslCertificateExpires) {
+            this.timeDatabaseSslCertificateExpires = Objects.requireNonNull(timeDatabaseSslCertificateExpires);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeOrdsCertificateExpires(String timeOrdsCertificateExpires) {
+            this.timeOrdsCertificateExpires = Objects.requireNonNull(timeOrdsCertificateExpires);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeZone(String timeZone) {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
@@ -810,6 +848,8 @@ public final class GetAutonomousVmClusterResult {
             o.scanListenerPortTls = scanListenerPortTls;
             o.state = state;
             o.timeCreated = timeCreated;
+            o.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+            o.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
             o.timeZone = timeZone;
             o.totalContainerDatabases = totalContainerDatabases;
             o.vmClusterNetworkId = vmClusterNetworkId;

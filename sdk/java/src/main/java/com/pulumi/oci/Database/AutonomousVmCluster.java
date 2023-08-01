@@ -571,6 +571,34 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
+     * The date and time of Database SSL certificate expiration.
+     * 
+     */
+    @Export(name="timeDatabaseSslCertificateExpires", type=String.class, parameters={})
+    private Output<String> timeDatabaseSslCertificateExpires;
+
+    /**
+     * @return The date and time of Database SSL certificate expiration.
+     * 
+     */
+    public Output<String> timeDatabaseSslCertificateExpires() {
+        return this.timeDatabaseSslCertificateExpires;
+    }
+    /**
+     * The date and time of ORDS certificate expiration.
+     * 
+     */
+    @Export(name="timeOrdsCertificateExpires", type=String.class, parameters={})
+    private Output<String> timeOrdsCertificateExpires;
+
+    /**
+     * @return The date and time of ORDS certificate expiration.
+     * 
+     */
+    public Output<String> timeOrdsCertificateExpires() {
+        return this.timeOrdsCertificateExpires;
+    }
+    /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */

@@ -1,6 +1,6 @@
 module github.com/oracle/terraform-provider-oci/shim
 
-go 1.19
+go 1.20
 
 require (
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.22.0

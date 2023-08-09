@@ -14160,6 +14160,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  kms_key_version_id: str,
                  license_model: str,
                  lifecycle_details: str,
+                 local_adg_auto_failover_max_data_loss_limit: int,
                  local_disaster_recovery_type: str,
                  local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult'],
                  long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult'],
@@ -14272,6 +14273,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
@@ -14382,6 +14384,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
         pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
@@ -14894,6 +14897,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="localAdgAutoFailoverMaxDataLossLimit")
+    def local_adg_auto_failover_max_data_loss_limit(self) -> int:
+        """
+        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        """
+        return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
 
     @property
     @pulumi.getter(name="localDisasterRecoveryType")
@@ -15987,6 +15998,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  kms_key_version_id: str,
                  license_model: str,
                  lifecycle_details: str,
+                 local_adg_auto_failover_max_data_loss_limit: int,
                  local_disaster_recovery_type: str,
                  local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult'],
                  long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult'],
@@ -16092,6 +16104,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
@@ -16194,6 +16207,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
         pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
@@ -16669,6 +16683,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="localAdgAutoFailoverMaxDataLossLimit")
+    def local_adg_auto_failover_max_data_loss_limit(self) -> int:
+        """
+        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        """
+        return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
 
     @property
     @pulumi.getter(name="localDisasterRecoveryType")

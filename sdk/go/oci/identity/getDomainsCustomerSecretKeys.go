@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Search user's customer secret key
+// Search for a user's customer secret keys.
 //
 // ## Example Usage
 //

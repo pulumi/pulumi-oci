@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeGetArgs>? _bypassCodes;
 
         /// <summary>
-        /// (Updatable) A list of bypass codes belongs to user
+        /// (Updatable) A list of bypass codes that belongs to the user.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -66,6 +66,8 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * idcsAllowUpdatesInReadOnlyMode: true
         /// * multiValued: false
         /// * mutability: readOnly
+        /// * idcsRequiresWriteForAccessFlows: true
+        /// * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
         /// * required: false
         /// * returned: request
         /// * type: integer
@@ -75,7 +77,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? LoginAttempts { get; set; }
 
         /// <summary>
-        /// (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        /// (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -116,7 +118,7 @@ namespace Pulumi.Oci.Identity.Inputs
         }
 
         /// <summary>
-        /// (Updatable) User Opted for MFA
+        /// (Updatable) The user opted for MFA.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -125,6 +127,7 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -134,7 +137,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? MfaStatus { get; set; }
 
         /// <summary>
-        /// (Updatable) Preferred Authentication Factor Type
+        /// (Updatable) The preferred authentication factor type.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -152,7 +155,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? PreferredAuthenticationFactor { get; set; }
 
         /// <summary>
-        /// (Updatable) Preferred Authentication method
+        /// (Updatable) The preferred authentication method.
         /// 
         /// **Added In:** 2009232244
         /// 
@@ -170,7 +173,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? PreferredAuthenticationMethod { get; set; }
 
         /// <summary>
-        /// (Updatable) User preferred device
+        /// (Updatable) The user's preferred device.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -188,7 +191,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceGetArgs>? PreferredDevice { get; set; }
 
         /// <summary>
-        /// (Updatable) Preferred Third party vendor name
+        /// (Updatable) The preferred third-party vendor name.
         /// 
         /// **Added In:** 19.2.1
         /// 

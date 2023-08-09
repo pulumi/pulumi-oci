@@ -181,7 +181,7 @@ def get_domains_my_user_db_credentials(authorization: Optional[str] = None,
     """
     This data source provides the list of My User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search a User's DBCredentials
+    Search for a user's own database (DB) credential.
 
     ## Example Usage
 
@@ -249,7 +249,7 @@ def get_domains_my_user_db_credentials_output(authorization: Optional[pulumi.Inp
     """
     This data source provides the list of My User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search a User's DBCredentials
+    Search for a user's own database (DB) credential.
 
     ## Example Usage
 

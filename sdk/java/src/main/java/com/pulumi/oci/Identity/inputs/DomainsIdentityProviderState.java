@@ -1147,6 +1147,45 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+     * 
+     * **Added In:** 2302092332
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="lastNotificationSentTime")
+    private @Nullable Output<String> lastNotificationSentTime;
+
+    /**
+     * @return (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+     * 
+     * **Added In:** 2302092332
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<String>> lastNotificationSentTime() {
+        return Optional.ofNullable(this.lastNotificationSentTime);
+    }
+
+    /**
      * (Updatable) HTTP binding to use for logout.
      * 
      * **SCIM++ Properties:**
@@ -2183,6 +2222,7 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         this.jitUserProvGroupSamlAttributeName = $.jitUserProvGroupSamlAttributeName;
         this.jitUserProvGroupStaticListEnabled = $.jitUserProvGroupStaticListEnabled;
         this.jitUserProvIgnoreErrorOnAbsentGroups = $.jitUserProvIgnoreErrorOnAbsentGroups;
+        this.lastNotificationSentTime = $.lastNotificationSentTime;
         this.logoutBinding = $.logoutBinding;
         this.logoutEnabled = $.logoutEnabled;
         this.logoutRequestUrl = $.logoutRequestUrl;
@@ -3655,6 +3695,51 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
          */
         public Builder jitUserProvIgnoreErrorOnAbsentGroups(Boolean jitUserProvIgnoreErrorOnAbsentGroups) {
             return jitUserProvIgnoreErrorOnAbsentGroups(Output.of(jitUserProvIgnoreErrorOnAbsentGroups));
+        }
+
+        /**
+         * @param lastNotificationSentTime (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+         * 
+         * **Added In:** 2302092332
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastNotificationSentTime(@Nullable Output<String> lastNotificationSentTime) {
+            $.lastNotificationSentTime = lastNotificationSentTime;
+            return this;
+        }
+
+        /**
+         * @param lastNotificationSentTime (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+         * 
+         * **Added In:** 2302092332
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastNotificationSentTime(String lastNotificationSentTime) {
+            return lastNotificationSentTime(Output.of(lastNotificationSentTime));
         }
 
         /**

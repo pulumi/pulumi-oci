@@ -201,7 +201,7 @@ def get_domains_oauth2client_credentials(attribute_sets: Optional[Sequence[str]]
     """
     This data source provides the list of O Auth2 Client Credentials in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search oauth2 client credentials
+    Search for a user's OAuth2 client credentials.
 
     ## Example Usage
 
@@ -279,7 +279,7 @@ def get_domains_oauth2client_credentials_output(attribute_sets: Optional[pulumi.
     """
     This data source provides the list of O Auth2 Client Credentials in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search oauth2 client credentials
+    Search for a user's OAuth2 client credentials.
 
     ## Example Usage
 

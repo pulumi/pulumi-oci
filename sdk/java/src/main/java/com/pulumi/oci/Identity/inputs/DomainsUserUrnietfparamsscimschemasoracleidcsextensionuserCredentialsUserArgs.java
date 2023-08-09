@@ -22,7 +22,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs();
 
     /**
-     * (Updatable) A list of api keys corresponding to user.
+     * (Updatable) A list of API keys corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -41,7 +41,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs>> apiKeys;
 
     /**
-     * @return (Updatable) A list of api keys corresponding to user.
+     * @return (Updatable) A list of API keys corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -61,7 +61,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     }
 
     /**
-     * (Updatable) A list of auth tokens corresponding to user.
+     * (Updatable) A list of Auth tokens corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -80,7 +80,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs>> authTokens;
 
     /**
-     * @return (Updatable) A list of auth tokens corresponding to user.
+     * @return (Updatable) A list of Auth tokens corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -139,7 +139,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     }
 
     /**
-     * (Updatable) A list of db credentials corresponding to user.
+     * (Updatable) A list of database credentials corresponding to user.
      * 
      * **Added In:** 2102181953
      * 
@@ -158,7 +158,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs>> dbCredentials;
 
     /**
-     * @return (Updatable) A list of db credentials corresponding to user.
+     * @return (Updatable) A list of database credentials corresponding to user.
      * 
      * **Added In:** 2102181953
      * 
@@ -178,7 +178,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     }
 
     /**
-     * (Updatable) A list of oauth2 client credentials corresponding to user.
+     * (Updatable) A list of OAuth2 client credentials corresponding to a user.
      * 
      * **Added In:** 2012271618
      * 
@@ -197,7 +197,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs>> oAuth2clientCredentials;
 
     /**
-     * @return (Updatable) A list of oauth2 client credentials corresponding to user.
+     * @return (Updatable) A list of OAuth2 client credentials corresponding to a user.
      * 
      * **Added In:** 2012271618
      * 
@@ -217,7 +217,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     }
 
     /**
-     * (Updatable) A list of smtp credentials corresponding to user.
+     * (Updatable) A list of SMTP credentials corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -236,7 +236,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs>> smtpCredentials;
 
     /**
-     * @return (Updatable) A list of smtp credentials corresponding to user.
+     * @return (Updatable) A list of SMTP credentials corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -285,7 +285,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param apiKeys (Updatable) A list of api keys corresponding to user.
+         * @param apiKeys (Updatable) A list of API keys corresponding to user.
          * 
          * **Added In:** 2012271618
          * 
@@ -308,7 +308,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param apiKeys (Updatable) A list of api keys corresponding to user.
+         * @param apiKeys (Updatable) A list of API keys corresponding to user.
          * 
          * **Added In:** 2012271618
          * 
@@ -330,7 +330,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param apiKeys (Updatable) A list of api keys corresponding to user.
+         * @param apiKeys (Updatable) A list of API keys corresponding to user.
          * 
          * **Added In:** 2012271618
          * 
@@ -352,7 +352,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param authTokens (Updatable) A list of auth tokens corresponding to user.
+         * @param authTokens (Updatable) A list of Auth tokens corresponding to user.
          * 
          * **Added In:** 2012271618
          * 
@@ -375,7 +375,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param authTokens (Updatable) A list of auth tokens corresponding to user.
+         * @param authTokens (Updatable) A list of Auth tokens corresponding to user.
          * 
          * **Added In:** 2012271618
          * 
@@ -397,7 +397,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param authTokens (Updatable) A list of auth tokens corresponding to user.
+         * @param authTokens (Updatable) A list of Auth tokens corresponding to user.
          * 
          * **Added In:** 2012271618
          * 
@@ -486,7 +486,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param dbCredentials (Updatable) A list of db credentials corresponding to user.
+         * @param dbCredentials (Updatable) A list of database credentials corresponding to user.
          * 
          * **Added In:** 2102181953
          * 
@@ -509,7 +509,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param dbCredentials (Updatable) A list of db credentials corresponding to user.
+         * @param dbCredentials (Updatable) A list of database credentials corresponding to user.
          * 
          * **Added In:** 2102181953
          * 
@@ -531,7 +531,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param dbCredentials (Updatable) A list of db credentials corresponding to user.
+         * @param dbCredentials (Updatable) A list of database credentials corresponding to user.
          * 
          * **Added In:** 2102181953
          * 
@@ -553,7 +553,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param oAuth2clientCredentials (Updatable) A list of oauth2 client credentials corresponding to user.
+         * @param oAuth2clientCredentials (Updatable) A list of OAuth2 client credentials corresponding to a user.
          * 
          * **Added In:** 2012271618
          * 
@@ -576,7 +576,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param oAuth2clientCredentials (Updatable) A list of oauth2 client credentials corresponding to user.
+         * @param oAuth2clientCredentials (Updatable) A list of OAuth2 client credentials corresponding to a user.
          * 
          * **Added In:** 2012271618
          * 
@@ -598,7 +598,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param oAuth2clientCredentials (Updatable) A list of oauth2 client credentials corresponding to user.
+         * @param oAuth2clientCredentials (Updatable) A list of OAuth2 client credentials corresponding to a user.
          * 
          * **Added In:** 2012271618
          * 
@@ -620,7 +620,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param smtpCredentials (Updatable) A list of smtp credentials corresponding to user.
+         * @param smtpCredentials (Updatable) A list of SMTP credentials corresponding to user.
          * 
          * **Added In:** 2012271618
          * 
@@ -643,7 +643,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param smtpCredentials (Updatable) A list of smtp credentials corresponding to user.
+         * @param smtpCredentials (Updatable) A list of SMTP credentials corresponding to user.
          * 
          * **Added In:** 2012271618
          * 
@@ -665,7 +665,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param smtpCredentials (Updatable) A list of smtp credentials corresponding to user.
+         * @param smtpCredentials (Updatable) A list of SMTP credentials corresponding to user.
          * 
          * **Added In:** 2012271618
          * 

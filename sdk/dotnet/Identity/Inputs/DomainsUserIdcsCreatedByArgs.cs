@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) Ocid of the User's Support Account.
+        /// (Updatable) The OCID of the user's support account.
         /// 
         /// **Added In:** 2103141444
         /// 

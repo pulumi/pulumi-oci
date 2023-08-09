@@ -125,7 +125,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     }
 
     /**
-     * (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      * **Added In:** 20.1.3
      * 
@@ -144,7 +144,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     private @Nullable Output<Boolean> expired;
 
     /**
-     * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      * **Added In:** 20.1.3
      * 
@@ -460,7 +460,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param expired (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+         * @param expired (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
          * 
          * **Added In:** 20.1.3
          * 
@@ -483,7 +483,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param expired (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+         * @param expired (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
          * 
          * **Added In:** 20.1.3
          * 

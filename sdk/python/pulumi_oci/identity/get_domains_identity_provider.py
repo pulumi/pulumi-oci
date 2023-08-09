@@ -22,7 +22,7 @@ class GetDomainsIdentityProviderResult:
     """
     A collection of values returned by getDomainsIdentityProvider.
     """
-    def __init__(__self__, assertion_attribute=None, attribute_sets=None, attributes=None, authn_request_binding=None, authorization=None, compartment_ocid=None, correlation_policies=None, delete_in_progress=None, description=None, domain_ocid=None, enabled=None, encryption_certificate=None, external_id=None, icon_url=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, identity_provider_id=None, idp_sso_url=None, include_signing_cert_in_signature=None, jit_user_prov_assigned_groups=None, jit_user_prov_attribute_update_enabled=None, jit_user_prov_attributes=None, jit_user_prov_create_user_enabled=None, jit_user_prov_enabled=None, jit_user_prov_group_assertion_attribute_enabled=None, jit_user_prov_group_assignment_method=None, jit_user_prov_group_mapping_mode=None, jit_user_prov_group_mappings=None, jit_user_prov_group_saml_attribute_name=None, jit_user_prov_group_static_list_enabled=None, jit_user_prov_ignore_error_on_absent_groups=None, logout_binding=None, logout_enabled=None, logout_request_url=None, logout_response_url=None, metadata=None, metas=None, name_id_format=None, ocid=None, partner_name=None, partner_provider_id=None, requested_authentication_contexts=None, require_force_authn=None, requires_encrypted_assertion=None, resource_type_schema_version=None, saml_ho_krequired=None, schemas=None, service_instance_identifier=None, shown_on_login_page=None, signature_hash_algorithm=None, signing_certificate=None, succinct_id=None, tags=None, tenancy_ocid=None, tenant_provider_id=None, type=None, urnietfparamsscimschemasoracleidcsextensionsocial_identity_providers=None, urnietfparamsscimschemasoracleidcsextensionx509identity_providers=None, user_mapping_method=None, user_mapping_store_attribute=None):
+    def __init__(__self__, assertion_attribute=None, attribute_sets=None, attributes=None, authn_request_binding=None, authorization=None, compartment_ocid=None, correlation_policies=None, delete_in_progress=None, description=None, domain_ocid=None, enabled=None, encryption_certificate=None, external_id=None, icon_url=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, identity_provider_id=None, idp_sso_url=None, include_signing_cert_in_signature=None, jit_user_prov_assigned_groups=None, jit_user_prov_attribute_update_enabled=None, jit_user_prov_attributes=None, jit_user_prov_create_user_enabled=None, jit_user_prov_enabled=None, jit_user_prov_group_assertion_attribute_enabled=None, jit_user_prov_group_assignment_method=None, jit_user_prov_group_mapping_mode=None, jit_user_prov_group_mappings=None, jit_user_prov_group_saml_attribute_name=None, jit_user_prov_group_static_list_enabled=None, jit_user_prov_ignore_error_on_absent_groups=None, last_notification_sent_time=None, logout_binding=None, logout_enabled=None, logout_request_url=None, logout_response_url=None, metadata=None, metas=None, name_id_format=None, ocid=None, partner_name=None, partner_provider_id=None, requested_authentication_contexts=None, require_force_authn=None, requires_encrypted_assertion=None, resource_type_schema_version=None, saml_ho_krequired=None, schemas=None, service_instance_identifier=None, shown_on_login_page=None, signature_hash_algorithm=None, signing_certificate=None, succinct_id=None, tags=None, tenancy_ocid=None, tenant_provider_id=None, type=None, urnietfparamsscimschemasoracleidcsextensionsocial_identity_providers=None, urnietfparamsscimschemasoracleidcsextensionx509identity_providers=None, user_mapping_method=None, user_mapping_store_attribute=None):
         if assertion_attribute and not isinstance(assertion_attribute, str):
             raise TypeError("Expected argument 'assertion_attribute' to be a str")
         pulumi.set(__self__, "assertion_attribute", assertion_attribute)
@@ -128,6 +128,9 @@ class GetDomainsIdentityProviderResult:
         if jit_user_prov_ignore_error_on_absent_groups and not isinstance(jit_user_prov_ignore_error_on_absent_groups, bool):
             raise TypeError("Expected argument 'jit_user_prov_ignore_error_on_absent_groups' to be a bool")
         pulumi.set(__self__, "jit_user_prov_ignore_error_on_absent_groups", jit_user_prov_ignore_error_on_absent_groups)
+        if last_notification_sent_time and not isinstance(last_notification_sent_time, str):
+            raise TypeError("Expected argument 'last_notification_sent_time' to be a str")
+        pulumi.set(__self__, "last_notification_sent_time", last_notification_sent_time)
         if logout_binding and not isinstance(logout_binding, str):
             raise TypeError("Expected argument 'logout_binding' to be a str")
         pulumi.set(__self__, "logout_binding", logout_binding)
@@ -482,6 +485,14 @@ class GetDomainsIdentityProviderResult:
         return pulumi.get(self, "jit_user_prov_ignore_error_on_absent_groups")
 
     @property
+    @pulumi.getter(name="lastNotificationSentTime")
+    def last_notification_sent_time(self) -> str:
+        """
+        Records the notification timestamp for the IdP whose signing certificate is about to expire
+        """
+        return pulumi.get(self, "last_notification_sent_time")
+
+    @property
     @pulumi.getter(name="logoutBinding")
     def logout_binding(self) -> str:
         """
@@ -752,6 +763,7 @@ class AwaitableGetDomainsIdentityProviderResult(GetDomainsIdentityProviderResult
             jit_user_prov_group_saml_attribute_name=self.jit_user_prov_group_saml_attribute_name,
             jit_user_prov_group_static_list_enabled=self.jit_user_prov_group_static_list_enabled,
             jit_user_prov_ignore_error_on_absent_groups=self.jit_user_prov_ignore_error_on_absent_groups,
+            last_notification_sent_time=self.last_notification_sent_time,
             logout_binding=self.logout_binding,
             logout_enabled=self.logout_enabled,
             logout_request_url=self.logout_request_url,
@@ -863,6 +875,7 @@ def get_domains_identity_provider(attribute_sets: Optional[Sequence[str]] = None
         jit_user_prov_group_saml_attribute_name=pulumi.get(__ret__, 'jit_user_prov_group_saml_attribute_name'),
         jit_user_prov_group_static_list_enabled=pulumi.get(__ret__, 'jit_user_prov_group_static_list_enabled'),
         jit_user_prov_ignore_error_on_absent_groups=pulumi.get(__ret__, 'jit_user_prov_ignore_error_on_absent_groups'),
+        last_notification_sent_time=pulumi.get(__ret__, 'last_notification_sent_time'),
         logout_binding=pulumi.get(__ret__, 'logout_binding'),
         logout_enabled=pulumi.get(__ret__, 'logout_enabled'),
         logout_request_url=pulumi.get(__ret__, 'logout_request_url'),

@@ -16,7 +16,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs();
 
     /**
-     * (Updatable) Ocid of the User&#39;s Support Account.
+     * (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -35,7 +35,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -237,7 +237,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 
@@ -260,7 +260,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 

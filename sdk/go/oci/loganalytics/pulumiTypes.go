@@ -295,7 +295,7 @@ func (o LogAnalyticsObjectCollectionRuleOverrideArrayOutput) Index(i pulumi.IntI
 }
 
 type LogAnalyticsPreferencesManagementItem struct {
-	// The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+	// The preference name.
 	Name *string `pulumi:"name"`
 	// The preference value.
 	Value *string `pulumi:"value"`
@@ -313,7 +313,7 @@ type LogAnalyticsPreferencesManagementItemInput interface {
 }
 
 type LogAnalyticsPreferencesManagementItemArgs struct {
-	// The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+	// The preference name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The preference value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -370,7 +370,7 @@ func (o LogAnalyticsPreferencesManagementItemOutput) ToLogAnalyticsPreferencesMa
 	return o
 }
 
-// The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+// The preference name.
 func (o LogAnalyticsPreferencesManagementItemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LogAnalyticsPreferencesManagementItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -4091,7 +4091,7 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 }
 
 type GetLogAnalyticsPreferenceItem struct {
-	// The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+	// The preference name.
 	Name string `pulumi:"name"`
 	// The preference value.
 	Value string `pulumi:"value"`
@@ -4109,7 +4109,7 @@ type GetLogAnalyticsPreferenceItemInput interface {
 }
 
 type GetLogAnalyticsPreferenceItemArgs struct {
-	// The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+	// The preference name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The preference value.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -4166,7 +4166,7 @@ func (o GetLogAnalyticsPreferenceItemOutput) ToGetLogAnalyticsPreferenceItemOutp
 	return o
 }
 
-// The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+// The preference name.
 func (o GetLogAnalyticsPreferenceItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsPreferenceItem) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -4451,6 +4451,457 @@ func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsResourceCategoriesListItem {
 		return vs[0].([]GetLogAnalyticsResourceCategoriesListItem)[vs[1].(int)]
 	}).(GetLogAnalyticsResourceCategoriesListItemOutput)
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollection struct {
+	// A list of properties and their effective values.
+	Items []GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem `pulumi:"items"`
+}
+
+// GetNamespaceEffectivePropertiesEffectivePropertyCollectionInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs and GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput values.
+// You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionInput` via:
+//
+//	GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs{...}
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutputWithContext(context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs struct {
+	// A list of properties and their effective values.
+	Items GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput {
+	return i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput)
+}
+
+// GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray and GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayInput` via:
+//
+//	GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray{ GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs{...} }
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutputWithContext(context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray []GetNamespaceEffectivePropertiesEffectivePropertyCollectionInput
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceEffectivePropertiesEffectivePropertyCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput {
+	return i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput)
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput {
+	return o
+}
+
+// A list of properties and their effective values.
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) Items() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollection) []GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem {
+		return v.Items
+	}).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput)
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceEffectivePropertiesEffectivePropertyCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceEffectivePropertiesEffectivePropertyCollection {
+		return vs[0].([]GetNamespaceEffectivePropertiesEffectivePropertyCollection)[vs[1].(int)]
+	}).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput)
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem struct {
+	// The effective level of the property value.
+	EffectiveLevel string `pulumi:"effectiveLevel"`
+	// The property name used for filtering.
+	Name string `pulumi:"name"`
+	// A list of pattern level override values for the property.
+	Patterns []GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern `pulumi:"patterns"`
+	// The effective value of the property. This is determined by considering the value set at the most effective level.
+	Value string `pulumi:"value"`
+}
+
+// GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemInput` via:
+//
+//	GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs{...}
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutputWithContext(context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs struct {
+	// The effective level of the property value.
+	EffectiveLevel pulumi.StringInput `pulumi:"effectiveLevel"`
+	// The property name used for filtering.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A list of pattern level override values for the property.
+	Patterns GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput `pulumi:"patterns"`
+	// The effective value of the property. This is determined by considering the value set at the most effective level.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput {
+	return i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput)
+}
+
+// GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayInput` via:
+//
+//	GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray{ GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs{...} }
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutputWithContext(context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray []GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemInput
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput {
+	return i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput)
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput {
+	return o
+}
+
+// The effective level of the property value.
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) EffectiveLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) string { return v.EffectiveLevel }).(pulumi.StringOutput)
+}
+
+// The property name used for filtering.
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A list of pattern level override values for the property.
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) Patterns() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) []GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern {
+		return v.Patterns
+	}).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput)
+}
+
+// The effective value of the property. This is determined by considering the value set at the most effective level.
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem {
+		return vs[0].([]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem)[vs[1].(int)]
+	}).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput)
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern struct {
+	// The effective level of the property value.
+	EffectiveLevel string `pulumi:"effectiveLevel"`
+	// The pattern id.
+	Id string `pulumi:"id"`
+	// The effective value of the property. This is determined by considering the value set at the most effective level.
+	Value string `pulumi:"value"`
+}
+
+// GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput values.
+// You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternInput` via:
+//
+//	GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs{...}
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternInput interface {
+	pulumi.Input
+
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutputWithContext(context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs struct {
+	// The effective level of the property value.
+	EffectiveLevel pulumi.StringInput `pulumi:"effectiveLevel"`
+	// The pattern id.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The effective value of the property. This is determined by considering the value set at the most effective level.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern)(nil)).Elem()
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput {
+	return i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput)
+}
+
+// GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput` via:
+//
+//	GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray{ GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs{...} }
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput
+	ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutputWithContext(context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray []GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternInput
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern)(nil)).Elem()
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput {
+	return i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput)
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern)(nil)).Elem()
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput {
+	return o
+}
+
+// The effective level of the property value.
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) EffectiveLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern) string {
+		return v.EffectiveLevel
+	}).(pulumi.StringOutput)
+}
+
+// The pattern id.
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The effective value of the property. This is determined by considering the value set at the most effective level.
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern)(nil)).Elem()
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput() GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern {
+		return vs[0].([]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern)[vs[1].(int)]
+	}).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput)
+}
+
+type GetNamespaceEffectivePropertiesFilter struct {
+	// The property name used for filtering.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamespaceEffectivePropertiesFilterInput is an input type that accepts GetNamespaceEffectivePropertiesFilterArgs and GetNamespaceEffectivePropertiesFilterOutput values.
+// You can construct a concrete instance of `GetNamespaceEffectivePropertiesFilterInput` via:
+//
+//	GetNamespaceEffectivePropertiesFilterArgs{...}
+type GetNamespaceEffectivePropertiesFilterInput interface {
+	pulumi.Input
+
+	ToGetNamespaceEffectivePropertiesFilterOutput() GetNamespaceEffectivePropertiesFilterOutput
+	ToGetNamespaceEffectivePropertiesFilterOutputWithContext(context.Context) GetNamespaceEffectivePropertiesFilterOutput
+}
+
+type GetNamespaceEffectivePropertiesFilterArgs struct {
+	// The property name used for filtering.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamespaceEffectivePropertiesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceEffectivePropertiesFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceEffectivePropertiesFilterArgs) ToGetNamespaceEffectivePropertiesFilterOutput() GetNamespaceEffectivePropertiesFilterOutput {
+	return i.ToGetNamespaceEffectivePropertiesFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceEffectivePropertiesFilterArgs) ToGetNamespaceEffectivePropertiesFilterOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesFilterOutput)
+}
+
+// GetNamespaceEffectivePropertiesFilterArrayInput is an input type that accepts GetNamespaceEffectivePropertiesFilterArray and GetNamespaceEffectivePropertiesFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceEffectivePropertiesFilterArrayInput` via:
+//
+//	GetNamespaceEffectivePropertiesFilterArray{ GetNamespaceEffectivePropertiesFilterArgs{...} }
+type GetNamespaceEffectivePropertiesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceEffectivePropertiesFilterArrayOutput() GetNamespaceEffectivePropertiesFilterArrayOutput
+	ToGetNamespaceEffectivePropertiesFilterArrayOutputWithContext(context.Context) GetNamespaceEffectivePropertiesFilterArrayOutput
+}
+
+type GetNamespaceEffectivePropertiesFilterArray []GetNamespaceEffectivePropertiesFilterInput
+
+func (GetNamespaceEffectivePropertiesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceEffectivePropertiesFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceEffectivePropertiesFilterArray) ToGetNamespaceEffectivePropertiesFilterArrayOutput() GetNamespaceEffectivePropertiesFilterArrayOutput {
+	return i.ToGetNamespaceEffectivePropertiesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceEffectivePropertiesFilterArray) ToGetNamespaceEffectivePropertiesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesFilterArrayOutput)
+}
+
+type GetNamespaceEffectivePropertiesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceEffectivePropertiesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceEffectivePropertiesFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceEffectivePropertiesFilterOutput) ToGetNamespaceEffectivePropertiesFilterOutput() GetNamespaceEffectivePropertiesFilterOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesFilterOutput) ToGetNamespaceEffectivePropertiesFilterOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesFilterOutput {
+	return o
+}
+
+// The property name used for filtering.
+func (o GetNamespaceEffectivePropertiesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamespaceEffectivePropertiesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamespaceEffectivePropertiesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamespaceEffectivePropertiesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceEffectivePropertiesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceEffectivePropertiesFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceEffectivePropertiesFilterArrayOutput) ToGetNamespaceEffectivePropertiesFilterArrayOutput() GetNamespaceEffectivePropertiesFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesFilterArrayOutput) ToGetNamespaceEffectivePropertiesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceEffectivePropertiesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceEffectivePropertiesFilter {
+		return vs[0].([]GetNamespaceEffectivePropertiesFilter)[vs[1].(int)]
+	}).(GetNamespaceEffectivePropertiesFilterOutput)
 }
 
 type GetNamespaceIngestTimeRuleAction struct {
@@ -5254,6 +5705,463 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem {
 		return vs[0].([]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem)[vs[1].(int)]
 	}).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput)
+}
+
+type GetNamespacePropertiesMetadataFilter struct {
+	// The property name used for filtering.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamespacePropertiesMetadataFilterInput is an input type that accepts GetNamespacePropertiesMetadataFilterArgs and GetNamespacePropertiesMetadataFilterOutput values.
+// You can construct a concrete instance of `GetNamespacePropertiesMetadataFilterInput` via:
+//
+//	GetNamespacePropertiesMetadataFilterArgs{...}
+type GetNamespacePropertiesMetadataFilterInput interface {
+	pulumi.Input
+
+	ToGetNamespacePropertiesMetadataFilterOutput() GetNamespacePropertiesMetadataFilterOutput
+	ToGetNamespacePropertiesMetadataFilterOutputWithContext(context.Context) GetNamespacePropertiesMetadataFilterOutput
+}
+
+type GetNamespacePropertiesMetadataFilterArgs struct {
+	// The property name used for filtering.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamespacePropertiesMetadataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespacePropertiesMetadataFilter)(nil)).Elem()
+}
+
+func (i GetNamespacePropertiesMetadataFilterArgs) ToGetNamespacePropertiesMetadataFilterOutput() GetNamespacePropertiesMetadataFilterOutput {
+	return i.ToGetNamespacePropertiesMetadataFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamespacePropertiesMetadataFilterArgs) ToGetNamespacePropertiesMetadataFilterOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataFilterOutput)
+}
+
+// GetNamespacePropertiesMetadataFilterArrayInput is an input type that accepts GetNamespacePropertiesMetadataFilterArray and GetNamespacePropertiesMetadataFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamespacePropertiesMetadataFilterArrayInput` via:
+//
+//	GetNamespacePropertiesMetadataFilterArray{ GetNamespacePropertiesMetadataFilterArgs{...} }
+type GetNamespacePropertiesMetadataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespacePropertiesMetadataFilterArrayOutput() GetNamespacePropertiesMetadataFilterArrayOutput
+	ToGetNamespacePropertiesMetadataFilterArrayOutputWithContext(context.Context) GetNamespacePropertiesMetadataFilterArrayOutput
+}
+
+type GetNamespacePropertiesMetadataFilterArray []GetNamespacePropertiesMetadataFilterInput
+
+func (GetNamespacePropertiesMetadataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespacePropertiesMetadataFilter)(nil)).Elem()
+}
+
+func (i GetNamespacePropertiesMetadataFilterArray) ToGetNamespacePropertiesMetadataFilterArrayOutput() GetNamespacePropertiesMetadataFilterArrayOutput {
+	return i.ToGetNamespacePropertiesMetadataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespacePropertiesMetadataFilterArray) ToGetNamespacePropertiesMetadataFilterArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataFilterArrayOutput)
+}
+
+type GetNamespacePropertiesMetadataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamespacePropertiesMetadataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespacePropertiesMetadataFilter)(nil)).Elem()
+}
+
+func (o GetNamespacePropertiesMetadataFilterOutput) ToGetNamespacePropertiesMetadataFilterOutput() GetNamespacePropertiesMetadataFilterOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataFilterOutput) ToGetNamespacePropertiesMetadataFilterOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataFilterOutput {
+	return o
+}
+
+// The property name used for filtering.
+func (o GetNamespacePropertiesMetadataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamespacePropertiesMetadataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamespacePropertiesMetadataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamespacePropertiesMetadataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespacePropertiesMetadataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespacePropertiesMetadataFilter)(nil)).Elem()
+}
+
+func (o GetNamespacePropertiesMetadataFilterArrayOutput) ToGetNamespacePropertiesMetadataFilterArrayOutput() GetNamespacePropertiesMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataFilterArrayOutput) ToGetNamespacePropertiesMetadataFilterArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespacePropertiesMetadataFilter {
+		return vs[0].([]GetNamespacePropertiesMetadataFilter)[vs[1].(int)]
+	}).(GetNamespacePropertiesMetadataFilterOutput)
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection struct {
+	// An array of properties along with their metadata summary.
+	Items []GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionInput` via:
+//
+//	GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs{...}
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutputWithContext(context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs struct {
+	// An array of properties along with their metadata summary.
+	Items GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput {
+	return i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput)
+}
+
+// GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayInput` via:
+//
+//	GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray{ GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs{...} }
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutputWithContext(context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray []GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionInput
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput {
+	return i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput)
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput {
+	return o
+}
+
+// An array of properties along with their metadata summary.
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) Items() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection) []GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem {
+		return v.Items
+	}).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput)
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection {
+		return vs[0].([]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection)[vs[1].(int)]
+	}).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput)
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem struct {
+	// The default property value.
+	DefaultValue string `pulumi:"defaultValue"`
+	// The property description.
+	Description string `pulumi:"description"`
+	// The property display name.
+	DisplayName string `pulumi:"displayName"`
+	// A list of levels at which the property could be defined.
+	Levels []GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel `pulumi:"levels"`
+	// The property name used for filtering.
+	Name string `pulumi:"name"`
+}
+
+// GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemInput` via:
+//
+//	GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs{...}
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutputWithContext(context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs struct {
+	// The default property value.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// The property description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The property display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A list of levels at which the property could be defined.
+	Levels GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayInput `pulumi:"levels"`
+	// The property name used for filtering.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput {
+	return i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput)
+}
+
+// GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayInput` via:
+//
+//	GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray{ GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs{...} }
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutputWithContext(context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray []GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemInput
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput {
+	return i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput)
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput {
+	return o
+}
+
+// The default property value.
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+// The property description.
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The property display name.
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// A list of levels at which the property could be defined.
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) Levels() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) []GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel {
+		return v.Levels
+	}).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput)
+}
+
+// The property name used for filtering.
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem {
+		return vs[0].([]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem)[vs[1].(int)]
+	}).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput)
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel struct {
+	// The constraints that apply to the properties at a certain level.
+	Constraints string `pulumi:"constraints"`
+	// The property name used for filtering.
+	Name string `pulumi:"name"`
+}
+
+// GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput values.
+// You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelInput` via:
+//
+//	GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs{...}
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelInput interface {
+	pulumi.Input
+
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutputWithContext(context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs struct {
+	// The constraints that apply to the properties at a certain level.
+	Constraints pulumi.StringInput `pulumi:"constraints"`
+	// The property name used for filtering.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel)(nil)).Elem()
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput {
+	return i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutputWithContext(context.Background())
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput)
+}
+
+// GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput values.
+// You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayInput` via:
+//
+//	GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray{ GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs{...} }
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput
+	ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutputWithContext(context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray []GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelInput
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel)(nil)).Elem()
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput {
+	return i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput)
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput struct{ *pulumi.OutputState }
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel)(nil)).Elem()
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput {
+	return o
+}
+
+// The constraints that apply to the properties at a certain level.
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) Constraints() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel) string {
+		return v.Constraints
+	}).(pulumi.StringOutput)
+}
+
+// The property name used for filtering.
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel)(nil)).Elem()
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput() GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput {
+	return o
+}
+
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel {
+		return vs[0].([]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel)[vs[1].(int)]
+	}).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput)
 }
 
 type GetNamespaceRulesFilter struct {
@@ -7296,6 +8204,381 @@ func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) Index(i pulumi.IntI
 	}).(GetNamespaceStorageEncryptionKeyInfoItemOutput)
 }
 
+type GetNamespaceStorageOverlappingRecallsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamespaceStorageOverlappingRecallsFilterInput is an input type that accepts GetNamespaceStorageOverlappingRecallsFilterArgs and GetNamespaceStorageOverlappingRecallsFilterOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsFilterInput` via:
+//
+//	GetNamespaceStorageOverlappingRecallsFilterArgs{...}
+type GetNamespaceStorageOverlappingRecallsFilterInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageOverlappingRecallsFilterOutput() GetNamespaceStorageOverlappingRecallsFilterOutput
+	ToGetNamespaceStorageOverlappingRecallsFilterOutputWithContext(context.Context) GetNamespaceStorageOverlappingRecallsFilterOutput
+}
+
+type GetNamespaceStorageOverlappingRecallsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamespaceStorageOverlappingRecallsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageOverlappingRecallsFilterArgs) ToGetNamespaceStorageOverlappingRecallsFilterOutput() GetNamespaceStorageOverlappingRecallsFilterOutput {
+	return i.ToGetNamespaceStorageOverlappingRecallsFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageOverlappingRecallsFilterArgs) ToGetNamespaceStorageOverlappingRecallsFilterOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsFilterOutput)
+}
+
+// GetNamespaceStorageOverlappingRecallsFilterArrayInput is an input type that accepts GetNamespaceStorageOverlappingRecallsFilterArray and GetNamespaceStorageOverlappingRecallsFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsFilterArrayInput` via:
+//
+//	GetNamespaceStorageOverlappingRecallsFilterArray{ GetNamespaceStorageOverlappingRecallsFilterArgs{...} }
+type GetNamespaceStorageOverlappingRecallsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageOverlappingRecallsFilterArrayOutput() GetNamespaceStorageOverlappingRecallsFilterArrayOutput
+	ToGetNamespaceStorageOverlappingRecallsFilterArrayOutputWithContext(context.Context) GetNamespaceStorageOverlappingRecallsFilterArrayOutput
+}
+
+type GetNamespaceStorageOverlappingRecallsFilterArray []GetNamespaceStorageOverlappingRecallsFilterInput
+
+func (GetNamespaceStorageOverlappingRecallsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageOverlappingRecallsFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageOverlappingRecallsFilterArray) ToGetNamespaceStorageOverlappingRecallsFilterArrayOutput() GetNamespaceStorageOverlappingRecallsFilterArrayOutput {
+	return i.ToGetNamespaceStorageOverlappingRecallsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageOverlappingRecallsFilterArray) ToGetNamespaceStorageOverlappingRecallsFilterArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsFilterArrayOutput)
+}
+
+type GetNamespaceStorageOverlappingRecallsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageOverlappingRecallsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageOverlappingRecallsFilterOutput) ToGetNamespaceStorageOverlappingRecallsFilterOutput() GetNamespaceStorageOverlappingRecallsFilterOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsFilterOutput) ToGetNamespaceStorageOverlappingRecallsFilterOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsFilterOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamespaceStorageOverlappingRecallsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamespaceStorageOverlappingRecallsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamespaceStorageOverlappingRecallsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageOverlappingRecallsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageOverlappingRecallsFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) ToGetNamespaceStorageOverlappingRecallsFilterArrayOutput() GetNamespaceStorageOverlappingRecallsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) ToGetNamespaceStorageOverlappingRecallsFilterArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageOverlappingRecallsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceStorageOverlappingRecallsFilter {
+		return vs[0].([]GetNamespaceStorageOverlappingRecallsFilter)[vs[1].(int)]
+	}).(GetNamespaceStorageOverlappingRecallsFilterOutput)
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection struct {
+	// This is the array of overlapping recall requests
+	Items []GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem `pulumi:"items"`
+}
+
+// GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionInput is an input type that accepts GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs and GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionInput` via:
+//
+//	GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs{...}
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput
+	ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutputWithContext(context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs struct {
+	// This is the array of overlapping recall requests
+	Items GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput {
+	return i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput)
+}
+
+// GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayInput is an input type that accepts GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray and GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayInput` via:
+//
+//	GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray{ GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs{...} }
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput
+	ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutputWithContext(context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray []GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionInput
+
+func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput {
+	return i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput)
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput {
+	return o
+}
+
+// This is the array of overlapping recall requests
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) Items() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection) []GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem {
+		return v.Items
+	}).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput)
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection {
+		return vs[0].([]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection)[vs[1].(int)]
+	}).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput)
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem struct {
+	// This is the user who initiated the recall request
+	CreatedBy string `pulumi:"createdBy"`
+	// This is the list of logsets associated with this recall
+	LogSets string `pulumi:"logSets"`
+	// This is the purpose of the recall
+	Purpose string `pulumi:"purpose"`
+	// This is the query associated with the recall
+	QueryString string `pulumi:"queryString"`
+	// This is the status of the recall
+	Status string `pulumi:"status"`
+	// This is the end of the time range for recalled data
+	TimeDataEnded string `pulumi:"timeDataEnded"`
+	// This is the start of the time range for recalled data
+	TimeDataStarted string `pulumi:"timeDataStarted"`
+	// This is the time when the recall operation was started for this recall request
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemInput is an input type that accepts GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs and GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemInput` via:
+//
+//	GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs{...}
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput
+	ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutputWithContext(context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs struct {
+	// This is the user who initiated the recall request
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// This is the list of logsets associated with this recall
+	LogSets pulumi.StringInput `pulumi:"logSets"`
+	// This is the purpose of the recall
+	Purpose pulumi.StringInput `pulumi:"purpose"`
+	// This is the query associated with the recall
+	QueryString pulumi.StringInput `pulumi:"queryString"`
+	// This is the status of the recall
+	Status pulumi.StringInput `pulumi:"status"`
+	// This is the end of the time range for recalled data
+	TimeDataEnded pulumi.StringInput `pulumi:"timeDataEnded"`
+	// This is the start of the time range for recalled data
+	TimeDataStarted pulumi.StringInput `pulumi:"timeDataStarted"`
+	// This is the time when the recall operation was started for this recall request
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput {
+	return i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput)
+}
+
+// GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayInput is an input type that accepts GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray and GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayInput` via:
+//
+//	GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray{ GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs{...} }
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput
+	ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutputWithContext(context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray []GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemInput
+
+func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput {
+	return i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput)
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput {
+	return o
+}
+
+// This is the user who initiated the recall request
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+		return v.CreatedBy
+	}).(pulumi.StringOutput)
+}
+
+// This is the list of logsets associated with this recall
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) LogSets() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string { return v.LogSets }).(pulumi.StringOutput)
+}
+
+// This is the purpose of the recall
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) Purpose() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string { return v.Purpose }).(pulumi.StringOutput)
+}
+
+// This is the query associated with the recall
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) QueryString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+		return v.QueryString
+	}).(pulumi.StringOutput)
+}
+
+// This is the status of the recall
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// This is the end of the time range for recalled data
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) TimeDataEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+		return v.TimeDataEnded
+	}).(pulumi.StringOutput)
+}
+
+// This is the start of the time range for recalled data
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) TimeDataStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+		return v.TimeDataStarted
+	}).(pulumi.StringOutput)
+}
+
+// This is the time when the recall operation was started for this recall request
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput() GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem {
+		return vs[0].([]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem)[vs[1].(int)]
+	}).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput)
+}
+
 type GetNamespacesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -7672,6 +8955,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsResourceCategoriesListCategoryArrayInput)(nil)).Elem(), GetLogAnalyticsResourceCategoriesListCategoryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsResourceCategoriesListItemInput)(nil)).Elem(), GetLogAnalyticsResourceCategoriesListItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsResourceCategoriesListItemArrayInput)(nil)).Elem(), GetLogAnalyticsResourceCategoriesListItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionInput)(nil)).Elem(), GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayInput)(nil)).Elem(), GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemInput)(nil)).Elem(), GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayInput)(nil)).Elem(), GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternInput)(nil)).Elem(), GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput)(nil)).Elem(), GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesFilterInput)(nil)).Elem(), GetNamespaceEffectivePropertiesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesFilterArrayInput)(nil)).Elem(), GetNamespaceEffectivePropertiesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleActionInput)(nil)).Elem(), GetNamespaceIngestTimeRuleActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleActionArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRuleActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleConditionInput)(nil)).Elem(), GetNamespaceIngestTimeRuleConditionArgs{})
@@ -7684,6 +8975,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataFilterInput)(nil)).Elem(), GetNamespacePropertiesMetadataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataFilterArrayInput)(nil)).Elem(), GetNamespacePropertiesMetadataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionInput)(nil)).Elem(), GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayInput)(nil)).Elem(), GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemInput)(nil)).Elem(), GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayInput)(nil)).Elem(), GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelInput)(nil)).Elem(), GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayInput)(nil)).Elem(), GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesFilterInput)(nil)).Elem(), GetNamespaceRulesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesFilterArrayInput)(nil)).Elem(), GetNamespaceRulesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceRulesRuleSummaryCollectionInput)(nil)).Elem(), GetNamespaceRulesRuleSummaryCollectionArgs{})
@@ -7714,6 +9013,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageEncryptionKeyInfoItemInput)(nil)).Elem(), GetNamespaceStorageEncryptionKeyInfoItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageEncryptionKeyInfoItemArrayInput)(nil)).Elem(), GetNamespaceStorageEncryptionKeyInfoItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsFilterInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsFilterArrayInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacesFilterInput)(nil)).Elem(), GetNamespacesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacesFilterArrayInput)(nil)).Elem(), GetNamespacesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacesNamespaceCollectionInput)(nil)).Elem(), GetNamespacesNamespaceCollectionArgs{})
@@ -7780,6 +9085,14 @@ func init() {
 	pulumi.RegisterOutputType(GetLogAnalyticsResourceCategoriesListCategoryArrayOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsResourceCategoriesListItemOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsResourceCategoriesListItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput{})
+	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesFilterOutput{})
+	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleActionOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleActionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleConditionOutput{})
@@ -7792,6 +9105,14 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataFilterOutput{})
+	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput{})
+	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceRulesFilterOutput{})
 	pulumi.RegisterOutputType(GetNamespaceRulesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceRulesRuleSummaryCollectionOutput{})
@@ -7822,6 +9143,12 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceStorageEncryptionKeyInfoItemOutput{})
 	pulumi.RegisterOutputType(GetNamespaceStorageEncryptionKeyInfoItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsFilterOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespacesFilterOutput{})
 	pulumi.RegisterOutputType(GetNamespacesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespacesNamespaceCollectionOutput{})

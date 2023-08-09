@@ -59,6 +59,11 @@ public final class GetControlsOperatorControlCollectionItem {
      */
     private String id;
     /**
+     * @return Whether the operator control is a default Operator Control.
+     * 
+     */
+    private Boolean isDefaultOperatorControl;
+    /**
      * @return Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      * 
      */
@@ -174,6 +179,13 @@ public final class GetControlsOperatorControlCollectionItem {
         return this.id;
     }
     /**
+     * @return Whether the operator control is a default Operator Control.
+     * 
+     */
+    public Boolean isDefaultOperatorControl() {
+        return this.isDefaultOperatorControl;
+    }
+    /**
      * @return Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      * 
      */
@@ -262,6 +274,7 @@ public final class GetControlsOperatorControlCollectionItem {
         private List<String> emailIdLists;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isDefaultOperatorControl;
         private Boolean isFullyPreApproved;
         private String lastModifiedInfo;
         private String operatorControlName;
@@ -284,6 +297,7 @@ public final class GetControlsOperatorControlCollectionItem {
     	      this.emailIdLists = defaults.emailIdLists;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isDefaultOperatorControl = defaults.isDefaultOperatorControl;
     	      this.isFullyPreApproved = defaults.isFullyPreApproved;
     	      this.lastModifiedInfo = defaults.lastModifiedInfo;
     	      this.operatorControlName = defaults.operatorControlName;
@@ -354,6 +368,11 @@ public final class GetControlsOperatorControlCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isDefaultOperatorControl(Boolean isDefaultOperatorControl) {
+            this.isDefaultOperatorControl = Objects.requireNonNull(isDefaultOperatorControl);
+            return this;
+        }
+        @CustomType.Setter
         public Builder isFullyPreApproved(Boolean isFullyPreApproved) {
             this.isFullyPreApproved = Objects.requireNonNull(isFullyPreApproved);
             return this;
@@ -417,6 +436,7 @@ public final class GetControlsOperatorControlCollectionItem {
             o.emailIdLists = emailIdLists;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.isDefaultOperatorControl = isDefaultOperatorControl;
             o.isFullyPreApproved = isFullyPreApproved;
             o.lastModifiedInfo = lastModifiedInfo;
             o.operatorControlName = operatorControlName;

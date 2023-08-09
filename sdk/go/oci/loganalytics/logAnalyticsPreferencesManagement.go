@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
 //
-// Updates the tenant preferences. Currently, only "DEFAULT_HOMEPAGE" is supported.
+// Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
 //
 // ## Example Usage
 //

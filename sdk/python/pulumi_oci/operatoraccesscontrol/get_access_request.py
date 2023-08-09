@@ -21,7 +21,7 @@ class GetAccessRequestResult:
     """
     A collection of values returned by getAccessRequest.
     """
-    def __init__(__self__, access_reason_summary=None, access_request_id=None, action_requests_lists=None, approver_comment=None, audit_types=None, closure_comment=None, compartment_id=None, defined_tags=None, duration=None, extend_duration=None, freeform_tags=None, id=None, is_auto_approved=None, lifecycle_details=None, opctl_additional_message=None, opctl_id=None, opctl_name=None, operator_id=None, reason=None, request_id=None, resource_id=None, resource_name=None, resource_type=None, severity=None, state=None, system_message=None, time_of_creation=None, time_of_modification=None, time_of_user_creation=None, user_id=None, workflow_ids=None):
+    def __init__(__self__, access_reason_summary=None, access_request_id=None, action_requests_lists=None, approver_comment=None, audit_types=None, closure_comment=None, compartment_id=None, defined_tags=None, duration=None, extend_duration=None, freeform_tags=None, id=None, is_auto_approved=None, lifecycle_details=None, opctl_additional_message=None, opctl_id=None, opctl_name=None, operator_id=None, reason=None, request_id=None, resource_id=None, resource_name=None, resource_type=None, severity=None, state=None, sub_resource_lists=None, system_message=None, time_of_creation=None, time_of_modification=None, time_of_user_creation=None, user_id=None, workflow_ids=None):
         if access_reason_summary and not isinstance(access_reason_summary, str):
             raise TypeError("Expected argument 'access_reason_summary' to be a str")
         pulumi.set(__self__, "access_reason_summary", access_reason_summary)
@@ -97,6 +97,9 @@ class GetAccessRequestResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if sub_resource_lists and not isinstance(sub_resource_lists, list):
+            raise TypeError("Expected argument 'sub_resource_lists' to be a list")
+        pulumi.set(__self__, "sub_resource_lists", sub_resource_lists)
         if system_message and not isinstance(system_message, str):
             raise TypeError("Expected argument 'system_message' to be a str")
         pulumi.set(__self__, "system_message", system_message)
@@ -314,6 +317,14 @@ class GetAccessRequestResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="subResourceLists")
+    def sub_resource_lists(self) -> Sequence[str]:
+        """
+        The subresources requested for approval.
+        """
+        return pulumi.get(self, "sub_resource_lists")
+
+    @property
     @pulumi.getter(name="systemMessage")
     def system_message(self) -> str:
         """
@@ -393,6 +404,7 @@ class AwaitableGetAccessRequestResult(GetAccessRequestResult):
             resource_type=self.resource_type,
             severity=self.severity,
             state=self.state,
+            sub_resource_lists=self.sub_resource_lists,
             system_message=self.system_message,
             time_of_creation=self.time_of_creation,
             time_of_modification=self.time_of_modification,
@@ -451,6 +463,7 @@ def get_access_request(access_request_id: Optional[str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         severity=pulumi.get(__ret__, 'severity'),
         state=pulumi.get(__ret__, 'state'),
+        sub_resource_lists=pulumi.get(__ret__, 'sub_resource_lists'),
         system_message=pulumi.get(__ret__, 'system_message'),
         time_of_creation=pulumi.get(__ret__, 'time_of_creation'),
         time_of_modification=pulumi.get(__ret__, 'time_of_modification'),

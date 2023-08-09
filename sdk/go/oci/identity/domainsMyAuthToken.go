@@ -14,7 +14,7 @@ import (
 
 // This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Add user's auth token
+// Create a user's own Auth token.
 //
 // ## Import
 //
@@ -77,7 +77,7 @@ type DomainsMyAuthToken struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -148,7 +148,7 @@ type DomainsMyAuthToken struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMyAuthTokenMetaArrayOutput `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -174,7 +174,7 @@ type DomainsMyAuthToken struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayOutput `pulumi:"schemas"`
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -212,7 +212,7 @@ type DomainsMyAuthToken struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
-	// User linked to auth token
+	// The user linked to the Auth token.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -311,7 +311,7 @@ type domainsMyAuthTokenState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid *string `pulumi:"domainOcid"`
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -382,7 +382,7 @@ type domainsMyAuthTokenState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsMyAuthTokenMeta `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -408,7 +408,7 @@ type domainsMyAuthTokenState struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -446,7 +446,7 @@ type domainsMyAuthTokenState struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid *string `pulumi:"tenancyOcid"`
-	// User linked to auth token
+	// The user linked to the Auth token.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -510,7 +510,7 @@ type DomainsMyAuthTokenState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringPtrInput
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -581,7 +581,7 @@ type DomainsMyAuthTokenState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMyAuthTokenMetaArrayInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -607,7 +607,7 @@ type DomainsMyAuthTokenState struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -645,7 +645,7 @@ type DomainsMyAuthTokenState struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid pulumi.StringPtrInput
-	// User linked to auth token
+	// The user linked to the Auth token.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -677,7 +677,7 @@ type domainsMyAuthTokenArgs struct {
 	// * required: false
 	// * returned: default
 	Description *string `pulumi:"description"`
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -693,7 +693,7 @@ type domainsMyAuthTokenArgs struct {
 	ExpiresOn *string `pulumi:"expiresOn"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -719,7 +719,7 @@ type domainsMyAuthTokenArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -745,7 +745,7 @@ type domainsMyAuthTokenArgs struct {
 	// * type: complex
 	// * uniqueness: none
 	Tags []DomainsMyAuthTokenTag `pulumi:"tags"`
-	// User linked to auth token
+	// The user linked to the Auth token.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -774,7 +774,7 @@ type DomainsMyAuthTokenArgs struct {
 	// * required: false
 	// * returned: default
 	Description pulumi.StringPtrInput
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -790,7 +790,7 @@ type DomainsMyAuthTokenArgs struct {
 	ExpiresOn pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -816,7 +816,7 @@ type DomainsMyAuthTokenArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -842,7 +842,7 @@ type DomainsMyAuthTokenArgs struct {
 	// * type: complex
 	// * uniqueness: none
 	Tags DomainsMyAuthTokenTagArrayInput
-	// User linked to auth token
+	// The user linked to the Auth token.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -1007,7 +1007,7 @@ func (o DomainsMyAuthTokenOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyAuthToken) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
-// User credential expires on
+// When the user's credential expire.
 //
 // **Added In:** 2109090424
 //
@@ -1101,7 +1101,7 @@ func (o DomainsMyAuthTokenOutput) Metas() DomainsMyAuthTokenMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsMyAuthToken) DomainsMyAuthTokenMetaArrayOutput { return v.Metas }).(DomainsMyAuthTokenMetaArrayOutput)
 }
 
-// User's ocid
+// The user's OCID.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1136,7 +1136,7 @@ func (o DomainsMyAuthTokenOutput) Schemas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsMyAuthToken) pulumi.StringArrayOutput { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
-// User credential status
+// The user's credential status.
 //
 // **Added In:** 2109090424
 //
@@ -1183,7 +1183,7 @@ func (o DomainsMyAuthTokenOutput) TenancyOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyAuthToken) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
 }
 
-// User linked to auth token
+// The user linked to the Auth token.
 //
 // **SCIM++ Properties:**
 // * caseExact: false

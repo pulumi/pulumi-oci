@@ -45,10 +45,25 @@ export type DomainReplicationToRegion = import("./domainReplicationToRegion").Do
 export const DomainReplicationToRegion: typeof import("./domainReplicationToRegion").DomainReplicationToRegion = null as any;
 utilities.lazyLoad(exports, ["DomainReplicationToRegion"], () => require("./domainReplicationToRegion"));
 
+export { DomainsAccountRecoverySettingArgs, DomainsAccountRecoverySettingState } from "./domainsAccountRecoverySetting";
+export type DomainsAccountRecoverySetting = import("./domainsAccountRecoverySetting").DomainsAccountRecoverySetting;
+export const DomainsAccountRecoverySetting: typeof import("./domainsAccountRecoverySetting").DomainsAccountRecoverySetting = null as any;
+utilities.lazyLoad(exports, ["DomainsAccountRecoverySetting"], () => require("./domainsAccountRecoverySetting"));
+
 export { DomainsApiKeyArgs, DomainsApiKeyState } from "./domainsApiKey";
 export type DomainsApiKey = import("./domainsApiKey").DomainsApiKey;
 export const DomainsApiKey: typeof import("./domainsApiKey").DomainsApiKey = null as any;
 utilities.lazyLoad(exports, ["DomainsApiKey"], () => require("./domainsApiKey"));
+
+export { DomainsAppArgs, DomainsAppState } from "./domainsApp";
+export type DomainsApp = import("./domainsApp").DomainsApp;
+export const DomainsApp: typeof import("./domainsApp").DomainsApp = null as any;
+utilities.lazyLoad(exports, ["DomainsApp"], () => require("./domainsApp"));
+
+export { DomainsAppRoleArgs, DomainsAppRoleState } from "./domainsAppRole";
+export type DomainsAppRole = import("./domainsAppRole").DomainsAppRole;
+export const DomainsAppRole: typeof import("./domainsAppRole").DomainsAppRole = null as any;
+utilities.lazyLoad(exports, ["DomainsAppRole"], () => require("./domainsAppRole"));
 
 export { DomainsAuthTokenArgs, DomainsAuthTokenState } from "./domainsAuthToken";
 export type DomainsAuthToken = import("./domainsAuthToken").DomainsAuthToken;
@@ -70,6 +85,11 @@ export type DomainsDynamicResourceGroup = import("./domainsDynamicResourceGroup"
 export const DomainsDynamicResourceGroup: typeof import("./domainsDynamicResourceGroup").DomainsDynamicResourceGroup = null as any;
 utilities.lazyLoad(exports, ["DomainsDynamicResourceGroup"], () => require("./domainsDynamicResourceGroup"));
 
+export { DomainsGrantArgs, DomainsGrantState } from "./domainsGrant";
+export type DomainsGrant = import("./domainsGrant").DomainsGrant;
+export const DomainsGrant: typeof import("./domainsGrant").DomainsGrant = null as any;
+utilities.lazyLoad(exports, ["DomainsGrant"], () => require("./domainsGrant"));
+
 export { DomainsGroupArgs, DomainsGroupState } from "./domainsGroup";
 export type DomainsGroup = import("./domainsGroup").DomainsGroup;
 export const DomainsGroup: typeof import("./domainsGroup").DomainsGroup = null as any;
@@ -79,6 +99,11 @@ export { DomainsIdentityProviderArgs, DomainsIdentityProviderState } from "./dom
 export type DomainsIdentityProvider = import("./domainsIdentityProvider").DomainsIdentityProvider;
 export const DomainsIdentityProvider: typeof import("./domainsIdentityProvider").DomainsIdentityProvider = null as any;
 utilities.lazyLoad(exports, ["DomainsIdentityProvider"], () => require("./domainsIdentityProvider"));
+
+export { DomainsIdentitySettingArgs, DomainsIdentitySettingState } from "./domainsIdentitySetting";
+export type DomainsIdentitySetting = import("./domainsIdentitySetting").DomainsIdentitySetting;
+export const DomainsIdentitySetting: typeof import("./domainsIdentitySetting").DomainsIdentitySetting = null as any;
+utilities.lazyLoad(exports, ["DomainsIdentitySetting"], () => require("./domainsIdentitySetting"));
 
 export { DomainsKmsiSettingArgs, DomainsKmsiSettingState } from "./domainsKmsiSetting";
 export type DomainsKmsiSetting = import("./domainsKmsiSetting").DomainsKmsiSetting;
@@ -105,6 +130,11 @@ export type DomainsMyOauth2clientCredential = import("./domainsMyOauth2clientCre
 export const DomainsMyOauth2clientCredential: typeof import("./domainsMyOauth2clientCredential").DomainsMyOauth2clientCredential = null as any;
 utilities.lazyLoad(exports, ["DomainsMyOauth2clientCredential"], () => require("./domainsMyOauth2clientCredential"));
 
+export { DomainsMyRequestArgs, DomainsMyRequestState } from "./domainsMyRequest";
+export type DomainsMyRequest = import("./domainsMyRequest").DomainsMyRequest;
+export const DomainsMyRequest: typeof import("./domainsMyRequest").DomainsMyRequest = null as any;
+utilities.lazyLoad(exports, ["DomainsMyRequest"], () => require("./domainsMyRequest"));
+
 export { DomainsMySmtpCredentialArgs, DomainsMySmtpCredentialState } from "./domainsMySmtpCredential";
 export type DomainsMySmtpCredential = import("./domainsMySmtpCredential").DomainsMySmtpCredential;
 export const DomainsMySmtpCredential: typeof import("./domainsMySmtpCredential").DomainsMySmtpCredential = null as any;
@@ -129,6 +159,16 @@ export { DomainsPasswordPolicyArgs, DomainsPasswordPolicyState } from "./domains
 export type DomainsPasswordPolicy = import("./domainsPasswordPolicy").DomainsPasswordPolicy;
 export const DomainsPasswordPolicy: typeof import("./domainsPasswordPolicy").DomainsPasswordPolicy = null as any;
 utilities.lazyLoad(exports, ["DomainsPasswordPolicy"], () => require("./domainsPasswordPolicy"));
+
+export { DomainsSecurityQuestionArgs, DomainsSecurityQuestionState } from "./domainsSecurityQuestion";
+export type DomainsSecurityQuestion = import("./domainsSecurityQuestion").DomainsSecurityQuestion;
+export const DomainsSecurityQuestion: typeof import("./domainsSecurityQuestion").DomainsSecurityQuestion = null as any;
+utilities.lazyLoad(exports, ["DomainsSecurityQuestion"], () => require("./domainsSecurityQuestion"));
+
+export { DomainsSecurityQuestionSettingArgs, DomainsSecurityQuestionSettingState } from "./domainsSecurityQuestionSetting";
+export type DomainsSecurityQuestionSetting = import("./domainsSecurityQuestionSetting").DomainsSecurityQuestionSetting;
+export const DomainsSecurityQuestionSetting: typeof import("./domainsSecurityQuestionSetting").DomainsSecurityQuestionSetting = null as any;
+utilities.lazyLoad(exports, ["DomainsSecurityQuestionSetting"], () => require("./domainsSecurityQuestionSetting"));
 
 export { DomainsSmtpCredentialArgs, DomainsSmtpCredentialState } from "./domainsSmtpCredential";
 export type DomainsSmtpCredential = import("./domainsSmtpCredential").DomainsSmtpCredential;
@@ -215,6 +255,26 @@ export const getDomains: typeof import("./getDomains").getDomains = null as any;
 export const getDomainsOutput: typeof import("./getDomains").getDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomains","getDomainsOutput"], () => require("./getDomains"));
 
+export { GetDomainsAccountMgmtInfoArgs, GetDomainsAccountMgmtInfoResult, GetDomainsAccountMgmtInfoOutputArgs } from "./getDomainsAccountMgmtInfo";
+export const getDomainsAccountMgmtInfo: typeof import("./getDomainsAccountMgmtInfo").getDomainsAccountMgmtInfo = null as any;
+export const getDomainsAccountMgmtInfoOutput: typeof import("./getDomainsAccountMgmtInfo").getDomainsAccountMgmtInfoOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsAccountMgmtInfo","getDomainsAccountMgmtInfoOutput"], () => require("./getDomainsAccountMgmtInfo"));
+
+export { GetDomainsAccountMgmtInfosArgs, GetDomainsAccountMgmtInfosResult, GetDomainsAccountMgmtInfosOutputArgs } from "./getDomainsAccountMgmtInfos";
+export const getDomainsAccountMgmtInfos: typeof import("./getDomainsAccountMgmtInfos").getDomainsAccountMgmtInfos = null as any;
+export const getDomainsAccountMgmtInfosOutput: typeof import("./getDomainsAccountMgmtInfos").getDomainsAccountMgmtInfosOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsAccountMgmtInfos","getDomainsAccountMgmtInfosOutput"], () => require("./getDomainsAccountMgmtInfos"));
+
+export { GetDomainsAccountRecoverySettingArgs, GetDomainsAccountRecoverySettingResult, GetDomainsAccountRecoverySettingOutputArgs } from "./getDomainsAccountRecoverySetting";
+export const getDomainsAccountRecoverySetting: typeof import("./getDomainsAccountRecoverySetting").getDomainsAccountRecoverySetting = null as any;
+export const getDomainsAccountRecoverySettingOutput: typeof import("./getDomainsAccountRecoverySetting").getDomainsAccountRecoverySettingOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsAccountRecoverySetting","getDomainsAccountRecoverySettingOutput"], () => require("./getDomainsAccountRecoverySetting"));
+
+export { GetDomainsAccountRecoverySettingsArgs, GetDomainsAccountRecoverySettingsResult, GetDomainsAccountRecoverySettingsOutputArgs } from "./getDomainsAccountRecoverySettings";
+export const getDomainsAccountRecoverySettings: typeof import("./getDomainsAccountRecoverySettings").getDomainsAccountRecoverySettings = null as any;
+export const getDomainsAccountRecoverySettingsOutput: typeof import("./getDomainsAccountRecoverySettings").getDomainsAccountRecoverySettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsAccountRecoverySettings","getDomainsAccountRecoverySettingsOutput"], () => require("./getDomainsAccountRecoverySettings"));
+
 export { GetDomainsApiKeyArgs, GetDomainsApiKeyResult, GetDomainsApiKeyOutputArgs } from "./getDomainsApiKey";
 export const getDomainsApiKey: typeof import("./getDomainsApiKey").getDomainsApiKey = null as any;
 export const getDomainsApiKeyOutput: typeof import("./getDomainsApiKey").getDomainsApiKeyOutput = null as any;
@@ -224,6 +284,26 @@ export { GetDomainsApiKeysArgs, GetDomainsApiKeysResult, GetDomainsApiKeysOutput
 export const getDomainsApiKeys: typeof import("./getDomainsApiKeys").getDomainsApiKeys = null as any;
 export const getDomainsApiKeysOutput: typeof import("./getDomainsApiKeys").getDomainsApiKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsApiKeys","getDomainsApiKeysOutput"], () => require("./getDomainsApiKeys"));
+
+export { GetDomainsAppArgs, GetDomainsAppResult, GetDomainsAppOutputArgs } from "./getDomainsApp";
+export const getDomainsApp: typeof import("./getDomainsApp").getDomainsApp = null as any;
+export const getDomainsAppOutput: typeof import("./getDomainsApp").getDomainsAppOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsApp","getDomainsAppOutput"], () => require("./getDomainsApp"));
+
+export { GetDomainsAppRoleArgs, GetDomainsAppRoleResult, GetDomainsAppRoleOutputArgs } from "./getDomainsAppRole";
+export const getDomainsAppRole: typeof import("./getDomainsAppRole").getDomainsAppRole = null as any;
+export const getDomainsAppRoleOutput: typeof import("./getDomainsAppRole").getDomainsAppRoleOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsAppRole","getDomainsAppRoleOutput"], () => require("./getDomainsAppRole"));
+
+export { GetDomainsAppRolesArgs, GetDomainsAppRolesResult, GetDomainsAppRolesOutputArgs } from "./getDomainsAppRoles";
+export const getDomainsAppRoles: typeof import("./getDomainsAppRoles").getDomainsAppRoles = null as any;
+export const getDomainsAppRolesOutput: typeof import("./getDomainsAppRoles").getDomainsAppRolesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsAppRoles","getDomainsAppRolesOutput"], () => require("./getDomainsAppRoles"));
+
+export { GetDomainsAppsArgs, GetDomainsAppsResult, GetDomainsAppsOutputArgs } from "./getDomainsApps";
+export const getDomainsApps: typeof import("./getDomainsApps").getDomainsApps = null as any;
+export const getDomainsAppsOutput: typeof import("./getDomainsApps").getDomainsAppsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsApps","getDomainsAppsOutput"], () => require("./getDomainsApps"));
 
 export { GetDomainsAuthTokenArgs, GetDomainsAuthTokenResult, GetDomainsAuthTokenOutputArgs } from "./getDomainsAuthToken";
 export const getDomainsAuthToken: typeof import("./getDomainsAuthToken").getDomainsAuthToken = null as any;
@@ -265,6 +345,16 @@ export const getDomainsDynamicResourceGroups: typeof import("./getDomainsDynamic
 export const getDomainsDynamicResourceGroupsOutput: typeof import("./getDomainsDynamicResourceGroups").getDomainsDynamicResourceGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsDynamicResourceGroups","getDomainsDynamicResourceGroupsOutput"], () => require("./getDomainsDynamicResourceGroups"));
 
+export { GetDomainsGrantArgs, GetDomainsGrantResult, GetDomainsGrantOutputArgs } from "./getDomainsGrant";
+export const getDomainsGrant: typeof import("./getDomainsGrant").getDomainsGrant = null as any;
+export const getDomainsGrantOutput: typeof import("./getDomainsGrant").getDomainsGrantOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsGrant","getDomainsGrantOutput"], () => require("./getDomainsGrant"));
+
+export { GetDomainsGrantsArgs, GetDomainsGrantsResult, GetDomainsGrantsOutputArgs } from "./getDomainsGrants";
+export const getDomainsGrants: typeof import("./getDomainsGrants").getDomainsGrants = null as any;
+export const getDomainsGrantsOutput: typeof import("./getDomainsGrants").getDomainsGrantsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsGrants","getDomainsGrantsOutput"], () => require("./getDomainsGrants"));
+
 export { GetDomainsGroupArgs, GetDomainsGroupResult, GetDomainsGroupOutputArgs } from "./getDomainsGroup";
 export const getDomainsGroup: typeof import("./getDomainsGroup").getDomainsGroup = null as any;
 export const getDomainsGroupOutput: typeof import("./getDomainsGroup").getDomainsGroupOutput = null as any;
@@ -285,6 +375,16 @@ export const getDomainsIdentityProviders: typeof import("./getDomainsIdentityPro
 export const getDomainsIdentityProvidersOutput: typeof import("./getDomainsIdentityProviders").getDomainsIdentityProvidersOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsIdentityProviders","getDomainsIdentityProvidersOutput"], () => require("./getDomainsIdentityProviders"));
 
+export { GetDomainsIdentitySettingArgs, GetDomainsIdentitySettingResult, GetDomainsIdentitySettingOutputArgs } from "./getDomainsIdentitySetting";
+export const getDomainsIdentitySetting: typeof import("./getDomainsIdentitySetting").getDomainsIdentitySetting = null as any;
+export const getDomainsIdentitySettingOutput: typeof import("./getDomainsIdentitySetting").getDomainsIdentitySettingOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsIdentitySetting","getDomainsIdentitySettingOutput"], () => require("./getDomainsIdentitySetting"));
+
+export { GetDomainsIdentitySettingsArgs, GetDomainsIdentitySettingsResult, GetDomainsIdentitySettingsOutputArgs } from "./getDomainsIdentitySettings";
+export const getDomainsIdentitySettings: typeof import("./getDomainsIdentitySettings").getDomainsIdentitySettings = null as any;
+export const getDomainsIdentitySettingsOutput: typeof import("./getDomainsIdentitySettings").getDomainsIdentitySettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsIdentitySettings","getDomainsIdentitySettingsOutput"], () => require("./getDomainsIdentitySettings"));
+
 export { GetDomainsKmsiSettingArgs, GetDomainsKmsiSettingResult, GetDomainsKmsiSettingOutputArgs } from "./getDomainsKmsiSetting";
 export const getDomainsKmsiSetting: typeof import("./getDomainsKmsiSetting").getDomainsKmsiSetting = null as any;
 export const getDomainsKmsiSettingOutput: typeof import("./getDomainsKmsiSetting").getDomainsKmsiSettingOutput = null as any;
@@ -304,6 +404,11 @@ export { GetDomainsMyApiKeysArgs, GetDomainsMyApiKeysResult, GetDomainsMyApiKeys
 export const getDomainsMyApiKeys: typeof import("./getDomainsMyApiKeys").getDomainsMyApiKeys = null as any;
 export const getDomainsMyApiKeysOutput: typeof import("./getDomainsMyApiKeys").getDomainsMyApiKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsMyApiKeys","getDomainsMyApiKeysOutput"], () => require("./getDomainsMyApiKeys"));
+
+export { GetDomainsMyAppsArgs, GetDomainsMyAppsResult, GetDomainsMyAppsOutputArgs } from "./getDomainsMyApps";
+export const getDomainsMyApps: typeof import("./getDomainsMyApps").getDomainsMyApps = null as any;
+export const getDomainsMyAppsOutput: typeof import("./getDomainsMyApps").getDomainsMyAppsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsMyApps","getDomainsMyAppsOutput"], () => require("./getDomainsMyApps"));
 
 export { GetDomainsMyAuthTokenArgs, GetDomainsMyAuthTokenResult, GetDomainsMyAuthTokenOutputArgs } from "./getDomainsMyAuthToken";
 export const getDomainsMyAuthToken: typeof import("./getDomainsMyAuthToken").getDomainsMyAuthToken = null as any;
@@ -349,6 +454,16 @@ export { GetDomainsMyOauth2clientCredentialsArgs, GetDomainsMyOauth2clientCreden
 export const getDomainsMyOauth2clientCredentials: typeof import("./getDomainsMyOauth2clientCredentials").getDomainsMyOauth2clientCredentials = null as any;
 export const getDomainsMyOauth2clientCredentialsOutput: typeof import("./getDomainsMyOauth2clientCredentials").getDomainsMyOauth2clientCredentialsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsMyOauth2clientCredentials","getDomainsMyOauth2clientCredentialsOutput"], () => require("./getDomainsMyOauth2clientCredentials"));
+
+export { GetDomainsMyRequestableGroupsArgs, GetDomainsMyRequestableGroupsResult, GetDomainsMyRequestableGroupsOutputArgs } from "./getDomainsMyRequestableGroups";
+export const getDomainsMyRequestableGroups: typeof import("./getDomainsMyRequestableGroups").getDomainsMyRequestableGroups = null as any;
+export const getDomainsMyRequestableGroupsOutput: typeof import("./getDomainsMyRequestableGroups").getDomainsMyRequestableGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsMyRequestableGroups","getDomainsMyRequestableGroupsOutput"], () => require("./getDomainsMyRequestableGroups"));
+
+export { GetDomainsMyRequestsArgs, GetDomainsMyRequestsResult, GetDomainsMyRequestsOutputArgs } from "./getDomainsMyRequests";
+export const getDomainsMyRequests: typeof import("./getDomainsMyRequests").getDomainsMyRequests = null as any;
+export const getDomainsMyRequestsOutput: typeof import("./getDomainsMyRequests").getDomainsMyRequestsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsMyRequests","getDomainsMyRequestsOutput"], () => require("./getDomainsMyRequests"));
 
 export { GetDomainsMySmtpCredentialArgs, GetDomainsMySmtpCredentialResult, GetDomainsMySmtpCredentialOutputArgs } from "./getDomainsMySmtpCredential";
 export const getDomainsMySmtpCredential: typeof import("./getDomainsMySmtpCredential").getDomainsMySmtpCredential = null as any;
@@ -410,6 +525,31 @@ export const getDomainsPasswordPolicy: typeof import("./getDomainsPasswordPolicy
 export const getDomainsPasswordPolicyOutput: typeof import("./getDomainsPasswordPolicy").getDomainsPasswordPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsPasswordPolicy","getDomainsPasswordPolicyOutput"], () => require("./getDomainsPasswordPolicy"));
 
+export { GetDomainsResourceTypeSchemaAttributesArgs, GetDomainsResourceTypeSchemaAttributesResult, GetDomainsResourceTypeSchemaAttributesOutputArgs } from "./getDomainsResourceTypeSchemaAttributes";
+export const getDomainsResourceTypeSchemaAttributes: typeof import("./getDomainsResourceTypeSchemaAttributes").getDomainsResourceTypeSchemaAttributes = null as any;
+export const getDomainsResourceTypeSchemaAttributesOutput: typeof import("./getDomainsResourceTypeSchemaAttributes").getDomainsResourceTypeSchemaAttributesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsResourceTypeSchemaAttributes","getDomainsResourceTypeSchemaAttributesOutput"], () => require("./getDomainsResourceTypeSchemaAttributes"));
+
+export { GetDomainsSecurityQuestionArgs, GetDomainsSecurityQuestionResult, GetDomainsSecurityQuestionOutputArgs } from "./getDomainsSecurityQuestion";
+export const getDomainsSecurityQuestion: typeof import("./getDomainsSecurityQuestion").getDomainsSecurityQuestion = null as any;
+export const getDomainsSecurityQuestionOutput: typeof import("./getDomainsSecurityQuestion").getDomainsSecurityQuestionOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSecurityQuestion","getDomainsSecurityQuestionOutput"], () => require("./getDomainsSecurityQuestion"));
+
+export { GetDomainsSecurityQuestionSettingArgs, GetDomainsSecurityQuestionSettingResult, GetDomainsSecurityQuestionSettingOutputArgs } from "./getDomainsSecurityQuestionSetting";
+export const getDomainsSecurityQuestionSetting: typeof import("./getDomainsSecurityQuestionSetting").getDomainsSecurityQuestionSetting = null as any;
+export const getDomainsSecurityQuestionSettingOutput: typeof import("./getDomainsSecurityQuestionSetting").getDomainsSecurityQuestionSettingOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSecurityQuestionSetting","getDomainsSecurityQuestionSettingOutput"], () => require("./getDomainsSecurityQuestionSetting"));
+
+export { GetDomainsSecurityQuestionSettingsArgs, GetDomainsSecurityQuestionSettingsResult, GetDomainsSecurityQuestionSettingsOutputArgs } from "./getDomainsSecurityQuestionSettings";
+export const getDomainsSecurityQuestionSettings: typeof import("./getDomainsSecurityQuestionSettings").getDomainsSecurityQuestionSettings = null as any;
+export const getDomainsSecurityQuestionSettingsOutput: typeof import("./getDomainsSecurityQuestionSettings").getDomainsSecurityQuestionSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSecurityQuestionSettings","getDomainsSecurityQuestionSettingsOutput"], () => require("./getDomainsSecurityQuestionSettings"));
+
+export { GetDomainsSecurityQuestionsArgs, GetDomainsSecurityQuestionsResult, GetDomainsSecurityQuestionsOutputArgs } from "./getDomainsSecurityQuestions";
+export const getDomainsSecurityQuestions: typeof import("./getDomainsSecurityQuestions").getDomainsSecurityQuestions = null as any;
+export const getDomainsSecurityQuestionsOutput: typeof import("./getDomainsSecurityQuestions").getDomainsSecurityQuestionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSecurityQuestions","getDomainsSecurityQuestionsOutput"], () => require("./getDomainsSecurityQuestions"));
+
 export { GetDomainsSmtpCredentialArgs, GetDomainsSmtpCredentialResult, GetDomainsSmtpCredentialOutputArgs } from "./getDomainsSmtpCredential";
 export const getDomainsSmtpCredential: typeof import("./getDomainsSmtpCredential").getDomainsSmtpCredential = null as any;
 export const getDomainsSmtpCredentialOutput: typeof import("./getDomainsSmtpCredential").getDomainsSmtpCredentialOutput = null as any;
@@ -424,6 +564,16 @@ export { GetDomainsUserArgs, GetDomainsUserResult, GetDomainsUserOutputArgs } fr
 export const getDomainsUser: typeof import("./getDomainsUser").getDomainsUser = null as any;
 export const getDomainsUserOutput: typeof import("./getDomainsUser").getDomainsUserOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsUser","getDomainsUserOutput"], () => require("./getDomainsUser"));
+
+export { GetDomainsUserAttributesSettingArgs, GetDomainsUserAttributesSettingResult, GetDomainsUserAttributesSettingOutputArgs } from "./getDomainsUserAttributesSetting";
+export const getDomainsUserAttributesSetting: typeof import("./getDomainsUserAttributesSetting").getDomainsUserAttributesSetting = null as any;
+export const getDomainsUserAttributesSettingOutput: typeof import("./getDomainsUserAttributesSetting").getDomainsUserAttributesSettingOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsUserAttributesSetting","getDomainsUserAttributesSettingOutput"], () => require("./getDomainsUserAttributesSetting"));
+
+export { GetDomainsUserAttributesSettingsArgs, GetDomainsUserAttributesSettingsResult, GetDomainsUserAttributesSettingsOutputArgs } from "./getDomainsUserAttributesSettings";
+export const getDomainsUserAttributesSettings: typeof import("./getDomainsUserAttributesSettings").getDomainsUserAttributesSettings = null as any;
+export const getDomainsUserAttributesSettingsOutput: typeof import("./getDomainsUserAttributesSettings").getDomainsUserAttributesSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsUserAttributesSettings","getDomainsUserAttributesSettingsOutput"], () => require("./getDomainsUserAttributesSettings"));
 
 export { GetDomainsUserDbCredentialArgs, GetDomainsUserDbCredentialResult, GetDomainsUserDbCredentialOutputArgs } from "./getDomainsUserDbCredential";
 export const getDomainsUserDbCredential: typeof import("./getDomainsUserDbCredential").getDomainsUserDbCredential = null as any;
@@ -676,8 +826,14 @@ const _module = {
                 return new Domain(name, <any>undefined, { urn })
             case "oci:Identity/domainReplicationToRegion:DomainReplicationToRegion":
                 return new DomainReplicationToRegion(name, <any>undefined, { urn })
+            case "oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting":
+                return new DomainsAccountRecoverySetting(name, <any>undefined, { urn })
             case "oci:Identity/domainsApiKey:DomainsApiKey":
                 return new DomainsApiKey(name, <any>undefined, { urn })
+            case "oci:Identity/domainsApp:DomainsApp":
+                return new DomainsApp(name, <any>undefined, { urn })
+            case "oci:Identity/domainsAppRole:DomainsAppRole":
+                return new DomainsAppRole(name, <any>undefined, { urn })
             case "oci:Identity/domainsAuthToken:DomainsAuthToken":
                 return new DomainsAuthToken(name, <any>undefined, { urn })
             case "oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting":
@@ -686,10 +842,14 @@ const _module = {
                 return new DomainsCustomerSecretKey(name, <any>undefined, { urn })
             case "oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup":
                 return new DomainsDynamicResourceGroup(name, <any>undefined, { urn })
+            case "oci:Identity/domainsGrant:DomainsGrant":
+                return new DomainsGrant(name, <any>undefined, { urn })
             case "oci:Identity/domainsGroup:DomainsGroup":
                 return new DomainsGroup(name, <any>undefined, { urn })
             case "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider":
                 return new DomainsIdentityProvider(name, <any>undefined, { urn })
+            case "oci:Identity/domainsIdentitySetting:DomainsIdentitySetting":
+                return new DomainsIdentitySetting(name, <any>undefined, { urn })
             case "oci:Identity/domainsKmsiSetting:DomainsKmsiSetting":
                 return new DomainsKmsiSetting(name, <any>undefined, { urn })
             case "oci:Identity/domainsMyApiKey:DomainsMyApiKey":
@@ -700,6 +860,8 @@ const _module = {
                 return new DomainsMyCustomerSecretKey(name, <any>undefined, { urn })
             case "oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential":
                 return new DomainsMyOauth2clientCredential(name, <any>undefined, { urn })
+            case "oci:Identity/domainsMyRequest:DomainsMyRequest":
+                return new DomainsMyRequest(name, <any>undefined, { urn })
             case "oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential":
                 return new DomainsMySmtpCredential(name, <any>undefined, { urn })
             case "oci:Identity/domainsMySupportAccount:DomainsMySupportAccount":
@@ -710,6 +872,10 @@ const _module = {
                 return new DomainsOauth2clientCredential(name, <any>undefined, { urn })
             case "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy":
                 return new DomainsPasswordPolicy(name, <any>undefined, { urn })
+            case "oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion":
+                return new DomainsSecurityQuestion(name, <any>undefined, { urn })
+            case "oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting":
+                return new DomainsSecurityQuestionSetting(name, <any>undefined, { urn })
             case "oci:Identity/domainsSmtpCredential:DomainsSmtpCredential":
                 return new DomainsSmtpCredential(name, <any>undefined, { urn })
             case "oci:Identity/domainsUser:DomainsUser":
@@ -759,23 +925,31 @@ pulumi.runtime.registerResourceModule("oci", "Identity/customerSecretKey", _modu
 pulumi.runtime.registerResourceModule("oci", "Identity/dbCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domain", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainReplicationToRegion", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsAccountRecoverySetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsApiKey", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsApp", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsAppRole", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsAuthToken", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsAuthenticationFactorSetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsCustomerSecretKey", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsDynamicResourceGroup", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsGrant", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentityProvider", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentitySetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsKmsiSetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyApiKey", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyAuthToken", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyCustomerSecretKey", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyOauth2clientCredential", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyRequest", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMySmtpCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMySupportAccount", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyUserDbCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsOauth2clientCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsPasswordPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsSecurityQuestion", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsSecurityQuestionSetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsSmtpCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsUser", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsUserDbCredential", _module)

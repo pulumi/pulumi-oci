@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion {
     /**
-     * @return (Updatable) Answer provided by an user for a security question.
+     * @return (Updatable) The answer provided by a user for a security question.
      * 
      * **SCIM++ Properties:**
      * * idcsCsvAttributeName: Answer
@@ -29,7 +29,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
      */
     private String answer;
     /**
-     * @return (Updatable) Hint for an answer given by user while setting up Security Question.
+     * @return (Updatable) The hint for an answer that&#39;s given by user when setting up a security question.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -78,7 +78,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion() {}
     /**
-     * @return (Updatable) Answer provided by an user for a security question.
+     * @return (Updatable) The answer provided by a user for a security question.
      * 
      * **SCIM++ Properties:**
      * * idcsCsvAttributeName: Answer
@@ -97,7 +97,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
         return this.answer;
     }
     /**
-     * @return (Updatable) Hint for an answer given by user while setting up Security Question.
+     * @return (Updatable) The hint for an answer that&#39;s given by user when setting up a security question.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false

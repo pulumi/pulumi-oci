@@ -14,17 +14,17 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser {
     /**
-     * @return The last failed login date
+     * @return The last failed login date.
      * 
      */
     private String lastFailedLoginDate;
     /**
-     * @return The last successful login date
+     * @return The last successful login date.
      * 
      */
     private String lastSuccessfulLoginDate;
     /**
-     * @return A complex attribute that indicates an account is locked (blocking new sessions)
+     * @return A complex attribute that indicates an account is locked (blocking any new sessions).
      * 
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds;
@@ -34,12 +34,12 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      */
     private Integer loginAttempts;
     /**
-     * @return Maximum number of concurrent sessions for a User
+     * @return The maximum number of concurrent sessions for a user.
      * 
      */
     private Integer maxConcurrentSessions;
     /**
-     * @return The previous successful login date
+     * @return The previous successful login date.
      * 
      */
     private String previousSuccessfulLoginDate;
@@ -54,28 +54,28 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      */
     private Integer recoveryEnrollAttempts;
     /**
-     * @return A complex attribute that indicates an password recovery is locked (blocking new sessions)
+     * @return A complex attribute that indicates a password recovery is locked (blocking any new sessions).
      * 
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser() {}
     /**
-     * @return The last failed login date
+     * @return The last failed login date.
      * 
      */
     public String lastFailedLoginDate() {
         return this.lastFailedLoginDate;
     }
     /**
-     * @return The last successful login date
+     * @return The last successful login date.
      * 
      */
     public String lastSuccessfulLoginDate() {
         return this.lastSuccessfulLoginDate;
     }
     /**
-     * @return A complex attribute that indicates an account is locked (blocking new sessions)
+     * @return A complex attribute that indicates an account is locked (blocking any new sessions).
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked> lockeds() {
@@ -89,14 +89,14 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         return this.loginAttempts;
     }
     /**
-     * @return Maximum number of concurrent sessions for a User
+     * @return The maximum number of concurrent sessions for a user.
      * 
      */
     public Integer maxConcurrentSessions() {
         return this.maxConcurrentSessions;
     }
     /**
-     * @return The previous successful login date
+     * @return The previous successful login date.
      * 
      */
     public String previousSuccessfulLoginDate() {
@@ -117,7 +117,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         return this.recoveryEnrollAttempts;
     }
     /**
-     * @return A complex attribute that indicates an password recovery is locked (blocking new sessions)
+     * @return A complex attribute that indicates a password recovery is locked (blocking any new sessions).
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked> recoveryLockeds() {

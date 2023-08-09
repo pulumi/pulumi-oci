@@ -152,7 +152,7 @@ class GetDomainsAuthTokenResult:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> str:
         """
-        User credential expires on
+        When the user's credential expire.
         """
         return pulumi.get(self, "expires_on")
 
@@ -213,7 +213,7 @@ class GetDomainsAuthTokenResult:
     @pulumi.getter
     def ocid(self) -> str:
         """
-        User's ocid
+        The user's OCID.
         """
         return pulumi.get(self, "ocid")
 
@@ -234,7 +234,7 @@ class GetDomainsAuthTokenResult:
     @pulumi.getter
     def status(self) -> str:
         """
-        User credential status
+        The user's credential status.
         """
         return pulumi.get(self, "status")
 
@@ -266,7 +266,7 @@ class GetDomainsAuthTokenResult:
     @pulumi.getter
     def users(self) -> Sequence['outputs.GetDomainsAuthTokenUserResult']:
         """
-        User linked to auth token
+        The user linked to the Auth token.
         """
         return pulumi.get(self, "users")
 
@@ -313,7 +313,7 @@ def get_domains_auth_token(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides details about a specific Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get user's auth token
+    Get a user's Auth token.
 
     ## Example Usage
 
@@ -385,7 +385,7 @@ def get_domains_auth_token_output(attribute_sets: Optional[pulumi.Input[Optional
     """
     This data source provides details about a specific Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get user's auth token
+    Get a user's Auth token.
 
     ## Example Usage
 

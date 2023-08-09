@@ -406,6 +406,20 @@ type DomainsIdentityProvider struct {
 	// * type: boolean
 	// * uniqueness: none
 	JitUserProvIgnoreErrorOnAbsentGroups pulumi.BoolOutput `pulumi:"jitUserProvIgnoreErrorOnAbsentGroups"`
+	// (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+	//
+	// **Added In:** 2302092332
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
+	LastNotificationSentTime pulumi.StringOutput `pulumi:"lastNotificationSentTime"`
 	// (Updatable) HTTP binding to use for logout.
 	//
 	// **SCIM++ Properties:**
@@ -1169,6 +1183,20 @@ type domainsIdentityProviderState struct {
 	// * type: boolean
 	// * uniqueness: none
 	JitUserProvIgnoreErrorOnAbsentGroups *bool `pulumi:"jitUserProvIgnoreErrorOnAbsentGroups"`
+	// (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+	//
+	// **Added In:** 2302092332
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
+	LastNotificationSentTime *string `pulumi:"lastNotificationSentTime"`
 	// (Updatable) HTTP binding to use for logout.
 	//
 	// **SCIM++ Properties:**
@@ -1891,6 +1919,20 @@ type DomainsIdentityProviderState struct {
 	// * type: boolean
 	// * uniqueness: none
 	JitUserProvIgnoreErrorOnAbsentGroups pulumi.BoolPtrInput
+	// (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+	//
+	// **Added In:** 2302092332
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
+	LastNotificationSentTime pulumi.StringPtrInput
 	// (Updatable) HTTP binding to use for logout.
 	//
 	// **SCIM++ Properties:**
@@ -4023,6 +4065,23 @@ func (o DomainsIdentityProviderOutput) JitUserProvGroupStaticListEnabled() pulum
 // * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvIgnoreErrorOnAbsentGroups() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.JitUserProvIgnoreErrorOnAbsentGroups }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+//
+// **Added In:** 2302092332
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: dateTime
+// * uniqueness: none
+func (o DomainsIdentityProviderOutput) LastNotificationSentTime() pulumi.StringOutput {
+	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.LastNotificationSentTime }).(pulumi.StringOutput)
 }
 
 // (Updatable) HTTP binding to use for logout.

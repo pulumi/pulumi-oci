@@ -18,11 +18,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Display;
         /// <summary>
-        /// The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+        /// The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
         /// </summary>
         public readonly string IdcsAppRoleId;
         /// <summary>
-        /// Ocid of the User's Support Account.
+        /// The OCID of the user's support account.
         /// </summary>
         public readonly string Ocid;
         /// <summary>

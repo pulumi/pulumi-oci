@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's oauth2 client credential
+ * Get a user's OAuth2 client credentials.
  *
  * ## Example Usage
  *
@@ -94,7 +94,7 @@ export interface GetDomainsOauth2clientCredentialResult {
      */
     readonly domainOcid: string;
     /**
-     * User credential expires on
+     * When the user's credentials expire.
      */
     readonly expiresOn: string;
     /**
@@ -119,7 +119,7 @@ export interface GetDomainsOauth2clientCredentialResult {
      */
     readonly idcsPreventedOperations: string[];
     /**
-     * Specifies if secret need to be reset
+     * Specifies whether the secret must be reset.
      */
     readonly isResetSecret: boolean;
     /**
@@ -127,12 +127,12 @@ export interface GetDomainsOauth2clientCredentialResult {
      */
     readonly metas: outputs.Identity.GetDomainsOauth2clientCredentialMeta[];
     /**
-     * User name
+     * The username.
      */
     readonly name: string;
     readonly oAuth2clientCredentialId: string;
     /**
-     * User's ocid
+     * The user's OCID.
      */
     readonly ocid: string;
     readonly resourceTypeSchemaVersion?: string;
@@ -145,7 +145,7 @@ export interface GetDomainsOauth2clientCredentialResult {
      */
     readonly scopes: outputs.Identity.GetDomainsOauth2clientCredentialScope[];
     /**
-     * User credential status
+     * The user's credential status.
      */
     readonly status: string;
     /**
@@ -161,14 +161,14 @@ export interface GetDomainsOauth2clientCredentialResult {
      */
     readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUsers: outputs.Identity.GetDomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser[];
     /**
-     * User linked to oauth2 client credential
+     * The user linked to the OAuth2 client credential.
      */
     readonly users: outputs.Identity.GetDomainsOauth2clientCredentialUser[];
 }
 /**
  * This data source provides details about a specific O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's oauth2 client credential
+ * Get a user's OAuth2 client credentials.
  *
  * ## Example Usage
  *

@@ -42,7 +42,7 @@ public final class GetDomainsMyAuthTokensMyAuthToken {
      */
     private String domainOcid;
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      */
     private String expiresOn;
@@ -82,7 +82,7 @@ public final class GetDomainsMyAuthTokensMyAuthToken {
      */
     private List<GetDomainsMyAuthTokensMyAuthTokenMeta> metas;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
@@ -97,7 +97,7 @@ public final class GetDomainsMyAuthTokensMyAuthToken {
      */
     private List<String> schemas;
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     private String status;
@@ -112,7 +112,7 @@ public final class GetDomainsMyAuthTokensMyAuthToken {
      */
     private String tenancyOcid;
     /**
-     * @return User linked to auth token
+     * @return The user linked to the Auth token.
      * 
      */
     private List<GetDomainsMyAuthTokensMyAuthTokenUser> users;
@@ -154,7 +154,7 @@ public final class GetDomainsMyAuthTokensMyAuthToken {
         return this.domainOcid;
     }
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      */
     public String expiresOn() {
@@ -210,7 +210,7 @@ public final class GetDomainsMyAuthTokensMyAuthToken {
         return this.metas;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -231,7 +231,7 @@ public final class GetDomainsMyAuthTokensMyAuthToken {
         return this.schemas;
     }
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     public String status() {
@@ -252,7 +252,7 @@ public final class GetDomainsMyAuthTokensMyAuthToken {
         return this.tenancyOcid;
     }
     /**
-     * @return User linked to auth token
+     * @return The user linked to the Auth token.
      * 
      */
     public List<GetDomainsMyAuthTokensMyAuthTokenUser> users() {

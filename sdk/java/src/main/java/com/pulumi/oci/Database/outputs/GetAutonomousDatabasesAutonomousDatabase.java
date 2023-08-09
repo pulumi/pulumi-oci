@@ -298,6 +298,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String lifecycleDetails;
     /**
+     * @return Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     * 
+     */
+    private Integer localAdgAutoFailoverMaxDataLossLimit;
+    /**
      * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
@@ -944,6 +949,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.lifecycleDetails;
     }
     /**
+     * @return Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     * 
+     */
+    public Integer localAdgAutoFailoverMaxDataLossLimit() {
+        return this.localAdgAutoFailoverMaxDataLossLimit;
+    }
+    /**
      * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
@@ -1383,6 +1395,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String kmsKeyVersionId;
         private String licenseModel;
         private String lifecycleDetails;
+        private Integer localAdgAutoFailoverMaxDataLossLimit;
         private String localDisasterRecoveryType;
         private List<GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
         private List<GetAutonomousDatabasesAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
@@ -1503,6 +1516,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.localAdgAutoFailoverMaxDataLossLimit = defaults.localAdgAutoFailoverMaxDataLossLimit;
     	      this.localDisasterRecoveryType = defaults.localDisasterRecoveryType;
     	      this.localStandbyDbs = defaults.localStandbyDbs;
     	      this.longTermBackupSchedules = defaults.longTermBackupSchedules;
@@ -1877,6 +1891,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder localAdgAutoFailoverMaxDataLossLimit(Integer localAdgAutoFailoverMaxDataLossLimit) {
+            this.localAdgAutoFailoverMaxDataLossLimit = Objects.requireNonNull(localAdgAutoFailoverMaxDataLossLimit);
             return this;
         }
         @CustomType.Setter
@@ -2263,6 +2282,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             o.kmsKeyVersionId = kmsKeyVersionId;
             o.licenseModel = licenseModel;
             o.lifecycleDetails = lifecycleDetails;
+            o.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
             o.localDisasterRecoveryType = localDisasterRecoveryType;
             o.localStandbyDbs = localStandbyDbs;
             o.longTermBackupSchedules = longTermBackupSchedules;

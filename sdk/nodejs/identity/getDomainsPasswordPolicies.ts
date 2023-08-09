@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Password Policies
+ * Search for password policies.
  *
  * ## Example Usage
  *
@@ -121,7 +121,7 @@ export interface GetDomainsPasswordPoliciesResult {
 /**
  * This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Password Policies
+ * Search for password policies.
  *
  * ## Example Usage
  *

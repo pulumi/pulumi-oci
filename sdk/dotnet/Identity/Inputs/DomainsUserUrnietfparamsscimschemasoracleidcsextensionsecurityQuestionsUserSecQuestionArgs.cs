@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Answer provided by an user for a security question.
+        /// (Updatable) The answer provided by a user for a security question.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCsvAttributeName: Answer
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Answer { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Hint for an answer given by user while setting up Security Question.
+        /// (Updatable) The hint for an answer that's given by user when setting up a security question.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false

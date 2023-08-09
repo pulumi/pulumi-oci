@@ -17,7 +17,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs();
 
     /**
-     * (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+     * (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value]
@@ -33,7 +33,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs>> realmUsers;
 
     /**
-     * @return (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+     * @return (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value]
@@ -74,7 +74,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param realmUsers (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+         * @param realmUsers (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [value]
@@ -94,7 +94,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param realmUsers (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+         * @param realmUsers (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [value]
@@ -113,7 +113,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param realmUsers (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+         * @param realmUsers (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [value]

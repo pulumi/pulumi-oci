@@ -29,7 +29,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
      */
     private @Nullable Integer dbLoginAttempts;
     /**
-     * @return (Updatable) The Database User Name
+     * @return (Updatable) The database username.
      * 
      * **Added In:** 2102181953
      * 
@@ -66,7 +66,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
         return Optional.ofNullable(this.dbLoginAttempts);
     }
     /**
-     * @return (Updatable) The Database User Name
+     * @return (Updatable) The database username.
      * 
      * **Added In:** 2102181953
      * 

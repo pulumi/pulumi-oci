@@ -25,7 +25,7 @@ public final class DomainsMyAuthTokenTag {
      */
     private String key;
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -62,7 +62,7 @@ public final class DomainsMyAuthTokenTag {
         return this.key;
     }
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true

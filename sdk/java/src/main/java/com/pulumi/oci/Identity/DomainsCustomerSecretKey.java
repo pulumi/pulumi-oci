@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Add a user&#39;s customer secret key
+ * Create a user&#39;s customer secret key.
  * 
  * ## Example Usage
  * 
@@ -95,7 +95,7 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey")
 public class DomainsCustomerSecretKey extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Access key
+     * (Updatable) The access key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -109,7 +109,7 @@ public class DomainsCustomerSecretKey extends com.pulumi.resources.CustomResourc
     private Output<String> accessKey;
 
     /**
-     * @return (Updatable) Access key
+     * @return (Updatable) The access key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -323,7 +323,7 @@ public class DomainsCustomerSecretKey extends com.pulumi.resources.CustomResourc
         return this.domainOcid;
     }
     /**
-     * User credential expires on
+     * When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -342,7 +342,7 @@ public class DomainsCustomerSecretKey extends com.pulumi.resources.CustomResourc
     private Output<String> expiresOn;
 
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -535,7 +535,7 @@ public class DomainsCustomerSecretKey extends com.pulumi.resources.CustomResourc
         return this.metas;
     }
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -552,7 +552,7 @@ public class DomainsCustomerSecretKey extends com.pulumi.resources.CustomResourc
     private Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -617,7 +617,7 @@ public class DomainsCustomerSecretKey extends com.pulumi.resources.CustomResourc
         return this.schemas;
     }
     /**
-     * User credential status
+     * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -636,7 +636,7 @@ public class DomainsCustomerSecretKey extends com.pulumi.resources.CustomResourc
     private Output<String> status;
 
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 

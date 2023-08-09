@@ -64,7 +64,7 @@ class DomainsMyOauth2clientCredentialArgs:
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credentials expire.
                
                **Added In:** 2109090424
                
@@ -77,7 +77,7 @@ class DomainsMyOauth2clientCredentialArgs:
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[bool] is_reset_secret: Specifies if secret need to be reset
+        :param pulumi.Input[bool] is_reset_secret: Specifies whether the secret must be reset.
                
                **Added In:** 2109090424
                
@@ -90,7 +90,7 @@ class DomainsMyOauth2clientCredentialArgs:
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -101,7 +101,7 @@ class DomainsMyOauth2clientCredentialArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -113,7 +113,7 @@ class DomainsMyOauth2clientCredentialArgs:
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -137,7 +137,7 @@ class DomainsMyOauth2clientCredentialArgs:
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input['DomainsMyOauth2clientCredentialUserArgs'] user: User linked to oauth2 client credential
+        :param pulumi.Input['DomainsMyOauth2clientCredentialUserArgs'] user: The user linked to the OAuth2 client credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -265,7 +265,7 @@ class DomainsMyOauth2clientCredentialArgs:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential expires on
+        When the user's credentials expire.
 
         **Added In:** 2109090424
 
@@ -289,7 +289,7 @@ class DomainsMyOauth2clientCredentialArgs:
     @pulumi.getter(name="isResetSecret")
     def is_reset_secret(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies if secret need to be reset
+        Specifies whether the secret must be reset.
 
         **Added In:** 2109090424
 
@@ -313,7 +313,7 @@ class DomainsMyOauth2clientCredentialArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -335,7 +335,7 @@ class DomainsMyOauth2clientCredentialArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -369,7 +369,7 @@ class DomainsMyOauth2clientCredentialArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -415,7 +415,7 @@ class DomainsMyOauth2clientCredentialArgs:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsMyOauth2clientCredentialUserArgs']]:
         """
-        User linked to oauth2 client credential
+        The user linked to the OAuth2 client credential.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -505,7 +505,7 @@ class _DomainsMyOauth2clientCredentialState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credentials expire.
                
                **Added In:** 2109090424
                
@@ -558,7 +558,7 @@ class _DomainsMyOauth2clientCredentialState:
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[bool] is_reset_secret: Specifies if secret need to be reset
+        :param pulumi.Input[bool] is_reset_secret: Specifies whether the secret must be reset.
                
                **Added In:** 2109090424
                
@@ -582,7 +582,7 @@ class _DomainsMyOauth2clientCredentialState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -593,7 +593,7 @@ class _DomainsMyOauth2clientCredentialState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -626,7 +626,7 @@ class _DomainsMyOauth2clientCredentialState:
                * multiValued: true
                * required: true
                * returned: default
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -661,7 +661,7 @@ class _DomainsMyOauth2clientCredentialState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input['DomainsMyOauth2clientCredentialUserArgs'] user: User linked to oauth2 client credential
+        :param pulumi.Input['DomainsMyOauth2clientCredentialUserArgs'] user: The user linked to the OAuth2 client credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -821,7 +821,7 @@ class _DomainsMyOauth2clientCredentialState:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential expires on
+        When the user's credentials expire.
 
         **Added In:** 2109090424
 
@@ -940,7 +940,7 @@ class _DomainsMyOauth2clientCredentialState:
     @pulumi.getter(name="isResetSecret")
     def is_reset_secret(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies if secret need to be reset
+        Specifies whether the secret must be reset.
 
         **Added In:** 2109090424
 
@@ -986,7 +986,7 @@ class _DomainsMyOauth2clientCredentialState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1008,7 +1008,7 @@ class _DomainsMyOauth2clientCredentialState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1085,7 +1085,7 @@ class _DomainsMyOauth2clientCredentialState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -1153,7 +1153,7 @@ class _DomainsMyOauth2clientCredentialState:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsMyOauth2clientCredentialUserArgs']]:
         """
-        User linked to oauth2 client credential
+        The user linked to the OAuth2 client credential.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1194,7 +1194,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
         """
         This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's oauth2 client credential
+        Create a user's own OAuth2 client credential.
 
         ## Import
 
@@ -1217,7 +1217,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credentials expire.
                
                **Added In:** 2109090424
                
@@ -1231,7 +1231,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * type: dateTime
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[bool] is_reset_secret: Specifies if secret need to be reset
+        :param pulumi.Input[bool] is_reset_secret: Specifies whether the secret must be reset.
                
                **Added In:** 2109090424
                
@@ -1244,7 +1244,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1255,7 +1255,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1288,7 +1288,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * multiValued: true
                * required: true
                * returned: default
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -1312,7 +1312,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialUserArgs']] user: User linked to oauth2 client credential
+        :param pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialUserArgs']] user: The user linked to the OAuth2 client credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1333,7 +1333,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
         """
         This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's oauth2 client credential
+        Create a user's own OAuth2 client credential.
 
         ## Import
 
@@ -1491,7 +1491,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credentials expire.
                
                **Added In:** 2109090424
                
@@ -1544,7 +1544,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[bool] is_reset_secret: Specifies if secret need to be reset
+        :param pulumi.Input[bool] is_reset_secret: Specifies whether the secret must be reset.
                
                **Added In:** 2109090424
                
@@ -1568,7 +1568,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1579,7 +1579,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1612,7 +1612,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * multiValued: true
                * required: true
                * returned: default
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -1647,7 +1647,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialUserArgs']] user: User linked to oauth2 client credential
+        :param pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialUserArgs']] user: The user linked to the OAuth2 client credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1770,7 +1770,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> pulumi.Output[str]:
         """
-        User credential expires on
+        When the user's credentials expire.
 
         **Added In:** 2109090424
 
@@ -1865,7 +1865,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
     @pulumi.getter(name="isResetSecret")
     def is_reset_secret(self) -> pulumi.Output[bool]:
         """
-        Specifies if secret need to be reset
+        Specifies whether the secret must be reset.
 
         **Added In:** 2109090424
 
@@ -1903,7 +1903,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1921,7 +1921,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1982,7 +1982,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -2038,7 +2038,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
     @pulumi.getter
     def user(self) -> pulumi.Output['outputs.DomainsMyOauth2clientCredentialUser']:
         """
-        User linked to oauth2 client credential
+        The user linked to the OAuth2 client credential.
 
         **SCIM++ Properties:**
         * caseExact: false

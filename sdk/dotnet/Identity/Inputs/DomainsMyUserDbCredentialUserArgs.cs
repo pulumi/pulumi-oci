@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsMyUserDbCredentialUserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) User display name
+        /// (Updatable) The user display name.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) User name
+        /// (Updatable) The username.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI that corresponds to the user linked to this credential
+        /// (Updatable) The URI that corresponds to the user linked to this credential.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// User's id
+        /// The user's identifier.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

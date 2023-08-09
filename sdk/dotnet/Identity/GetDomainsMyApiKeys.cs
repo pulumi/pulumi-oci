@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of My Api Keys in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Api Key
+        /// Search for a user's own API key.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of My Api Keys in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Api Key
+        /// Search for a user's own API key.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

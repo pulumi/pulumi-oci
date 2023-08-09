@@ -204,7 +204,7 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     }
 
     /**
-     * (Updatable) Number of domain levels IDCS should use for origin comparision
+     * (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * 
      * **Added In:** 2109020413
      * 
@@ -224,7 +224,7 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     private @Nullable Output<Integer> domainValidationLevel;
 
     /**
-     * @return (Updatable) Number of domain levels IDCS should use for origin comparision
+     * @return (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * 
      * **Added In:** 2109020413
      * 
@@ -607,7 +607,7 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         }
 
         /**
-         * @param domainValidationLevel (Updatable) Number of domain levels IDCS should use for origin comparision
+         * @param domainValidationLevel (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
          * 
          * **Added In:** 2109020413
          * 
@@ -631,7 +631,7 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         }
 
         /**
-         * @param domainValidationLevel (Updatable) Number of domain levels IDCS should use for origin comparision
+         * @param domainValidationLevel (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
          * 
          * **Added In:** 2109020413
          * 

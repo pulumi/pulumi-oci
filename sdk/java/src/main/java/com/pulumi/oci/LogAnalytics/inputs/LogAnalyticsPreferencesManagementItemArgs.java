@@ -16,14 +16,14 @@ public final class LogAnalyticsPreferencesManagementItemArgs extends com.pulumi.
     public static final LogAnalyticsPreferencesManagementItemArgs Empty = new LogAnalyticsPreferencesManagementItemArgs();
 
     /**
-     * The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * The preference name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * @return The preference name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -71,7 +71,7 @@ public final class LogAnalyticsPreferencesManagementItemArgs extends com.pulumi.
         }
 
         /**
-         * @param name The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+         * @param name The preference name.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class LogAnalyticsPreferencesManagementItemArgs extends com.pulumi.
         }
 
         /**
-         * @param name The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+         * @param name The preference name.
          * 
          * @return builder
          * 

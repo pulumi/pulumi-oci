@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Add user&#39;s auth token
+ * Create a user&#39;s own Auth token.
  * 
  * ## Example Usage
  * 
@@ -235,7 +235,7 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
         return this.domainOcid;
     }
     /**
-     * User credential expires on
+     * When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -254,7 +254,7 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
     private Output<String> expiresOn;
 
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -447,7 +447,7 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
         return this.metas;
     }
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -464,7 +464,7 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
     private Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -529,7 +529,7 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
         return this.schemas;
     }
     /**
-     * User credential status
+     * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -548,7 +548,7 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
     private Output<String> status;
 
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -635,7 +635,7 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
         return this.tenancyOcid;
     }
     /**
-     * User linked to auth token
+     * The user linked to the Auth token.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -652,7 +652,7 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
     private Output<DomainsMyAuthTokenUser> user;
 
     /**
-     * @return User linked to auth token
+     * @return The user linked to the Auth token.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false

@@ -125,7 +125,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter(name="dbPassword")
     def db_password(self) -> str:
         """
-        The db password of the user
+        The user's database password.
         """
         return pulumi.get(self, "db_password")
 
@@ -157,7 +157,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter
     def expired(self) -> bool:
         """
-        Indicates that the db password has expired
+        Indicates that the database password has expired.
         """
         return pulumi.get(self, "expired")
 
@@ -165,7 +165,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> str:
         """
-        User credential expires on
+        When the user credential expires.
         """
         return pulumi.get(self, "expires_on")
 
@@ -218,7 +218,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter(name="lastSetDate")
     def last_set_date(self) -> str:
         """
-        A DateTime that specifies the date and time when the current db password was set
+        A DateTime that specifies the date and time when the current database password was set.
         """
         return pulumi.get(self, "last_set_date")
 
@@ -234,7 +234,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter(name="mixedDbPassword")
     def mixed_db_password(self) -> str:
         """
-        The db password of the user with mixed salt
+        The user's database password with mixed salt.
         """
         return pulumi.get(self, "mixed_db_password")
 
@@ -242,7 +242,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter(name="mixedSalt")
     def mixed_salt(self) -> str:
         """
-        The mixed salt of the password
+        The mixed salt of the password.
         """
         return pulumi.get(self, "mixed_salt")
 
@@ -255,7 +255,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        User name
+        The username.
         """
         return pulumi.get(self, "name")
 
@@ -263,7 +263,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter
     def ocid(self) -> str:
         """
-        User's ocid
+        The user's OCID.
         """
         return pulumi.get(self, "ocid")
 
@@ -276,7 +276,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter
     def salt(self) -> str:
         """
-        The salt of the password
+        The salt of the password.
         """
         return pulumi.get(self, "salt")
 
@@ -316,7 +316,7 @@ class GetDomainsMyUserDbCredentialResult:
     @pulumi.getter
     def users(self) -> Sequence['outputs.GetDomainsMyUserDbCredentialUserResult']:
         """
-        User linked to db credential
+        The user linked to the database credential.
         """
         return pulumi.get(self, "users")
 
@@ -365,7 +365,7 @@ def get_domains_my_user_db_credential(authorization: Optional[str] = None,
     """
     This data source provides details about a specific My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a User's DbCredentials
+    Get a user's own database (DB) credential.
 
     ## Example Usage
 
@@ -433,7 +433,7 @@ def get_domains_my_user_db_credential_output(authorization: Optional[pulumi.Inpu
     """
     This data source provides details about a specific My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a User's DbCredentials
+    Get a user's own database (DB) credential.
 
     ## Example Usage
 

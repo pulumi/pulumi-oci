@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's customer secret key
+        /// Get a user's own customer secret key.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's customer secret key
+        /// Get a user's own customer secret key.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -148,7 +148,7 @@ namespace Pulumi.Oci.Identity
     public sealed class GetDomainsMyCustomerSecretKeyResult
     {
         /// <summary>
-        /// Access key
+        /// The access key.
         /// </summary>
         public readonly string AccessKey;
         public readonly string? Authorization;
@@ -173,7 +173,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly string DomainOcid;
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// </summary>
         public readonly string ExpiresOn;
         /// <summary>
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.Identity
         public readonly ImmutableArray<Outputs.GetDomainsMyCustomerSecretKeyMetaResult> Metas;
         public readonly string MyCustomerSecretKeyId;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         public readonly string? ResourceTypeSchemaVersion;
@@ -212,7 +212,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<string> Schemas;
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// </summary>
         public readonly string Status;
         /// <summary>

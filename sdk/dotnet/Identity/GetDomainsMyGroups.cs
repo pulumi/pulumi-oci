@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of My Groups in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search My Groups
+        /// Search for 'My Groups'.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of My Groups in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search My Groups
+        /// Search for 'My Groups'.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

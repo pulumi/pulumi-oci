@@ -19,13 +19,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs();
 
     /**
-     * (Updatable) The last failed login date
+     * (Updatable) The last failed login date.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: dateTime
@@ -36,13 +37,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<String> lastFailedLoginDate;
 
     /**
-     * @return (Updatable) The last failed login date
+     * @return (Updatable) The last failed login date.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: dateTime
@@ -54,13 +56,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) The last successful login date
+     * (Updatable) The last successful login date.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: dateTime
@@ -71,13 +74,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<String> lastSuccessfulLoginDate;
 
     /**
-     * @return (Updatable) The last successful login date
+     * @return (Updatable) The last successful login date.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: dateTime
@@ -89,7 +93,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+     * (Updatable) A complex attribute that indicates an account is locked (blocking any new sessions).
      * 
      * **SCIM++ Properties:**
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
@@ -107,7 +111,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs> locked;
 
     /**
-     * @return (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+     * @return (Updatable) A complex attribute that indicates an account is locked (blocking any new sessions).
      * 
      * **SCIM++ Properties:**
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
@@ -133,6 +137,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: integer
@@ -150,6 +156,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: integer
@@ -161,7 +169,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) Maximum number of concurrent sessions for a User
+     * (Updatable) The maximum number of concurrent sessions for a user.
      * 
      * **Added In:** 20.1.3
      * 
@@ -181,7 +189,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<Integer> maxConcurrentSessions;
 
     /**
-     * @return (Updatable) Maximum number of concurrent sessions for a User
+     * @return (Updatable) The maximum number of concurrent sessions for a user.
      * 
      * **Added In:** 20.1.3
      * 
@@ -202,13 +210,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) The previous successful login date
+     * (Updatable) The previous successful login date.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: dateTime
@@ -219,13 +228,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<String> previousSuccessfulLoginDate;
 
     /**
-     * @return (Updatable) The previous successful login date
+     * @return (Updatable) The previous successful login date.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: dateTime
@@ -245,6 +255,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: integer
@@ -263,6 +274,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: integer
@@ -311,7 +323,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+     * (Updatable) A complex attribute that indicates a password recovery is locked (blocking any new sessions).
      * 
      * **Added In:** 19.1.4
      * 
@@ -329,7 +341,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs> recoveryLocked;
 
     /**
-     * @return (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+     * @return (Updatable) A complex attribute that indicates a password recovery is locked (blocking any new sessions).
      * 
      * **Added In:** 19.1.4
      * 
@@ -380,13 +392,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param lastFailedLoginDate (Updatable) The last failed login date
+         * @param lastFailedLoginDate (Updatable) The last failed login date.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * idcsAllowUpdatesInReadOnlyMode: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: dateTime
@@ -401,13 +414,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param lastFailedLoginDate (Updatable) The last failed login date
+         * @param lastFailedLoginDate (Updatable) The last failed login date.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * idcsAllowUpdatesInReadOnlyMode: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: dateTime
@@ -421,13 +435,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param lastSuccessfulLoginDate (Updatable) The last successful login date
+         * @param lastSuccessfulLoginDate (Updatable) The last successful login date.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: true
          * * idcsAllowUpdatesInReadOnlyMode: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: dateTime
@@ -442,13 +457,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param lastSuccessfulLoginDate (Updatable) The last successful login date
+         * @param lastSuccessfulLoginDate (Updatable) The last successful login date.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: true
          * * idcsAllowUpdatesInReadOnlyMode: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: dateTime
@@ -462,7 +478,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param locked (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+         * @param locked (Updatable) A complex attribute that indicates an account is locked (blocking any new sessions).
          * 
          * **SCIM++ Properties:**
          * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
@@ -484,7 +500,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param locked (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+         * @param locked (Updatable) A complex attribute that indicates an account is locked (blocking any new sessions).
          * 
          * **SCIM++ Properties:**
          * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
@@ -512,6 +528,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsAllowUpdatesInReadOnlyMode: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
+         * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: integer
@@ -533,6 +551,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsAllowUpdatesInReadOnlyMode: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
+         * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: integer
@@ -546,7 +566,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param maxConcurrentSessions (Updatable) Maximum number of concurrent sessions for a User
+         * @param maxConcurrentSessions (Updatable) The maximum number of concurrent sessions for a user.
          * 
          * **Added In:** 20.1.3
          * 
@@ -570,7 +590,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param maxConcurrentSessions (Updatable) Maximum number of concurrent sessions for a User
+         * @param maxConcurrentSessions (Updatable) The maximum number of concurrent sessions for a user.
          * 
          * **Added In:** 20.1.3
          * 
@@ -593,13 +613,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param previousSuccessfulLoginDate (Updatable) The previous successful login date
+         * @param previousSuccessfulLoginDate (Updatable) The previous successful login date.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: dateTime
@@ -614,13 +635,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param previousSuccessfulLoginDate (Updatable) The previous successful login date
+         * @param previousSuccessfulLoginDate (Updatable) The previous successful login date.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: dateTime
@@ -642,6 +664,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: integer
@@ -664,6 +687,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: integer
@@ -720,7 +744,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param recoveryLocked (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+         * @param recoveryLocked (Updatable) A complex attribute that indicates a password recovery is locked (blocking any new sessions).
          * 
          * **Added In:** 19.1.4
          * 
@@ -742,7 +766,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param recoveryLocked (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+         * @param recoveryLocked (Updatable) A complex attribute that indicates a password recovery is locked (blocking any new sessions).
          * 
          * **Added In:** 19.1.4
          * 

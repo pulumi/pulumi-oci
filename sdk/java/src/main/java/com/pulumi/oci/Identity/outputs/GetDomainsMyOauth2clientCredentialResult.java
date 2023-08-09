@@ -41,7 +41,7 @@ public final class GetDomainsMyOauth2clientCredentialResult {
      */
     private String domainOcid;
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credentials expire.
      * 
      */
     private String expiresOn;
@@ -72,7 +72,7 @@ public final class GetDomainsMyOauth2clientCredentialResult {
      */
     private List<String> idcsPreventedOperations;
     /**
-     * @return Specifies if secret need to be reset
+     * @return Specifies whether the secret must be reset.
      * 
      */
     private Boolean isResetSecret;
@@ -83,12 +83,12 @@ public final class GetDomainsMyOauth2clientCredentialResult {
     private List<GetDomainsMyOauth2clientCredentialMeta> metas;
     private String myOauth2clientCredentialId;
     /**
-     * @return User name
+     * @return The username.
      * 
      */
     private String name;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
@@ -104,7 +104,7 @@ public final class GetDomainsMyOauth2clientCredentialResult {
      */
     private List<GetDomainsMyOauth2clientCredentialScope> scopes;
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     private String status;
@@ -119,7 +119,7 @@ public final class GetDomainsMyOauth2clientCredentialResult {
      */
     private String tenancyOcid;
     /**
-     * @return User linked to oauth2 client credential
+     * @return The user linked to the OAuth2 client credential.
      * 
      */
     private List<GetDomainsMyOauth2clientCredentialUser> users;
@@ -157,7 +157,7 @@ public final class GetDomainsMyOauth2clientCredentialResult {
         return this.domainOcid;
     }
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credentials expire.
      * 
      */
     public String expiresOn() {
@@ -202,7 +202,7 @@ public final class GetDomainsMyOauth2clientCredentialResult {
         return this.idcsPreventedOperations;
     }
     /**
-     * @return Specifies if secret need to be reset
+     * @return Specifies whether the secret must be reset.
      * 
      */
     public Boolean isResetSecret() {
@@ -219,14 +219,14 @@ public final class GetDomainsMyOauth2clientCredentialResult {
         return this.myOauth2clientCredentialId;
     }
     /**
-     * @return User name
+     * @return The username.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -250,7 +250,7 @@ public final class GetDomainsMyOauth2clientCredentialResult {
         return this.scopes;
     }
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     public String status() {
@@ -271,7 +271,7 @@ public final class GetDomainsMyOauth2clientCredentialResult {
         return this.tenancyOcid;
     }
     /**
-     * @return User linked to oauth2 client credential
+     * @return The user linked to the OAuth2 client credential.
      * 
      */
     public List<GetDomainsMyOauth2clientCredentialUser> users() {

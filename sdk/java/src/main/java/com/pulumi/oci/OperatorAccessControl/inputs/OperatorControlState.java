@@ -140,6 +140,21 @@ public final class OperatorControlState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Whether the operator control is a default Operator Control.
+     * 
+     */
+    @Import(name="isDefaultOperatorControl")
+    private @Nullable Output<Boolean> isDefaultOperatorControl;
+
+    /**
+     * @return Whether the operator control is a default Operator Control.
+     * 
+     */
+    public Optional<Output<Boolean>> isDefaultOperatorControl() {
+        return Optional.ofNullable(this.isDefaultOperatorControl);
+    }
+
+    /**
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      * 
      */
@@ -306,6 +321,7 @@ public final class OperatorControlState extends com.pulumi.resources.ResourceArg
         this.description = $.description;
         this.emailIdLists = $.emailIdLists;
         this.freeformTags = $.freeformTags;
+        this.isDefaultOperatorControl = $.isDefaultOperatorControl;
         this.isFullyPreApproved = $.isFullyPreApproved;
         this.lastModifiedInfo = $.lastModifiedInfo;
         this.operatorControlName = $.operatorControlName;
@@ -542,6 +558,27 @@ public final class OperatorControlState extends com.pulumi.resources.ResourceArg
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isDefaultOperatorControl Whether the operator control is a default Operator Control.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultOperatorControl(@Nullable Output<Boolean> isDefaultOperatorControl) {
+            $.isDefaultOperatorControl = isDefaultOperatorControl;
+            return this;
+        }
+
+        /**
+         * @param isDefaultOperatorControl Whether the operator control is a default Operator Control.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultOperatorControl(Boolean isDefaultOperatorControl) {
+            return isDefaultOperatorControl(Output.of(isDefaultOperatorControl));
         }
 
         /**

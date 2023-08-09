@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// This resource provides the My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
     /// 
-    /// Add a user's smtp credenials
+    /// Create a user's own SMTP credential.
     /// 
     /// ## Import
     /// 

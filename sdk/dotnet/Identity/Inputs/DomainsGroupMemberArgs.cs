@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsGroupMemberArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The DateTime the member was added to the Group.
+        /// (Updatable) The date and time that the member was added to the group.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) Membership Ocid
+        /// (Updatable) The membership OCID.
         /// 
         /// **Added In:** 2102181953
         /// 

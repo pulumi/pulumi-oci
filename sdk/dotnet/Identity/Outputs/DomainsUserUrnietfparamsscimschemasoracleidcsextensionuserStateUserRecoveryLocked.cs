@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked
     {
         /// <summary>
-        /// (Updatable) The date and time that the current resource was locked
+        /// (Updatable) The date and time that the current resource was locked.
         /// 
         /// **Added In:** 19.1.4
         /// 
@@ -22,6 +22,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: dateTime
@@ -29,7 +30,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? LockDate;
         /// <summary>
-        /// (Updatable) Indicates that the rev is locked
+        /// (Updatable) Indicates that the recovery is locked.
         /// 
         /// **Added In:** 19.1.4
         /// 
@@ -38,6 +39,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: boolean

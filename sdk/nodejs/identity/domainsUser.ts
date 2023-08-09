@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Create a User
+ * Create a user.
  *
  * ## Import
  *
@@ -351,7 +351,7 @@ export class DomainsUser extends pulumi.CustomResource {
      */
     public readonly nickName!: pulumi.Output<string>;
     /**
-     * (Updatable) Ocid of the User's Support Account.
+     * (Updatable) The OCID of the user's support account.
      *
      * **Added In:** 2103141444
      *
@@ -556,7 +556,7 @@ export class DomainsUser extends pulumi.CustomResource {
      */
     public readonly urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser>;
     /**
-     * (Updatable) Db Credentials User extension
+     * (Updatable) The database credentials user extension.
      */
     public readonly urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser>;
     /**
@@ -584,7 +584,7 @@ export class DomainsUser extends pulumi.CustomResource {
      */
     public readonly urnietfparamsscimschemasoracleidcsextensionposixUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser>;
     /**
-     * (Updatable) This extension defines attributes used to store Security Questions of User.
+     * (Updatable) This extension defines the attributes used to store the security questions of a user.
      */
     public readonly urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser>;
     /**
@@ -612,11 +612,11 @@ export class DomainsUser extends pulumi.CustomResource {
      */
     public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser[]>;
     /**
-     * (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
     public readonly urnietfparamsscimschemasoracleidcsextensionuserStateUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser>;
     /**
-     * (Updatable) Oracle Cloud Infrastructure IAM User
+     * (Updatable) Oracle Identity Cloud Service User
      */
     public readonly urnietfparamsscimschemasoracleidcsextensionuserUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser>;
     /**
@@ -1130,7 +1130,7 @@ export interface DomainsUserState {
      */
     nickName?: pulumi.Input<string>;
     /**
-     * (Updatable) Ocid of the User's Support Account.
+     * (Updatable) The OCID of the user's support account.
      *
      * **Added In:** 2103141444
      *
@@ -1335,7 +1335,7 @@ export interface DomainsUserState {
      */
     urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser>;
     /**
-     * (Updatable) Db Credentials User extension
+     * (Updatable) The database credentials user extension.
      */
     urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser>;
     /**
@@ -1363,7 +1363,7 @@ export interface DomainsUserState {
      */
     urnietfparamsscimschemasoracleidcsextensionposixUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser>;
     /**
-     * (Updatable) This extension defines attributes used to store Security Questions of User.
+     * (Updatable) This extension defines the attributes used to store the security questions of a user.
      */
     urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser>;
     /**
@@ -1391,11 +1391,11 @@ export interface DomainsUserState {
      */
     urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser>[]>;
     /**
-     * (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
     urnietfparamsscimschemasoracleidcsextensionuserStateUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser>;
     /**
-     * (Updatable) Oracle Cloud Infrastructure IAM User
+     * (Updatable) Oracle Identity Cloud Service User
      */
     urnietfparamsscimschemasoracleidcsextensionuserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser>;
     /**
@@ -1634,7 +1634,7 @@ export interface DomainsUserArgs {
      */
     nickName?: pulumi.Input<string>;
     /**
-     * (Updatable) Ocid of the User's Support Account.
+     * (Updatable) The OCID of the user's support account.
      *
      * **Added In:** 2103141444
      *
@@ -1825,7 +1825,7 @@ export interface DomainsUserArgs {
      */
     urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser>;
     /**
-     * (Updatable) Db Credentials User extension
+     * (Updatable) The database credentials user extension.
      */
     urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser>;
     /**
@@ -1845,7 +1845,7 @@ export interface DomainsUserArgs {
      */
     urnietfparamsscimschemasoracleidcsextensionposixUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser>;
     /**
-     * (Updatable) This extension defines attributes used to store Security Questions of User.
+     * (Updatable) This extension defines the attributes used to store the security questions of a user.
      */
     urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser>;
     /**
@@ -1869,11 +1869,11 @@ export interface DomainsUserArgs {
      */
     urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser>;
     /**
-     * (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
     urnietfparamsscimschemasoracleidcsextensionuserStateUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser>;
     /**
-     * (Updatable) Oracle Cloud Infrastructure IAM User
+     * (Updatable) Oracle Identity Cloud Service User
      */
     urnietfparamsscimschemasoracleidcsextensionuserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser>;
     /**

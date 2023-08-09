@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// User's id
+        /// The user's identifier.
         /// </summary>
         public readonly string Value;
 

@@ -1372,14 +1372,18 @@ class MigrationExcludeObjectArgs:
     def __init__(__self__, *,
                  object: pulumi.Input[str],
                  owner: pulumi.Input[str],
+                 is_omit_excluded_table_from_replication: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] object: (Updatable) Name of the object (regular expression is allowed)
         :param pulumi.Input[str] owner: (Updatable) Owner of the object (regular expression is allowed)
+        :param pulumi.Input[bool] is_omit_excluded_table_from_replication: (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
         :param pulumi.Input[str] type: (Updatable) Migration type.
         """
         pulumi.set(__self__, "object", object)
         pulumi.set(__self__, "owner", owner)
+        if is_omit_excluded_table_from_replication is not None:
+            pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
@@ -1406,6 +1410,18 @@ class MigrationExcludeObjectArgs:
     @owner.setter
     def owner(self, value: pulumi.Input[str]):
         pulumi.set(self, "owner", value)
+
+    @property
+    @pulumi.getter(name="isOmitExcludedTableFromReplication")
+    def is_omit_excluded_table_from_replication(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+        """
+        return pulumi.get(self, "is_omit_excluded_table_from_replication")
+
+    @is_omit_excluded_table_from_replication.setter
+    def is_omit_excluded_table_from_replication(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_omit_excluded_table_from_replication", value)
 
     @property
     @pulumi.getter
@@ -1905,14 +1921,18 @@ class MigrationIncludeObjectArgs:
     def __init__(__self__, *,
                  object: pulumi.Input[str],
                  owner: pulumi.Input[str],
+                 is_omit_excluded_table_from_replication: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] object: (Updatable) Name of the object (regular expression is allowed)
         :param pulumi.Input[str] owner: (Updatable) Owner of the object (regular expression is allowed)
+        :param pulumi.Input[bool] is_omit_excluded_table_from_replication: (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
         :param pulumi.Input[str] type: (Updatable) Migration type.
         """
         pulumi.set(__self__, "object", object)
         pulumi.set(__self__, "owner", owner)
+        if is_omit_excluded_table_from_replication is not None:
+            pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
@@ -1939,6 +1959,18 @@ class MigrationIncludeObjectArgs:
     @owner.setter
     def owner(self, value: pulumi.Input[str]):
         pulumi.set(self, "owner", value)
+
+    @property
+    @pulumi.getter(name="isOmitExcludedTableFromReplication")
+    def is_omit_excluded_table_from_replication(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+        """
+        return pulumi.get(self, "is_omit_excluded_table_from_replication")
+
+    @is_omit_excluded_table_from_replication.setter
+    def is_omit_excluded_table_from_replication(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_omit_excluded_table_from_replication", value)
 
     @property
     @pulumi.getter

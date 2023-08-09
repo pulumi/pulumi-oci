@@ -16,7 +16,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs();
 
     /**
-     * (Updatable) Authentication method.
+     * (Updatable) The authentication method.
      * 
      * **Added In:** 2009232244
      * 
@@ -34,7 +34,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> authenticationMethod;
 
     /**
-     * @return (Updatable) Authentication method.
+     * @return (Updatable) The authentication method.
      * 
      * **Added In:** 2009232244
      * 
@@ -86,7 +86,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) Device authentication factor status.
+     * (Updatable) The device authentication factor status.
      * 
      * **Added In:** 18.4.2
      * 
@@ -104,7 +104,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> factorStatus;
 
     /**
-     * @return (Updatable) Device authentication factor status.
+     * @return (Updatable) The device authentication factor status.
      * 
      * **Added In:** 18.4.2
      * 
@@ -162,7 +162,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) Last Sync time for device.
+     * (Updatable) The last sync time for device.
      * 
      * **Added In:** 18.4.2
      * 
@@ -180,7 +180,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> lastSyncTime;
 
     /**
-     * @return (Updatable) Last Sync time for device.
+     * @return (Updatable) The last sync time for device.
      * 
      * **Added In:** 18.4.2
      * 
@@ -271,7 +271,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) Third party factor vendor name.
+     * (Updatable) The third-party factor vendor name.
      * 
      * **Added In:** 2009232244
      * 
@@ -289,7 +289,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> thirdPartyVendorName;
 
     /**
-     * @return (Updatable) Third party factor vendor name.
+     * @return (Updatable) The third-party factor vendor name.
      * 
      * **Added In:** 2009232244
      * 
@@ -379,7 +379,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param authenticationMethod (Updatable) Authentication method.
+         * @param authenticationMethod (Updatable) The authentication method.
          * 
          * **Added In:** 2009232244
          * 
@@ -401,7 +401,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param authenticationMethod (Updatable) Authentication method.
+         * @param authenticationMethod (Updatable) The authentication method.
          * 
          * **Added In:** 2009232244
          * 
@@ -461,7 +461,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param factorStatus (Updatable) Device authentication factor status.
+         * @param factorStatus (Updatable) The device authentication factor status.
          * 
          * **Added In:** 18.4.2
          * 
@@ -483,7 +483,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param factorStatus (Updatable) Device authentication factor status.
+         * @param factorStatus (Updatable) The device authentication factor status.
          * 
          * **Added In:** 18.4.2
          * 
@@ -549,7 +549,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param lastSyncTime (Updatable) Last Sync time for device.
+         * @param lastSyncTime (Updatable) The last sync time for device.
          * 
          * **Added In:** 18.4.2
          * 
@@ -571,7 +571,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param lastSyncTime (Updatable) Last Sync time for device.
+         * @param lastSyncTime (Updatable) The last sync time for device.
          * 
          * **Added In:** 18.4.2
          * 
@@ -676,7 +676,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param thirdPartyVendorName (Updatable) Third party factor vendor name.
+         * @param thirdPartyVendorName (Updatable) The third-party factor vendor name.
          * 
          * **Added In:** 2009232244
          * 
@@ -698,7 +698,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param thirdPartyVendorName (Updatable) Third party factor vendor name.
+         * @param thirdPartyVendorName (Updatable) The third-party factor vendor name.
          * 
          * **Added In:** 2009232244
          * 

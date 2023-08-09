@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Add a user&#39;s smtp credenials
+ * Create a user&#39;s SMTP credentials.
  * 
  * ## Example Usage
  * 

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search a User's DBCredentials
+ * Search for a user's database (DB) credentials.
  *
  * ## Example Usage
  *
@@ -121,7 +121,7 @@ export interface GetDomainsUserDbCredentialsResult {
 /**
  * This data source provides the list of User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search a User's DBCredentials
+ * Search for a user's database (DB) credentials.
  *
  * ## Example Usage
  *

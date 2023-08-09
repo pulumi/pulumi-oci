@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser {
     /**
-     * @return (Updatable) A list of bypass codes belongs to user
+     * @return (Updatable) A list of bypass codes that belongs to the user.
      * 
      * **Added In:** 18.3.6
      * 
@@ -57,6 +57,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: integer
@@ -65,7 +67,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable Integer loginAttempts;
     /**
-     * @return (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * @return (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * 
      * **Added In:** 18.3.6
      * 
@@ -98,7 +100,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable List<String> mfaIgnoredApps;
     /**
-     * @return (Updatable) User Opted for MFA
+     * @return (Updatable) The user opted for MFA.
      * 
      * **Added In:** 18.3.6
      * 
@@ -107,6 +109,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: string
@@ -115,7 +118,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String mfaStatus;
     /**
-     * @return (Updatable) Preferred Authentication Factor Type
+     * @return (Updatable) The preferred authentication factor type.
      * 
      * **Added In:** 18.3.6
      * 
@@ -132,7 +135,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String preferredAuthenticationFactor;
     /**
-     * @return (Updatable) Preferred Authentication method
+     * @return (Updatable) The preferred authentication method.
      * 
      * **Added In:** 2009232244
      * 
@@ -149,7 +152,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String preferredAuthenticationMethod;
     /**
-     * @return (Updatable) User preferred device
+     * @return (Updatable) The user&#39;s preferred device.
      * 
      * **Added In:** 18.3.6
      * 
@@ -166,7 +169,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice preferredDevice;
     /**
-     * @return (Updatable) Preferred Third party vendor name
+     * @return (Updatable) The preferred third-party vendor name.
      * 
      * **Added In:** 19.2.1
      * 
@@ -201,7 +204,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser() {}
     /**
-     * @return (Updatable) A list of bypass codes belongs to user
+     * @return (Updatable) A list of bypass codes that belongs to the user.
      * 
      * **Added In:** 18.3.6
      * 
@@ -244,6 +247,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: integer
@@ -254,7 +259,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.loginAttempts);
     }
     /**
-     * @return (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * @return (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * 
      * **Added In:** 18.3.6
      * 
@@ -291,7 +296,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return this.mfaIgnoredApps == null ? List.of() : this.mfaIgnoredApps;
     }
     /**
-     * @return (Updatable) User Opted for MFA
+     * @return (Updatable) The user opted for MFA.
      * 
      * **Added In:** 18.3.6
      * 
@@ -300,6 +305,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: string
@@ -310,7 +316,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.mfaStatus);
     }
     /**
-     * @return (Updatable) Preferred Authentication Factor Type
+     * @return (Updatable) The preferred authentication factor type.
      * 
      * **Added In:** 18.3.6
      * 
@@ -329,7 +335,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.preferredAuthenticationFactor);
     }
     /**
-     * @return (Updatable) Preferred Authentication method
+     * @return (Updatable) The preferred authentication method.
      * 
      * **Added In:** 2009232244
      * 
@@ -348,7 +354,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.preferredAuthenticationMethod);
     }
     /**
-     * @return (Updatable) User preferred device
+     * @return (Updatable) The user&#39;s preferred device.
      * 
      * **Added In:** 18.3.6
      * 
@@ -367,7 +373,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.preferredDevice);
     }
     /**
-     * @return (Updatable) Preferred Third party vendor name
+     * @return (Updatable) The preferred third-party vendor name.
      * 
      * **Added In:** 19.2.1
      * 

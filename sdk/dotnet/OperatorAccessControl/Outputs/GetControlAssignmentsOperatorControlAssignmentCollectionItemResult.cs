@@ -54,6 +54,10 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// </summary>
         public readonly bool IsAutoApproveDuringMaintenance;
         /// <summary>
+        /// Whether the assignment is a default assignment.
+        /// </summary>
+        public readonly bool IsDefaultAssignment;
+        /// <summary>
         /// If set, then the target resource is always governed by the operator control.
         /// </summary>
         public readonly bool IsEnforcedAlways;
@@ -144,6 +148,8 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
 
             bool isAutoApproveDuringMaintenance,
 
+            bool isDefaultAssignment,
+
             bool isEnforcedAlways,
 
             bool isLogForwarded,
@@ -188,6 +194,7 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
+            IsDefaultAssignment = isDefaultAssignment;
             IsEnforcedAlways = isEnforcedAlways;
             IsLogForwarded = isLogForwarded;
             LifecycleDetails = lifecycleDetails;

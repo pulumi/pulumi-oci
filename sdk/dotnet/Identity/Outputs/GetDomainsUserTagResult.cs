@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUserTagResult
     {
         /// <summary>
-        /// The value of of the User's api key.
+        /// The user's API key value.
         /// </summary>
         public readonly string Key;
         /// <summary>

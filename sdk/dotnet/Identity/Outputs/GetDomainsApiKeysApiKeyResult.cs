@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsApiKeysApiKeyMetaResult> Metas;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         /// <summary>
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsApiKeysApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult> UrnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
         /// <summary>
-        /// User linked to api key
+        /// The user linked to the API key.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsApiKeysApiKeyUserResult> Users;
 

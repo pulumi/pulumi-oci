@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsGroupMemberResult
     {
         /// <summary>
-        /// The DateTime the member was added to the Group.
+        /// The date and time that the member was added to the group.
         /// </summary>
         public readonly string DateAdded;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Display;
         /// <summary>
-        /// Membership Ocid
+        /// The membership OCID.
         /// </summary>
         public readonly string MembershipOcid;
         /// <summary>

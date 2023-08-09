@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Create a Group
+ * Create a group.
  * 
  * ## Example Usage
  * 
@@ -240,7 +240,7 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
         return this.deleteInProgress;
     }
     /**
-     * (Updatable) Group display name
+     * (Updatable) The Group display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -259,7 +259,7 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Group display name
+     * @return (Updatable) The Group display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -486,7 +486,7 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
         return this.idcsPreventedOperations;
     }
     /**
-     * (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -506,7 +506,7 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
     private Output<List<DomainsGroupMember>> members;
 
     /**
-     * @return (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * @return (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -560,7 +560,7 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
         return this.metas;
     }
     /**
-     * (Updatable) A human readable name for Group as defined by the Service Consumer
+     * (Updatable) A human readable name for the group as defined by the Service Consumer.
      * 
      * **Added In:** 2011192329
      * 
@@ -579,7 +579,7 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
     private Output<String> nonUniqueDisplayName;
 
     /**
-     * @return (Updatable) A human readable name for Group as defined by the Service Consumer
+     * @return (Updatable) A human readable name for the group as defined by the Service Consumer.
      * 
      * **Added In:** 2011192329
      * 
@@ -790,14 +790,14 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
         return this.urnietfparamsscimschemasoracleidcsextensiondynamicGroup;
     }
     /**
-     * (Updatable) Idcs Group
+     * (Updatable) Oracle Identity Cloud Service Group
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensiongroupGroup", type=DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup.class, parameters={})
     private Output<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroup;
 
     /**
-     * @return (Updatable) Idcs Group
+     * @return (Updatable) Oracle Identity Cloud Service Group
      * 
      */
     public Output<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroup() {

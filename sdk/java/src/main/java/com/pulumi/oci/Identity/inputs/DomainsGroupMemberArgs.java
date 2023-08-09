@@ -16,7 +16,7 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     public static final DomainsGroupMemberArgs Empty = new DomainsGroupMemberArgs();
 
     /**
-     * (Updatable) The DateTime the member was added to the Group.
+     * (Updatable) The date and time that the member was added to the group.
      * 
      * **Added In:** 2012271618
      * 
@@ -33,7 +33,7 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> dateAdded;
 
     /**
-     * @return (Updatable) The DateTime the member was added to the Group.
+     * @return (Updatable) The date and time that the member was added to the group.
      * 
      * **Added In:** 2012271618
      * 
@@ -88,7 +88,7 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Membership Ocid
+     * (Updatable) The membership OCID.
      * 
      * **Added In:** 2102181953
      * 
@@ -107,7 +107,7 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> membershipOcid;
 
     /**
-     * @return (Updatable) Membership Ocid
+     * @return (Updatable) The membership OCID.
      * 
      * **Added In:** 2102181953
      * 
@@ -345,7 +345,7 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param dateAdded (Updatable) The DateTime the member was added to the Group.
+         * @param dateAdded (Updatable) The date and time that the member was added to the group.
          * 
          * **Added In:** 2012271618
          * 
@@ -366,7 +366,7 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param dateAdded (Updatable) The DateTime the member was added to the Group.
+         * @param dateAdded (Updatable) The date and time that the member was added to the group.
          * 
          * **Added In:** 2012271618
          * 
@@ -429,7 +429,7 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param membershipOcid (Updatable) Membership Ocid
+         * @param membershipOcid (Updatable) The membership OCID.
          * 
          * **Added In:** 2102181953
          * 
@@ -452,7 +452,7 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param membershipOcid (Updatable) Membership Ocid
+         * @param membershipOcid (Updatable) The membership OCID.
          * 
          * **Added In:** 2102181953
          * 

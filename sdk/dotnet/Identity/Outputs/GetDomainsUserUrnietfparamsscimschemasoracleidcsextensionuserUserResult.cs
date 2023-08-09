@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string CreationMechanism;
         /// <summary>
-        /// If set, indicates the user's preferred authentication target app. If not set and the user's \"syncedFromApp\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+        /// If set, indicates the user's preferred authentication target app. If not set and the user's \"syncedFromApp\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppResult> DelegatedAuthenticationTargetApps;
         /// <summary>
@@ -49,6 +49,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantResult> Grants;
+        /// <summary>
+        /// Specifies date time when a User's group membership was last modified.
+        /// </summary>
+        public readonly string GroupMembershipLastModified;
         /// <summary>
         /// Description:
         /// </summary>
@@ -77,6 +81,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
         /// </summary>
         public readonly string NotificationEmailTemplateId;
+        /// <summary>
+        /// User's preferred landing page following login, logout and reset password.
+        /// </summary>
+        public readonly string PreferredUiLandingPage;
         /// <summary>
         /// A supplemental status indicating the reason why a user is disabled
         /// </summary>
@@ -122,6 +130,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantResult> grants,
 
+            string groupMembershipLastModified,
+
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupResult> idcsAppRolesLimitedToGroups,
 
             bool isAccountRecoveryEnrolled,
@@ -135,6 +145,8 @@ namespace Pulumi.Oci.Identity.Outputs
             bool isGroupMembershipSyncedToUsersGroups,
 
             string notificationEmailTemplateId,
+
+            string preferredUiLandingPage,
 
             string status,
 
@@ -157,6 +169,7 @@ namespace Pulumi.Oci.Identity.Outputs
             DelegatedAuthenticationTargetApps = delegatedAuthenticationTargetApps;
             DoNotShowGettingStarted = doNotShowGettingStarted;
             Grants = grants;
+            GroupMembershipLastModified = groupMembershipLastModified;
             IdcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
             IsAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
             IsAuthenticationDelegated = isAuthenticationDelegated;
@@ -164,6 +177,7 @@ namespace Pulumi.Oci.Identity.Outputs
             IsGroupMembershipNormalized = isGroupMembershipNormalized;
             IsGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             NotificationEmailTemplateId = notificationEmailTemplateId;
+            PreferredUiLandingPage = preferredUiLandingPage;
             Status = status;
             SupportAccounts = supportAccounts;
             SyncedFromApps = syncedFromApps;

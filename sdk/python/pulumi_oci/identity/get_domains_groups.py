@@ -201,7 +201,7 @@ def get_domains_groups(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides the list of Groups in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Groups.The Group search and get operations on users/members will throw an exception if it has more than 10K members, to avoid the exception use the pagination filter to get or search group members
+    Search for groups. <b>Important:</b> The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
 
     ## Example Usage
 
@@ -279,7 +279,7 @@ def get_domains_groups_output(attribute_sets: Optional[pulumi.Input[Optional[Seq
     """
     This data source provides the list of Groups in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Groups.The Group search and get operations on users/members will throw an exception if it has more than 10K members, to avoid the exception use the pagination filter to get or search group members
+    Search for groups. <b>Important:</b> The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
 
     ## Example Usage
 

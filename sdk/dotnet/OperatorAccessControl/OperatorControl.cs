@@ -74,6 +74,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Whether the operator control is a default Operator Control.
+        /// </summary>
+        [Output("isDefaultOperatorControl")]
+        public Output<bool> IsDefaultOperatorControl { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         /// </summary>
         [Output("isFullyPreApproved")]
@@ -386,6 +392,12 @@ namespace Pulumi.Oci.OperatorAccessControl
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Whether the operator control is a default Operator Control.
+        /// </summary>
+        [Input("isDefaultOperatorControl")]
+        public Input<bool>? IsDefaultOperatorControl { get; set; }
 
         /// <summary>
         /// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.

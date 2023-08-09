@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential {
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -64,7 +64,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential() {}
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 

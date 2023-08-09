@@ -114,6 +114,7 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             {
     ///                 Object = @var.Migration_exclude_objects_object,
     ///                 Owner = @var.Migration_exclude_objects_owner,
+    ///                 IsOmitExcludedTableFromReplication = @var.Migration_exclude_objects_is_omit_excluded_table_from_replication,
     ///                 Type = @var.Migration_exclude_objects_type,
     ///             },
     ///         },
@@ -172,6 +173,7 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             {
     ///                 Object = @var.Migration_include_objects_object,
     ///                 Owner = @var.Migration_include_objects_owner,
+    ///                 IsOmitExcludedTableFromReplication = @var.Migration_include_objects_is_omit_excluded_table_from_replication,
     ///                 Type = @var.Migration_include_objects_type,
     ///             },
     ///         },

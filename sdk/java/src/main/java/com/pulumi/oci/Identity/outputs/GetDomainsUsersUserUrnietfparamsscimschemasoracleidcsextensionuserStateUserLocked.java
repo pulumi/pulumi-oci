@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked {
     /**
-     * @return Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      */
     private Boolean expired;
     /**
-     * @return The date and time that the current resource was locked
+     * @return The date and time that the current resource was locked.
      * 
      */
     private String lockDate;
     /**
-     * @return Indicates that the rev is locked
+     * @return Indicates that the recovery is locked.
      * 
      */
     private Boolean on;
     /**
-     * @return Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+     * @return Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      * 
      */
     private Integer reason;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked() {}
     /**
-     * @return Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      */
     public Boolean expired() {
         return this.expired;
     }
     /**
-     * @return The date and time that the current resource was locked
+     * @return The date and time that the current resource was locked.
      * 
      */
     public String lockDate() {
         return this.lockDate;
     }
     /**
-     * @return Indicates that the rev is locked
+     * @return Indicates that the recovery is locked.
      * 
      */
     public Boolean on() {
         return this.on;
     }
     /**
-     * @return Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+     * @return Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      * 
      */
     public Integer reason() {

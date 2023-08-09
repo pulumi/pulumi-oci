@@ -106,7 +106,7 @@ class GetDomainsCustomerSecretKeyResult:
     @pulumi.getter(name="accessKey")
     def access_key(self) -> str:
         """
-        Access key
+        The access key.
         """
         return pulumi.get(self, "access_key")
 
@@ -174,7 +174,7 @@ class GetDomainsCustomerSecretKeyResult:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> str:
         """
-        User credential expires on
+        When the user's credential expire.
         """
         return pulumi.get(self, "expires_on")
 
@@ -235,7 +235,7 @@ class GetDomainsCustomerSecretKeyResult:
     @pulumi.getter
     def ocid(self) -> str:
         """
-        User's ocid
+        The user's OCID.
         """
         return pulumi.get(self, "ocid")
 
@@ -256,7 +256,7 @@ class GetDomainsCustomerSecretKeyResult:
     @pulumi.getter
     def status(self) -> str:
         """
-        User credential status
+        The user's credential status.
         """
         return pulumi.get(self, "status")
 
@@ -337,7 +337,7 @@ def get_domains_customer_secret_key(attribute_sets: Optional[Sequence[str]] = No
     """
     This data source provides details about a specific Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get user's customer secret key
+    Get a user's customer secret key.
 
     ## Example Usage
 
@@ -411,7 +411,7 @@ def get_domains_customer_secret_key_output(attribute_sets: Optional[pulumi.Input
     """
     This data source provides details about a specific Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get user's customer secret key
+    Get a user's customer secret key.
 
     ## Example Usage
 

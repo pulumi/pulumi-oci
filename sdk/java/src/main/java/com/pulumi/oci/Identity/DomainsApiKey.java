@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Add a user&#39;s api key
+ * Create a user&#39;s API key.
  * 
  * ## Example Usage
  * 
@@ -511,7 +511,7 @@ public class DomainsApiKey extends com.pulumi.resources.CustomResource {
         return this.metas;
     }
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -528,7 +528,7 @@ public class DomainsApiKey extends com.pulumi.resources.CustomResource {
     private Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -675,7 +675,7 @@ public class DomainsApiKey extends com.pulumi.resources.CustomResource {
         return this.urnietfparamsscimschemasoracleidcsextensionselfChangeUser;
     }
     /**
-     * User linked to api key
+     * The user linked to the API key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -692,7 +692,7 @@ public class DomainsApiKey extends com.pulumi.resources.CustomResource {
     private Output<DomainsApiKeyUser> user;
 
     /**
-     * @return User linked to api key
+     * @return The user linked to the API key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false

@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string DomainOcid;
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// </summary>
         public readonly string ExpiresOn;
         /// <summary>
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsMyAuthTokensMyAuthTokenMetaResult> Metas;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         /// <summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Schemas;
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// </summary>
         public readonly string Status;
         /// <summary>
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string TenancyOcid;
         /// <summary>
-        /// User linked to auth token
+        /// The user linked to the Auth token.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsMyAuthTokensMyAuthTokenUserResult> Users;
 

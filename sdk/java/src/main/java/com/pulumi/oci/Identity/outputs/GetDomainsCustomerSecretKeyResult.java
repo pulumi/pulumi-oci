@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDomainsCustomerSecretKeyResult {
     /**
-     * @return Access key
+     * @return The access key.
      * 
      */
     private String accessKey;
@@ -54,7 +54,7 @@ public final class GetDomainsCustomerSecretKeyResult {
      */
     private String domainOcid;
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      */
     private String expiresOn;
@@ -90,7 +90,7 @@ public final class GetDomainsCustomerSecretKeyResult {
      */
     private List<GetDomainsCustomerSecretKeyMeta> metas;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
@@ -101,7 +101,7 @@ public final class GetDomainsCustomerSecretKeyResult {
      */
     private List<String> schemas;
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     private String status;
@@ -128,7 +128,7 @@ public final class GetDomainsCustomerSecretKeyResult {
 
     private GetDomainsCustomerSecretKeyResult() {}
     /**
-     * @return Access key
+     * @return The access key.
      * 
      */
     public String accessKey() {
@@ -182,7 +182,7 @@ public final class GetDomainsCustomerSecretKeyResult {
         return this.domainOcid;
     }
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      */
     public String expiresOn() {
@@ -234,7 +234,7 @@ public final class GetDomainsCustomerSecretKeyResult {
         return this.metas;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -251,7 +251,7 @@ public final class GetDomainsCustomerSecretKeyResult {
         return this.schemas;
     }
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     public String status() {

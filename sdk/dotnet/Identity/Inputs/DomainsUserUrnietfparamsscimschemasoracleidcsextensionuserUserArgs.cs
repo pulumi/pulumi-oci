@@ -104,6 +104,7 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: immutable
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: never
         /// * type: boolean
@@ -121,6 +122,7 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: immutable
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: request
         /// * type: string
@@ -130,7 +132,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? CreationMechanism { get; set; }
 
         /// <summary>
-        /// (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \"syncedFromApp\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+        /// (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \"syncedFromApp\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
         /// 
         /// **Added In:** 17.4.6
         /// 
@@ -183,6 +185,23 @@ namespace Pulumi.Oci.Identity.Inputs
             get => _grants ?? (_grants = new InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs>());
             set => _grants = value;
         }
+
+        /// <summary>
+        /// (Updatable) Specifies date time when a User's group membership was last modified.
+        /// 
+        /// **Added In:** 2304270343
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: dateTime
+        /// * uniqueness: none
+        /// </summary>
+        [Input("groupMembershipLastModified")]
+        public Input<string>? GroupMembershipLastModified { get; set; }
 
         [Input("idcsAppRolesLimitedToGroups")]
         private InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs>? _idcsAppRolesLimitedToGroups;
@@ -253,6 +272,7 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: boolean
@@ -312,6 +332,24 @@ namespace Pulumi.Oci.Identity.Inputs
         /// </summary>
         [Input("notificationEmailTemplateId")]
         public Input<string>? NotificationEmailTemplateId { get; set; }
+
+        /// <summary>
+        /// (Updatable) User's preferred landing page following login, logout and reset password.
+        /// 
+        /// **Added In:** 2302092332
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("preferredUiLandingPage")]
+        public Input<string>? PreferredUiLandingPage { get; set; }
 
         /// <summary>
         /// (Updatable) A supplemental status indicating the reason why a user is disabled

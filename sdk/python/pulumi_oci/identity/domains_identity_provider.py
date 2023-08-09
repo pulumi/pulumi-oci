@@ -1883,6 +1883,7 @@ class _DomainsIdentityProviderState:
                  jit_user_prov_group_saml_attribute_name: Optional[pulumi.Input[str]] = None,
                  jit_user_prov_group_static_list_enabled: Optional[pulumi.Input[bool]] = None,
                  jit_user_prov_ignore_error_on_absent_groups: Optional[pulumi.Input[bool]] = None,
+                 last_notification_sent_time: Optional[pulumi.Input[str]] = None,
                  logout_binding: Optional[pulumi.Input[str]] = None,
                  logout_enabled: Optional[pulumi.Input[bool]] = None,
                  logout_request_url: Optional[pulumi.Input[str]] = None,
@@ -2258,6 +2259,19 @@ class _DomainsIdentityProviderState:
                * required: false
                * returned: default
                * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] last_notification_sent_time: (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+               
+               **Added In:** 2302092332
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
                * uniqueness: none
         :param pulumi.Input[str] logout_binding: (Updatable) HTTP binding to use for logout.
                
@@ -2639,6 +2653,8 @@ class _DomainsIdentityProviderState:
             pulumi.set(__self__, "jit_user_prov_group_static_list_enabled", jit_user_prov_group_static_list_enabled)
         if jit_user_prov_ignore_error_on_absent_groups is not None:
             pulumi.set(__self__, "jit_user_prov_ignore_error_on_absent_groups", jit_user_prov_ignore_error_on_absent_groups)
+        if last_notification_sent_time is not None:
+            pulumi.set(__self__, "last_notification_sent_time", last_notification_sent_time)
         if logout_binding is not None:
             pulumi.set(__self__, "logout_binding", logout_binding)
         if logout_enabled is not None:
@@ -3405,6 +3421,30 @@ class _DomainsIdentityProviderState:
     @jit_user_prov_ignore_error_on_absent_groups.setter
     def jit_user_prov_ignore_error_on_absent_groups(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "jit_user_prov_ignore_error_on_absent_groups", value)
+
+    @property
+    @pulumi.getter(name="lastNotificationSentTime")
+    def last_notification_sent_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+
+        **Added In:** 2302092332
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_notification_sent_time")
+
+    @last_notification_sent_time.setter
+    def last_notification_sent_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_notification_sent_time", value)
 
     @property
     @pulumi.getter(name="logoutBinding")
@@ -4826,6 +4866,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             __props__.__dict__["idcs_last_modified_bies"] = None
             __props__.__dict__["idcs_last_upgraded_in_release"] = None
             __props__.__dict__["idcs_prevented_operations"] = None
+            __props__.__dict__["last_notification_sent_time"] = None
             __props__.__dict__["metas"] = None
             __props__.__dict__["tenancy_ocid"] = None
             __props__.__dict__["tenant_provider_id"] = None
@@ -4872,6 +4913,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             jit_user_prov_group_saml_attribute_name: Optional[pulumi.Input[str]] = None,
             jit_user_prov_group_static_list_enabled: Optional[pulumi.Input[bool]] = None,
             jit_user_prov_ignore_error_on_absent_groups: Optional[pulumi.Input[bool]] = None,
+            last_notification_sent_time: Optional[pulumi.Input[str]] = None,
             logout_binding: Optional[pulumi.Input[str]] = None,
             logout_enabled: Optional[pulumi.Input[bool]] = None,
             logout_request_url: Optional[pulumi.Input[str]] = None,
@@ -5253,6 +5295,19 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
+        :param pulumi.Input[str] last_notification_sent_time: (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+               
+               **Added In:** 2302092332
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
         :param pulumi.Input[str] logout_binding: (Updatable) HTTP binding to use for logout.
                
                **SCIM++ Properties:**
@@ -5604,6 +5659,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         __props__.__dict__["jit_user_prov_group_saml_attribute_name"] = jit_user_prov_group_saml_attribute_name
         __props__.__dict__["jit_user_prov_group_static_list_enabled"] = jit_user_prov_group_static_list_enabled
         __props__.__dict__["jit_user_prov_ignore_error_on_absent_groups"] = jit_user_prov_ignore_error_on_absent_groups
+        __props__.__dict__["last_notification_sent_time"] = last_notification_sent_time
         __props__.__dict__["logout_binding"] = logout_binding
         __props__.__dict__["logout_enabled"] = logout_enabled
         __props__.__dict__["logout_request_url"] = logout_request_url
@@ -6210,6 +6266,26 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_ignore_error_on_absent_groups")
+
+    @property
+    @pulumi.getter(name="lastNotificationSentTime")
+    def last_notification_sent_time(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+
+        **Added In:** 2302092332
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_notification_sent_time")
 
     @property
     @pulumi.getter(name="logoutBinding")

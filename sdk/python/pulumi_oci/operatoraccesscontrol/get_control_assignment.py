@@ -21,7 +21,7 @@ class GetControlAssignmentResult:
     """
     A collection of values returned by getControlAssignment.
     """
-    def __init__(__self__, assigner_id=None, comment=None, compartment_id=None, defined_tags=None, detachment_description=None, error_code=None, error_message=None, freeform_tags=None, id=None, is_auto_approve_during_maintenance=None, is_enforced_always=None, is_log_forwarded=None, lifecycle_details=None, operator_control_assignment_id=None, operator_control_id=None, remote_syslog_server_address=None, remote_syslog_server_ca_cert=None, remote_syslog_server_port=None, resource_compartment_id=None, resource_id=None, resource_name=None, resource_type=None, state=None, time_assignment_from=None, time_assignment_to=None, time_of_assignment=None, time_of_deletion=None, unassigner_id=None):
+    def __init__(__self__, assigner_id=None, comment=None, compartment_id=None, defined_tags=None, detachment_description=None, error_code=None, error_message=None, freeform_tags=None, id=None, is_auto_approve_during_maintenance=None, is_default_assignment=None, is_enforced_always=None, is_log_forwarded=None, lifecycle_details=None, operator_control_assignment_id=None, operator_control_id=None, remote_syslog_server_address=None, remote_syslog_server_ca_cert=None, remote_syslog_server_port=None, resource_compartment_id=None, resource_id=None, resource_name=None, resource_type=None, state=None, time_assignment_from=None, time_assignment_to=None, time_of_assignment=None, time_of_deletion=None, unassigner_id=None):
         if assigner_id and not isinstance(assigner_id, str):
             raise TypeError("Expected argument 'assigner_id' to be a str")
         pulumi.set(__self__, "assigner_id", assigner_id)
@@ -52,6 +52,9 @@ class GetControlAssignmentResult:
         if is_auto_approve_during_maintenance and not isinstance(is_auto_approve_during_maintenance, bool):
             raise TypeError("Expected argument 'is_auto_approve_during_maintenance' to be a bool")
         pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
+        if is_default_assignment and not isinstance(is_default_assignment, bool):
+            raise TypeError("Expected argument 'is_default_assignment' to be a bool")
+        pulumi.set(__self__, "is_default_assignment", is_default_assignment)
         if is_enforced_always and not isinstance(is_enforced_always, bool):
             raise TypeError("Expected argument 'is_enforced_always' to be a bool")
         pulumi.set(__self__, "is_enforced_always", is_enforced_always)
@@ -186,6 +189,14 @@ class GetControlAssignmentResult:
         The boolean if true would autoApprove during maintenance.
         """
         return pulumi.get(self, "is_auto_approve_during_maintenance")
+
+    @property
+    @pulumi.getter(name="isDefaultAssignment")
+    def is_default_assignment(self) -> bool:
+        """
+        Whether the assignment is a default assignment.
+        """
+        return pulumi.get(self, "is_default_assignment")
 
     @property
     @pulumi.getter(name="isEnforcedAlways")
@@ -345,6 +356,7 @@ class AwaitableGetControlAssignmentResult(GetControlAssignmentResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_auto_approve_during_maintenance=self.is_auto_approve_during_maintenance,
+            is_default_assignment=self.is_default_assignment,
             is_enforced_always=self.is_enforced_always,
             is_log_forwarded=self.is_log_forwarded,
             lifecycle_details=self.lifecycle_details,
@@ -400,6 +412,7 @@ def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_auto_approve_during_maintenance=pulumi.get(__ret__, 'is_auto_approve_during_maintenance'),
+        is_default_assignment=pulumi.get(__ret__, 'is_default_assignment'),
         is_enforced_always=pulumi.get(__ret__, 'is_enforced_always'),
         is_log_forwarded=pulumi.get(__ret__, 'is_log_forwarded'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),

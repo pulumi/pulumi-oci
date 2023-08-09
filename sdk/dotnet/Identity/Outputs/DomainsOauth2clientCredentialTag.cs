@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// User's id
+        /// The user's ID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

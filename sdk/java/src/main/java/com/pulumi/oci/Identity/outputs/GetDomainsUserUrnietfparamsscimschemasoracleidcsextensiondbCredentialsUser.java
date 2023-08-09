@@ -16,7 +16,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCr
      */
     private Integer dbLoginAttempts;
     /**
-     * @return The Database User Name
+     * @return The database username.
      * 
      */
     private String dbUserName;
@@ -30,7 +30,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCr
         return this.dbLoginAttempts;
     }
     /**
-     * @return The Database User Name
+     * @return The database username.
      * 
      */
     public String dbUserName() {

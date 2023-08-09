@@ -25,7 +25,7 @@ public final class GetDomainsUserGroup {
      */
     private String externalId;
     /**
-     * @return Membership Ocid
+     * @return The membership OCID.
      * 
      */
     private String membershipOcid;
@@ -35,7 +35,7 @@ public final class GetDomainsUserGroup {
      */
     private String nonUniqueDisplay;
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     private String ocid;
@@ -78,7 +78,7 @@ public final class GetDomainsUserGroup {
         return this.externalId;
     }
     /**
-     * @return Membership Ocid
+     * @return The membership OCID.
      * 
      */
     public String membershipOcid() {
@@ -92,7 +92,7 @@ public final class GetDomainsUserGroup {
         return this.nonUniqueDisplay;
     }
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     public String ocid() {

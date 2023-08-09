@@ -146,6 +146,20 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * Whether the operator control is a default Operator Control.
+     * 
+     */
+    @Export(name="isDefaultOperatorControl", type=Boolean.class, parameters={})
+    private Output<Boolean> isDefaultOperatorControl;
+
+    /**
+     * @return Whether the operator control is a default Operator Control.
+     * 
+     */
+    public Output<Boolean> isDefaultOperatorControl() {
+        return this.isDefaultOperatorControl;
+    }
+    /**
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      * 
      */

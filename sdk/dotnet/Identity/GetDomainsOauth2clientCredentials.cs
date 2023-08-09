@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of O Auth2 Client Credentials in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search oauth2 client credentials
+        /// Search for a user's OAuth2 client credentials.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of O Auth2 Client Credentials in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search oauth2 client credentials
+        /// Search for a user's OAuth2 client credentials.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

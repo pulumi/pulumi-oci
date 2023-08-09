@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string CompartmentOcid;
         /// <summary>
-        /// The db password of the user
+        /// The user's database password.
         /// </summary>
         public readonly string DbPassword;
         /// <summary>
@@ -46,11 +46,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string DomainOcid;
         /// <summary>
-        /// Indicates that the db password has expired
+        /// Indicates that the database password has expired.
         /// </summary>
         public readonly bool Expired;
         /// <summary>
-        /// User credential expires on
+        /// When the user credential expires.
         /// </summary>
         public readonly string ExpiresOn;
         /// <summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> IdcsPreventedOperations;
         /// <summary>
-        /// A DateTime that specifies the date and time when the current db password was set
+        /// A DateTime that specifies the date and time when the current database password was set.
         /// </summary>
         public readonly string LastSetDate;
         /// <summary>
@@ -86,19 +86,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUserDbCredentialsUserDbCredentialMetaResult> Metas;
         /// <summary>
-        /// The db password of the user with mixed salt
+        /// The user's database password with mixed salt.
         /// </summary>
         public readonly string MixedDbPassword;
         /// <summary>
-        /// The mixed salt of the password
+        /// The mixed salt of the password.
         /// </summary>
         public readonly string MixedSalt;
         /// <summary>
-        /// User name
+        /// The username.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         /// <summary>
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string ResourceTypeSchemaVersion;
         /// <summary>
-        /// The salt of the password
+        /// The salt of the password.
         /// </summary>
         public readonly string Salt;
         /// <summary>
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUserDbCredentialsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult> UrnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
         /// <summary>
-        /// User linked to db credential
+        /// The user linked to the database credential.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUserDbCredentialsUserDbCredentialUserResult> Users;
 

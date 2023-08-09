@@ -192,6 +192,11 @@ public final class GetDomainsIdentityProvidersIdentityProvider {
      */
     private Boolean jitUserProvIgnoreErrorOnAbsentGroups;
     /**
+     * @return Records the notification timestamp for the IdP whose signing certificate is about to expire
+     * 
+     */
+    private String lastNotificationSentTime;
+    /**
      * @return HTTP binding to use for logout.
      * 
      */
@@ -577,6 +582,13 @@ public final class GetDomainsIdentityProvidersIdentityProvider {
         return this.jitUserProvIgnoreErrorOnAbsentGroups;
     }
     /**
+     * @return Records the notification timestamp for the IdP whose signing certificate is about to expire
+     * 
+     */
+    public String lastNotificationSentTime() {
+        return this.lastNotificationSentTime;
+    }
+    /**
      * @return HTTP binding to use for logout.
      * 
      */
@@ -823,6 +835,7 @@ public final class GetDomainsIdentityProvidersIdentityProvider {
         private String jitUserProvGroupSamlAttributeName;
         private Boolean jitUserProvGroupStaticListEnabled;
         private Boolean jitUserProvIgnoreErrorOnAbsentGroups;
+        private String lastNotificationSentTime;
         private String logoutBinding;
         private Boolean logoutEnabled;
         private String logoutRequestUrl;
@@ -889,6 +902,7 @@ public final class GetDomainsIdentityProvidersIdentityProvider {
     	      this.jitUserProvGroupSamlAttributeName = defaults.jitUserProvGroupSamlAttributeName;
     	      this.jitUserProvGroupStaticListEnabled = defaults.jitUserProvGroupStaticListEnabled;
     	      this.jitUserProvIgnoreErrorOnAbsentGroups = defaults.jitUserProvIgnoreErrorOnAbsentGroups;
+    	      this.lastNotificationSentTime = defaults.lastNotificationSentTime;
     	      this.logoutBinding = defaults.logoutBinding;
     	      this.logoutEnabled = defaults.logoutEnabled;
     	      this.logoutRequestUrl = defaults.logoutRequestUrl;
@@ -1115,6 +1129,11 @@ public final class GetDomainsIdentityProvidersIdentityProvider {
             return this;
         }
         @CustomType.Setter
+        public Builder lastNotificationSentTime(String lastNotificationSentTime) {
+            this.lastNotificationSentTime = Objects.requireNonNull(lastNotificationSentTime);
+            return this;
+        }
+        @CustomType.Setter
         public Builder logoutBinding(String logoutBinding) {
             this.logoutBinding = Objects.requireNonNull(logoutBinding);
             return this;
@@ -1313,6 +1332,7 @@ public final class GetDomainsIdentityProvidersIdentityProvider {
             o.jitUserProvGroupSamlAttributeName = jitUserProvGroupSamlAttributeName;
             o.jitUserProvGroupStaticListEnabled = jitUserProvGroupStaticListEnabled;
             o.jitUserProvIgnoreErrorOnAbsentGroups = jitUserProvIgnoreErrorOnAbsentGroups;
+            o.lastNotificationSentTime = lastNotificationSentTime;
             o.logoutBinding = logoutBinding;
             o.logoutEnabled = logoutEnabled;
             o.logoutRequestUrl = logoutRequestUrl;

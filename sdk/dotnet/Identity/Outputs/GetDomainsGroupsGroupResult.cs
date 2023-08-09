@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool DeleteInProgress;
         /// <summary>
-        /// Group display name
+        /// The Group display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> IdcsPreventedOperations;
         /// <summary>
-        /// Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        /// The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsGroupsGroupMemberResult> Members;
         /// <summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsGroupsGroupMetaResult> Metas;
         /// <summary>
-        /// A human readable name for Group as defined by the Service Consumer
+        /// A human readable name for the group as defined by the Service Consumer.
         /// </summary>
         public readonly string NonUniqueDisplayName;
         /// <summary>
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupResult> UrnietfparamsscimschemasoracleidcsextensiondynamicGroups;
         /// <summary>
-        /// Idcs Group
+        /// Oracle Identity Cloud Service Group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupResult> UrnietfparamsscimschemasoracleidcsextensiongroupGroups;
         /// <summary>

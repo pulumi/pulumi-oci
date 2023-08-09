@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Get a User
+// Get a user.
 //
 // ## Example Usage
 //
@@ -119,7 +119,7 @@ type LookupDomainsUserResult struct {
 	Names []GetDomainsUserName `pulumi:"names"`
 	// Nick name
 	NickName string `pulumi:"nickName"`
-	// Ocid of the User's Support Account.
+	// The OCID of the user's support account.
 	Ocid string `pulumi:"ocid"`
 	// Password attribute. Max length for password is controlled via Password Policy.
 	Password string `pulumi:"password"`
@@ -152,7 +152,7 @@ type LookupDomainsUserResult struct {
 	UrnietfparamsscimschemasoracleidcsextensionadaptiveUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionadaptiveUsers"`
 	// User's Capabilities
 	UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser `pulumi:"urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers"`
-	// Db Credentials User extension
+	// The database credentials user extension.
 	UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers"`
 	// DB User extension
 	UrnietfparamsscimschemasoracleidcsextensiondbUserUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbUserUsers"`
@@ -166,7 +166,7 @@ type LookupDomainsUserResult struct {
 	UrnietfparamsscimschemasoracleidcsextensionpasswordlessUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers"`
 	// POSIX User extension
 	UrnietfparamsscimschemasoracleidcsextensionposixUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionposixUsers"`
-	// This extension defines attributes used to store Security Questions of User.
+	// This extension defines the attributes used to store the security questions of a user.
 	UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUsers"`
@@ -180,9 +180,9 @@ type LookupDomainsUserResult struct {
 	UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser `pulumi:"urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers"`
 	// User's credentials
 	UrnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers"`
-	// This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+	// This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
 	UrnietfparamsscimschemasoracleidcsextensionuserStateUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserStateUsers"`
-	// Oracle Cloud Infrastructure IAM User
+	// Oracle Identity Cloud Service User
 	UrnietfparamsscimschemasoracleidcsextensionuserUsers []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserUsers"`
 	// User Support User Id
 	UserId string `pulumi:"userId"`
@@ -363,7 +363,7 @@ func (o LookupDomainsUserResultOutput) NickName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.NickName }).(pulumi.StringOutput)
 }
 
-// Ocid of the User's Support Account.
+// The OCID of the user's support account.
 func (o LookupDomainsUserResultOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.Ocid }).(pulumi.StringOutput)
 }
@@ -455,7 +455,7 @@ func (o LookupDomainsUserResultOutput) Urnietfparamsscimschemasoracleidcsextensi
 	}).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput)
 }
 
-// Db Credentials User extension
+// The database credentials user extension.
 func (o LookupDomainsUserResultOutput) UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers() GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput {
 	return o.ApplyT(func(v LookupDomainsUserResult) []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser {
 		return v.UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers
@@ -504,7 +504,7 @@ func (o LookupDomainsUserResultOutput) Urnietfparamsscimschemasoracleidcsextensi
 	}).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput)
 }
 
-// This extension defines attributes used to store Security Questions of User.
+// This extension defines the attributes used to store the security questions of a user.
 func (o LookupDomainsUserResultOutput) UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers() GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput {
 	return o.ApplyT(func(v LookupDomainsUserResult) []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser {
 		return v.UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers
@@ -553,14 +553,14 @@ func (o LookupDomainsUserResultOutput) Urnietfparamsscimschemasoracleidcsextensi
 	}).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput)
 }
 
-// This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+// This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
 func (o LookupDomainsUserResultOutput) UrnietfparamsscimschemasoracleidcsextensionuserStateUsers() GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput {
 	return o.ApplyT(func(v LookupDomainsUserResult) []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser {
 		return v.UrnietfparamsscimschemasoracleidcsextensionuserStateUsers
 	}).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput)
 }
 
-// Oracle Cloud Infrastructure IAM User
+// Oracle Identity Cloud Service User
 func (o LookupDomainsUserResultOutput) UrnietfparamsscimschemasoracleidcsextensionuserUsers() GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutput {
 	return o.ApplyT(func(v LookupDomainsUserResult) []GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser {
 		return v.UrnietfparamsscimschemasoracleidcsextensionuserUsers

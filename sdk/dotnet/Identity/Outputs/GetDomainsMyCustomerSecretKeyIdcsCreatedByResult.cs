@@ -14,15 +14,15 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsMyCustomerSecretKeyIdcsCreatedByResult
     {
         /// <summary>
-        /// User display name
+        /// The user's display name.
         /// </summary>
         public readonly string Display;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         /// <summary>
-        /// The URI that corresponds to the user linked to this credential
+        /// The URI that corresponds to the user linked to this credential.
         /// </summary>
         public readonly string Ref;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// User's id
+        /// The user's ID.
         /// </summary>
         public readonly string Value;
 

@@ -92,6 +92,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: immutable
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: never
      * * type: boolean
@@ -108,6 +109,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: string
@@ -116,7 +118,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable String creationMechanism;
     /**
-     * @return (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+     * @return (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      * **Added In:** 17.4.6
      * 
@@ -161,6 +163,22 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants;
+    /**
+     * @return (Updatable) Specifies date time when a User&#39;s group membership was last modified.
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable String groupMembershipLastModified;
     /**
      * @return (Updatable) Description:
      * 
@@ -221,6 +239,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -277,6 +296,23 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * 
      */
     private @Nullable String notificationEmailTemplateId;
+    /**
+     * @return (Updatable) User&#39;s preferred landing page following login, logout and reset password.
+     * 
+     * **Added In:** 2302092332
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable String preferredUiLandingPage;
     /**
      * @return (Updatable) A supplemental status indicating the reason why a user is disabled
      * 
@@ -456,6 +492,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: immutable
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: never
      * * type: boolean
@@ -474,6 +511,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: string
@@ -484,7 +522,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.creationMechanism);
     }
     /**
-     * @return (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+     * @return (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      * **Added In:** 17.4.6
      * 
@@ -534,6 +572,24 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants() {
         return this.grants == null ? List.of() : this.grants;
+    }
+    /**
+     * @return (Updatable) Specifies date time when a User&#39;s group membership was last modified.
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    public Optional<String> groupMembershipLastModified() {
+        return Optional.ofNullable(this.groupMembershipLastModified);
     }
     /**
      * @return (Updatable) Description:
@@ -601,6 +657,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -664,6 +721,25 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     public Optional<String> notificationEmailTemplateId() {
         return Optional.ofNullable(this.notificationEmailTemplateId);
+    }
+    /**
+     * @return (Updatable) User&#39;s preferred landing page following login, logout and reset password.
+     * 
+     * **Added In:** 2302092332
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<String> preferredUiLandingPage() {
+        return Optional.ofNullable(this.preferredUiLandingPage);
     }
     /**
      * @return (Updatable) A supplemental status indicating the reason why a user is disabled
@@ -795,6 +871,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         private @Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp delegatedAuthenticationTargetApp;
         private @Nullable Boolean doNotShowGettingStarted;
         private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants;
+        private @Nullable String groupMembershipLastModified;
         private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups;
         private @Nullable Boolean isAccountRecoveryEnrolled;
         private @Nullable Boolean isAuthenticationDelegated;
@@ -802,6 +879,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         private @Nullable Boolean isGroupMembershipNormalized;
         private @Nullable Boolean isGroupMembershipSyncedToUsersGroups;
         private @Nullable String notificationEmailTemplateId;
+        private @Nullable String preferredUiLandingPage;
         private @Nullable String status;
         private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts;
         private @Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp syncedFromApp;
@@ -820,6 +898,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     	      this.delegatedAuthenticationTargetApp = defaults.delegatedAuthenticationTargetApp;
     	      this.doNotShowGettingStarted = defaults.doNotShowGettingStarted;
     	      this.grants = defaults.grants;
+    	      this.groupMembershipLastModified = defaults.groupMembershipLastModified;
     	      this.idcsAppRolesLimitedToGroups = defaults.idcsAppRolesLimitedToGroups;
     	      this.isAccountRecoveryEnrolled = defaults.isAccountRecoveryEnrolled;
     	      this.isAuthenticationDelegated = defaults.isAuthenticationDelegated;
@@ -827,6 +906,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     	      this.isGroupMembershipNormalized = defaults.isGroupMembershipNormalized;
     	      this.isGroupMembershipSyncedToUsersGroups = defaults.isGroupMembershipSyncedToUsersGroups;
     	      this.notificationEmailTemplateId = defaults.notificationEmailTemplateId;
+    	      this.preferredUiLandingPage = defaults.preferredUiLandingPage;
     	      this.status = defaults.status;
     	      this.supportAccounts = defaults.supportAccounts;
     	      this.syncedFromApp = defaults.syncedFromApp;
@@ -893,6 +973,11 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             return grants(List.of(grants));
         }
         @CustomType.Setter
+        public Builder groupMembershipLastModified(@Nullable String groupMembershipLastModified) {
+            this.groupMembershipLastModified = groupMembershipLastModified;
+            return this;
+        }
+        @CustomType.Setter
         public Builder idcsAppRolesLimitedToGroups(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups) {
             this.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
             return this;
@@ -928,6 +1013,11 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         @CustomType.Setter
         public Builder notificationEmailTemplateId(@Nullable String notificationEmailTemplateId) {
             this.notificationEmailTemplateId = notificationEmailTemplateId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder preferredUiLandingPage(@Nullable String preferredUiLandingPage) {
+            this.preferredUiLandingPage = preferredUiLandingPage;
             return this;
         }
         @CustomType.Setter
@@ -977,6 +1067,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             o.delegatedAuthenticationTargetApp = delegatedAuthenticationTargetApp;
             o.doNotShowGettingStarted = doNotShowGettingStarted;
             o.grants = grants;
+            o.groupMembershipLastModified = groupMembershipLastModified;
             o.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
             o.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
             o.isAuthenticationDelegated = isAuthenticationDelegated;
@@ -984,6 +1075,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             o.isGroupMembershipNormalized = isGroupMembershipNormalized;
             o.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             o.notificationEmailTemplateId = notificationEmailTemplateId;
+            o.preferredUiLandingPage = preferredUiLandingPage;
             o.status = status;
             o.supportAccounts = supportAccounts;
             o.syncedFromApp = syncedFromApp;

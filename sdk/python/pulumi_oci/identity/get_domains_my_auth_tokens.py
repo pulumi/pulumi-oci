@@ -181,7 +181,7 @@ def get_domains_my_auth_tokens(authorization: Optional[str] = None,
     """
     This data source provides the list of My Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search AuthTokens
+    Search for a user's own Auth token.
 
     ## Example Usage
 
@@ -249,7 +249,7 @@ def get_domains_my_auth_tokens_output(authorization: Optional[pulumi.Input[Optio
     """
     This data source provides the list of My Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search AuthTokens
+    Search for a user's own Auth token.
 
     ## Example Usage
 

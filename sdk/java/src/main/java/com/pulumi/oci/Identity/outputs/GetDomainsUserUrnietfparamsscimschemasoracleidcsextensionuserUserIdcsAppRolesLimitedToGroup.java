@@ -15,12 +15,12 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      */
     private String display;
     /**
-     * @return The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+     * @return The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
      * 
      */
     private String idcsAppRoleId;
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     private String ocid;
@@ -44,14 +44,14 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         return this.display;
     }
     /**
-     * @return The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+     * @return The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
      * 
      */
     public String idcsAppRoleId() {
         return this.idcsAppRoleId;
     }
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     public String ocid() {

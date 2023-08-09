@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDomainsMyCustomerSecretKeyResult {
     /**
-     * @return Access key
+     * @return The access key.
      * 
      */
     private String accessKey;
@@ -50,7 +50,7 @@ public final class GetDomainsMyCustomerSecretKeyResult {
      */
     private String domainOcid;
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      */
     private String expiresOn;
@@ -87,7 +87,7 @@ public final class GetDomainsMyCustomerSecretKeyResult {
     private List<GetDomainsMyCustomerSecretKeyMeta> metas;
     private String myCustomerSecretKeyId;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
@@ -98,7 +98,7 @@ public final class GetDomainsMyCustomerSecretKeyResult {
      */
     private List<String> schemas;
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     private String status;
@@ -120,7 +120,7 @@ public final class GetDomainsMyCustomerSecretKeyResult {
 
     private GetDomainsMyCustomerSecretKeyResult() {}
     /**
-     * @return Access key
+     * @return The access key.
      * 
      */
     public String accessKey() {
@@ -165,7 +165,7 @@ public final class GetDomainsMyCustomerSecretKeyResult {
         return this.domainOcid;
     }
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      */
     public String expiresOn() {
@@ -220,7 +220,7 @@ public final class GetDomainsMyCustomerSecretKeyResult {
         return this.myCustomerSecretKeyId;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -237,7 +237,7 @@ public final class GetDomainsMyCustomerSecretKeyResult {
         return this.schemas;
     }
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     public String status() {

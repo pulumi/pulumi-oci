@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Add a user's api key
+ * Add a user's own API key.
  *
  * ## Import
  *
@@ -204,7 +204,7 @@ export class DomainsMyApiKey extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsMyApiKeyMeta[]>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -264,7 +264,7 @@ export class DomainsMyApiKey extends pulumi.CustomResource {
      */
     public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
     /**
-     * User linked to api key
+     * The user linked to the API key.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -507,7 +507,7 @@ export interface DomainsMyApiKeyState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyApiKeyMeta>[]>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -567,7 +567,7 @@ export interface DomainsMyApiKeyState {
      */
     tenancyOcid?: pulumi.Input<string>;
     /**
-     * User linked to api key
+     * The user linked to the API key.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -622,7 +622,7 @@ export interface DomainsMyApiKeyArgs {
      */
     key: pulumi.Input<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -668,7 +668,7 @@ export interface DomainsMyApiKeyArgs {
      */
     tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyApiKeyTag>[]>;
     /**
-     * User linked to api key
+     * The user linked to the API key.
      *
      * **SCIM++ Properties:**
      * * caseExact: false

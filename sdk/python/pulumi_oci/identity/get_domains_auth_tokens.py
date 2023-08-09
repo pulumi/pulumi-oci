@@ -201,7 +201,7 @@ def get_domains_auth_tokens(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search AuthTokens
+    Search for Auth tokens.
 
     ## Example Usage
 
@@ -279,7 +279,7 @@ def get_domains_auth_tokens_output(attribute_sets: Optional[pulumi.Input[Optiona
     """
     This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search AuthTokens
+    Search for Auth tokens.
 
     ## Example Usage
 

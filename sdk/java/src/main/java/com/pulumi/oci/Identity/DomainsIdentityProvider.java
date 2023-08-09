@@ -151,6 +151,8 @@ import javax.annotation.Nullable;
  *                 .crlEnabled(var_.identity_provider_urnietfparamsscimschemasoracleidcsextensionx509identity_provider_crl_enabled())
  *                 .crlLocation(var_.identity_provider_urnietfparamsscimschemasoracleidcsextensionx509identity_provider_crl_location())
  *                 .crlReloadDuration(var_.identity_provider_urnietfparamsscimschemasoracleidcsextensionx509identity_provider_crl_reload_duration())
+ *                 .ekuValidationEnabled(var_.identity_provider_urnietfparamsscimschemasoracleidcsextensionx509identity_provider_eku_validation_enabled())
+ *                 .ekuValues(var_.identity_provider_urnietfparamsscimschemasoracleidcsextensionx509identity_provider_eku_values())
  *                 .ocspAllowUnknownResponseStatus(var_.identity_provider_urnietfparamsscimschemasoracleidcsextensionx509identity_provider_ocsp_allow_unknown_response_status())
  *                 .ocspEnableSignedResponse(var_.identity_provider_urnietfparamsscimschemasoracleidcsextensionx509identity_provider_ocsp_enable_signed_response())
  *                 .ocspEnabled(var_.identity_provider_urnietfparamsscimschemasoracleidcsextensionx509identity_provider_ocsp_enabled())
@@ -1264,6 +1266,44 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      */
     public Output<Boolean> jitUserProvIgnoreErrorOnAbsentGroups() {
         return this.jitUserProvIgnoreErrorOnAbsentGroups;
+    }
+    /**
+     * (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+     * 
+     * **Added In:** 2302092332
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="lastNotificationSentTime", type=String.class, parameters={})
+    private Output<String> lastNotificationSentTime;
+
+    /**
+     * @return (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+     * 
+     * **Added In:** 2302092332
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    public Output<String> lastNotificationSentTime() {
+        return this.lastNotificationSentTime;
     }
     /**
      * (Updatable) HTTP binding to use for logout.

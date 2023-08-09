@@ -198,14 +198,14 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
-     * Retention period, in days, for backups.
+     * (Updatable) Retention period, in days, for backups.
      * 
      */
     @Import(name="backupRetentionPeriodInDays")
     private @Nullable Output<Integer> backupRetentionPeriodInDays;
 
     /**
-     * @return Retention period, in days, for backups.
+     * @return (Updatable) Retention period, in days, for backups.
      * 
      */
     public Optional<Output<Integer>> backupRetentionPeriodInDays() {
@@ -281,14 +281,14 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      * 
      */
     @Import(name="computeModel")
     private @Nullable Output<String> computeModel;
 
     /**
-     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * @return (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      * 
      */
     public Optional<Output<String>> computeModel() {
@@ -327,7 +327,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
     /**
      * (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-     * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     * 
+     * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
      * * The data type must be an *integer*.
      * * The minimum number of cores for all types of autonomous database is *1*
      * * The maximum number of cores is as follows:
@@ -340,7 +341,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
     /**
      * @return (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-     * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     * 
+     * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
      * * The data type must be an *integer*.
      * * The minimum number of cores for all types of autonomous database is *1*
      * * The maximum number of cores is as follows:
@@ -957,6 +959,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     * 
+     */
+    @Import(name="localAdgAutoFailoverMaxDataLossLimit")
+    private @Nullable Output<Integer> localAdgAutoFailoverMaxDataLossLimit;
+
+    /**
+     * @return Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     * 
+     */
+    public Optional<Output<Integer>> localAdgAutoFailoverMaxDataLossLimit() {
+        return Optional.ofNullable(this.localAdgAutoFailoverMaxDataLossLimit);
+    }
+
+    /**
      * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
@@ -1017,14 +1034,14 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
     @Import(name="memoryPerOracleComputeUnitInGbs")
     private @Nullable Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
     public Optional<Output<Integer>> memoryPerOracleComputeUnitInGbs() {
@@ -1082,10 +1099,10 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      * (Updatable) The number of OCPU cores to be made available to the database.
      * 
      * The following points apply:
-     * * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+     * * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
      * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
      * 
-     * For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      * 
@@ -1097,10 +1114,10 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      * @return (Updatable) The number of OCPU cores to be made available to the database.
      * 
      * The following points apply:
-     * * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+     * * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
      * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
      * 
-     * For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      * 
@@ -1955,6 +1972,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.localAdgAutoFailoverMaxDataLossLimit = $.localAdgAutoFailoverMaxDataLossLimit;
         this.localDisasterRecoveryType = $.localDisasterRecoveryType;
         this.localStandbyDbs = $.localStandbyDbs;
         this.longTermBackupSchedules = $.longTermBackupSchedules;
@@ -2295,7 +2313,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param backupRetentionPeriodInDays Retention period, in days, for backups.
+         * @param backupRetentionPeriodInDays (Updatable) Retention period, in days, for backups.
          * 
          * @return builder
          * 
@@ -2306,7 +2324,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param backupRetentionPeriodInDays Retention period, in days, for backups.
+         * @param backupRetentionPeriodInDays (Updatable) Retention period, in days, for backups.
          * 
          * @return builder
          * 
@@ -2408,7 +2426,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+         * @param computeModel (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
          * 
          * @return builder
          * 
@@ -2419,7 +2437,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+         * @param computeModel (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
          * 
          * @return builder
          * 
@@ -2492,7 +2510,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
         /**
          * @param cpuCoreCount (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-         * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+         * 
+         * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
          * * The data type must be an *integer*.
          * * The minimum number of cores for all types of autonomous database is *1*
          * * The maximum number of cores is as follows:
@@ -2509,7 +2528,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
         /**
          * @param cpuCoreCount (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-         * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+         * 
+         * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
          * * The data type must be an *integer*.
          * * The minimum number of cores for all types of autonomous database is *1*
          * * The maximum number of cores is as follows:
@@ -3376,6 +3396,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param localAdgAutoFailoverMaxDataLossLimit Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localAdgAutoFailoverMaxDataLossLimit(@Nullable Output<Integer> localAdgAutoFailoverMaxDataLossLimit) {
+            $.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
+            return this;
+        }
+
+        /**
+         * @param localAdgAutoFailoverMaxDataLossLimit Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localAdgAutoFailoverMaxDataLossLimit(Integer localAdgAutoFailoverMaxDataLossLimit) {
+            return localAdgAutoFailoverMaxDataLossLimit(Output.of(localAdgAutoFailoverMaxDataLossLimit));
+        }
+
+        /**
          * @param localDisasterRecoveryType Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          * 
          * @return builder
@@ -3480,7 +3521,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
          * 
          * @return builder
          * 
@@ -3491,7 +3532,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
          * 
          * @return builder
          * 
@@ -3580,10 +3621,10 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          * @param ocpuCount (Updatable) The number of OCPU cores to be made available to the database.
          * 
          * The following points apply:
-         * * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+         * * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
          * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
          * 
-         * For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+         * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
          * 
          * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
          * 
@@ -3599,10 +3640,10 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          * @param ocpuCount (Updatable) The number of OCPU cores to be made available to the database.
          * 
          * The following points apply:
-         * * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+         * * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
          * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
          * 
-         * For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+         * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
          * 
          * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
          * 

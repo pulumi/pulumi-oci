@@ -34,6 +34,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int CrlReloadDuration;
         /// <summary>
+        /// Set to true to enable EKU Validation
+        /// </summary>
+        public readonly bool EkuValidationEnabled;
+        /// <summary>
+        /// List of EKU which needs to be validated
+        /// </summary>
+        public readonly ImmutableArray<string> EkuValues;
+        /// <summary>
         /// Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
         /// </summary>
         public readonly bool OcspAllowUnknownResponseStatus;
@@ -86,6 +94,10 @@ namespace Pulumi.Oci.Identity.Outputs
 
             int crlReloadDuration,
 
+            bool ekuValidationEnabled,
+
+            ImmutableArray<string> ekuValues,
+
             bool ocspAllowUnknownResponseStatus,
 
             bool ocspEnableSignedResponse,
@@ -111,6 +123,8 @@ namespace Pulumi.Oci.Identity.Outputs
             CrlEnabled = crlEnabled;
             CrlLocation = crlLocation;
             CrlReloadDuration = crlReloadDuration;
+            EkuValidationEnabled = ekuValidationEnabled;
+            EkuValues = ekuValues;
             OcspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
             OcspEnableSignedResponse = ocspEnableSignedResponse;
             OcspEnabled = ocspEnabled;

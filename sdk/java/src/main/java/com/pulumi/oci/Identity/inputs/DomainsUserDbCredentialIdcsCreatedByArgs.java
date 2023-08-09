@@ -16,7 +16,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
     public static final DomainsUserDbCredentialIdcsCreatedByArgs Empty = new DomainsUserDbCredentialIdcsCreatedByArgs();
 
     /**
-     * (Updatable) User display name
+     * (Updatable) The user display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -33,7 +33,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) User display name
+     * @return (Updatable) The user display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -51,7 +51,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
     }
 
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -68,7 +68,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -86,7 +86,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) The URI that corresponds to the user linked to this credential
+     * (Updatable) The URI that corresponds to the user linked to this credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -103,7 +103,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI that corresponds to the user linked to this credential
+     * @return (Updatable) The URI that corresponds to the user linked to this credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -156,7 +156,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
     }
 
     /**
-     * User&#39;s id
+     * The user&#39;s identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -176,7 +176,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
     private Output<String> value;
 
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -225,7 +225,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param display (Updatable) User display name
+         * @param display (Updatable) The user display name.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -246,7 +246,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param display (Updatable) User display name
+         * @param display (Updatable) The user display name.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -266,7 +266,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -287,7 +287,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -307,7 +307,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param ref (Updatable) The URI that corresponds to the user linked to this credential
+         * @param ref (Updatable) The URI that corresponds to the user linked to this credential.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -328,7 +328,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param ref (Updatable) The URI that corresponds to the user linked to this credential
+         * @param ref (Updatable) The URI that corresponds to the user linked to this credential.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -389,7 +389,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The user&#39;s identifier.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -413,7 +413,7 @@ public final class DomainsUserDbCredentialIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The user&#39;s identifier.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true

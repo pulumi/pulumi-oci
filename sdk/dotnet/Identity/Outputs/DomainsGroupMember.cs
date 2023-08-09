@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsGroupMember
     {
         /// <summary>
-        /// (Updatable) The DateTime the member was added to the Group.
+        /// (Updatable) The date and time that the member was added to the group.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) Membership Ocid
+        /// (Updatable) The membership OCID.
         /// 
         /// **Added In:** 2102181953
         /// 

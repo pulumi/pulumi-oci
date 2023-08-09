@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search smtp credentials
+        /// Search for SMTP credentials.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search smtp credentials
+        /// Search for SMTP credentials.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

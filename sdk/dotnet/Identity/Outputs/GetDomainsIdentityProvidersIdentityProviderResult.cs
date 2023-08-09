@@ -150,6 +150,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool JitUserProvIgnoreErrorOnAbsentGroups;
         /// <summary>
+        /// Records the notification timestamp for the IdP whose signing certificate is about to expire
+        /// </summary>
+        public readonly string LastNotificationSentTime;
+        /// <summary>
         /// HTTP binding to use for logout.
         /// </summary>
         public readonly string LogoutBinding;
@@ -336,6 +340,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             bool jitUserProvIgnoreErrorOnAbsentGroups,
 
+            string lastNotificationSentTime,
+
             string logoutBinding,
 
             bool logoutEnabled,
@@ -428,6 +434,7 @@ namespace Pulumi.Oci.Identity.Outputs
             JitUserProvGroupSamlAttributeName = jitUserProvGroupSamlAttributeName;
             JitUserProvGroupStaticListEnabled = jitUserProvGroupStaticListEnabled;
             JitUserProvIgnoreErrorOnAbsentGroups = jitUserProvIgnoreErrorOnAbsentGroups;
+            LastNotificationSentTime = lastNotificationSentTime;
             LogoutBinding = logoutBinding;
             LogoutEnabled = logoutEnabled;
             LogoutRequestUrl = logoutRequestUrl;

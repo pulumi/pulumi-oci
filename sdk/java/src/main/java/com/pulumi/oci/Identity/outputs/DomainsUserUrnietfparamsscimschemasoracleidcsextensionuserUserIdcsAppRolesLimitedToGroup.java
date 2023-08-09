@@ -26,7 +26,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+     * @return (Updatable) The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
      * 
      * **Added In:** 19.2.1
      * 
@@ -43,7 +43,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private String idcsAppRoleId;
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -111,7 +111,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+     * @return (Updatable) The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
      * 
      * **Added In:** 19.2.1
      * 
@@ -130,7 +130,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return this.idcsAppRoleId;
     }
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 

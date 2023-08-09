@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserGetArgs>? _realmUsers;
 
         /// <summary>
-        /// (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+        /// (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [value]

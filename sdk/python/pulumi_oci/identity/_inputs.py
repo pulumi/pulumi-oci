@@ -13,12 +13,85 @@ __all__ = [
     'AuthenticationPolicyNetworkPolicyArgs',
     'AuthenticationPolicyPasswordPolicyArgs',
     'DomainReplicaRegionArgs',
+    'DomainsAccountRecoverySettingIdcsCreatedByArgs',
+    'DomainsAccountRecoverySettingIdcsLastModifiedByArgs',
+    'DomainsAccountRecoverySettingMetaArgs',
+    'DomainsAccountRecoverySettingTagArgs',
     'DomainsApiKeyIdcsCreatedByArgs',
     'DomainsApiKeyIdcsLastModifiedByArgs',
     'DomainsApiKeyMetaArgs',
     'DomainsApiKeyTagArgs',
     'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs',
     'DomainsApiKeyUserArgs',
+    'DomainsAppAccountArgs',
+    'DomainsAppAdminRoleArgs',
+    'DomainsAppAliasAppArgs',
+    'DomainsAppAllowedScopeArgs',
+    'DomainsAppAllowedTagArgs',
+    'DomainsAppAppSignonPolicyArgs',
+    'DomainsAppAppsNetworkPerimeterArgs',
+    'DomainsAppAsOpcServiceArgs',
+    'DomainsAppAttrRenderingMetadataArgs',
+    'DomainsAppBasedOnTemplateArgs',
+    'DomainsAppCertificateArgs',
+    'DomainsAppCloudControlPropertyArgs',
+    'DomainsAppEditableAttributeArgs',
+    'DomainsAppGrantArgs',
+    'DomainsAppGrantedAppRoleArgs',
+    'DomainsAppIdcsCreatedByArgs',
+    'DomainsAppIdcsLastModifiedByArgs',
+    'DomainsAppIdentityProviderArgs',
+    'DomainsAppIdpPolicyArgs',
+    'DomainsAppMetaArgs',
+    'DomainsAppProtectableSecondaryAudienceArgs',
+    'DomainsAppRadiusPolicyArgs',
+    'DomainsAppRoleAppArgs',
+    'DomainsAppRoleIdcsCreatedByArgs',
+    'DomainsAppRoleIdcsLastModifiedByArgs',
+    'DomainsAppRoleMemberArgs',
+    'DomainsAppRoleMetaArgs',
+    'DomainsAppRoleTagArgs',
+    'DomainsAppSamlServiceProviderArgs',
+    'DomainsAppScopeArgs',
+    'DomainsAppServiceParamArgs',
+    'DomainsAppSignonPolicyArgs',
+    'DomainsAppTagArgs',
+    'DomainsAppTermsOfUseArgs',
+    'DomainsAppTrustPolicyArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttributeArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs',
+    'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs',
+    'DomainsAppUserRoleArgs',
     'DomainsAuthTokenIdcsCreatedByArgs',
     'DomainsAuthTokenIdcsLastModifiedByArgs',
     'DomainsAuthTokenMetaArgs',
@@ -56,6 +129,15 @@ __all__ = [
     'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs',
     'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs',
     'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs',
+    'DomainsGrantAppArgs',
+    'DomainsGrantAppEntitlementCollectionArgs',
+    'DomainsGrantEntitlementArgs',
+    'DomainsGrantGranteeArgs',
+    'DomainsGrantGrantorArgs',
+    'DomainsGrantIdcsCreatedByArgs',
+    'DomainsGrantIdcsLastModifiedByArgs',
+    'DomainsGrantMetaArgs',
+    'DomainsGrantTagArgs',
     'DomainsGroupIdcsCreatedByArgs',
     'DomainsGroupIdcsLastModifiedByArgs',
     'DomainsGroupMemberArgs',
@@ -86,6 +168,14 @@ __all__ = [
     'DomainsIdentityProviderTagArgs',
     'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs',
     'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs',
+    'DomainsIdentitySettingIdcsCreatedByArgs',
+    'DomainsIdentitySettingIdcsLastModifiedByArgs',
+    'DomainsIdentitySettingMetaArgs',
+    'DomainsIdentitySettingMyProfileArgs',
+    'DomainsIdentitySettingPosixGidArgs',
+    'DomainsIdentitySettingPosixUidArgs',
+    'DomainsIdentitySettingTagArgs',
+    'DomainsIdentitySettingTokenArgs',
     'DomainsKmsiSettingIdcsCreatedByArgs',
     'DomainsKmsiSettingIdcsLastModifiedByArgs',
     'DomainsKmsiSettingMetaArgs',
@@ -111,6 +201,12 @@ __all__ = [
     'DomainsMyOauth2clientCredentialScopeArgs',
     'DomainsMyOauth2clientCredentialTagArgs',
     'DomainsMyOauth2clientCredentialUserArgs',
+    'DomainsMyRequestIdcsCreatedByArgs',
+    'DomainsMyRequestIdcsLastModifiedByArgs',
+    'DomainsMyRequestMetaArgs',
+    'DomainsMyRequestRequestingArgs',
+    'DomainsMyRequestRequestorArgs',
+    'DomainsMyRequestTagArgs',
     'DomainsMySmtpCredentialIdcsCreatedByArgs',
     'DomainsMySmtpCredentialIdcsLastModifiedByArgs',
     'DomainsMySmtpCredentialMetaArgs',
@@ -139,6 +235,15 @@ __all__ = [
     'DomainsPasswordPolicyIdcsLastModifiedByArgs',
     'DomainsPasswordPolicyMetaArgs',
     'DomainsPasswordPolicyTagArgs',
+    'DomainsSecurityQuestionIdcsCreatedByArgs',
+    'DomainsSecurityQuestionIdcsLastModifiedByArgs',
+    'DomainsSecurityQuestionMetaArgs',
+    'DomainsSecurityQuestionQuestionTextArgs',
+    'DomainsSecurityQuestionSettingIdcsCreatedByArgs',
+    'DomainsSecurityQuestionSettingIdcsLastModifiedByArgs',
+    'DomainsSecurityQuestionSettingMetaArgs',
+    'DomainsSecurityQuestionSettingTagArgs',
+    'DomainsSecurityQuestionTagArgs',
     'DomainsSmtpCredentialIdcsCreatedByArgs',
     'DomainsSmtpCredentialIdcsLastModifiedByArgs',
     'DomainsSmtpCredentialMetaArgs',
@@ -442,6 +547,642 @@ class DomainReplicaRegionArgs:
 
 
 @pulumi.input_type
+class DomainsAccountRecoverySettingIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAccountRecoverySettingIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAccountRecoverySettingMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsAccountRecoverySettingTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Key or name of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Key or name of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
 class DomainsApiKeyIdcsCreatedByArgs:
     def __init__(__self__, *,
                  value: pulumi.Input[str],
@@ -450,7 +1191,7 @@ class DomainsApiKeyIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -465,7 +1206,7 @@ class DomainsApiKeyIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -476,7 +1217,7 @@ class DomainsApiKeyIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -487,7 +1228,7 @@ class DomainsApiKeyIdcsCreatedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -524,7 +1265,7 @@ class DomainsApiKeyIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -550,7 +1291,7 @@ class DomainsApiKeyIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -572,7 +1313,7 @@ class DomainsApiKeyIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -594,7 +1335,7 @@ class DomainsApiKeyIdcsCreatedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -644,7 +1385,7 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -659,7 +1400,7 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -670,7 +1411,7 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -681,7 +1422,7 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -718,7 +1459,7 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -744,7 +1485,7 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -766,7 +1507,7 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -788,7 +1529,7 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1033,7 +1774,7 @@ class DomainsApiKeyTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1078,7 +1819,7 @@ class DomainsApiKeyTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1155,7 +1896,7 @@ class DomainsApiKeyUserArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1166,7 +1907,7 @@ class DomainsApiKeyUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1177,7 +1918,7 @@ class DomainsApiKeyUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1188,7 +1929,7 @@ class DomainsApiKeyUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1199,7 +1940,7 @@ class DomainsApiKeyUserArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1230,7 +1971,7 @@ class DomainsApiKeyUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1252,7 +1993,7 @@ class DomainsApiKeyUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1274,7 +2015,7 @@ class DomainsApiKeyUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1296,7 +2037,7 @@ class DomainsApiKeyUserArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1318,7 +2059,7 @@ class DomainsApiKeyUserArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1342,6 +2083,12546 @@ class DomainsApiKeyUserArgs:
 
 
 @pulumi.input_type
+class DomainsAppAccountArgs:
+    def __init__(__self__, *,
+                 active: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 owner_id: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] active: (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] owner_id: (Updatable) Owner identifier
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if owner_id is not None:
+            pulumi.set(__self__, "owner_id", owner_id)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "active")
+
+    @active.setter
+    def active(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "active", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="ownerId")
+    def owner_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Owner identifier
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "owner_id")
+
+    @owner_id.setter
+    def owner_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "owner_id", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAppAdminRoleArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] description: (Updatable) The description of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The description of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppAliasAppArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] description: (Updatable) The description of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The description of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppAllowedScopeArgs:
+    def __init__(__self__, *,
+                 fqs: pulumi.Input[str],
+                 id_of_defining_app: Optional[pulumi.Input[str]] = None,
+                 read_only: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] fqs: (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the 'value' of each scope with the value of 'audience'. Each value of 'fqs' must be unique across the system. Used only when this App acts as an OAuth Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
+        :param pulumi.Input[str] id_of_defining_app: (Updatable) The ID of the App that defines this scope.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] read_only: (Updatable) If true, indicates that this value must be protected.
+               
+               **Added In:** 18.2.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: boolean
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "fqs", fqs)
+        if id_of_defining_app is not None:
+            pulumi.set(__self__, "id_of_defining_app", id_of_defining_app)
+        if read_only is not None:
+            pulumi.set(__self__, "read_only", read_only)
+
+    @property
+    @pulumi.getter
+    def fqs(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the 'value' of each scope with the value of 'audience'. Each value of 'fqs' must be unique across the system. Used only when this App acts as an OAuth Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
+        """
+        return pulumi.get(self, "fqs")
+
+    @fqs.setter
+    def fqs(self, value: pulumi.Input[str]):
+        pulumi.set(self, "fqs", value)
+
+    @property
+    @pulumi.getter(name="idOfDefiningApp")
+    def id_of_defining_app(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The ID of the App that defines this scope.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "id_of_defining_app")
+
+    @id_of_defining_app.setter
+    def id_of_defining_app(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id_of_defining_app", value)
+
+    @property
+    @pulumi.getter(name="readOnly")
+    def read_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that this value must be protected.
+
+        **Added In:** 18.2.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "read_only")
+
+    @read_only.setter
+    def read_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "read_only", value)
+
+
+@pulumi.input_type
+class DomainsAppAllowedTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 read_only: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * required: true
+               * mutability: readWrite
+               * returned: default
+               * idcsSearchable: true
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] read_only: (Updatable) If true, indicates that this value must be protected.
+               
+               **Added In:** 18.2.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: boolean
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+        if read_only is not None:
+            pulumi.set(__self__, "read_only", read_only)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * required: true
+        * mutability: readWrite
+        * returned: default
+        * idcsSearchable: true
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="readOnly")
+    def read_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that this value must be protected.
+
+        **Added In:** 18.2.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "read_only")
+
+    @read_only.setter
+    def read_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "read_only", value)
+
+
+@pulumi.input_type
+class DomainsAppAppSignonPolicyArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppAppsNetworkPerimeterArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppAsOpcServiceArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppAttrRenderingMetadataArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 datatype: Optional[pulumi.Input[str]] = None,
+                 helptext: Optional[pulumi.Input[str]] = None,
+                 label: Optional[pulumi.Input[str]] = None,
+                 max_length: Optional[pulumi.Input[int]] = None,
+                 max_size: Optional[pulumi.Input[int]] = None,
+                 min_length: Optional[pulumi.Input[int]] = None,
+                 min_size: Optional[pulumi.Input[int]] = None,
+                 order: Optional[pulumi.Input[int]] = None,
+                 read_only: Optional[pulumi.Input[bool]] = None,
+                 regexp: Optional[pulumi.Input[str]] = None,
+                 required: Optional[pulumi.Input[bool]] = None,
+                 section: Optional[pulumi.Input[str]] = None,
+                 visible: Optional[pulumi.Input[bool]] = None,
+                 widget: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] datatype: (Updatable) Data type of the attribute.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] helptext: (Updatable) Help text for the attribute. It can contain HTML tags.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] label: (Updatable) Label for the attribute to be shown in the UI.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] max_length: (Updatable) Maximum length of the attribute.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] max_size: (Updatable) Maximum size of the attribute.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] min_length: (Updatable) Minimum length of the attribute.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] min_size: (Updatable) Minimum size of the attribute..
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] order: (Updatable) Display sequence of the bundle configuration property.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[bool] read_only: (Updatable) If true, indicates that this value must be protected.
+               
+               **Added In:** 18.2.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] regexp: (Updatable) Regular expression of the attribute for validation.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] required: (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] section: (Updatable) UI widget to use for the attribute.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] visible: (Updatable) Indicates whether the attribute is to be shown on the application creation UI.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] widget: (Updatable) UI widget to use for the attribute.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "name", name)
+        if datatype is not None:
+            pulumi.set(__self__, "datatype", datatype)
+        if helptext is not None:
+            pulumi.set(__self__, "helptext", helptext)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if max_length is not None:
+            pulumi.set(__self__, "max_length", max_length)
+        if max_size is not None:
+            pulumi.set(__self__, "max_size", max_size)
+        if min_length is not None:
+            pulumi.set(__self__, "min_length", min_length)
+        if min_size is not None:
+            pulumi.set(__self__, "min_size", min_size)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if read_only is not None:
+            pulumi.set(__self__, "read_only", read_only)
+        if regexp is not None:
+            pulumi.set(__self__, "regexp", regexp)
+        if required is not None:
+            pulumi.set(__self__, "required", required)
+        if section is not None:
+            pulumi.set(__self__, "section", section)
+        if visible is not None:
+            pulumi.set(__self__, "visible", visible)
+        if widget is not None:
+            pulumi.set(__self__, "widget", widget)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def datatype(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Data type of the attribute.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "datatype")
+
+    @datatype.setter
+    def datatype(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "datatype", value)
+
+    @property
+    @pulumi.getter
+    def helptext(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Help text for the attribute. It can contain HTML tags.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "helptext")
+
+    @helptext.setter
+    def helptext(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "helptext", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Label for the attribute to be shown in the UI.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "label", value)
+
+    @property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum length of the attribute.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "max_length")
+
+    @max_length.setter
+    def max_length(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_length", value)
+
+    @property
+    @pulumi.getter(name="maxSize")
+    def max_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum size of the attribute.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "max_size")
+
+    @max_size.setter
+    def max_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_size", value)
+
+    @property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Minimum length of the attribute.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "min_length")
+
+    @min_length.setter
+    def min_length(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_length", value)
+
+    @property
+    @pulumi.getter(name="minSize")
+    def min_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Minimum size of the attribute..
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "min_size")
+
+    @min_size.setter
+    def min_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_size", value)
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Display sequence of the bundle configuration property.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "order")
+
+    @order.setter
+    def order(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "order", value)
+
+    @property
+    @pulumi.getter(name="readOnly")
+    def read_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that this value must be protected.
+
+        **Added In:** 18.2.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "read_only")
+
+    @read_only.setter
+    def read_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "read_only", value)
+
+    @property
+    @pulumi.getter
+    def regexp(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Regular expression of the attribute for validation.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "regexp")
+
+    @regexp.setter
+    def regexp(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "regexp", value)
+
+    @property
+    @pulumi.getter
+    def required(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "required")
+
+    @required.setter
+    def required(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "required", value)
+
+    @property
+    @pulumi.getter
+    def section(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) UI widget to use for the attribute.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "section")
+
+    @section.setter
+    def section(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "section", value)
+
+    @property
+    @pulumi.getter
+    def visible(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether the attribute is to be shown on the application creation UI.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "visible")
+
+    @visible.setter
+    def visible(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "visible", value)
+
+    @property
+    @pulumi.getter
+    def widget(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) UI widget to use for the attribute.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "widget")
+
+    @widget.setter
+    def widget(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "widget", value)
+
+
+@pulumi.input_type
+class DomainsAppBasedOnTemplateArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 well_known_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] well_known_id: (Updatable) Unique well-known identifier used to reference connector bundle.
+               
+               **Added In:** 19.1.4
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if well_known_id is not None:
+            pulumi.set(__self__, "well_known_id", well_known_id)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter(name="wellKnownId")
+    def well_known_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique well-known identifier used to reference connector bundle.
+
+        **Added In:** 19.1.4
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "well_known_id")
+
+    @well_known_id.setter
+    def well_known_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "well_known_id", value)
+
+
+@pulumi.input_type
+class DomainsAppCertificateArgs:
+    def __init__(__self__, *,
+                 cert_alias: pulumi.Input[str],
+                 kid: Optional[pulumi.Input[str]] = None,
+                 sha1thumbprint: Optional[pulumi.Input[str]] = None,
+                 x509base64certificate: Optional[pulumi.Input[str]] = None,
+                 x5t: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] cert_alias: (Updatable) Certificate alias
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: always
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] kid: (Updatable) Certificate kid
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] sha1thumbprint: (Updatable) sha1Thumbprint
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] x509base64certificate: (Updatable) Base-64-encoded certificate.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: binary
+               * uniqueness: none
+        :param pulumi.Input[str] x5t: (Updatable) Certificate x5t
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "cert_alias", cert_alias)
+        if kid is not None:
+            pulumi.set(__self__, "kid", kid)
+        if sha1thumbprint is not None:
+            pulumi.set(__self__, "sha1thumbprint", sha1thumbprint)
+        if x509base64certificate is not None:
+            pulumi.set(__self__, "x509base64certificate", x509base64certificate)
+        if x5t is not None:
+            pulumi.set(__self__, "x5t", x5t)
+
+    @property
+    @pulumi.getter(name="certAlias")
+    def cert_alias(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Certificate alias
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: always
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "cert_alias")
+
+    @cert_alias.setter
+    def cert_alias(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cert_alias", value)
+
+    @property
+    @pulumi.getter
+    def kid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Certificate kid
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "kid")
+
+    @kid.setter
+    def kid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kid", value)
+
+    @property
+    @pulumi.getter
+    def sha1thumbprint(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) sha1Thumbprint
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "sha1thumbprint")
+
+    @sha1thumbprint.setter
+    def sha1thumbprint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sha1thumbprint", value)
+
+    @property
+    @pulumi.getter
+    def x509base64certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Base-64-encoded certificate.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: binary
+        * uniqueness: none
+        """
+        return pulumi.get(self, "x509base64certificate")
+
+    @x509base64certificate.setter
+    def x509base64certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "x509base64certificate", value)
+
+    @property
+    @pulumi.getter
+    def x5t(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Certificate x5t
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "x5t")
+
+    @x5t.setter
+    def x5t(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "x5t", value)
+
+
+@pulumi.input_type
+class DomainsAppCloudControlPropertyArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 values: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        """
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) The value(s) of the property.
+               
+               **Added In:** 18.4.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) The value(s) of the property.
+
+        **Added In:** 18.4.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "values", value)
+
+
+@pulumi.input_type
+class DomainsAppEditableAttributeArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class DomainsAppGrantArgs:
+    def __init__(__self__, *,
+                 grant_mechanism: Optional[pulumi.Input[str]] = None,
+                 grantee_id: Optional[pulumi.Input[str]] = None,
+                 grantee_type: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+               * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+               * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+               * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] grantee_id: (Updatable) Grantee identifier
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] grantee_type: (Updatable) Grantee resource type. Allowed values are User and Group.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if grant_mechanism is not None:
+            pulumi.set(__self__, "grant_mechanism", grant_mechanism)
+        if grantee_id is not None:
+            pulumi.set(__self__, "grantee_id", grantee_id)
+        if grantee_type is not None:
+            pulumi.set(__self__, "grantee_type", grantee_type)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="grantMechanism")
+    def grant_mechanism(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+        * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+        * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+        * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "grant_mechanism")
+
+    @grant_mechanism.setter
+    def grant_mechanism(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "grant_mechanism", value)
+
+    @property
+    @pulumi.getter(name="granteeId")
+    def grantee_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Grantee identifier
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "grantee_id")
+
+    @grantee_id.setter
+    def grantee_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "grantee_id", value)
+
+    @property
+    @pulumi.getter(name="granteeType")
+    def grantee_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Grantee resource type. Allowed values are User and Group.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "grantee_type")
+
+    @grantee_type.setter
+    def grantee_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "grantee_type", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAppGrantedAppRoleArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 admin_role: Optional[pulumi.Input[bool]] = None,
+                 app_id: Optional[pulumi.Input[str]] = None,
+                 app_name: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 legacy_group_name: Optional[pulumi.Input[str]] = None,
+                 read_only: Optional[pulumi.Input[bool]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] admin_role: (Updatable) If true, then this granted AppRole confers administrative privileges within the App that defines it. Otherwise, the granted AppRole confers only functional privileges.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] app_id: (Updatable) The id of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] app_name: (Updatable) The name of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] legacy_group_name: (Updatable) The name of the legacy group associated with this AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] read_only: (Updatable) If true, indicates that this value must be protected.
+               
+               **Added In:** 18.2.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+               
+               **Added In:** 18.1.6
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsDefaultValue: AccountObjectClass
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if admin_role is not None:
+            pulumi.set(__self__, "admin_role", admin_role)
+        if app_id is not None:
+            pulumi.set(__self__, "app_id", app_id)
+        if app_name is not None:
+            pulumi.set(__self__, "app_name", app_name)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if legacy_group_name is not None:
+            pulumi.set(__self__, "legacy_group_name", legacy_group_name)
+        if read_only is not None:
+            pulumi.set(__self__, "read_only", read_only)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="adminRole")
+    def admin_role(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, then this granted AppRole confers administrative privileges within the App that defines it. Otherwise, the granted AppRole confers only functional privileges.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "admin_role")
+
+    @admin_role.setter
+    def admin_role(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "admin_role", value)
+
+    @property
+    @pulumi.getter(name="appId")
+    def app_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The id of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "app_id")
+
+    @app_id.setter
+    def app_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_id", value)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "app_name")
+
+    @app_name.setter
+    def app_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_name", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter(name="legacyGroupName")
+    def legacy_group_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the legacy group associated with this AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "legacy_group_name")
+
+    @legacy_group_name.setter
+    def legacy_group_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_group_name", value)
+
+    @property
+    @pulumi.getter(name="readOnly")
+    def read_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that this value must be protected.
+
+        **Added In:** 18.2.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "read_only")
+
+    @read_only.setter
+    def read_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "read_only", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+
+        **Added In:** 18.1.6
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsDefaultValue: AccountObjectClass
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAppIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+               
+               **Added In:** 18.1.6
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsDefaultValue: AccountObjectClass
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+
+        **Added In:** 18.1.6
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsDefaultValue: AccountObjectClass
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAppIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+               
+               **Added In:** 18.1.6
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsDefaultValue: AccountObjectClass
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+
+        **Added In:** 18.1.6
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsDefaultValue: AccountObjectClass
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAppIdentityProviderArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppIdpPolicyArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] resource_type: (Updatable) Object class resource type
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Object class resource type
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsAppProtectableSecondaryAudienceArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 read_only: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] read_only: (Updatable) If true, indicates that this value must be protected.
+               
+               **Added In:** 18.2.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: boolean
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if read_only is not None:
+            pulumi.set(__self__, "read_only", read_only)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="readOnly")
+    def read_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that this value must be protected.
+
+        **Added In:** 18.2.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "read_only")
+
+    @read_only.setter
+    def read_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "read_only", value)
+
+
+@pulumi.input_type
+class DomainsAppRadiusPolicyArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppRoleAppArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 service_instance_identifier: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: Member display name
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] name: (Updatable) Application name
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) The URI corresponding to the member Resource of this Group
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] service_instance_identifier: (Updatable) The serviceInstanceIdentifier of the App that defines this AppRole. This value will match the opcServiceInstanceGUID of any service-instance that the App represents.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if service_instance_identifier is not None:
+            pulumi.set(__self__, "service_instance_identifier", service_instance_identifier)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        Member display name
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Application name
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI corresponding to the member Resource of this Group
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter(name="serviceInstanceIdentifier")
+    def service_instance_identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The serviceInstanceIdentifier of the App that defines this AppRole. This value will match the opcServiceInstanceGUID of any service-instance that the App represents.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "service_instance_identifier")
+
+    @service_instance_identifier.setter
+    def service_instance_identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_instance_identifier", value)
+
+
+@pulumi.input_type
+class DomainsAppRoleIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: Member display name
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI corresponding to the member Resource of this Group
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: Indicates the type of Resource--for example, User, Group or DynamicResourceGroup
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsCsvAttributeName: Member Type
+               * idcsDefaultValue: User
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        Member display name
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI corresponding to the member Resource of this Group
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the type of Resource--for example, User, Group or DynamicResourceGroup
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsCsvAttributeName: Member Type
+        * idcsDefaultValue: User
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAppRoleIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: Member display name
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI corresponding to the member Resource of this Group
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: Indicates the type of Resource--for example, User, Group or DynamicResourceGroup
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsCsvAttributeName: Member Type
+               * idcsDefaultValue: User
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        Member display name
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI corresponding to the member Resource of this Group
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the type of Resource--for example, User, Group or DynamicResourceGroup
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsCsvAttributeName: Member Type
+        * idcsDefaultValue: User
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsAppRoleMemberArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Indicates the type of Resource--for example, User, Group or DynamicResourceGroup
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsCsvAttributeName: Member Type
+               * idcsDefaultValue: User
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: Member display name
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) The URI corresponding to the member Resource of this Group
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Indicates the type of Resource--for example, User, Group or DynamicResourceGroup
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsCsvAttributeName: Member Type
+        * idcsDefaultValue: User
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        Member display name
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI corresponding to the member Resource of this Group
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppRoleMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsAppRoleTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAppSamlServiceProviderArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppScopeArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 fqs: Optional[pulumi.Input[str]] = None,
+                 read_only: Optional[pulumi.Input[bool]] = None,
+                 requires_consent: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] description: (Updatable) The description of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display_name: (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] fqs: (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the 'value' of each scope with the value of 'audience'. Each value of 'fqs' must be unique across the system. Used only when this App acts as an OAuth Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
+        :param pulumi.Input[bool] read_only: (Updatable) If true, indicates that this value must be protected.
+               
+               **Added In:** 18.2.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] requires_consent: (Updatable) If true, indicates that a user must provide consent to access this scope. Note: Used only when this App acts as an OAuth Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if fqs is not None:
+            pulumi.set(__self__, "fqs", fqs)
+        if read_only is not None:
+            pulumi.set(__self__, "read_only", read_only)
+        if requires_consent is not None:
+            pulumi.set(__self__, "requires_consent", requires_consent)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The description of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def fqs(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the 'value' of each scope with the value of 'audience'. Each value of 'fqs' must be unique across the system. Used only when this App acts as an OAuth Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
+        """
+        return pulumi.get(self, "fqs")
+
+    @fqs.setter
+    def fqs(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "fqs", value)
+
+    @property
+    @pulumi.getter(name="readOnly")
+    def read_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that this value must be protected.
+
+        **Added In:** 18.2.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "read_only")
+
+    @read_only.setter
+    def read_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "read_only", value)
+
+    @property
+    @pulumi.getter(name="requiresConsent")
+    def requires_consent(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that a user must provide consent to access this scope. Note: Used only when this App acts as an OAuth Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "requires_consent")
+
+    @requires_consent.setter
+    def requires_consent(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "requires_consent", value)
+
+
+@pulumi.input_type
+class DomainsAppServiceParamArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAppSignonPolicyArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * required: true
+               * mutability: readWrite
+               * returned: default
+               * idcsSearchable: true
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * required: true
+        * mutability: readWrite
+        * returned: default
+        * idcsSearchable: true
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAppTermsOfUseArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 name: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppTrustPolicyArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
+    def __init__(__self__, *,
+                 defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
+                 tag_slug: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]] defined_tags: (Updatable) Oracle Cloud Infrastructure Defined Tags
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [namespace, key, value]
+               * type: complex
+               * idcsSearchable: true
+               * required: false
+               * mutability: readWrite
+               * multiValued: true
+               * returned: default
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]] freeform_tags: (Updatable) Oracle Cloud Infrastructure Freeform Tags
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * type: complex
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * multiValued: true
+        :param pulumi.Input[str] tag_slug: (Updatable) Oracle Cloud Infrastructure Tag slug
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * type: binary
+               * mutability: readOnly
+               * returned: request
+        """
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if tag_slug is not None:
+            pulumi.set(__self__, "tag_slug", tag_slug)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Defined Tags
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [namespace, key, value]
+        * type: complex
+        * idcsSearchable: true
+        * required: false
+        * mutability: readWrite
+        * multiValued: true
+        * returned: default
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Freeform Tags
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * type: complex
+        * required: false
+        * mutability: readWrite
+        * returned: default
+        * multiValued: true
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="tagSlug")
+    def tag_slug(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag slug
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * type: binary
+        * mutability: readOnly
+        * returned: request
+        """
+        return pulumi.get(self, "tag_slug")
+
+    @tag_slug.setter
+    def tag_slug(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tag_slug", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 namespace: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * required: true
+               * mutability: readWrite
+               * returned: default
+               * idcsSearchable: true
+               * uniqueness: none
+        :param pulumi.Input[str] namespace: (Updatable) Oracle Cloud Infrastructure Tag namespace
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * required: true
+               * mutability: readWrite
+               * returned: default
+               * idcsSearchable: true
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * required: true
+        * mutability: readWrite
+        * returned: default
+        * idcsSearchable: true
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag namespace
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * required: true
+        * mutability: readWrite
+        * returned: default
+        * idcsSearchable: true
+        * uniqueness: none
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Oracle Cloud Infrastructure Tag key
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * required: true
+               * mutability: readWrite
+               * returned: default
+               * idcsSearchable: true
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Tag key
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * required: true
+        * mutability: readWrite
+        * returned: default
+        * idcsSearchable: true
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs:
+    def __init__(__self__, *,
+                 domain_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs']] = None,
+                 domain_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs'] domain_app: (Updatable) Description:
+               
+               **Added In:** 18.2.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[str] domain_name: (Updatable) The name of the Enterprise Domain that contains any number of DBInstances. If specified, the value must be unique.  A non-null value indicates that App represents a DBDomain. A value of null indicates that the App represents an DB-instance.
+               
+               **Added In:** 18.2.2
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
+        """
+        if domain_app is not None:
+            pulumi.set(__self__, "domain_app", domain_app)
+        if domain_name is not None:
+            pulumi.set(__self__, "domain_name", domain_name)
+
+    @property
+    @pulumi.getter(name="domainApp")
+    def domain_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs']]:
+        """
+        (Updatable) Description:
+
+        **Added In:** 18.2.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "domain_app")
+
+    @domain_app.setter
+    def domain_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs']]):
+        pulumi.set(self, "domain_app", value)
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the Enterprise Domain that contains any number of DBInstances. If specified, the value must be unique.  A non-null value indicates that App represents a DBDomain. A value of null indicates that the App represents an DB-instance.
+
+        **Added In:** 18.2.2
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_name", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs:
+    def __init__(__self__, *,
+                 allow_authz_decision_ttl: Optional[pulumi.Input[int]] = None,
+                 allow_authz_policy: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs']] = None,
+                 app_resources: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs']]]] = None,
+                 deny_authz_decision_ttl: Optional[pulumi.Input[int]] = None,
+                 deny_authz_policy: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs']] = None):
+        """
+        :param pulumi.Input[int] allow_authz_decision_ttl: (Updatable) Allow Authz policy decision expiry time in seconds.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsMaxValue: 3600
+               * idcsMinValue: 0
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs'] allow_authz_policy: (Updatable) Allow Authz Policy.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs']]] app_resources: (Updatable) A list of AppResources of this App.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsCompositeKey: [value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+        :param pulumi.Input[int] deny_authz_decision_ttl: (Updatable) Deny Authz policy decision expiry time in seconds.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsMaxValue: 3600
+               * idcsMinValue: 0
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs'] deny_authz_policy: (Updatable) Deny Authz Policy.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+        """
+        if allow_authz_decision_ttl is not None:
+            pulumi.set(__self__, "allow_authz_decision_ttl", allow_authz_decision_ttl)
+        if allow_authz_policy is not None:
+            pulumi.set(__self__, "allow_authz_policy", allow_authz_policy)
+        if app_resources is not None:
+            pulumi.set(__self__, "app_resources", app_resources)
+        if deny_authz_decision_ttl is not None:
+            pulumi.set(__self__, "deny_authz_decision_ttl", deny_authz_decision_ttl)
+        if deny_authz_policy is not None:
+            pulumi.set(__self__, "deny_authz_policy", deny_authz_policy)
+
+    @property
+    @pulumi.getter(name="allowAuthzDecisionTtl")
+    def allow_authz_decision_ttl(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Allow Authz policy decision expiry time in seconds.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * idcsMaxValue: 3600
+        * idcsMinValue: 0
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "allow_authz_decision_ttl")
+
+    @allow_authz_decision_ttl.setter
+    def allow_authz_decision_ttl(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "allow_authz_decision_ttl", value)
+
+    @property
+    @pulumi.getter(name="allowAuthzPolicy")
+    def allow_authz_policy(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs']]:
+        """
+        (Updatable) Allow Authz Policy.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        """
+        return pulumi.get(self, "allow_authz_policy")
+
+    @allow_authz_policy.setter
+    def allow_authz_policy(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs']]):
+        pulumi.set(self, "allow_authz_policy", value)
+
+    @property
+    @pulumi.getter(name="appResources")
+    def app_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs']]]]:
+        """
+        (Updatable) A list of AppResources of this App.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsCompositeKey: [value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        """
+        return pulumi.get(self, "app_resources")
+
+    @app_resources.setter
+    def app_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs']]]]):
+        pulumi.set(self, "app_resources", value)
+
+    @property
+    @pulumi.getter(name="denyAuthzDecisionTtl")
+    def deny_authz_decision_ttl(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Deny Authz policy decision expiry time in seconds.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * idcsMaxValue: 3600
+        * idcsMinValue: 0
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "deny_authz_decision_ttl")
+
+    @deny_authz_decision_ttl.setter
+    def deny_authz_decision_ttl(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "deny_authz_decision_ttl", value)
+
+    @property
+    @pulumi.getter(name="denyAuthzPolicy")
+    def deny_authz_policy(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs']]:
+        """
+        (Updatable) Deny Authz Policy.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        """
+        return pulumi.get(self, "deny_authz_policy")
+
+    @deny_authz_policy.setter
+    def deny_authz_policy(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs']]):
+        pulumi.set(self, "deny_authz_policy", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs:
+    def __init__(__self__, *,
+                 configuration: Optional[pulumi.Input[str]] = None,
+                 form_cred_method: Optional[pulumi.Input[str]] = None,
+                 form_credential_sharing_group_id: Optional[pulumi.Input[str]] = None,
+                 form_fill_url_matches: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs']]]] = None,
+                 form_type: Optional[pulumi.Input[str]] = None,
+                 reveal_password_on_form: Optional[pulumi.Input[bool]] = None,
+                 sync_from_template: Optional[pulumi.Input[bool]] = None,
+                 user_name_form_expression: Optional[pulumi.Input[str]] = None,
+                 user_name_form_template: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] configuration: (Updatable) FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] form_cred_method: (Updatable) Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] form_credential_sharing_group_id: (Updatable) Credential Sharing Group to which this form-fill application belongs.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs']]] form_fill_url_matches: (Updatable) A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [formUrl]
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[str] form_type: (Updatable) Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] reveal_password_on_form: (Updatable) If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] sync_from_template: (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
+               
+               **Added In:** 17.4.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] user_name_form_expression: (Updatable) Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] user_name_form_template: (Updatable) Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine 'concat' and 'substring' operations with literals and with any attribute of the Oracle Identity Cloud Service user.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsPii: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if form_cred_method is not None:
+            pulumi.set(__self__, "form_cred_method", form_cred_method)
+        if form_credential_sharing_group_id is not None:
+            pulumi.set(__self__, "form_credential_sharing_group_id", form_credential_sharing_group_id)
+        if form_fill_url_matches is not None:
+            pulumi.set(__self__, "form_fill_url_matches", form_fill_url_matches)
+        if form_type is not None:
+            pulumi.set(__self__, "form_type", form_type)
+        if reveal_password_on_form is not None:
+            pulumi.set(__self__, "reveal_password_on_form", reveal_password_on_form)
+        if sync_from_template is not None:
+            pulumi.set(__self__, "sync_from_template", sync_from_template)
+        if user_name_form_expression is not None:
+            pulumi.set(__self__, "user_name_form_expression", user_name_form_expression)
+        if user_name_form_template is not None:
+            pulumi.set(__self__, "user_name_form_template", user_name_form_template)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "configuration", value)
+
+    @property
+    @pulumi.getter(name="formCredMethod")
+    def form_cred_method(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_cred_method")
+
+    @form_cred_method.setter
+    def form_cred_method(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "form_cred_method", value)
+
+    @property
+    @pulumi.getter(name="formCredentialSharingGroupId")
+    def form_credential_sharing_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Credential Sharing Group to which this form-fill application belongs.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_credential_sharing_group_id")
+
+    @form_credential_sharing_group_id.setter
+    def form_credential_sharing_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "form_credential_sharing_group_id", value)
+
+    @property
+    @pulumi.getter(name="formFillUrlMatches")
+    def form_fill_url_matches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs']]]]:
+        """
+        (Updatable) A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [formUrl]
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_fill_url_matches")
+
+    @form_fill_url_matches.setter
+    def form_fill_url_matches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs']]]]):
+        pulumi.set(self, "form_fill_url_matches", value)
+
+    @property
+    @pulumi.getter(name="formType")
+    def form_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_type")
+
+    @form_type.setter
+    def form_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "form_type", value)
+
+    @property
+    @pulumi.getter(name="revealPasswordOnForm")
+    def reveal_password_on_form(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "reveal_password_on_form")
+
+    @reveal_password_on_form.setter
+    def reveal_password_on_form(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "reveal_password_on_form", value)
+
+    @property
+    @pulumi.getter(name="syncFromTemplate")
+    def sync_from_template(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
+
+        **Added In:** 17.4.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "sync_from_template")
+
+    @sync_from_template.setter
+    def sync_from_template(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "sync_from_template", value)
+
+    @property
+    @pulumi.getter(name="userNameFormExpression")
+    def user_name_form_expression(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "user_name_form_expression")
+
+    @user_name_form_expression.setter
+    def user_name_form_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name_form_expression", value)
+
+    @property
+    @pulumi.getter(name="userNameFormTemplate")
+    def user_name_form_template(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine 'concat' and 'substring' operations with literals and with any attribute of the Oracle Identity Cloud Service user.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsPii: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "user_name_form_template")
+
+    @user_name_form_template.setter
+    def user_name_form_template(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name_form_template", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs:
+    def __init__(__self__, *,
+                 form_url: pulumi.Input[str],
+                 form_url_match_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] form_url: (Updatable) An application formUrl that FormFill will match against any formUrl that a User enters in trying to access the target-service which this App represents.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] form_url_match_type: (Updatable) Indicates how to interpret the value of 'formUrl' when matching against a user-specified formUrl.  The system currently supports only 'Exact', which indicates that the value of 'formUrl' should be treated as a literal value.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "form_url", form_url)
+        if form_url_match_type is not None:
+            pulumi.set(__self__, "form_url_match_type", form_url_match_type)
+
+    @property
+    @pulumi.getter(name="formUrl")
+    def form_url(self) -> pulumi.Input[str]:
+        """
+        (Updatable) An application formUrl that FormFill will match against any formUrl that a User enters in trying to access the target-service which this App represents.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_url")
+
+    @form_url.setter
+    def form_url(self, value: pulumi.Input[str]):
+        pulumi.set(self, "form_url", value)
+
+    @property
+    @pulumi.getter(name="formUrlMatchType")
+    def form_url_match_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates how to interpret the value of 'formUrl' when matching against a user-specified formUrl.  The system currently supports only 'Exact', which indicates that the value of 'formUrl' should be treated as a literal value.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_url_match_type")
+
+    @form_url_match_type.setter
+    def form_url_match_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "form_url_match_type", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs:
+    def __init__(__self__, *,
+                 configuration: Optional[pulumi.Input[str]] = None,
+                 form_cred_method: Optional[pulumi.Input[str]] = None,
+                 form_credential_sharing_group_id: Optional[pulumi.Input[str]] = None,
+                 form_fill_url_matches: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs']]]] = None,
+                 form_type: Optional[pulumi.Input[str]] = None,
+                 reveal_password_on_form: Optional[pulumi.Input[bool]] = None,
+                 sync_from_template: Optional[pulumi.Input[bool]] = None,
+                 user_name_form_expression: Optional[pulumi.Input[str]] = None,
+                 user_name_form_template: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] configuration: (Updatable) FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] form_cred_method: (Updatable) Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] form_credential_sharing_group_id: (Updatable) Credential Sharing Group to which this form-fill application belongs.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs']]] form_fill_url_matches: (Updatable) A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [formUrl]
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[str] form_type: (Updatable) Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] reveal_password_on_form: (Updatable) If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] sync_from_template: (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
+               
+               **Added In:** 17.4.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] user_name_form_expression: (Updatable) Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] user_name_form_template: (Updatable) Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine 'concat' and 'substring' operations with literals and with any attribute of the Oracle Identity Cloud Service user.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsPii: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if form_cred_method is not None:
+            pulumi.set(__self__, "form_cred_method", form_cred_method)
+        if form_credential_sharing_group_id is not None:
+            pulumi.set(__self__, "form_credential_sharing_group_id", form_credential_sharing_group_id)
+        if form_fill_url_matches is not None:
+            pulumi.set(__self__, "form_fill_url_matches", form_fill_url_matches)
+        if form_type is not None:
+            pulumi.set(__self__, "form_type", form_type)
+        if reveal_password_on_form is not None:
+            pulumi.set(__self__, "reveal_password_on_form", reveal_password_on_form)
+        if sync_from_template is not None:
+            pulumi.set(__self__, "sync_from_template", sync_from_template)
+        if user_name_form_expression is not None:
+            pulumi.set(__self__, "user_name_form_expression", user_name_form_expression)
+        if user_name_form_template is not None:
+            pulumi.set(__self__, "user_name_form_template", user_name_form_template)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "configuration", value)
+
+    @property
+    @pulumi.getter(name="formCredMethod")
+    def form_cred_method(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_cred_method")
+
+    @form_cred_method.setter
+    def form_cred_method(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "form_cred_method", value)
+
+    @property
+    @pulumi.getter(name="formCredentialSharingGroupId")
+    def form_credential_sharing_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Credential Sharing Group to which this form-fill application belongs.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_credential_sharing_group_id")
+
+    @form_credential_sharing_group_id.setter
+    def form_credential_sharing_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "form_credential_sharing_group_id", value)
+
+    @property
+    @pulumi.getter(name="formFillUrlMatches")
+    def form_fill_url_matches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs']]]]:
+        """
+        (Updatable) A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [formUrl]
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_fill_url_matches")
+
+    @form_fill_url_matches.setter
+    def form_fill_url_matches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs']]]]):
+        pulumi.set(self, "form_fill_url_matches", value)
+
+    @property
+    @pulumi.getter(name="formType")
+    def form_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_type")
+
+    @form_type.setter
+    def form_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "form_type", value)
+
+    @property
+    @pulumi.getter(name="revealPasswordOnForm")
+    def reveal_password_on_form(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "reveal_password_on_form")
+
+    @reveal_password_on_form.setter
+    def reveal_password_on_form(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "reveal_password_on_form", value)
+
+    @property
+    @pulumi.getter(name="syncFromTemplate")
+    def sync_from_template(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
+
+        **Added In:** 17.4.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "sync_from_template")
+
+    @sync_from_template.setter
+    def sync_from_template(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "sync_from_template", value)
+
+    @property
+    @pulumi.getter(name="userNameFormExpression")
+    def user_name_form_expression(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "user_name_form_expression")
+
+    @user_name_form_expression.setter
+    def user_name_form_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name_form_expression", value)
+
+    @property
+    @pulumi.getter(name="userNameFormTemplate")
+    def user_name_form_template(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine 'concat' and 'substring' operations with literals and with any attribute of the Oracle Identity Cloud Service user.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsPii: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "user_name_form_template")
+
+    @user_name_form_template.setter
+    def user_name_form_template(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name_form_template", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs:
+    def __init__(__self__, *,
+                 form_url: pulumi.Input[str],
+                 form_url_match_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] form_url: (Updatable) An application formUrl that FormFill will match against any formUrl that a User enters in trying to access the target-service which this App represents.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] form_url_match_type: (Updatable) Indicates how to interpret the value of 'formUrl' when matching against a user-specified formUrl.  The system currently supports only 'Exact', which indicates that the value of 'formUrl' should be treated as a literal value.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "form_url", form_url)
+        if form_url_match_type is not None:
+            pulumi.set(__self__, "form_url_match_type", form_url_match_type)
+
+    @property
+    @pulumi.getter(name="formUrl")
+    def form_url(self) -> pulumi.Input[str]:
+        """
+        (Updatable) An application formUrl that FormFill will match against any formUrl that a User enters in trying to access the target-service which this App represents.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_url")
+
+    @form_url.setter
+    def form_url(self, value: pulumi.Input[str]):
+        pulumi.set(self, "form_url", value)
+
+    @property
+    @pulumi.getter(name="formUrlMatchType")
+    def form_url_match_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates how to interpret the value of 'formUrl' when matching against a user-specified formUrl.  The system currently supports only 'Exact', which indicates that the value of 'formUrl' should be treated as a literal value.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "form_url_match_type")
+
+    @form_url_match_type.setter
+    def form_url_match_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "form_url_match_type", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs:
+    def __init__(__self__, *,
+                 default_encryption_salt_type: Optional[pulumi.Input[str]] = None,
+                 master_key: Optional[pulumi.Input[str]] = None,
+                 max_renewable_age: Optional[pulumi.Input[int]] = None,
+                 max_ticket_life: Optional[pulumi.Input[int]] = None,
+                 realm_name: Optional[pulumi.Input[str]] = None,
+                 supported_encryption_salt_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 ticket_flags: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] default_encryption_salt_type: (Updatable) The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App unless another type of salt is specified.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] master_key: (Updatable) The primary key that the system should use to encrypt artifacts that are specific to this Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * idcsSensitive: none
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] max_renewable_age: (Updatable) Max Renewable Age in seconds
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] max_ticket_life: (Updatable) Max Ticket Life in seconds
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[str] realm_name: (Updatable) The name of the Kerberos Realm that this App uses for authentication.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] supported_encryption_salt_types: (Updatable) The types of salt that are available for the system to use when encrypting Kerberos-specific artifacts for this App.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] ticket_flags: (Updatable) Ticket Flags
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: integer
+               * uniqueness: none
+        """
+        if default_encryption_salt_type is not None:
+            pulumi.set(__self__, "default_encryption_salt_type", default_encryption_salt_type)
+        if master_key is not None:
+            pulumi.set(__self__, "master_key", master_key)
+        if max_renewable_age is not None:
+            pulumi.set(__self__, "max_renewable_age", max_renewable_age)
+        if max_ticket_life is not None:
+            pulumi.set(__self__, "max_ticket_life", max_ticket_life)
+        if realm_name is not None:
+            pulumi.set(__self__, "realm_name", realm_name)
+        if supported_encryption_salt_types is not None:
+            pulumi.set(__self__, "supported_encryption_salt_types", supported_encryption_salt_types)
+        if ticket_flags is not None:
+            pulumi.set(__self__, "ticket_flags", ticket_flags)
+
+    @property
+    @pulumi.getter(name="defaultEncryptionSaltType")
+    def default_encryption_salt_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App unless another type of salt is specified.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "default_encryption_salt_type")
+
+    @default_encryption_salt_type.setter
+    def default_encryption_salt_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "default_encryption_salt_type", value)
+
+    @property
+    @pulumi.getter(name="masterKey")
+    def master_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The primary key that the system should use to encrypt artifacts that are specific to this Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * idcsSensitive: none
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "master_key")
+
+    @master_key.setter
+    def master_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "master_key", value)
+
+    @property
+    @pulumi.getter(name="maxRenewableAge")
+    def max_renewable_age(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Max Renewable Age in seconds
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "max_renewable_age")
+
+    @max_renewable_age.setter
+    def max_renewable_age(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_renewable_age", value)
+
+    @property
+    @pulumi.getter(name="maxTicketLife")
+    def max_ticket_life(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Max Ticket Life in seconds
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "max_ticket_life")
+
+    @max_ticket_life.setter
+    def max_ticket_life(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_ticket_life", value)
+
+    @property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the Kerberos Realm that this App uses for authentication.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "realm_name")
+
+    @realm_name.setter
+    def realm_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "realm_name", value)
+
+    @property
+    @pulumi.getter(name="supportedEncryptionSaltTypes")
+    def supported_encryption_salt_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The types of salt that are available for the system to use when encrypting Kerberos-specific artifacts for this App.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "supported_encryption_salt_types")
+
+    @supported_encryption_salt_types.setter
+    def supported_encryption_salt_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "supported_encryption_salt_types", value)
+
+    @property
+    @pulumi.getter(name="ticketFlags")
+    def ticket_flags(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Ticket Flags
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ticket_flags")
+
+    @ticket_flags.setter
+    def ticket_flags(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "ticket_flags", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs:
+    def __init__(__self__, *,
+                 account_form_visible: Optional[pulumi.Input[bool]] = None,
+                 admin_consent_granted: Optional[pulumi.Input[bool]] = None,
+                 bundle_configuration_properties: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs']]]] = None,
+                 bundle_pool_configuration: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs']] = None,
+                 can_be_authoritative: Optional[pulumi.Input[bool]] = None,
+                 connected: Optional[pulumi.Input[bool]] = None,
+                 connector_bundles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgs']]]] = None,
+                 enable_auth_sync_new_user_notification: Optional[pulumi.Input[bool]] = None,
+                 enable_sync: Optional[pulumi.Input[bool]] = None,
+                 enable_sync_summary_report_notification: Optional[pulumi.Input[bool]] = None,
+                 flat_file_bundle_configuration_properties: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs']]]] = None,
+                 flat_file_connector_bundle: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs']] = None,
+                 identity_bridges: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgs']]]] = None,
+                 is_authoritative: Optional[pulumi.Input[bool]] = None,
+                 is_directory: Optional[pulumi.Input[bool]] = None,
+                 is_on_premise_app: Optional[pulumi.Input[bool]] = None,
+                 is_schema_customization_supported: Optional[pulumi.Input[bool]] = None,
+                 is_schema_discovery_supported: Optional[pulumi.Input[bool]] = None,
+                 is_three_legged_oauth_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_two_legged_oauth_enabled: Optional[pulumi.Input[bool]] = None,
+                 object_classes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs']]]] = None,
+                 sync_config_last_modified: Optional[pulumi.Input[str]] = None,
+                 three_legged_oauth_credential: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs']] = None,
+                 three_legged_oauth_provider_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] account_form_visible: (Updatable) If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \\"false\\" will be assumed as the value for this attribute.
+               
+               **Added In:** 18.4.2
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] admin_consent_granted: (Updatable) If true, admin has granted consent to perform managed app run-time operations.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs']]] bundle_configuration_properties: (Updatable) ConnectorBundle configuration properties
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs'] bundle_pool_configuration: (Updatable) Configurable options maintaining a pool of ICF connector instances. Values for sub attributes can be set only if the ConnectorBundle referenced in the App has connectorPoolingSupported set to true
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[bool] can_be_authoritative: (Updatable) If true, the managed app can be authoritative.
+               
+               **Added In:** 17.4.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] connected: (Updatable) If true, the accounts of the application are managed through an ICF connector bundle
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgs']]] connector_bundles: (Updatable) ConnectorBundle
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[bool] enable_auth_sync_new_user_notification: (Updatable) If true, send activation email to new users created from authoritative sync.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] enable_sync: (Updatable) If true, sync run-time operations are enabled for this App.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] enable_sync_summary_report_notification: (Updatable) If true, send sync summary as notification upon job completion.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs']]] flat_file_bundle_configuration_properties: (Updatable) Flat file connector bundle configuration properties
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs'] flat_file_connector_bundle: (Updatable) Flat file connector bundle to sync from a flat file.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgs']]] identity_bridges: (Updatable) IdentityBridges associated with this App
+               
+               **Added In:** 19.1.4
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[bool] is_authoritative: (Updatable) If true, sync from the managed app will be performed as authoritative sync.
+               
+               **Added In:** 17.4.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] is_directory: (Updatable) If true, the managed app is a directory.
+               
+               **Added In:** 19.1.4
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] is_on_premise_app: (Updatable) If true, the managed app is an On-Premise app.
+               
+               **Added In:** 19.1.4
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] is_schema_customization_supported: (Updatable) If true, the managed app supports schema customization.
+               
+               **Added In:** 19.1.4
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] is_schema_discovery_supported: (Updatable) If true, the managed app supports schema discovery.
+               
+               **Added In:** 19.1.4
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] is_three_legged_oauth_enabled: (Updatable) If true, the managed app requires 3-legged OAuth for authorization.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] is_two_legged_oauth_enabled: (Updatable) If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to this ManagedApp.
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs']]] object_classes: (Updatable) Object classes
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[str] sync_config_last_modified: (Updatable) The most recent DateTime that the configuration of this App was updated. AppServices updates this timestamp whenever AppServices updates an App's configuration with respect to synchronization.
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs'] three_legged_oauth_credential: (Updatable) The value of this attribute persists any OAuth access token that the system uses to connect to this ManagedApp. The system obtains this access token using an OAuth protocol flow that could be two-legged or three-legged. A two-legged flow involves only the requester and the server. A three-legged flow also requires the consent of a user -- in this case the consent of an administrator.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+        :param pulumi.Input[str] three_legged_oauth_provider_name: (Updatable) Three legged OAuth provider name in Oracle Identity Cloud Service.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+        """
+        if account_form_visible is not None:
+            pulumi.set(__self__, "account_form_visible", account_form_visible)
+        if admin_consent_granted is not None:
+            pulumi.set(__self__, "admin_consent_granted", admin_consent_granted)
+        if bundle_configuration_properties is not None:
+            pulumi.set(__self__, "bundle_configuration_properties", bundle_configuration_properties)
+        if bundle_pool_configuration is not None:
+            pulumi.set(__self__, "bundle_pool_configuration", bundle_pool_configuration)
+        if can_be_authoritative is not None:
+            pulumi.set(__self__, "can_be_authoritative", can_be_authoritative)
+        if connected is not None:
+            pulumi.set(__self__, "connected", connected)
+        if connector_bundles is not None:
+            pulumi.set(__self__, "connector_bundles", connector_bundles)
+        if enable_auth_sync_new_user_notification is not None:
+            pulumi.set(__self__, "enable_auth_sync_new_user_notification", enable_auth_sync_new_user_notification)
+        if enable_sync is not None:
+            pulumi.set(__self__, "enable_sync", enable_sync)
+        if enable_sync_summary_report_notification is not None:
+            pulumi.set(__self__, "enable_sync_summary_report_notification", enable_sync_summary_report_notification)
+        if flat_file_bundle_configuration_properties is not None:
+            pulumi.set(__self__, "flat_file_bundle_configuration_properties", flat_file_bundle_configuration_properties)
+        if flat_file_connector_bundle is not None:
+            pulumi.set(__self__, "flat_file_connector_bundle", flat_file_connector_bundle)
+        if identity_bridges is not None:
+            pulumi.set(__self__, "identity_bridges", identity_bridges)
+        if is_authoritative is not None:
+            pulumi.set(__self__, "is_authoritative", is_authoritative)
+        if is_directory is not None:
+            pulumi.set(__self__, "is_directory", is_directory)
+        if is_on_premise_app is not None:
+            pulumi.set(__self__, "is_on_premise_app", is_on_premise_app)
+        if is_schema_customization_supported is not None:
+            pulumi.set(__self__, "is_schema_customization_supported", is_schema_customization_supported)
+        if is_schema_discovery_supported is not None:
+            pulumi.set(__self__, "is_schema_discovery_supported", is_schema_discovery_supported)
+        if is_three_legged_oauth_enabled is not None:
+            pulumi.set(__self__, "is_three_legged_oauth_enabled", is_three_legged_oauth_enabled)
+        if is_two_legged_oauth_enabled is not None:
+            pulumi.set(__self__, "is_two_legged_oauth_enabled", is_two_legged_oauth_enabled)
+        if object_classes is not None:
+            pulumi.set(__self__, "object_classes", object_classes)
+        if sync_config_last_modified is not None:
+            pulumi.set(__self__, "sync_config_last_modified", sync_config_last_modified)
+        if three_legged_oauth_credential is not None:
+            pulumi.set(__self__, "three_legged_oauth_credential", three_legged_oauth_credential)
+        if three_legged_oauth_provider_name is not None:
+            pulumi.set(__self__, "three_legged_oauth_provider_name", three_legged_oauth_provider_name)
+
+    @property
+    @pulumi.getter(name="accountFormVisible")
+    def account_form_visible(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \\"false\\" will be assumed as the value for this attribute.
+
+        **Added In:** 18.4.2
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "account_form_visible")
+
+    @account_form_visible.setter
+    def account_form_visible(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "account_form_visible", value)
+
+    @property
+    @pulumi.getter(name="adminConsentGranted")
+    def admin_consent_granted(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, admin has granted consent to perform managed app run-time operations.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "admin_consent_granted")
+
+    @admin_consent_granted.setter
+    def admin_consent_granted(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "admin_consent_granted", value)
+
+    @property
+    @pulumi.getter(name="bundleConfigurationProperties")
+    def bundle_configuration_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs']]]]:
+        """
+        (Updatable) ConnectorBundle configuration properties
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [name]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "bundle_configuration_properties")
+
+    @bundle_configuration_properties.setter
+    def bundle_configuration_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs']]]]):
+        pulumi.set(self, "bundle_configuration_properties", value)
+
+    @property
+    @pulumi.getter(name="bundlePoolConfiguration")
+    def bundle_pool_configuration(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs']]:
+        """
+        (Updatable) Configurable options maintaining a pool of ICF connector instances. Values for sub attributes can be set only if the ConnectorBundle referenced in the App has connectorPoolingSupported set to true
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "bundle_pool_configuration")
+
+    @bundle_pool_configuration.setter
+    def bundle_pool_configuration(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs']]):
+        pulumi.set(self, "bundle_pool_configuration", value)
+
+    @property
+    @pulumi.getter(name="canBeAuthoritative")
+    def can_be_authoritative(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, the managed app can be authoritative.
+
+        **Added In:** 17.4.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "can_be_authoritative")
+
+    @can_be_authoritative.setter
+    def can_be_authoritative(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "can_be_authoritative", value)
+
+    @property
+    @pulumi.getter
+    def connected(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, the accounts of the application are managed through an ICF connector bundle
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "connected")
+
+    @connected.setter
+    def connected(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "connected", value)
+
+    @property
+    @pulumi.getter(name="connectorBundles")
+    def connector_bundles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgs']]]]:
+        """
+        (Updatable) ConnectorBundle
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "connector_bundles")
+
+    @connector_bundles.setter
+    def connector_bundles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgs']]]]):
+        pulumi.set(self, "connector_bundles", value)
+
+    @property
+    @pulumi.getter(name="enableAuthSyncNewUserNotification")
+    def enable_auth_sync_new_user_notification(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, send activation email to new users created from authoritative sync.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "enable_auth_sync_new_user_notification")
+
+    @enable_auth_sync_new_user_notification.setter
+    def enable_auth_sync_new_user_notification(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_auth_sync_new_user_notification", value)
+
+    @property
+    @pulumi.getter(name="enableSync")
+    def enable_sync(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, sync run-time operations are enabled for this App.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "enable_sync")
+
+    @enable_sync.setter
+    def enable_sync(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_sync", value)
+
+    @property
+    @pulumi.getter(name="enableSyncSummaryReportNotification")
+    def enable_sync_summary_report_notification(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, send sync summary as notification upon job completion.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "enable_sync_summary_report_notification")
+
+    @enable_sync_summary_report_notification.setter
+    def enable_sync_summary_report_notification(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_sync_summary_report_notification", value)
+
+    @property
+    @pulumi.getter(name="flatFileBundleConfigurationProperties")
+    def flat_file_bundle_configuration_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs']]]]:
+        """
+        (Updatable) Flat file connector bundle configuration properties
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [name]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "flat_file_bundle_configuration_properties")
+
+    @flat_file_bundle_configuration_properties.setter
+    def flat_file_bundle_configuration_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs']]]]):
+        pulumi.set(self, "flat_file_bundle_configuration_properties", value)
+
+    @property
+    @pulumi.getter(name="flatFileConnectorBundle")
+    def flat_file_connector_bundle(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs']]:
+        """
+        (Updatable) Flat file connector bundle to sync from a flat file.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "flat_file_connector_bundle")
+
+    @flat_file_connector_bundle.setter
+    def flat_file_connector_bundle(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs']]):
+        pulumi.set(self, "flat_file_connector_bundle", value)
+
+    @property
+    @pulumi.getter(name="identityBridges")
+    def identity_bridges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgs']]]]:
+        """
+        (Updatable) IdentityBridges associated with this App
+
+        **Added In:** 19.1.4
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "identity_bridges")
+
+    @identity_bridges.setter
+    def identity_bridges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgs']]]]):
+        pulumi.set(self, "identity_bridges", value)
+
+    @property
+    @pulumi.getter(name="isAuthoritative")
+    def is_authoritative(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, sync from the managed app will be performed as authoritative sync.
+
+        **Added In:** 17.4.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "is_authoritative")
+
+    @is_authoritative.setter
+    def is_authoritative(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_authoritative", value)
+
+    @property
+    @pulumi.getter(name="isDirectory")
+    def is_directory(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, the managed app is a directory.
+
+        **Added In:** 19.1.4
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "is_directory")
+
+    @is_directory.setter
+    def is_directory(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_directory", value)
+
+    @property
+    @pulumi.getter(name="isOnPremiseApp")
+    def is_on_premise_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, the managed app is an On-Premise app.
+
+        **Added In:** 19.1.4
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "is_on_premise_app")
+
+    @is_on_premise_app.setter
+    def is_on_premise_app(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_on_premise_app", value)
+
+    @property
+    @pulumi.getter(name="isSchemaCustomizationSupported")
+    def is_schema_customization_supported(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, the managed app supports schema customization.
+
+        **Added In:** 19.1.4
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "is_schema_customization_supported")
+
+    @is_schema_customization_supported.setter
+    def is_schema_customization_supported(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_schema_customization_supported", value)
+
+    @property
+    @pulumi.getter(name="isSchemaDiscoverySupported")
+    def is_schema_discovery_supported(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, the managed app supports schema discovery.
+
+        **Added In:** 19.1.4
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "is_schema_discovery_supported")
+
+    @is_schema_discovery_supported.setter
+    def is_schema_discovery_supported(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_schema_discovery_supported", value)
+
+    @property
+    @pulumi.getter(name="isThreeLeggedOauthEnabled")
+    def is_three_legged_oauth_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, the managed app requires 3-legged OAuth for authorization.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "is_three_legged_oauth_enabled")
+
+    @is_three_legged_oauth_enabled.setter
+    def is_three_legged_oauth_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_three_legged_oauth_enabled", value)
+
+    @property
+    @pulumi.getter(name="isTwoLeggedOauthEnabled")
+    def is_two_legged_oauth_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to this ManagedApp.
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "is_two_legged_oauth_enabled")
+
+    @is_two_legged_oauth_enabled.setter
+    def is_two_legged_oauth_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_two_legged_oauth_enabled", value)
+
+    @property
+    @pulumi.getter(name="objectClasses")
+    def object_classes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs']]]]:
+        """
+        (Updatable) Object classes
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "object_classes")
+
+    @object_classes.setter
+    def object_classes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs']]]]):
+        pulumi.set(self, "object_classes", value)
+
+    @property
+    @pulumi.getter(name="syncConfigLastModified")
+    def sync_config_last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the configuration of this App was updated. AppServices updates this timestamp whenever AppServices updates an App's configuration with respect to synchronization.
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "sync_config_last_modified")
+
+    @sync_config_last_modified.setter
+    def sync_config_last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sync_config_last_modified", value)
+
+    @property
+    @pulumi.getter(name="threeLeggedOauthCredential")
+    def three_legged_oauth_credential(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs']]:
+        """
+        (Updatable) The value of this attribute persists any OAuth access token that the system uses to connect to this ManagedApp. The system obtains this access token using an OAuth protocol flow that could be two-legged or three-legged. A two-legged flow involves only the requester and the server. A three-legged flow also requires the consent of a user -- in this case the consent of an administrator.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        """
+        return pulumi.get(self, "three_legged_oauth_credential")
+
+    @three_legged_oauth_credential.setter
+    def three_legged_oauth_credential(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs']]):
+        pulumi.set(self, "three_legged_oauth_credential", value)
+
+    @property
+    @pulumi.getter(name="threeLeggedOauthProviderName")
+    def three_legged_oauth_provider_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Three legged OAuth provider name in Oracle Identity Cloud Service.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "three_legged_oauth_provider_name")
+
+    @three_legged_oauth_provider_name.setter
+    def three_legged_oauth_provider_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "three_legged_oauth_provider_name", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs:
+    def __init__(__self__, *,
+                 icf_type: pulumi.Input[str],
+                 name: pulumi.Input[str],
+                 required: pulumi.Input[bool],
+                 confidential: Optional[pulumi.Input[bool]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 help_message: Optional[pulumi.Input[str]] = None,
+                 order: Optional[pulumi.Input[int]] = None,
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] icf_type: (Updatable) ICF data type of flatfile the bundle configuration property. This attribute maps to \\"type\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] required: (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] confidential: (Updatable) If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] display_name: (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] help_message: (Updatable) Help message of the flatfile bundle configuration property. This attribute maps to \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] order: (Updatable) Display sequence of the bundle configuration property.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "icf_type", icf_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "required", required)
+        if confidential is not None:
+            pulumi.set(__self__, "confidential", confidential)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if help_message is not None:
+            pulumi.set(__self__, "help_message", help_message)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="icfType")
+    def icf_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ICF data type of flatfile the bundle configuration property. This attribute maps to \\"type\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "icf_type")
+
+    @icf_type.setter
+    def icf_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "icf_type", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def required(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "required")
+
+    @required.setter
+    def required(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "required", value)
+
+    @property
+    @pulumi.getter
+    def confidential(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "confidential")
+
+    @confidential.setter
+    def confidential(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "confidential", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="helpMessage")
+    def help_message(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Help message of the flatfile bundle configuration property. This attribute maps to \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "help_message")
+
+    @help_message.setter
+    def help_message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "help_message", value)
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Display sequence of the bundle configuration property.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "order")
+
+    @order.setter
+    def order(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "order", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "values", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs:
+    def __init__(__self__, *,
+                 max_idle: Optional[pulumi.Input[int]] = None,
+                 max_objects: Optional[pulumi.Input[int]] = None,
+                 max_wait: Optional[pulumi.Input[int]] = None,
+                 min_evictable_idle_time_millis: Optional[pulumi.Input[int]] = None,
+                 min_idle: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] max_idle: (Updatable) Maximum number of connector instances in the pool that are idle and active.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] max_objects: (Updatable) Maximum number of connector instances in the pool that are idle and active.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] max_wait: (Updatable) Maximum time (in milliseconds) to wait for a free connector instance to become available before failing.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] min_evictable_idle_time_millis: (Updatable) Minimum time (in milliseconds) to wait before evicting an idle conenctor instance from the pool.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] min_idle: (Updatable) Minimum number of idle connector instances in the pool.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        """
+        if max_idle is not None:
+            pulumi.set(__self__, "max_idle", max_idle)
+        if max_objects is not None:
+            pulumi.set(__self__, "max_objects", max_objects)
+        if max_wait is not None:
+            pulumi.set(__self__, "max_wait", max_wait)
+        if min_evictable_idle_time_millis is not None:
+            pulumi.set(__self__, "min_evictable_idle_time_millis", min_evictable_idle_time_millis)
+        if min_idle is not None:
+            pulumi.set(__self__, "min_idle", min_idle)
+
+    @property
+    @pulumi.getter(name="maxIdle")
+    def max_idle(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum number of connector instances in the pool that are idle and active.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "max_idle")
+
+    @max_idle.setter
+    def max_idle(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_idle", value)
+
+    @property
+    @pulumi.getter(name="maxObjects")
+    def max_objects(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum number of connector instances in the pool that are idle and active.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "max_objects")
+
+    @max_objects.setter
+    def max_objects(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_objects", value)
+
+    @property
+    @pulumi.getter(name="maxWait")
+    def max_wait(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum time (in milliseconds) to wait for a free connector instance to become available before failing.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "max_wait")
+
+    @max_wait.setter
+    def max_wait(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_wait", value)
+
+    @property
+    @pulumi.getter(name="minEvictableIdleTimeMillis")
+    def min_evictable_idle_time_millis(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Minimum time (in milliseconds) to wait before evicting an idle conenctor instance from the pool.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "min_evictable_idle_time_millis")
+
+    @min_evictable_idle_time_millis.setter
+    def min_evictable_idle_time_millis(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_evictable_idle_time_millis", value)
+
+    @property
+    @pulumi.getter(name="minIdle")
+    def min_idle(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Minimum number of idle connector instances in the pool.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "min_idle")
+
+    @min_idle.setter
+    def min_idle(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_idle", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 well_known_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+               
+               **Added In:** 18.1.6
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsDefaultValue: AccountObjectClass
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] well_known_id: (Updatable) Unique well-known identifier used to reference connector bundle.
+               
+               **Added In:** 19.1.4
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if well_known_id is not None:
+            pulumi.set(__self__, "well_known_id", well_known_id)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+
+        **Added In:** 18.1.6
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsDefaultValue: AccountObjectClass
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter(name="wellKnownId")
+    def well_known_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique well-known identifier used to reference connector bundle.
+
+        **Added In:** 19.1.4
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "well_known_id")
+
+    @well_known_id.setter
+    def well_known_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "well_known_id", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs:
+    def __init__(__self__, *,
+                 icf_type: pulumi.Input[str],
+                 name: pulumi.Input[str],
+                 required: pulumi.Input[bool],
+                 confidential: Optional[pulumi.Input[bool]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 help_message: Optional[pulumi.Input[str]] = None,
+                 order: Optional[pulumi.Input[int]] = None,
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] icf_type: (Updatable) ICF data type of flatfile the bundle configuration property. This attribute maps to \\"type\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] required: (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] confidential: (Updatable) If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] display_name: (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] help_message: (Updatable) Help message of the flatfile bundle configuration property. This attribute maps to \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] order: (Updatable) Display sequence of the bundle configuration property.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "icf_type", icf_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "required", required)
+        if confidential is not None:
+            pulumi.set(__self__, "confidential", confidential)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if help_message is not None:
+            pulumi.set(__self__, "help_message", help_message)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="icfType")
+    def icf_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ICF data type of flatfile the bundle configuration property. This attribute maps to \\"type\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "icf_type")
+
+    @icf_type.setter
+    def icf_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "icf_type", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def required(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "required")
+
+    @required.setter
+    def required(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "required", value)
+
+    @property
+    @pulumi.getter
+    def confidential(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "confidential")
+
+    @confidential.setter
+    def confidential(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "confidential", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="helpMessage")
+    def help_message(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Help message of the flatfile bundle configuration property. This attribute maps to \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "help_message")
+
+    @help_message.setter
+    def help_message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "help_message", value)
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Display sequence of the bundle configuration property.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "order")
+
+    @order.setter
+    def order(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "order", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "values", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 well_known_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] well_known_id: (Updatable) Unique well-known identifier used to reference connector bundle.
+               
+               **Added In:** 19.1.4
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if well_known_id is not None:
+            pulumi.set(__self__, "well_known_id", well_known_id)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter(name="wellKnownId")
+    def well_known_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique well-known identifier used to reference connector bundle.
+
+        **Added In:** 19.1.4
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "well_known_id")
+
+    @well_known_id.setter
+    def well_known_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "well_known_id", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 is_account_object_class: Optional[pulumi.Input[bool]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+               
+               **Added In:** 18.1.6
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsDefaultValue: AccountObjectClass
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] is_account_object_class: (Updatable) If true, the object class represents an account. The isAccountObjectClass attribute value 'true' MUST appear no more than once.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] resource_type: (Updatable) Object class resource type
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if is_account_object_class is not None:
+            pulumi.set(__self__, "is_account_object_class", is_account_object_class)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+
+        **Added In:** 18.1.6
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsDefaultValue: AccountObjectClass
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter(name="isAccountObjectClass")
+    def is_account_object_class(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, the object class represents an account. The isAccountObjectClass attribute value 'true' MUST appear no more than once.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "is_account_object_class")
+
+    @is_account_object_class.setter
+    def is_account_object_class(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_account_object_class", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Object class resource type
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs:
+    def __init__(__self__, *,
+                 access_token: Optional[pulumi.Input[str]] = None,
+                 access_token_expiry: Optional[pulumi.Input[str]] = None,
+                 refresh_token: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] access_token: (Updatable) Access Token
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * idcsSensitive: encrypt
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] access_token_expiry: (Updatable) Access token expiry
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] refresh_token: (Updatable) Refresh Token
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * idcsSensitive: encrypt
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if access_token is not None:
+            pulumi.set(__self__, "access_token", access_token)
+        if access_token_expiry is not None:
+            pulumi.set(__self__, "access_token_expiry", access_token_expiry)
+        if refresh_token is not None:
+            pulumi.set(__self__, "refresh_token", refresh_token)
+
+    @property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Access Token
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * idcsSensitive: encrypt
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "access_token")
+
+    @access_token.setter
+    def access_token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "access_token", value)
+
+    @property
+    @pulumi.getter(name="accessTokenExpiry")
+    def access_token_expiry(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Access token expiry
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "access_token_expiry")
+
+    @access_token_expiry.setter
+    def access_token_expiry(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "access_token_expiry", value)
+
+    @property
+    @pulumi.getter(name="refreshToken")
+    def refresh_token(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Refresh Token
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * idcsSensitive: encrypt
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "refresh_token")
+
+    @refresh_token.setter
+    def refresh_token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "refresh_token", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs:
+    def __init__(__self__, *,
+                 multicloud_service_type: pulumi.Input[str],
+                 multicloud_platform_url: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] multicloud_service_type: (Updatable) Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
+               
+               **Added In:** 2301202328
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: request
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] multicloud_platform_url: (Updatable) The multicloud platform service URL which the application will invoke for runtime operations such as AWSCredentials api invocation
+               
+               **Added In:** 2301202328
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "multicloud_service_type", multicloud_service_type)
+        if multicloud_platform_url is not None:
+            pulumi.set(__self__, "multicloud_platform_url", multicloud_platform_url)
+
+    @property
+    @pulumi.getter(name="multicloudServiceType")
+    def multicloud_service_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
+
+        **Added In:** 2301202328
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: request
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "multicloud_service_type")
+
+    @multicloud_service_type.setter
+    def multicloud_service_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "multicloud_service_type", value)
+
+    @property
+    @pulumi.getter(name="multicloudPlatformUrl")
+    def multicloud_platform_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The multicloud platform service URL which the application will invoke for runtime operations such as AWSCredentials api invocation
+
+        **Added In:** 2301202328
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "multicloud_platform_url")
+
+    @multicloud_platform_url.setter
+    def multicloud_platform_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "multicloud_platform_url", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs:
+    def __init__(__self__, *,
+                 current_federation_mode: Optional[pulumi.Input[str]] = None,
+                 current_synchronization_mode: Optional[pulumi.Input[str]] = None,
+                 enabling_next_fed_sync_modes: Optional[pulumi.Input[bool]] = None,
+                 next_federation_mode: Optional[pulumi.Input[str]] = None,
+                 next_synchronization_mode: Optional[pulumi.Input[str]] = None,
+                 region: Optional[pulumi.Input[str]] = None,
+                 service_instance_identifier: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] current_federation_mode: (Updatable) Current Federation Mode
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+        :param pulumi.Input[str] current_synchronization_mode: (Updatable) Current Synchronization Mode
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+        :param pulumi.Input[bool] enabling_next_fed_sync_modes: (Updatable) If true, indicates that enablement is in progress started but not completed
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: boolean
+        :param pulumi.Input[str] next_federation_mode: (Updatable) Next Federation Mode
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+        :param pulumi.Input[str] next_synchronization_mode: (Updatable) Next Synchronization Mode
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+        :param pulumi.Input[str] region: (Updatable) This value identifies the OPC region in which the service is running.
+               
+               **Added In:** 19.1.4
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] service_instance_identifier: (Updatable) This value specifies the unique identifier assigned to an instance of an Oracle Public Cloud service app.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
+        """
+        if current_federation_mode is not None:
+            pulumi.set(__self__, "current_federation_mode", current_federation_mode)
+        if current_synchronization_mode is not None:
+            pulumi.set(__self__, "current_synchronization_mode", current_synchronization_mode)
+        if enabling_next_fed_sync_modes is not None:
+            pulumi.set(__self__, "enabling_next_fed_sync_modes", enabling_next_fed_sync_modes)
+        if next_federation_mode is not None:
+            pulumi.set(__self__, "next_federation_mode", next_federation_mode)
+        if next_synchronization_mode is not None:
+            pulumi.set(__self__, "next_synchronization_mode", next_synchronization_mode)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if service_instance_identifier is not None:
+            pulumi.set(__self__, "service_instance_identifier", service_instance_identifier)
+
+    @property
+    @pulumi.getter(name="currentFederationMode")
+    def current_federation_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Current Federation Mode
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        """
+        return pulumi.get(self, "current_federation_mode")
+
+    @current_federation_mode.setter
+    def current_federation_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "current_federation_mode", value)
+
+    @property
+    @pulumi.getter(name="currentSynchronizationMode")
+    def current_synchronization_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Current Synchronization Mode
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        """
+        return pulumi.get(self, "current_synchronization_mode")
+
+    @current_synchronization_mode.setter
+    def current_synchronization_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "current_synchronization_mode", value)
+
+    @property
+    @pulumi.getter(name="enablingNextFedSyncModes")
+    def enabling_next_fed_sync_modes(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that enablement is in progress started but not completed
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: boolean
+        """
+        return pulumi.get(self, "enabling_next_fed_sync_modes")
+
+    @enabling_next_fed_sync_modes.setter
+    def enabling_next_fed_sync_modes(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enabling_next_fed_sync_modes", value)
+
+    @property
+    @pulumi.getter(name="nextFederationMode")
+    def next_federation_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Next Federation Mode
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        """
+        return pulumi.get(self, "next_federation_mode")
+
+    @next_federation_mode.setter
+    def next_federation_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "next_federation_mode", value)
+
+    @property
+    @pulumi.getter(name="nextSynchronizationMode")
+    def next_synchronization_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Next Synchronization Mode
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        """
+        return pulumi.get(self, "next_synchronization_mode")
+
+    @next_synchronization_mode.setter
+    def next_synchronization_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "next_synchronization_mode", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This value identifies the OPC region in which the service is running.
+
+        **Added In:** 19.1.4
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter(name="serviceInstanceIdentifier")
+    def service_instance_identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This value specifies the unique identifier assigned to an instance of an Oracle Public Cloud service app.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
+        """
+        return pulumi.get(self, "service_instance_identifier")
+
+    @service_instance_identifier.setter
+    def service_instance_identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_instance_identifier", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs:
+    def __init__(__self__, *,
+                 client_ip: pulumi.Input[str],
+                 include_group_in_response: pulumi.Input[bool],
+                 port: pulumi.Input[str],
+                 secret_key: pulumi.Input[str],
+                 capture_client_ip: Optional[pulumi.Input[bool]] = None,
+                 country_code_response_attribute_id: Optional[pulumi.Input[str]] = None,
+                 end_user_ip_attribute: Optional[pulumi.Input[str]] = None,
+                 group_membership_radius_attribute: Optional[pulumi.Input[str]] = None,
+                 group_membership_to_returns: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs']]]] = None,
+                 group_name_format: Optional[pulumi.Input[str]] = None,
+                 password_and_otp_together: Optional[pulumi.Input[bool]] = None,
+                 radius_vendor_specific_id: Optional[pulumi.Input[str]] = None,
+                 response_format: Optional[pulumi.Input[str]] = None,
+                 response_format_delimiter: Optional[pulumi.Input[str]] = None,
+                 type_of_radius_app: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] client_ip: (Updatable) This is the IP address of the RADIUS Client like Oracle Database server. It can be only IP address and not hostname.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+        :param pulumi.Input[bool] include_group_in_response: (Updatable) Indicates to include groups in RADIUS response
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+        :param pulumi.Input[str] port: (Updatable) This is the port of RADIUS Proxy which RADIUS client will connect to.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+        :param pulumi.Input[str] secret_key: (Updatable) Secret key used to secure communication between RADIUS Proxy and RADIUS client
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+        :param pulumi.Input[bool] capture_client_ip: (Updatable) If true, capture the client IP address from the RADIUS request packet. IP Address is used for auditing, policy-evaluation and country-code calculation.
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+        :param pulumi.Input[str] country_code_response_attribute_id: (Updatable) Vendor-specific identifier of the attribute in the RADIUS response that will contain the end-user's country code. This is an integer-value in the range 1 to 255
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+        :param pulumi.Input[str] end_user_ip_attribute: (Updatable) The name of the attribute that contains the Internet Protocol address of the end-user.
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+        :param pulumi.Input[str] group_membership_radius_attribute: (Updatable) RADIUS attribute that RADIUS-enabled system uses to pass the group membership
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs']]] group_membership_to_returns: (Updatable) In a successful authentication response, Oracle Identity Cloud Service will pass user's group information restricted to groups persisted in this attribute, in the specified RADIUS attribute.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[str] group_name_format: (Updatable) Configure the groupNameFormat based on vendor in order to pass it to RADIUS infra
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+        :param pulumi.Input[bool] password_and_otp_together: (Updatable) Indicates if password and OTP are passed in the same sign-in request or not.
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+        :param pulumi.Input[str] radius_vendor_specific_id: (Updatable) ID used to identify a particular vendor.
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+        :param pulumi.Input[str] response_format: (Updatable) Configure the responseFormat based on vendor in order to pass it to RADIUS infra
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+        :param pulumi.Input[str] response_format_delimiter: (Updatable) The delimiter used if group membership responseFormat is a delimited list instead of repeating attributes
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+        :param pulumi.Input[str] type_of_radius_app: (Updatable) Value consists of type of RADIUS App. Type can be Oracle Database, VPN etc
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+        """
+        pulumi.set(__self__, "client_ip", client_ip)
+        pulumi.set(__self__, "include_group_in_response", include_group_in_response)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "secret_key", secret_key)
+        if capture_client_ip is not None:
+            pulumi.set(__self__, "capture_client_ip", capture_client_ip)
+        if country_code_response_attribute_id is not None:
+            pulumi.set(__self__, "country_code_response_attribute_id", country_code_response_attribute_id)
+        if end_user_ip_attribute is not None:
+            pulumi.set(__self__, "end_user_ip_attribute", end_user_ip_attribute)
+        if group_membership_radius_attribute is not None:
+            pulumi.set(__self__, "group_membership_radius_attribute", group_membership_radius_attribute)
+        if group_membership_to_returns is not None:
+            pulumi.set(__self__, "group_membership_to_returns", group_membership_to_returns)
+        if group_name_format is not None:
+            pulumi.set(__self__, "group_name_format", group_name_format)
+        if password_and_otp_together is not None:
+            pulumi.set(__self__, "password_and_otp_together", password_and_otp_together)
+        if radius_vendor_specific_id is not None:
+            pulumi.set(__self__, "radius_vendor_specific_id", radius_vendor_specific_id)
+        if response_format is not None:
+            pulumi.set(__self__, "response_format", response_format)
+        if response_format_delimiter is not None:
+            pulumi.set(__self__, "response_format_delimiter", response_format_delimiter)
+        if type_of_radius_app is not None:
+            pulumi.set(__self__, "type_of_radius_app", type_of_radius_app)
+
+    @property
+    @pulumi.getter(name="clientIp")
+    def client_ip(self) -> pulumi.Input[str]:
+        """
+        (Updatable) This is the IP address of the RADIUS Client like Oracle Database server. It can be only IP address and not hostname.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "client_ip")
+
+    @client_ip.setter
+    def client_ip(self, value: pulumi.Input[str]):
+        pulumi.set(self, "client_ip", value)
+
+    @property
+    @pulumi.getter(name="includeGroupInResponse")
+    def include_group_in_response(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Indicates to include groups in RADIUS response
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        """
+        return pulumi.get(self, "include_group_in_response")
+
+    @include_group_in_response.setter
+    def include_group_in_response(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "include_group_in_response", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> pulumi.Input[str]:
+        """
+        (Updatable) This is the port of RADIUS Proxy which RADIUS client will connect to.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: pulumi.Input[str]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter(name="secretKey")
+    def secret_key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Secret key used to secure communication between RADIUS Proxy and RADIUS client
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "secret_key")
+
+    @secret_key.setter
+    def secret_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "secret_key", value)
+
+    @property
+    @pulumi.getter(name="captureClientIp")
+    def capture_client_ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, capture the client IP address from the RADIUS request packet. IP Address is used for auditing, policy-evaluation and country-code calculation.
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        """
+        return pulumi.get(self, "capture_client_ip")
+
+    @capture_client_ip.setter
+    def capture_client_ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "capture_client_ip", value)
+
+    @property
+    @pulumi.getter(name="countryCodeResponseAttributeId")
+    def country_code_response_attribute_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Vendor-specific identifier of the attribute in the RADIUS response that will contain the end-user's country code. This is an integer-value in the range 1 to 255
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "country_code_response_attribute_id")
+
+    @country_code_response_attribute_id.setter
+    def country_code_response_attribute_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "country_code_response_attribute_id", value)
+
+    @property
+    @pulumi.getter(name="endUserIpAttribute")
+    def end_user_ip_attribute(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the attribute that contains the Internet Protocol address of the end-user.
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "end_user_ip_attribute")
+
+    @end_user_ip_attribute.setter
+    def end_user_ip_attribute(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "end_user_ip_attribute", value)
+
+    @property
+    @pulumi.getter(name="groupMembershipRadiusAttribute")
+    def group_membership_radius_attribute(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) RADIUS attribute that RADIUS-enabled system uses to pass the group membership
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "group_membership_radius_attribute")
+
+    @group_membership_radius_attribute.setter
+    def group_membership_radius_attribute(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_membership_radius_attribute", value)
+
+    @property
+    @pulumi.getter(name="groupMembershipToReturns")
+    def group_membership_to_returns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs']]]]:
+        """
+        (Updatable) In a successful authentication response, Oracle Identity Cloud Service will pass user's group information restricted to groups persisted in this attribute, in the specified RADIUS attribute.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "group_membership_to_returns")
+
+    @group_membership_to_returns.setter
+    def group_membership_to_returns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs']]]]):
+        pulumi.set(self, "group_membership_to_returns", value)
+
+    @property
+    @pulumi.getter(name="groupNameFormat")
+    def group_name_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Configure the groupNameFormat based on vendor in order to pass it to RADIUS infra
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "group_name_format")
+
+    @group_name_format.setter
+    def group_name_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_name_format", value)
+
+    @property
+    @pulumi.getter(name="passwordAndOtpTogether")
+    def password_and_otp_together(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates if password and OTP are passed in the same sign-in request or not.
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        """
+        return pulumi.get(self, "password_and_otp_together")
+
+    @password_and_otp_together.setter
+    def password_and_otp_together(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "password_and_otp_together", value)
+
+    @property
+    @pulumi.getter(name="radiusVendorSpecificId")
+    def radius_vendor_specific_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) ID used to identify a particular vendor.
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "radius_vendor_specific_id")
+
+    @radius_vendor_specific_id.setter
+    def radius_vendor_specific_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "radius_vendor_specific_id", value)
+
+    @property
+    @pulumi.getter(name="responseFormat")
+    def response_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Configure the responseFormat based on vendor in order to pass it to RADIUS infra
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "response_format")
+
+    @response_format.setter
+    def response_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "response_format", value)
+
+    @property
+    @pulumi.getter(name="responseFormatDelimiter")
+    def response_format_delimiter(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The delimiter used if group membership responseFormat is a delimited list instead of repeating attributes
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "response_format_delimiter")
+
+    @response_format_delimiter.setter
+    def response_format_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "response_format_delimiter", value)
+
+    @property
+    @pulumi.getter(name="typeOfRadiusApp")
+    def type_of_radius_app(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Value consists of type of RADIUS App. Type can be Oracle Database, VPN etc
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        """
+        return pulumi.get(self, "type_of_radius_app")
+
+    @type_of_radius_app.setter
+    def type_of_radius_app(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type_of_radius_app", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs:
+    def __init__(__self__, *,
+                 requestable: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] requestable: (Updatable) Flag controlling whether resource can be request by user through self service console.
+               
+               **Added In:** 17.3.4
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: boolean
+               * uniqueness: none
+        """
+        if requestable is not None:
+            pulumi.set(__self__, "requestable", requestable)
+
+    @property
+    @pulumi.getter
+    def requestable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Flag controlling whether resource can be request by user through self service console.
+
+        **Added In:** 17.3.4
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "requestable")
+
+    @requestable.setter
+    def requestable(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "requestable", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs:
+    def __init__(__self__, *,
+                 assertion_consumer_url: Optional[pulumi.Input[str]] = None,
+                 encrypt_assertion: Optional[pulumi.Input[bool]] = None,
+                 encryption_algorithm: Optional[pulumi.Input[str]] = None,
+                 encryption_certificate: Optional[pulumi.Input[str]] = None,
+                 federation_protocol: Optional[pulumi.Input[str]] = None,
+                 group_assertion_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs']]]] = None,
+                 hok_acs_url: Optional[pulumi.Input[str]] = None,
+                 hok_required: Optional[pulumi.Input[bool]] = None,
+                 include_signing_cert_in_signature: Optional[pulumi.Input[bool]] = None,
+                 key_encryption_algorithm: Optional[pulumi.Input[str]] = None,
+                 last_notification_sent_time: Optional[pulumi.Input[str]] = None,
+                 logout_binding: Optional[pulumi.Input[str]] = None,
+                 logout_enabled: Optional[pulumi.Input[bool]] = None,
+                 logout_request_url: Optional[pulumi.Input[str]] = None,
+                 logout_response_url: Optional[pulumi.Input[str]] = None,
+                 metadata: Optional[pulumi.Input[str]] = None,
+                 name_id_format: Optional[pulumi.Input[str]] = None,
+                 name_id_userstore_attribute: Optional[pulumi.Input[str]] = None,
+                 outbound_assertion_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttributeArgs']]]] = None,
+                 partner_provider_id: Optional[pulumi.Input[str]] = None,
+                 partner_provider_pattern: Optional[pulumi.Input[str]] = None,
+                 sign_response_or_assertion: Optional[pulumi.Input[str]] = None,
+                 signature_hash_algorithm: Optional[pulumi.Input[str]] = None,
+                 signing_certificate: Optional[pulumi.Input[str]] = None,
+                 succinct_id: Optional[pulumi.Input[str]] = None,
+                 tenant_provider_id: Optional[pulumi.Input[str]] = None,
+                 user_assertion_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs']]]] = None):
+        """
+        :param pulumi.Input[str] assertion_consumer_url: (Updatable) The attribute represents the URL to which the SAML Assertions will be sent by the SAML IdP.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] encrypt_assertion: (Updatable) If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML) assertion.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] encryption_algorithm: (Updatable) This attribute indicates the encryption algorithm used to encrypt the SAML assertion.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] encryption_certificate: (Updatable) This attribute represents the encryption certificate that an App uses to encrypt the Security Assertion Markup Language (SAML) assertion.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] federation_protocol: (Updatable) Specifies the preferred federation protocol (SAML2.0 or WS-Fed1.1).
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsDefaultValue: SAML2.0
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs']]] group_assertion_attributes: (Updatable) Each value of this attribute describes an attribute of Group that will be sent in a Security Assertion Markup Language (SAML) assertion.
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[str] hok_acs_url: (Updatable) Hok Assertion Consumer Service Url
+               
+               **Added In:** 2101262133
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] hok_required: (Updatable) If enabled, then the SAML Service supports Hok for this App.
+               
+               **Added In:** 2101262133
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] include_signing_cert_in_signature: (Updatable) If true, then the signing certificate is included in the signature.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] key_encryption_algorithm: (Updatable) This attribute indicates the key encryption algorithm.
+               
+               **Added In:** 18.4.2
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] last_notification_sent_time: (Updatable) Records the notification timestamp for the SP whose signing certificate is about to expire.
+               
+               **Added In:** 2302092332
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] logout_binding: (Updatable) This attribute represents the HTTP binding that would be used while logout.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] logout_enabled: (Updatable) If true, then the SAML Service supports logout for this App.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] logout_request_url: (Updatable) The URL to which the partner sends the logout request.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] logout_response_url: (Updatable) The URL to which the partner sends the logout response.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] metadata: (Updatable) This attribute represents the metadata of a Security Provider in the Security Assertion Markup Language protocol.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] name_id_format: (Updatable) This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat other than the standard list is chosen, it will be considered a custom nameidformat. The standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier, saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and saml-persistent-opaque.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] name_id_userstore_attribute: (Updatable) **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none This property specifies which user attribute is used as the NameID value in the SAML assertion. This attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttributeArgs']]] outbound_assertion_attributes: (Updatable) Use to construct the outgoing SAML attributes
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCompositeKey: [value]
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        :param pulumi.Input[str] partner_provider_id: (Updatable) The ID of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] partner_provider_pattern: (Updatable) The pattern of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+               
+               **Added In:** 2202230830
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] sign_response_or_assertion: (Updatable) Indicates which part of the response should be signed.  A value of \\"Assertion\\" indicates that the Assertion should be signed.  A value of \\"Response\\" indicates that the SSO Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the Assertion and the SSO Response should be signed.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] signature_hash_algorithm: (Updatable) This attribute represents the algorithm used to hash the signature.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] signing_certificate: (Updatable) This attribute represents the signing certificate that an App uses to verify the signed authentication request.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] succinct_id: (Updatable) This attribute represents the Succinct ID.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
+        :param pulumi.Input[str] tenant_provider_id: (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this SP.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs']]] user_assertion_attributes: (Updatable) Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
+        """
+        if assertion_consumer_url is not None:
+            pulumi.set(__self__, "assertion_consumer_url", assertion_consumer_url)
+        if encrypt_assertion is not None:
+            pulumi.set(__self__, "encrypt_assertion", encrypt_assertion)
+        if encryption_algorithm is not None:
+            pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
+        if encryption_certificate is not None:
+            pulumi.set(__self__, "encryption_certificate", encryption_certificate)
+        if federation_protocol is not None:
+            pulumi.set(__self__, "federation_protocol", federation_protocol)
+        if group_assertion_attributes is not None:
+            pulumi.set(__self__, "group_assertion_attributes", group_assertion_attributes)
+        if hok_acs_url is not None:
+            pulumi.set(__self__, "hok_acs_url", hok_acs_url)
+        if hok_required is not None:
+            pulumi.set(__self__, "hok_required", hok_required)
+        if include_signing_cert_in_signature is not None:
+            pulumi.set(__self__, "include_signing_cert_in_signature", include_signing_cert_in_signature)
+        if key_encryption_algorithm is not None:
+            pulumi.set(__self__, "key_encryption_algorithm", key_encryption_algorithm)
+        if last_notification_sent_time is not None:
+            pulumi.set(__self__, "last_notification_sent_time", last_notification_sent_time)
+        if logout_binding is not None:
+            pulumi.set(__self__, "logout_binding", logout_binding)
+        if logout_enabled is not None:
+            pulumi.set(__self__, "logout_enabled", logout_enabled)
+        if logout_request_url is not None:
+            pulumi.set(__self__, "logout_request_url", logout_request_url)
+        if logout_response_url is not None:
+            pulumi.set(__self__, "logout_response_url", logout_response_url)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name_id_format is not None:
+            pulumi.set(__self__, "name_id_format", name_id_format)
+        if name_id_userstore_attribute is not None:
+            pulumi.set(__self__, "name_id_userstore_attribute", name_id_userstore_attribute)
+        if outbound_assertion_attributes is not None:
+            pulumi.set(__self__, "outbound_assertion_attributes", outbound_assertion_attributes)
+        if partner_provider_id is not None:
+            pulumi.set(__self__, "partner_provider_id", partner_provider_id)
+        if partner_provider_pattern is not None:
+            pulumi.set(__self__, "partner_provider_pattern", partner_provider_pattern)
+        if sign_response_or_assertion is not None:
+            pulumi.set(__self__, "sign_response_or_assertion", sign_response_or_assertion)
+        if signature_hash_algorithm is not None:
+            pulumi.set(__self__, "signature_hash_algorithm", signature_hash_algorithm)
+        if signing_certificate is not None:
+            pulumi.set(__self__, "signing_certificate", signing_certificate)
+        if succinct_id is not None:
+            pulumi.set(__self__, "succinct_id", succinct_id)
+        if tenant_provider_id is not None:
+            pulumi.set(__self__, "tenant_provider_id", tenant_provider_id)
+        if user_assertion_attributes is not None:
+            pulumi.set(__self__, "user_assertion_attributes", user_assertion_attributes)
+
+    @property
+    @pulumi.getter(name="assertionConsumerUrl")
+    def assertion_consumer_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The attribute represents the URL to which the SAML Assertions will be sent by the SAML IdP.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "assertion_consumer_url")
+
+    @assertion_consumer_url.setter
+    def assertion_consumer_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "assertion_consumer_url", value)
+
+    @property
+    @pulumi.getter(name="encryptAssertion")
+    def encrypt_assertion(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, indicates that the system must encrypt the Security Assertion Markup Language (SAML) assertion.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "encrypt_assertion")
+
+    @encrypt_assertion.setter
+    def encrypt_assertion(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "encrypt_assertion", value)
+
+    @property
+    @pulumi.getter(name="encryptionAlgorithm")
+    def encryption_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This attribute indicates the encryption algorithm used to encrypt the SAML assertion.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "encryption_algorithm")
+
+    @encryption_algorithm.setter
+    def encryption_algorithm(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "encryption_algorithm", value)
+
+    @property
+    @pulumi.getter(name="encryptionCertificate")
+    def encryption_certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This attribute represents the encryption certificate that an App uses to encrypt the Security Assertion Markup Language (SAML) assertion.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "encryption_certificate")
+
+    @encryption_certificate.setter
+    def encryption_certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "encryption_certificate", value)
+
+    @property
+    @pulumi.getter(name="federationProtocol")
+    def federation_protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies the preferred federation protocol (SAML2.0 or WS-Fed1.1).
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsDefaultValue: SAML2.0
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "federation_protocol")
+
+    @federation_protocol.setter
+    def federation_protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "federation_protocol", value)
+
+    @property
+    @pulumi.getter(name="groupAssertionAttributes")
+    def group_assertion_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs']]]]:
+        """
+        (Updatable) Each value of this attribute describes an attribute of Group that will be sent in a Security Assertion Markup Language (SAML) assertion.
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCompositeKey: [name]
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "group_assertion_attributes")
+
+    @group_assertion_attributes.setter
+    def group_assertion_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs']]]]):
+        pulumi.set(self, "group_assertion_attributes", value)
+
+    @property
+    @pulumi.getter(name="hokAcsUrl")
+    def hok_acs_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Hok Assertion Consumer Service Url
+
+        **Added In:** 2101262133
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "hok_acs_url")
+
+    @hok_acs_url.setter
+    def hok_acs_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hok_acs_url", value)
+
+    @property
+    @pulumi.getter(name="hokRequired")
+    def hok_required(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled, then the SAML Service supports Hok for this App.
+
+        **Added In:** 2101262133
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "hok_required")
+
+    @hok_required.setter
+    def hok_required(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "hok_required", value)
+
+    @property
+    @pulumi.getter(name="includeSigningCertInSignature")
+    def include_signing_cert_in_signature(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, then the signing certificate is included in the signature.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "include_signing_cert_in_signature")
+
+    @include_signing_cert_in_signature.setter
+    def include_signing_cert_in_signature(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_signing_cert_in_signature", value)
+
+    @property
+    @pulumi.getter(name="keyEncryptionAlgorithm")
+    def key_encryption_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This attribute indicates the key encryption algorithm.
+
+        **Added In:** 18.4.2
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key_encryption_algorithm")
+
+    @key_encryption_algorithm.setter
+    def key_encryption_algorithm(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_encryption_algorithm", value)
+
+    @property
+    @pulumi.getter(name="lastNotificationSentTime")
+    def last_notification_sent_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Records the notification timestamp for the SP whose signing certificate is about to expire.
+
+        **Added In:** 2302092332
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_notification_sent_time")
+
+    @last_notification_sent_time.setter
+    def last_notification_sent_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_notification_sent_time", value)
+
+    @property
+    @pulumi.getter(name="logoutBinding")
+    def logout_binding(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This attribute represents the HTTP binding that would be used while logout.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "logout_binding")
+
+    @logout_binding.setter
+    def logout_binding(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "logout_binding", value)
+
+    @property
+    @pulumi.getter(name="logoutEnabled")
+    def logout_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, then the SAML Service supports logout for this App.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "logout_enabled")
+
+    @logout_enabled.setter
+    def logout_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "logout_enabled", value)
+
+    @property
+    @pulumi.getter(name="logoutRequestUrl")
+    def logout_request_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URL to which the partner sends the logout request.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "logout_request_url")
+
+    @logout_request_url.setter
+    def logout_request_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "logout_request_url", value)
+
+    @property
+    @pulumi.getter(name="logoutResponseUrl")
+    def logout_response_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URL to which the partner sends the logout response.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "logout_response_url")
+
+    @logout_response_url.setter
+    def logout_response_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "logout_response_url", value)
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This attribute represents the metadata of a Security Provider in the Security Assertion Markup Language protocol.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "metadata", value)
+
+    @property
+    @pulumi.getter(name="nameIdFormat")
+    def name_id_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This can be any string, but there are a set of standard nameIdFormats. If a nameIdFormat other than the standard list is chosen, it will be considered a custom nameidformat. The standard nameidformats include: saml-x509, saml-emailaddress, saml-windowsnamequalifier, saml-kerberos, saml-persistent, saml-transient, saml-unspecified, saml-none, and saml-persistent-opaque.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name_id_format")
+
+    @name_id_format.setter
+    def name_id_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name_id_format", value)
+
+    @property
+    @pulumi.getter(name="nameIdUserstoreAttribute")
+    def name_id_userstore_attribute(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none This property specifies which user attribute is used as the NameID value in the SAML assertion. This attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema.
+        """
+        return pulumi.get(self, "name_id_userstore_attribute")
+
+    @name_id_userstore_attribute.setter
+    def name_id_userstore_attribute(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name_id_userstore_attribute", value)
+
+    @property
+    @pulumi.getter(name="outboundAssertionAttributes")
+    def outbound_assertion_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttributeArgs']]]]:
+        """
+        (Updatable) Use to construct the outgoing SAML attributes
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCompositeKey: [value]
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "outbound_assertion_attributes")
+
+    @outbound_assertion_attributes.setter
+    def outbound_assertion_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttributeArgs']]]]):
+        pulumi.set(self, "outbound_assertion_attributes", value)
+
+    @property
+    @pulumi.getter(name="partnerProviderId")
+    def partner_provider_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The ID of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "partner_provider_id")
+
+    @partner_provider_id.setter
+    def partner_provider_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "partner_provider_id", value)
+
+    @property
+    @pulumi.getter(name="partnerProviderPattern")
+    def partner_provider_pattern(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The pattern of the Provider. This value corresponds to the entityID from the Service Provider metadata.
+
+        **Added In:** 2202230830
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "partner_provider_pattern")
+
+    @partner_provider_pattern.setter
+    def partner_provider_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "partner_provider_pattern", value)
+
+    @property
+    @pulumi.getter(name="signResponseOrAssertion")
+    def sign_response_or_assertion(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates which part of the response should be signed.  A value of \\"Assertion\\" indicates that the Assertion should be signed.  A value of \\"Response\\" indicates that the SSO Response should be signed. A value of \\"AssertionAndResponse\\" indicates that both the Assertion and the SSO Response should be signed.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "sign_response_or_assertion")
+
+    @sign_response_or_assertion.setter
+    def sign_response_or_assertion(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sign_response_or_assertion", value)
+
+    @property
+    @pulumi.getter(name="signatureHashAlgorithm")
+    def signature_hash_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This attribute represents the algorithm used to hash the signature.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "signature_hash_algorithm")
+
+    @signature_hash_algorithm.setter
+    def signature_hash_algorithm(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "signature_hash_algorithm", value)
+
+    @property
+    @pulumi.getter(name="signingCertificate")
+    def signing_certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This attribute represents the signing certificate that an App uses to verify the signed authentication request.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "signing_certificate")
+
+    @signing_certificate.setter
+    def signing_certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "signing_certificate", value)
+
+    @property
+    @pulumi.getter(name="succinctId")
+    def succinct_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This attribute represents the Succinct ID.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
+        """
+        return pulumi.get(self, "succinct_id")
+
+    @succinct_id.setter
+    def succinct_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "succinct_id", value)
+
+    @property
+    @pulumi.getter(name="tenantProviderId")
+    def tenant_provider_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this SP.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "tenant_provider_id")
+
+    @tenant_provider_id.setter
+    def tenant_provider_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tenant_provider_id", value)
+
+    @property
+    @pulumi.getter(name="userAssertionAttributes")
+    def user_assertion_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs']]]]:
+        """
+        (Updatable) Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCompositeKey: [name]
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "user_assertion_attributes")
+
+    @user_assertion_attributes.setter
+    def user_assertion_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs']]]]):
+        pulumi.set(self, "user_assertion_attributes", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 condition: Optional[pulumi.Input[str]] = None,
+                 format: Optional[pulumi.Input[str]] = None,
+                 group_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] condition: (Updatable) Indicates the filter types that are supported for the Group assertion attributes.
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] format: (Updatable) Indicates the format of the assertion attribute.
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] group_name: (Updatable) Indicates the group name that are supported for the group assertion attributes.
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "name", name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates the filter types that are supported for the Group assertion attributes.
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter
+    def format(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates the format of the assertion attribute.
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "format")
+
+    @format.setter
+    def format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "format", value)
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates the group name that are supported for the group assertion attributes.
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "group_name")
+
+    @group_name.setter
+    def group_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_name", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttributeArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 direction: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] direction: (Updatable) Mapped Attribute Direction
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if direction is not None:
+            pulumi.set(__self__, "direction", direction)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def direction(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Mapped Attribute Direction
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "direction")
+
+    @direction.setter
+    def direction(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "direction", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 user_store_attribute_name: pulumi.Input[str],
+                 format: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] user_store_attribute_name: (Updatable) This attribute specifies which user attribute should be used to create the value of the SAML assertion attribute. The userstore attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema. <br><b>Note</b>: Attributes from extensions to the Core User schema are not supported in v1.0.
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] format: (Updatable) Indicates the format of the assertion attribute.
+               
+               **Deprecated Since: 18.2.2**
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * idcsValuePersistedInOtherAttribute: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "user_store_attribute_name", user_store_attribute_name)
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="userStoreAttributeName")
+    def user_store_attribute_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) This attribute specifies which user attribute should be used to create the value of the SAML assertion attribute. The userstore attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema. <br><b>Note</b>: Attributes from extensions to the Core User schema are not supported in v1.0.
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "user_store_attribute_name")
+
+    @user_store_attribute_name.setter
+    def user_store_attribute_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "user_store_attribute_name", value)
+
+    @property
+    @pulumi.getter
+    def format(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Indicates the format of the assertion attribute.
+
+        **Deprecated Since: 18.2.2**
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * idcsValuePersistedInOtherAttribute: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "format")
+
+    @format.setter
+    def format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "format", value)
+
+
+@pulumi.input_type
+class DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs:
+    def __init__(__self__, *,
+                 resource_ref: Optional[pulumi.Input[bool]] = None,
+                 web_tier_policy_az_control: Optional[pulumi.Input[str]] = None,
+                 web_tier_policy_json: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] resource_ref: (Updatable) If this Attribute is true, resource ref id and resource ref name attributes will we included in wtp json response.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[str] web_tier_policy_az_control: (Updatable) Webtier policy AZ Control
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] web_tier_policy_json: (Updatable) Store the web tier policy for an application as a string in Javascript Object Notification (JSON) format.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
+        """
+        if resource_ref is not None:
+            pulumi.set(__self__, "resource_ref", resource_ref)
+        if web_tier_policy_az_control is not None:
+            pulumi.set(__self__, "web_tier_policy_az_control", web_tier_policy_az_control)
+        if web_tier_policy_json is not None:
+            pulumi.set(__self__, "web_tier_policy_json", web_tier_policy_json)
+
+    @property
+    @pulumi.getter(name="resourceRef")
+    def resource_ref(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If this Attribute is true, resource ref id and resource ref name attributes will we included in wtp json response.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_ref")
+
+    @resource_ref.setter
+    def resource_ref(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "resource_ref", value)
+
+    @property
+    @pulumi.getter(name="webTierPolicyAzControl")
+    def web_tier_policy_az_control(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Webtier policy AZ Control
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "web_tier_policy_az_control")
+
+    @web_tier_policy_az_control.setter
+    def web_tier_policy_az_control(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "web_tier_policy_az_control", value)
+
+    @property
+    @pulumi.getter(name="webTierPolicyJson")
+    def web_tier_policy_json(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Store the web tier policy for an application as a string in Javascript Object Notification (JSON) format.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "web_tier_policy_json")
+
+    @web_tier_policy_json.setter
+    def web_tier_policy_json(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "web_tier_policy_json", value)
+
+
+@pulumi.input_type
+class DomainsAppUserRoleArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] description: (Updatable) The description of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) Display-name of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) URI of the AppRole.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The description of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display-name of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of the AppRole.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
 class DomainsAuthTokenIdcsCreatedByArgs:
     def __init__(__self__, *,
                  value: pulumi.Input[str],
@@ -1350,7 +14631,7 @@ class DomainsAuthTokenIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1365,7 +14646,7 @@ class DomainsAuthTokenIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1376,7 +14657,7 @@ class DomainsAuthTokenIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1424,7 +14705,7 @@ class DomainsAuthTokenIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1450,7 +14731,7 @@ class DomainsAuthTokenIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1472,7 +14753,7 @@ class DomainsAuthTokenIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1544,7 +14825,7 @@ class DomainsAuthTokenIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1559,7 +14840,7 @@ class DomainsAuthTokenIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1570,7 +14851,7 @@ class DomainsAuthTokenIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1618,7 +14899,7 @@ class DomainsAuthTokenIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1644,7 +14925,7 @@ class DomainsAuthTokenIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1666,7 +14947,7 @@ class DomainsAuthTokenIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1933,7 +15214,7 @@ class DomainsAuthTokenTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1978,7 +15259,7 @@ class DomainsAuthTokenTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -2055,7 +15336,7 @@ class DomainsAuthTokenUserArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -2066,7 +15347,7 @@ class DomainsAuthTokenUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -2077,7 +15358,7 @@ class DomainsAuthTokenUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -2099,7 +15380,7 @@ class DomainsAuthTokenUserArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -2130,7 +15411,7 @@ class DomainsAuthTokenUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -2152,7 +15433,7 @@ class DomainsAuthTokenUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -2174,7 +15455,7 @@ class DomainsAuthTokenUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -2218,7 +15499,7 @@ class DomainsAuthTokenUserArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -4673,7 +17954,7 @@ class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextens
                * returned: default
                * type: integer
                * uniqueness: none
-        :param pulumi.Input[int] domain_validation_level: (Updatable) Number of domain levels IDCS should use for origin comparision
+        :param pulumi.Input[int] domain_validation_level: (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
                
                **Added In:** 2109020413
                
@@ -4889,7 +18170,7 @@ class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextens
     @pulumi.getter(name="domainValidationLevel")
     def domain_validation_level(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Number of domain levels IDCS should use for origin comparision
+        (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
 
         **Added In:** 2109020413
 
@@ -5158,7 +18439,7 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5173,7 +18454,7 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -5184,7 +18465,7 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5195,7 +18476,7 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5232,7 +18513,7 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -5258,7 +18539,7 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -5280,7 +18561,7 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -5302,7 +18583,7 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -5352,7 +18633,7 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5367,7 +18648,7 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -5378,7 +18659,7 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5389,7 +18670,7 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5426,7 +18707,7 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -5452,7 +18733,7 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -5474,7 +18755,7 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -5496,7 +18777,7 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -5741,7 +19022,7 @@ class DomainsCustomerSecretKeyTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5786,7 +19067,7 @@ class DomainsCustomerSecretKeyTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -5863,7 +19144,7 @@ class DomainsCustomerSecretKeyUserArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -5874,7 +19155,7 @@ class DomainsCustomerSecretKeyUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The user's name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -5885,7 +19166,7 @@ class DomainsCustomerSecretKeyUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5896,7 +19177,7 @@ class DomainsCustomerSecretKeyUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5907,7 +19188,7 @@ class DomainsCustomerSecretKeyUserArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -5938,7 +19219,7 @@ class DomainsCustomerSecretKeyUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -5960,7 +19241,7 @@ class DomainsCustomerSecretKeyUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The user's name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -5982,7 +19263,7 @@ class DomainsCustomerSecretKeyUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -6004,7 +19285,7 @@ class DomainsCustomerSecretKeyUserArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -6026,7 +19307,7 @@ class DomainsCustomerSecretKeyUserArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -6329,7 +19610,10 @@ class DomainsDynamicResourceGroupGrantArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+               * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+               * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+               * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -6401,7 +19685,10 @@ class DomainsDynamicResourceGroupGrantArgs:
     @pulumi.getter(name="grantMechanism")
     def grant_mechanism(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+        * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+        * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+        * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -7431,6 +20718,1213 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
 
 
 @pulumi.input_type
+class DomainsGrantAppArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsGrantAppEntitlementCollectionArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsGrantEntitlementArgs:
+    def __init__(__self__, *,
+                 attribute_name: pulumi.Input[str],
+                 attribute_value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] attribute_name: The name of the attribute whose value (specified by attributeValue) confers privilege within the service-instance (specified by app).
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] attribute_value: The value of the attribute (specified by attributeName) that confers privilege within the service-instance (specified by app).  If attributeName is 'appRoles', then attributeValue is the ID of the AppRole.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsCsvAttributeName: Display Name
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "attribute_name", attribute_name)
+        pulumi.set(__self__, "attribute_value", attribute_value)
+
+    @property
+    @pulumi.getter(name="attributeName")
+    def attribute_name(self) -> pulumi.Input[str]:
+        """
+        The name of the attribute whose value (specified by attributeValue) confers privilege within the service-instance (specified by app).
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "attribute_name")
+
+    @attribute_name.setter
+    def attribute_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute_name", value)
+
+    @property
+    @pulumi.getter(name="attributeValue")
+    def attribute_value(self) -> pulumi.Input[str]:
+        """
+        The value of the attribute (specified by attributeName) that confers privilege within the service-instance (specified by app).  If attributeName is 'appRoles', then attributeValue is the ID of the AppRole.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsCsvAttributeName: Display Name
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "attribute_value")
+
+    @attribute_value.setter
+    def attribute_value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute_value", value)
+
+
+@pulumi.input_type
+class DomainsGrantGranteeArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsGrantGrantorArgs:
+    def __init__(__self__, *,
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display: The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsGrantIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsGrantIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsGrantMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsGrantTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
 class DomainsGroupIdcsCreatedByArgs:
     def __init__(__self__, *,
                  value: pulumi.Input[str],
@@ -7864,7 +22358,7 @@ class DomainsGroupMemberArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] date_added: (Updatable) The DateTime the member was added to the Group.
+        :param pulumi.Input[str] date_added: (Updatable) The date and time that the member was added to the group.
                
                **Added In:** 2012271618
                
@@ -7887,7 +22381,7 @@ class DomainsGroupMemberArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] membership_ocid: (Updatable) Membership Ocid
+        :param pulumi.Input[str] membership_ocid: (Updatable) The membership OCID.
                
                **Added In:** 2102181953
                
@@ -8003,7 +22497,7 @@ class DomainsGroupMemberArgs:
     @pulumi.getter(name="dateAdded")
     def date_added(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The DateTime the member was added to the Group.
+        (Updatable) The date and time that the member was added to the group.
 
         **Added In:** 2012271618
 
@@ -8048,7 +22542,7 @@ class DomainsGroupMemberArgs:
     @pulumi.getter(name="membershipOcid")
     def membership_ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Membership Ocid
+        (Updatable) The membership OCID.
 
         **Added In:** 2102181953
 
@@ -9743,7 +24237,10 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+               * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+               * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+               * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -9815,7 +24312,10 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs
     @pulumi.getter(name="grantMechanism")
     def grant_mechanism(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+        * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+        * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+        * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -12209,6 +26709,8 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509iden
                  crl_enabled: Optional[pulumi.Input[bool]] = None,
                  crl_location: Optional[pulumi.Input[str]] = None,
                  crl_reload_duration: Optional[pulumi.Input[int]] = None,
+                 eku_validation_enabled: Optional[pulumi.Input[bool]] = None,
+                 eku_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ocsp_allow_unknown_response_status: Optional[pulumi.Input[bool]] = None,
                  ocsp_enable_signed_response: Optional[pulumi.Input[bool]] = None,
                  ocsp_enabled: Optional[pulumi.Input[bool]] = None,
@@ -12307,6 +26809,32 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509iden
                * required: false
                * returned: default
                * type: integer
+               * uniqueness: none
+        :param pulumi.Input[bool] eku_validation_enabled: (Updatable) Set to true to enable EKU Validation
+               
+               **Added In:** 2304270343
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] eku_values: (Updatable) List of EKU which needs to be validated
+               
+               **Added In:** 2304270343
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
                * uniqueness: none
         :param pulumi.Input[bool] ocsp_allow_unknown_response_status: (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
                
@@ -12425,6 +26953,10 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509iden
             pulumi.set(__self__, "crl_location", crl_location)
         if crl_reload_duration is not None:
             pulumi.set(__self__, "crl_reload_duration", crl_reload_duration)
+        if eku_validation_enabled is not None:
+            pulumi.set(__self__, "eku_validation_enabled", eku_validation_enabled)
+        if eku_values is not None:
+            pulumi.set(__self__, "eku_values", eku_values)
         if ocsp_allow_unknown_response_status is not None:
             pulumi.set(__self__, "ocsp_allow_unknown_response_status", ocsp_allow_unknown_response_status)
         if ocsp_enable_signed_response is not None:
@@ -12608,6 +27140,54 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509iden
     @crl_reload_duration.setter
     def crl_reload_duration(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "crl_reload_duration", value)
+
+    @property
+    @pulumi.getter(name="ekuValidationEnabled")
+    def eku_validation_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Set to true to enable EKU Validation
+
+        **Added In:** 2304270343
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "eku_validation_enabled")
+
+    @eku_validation_enabled.setter
+    def eku_validation_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "eku_validation_enabled", value)
+
+    @property
+    @pulumi.getter(name="ekuValues")
+    def eku_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of EKU which needs to be validated
+
+        **Added In:** 2304270343
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "eku_values")
+
+    @eku_values.setter
+    def eku_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "eku_values", value)
 
     @property
     @pulumi.getter(name="ocspAllowUnknownResponseStatus")
@@ -12801,6 +27381,1037 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509iden
     @other_cert_match_attribute.setter
     def other_cert_match_attribute(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "other_cert_match_attribute", value)
+
+
+@pulumi.input_type
+class DomainsIdentitySettingIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: (Updatable) The token type.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The token type.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsIdentitySettingIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: (Updatable) The token type.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The token type.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsIdentitySettingMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsIdentitySettingMyProfileArgs:
+    def __init__(__self__, *,
+                 allow_end_users_to_change_their_password: Optional[pulumi.Input[bool]] = None,
+                 allow_end_users_to_link_their_support_account: Optional[pulumi.Input[bool]] = None,
+                 allow_end_users_to_manage_their_capabilities: Optional[pulumi.Input[bool]] = None,
+                 allow_end_users_to_update_their_security_settings: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] allow_end_users_to_change_their_password: (Updatable) Whether to allow users to change their own password.
+               
+               **Added In:** 2207040824
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] allow_end_users_to_link_their_support_account: (Updatable) Whether to allow users to link or unlink their support accounts.
+               
+               **Added In:** 2207040824
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] allow_end_users_to_manage_their_capabilities: (Updatable) Whether to allow users to update their capabilities.
+               
+               **Added In:** 2207040824
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] allow_end_users_to_update_their_security_settings: (Updatable) Whether to allow users to update their security settings.
+               
+               **Added In:** 2207040824
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        """
+        if allow_end_users_to_change_their_password is not None:
+            pulumi.set(__self__, "allow_end_users_to_change_their_password", allow_end_users_to_change_their_password)
+        if allow_end_users_to_link_their_support_account is not None:
+            pulumi.set(__self__, "allow_end_users_to_link_their_support_account", allow_end_users_to_link_their_support_account)
+        if allow_end_users_to_manage_their_capabilities is not None:
+            pulumi.set(__self__, "allow_end_users_to_manage_their_capabilities", allow_end_users_to_manage_their_capabilities)
+        if allow_end_users_to_update_their_security_settings is not None:
+            pulumi.set(__self__, "allow_end_users_to_update_their_security_settings", allow_end_users_to_update_their_security_settings)
+
+    @property
+    @pulumi.getter(name="allowEndUsersToChangeTheirPassword")
+    def allow_end_users_to_change_their_password(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether to allow users to change their own password.
+
+        **Added In:** 2207040824
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "allow_end_users_to_change_their_password")
+
+    @allow_end_users_to_change_their_password.setter
+    def allow_end_users_to_change_their_password(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_end_users_to_change_their_password", value)
+
+    @property
+    @pulumi.getter(name="allowEndUsersToLinkTheirSupportAccount")
+    def allow_end_users_to_link_their_support_account(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether to allow users to link or unlink their support accounts.
+
+        **Added In:** 2207040824
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "allow_end_users_to_link_their_support_account")
+
+    @allow_end_users_to_link_their_support_account.setter
+    def allow_end_users_to_link_their_support_account(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_end_users_to_link_their_support_account", value)
+
+    @property
+    @pulumi.getter(name="allowEndUsersToManageTheirCapabilities")
+    def allow_end_users_to_manage_their_capabilities(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether to allow users to update their capabilities.
+
+        **Added In:** 2207040824
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "allow_end_users_to_manage_their_capabilities")
+
+    @allow_end_users_to_manage_their_capabilities.setter
+    def allow_end_users_to_manage_their_capabilities(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_end_users_to_manage_their_capabilities", value)
+
+    @property
+    @pulumi.getter(name="allowEndUsersToUpdateTheirSecuritySettings")
+    def allow_end_users_to_update_their_security_settings(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether to allow users to update their security settings.
+
+        **Added In:** 2207040824
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "allow_end_users_to_update_their_security_settings")
+
+    @allow_end_users_to_update_their_security_settings.setter
+    def allow_end_users_to_update_their_security_settings(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_end_users_to_update_their_security_settings", value)
+
+
+@pulumi.input_type
+class DomainsIdentitySettingPosixGidArgs:
+    def __init__(__self__, *,
+                 manual_assignment_ends_at: Optional[pulumi.Input[int]] = None,
+                 manual_assignment_starts_from: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] manual_assignment_ends_at: (Updatable) The number at which the Posix Uid Manual assignment ends.
+               
+               **Added In:** 17.4.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] manual_assignment_starts_from: (Updatable) The number from which the Posix Uid Manual assignment starts.
+               
+               **Added In:** 17.4.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        """
+        if manual_assignment_ends_at is not None:
+            pulumi.set(__self__, "manual_assignment_ends_at", manual_assignment_ends_at)
+        if manual_assignment_starts_from is not None:
+            pulumi.set(__self__, "manual_assignment_starts_from", manual_assignment_starts_from)
+
+    @property
+    @pulumi.getter(name="manualAssignmentEndsAt")
+    def manual_assignment_ends_at(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number at which the Posix Uid Manual assignment ends.
+
+        **Added In:** 17.4.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "manual_assignment_ends_at")
+
+    @manual_assignment_ends_at.setter
+    def manual_assignment_ends_at(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "manual_assignment_ends_at", value)
+
+    @property
+    @pulumi.getter(name="manualAssignmentStartsFrom")
+    def manual_assignment_starts_from(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number from which the Posix Uid Manual assignment starts.
+
+        **Added In:** 17.4.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "manual_assignment_starts_from")
+
+    @manual_assignment_starts_from.setter
+    def manual_assignment_starts_from(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "manual_assignment_starts_from", value)
+
+
+@pulumi.input_type
+class DomainsIdentitySettingPosixUidArgs:
+    def __init__(__self__, *,
+                 manual_assignment_ends_at: Optional[pulumi.Input[int]] = None,
+                 manual_assignment_starts_from: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] manual_assignment_ends_at: (Updatable) The number at which the Posix Uid Manual assignment ends.
+               
+               **Added In:** 17.4.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        :param pulumi.Input[int] manual_assignment_starts_from: (Updatable) The number from which the Posix Uid Manual assignment starts.
+               
+               **Added In:** 17.4.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        """
+        if manual_assignment_ends_at is not None:
+            pulumi.set(__self__, "manual_assignment_ends_at", manual_assignment_ends_at)
+        if manual_assignment_starts_from is not None:
+            pulumi.set(__self__, "manual_assignment_starts_from", manual_assignment_starts_from)
+
+    @property
+    @pulumi.getter(name="manualAssignmentEndsAt")
+    def manual_assignment_ends_at(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number at which the Posix Uid Manual assignment ends.
+
+        **Added In:** 17.4.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "manual_assignment_ends_at")
+
+    @manual_assignment_ends_at.setter
+    def manual_assignment_ends_at(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "manual_assignment_ends_at", value)
+
+    @property
+    @pulumi.getter(name="manualAssignmentStartsFrom")
+    def manual_assignment_starts_from(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number from which the Posix Uid Manual assignment starts.
+
+        **Added In:** 17.4.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "manual_assignment_starts_from")
+
+    @manual_assignment_starts_from.setter
+    def manual_assignment_starts_from(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "manual_assignment_starts_from", value)
+
+
+@pulumi.input_type
+class DomainsIdentitySettingTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Key or name of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Key or name of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsIdentitySettingTokenArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 expires_after: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) The token type.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] expires_after: (Updatable) Indicates the number of minutes after which the token expires automatically.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "type", type)
+        if expires_after is not None:
+            pulumi.set(__self__, "expires_after", expires_after)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The token type.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="expiresAfter")
+    def expires_after(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Indicates the number of minutes after which the token expires automatically.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "expires_after")
+
+    @expires_after.setter
+    def expires_after(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "expires_after", value)
 
 
 @pulumi.input_type
@@ -13448,7 +29059,7 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -13463,7 +29074,7 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -13474,7 +29085,7 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -13485,7 +29096,7 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -13522,7 +29133,7 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -13548,7 +29159,7 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -13570,7 +29181,7 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -13592,7 +29203,7 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -13642,7 +29253,7 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -13657,7 +29268,7 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -13668,7 +29279,7 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -13679,7 +29290,7 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -13716,7 +29327,7 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -13742,7 +29353,7 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -13764,7 +29375,7 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -13786,7 +29397,7 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14031,7 +29642,7 @@ class DomainsMyApiKeyTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -14076,7 +29687,7 @@ class DomainsMyApiKeyTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14108,7 +29719,7 @@ class DomainsMyApiKeyUserArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -14119,7 +29730,7 @@ class DomainsMyApiKeyUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -14130,7 +29741,7 @@ class DomainsMyApiKeyUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -14141,7 +29752,7 @@ class DomainsMyApiKeyUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -14152,7 +29763,7 @@ class DomainsMyApiKeyUserArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -14183,7 +29794,7 @@ class DomainsMyApiKeyUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -14205,7 +29816,7 @@ class DomainsMyApiKeyUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -14227,7 +29838,7 @@ class DomainsMyApiKeyUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14249,7 +29860,7 @@ class DomainsMyApiKeyUserArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14271,7 +29882,7 @@ class DomainsMyApiKeyUserArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14303,7 +29914,7 @@ class DomainsMyAuthTokenIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -14318,7 +29929,7 @@ class DomainsMyAuthTokenIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -14329,7 +29940,7 @@ class DomainsMyAuthTokenIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -14377,7 +29988,7 @@ class DomainsMyAuthTokenIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14403,7 +30014,7 @@ class DomainsMyAuthTokenIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -14425,7 +30036,7 @@ class DomainsMyAuthTokenIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14497,7 +30108,7 @@ class DomainsMyAuthTokenIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -14512,7 +30123,7 @@ class DomainsMyAuthTokenIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -14523,7 +30134,7 @@ class DomainsMyAuthTokenIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -14571,7 +30182,7 @@ class DomainsMyAuthTokenIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14597,7 +30208,7 @@ class DomainsMyAuthTokenIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -14619,7 +30230,7 @@ class DomainsMyAuthTokenIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14886,7 +30497,7 @@ class DomainsMyAuthTokenTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -14931,7 +30542,7 @@ class DomainsMyAuthTokenTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -14963,7 +30574,7 @@ class DomainsMyAuthTokenUserArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -14974,7 +30585,7 @@ class DomainsMyAuthTokenUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -14985,7 +30596,7 @@ class DomainsMyAuthTokenUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15007,7 +30618,7 @@ class DomainsMyAuthTokenUserArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15038,7 +30649,7 @@ class DomainsMyAuthTokenUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -15060,7 +30671,7 @@ class DomainsMyAuthTokenUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -15082,7 +30693,7 @@ class DomainsMyAuthTokenUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15126,7 +30737,7 @@ class DomainsMyAuthTokenUserArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15158,7 +30769,7 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15173,7 +30784,7 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -15184,7 +30795,7 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15195,7 +30806,7 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15232,7 +30843,7 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15258,7 +30869,7 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -15280,7 +30891,7 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15302,7 +30913,7 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15352,7 +30963,7 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15367,7 +30978,7 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -15378,7 +30989,7 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15389,7 +31000,7 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15426,7 +31037,7 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15452,7 +31063,7 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -15474,7 +31085,7 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15496,7 +31107,7 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15741,7 +31352,7 @@ class DomainsMyCustomerSecretKeyTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15786,7 +31397,7 @@ class DomainsMyCustomerSecretKeyTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15818,7 +31429,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -15829,7 +31440,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The user's name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -15840,7 +31451,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15851,7 +31462,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15862,7 +31473,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -15893,7 +31504,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -15915,7 +31526,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The user's name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -15937,7 +31548,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15959,7 +31570,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -15981,7 +31592,7 @@ class DomainsMyCustomerSecretKeyUserArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16013,7 +31624,7 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16028,7 +31639,7 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -16039,7 +31650,7 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16050,7 +31661,7 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16087,7 +31698,7 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16113,7 +31724,7 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -16135,7 +31746,7 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16157,7 +31768,7 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16207,7 +31818,7 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16222,7 +31833,7 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -16233,7 +31844,7 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16244,7 +31855,7 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16281,7 +31892,7 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16307,7 +31918,7 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -16329,7 +31940,7 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16351,7 +31962,7 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16665,7 +32276,7 @@ class DomainsMyOauth2clientCredentialTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16710,7 +32321,7 @@ class DomainsMyOauth2clientCredentialTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16742,7 +32353,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -16753,7 +32364,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -16764,7 +32375,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16775,7 +32386,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16786,7 +32397,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -16817,7 +32428,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -16839,7 +32450,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -16861,7 +32472,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16883,7 +32494,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16905,7 +32516,7 @@ class DomainsMyOauth2clientCredentialUserArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -16925,6 +32536,901 @@ class DomainsMyOauth2clientCredentialUserArgs:
 
     @value.setter
     def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsMyRequestIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: User display name
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) User URI
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: Requestable type. Allowed values are Group and App.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsCsvAttributeName: Requestable Type
+               * idcsDefaultValue: Group
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        User display name
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User URI
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Requestable type. Allowed values are Group and App.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsCsvAttributeName: Requestable Type
+        * idcsDefaultValue: Group
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyRequestIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: User display name
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) User URI
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: Requestable type. Allowed values are Group and App.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsCsvAttributeName: Requestable Type
+               * idcsDefaultValue: Group
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        User display name
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User URI
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Requestable type. Allowed values are Group and App.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsCsvAttributeName: Requestable Type
+        * idcsDefaultValue: Group
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsMyRequestMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsMyRequestRequestingArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Requestable type. Allowed values are Group and App.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsCsvAttributeName: Requestable Type
+               * idcsDefaultValue: Group
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: User display name
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) User URI
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Requestable type. Allowed values are Group and App.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsCsvAttributeName: Requestable Type
+        * idcsDefaultValue: Group
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        User display name
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User URI
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsMyRequestRequestorArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: User display name
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) User URI
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        User display name
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User URI
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+
+@pulumi.input_type
+class DomainsMyRequestTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
 
@@ -18583,7 +35089,7 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -18598,7 +35104,7 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -18609,7 +35115,7 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -18620,7 +35126,7 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -18657,7 +35163,7 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -18683,7 +35189,7 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -18705,7 +35211,7 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -18727,7 +35233,7 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -18777,7 +35283,7 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -18792,7 +35298,7 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -18803,7 +35309,7 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -18814,7 +35320,7 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -18851,7 +35357,7 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -18877,7 +35383,7 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -18899,7 +35405,7 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -18921,7 +35427,7 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19166,7 +35672,7 @@ class DomainsMyUserDbCredentialTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19211,7 +35717,7 @@ class DomainsMyUserDbCredentialTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19243,7 +35749,7 @@ class DomainsMyUserDbCredentialUserArgs:
                  ocid: Optional[pulumi.Input[str]] = None,
                  ref: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19258,7 +35764,7 @@ class DomainsMyUserDbCredentialUserArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -19269,7 +35775,7 @@ class DomainsMyUserDbCredentialUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -19280,7 +35786,7 @@ class DomainsMyUserDbCredentialUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19291,7 +35797,7 @@ class DomainsMyUserDbCredentialUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19317,7 +35823,7 @@ class DomainsMyUserDbCredentialUserArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19343,7 +35849,7 @@ class DomainsMyUserDbCredentialUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -19365,7 +35871,7 @@ class DomainsMyUserDbCredentialUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -19387,7 +35893,7 @@ class DomainsMyUserDbCredentialUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19409,7 +35915,7 @@ class DomainsMyUserDbCredentialUserArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19437,7 +35943,7 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19452,7 +35958,7 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -19463,7 +35969,7 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19474,7 +35980,7 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19511,7 +36017,7 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19537,7 +36043,7 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -19559,7 +36065,7 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19581,7 +36087,7 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19631,7 +36137,7 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19646,7 +36152,7 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -19657,7 +36163,7 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19668,7 +36174,7 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -19705,7 +36211,7 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19731,7 +36237,7 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -19753,7 +36259,7 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -19775,7 +36281,7 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -20089,7 +36595,7 @@ class DomainsOauth2clientCredentialTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -20134,7 +36640,7 @@ class DomainsOauth2clientCredentialTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -20211,7 +36717,7 @@ class DomainsOauth2clientCredentialUserArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user's display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -20222,7 +36728,7 @@ class DomainsOauth2clientCredentialUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -20233,7 +36739,7 @@ class DomainsOauth2clientCredentialUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -20244,7 +36750,7 @@ class DomainsOauth2clientCredentialUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -20255,7 +36761,7 @@ class DomainsOauth2clientCredentialUserArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's ID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -20286,7 +36792,7 @@ class DomainsOauth2clientCredentialUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user's display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -20308,7 +36814,7 @@ class DomainsOauth2clientCredentialUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -20330,7 +36836,7 @@ class DomainsOauth2clientCredentialUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -20352,7 +36858,7 @@ class DomainsOauth2clientCredentialUserArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -20374,7 +36880,7 @@ class DomainsOauth2clientCredentialUserArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -21206,6 +37712,1409 @@ class DomainsPasswordPolicyTagArgs:
     def value(self) -> pulumi.Input[str]:
         """
         (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsSecurityQuestionIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: This indicates if the question is a Custom Question added by the Security Admin.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: always
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        This indicates if the question is a Custom Question added by the Security Admin.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: always
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsSecurityQuestionIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: This indicates if the question is a Custom Question added by the Security Admin.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: always
+               * type: string
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        This indicates if the question is a Custom Question added by the Security Admin.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: always
+        * type: string
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsSecurityQuestionMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: The DateTime the Resource was added to the Service Provider
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] last_modified: The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] location: The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] resource_type: Name of the resource type of the resource--for example, Users or Groups
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] version: The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the resource type of the resource--for example, Users or Groups
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsSecurityQuestionQuestionTextArgs:
+    def __init__(__self__, *,
+                 locale: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 default: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] locale: The locale
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
+               * idcsCanonicalValueSourceResourceType: AllowedValue
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: always
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[bool] default: If true, specifies that the localized attribute instance value is the default and will be returned if no localized value found for requesting user's preferred locale. One and only one instance should have this attribute set to true.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "locale", locale)
+        pulumi.set(__self__, "value", value)
+        if default is not None:
+            pulumi.set(__self__, "default", default)
+
+    @property
+    @pulumi.getter
+    def locale(self) -> pulumi.Input[str]:
+        """
+        The locale
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
+        * idcsCanonicalValueSourceResourceType: AllowedValue
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: always
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "locale")
+
+    @locale.setter
+    def locale(self, value: pulumi.Input[str]):
+        pulumi.set(self, "locale", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def default(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, specifies that the localized attribute instance value is the default and will be returned if no localized value found for requesting user's preferred locale. One and only one instance should have this attribute set to true.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "default")
+
+    @default.setter
+    def default(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "default", value)
+
+
+@pulumi.input_type
+class DomainsSecurityQuestionSettingIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsSecurityQuestionSettingIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 display: Optional[pulumi.Input[str]] = None,
+                 ocid: Optional[pulumi.Input[str]] = None,
+                 ref: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] display: (Updatable) The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: reference
+               * uniqueness: none
+        :param pulumi.Input[str] type: (Updatable) The type of resource, User or App, that modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display", value)
+
+    @property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: reference
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ref", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class DomainsSecurityQuestionSettingMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[str]] = None,
+                 last_modified: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created", value)
+
+    @property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DomainsSecurityQuestionSettingTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: (Updatable) Key or name of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Key or name of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DomainsSecurityQuestionTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: Key or name of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] value: Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        """
+        Key or name of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        """
+        Value of the tag.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -22395,7 +40304,7 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -22410,7 +40319,7 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -22421,7 +40330,7 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -22432,7 +40341,7 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -22469,7 +40378,7 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -22495,7 +40404,7 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -22517,7 +40426,7 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -22539,7 +40448,7 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -22589,7 +40498,7 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -22604,7 +40513,7 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -22615,7 +40524,7 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -22626,7 +40535,7 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -22663,7 +40572,7 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -22689,7 +40598,7 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -22711,7 +40620,7 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -22733,7 +40642,7 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -22978,7 +40887,7 @@ class DomainsUserDbCredentialTagArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -23023,7 +40932,7 @@ class DomainsUserDbCredentialTagArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -23100,7 +41009,7 @@ class DomainsUserDbCredentialUserArgs:
                  ocid: Optional[pulumi.Input[str]] = None,
                  ref: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: User's id
+        :param pulumi.Input[str] value: The user's identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -23115,7 +41024,7 @@ class DomainsUserDbCredentialUserArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display: (Updatable) User display name
+        :param pulumi.Input[str] display: (Updatable) The user display name.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -23126,7 +41035,7 @@ class DomainsUserDbCredentialUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -23137,7 +41046,7 @@ class DomainsUserDbCredentialUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -23148,7 +41057,7 @@ class DomainsUserDbCredentialUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential
+        :param pulumi.Input[str] ref: (Updatable) The URI that corresponds to the user linked to this credential.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -23174,7 +41083,7 @@ class DomainsUserDbCredentialUserArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -23200,7 +41109,7 @@ class DomainsUserDbCredentialUserArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User display name
+        (Updatable) The user display name.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -23222,7 +41131,7 @@ class DomainsUserDbCredentialUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -23244,7 +41153,7 @@ class DomainsUserDbCredentialUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -23266,7 +41175,7 @@ class DomainsUserDbCredentialUserArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The URI that corresponds to the user linked to this credential
+        (Updatable) The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -23723,7 +41632,7 @@ class DomainsUserGroupArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] membership_ocid: (Updatable) Membership Ocid
+        :param pulumi.Input[str] membership_ocid: (Updatable) The membership OCID.
                
                **Added In:** 2103141444
                
@@ -23747,7 +41656,7 @@ class DomainsUserGroupArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -23896,7 +41805,7 @@ class DomainsUserGroupArgs:
     @pulumi.getter(name="membershipOcid")
     def membership_ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Membership Ocid
+        (Updatable) The membership OCID.
 
         **Added In:** 2103141444
 
@@ -23942,7 +41851,7 @@ class DomainsUserGroupArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -24040,7 +41949,7 @@ class DomainsUserIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -24136,7 +42045,7 @@ class DomainsUserIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -24234,7 +42143,7 @@ class DomainsUserIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -24330,7 +42239,7 @@ class DomainsUserIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -25448,7 +43357,7 @@ class DomainsUserTagArgs:
                  key: pulumi.Input[str],
                  value: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] key: (Updatable) The value of of the User's api key.
+        :param pulumi.Input[str] key: (Updatable) The user's API key value.
                
                **Added In:** 2106240046
                
@@ -25483,7 +43392,7 @@ class DomainsUserTagArgs:
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
         """
-        (Updatable) The value of of the User's api key.
+        (Updatable) The user's API key value.
 
         **Added In:** 2106240046
 
@@ -26023,7 +43932,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArg
                  namespace: pulumi.Input[str],
                  value: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] key: (Updatable) The value of of the User's api key.
+        :param pulumi.Input[str] key: (Updatable) The user's API key value.
                
                **Added In:** 2106240046
                
@@ -26071,7 +43980,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArg
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
         """
-        (Updatable) The value of of the User's api key.
+        (Updatable) The user's API key value.
 
         **Added In:** 2106240046
 
@@ -26146,7 +44055,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagAr
                  key: pulumi.Input[str],
                  value: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] key: (Updatable) The value of of the User's api key.
+        :param pulumi.Input[str] key: (Updatable) The user's API key value.
                
                **Added In:** 2106240046
                
@@ -26181,7 +44090,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagAr
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
         """
-        (Updatable) The value of of the User's api key.
+        (Updatable) The user's API key value.
 
         **Added In:** 2106240046
 
@@ -26594,13 +44503,14 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
     def __init__(__self__, *,
                  can_use_api_keys: Optional[pulumi.Input[bool]] = None,
                  can_use_auth_tokens: Optional[pulumi.Input[bool]] = None,
+                 can_use_console: Optional[pulumi.Input[bool]] = None,
                  can_use_console_password: Optional[pulumi.Input[bool]] = None,
                  can_use_customer_secret_keys: Optional[pulumi.Input[bool]] = None,
                  can_use_db_credentials: Optional[pulumi.Input[bool]] = None,
                  can_use_oauth2client_credentials: Optional[pulumi.Input[bool]] = None,
                  can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[bool] can_use_api_keys: (Updatable) Indicates weather a user can use api keys
+        :param pulumi.Input[bool] can_use_api_keys: (Updatable) Indicates whether a user can use API keys.
                
                **Added In:** 2012271618
                
@@ -26613,7 +44523,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[bool] can_use_auth_tokens: (Updatable) Indicates weather a user can use auth tokens
+        :param pulumi.Input[bool] can_use_auth_tokens: (Updatable) Indicates whether a user can use Auth tokens.
                
                **Added In:** 2012271618
                
@@ -26626,7 +44536,20 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[bool] can_use_console_password: (Updatable) Indicates weather a user can use console password
+        :param pulumi.Input[bool] can_use_console: (Updatable) Specifies whether user can access the Console.
+               
+               **Added In:** 2206280902
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[bool] can_use_console_password: (Updatable) Indicates whether a user can use Console passwords.
                
                **Added In:** 2012271618
                
@@ -26639,7 +44562,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[bool] can_use_customer_secret_keys: (Updatable) Indicates weather a user can use customer secret keys
+        :param pulumi.Input[bool] can_use_customer_secret_keys: (Updatable) Indicates whether a user can use customer secret keys.
                
                **Added In:** 2012271618
                
@@ -26652,7 +44575,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[bool] can_use_db_credentials: (Updatable) Indicates weather a user can use db credentials
+        :param pulumi.Input[bool] can_use_db_credentials: (Updatable) Indicates whether a user can use database credentials.
                
                **Added In:** 2012271618
                
@@ -26665,7 +44588,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[bool] can_use_oauth2client_credentials: (Updatable) Indicates weather a user can use oauth2 client credentials
+        :param pulumi.Input[bool] can_use_oauth2client_credentials: (Updatable) Indicates whether a user can use OAuth2 client credentials.
                
                **Added In:** 2012271618
                
@@ -26678,7 +44601,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[bool] can_use_smtp_credentials: (Updatable) Indicates weather a user can use smtp credentials
+        :param pulumi.Input[bool] can_use_smtp_credentials: (Updatable) Indicates whether a user can use SMTP credentials.
                
                **Added In:** 2012271618
                
@@ -26696,6 +44619,8 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
             pulumi.set(__self__, "can_use_api_keys", can_use_api_keys)
         if can_use_auth_tokens is not None:
             pulumi.set(__self__, "can_use_auth_tokens", can_use_auth_tokens)
+        if can_use_console is not None:
+            pulumi.set(__self__, "can_use_console", can_use_console)
         if can_use_console_password is not None:
             pulumi.set(__self__, "can_use_console_password", can_use_console_password)
         if can_use_customer_secret_keys is not None:
@@ -26711,7 +44636,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
     @pulumi.getter(name="canUseApiKeys")
     def can_use_api_keys(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates weather a user can use api keys
+        (Updatable) Indicates whether a user can use API keys.
 
         **Added In:** 2012271618
 
@@ -26735,7 +44660,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
     @pulumi.getter(name="canUseAuthTokens")
     def can_use_auth_tokens(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates weather a user can use auth tokens
+        (Updatable) Indicates whether a user can use Auth tokens.
 
         **Added In:** 2012271618
 
@@ -26756,10 +44681,34 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
         pulumi.set(self, "can_use_auth_tokens", value)
 
     @property
+    @pulumi.getter(name="canUseConsole")
+    def can_use_console(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies whether user can access the Console.
+
+        **Added In:** 2206280902
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "can_use_console")
+
+    @can_use_console.setter
+    def can_use_console(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "can_use_console", value)
+
+    @property
     @pulumi.getter(name="canUseConsolePassword")
     def can_use_console_password(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates weather a user can use console password
+        (Updatable) Indicates whether a user can use Console passwords.
 
         **Added In:** 2012271618
 
@@ -26783,7 +44732,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
     @pulumi.getter(name="canUseCustomerSecretKeys")
     def can_use_customer_secret_keys(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates weather a user can use customer secret keys
+        (Updatable) Indicates whether a user can use customer secret keys.
 
         **Added In:** 2012271618
 
@@ -26807,7 +44756,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
     @pulumi.getter(name="canUseDbCredentials")
     def can_use_db_credentials(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates weather a user can use db credentials
+        (Updatable) Indicates whether a user can use database credentials.
 
         **Added In:** 2012271618
 
@@ -26831,7 +44780,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
     @pulumi.getter(name="canUseOauth2clientCredentials")
     def can_use_oauth2client_credentials(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates weather a user can use oauth2 client credentials
+        (Updatable) Indicates whether a user can use OAuth2 client credentials.
 
         **Added In:** 2012271618
 
@@ -26855,7 +44804,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
     @pulumi.getter(name="canUseSmtpCredentials")
     def can_use_smtp_credentials(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates weather a user can use smtp credentials
+        (Updatable) Indicates whether a user can use SMTP credentials.
 
         **Added In:** 2012271618
 
@@ -26894,7 +44843,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArg
                * returned: request
                * type: integer
                * uniqueness: none
-        :param pulumi.Input[str] db_user_name: (Updatable) The Database User Name
+        :param pulumi.Input[str] db_user_name: (Updatable) The database username.
                
                **Added In:** 2102181953
                
@@ -26940,7 +44889,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArg
     @pulumi.getter(name="dbUserName")
     def db_user_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The Database User Name
+        (Updatable) The database username.
 
         **Added In:** 2102181953
 
@@ -27254,7 +45203,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs
     def __init__(__self__, *,
                  realm_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]] realm_users: (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]] realm_users: (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -27272,7 +45221,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs
     @pulumi.getter(name="realmUsers")
     def realm_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]]]:
         """
-        (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+        (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
 
         **SCIM++ Properties:**
         * idcsCompositeKey: [value]
@@ -27312,7 +45261,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserReal
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] principal_name: (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        :param pulumi.Input[str] principal_name: (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
                
                **SCIM++ Properties:**
                * idcsPii: true
@@ -27323,7 +45272,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserReal
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] realm_name: (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        :param pulumi.Input[str] realm_name: (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -27383,7 +45332,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserReal
     @pulumi.getter(name="principalName")
     def principal_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
         * idcsPii: true
@@ -27405,7 +45354,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserReal
     @pulumi.getter(name="realmName")
     def realm_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
         * idcsSearchable: true
@@ -27461,7 +45410,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
                  preferred_third_party_vendor: Optional[pulumi.Input[str]] = None,
                  trusted_user_agents: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs']]] bypass_codes: (Updatable) A list of bypass codes belongs to user
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs']]] bypass_codes: (Updatable) A list of bypass codes that belongs to the user.
                
                **Added In:** 18.3.6
                
@@ -27492,11 +45441,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
                * idcsAllowUpdatesInReadOnlyMode: true
                * multiValued: false
                * mutability: readOnly
+               * idcsRequiresWriteForAccessFlows: true
+               * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
                * required: false
                * returned: request
                * type: integer
                * uniqueness: none
-        :param pulumi.Input[str] mfa_enabled_on: (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        :param pulumi.Input[str] mfa_enabled_on: (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
                
                **Added In:** 18.3.6
                
@@ -27521,7 +45472,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] mfa_status: (Updatable) User Opted for MFA
+        :param pulumi.Input[str] mfa_status: (Updatable) The user opted for MFA.
                
                **Added In:** 18.3.6
                
@@ -27530,11 +45481,12 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
                * idcsSearchable: true
                * multiValued: false
                * mutability: readOnly
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] preferred_authentication_factor: (Updatable) Preferred Authentication Factor Type
+        :param pulumi.Input[str] preferred_authentication_factor: (Updatable) The preferred authentication factor type.
                
                **Added In:** 18.3.6
                
@@ -27547,7 +45499,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] preferred_authentication_method: (Updatable) Preferred Authentication method
+        :param pulumi.Input[str] preferred_authentication_method: (Updatable) The preferred authentication method.
                
                **Added In:** 2009232244
                
@@ -27560,7 +45512,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs'] preferred_device: (Updatable) User preferred device
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs'] preferred_device: (Updatable) The user's preferred device.
                
                **Added In:** 18.3.6
                
@@ -27573,7 +45525,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[str] preferred_third_party_vendor: (Updatable) Preferred Third party vendor name
+        :param pulumi.Input[str] preferred_third_party_vendor: (Updatable) The preferred third-party vendor name.
                
                **Added In:** 19.2.1
                
@@ -27626,7 +45578,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
     @pulumi.getter(name="bypassCodes")
     def bypass_codes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs']]]]:
         """
-        (Updatable) A list of bypass codes belongs to user
+        (Updatable) A list of bypass codes that belongs to the user.
 
         **Added In:** 18.3.6
 
@@ -27679,6 +45631,8 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
         * idcsAllowUpdatesInReadOnlyMode: true
         * multiValued: false
         * mutability: readOnly
+        * idcsRequiresWriteForAccessFlows: true
+        * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
         * required: false
         * returned: request
         * type: integer
@@ -27694,7 +45648,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
     @pulumi.getter(name="mfaEnabledOn")
     def mfa_enabled_on(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
 
         **Added In:** 18.3.6
 
@@ -27741,7 +45695,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
     @pulumi.getter(name="mfaStatus")
     def mfa_status(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User Opted for MFA
+        (Updatable) The user opted for MFA.
 
         **Added In:** 18.3.6
 
@@ -27750,6 +45704,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
         * idcsSearchable: true
         * multiValued: false
         * mutability: readOnly
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: default
         * type: string
@@ -27765,7 +45720,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
     @pulumi.getter(name="preferredAuthenticationFactor")
     def preferred_authentication_factor(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Preferred Authentication Factor Type
+        (Updatable) The preferred authentication factor type.
 
         **Added In:** 18.3.6
 
@@ -27789,7 +45744,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
     @pulumi.getter(name="preferredAuthenticationMethod")
     def preferred_authentication_method(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Preferred Authentication method
+        (Updatable) The preferred authentication method.
 
         **Added In:** 2009232244
 
@@ -27813,7 +45768,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
     @pulumi.getter(name="preferredDevice")
     def preferred_device(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs']]:
         """
-        (Updatable) User preferred device
+        (Updatable) The user's preferred device.
 
         **Added In:** 18.3.6
 
@@ -27837,7 +45792,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
     @pulumi.getter(name="preferredThirdPartyVendor")
     def preferred_third_party_vendor(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Preferred Third party vendor name
+        (Updatable) The preferred third-party vendor name.
 
         **Added In:** 19.2.1
 
@@ -27994,7 +45949,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] authentication_method: (Updatable) Authentication method.
+        :param pulumi.Input[str] authentication_method: (Updatable) The authentication method.
                
                **Added In:** 2009232244
                
@@ -28016,7 +45971,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] factor_status: (Updatable) Device authentication factor status.
+        :param pulumi.Input[str] factor_status: (Updatable) The device authentication factor status.
                
                **Added In:** 18.4.2
                
@@ -28041,7 +45996,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] last_sync_time: (Updatable) Last Sync time for device.
+        :param pulumi.Input[str] last_sync_time: (Updatable) The last sync time for device.
                
                **Added In:** 18.4.2
                
@@ -28076,7 +46031,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] third_party_vendor_name: (Updatable) Third party factor vendor name.
+        :param pulumi.Input[str] third_party_vendor_name: (Updatable) The third-party factor vendor name.
                
                **Added In:** 2009232244
                
@@ -28136,7 +46091,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
     @pulumi.getter(name="authenticationMethod")
     def authentication_method(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Authentication method.
+        (Updatable) The authentication method.
 
         **Added In:** 2009232244
 
@@ -28180,7 +46135,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
     @pulumi.getter(name="factorStatus")
     def factor_status(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Device authentication factor status.
+        (Updatable) The device authentication factor status.
 
         **Added In:** 18.4.2
 
@@ -28227,7 +46182,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
     @pulumi.getter(name="lastSyncTime")
     def last_sync_time(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Last Sync time for device.
+        (Updatable) The last sync time for device.
 
         **Added In:** 18.4.2
 
@@ -28295,7 +46250,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
     @pulumi.getter(name="thirdPartyVendorName")
     def third_party_vendor_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Third party factor vendor name.
+        (Updatable) The third-party factor vendor name.
 
         **Added In:** 2009232244
 
@@ -28601,7 +46556,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArg
                * returned: request
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[bool] expired: (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        :param pulumi.Input[bool] expired: (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
                
                **Added In:** 20.1.3
                
@@ -28747,7 +46702,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArg
     @pulumi.getter
     def expired(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
 
         **Added In:** 20.1.3
 
@@ -29443,7 +47398,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
     def __init__(__self__, *,
                  sec_questions: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]] sec_questions: (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]] sec_questions: (Updatable) The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -29461,7 +47416,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
     @pulumi.getter(name="secQuestions")
     def sec_questions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]]]:
         """
-        (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+        (Updatable) The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
 
         **SCIM++ Properties:**
         * idcsCompositeKey: [value]
@@ -29487,7 +47442,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
                  hint_text: Optional[pulumi.Input[str]] = None,
                  ref: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] answer: (Updatable) Answer provided by an user for a security question.
+        :param pulumi.Input[str] answer: (Updatable) The answer provided by a user for a security question.
                
                **SCIM++ Properties:**
                * idcsCsvAttributeName: Answer
@@ -29514,7 +47469,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] hint_text: (Updatable) Hint for an answer given by user while setting up Security Question.
+        :param pulumi.Input[str] hint_text: (Updatable) The hint for an answer that's given by user when setting up a security question.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -29548,7 +47503,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
     @pulumi.getter
     def answer(self) -> pulumi.Input[str]:
         """
-        (Updatable) Answer provided by an user for a security question.
+        (Updatable) The answer provided by a user for a security question.
 
         **SCIM++ Properties:**
         * idcsCsvAttributeName: Answer
@@ -29597,7 +47552,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
     @pulumi.getter(name="hintText")
     def hint_text(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Hint for an answer given by user while setting up Security Question.
+        (Updatable) The hint for an answer that's given by user when setting up a security question.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -30266,7 +48221,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
                  o_auth2client_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]]] = None,
                  smtp_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs']]] api_keys: (Updatable) A list of api keys corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs']]] api_keys: (Updatable) A list of API keys corresponding to user.
                
                **Added In:** 2012271618
                
@@ -30279,7 +48234,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs']]] auth_tokens: (Updatable) A list of auth tokens corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs']]] auth_tokens: (Updatable) A list of Auth tokens corresponding to user.
                
                **Added In:** 2012271618
                
@@ -30305,7 +48260,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]] db_credentials: (Updatable) A list of db credentials corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]] db_credentials: (Updatable) A list of database credentials corresponding to user.
                
                **Added In:** 2102181953
                
@@ -30318,7 +48273,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]] o_auth2client_credentials: (Updatable) A list of oauth2 client credentials corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]] o_auth2client_credentials: (Updatable) A list of OAuth2 client credentials corresponding to a user.
                
                **Added In:** 2012271618
                
@@ -30331,7 +48286,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]] smtp_credentials: (Updatable) A list of smtp credentials corresponding to user.
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]] smtp_credentials: (Updatable) A list of SMTP credentials corresponding to user.
                
                **Added In:** 2012271618
                
@@ -30362,7 +48317,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     @pulumi.getter(name="apiKeys")
     def api_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs']]]]:
         """
-        (Updatable) A list of api keys corresponding to user.
+        (Updatable) A list of API keys corresponding to user.
 
         **Added In:** 2012271618
 
@@ -30386,7 +48341,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     @pulumi.getter(name="authTokens")
     def auth_tokens(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs']]]]:
         """
-        (Updatable) A list of auth tokens corresponding to user.
+        (Updatable) A list of Auth tokens corresponding to user.
 
         **Added In:** 2012271618
 
@@ -30434,7 +48389,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     @pulumi.getter(name="dbCredentials")
     def db_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]]]:
         """
-        (Updatable) A list of db credentials corresponding to user.
+        (Updatable) A list of database credentials corresponding to user.
 
         **Added In:** 2102181953
 
@@ -30458,7 +48413,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     @pulumi.getter(name="oAuth2clientCredentials")
     def o_auth2client_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]]]:
         """
-        (Updatable) A list of oauth2 client credentials corresponding to user.
+        (Updatable) A list of OAuth2 client credentials corresponding to a user.
 
         **Added In:** 2012271618
 
@@ -30482,7 +48437,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     @pulumi.getter(name="smtpCredentials")
     def smtp_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]]]:
         """
-        (Updatable) A list of smtp credentials corresponding to user.
+        (Updatable) A list of SMTP credentials corresponding to user.
 
         **Added In:** 2012271618
 
@@ -30511,7 +48466,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The value of of the User's api key.
+        :param pulumi.Input[str] key: (Updatable) The user's API key value.
                
                **Added In:** 2106240046
                
@@ -30524,7 +48479,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -30577,7 +48532,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The value of of the User's api key.
+        (Updatable) The user's API key value.
 
         **Added In:** 2106240046
 
@@ -30601,7 +48556,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -30677,7 +48632,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -30728,7 +48683,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -30804,7 +48759,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserC
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -30855,7 +48810,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserC
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -30931,7 +48886,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserD
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -30982,7 +48937,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserD
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -31058,7 +49013,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserO
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -31109,7 +49064,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserO
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -31185,7 +49140,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserS
                  ref: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -31236,7 +49191,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserS
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -31318,29 +49273,31 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
                  recovery_enroll_attempts: Optional[pulumi.Input[int]] = None,
                  recovery_locked: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs']] = None):
         """
-        :param pulumi.Input[str] last_failed_login_date: (Updatable) The last failed login date
+        :param pulumi.Input[str] last_failed_login_date: (Updatable) The last failed login date.
                
                **SCIM++ Properties:**
                * idcsSearchable: false
                * idcsAllowUpdatesInReadOnlyMode: true
                * multiValued: false
                * mutability: readOnly
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: request
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[str] last_successful_login_date: (Updatable) The last successful login date
+        :param pulumi.Input[str] last_successful_login_date: (Updatable) The last successful login date.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
                * idcsAllowUpdatesInReadOnlyMode: true
                * multiValued: false
                * mutability: readOnly
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: request
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs'] locked: (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs'] locked: (Updatable) A complex attribute that indicates an account is locked (blocking any new sessions).
                
                **SCIM++ Properties:**
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
@@ -31359,11 +49316,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
                * idcsAllowUpdatesInReadOnlyMode: true
                * multiValued: false
                * mutability: readOnly
+               * idcsRequiresWriteForAccessFlows: true
+               * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
                * required: false
                * returned: request
                * type: integer
                * uniqueness: none
-        :param pulumi.Input[int] max_concurrent_sessions: (Updatable) Maximum number of concurrent sessions for a User
+        :param pulumi.Input[int] max_concurrent_sessions: (Updatable) The maximum number of concurrent sessions for a user.
                
                **Added In:** 20.1.3
                
@@ -31377,13 +49336,14 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
                * returned: default
                * type: integer
                * uniqueness: none
-        :param pulumi.Input[str] previous_successful_login_date: (Updatable) The previous successful login date
+        :param pulumi.Input[str] previous_successful_login_date: (Updatable) The previous successful login date.
                
                **SCIM++ Properties:**
                * caseExact: false
                * idcsSearchable: false
                * multiValued: false
                * mutability: readOnly
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: request
                * type: dateTime
@@ -31396,6 +49356,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
                * idcsSearchable: false
                * multiValued: false
                * mutability: readOnly
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: request
                * type: integer
@@ -31412,7 +49373,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
                * returned: request
                * type: integer
                * uniqueness: none
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs'] recovery_locked: (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs'] recovery_locked: (Updatable) A complex attribute that indicates a password recovery is locked (blocking any new sessions).
                
                **Added In:** 19.1.4
                
@@ -31448,13 +49409,14 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
     @pulumi.getter(name="lastFailedLoginDate")
     def last_failed_login_date(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The last failed login date
+        (Updatable) The last failed login date.
 
         **SCIM++ Properties:**
         * idcsSearchable: false
         * idcsAllowUpdatesInReadOnlyMode: true
         * multiValued: false
         * mutability: readOnly
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: request
         * type: dateTime
@@ -31470,13 +49432,14 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
     @pulumi.getter(name="lastSuccessfulLoginDate")
     def last_successful_login_date(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The last successful login date
+        (Updatable) The last successful login date.
 
         **SCIM++ Properties:**
         * idcsSearchable: true
         * idcsAllowUpdatesInReadOnlyMode: true
         * multiValued: false
         * mutability: readOnly
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: request
         * type: dateTime
@@ -31492,7 +49455,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
     @pulumi.getter
     def locked(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs']]:
         """
-        (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+        (Updatable) A complex attribute that indicates an account is locked (blocking any new sessions).
 
         **SCIM++ Properties:**
         * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
@@ -31522,6 +49485,8 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
         * idcsAllowUpdatesInReadOnlyMode: true
         * multiValued: false
         * mutability: readOnly
+        * idcsRequiresWriteForAccessFlows: true
+        * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
         * required: false
         * returned: request
         * type: integer
@@ -31537,7 +49502,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
     @pulumi.getter(name="maxConcurrentSessions")
     def max_concurrent_sessions(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Maximum number of concurrent sessions for a User
+        (Updatable) The maximum number of concurrent sessions for a user.
 
         **Added In:** 20.1.3
 
@@ -31562,13 +49527,14 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
     @pulumi.getter(name="previousSuccessfulLoginDate")
     def previous_successful_login_date(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The previous successful login date
+        (Updatable) The previous successful login date.
 
         **SCIM++ Properties:**
         * caseExact: false
         * idcsSearchable: false
         * multiValued: false
         * mutability: readOnly
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: request
         * type: dateTime
@@ -31592,6 +49558,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
         * idcsSearchable: false
         * multiValued: false
         * mutability: readOnly
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: request
         * type: integer
@@ -31630,7 +49597,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
     @pulumi.getter(name="recoveryLocked")
     def recovery_locked(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs']]:
         """
-        (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+        (Updatable) A complex attribute that indicates a password recovery is locked (blocking any new sessions).
 
         **Added In:** 19.1.4
 
@@ -31658,7 +49625,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
                  on: Optional[pulumi.Input[bool]] = None,
                  reason: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[bool] expired: (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        :param pulumi.Input[bool] expired: (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
                
                **Added In:** 20.1.3
                
@@ -31671,7 +49638,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
                * returned: request
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[str] lock_date: (Updatable) The date and time that the current resource was locked
+        :param pulumi.Input[str] lock_date: (Updatable) The date and time that the current resource was locked.
                
                **Added In:** 19.1.4
                
@@ -31679,11 +49646,12 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
                * idcsSearchable: false
                * multiValued: false
                * mutability: readWrite
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[bool] on: (Updatable) Indicates that the rev is locked
+        :param pulumi.Input[bool] on: (Updatable) Indicates that the recovery is locked.
                
                **Added In:** 19.1.4
                
@@ -31692,16 +49660,19 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
                * idcsSearchable: true
                * multiValued: false
                * mutability: readWrite
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[int] reason: (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+        :param pulumi.Input[int] reason: (Updatable) Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
                
                **SCIM++ Properties:**
                * idcsSearchable: false
                * multiValued: false
                * mutability: readWrite
+               * idcsRequiresWriteForAccessFlows: true
+               * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
                * required: false
                * returned: default
                * type: integer
@@ -31720,7 +49691,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
     @pulumi.getter
     def expired(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
 
         **Added In:** 20.1.3
 
@@ -31744,7 +49715,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
     @pulumi.getter(name="lockDate")
     def lock_date(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The date and time that the current resource was locked
+        (Updatable) The date and time that the current resource was locked.
 
         **Added In:** 19.1.4
 
@@ -31752,6 +49723,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
         * idcsSearchable: false
         * multiValued: false
         * mutability: readWrite
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: default
         * type: dateTime
@@ -31767,7 +49739,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
     @pulumi.getter
     def on(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates that the rev is locked
+        (Updatable) Indicates that the recovery is locked.
 
         **Added In:** 19.1.4
 
@@ -31776,6 +49748,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
         * idcsSearchable: true
         * multiValued: false
         * mutability: readWrite
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: default
         * type: boolean
@@ -31791,12 +49764,14 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
     @pulumi.getter
     def reason(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+        (Updatable) Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
 
         **SCIM++ Properties:**
         * idcsSearchable: false
         * multiValued: false
         * mutability: readWrite
+        * idcsRequiresWriteForAccessFlows: true
+        * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
         * required: false
         * returned: default
         * type: integer
@@ -31815,7 +49790,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecover
                  lock_date: Optional[pulumi.Input[str]] = None,
                  on: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[str] lock_date: (Updatable) The date and time that the current resource was locked
+        :param pulumi.Input[str] lock_date: (Updatable) The date and time that the current resource was locked.
                
                **Added In:** 19.1.4
                
@@ -31823,11 +49798,12 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecover
                * idcsSearchable: false
                * multiValued: false
                * mutability: readWrite
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[bool] on: (Updatable) Indicates that the rev is locked
+        :param pulumi.Input[bool] on: (Updatable) Indicates that the recovery is locked.
                
                **Added In:** 19.1.4
                
@@ -31836,6 +49812,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecover
                * idcsSearchable: true
                * multiValued: false
                * mutability: readWrite
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: default
                * type: boolean
@@ -31850,7 +49827,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecover
     @pulumi.getter(name="lockDate")
     def lock_date(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The date and time that the current resource was locked
+        (Updatable) The date and time that the current resource was locked.
 
         **Added In:** 19.1.4
 
@@ -31858,6 +49835,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecover
         * idcsSearchable: false
         * multiValued: false
         * mutability: readWrite
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: default
         * type: dateTime
@@ -31873,7 +49851,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecover
     @pulumi.getter
     def on(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates that the rev is locked
+        (Updatable) Indicates that the recovery is locked.
 
         **Added In:** 19.1.4
 
@@ -31882,6 +49860,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecover
         * idcsSearchable: true
         * multiValued: false
         * mutability: readWrite
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: default
         * type: boolean
@@ -31906,6 +49885,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
                  delegated_authentication_target_app: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs']] = None,
                  do_not_show_getting_started: Optional[pulumi.Input[bool]] = None,
                  grants: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs']]]] = None,
+                 group_membership_last_modified: Optional[pulumi.Input[str]] = None,
                  idcs_app_roles_limited_to_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs']]]] = None,
                  is_account_recovery_enrolled: Optional[pulumi.Input[bool]] = None,
                  is_authentication_delegated: Optional[pulumi.Input[bool]] = None,
@@ -31913,6 +49893,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
                  is_group_membership_normalized: Optional[pulumi.Input[bool]] = None,
                  is_group_membership_synced_to_users_groups: Optional[pulumi.Input[bool]] = None,
                  notification_email_template_id: Optional[pulumi.Input[str]] = None,
+                 preferred_ui_landing_page: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  support_accounts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs']]]] = None,
                  synced_from_app: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs']] = None,
@@ -31973,6 +49954,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
                * idcsSearchable: false
                * multiValued: false
                * mutability: immutable
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: never
                * type: boolean
@@ -31985,11 +49967,12 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
                * idcsSearchable: true
                * multiValued: false
                * mutability: immutable
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs'] delegated_authentication_target_app: (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \\"syncedFromApp\\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs'] delegated_authentication_target_app: (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \\"syncedFromApp\\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
                
                **Added In:** 17.4.6
                
@@ -32022,6 +50005,18 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
                * required: false
                * returned: request
                * type: complex
+               * uniqueness: none
+        :param pulumi.Input[str] group_membership_last_modified: (Updatable) Specifies date time when a User's group membership was last modified.
+               
+               **Added In:** 2304270343
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: dateTime
                * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs']]] idcs_app_roles_limited_to_groups: (Updatable) Description:
                
@@ -32070,6 +50065,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
                * idcsSearchable: true
                * multiValued: false
                * mutability: readWrite
+               * idcsRequiresWriteForAccessFlows: true
                * required: false
                * returned: default
                * type: boolean
@@ -32109,6 +50105,19 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
                * mutability: writeOnly
                * required: false
                * returned: never
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] preferred_ui_landing_page: (Updatable) User's preferred landing page following login, logout and reset password.
+               
+               **Added In:** 2302092332
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] status: (Updatable) A supplemental status indicating the reason why a user is disabled
@@ -32205,6 +50214,8 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
             pulumi.set(__self__, "do_not_show_getting_started", do_not_show_getting_started)
         if grants is not None:
             pulumi.set(__self__, "grants", grants)
+        if group_membership_last_modified is not None:
+            pulumi.set(__self__, "group_membership_last_modified", group_membership_last_modified)
         if idcs_app_roles_limited_to_groups is not None:
             pulumi.set(__self__, "idcs_app_roles_limited_to_groups", idcs_app_roles_limited_to_groups)
         if is_account_recovery_enrolled is not None:
@@ -32219,6 +50230,8 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
             pulumi.set(__self__, "is_group_membership_synced_to_users_groups", is_group_membership_synced_to_users_groups)
         if notification_email_template_id is not None:
             pulumi.set(__self__, "notification_email_template_id", notification_email_template_id)
+        if preferred_ui_landing_page is not None:
+            pulumi.set(__self__, "preferred_ui_landing_page", preferred_ui_landing_page)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if support_accounts is not None:
@@ -32333,6 +50346,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
         * idcsSearchable: false
         * multiValued: false
         * mutability: immutable
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: never
         * type: boolean
@@ -32356,6 +50370,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
         * idcsSearchable: true
         * multiValued: false
         * mutability: immutable
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: request
         * type: string
@@ -32371,7 +50386,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
     @pulumi.getter(name="delegatedAuthenticationTargetApp")
     def delegated_authentication_target_app(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs']]:
         """
-        (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \\"syncedFromApp\\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+        (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \\"syncedFromApp\\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
 
         **Added In:** 17.4.6
 
@@ -32433,6 +50448,29 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
     @grants.setter
     def grants(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs']]]]):
         pulumi.set(self, "grants", value)
+
+    @property
+    @pulumi.getter(name="groupMembershipLastModified")
+    def group_membership_last_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies date time when a User's group membership was last modified.
+
+        **Added In:** 2304270343
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "group_membership_last_modified")
+
+    @group_membership_last_modified.setter
+    def group_membership_last_modified(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_membership_last_modified", value)
 
     @property
     @pulumi.getter(name="idcsAppRolesLimitedToGroups")
@@ -32518,6 +50556,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
         * idcsSearchable: true
         * multiValued: false
         * mutability: readWrite
+        * idcsRequiresWriteForAccessFlows: true
         * required: false
         * returned: default
         * type: boolean
@@ -32598,6 +50637,30 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
     @notification_email_template_id.setter
     def notification_email_template_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "notification_email_template_id", value)
+
+    @property
+    @pulumi.getter(name="preferredUiLandingPage")
+    def preferred_ui_landing_page(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User's preferred landing page following login, logout and reset password.
+
+        **Added In:** 2302092332
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "preferred_ui_landing_page")
+
+    @preferred_ui_landing_page.setter
+    def preferred_ui_landing_page(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_ui_landing_page", value)
 
     @property
     @pulumi.getter
@@ -33009,7 +51072,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] legacy_group_name: (Updatable) The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+        :param pulumi.Input[str] legacy_group_name: (Updatable) The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -33172,7 +51235,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs:
     @pulumi.getter(name="legacyGroupName")
     def legacy_group_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+        (Updatable) The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
 
         **SCIM++ Properties:**
         * idcsSearchable: true
@@ -33601,7 +51664,10 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        :param pulumi.Input[str] grant_mechanism: (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+               * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+               * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+               * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -33689,7 +51755,10 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs:
     @pulumi.getter(name="grantMechanism")
     def grant_mechanism(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+        * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+        * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+        * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -33789,7 +51858,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRoles
                  ocid: Optional[pulumi.Input[str]] = None,
                  ref: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] idcs_app_role_id: (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+        :param pulumi.Input[str] idcs_app_role_id: (Updatable) The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
                
                **Added In:** 19.2.1
                
@@ -33826,7 +51895,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRoles
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -33865,7 +51934,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRoles
     @pulumi.getter(name="idcsAppRoleId")
     def idcs_app_role_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+        (Updatable) The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
 
         **Added In:** 19.2.1
 
@@ -33935,7 +52004,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRoles
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -33988,7 +52057,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccou
                  user_provider: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -34069,7 +52138,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccou
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 

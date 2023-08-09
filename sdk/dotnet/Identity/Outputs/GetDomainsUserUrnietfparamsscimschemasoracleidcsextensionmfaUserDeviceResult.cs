@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceResult
     {
         /// <summary>
-        /// Authentication method.
+        /// The authentication method.
         /// </summary>
         public readonly string AuthenticationMethod;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Display;
         /// <summary>
-        /// Device authentication factor status.
+        /// The device authentication factor status.
         /// </summary>
         public readonly string FactorStatus;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string FactorType;
         /// <summary>
-        /// Last Sync time for device.
+        /// The last sync time for device.
         /// </summary>
         public readonly string LastSyncTime;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// Third party factor vendor name.
+        /// The third-party factor vendor name.
         /// </summary>
         public readonly string ThirdPartyVendorName;
         /// <summary>

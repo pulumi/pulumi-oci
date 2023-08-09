@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's api key
+ * Get a user's API key.
  *
  * ## Example Usage
  *
@@ -128,7 +128,7 @@ export interface GetDomainsApiKeyResult {
      */
     readonly metas: outputs.Identity.GetDomainsApiKeyMeta[];
     /**
-     * User's ocid
+     * The user's OCID.
      */
     readonly ocid: string;
     readonly resourceTypeSchemaVersion?: string;
@@ -149,14 +149,14 @@ export interface GetDomainsApiKeyResult {
      */
     readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUsers: outputs.Identity.GetDomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser[];
     /**
-     * User linked to api key
+     * The user linked to the API key.
      */
     readonly users: outputs.Identity.GetDomainsApiKeyUser[];
 }
 /**
  * This data source provides details about a specific Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's api key
+ * Get a user's API key.
  *
  * ## Example Usage
  *

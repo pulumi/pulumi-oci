@@ -100,9 +100,10 @@ import (
 //				},
 //				ExcludeObjects: databasemigration.MigrationExcludeObjectArray{
 //					&databasemigration.MigrationExcludeObjectArgs{
-//						Object: pulumi.Any(_var.Migration_exclude_objects_object),
-//						Owner:  pulumi.Any(_var.Migration_exclude_objects_owner),
-//						Type:   pulumi.Any(_var.Migration_exclude_objects_type),
+//						Object:                             pulumi.Any(_var.Migration_exclude_objects_object),
+//						Owner:                              pulumi.Any(_var.Migration_exclude_objects_owner),
+//						IsOmitExcludedTableFromReplication: pulumi.Any(_var.Migration_exclude_objects_is_omit_excluded_table_from_replication),
+//						Type:                               pulumi.Any(_var.Migration_exclude_objects_type),
 //					},
 //				},
 //				FreeformTags: pulumi.AnyMap{
@@ -146,9 +147,10 @@ import (
 //				},
 //				IncludeObjects: databasemigration.MigrationIncludeObjectArray{
 //					&databasemigration.MigrationIncludeObjectArgs{
-//						Object: pulumi.Any(_var.Migration_include_objects_object),
-//						Owner:  pulumi.Any(_var.Migration_include_objects_owner),
-//						Type:   pulumi.Any(_var.Migration_include_objects_type),
+//						Object:                             pulumi.Any(_var.Migration_include_objects_object),
+//						Owner:                              pulumi.Any(_var.Migration_include_objects_owner),
+//						IsOmitExcludedTableFromReplication: pulumi.Any(_var.Migration_include_objects_is_omit_excluded_table_from_replication),
+//						Type:                               pulumi.Any(_var.Migration_include_objects_type),
 //					},
 //				},
 //				SourceContainerDatabaseConnectionId: pulumi.Any(oci_database_migration_connection.Test_connection.Id),

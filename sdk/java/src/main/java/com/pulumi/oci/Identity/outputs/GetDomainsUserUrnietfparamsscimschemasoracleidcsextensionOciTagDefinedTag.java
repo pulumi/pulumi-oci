@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag {
     /**
-     * @return The value of of the User&#39;s api key.
+     * @return The user&#39;s API key value.
      * 
      */
     private String key;
@@ -27,7 +27,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciT
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag() {}
     /**
-     * @return The value of of the User&#39;s api key.
+     * @return The user&#39;s API key value.
      * 
      */
     public String key() {

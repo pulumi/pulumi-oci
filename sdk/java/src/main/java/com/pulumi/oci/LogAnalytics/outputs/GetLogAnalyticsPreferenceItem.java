@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetLogAnalyticsPreferenceItem {
     /**
-     * @return The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * @return The preference name.
      * 
      */
     private String name;
@@ -22,7 +22,7 @@ public final class GetLogAnalyticsPreferenceItem {
 
     private GetLogAnalyticsPreferenceItem() {}
     /**
-     * @return The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * @return The preference name.
      * 
      */
     public String name() {

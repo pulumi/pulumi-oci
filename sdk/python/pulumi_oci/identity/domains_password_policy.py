@@ -28,6 +28,8 @@ class DomainsPasswordPolicyArgs:
                  dictionary_word_disallowed: Optional[pulumi.Input[bool]] = None,
                  disallowed_chars: Optional[pulumi.Input[str]] = None,
                  disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 distinct_characters: Optional[pulumi.Input[int]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  first_name_disallowed: Optional[pulumi.Input[bool]] = None,
                  force_password_reset: Optional[pulumi.Input[bool]] = None,
@@ -145,6 +147,30 @@ class DomainsPasswordPolicyArgs:
                * required: false
                * returned: default
                * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] disallowed_user_attribute_values: (Updatable) List of User attributes whose values are not allowed in the password.
+               
+               **Added In:** 2303212224
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] distinct_characters: (Updatable) The number of distinct characters between old password and new password
+               
+               **Added In:** 2303212224
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
                * uniqueness: none
         :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
                
@@ -485,6 +511,10 @@ class DomainsPasswordPolicyArgs:
             pulumi.set(__self__, "disallowed_chars", disallowed_chars)
         if disallowed_substrings is not None:
             pulumi.set(__self__, "disallowed_substrings", disallowed_substrings)
+        if disallowed_user_attribute_values is not None:
+            pulumi.set(__self__, "disallowed_user_attribute_values", disallowed_user_attribute_values)
+        if distinct_characters is not None:
+            pulumi.set(__self__, "distinct_characters", distinct_characters)
         if external_id is not None:
             pulumi.set(__self__, "external_id", external_id)
         if first_name_disallowed is not None:
@@ -764,6 +794,52 @@ class DomainsPasswordPolicyArgs:
     @disallowed_substrings.setter
     def disallowed_substrings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "disallowed_substrings", value)
+
+    @property
+    @pulumi.getter(name="disallowedUserAttributeValues")
+    def disallowed_user_attribute_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of User attributes whose values are not allowed in the password.
+
+        **Added In:** 2303212224
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "disallowed_user_attribute_values")
+
+    @disallowed_user_attribute_values.setter
+    def disallowed_user_attribute_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "disallowed_user_attribute_values", value)
+
+    @property
+    @pulumi.getter(name="distinctCharacters")
+    def distinct_characters(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of distinct characters between old password and new password
+
+        **Added In:** 2303212224
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "distinct_characters")
+
+    @distinct_characters.setter
+    def distinct_characters(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "distinct_characters", value)
 
     @property
     @pulumi.getter(name="externalId")
@@ -1439,6 +1515,8 @@ class _DomainsPasswordPolicyState:
                  dictionary_word_disallowed: Optional[pulumi.Input[bool]] = None,
                  disallowed_chars: Optional[pulumi.Input[str]] = None,
                  disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 distinct_characters: Optional[pulumi.Input[int]] = None,
                  domain_ocid: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  first_name_disallowed: Optional[pulumi.Input[bool]] = None,
@@ -1586,6 +1664,30 @@ class _DomainsPasswordPolicyState:
                * required: false
                * returned: default
                * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] disallowed_user_attribute_values: (Updatable) List of User attributes whose values are not allowed in the password.
+               
+               **Added In:** 2303212224
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] distinct_characters: (Updatable) The number of distinct characters between old password and new password
+               
+               **Added In:** 2303212224
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
                * uniqueness: none
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
                
@@ -2014,6 +2116,10 @@ class _DomainsPasswordPolicyState:
             pulumi.set(__self__, "disallowed_chars", disallowed_chars)
         if disallowed_substrings is not None:
             pulumi.set(__self__, "disallowed_substrings", disallowed_substrings)
+        if disallowed_user_attribute_values is not None:
+            pulumi.set(__self__, "disallowed_user_attribute_values", disallowed_user_attribute_values)
+        if distinct_characters is not None:
+            pulumi.set(__self__, "distinct_characters", distinct_characters)
         if domain_ocid is not None:
             pulumi.set(__self__, "domain_ocid", domain_ocid)
         if external_id is not None:
@@ -2343,6 +2449,52 @@ class _DomainsPasswordPolicyState:
     @disallowed_substrings.setter
     def disallowed_substrings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "disallowed_substrings", value)
+
+    @property
+    @pulumi.getter(name="disallowedUserAttributeValues")
+    def disallowed_user_attribute_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of User attributes whose values are not allowed in the password.
+
+        **Added In:** 2303212224
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "disallowed_user_attribute_values")
+
+    @disallowed_user_attribute_values.setter
+    def disallowed_user_attribute_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "disallowed_user_attribute_values", value)
+
+    @property
+    @pulumi.getter(name="distinctCharacters")
+    def distinct_characters(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The number of distinct characters between old password and new password
+
+        **Added In:** 2303212224
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "distinct_characters")
+
+    @distinct_characters.setter
+    def distinct_characters(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "distinct_characters", value)
 
     @property
     @pulumi.getter(name="domainOcid")
@@ -3200,6 +3352,8 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  dictionary_word_disallowed: Optional[pulumi.Input[bool]] = None,
                  disallowed_chars: Optional[pulumi.Input[str]] = None,
                  disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 distinct_characters: Optional[pulumi.Input[int]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  first_name_disallowed: Optional[pulumi.Input[bool]] = None,
                  force_password_reset: Optional[pulumi.Input[bool]] = None,
@@ -3237,7 +3391,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         """
         This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Create a Password Policy
+        Create a password policy.
 
         ## Import
 
@@ -3321,6 +3475,30 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] disallowed_user_attribute_values: (Updatable) List of User attributes whose values are not allowed in the password.
+               
+               **Added In:** 2303212224
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] distinct_characters: (Updatable) The number of distinct characters between old password and new password
+               
+               **Added In:** 2303212224
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
                * uniqueness: none
         :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
                
@@ -3660,7 +3838,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         """
         This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Create a Password Policy
+        Create a password policy.
 
         ## Import
 
@@ -3695,6 +3873,8 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  dictionary_word_disallowed: Optional[pulumi.Input[bool]] = None,
                  disallowed_chars: Optional[pulumi.Input[str]] = None,
                  disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 distinct_characters: Optional[pulumi.Input[int]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  first_name_disallowed: Optional[pulumi.Input[bool]] = None,
                  force_password_reset: Optional[pulumi.Input[bool]] = None,
@@ -3747,6 +3927,8 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
             __props__.__dict__["dictionary_word_disallowed"] = dictionary_word_disallowed
             __props__.__dict__["disallowed_chars"] = disallowed_chars
             __props__.__dict__["disallowed_substrings"] = disallowed_substrings
+            __props__.__dict__["disallowed_user_attribute_values"] = disallowed_user_attribute_values
+            __props__.__dict__["distinct_characters"] = distinct_characters
             __props__.__dict__["external_id"] = external_id
             __props__.__dict__["first_name_disallowed"] = first_name_disallowed
             __props__.__dict__["force_password_reset"] = force_password_reset
@@ -3819,6 +4001,8 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
             dictionary_word_disallowed: Optional[pulumi.Input[bool]] = None,
             disallowed_chars: Optional[pulumi.Input[str]] = None,
             disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            distinct_characters: Optional[pulumi.Input[int]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
             external_id: Optional[pulumi.Input[str]] = None,
             first_name_disallowed: Optional[pulumi.Input[bool]] = None,
@@ -3971,6 +4155,30 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] disallowed_user_attribute_values: (Updatable) List of User attributes whose values are not allowed in the password.
+               
+               **Added In:** 2303212224
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[int] distinct_characters: (Updatable) The number of distinct characters between old password and new password
+               
+               **Added In:** 2303212224
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: integer
                * uniqueness: none
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
                
@@ -4390,6 +4598,8 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         __props__.__dict__["dictionary_word_disallowed"] = dictionary_word_disallowed
         __props__.__dict__["disallowed_chars"] = disallowed_chars
         __props__.__dict__["disallowed_substrings"] = disallowed_substrings
+        __props__.__dict__["disallowed_user_attribute_values"] = disallowed_user_attribute_values
+        __props__.__dict__["distinct_characters"] = distinct_characters
         __props__.__dict__["domain_ocid"] = domain_ocid
         __props__.__dict__["external_id"] = external_id
         __props__.__dict__["first_name_disallowed"] = first_name_disallowed
@@ -4628,6 +4838,44 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "disallowed_substrings")
+
+    @property
+    @pulumi.getter(name="disallowedUserAttributeValues")
+    def disallowed_user_attribute_values(self) -> pulumi.Output[Sequence[str]]:
+        """
+        (Updatable) List of User attributes whose values are not allowed in the password.
+
+        **Added In:** 2303212224
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "disallowed_user_attribute_values")
+
+    @property
+    @pulumi.getter(name="distinctCharacters")
+    def distinct_characters(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The number of distinct characters between old password and new password
+
+        **Added In:** 2303212224
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: integer
+        * uniqueness: none
+        """
+        return pulumi.get(self, "distinct_characters")
 
     @property
     @pulumi.getter(name="domainOcid")

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's oauth2 client credential
+ * Get a user's own OAuth2 client credential.
  *
  * ## Example Usage
  *
@@ -80,7 +80,7 @@ export interface GetDomainsMyOauth2clientCredentialResult {
      */
     readonly domainOcid: string;
     /**
-     * User credential expires on
+     * When the user's credentials expire.
      */
     readonly expiresOn: string;
     /**
@@ -105,7 +105,7 @@ export interface GetDomainsMyOauth2clientCredentialResult {
      */
     readonly idcsPreventedOperations: string[];
     /**
-     * Specifies if secret need to be reset
+     * Specifies whether the secret must be reset.
      */
     readonly isResetSecret: boolean;
     /**
@@ -114,11 +114,11 @@ export interface GetDomainsMyOauth2clientCredentialResult {
     readonly metas: outputs.Identity.GetDomainsMyOauth2clientCredentialMeta[];
     readonly myOauth2clientCredentialId: string;
     /**
-     * User name
+     * The username.
      */
     readonly name: string;
     /**
-     * User's ocid
+     * The user's OCID.
      */
     readonly ocid: string;
     readonly resourceTypeSchemaVersion?: string;
@@ -131,7 +131,7 @@ export interface GetDomainsMyOauth2clientCredentialResult {
      */
     readonly scopes: outputs.Identity.GetDomainsMyOauth2clientCredentialScope[];
     /**
-     * User credential status
+     * The user's credential status.
      */
     readonly status: string;
     /**
@@ -143,14 +143,14 @@ export interface GetDomainsMyOauth2clientCredentialResult {
      */
     readonly tenancyOcid: string;
     /**
-     * User linked to oauth2 client credential
+     * The user linked to the OAuth2 client credential.
      */
     readonly users: outputs.Identity.GetDomainsMyOauth2clientCredentialUser[];
 }
 /**
  * This data source provides details about a specific My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's oauth2 client credential
+ * Get a user's own OAuth2 client credential.
  *
  * ## Example Usage
  *

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsMyAuthTokenIdcsLastModifiedByGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) User display name
+        /// (Updatable) The user's display name.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// User's id
+        /// The user's ID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

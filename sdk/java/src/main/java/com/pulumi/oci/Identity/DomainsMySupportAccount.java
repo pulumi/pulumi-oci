@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Create a Support Account
+ * Create a user&#39;s own support account.
  * 
  * ## Example Usage
  * 

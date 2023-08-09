@@ -402,7 +402,7 @@ class GetDomainsUserResult:
     @pulumi.getter
     def ocid(self) -> str:
         """
-        Ocid of the User's Support Account.
+        The OCID of the user's support account.
         """
         return pulumi.get(self, "ocid")
 
@@ -535,7 +535,7 @@ class GetDomainsUserResult:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers")
     def urnietfparamsscimschemasoracleidcsextensiondb_credentials_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserResult']:
         """
-        Db Credentials User extension
+        The database credentials user extension.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_users")
 
@@ -591,7 +591,7 @@ class GetDomainsUserResult:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers")
     def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserResult']:
         """
-        This extension defines attributes used to store Security Questions of User.
+        This extension defines the attributes used to store the security questions of a user.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_users")
 
@@ -647,7 +647,7 @@ class GetDomainsUserResult:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUsers")
     def urnietfparamsscimschemasoracleidcsextensionuser_state_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserResult']:
         """
-        This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+        This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_users")
 
@@ -655,7 +655,7 @@ class GetDomainsUserResult:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUsers")
     def urnietfparamsscimschemasoracleidcsextensionuser_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserResult']:
         """
-        Oracle Cloud Infrastructure IAM User
+        Oracle Identity Cloud Service User
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_users")
 
@@ -772,7 +772,7 @@ def get_domains_user(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a User
+    Get a user.
 
     ## Example Usage
 
@@ -882,7 +882,7 @@ def get_domains_user_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
     """
     This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a User
+    Get a user.
 
     ## Example Usage
 

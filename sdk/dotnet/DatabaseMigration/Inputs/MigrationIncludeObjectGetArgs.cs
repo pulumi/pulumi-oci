@@ -13,6 +13,12 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
     public sealed class MigrationIncludeObjectGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+        /// </summary>
+        [Input("isOmitExcludedTableFromReplication")]
+        public Input<bool>? IsOmitExcludedTableFromReplication { get; set; }
+
+        /// <summary>
         /// (Updatable) Name of the object (regular expression is allowed)
         /// </summary>
         [Input("object", required: true)]

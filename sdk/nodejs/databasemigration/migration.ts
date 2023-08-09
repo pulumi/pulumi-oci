@@ -86,6 +86,7 @@ import * as utilities from "../utilities";
  *     excludeObjects: [{
  *         object: _var.migration_exclude_objects_object,
  *         owner: _var.migration_exclude_objects_owner,
+ *         isOmitExcludedTableFromReplication: _var.migration_exclude_objects_is_omit_excluded_table_from_replication,
  *         type: _var.migration_exclude_objects_type,
  *     }],
  *     freeformTags: {
@@ -130,6 +131,7 @@ import * as utilities from "../utilities";
  *     includeObjects: [{
  *         object: _var.migration_include_objects_object,
  *         owner: _var.migration_include_objects_owner,
+ *         isOmitExcludedTableFromReplication: _var.migration_include_objects_is_omit_excluded_table_from_replication,
  *         type: _var.migration_include_objects_type,
  *     }],
  *     sourceContainerDatabaseConnectionId: oci_database_migration_connection.test_connection.id,

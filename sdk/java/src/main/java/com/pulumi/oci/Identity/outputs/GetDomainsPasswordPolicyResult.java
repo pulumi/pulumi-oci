@@ -74,6 +74,16 @@ public final class GetDomainsPasswordPolicyResult {
      */
     private List<String> disallowedSubstrings;
     /**
+     * @return List of User attributes whose values are not allowed in the password.
+     * 
+     */
+    private List<String> disallowedUserAttributeValues;
+    /**
+     * @return The number of distinct characters between old password and new password
+     * 
+     */
+    private Integer distinctCharacters;
+    /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
@@ -351,6 +361,20 @@ public final class GetDomainsPasswordPolicyResult {
      */
     public List<String> disallowedSubstrings() {
         return this.disallowedSubstrings;
+    }
+    /**
+     * @return List of User attributes whose values are not allowed in the password.
+     * 
+     */
+    public List<String> disallowedUserAttributeValues() {
+        return this.disallowedUserAttributeValues;
+    }
+    /**
+     * @return The number of distinct characters between old password and new password
+     * 
+     */
+    public Integer distinctCharacters() {
+        return this.distinctCharacters;
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -657,6 +681,8 @@ public final class GetDomainsPasswordPolicyResult {
         private Boolean dictionaryWordDisallowed;
         private String disallowedChars;
         private List<String> disallowedSubstrings;
+        private List<String> disallowedUserAttributeValues;
+        private Integer distinctCharacters;
         private String domainOcid;
         private String externalId;
         private Boolean firstNameDisallowed;
@@ -715,6 +741,8 @@ public final class GetDomainsPasswordPolicyResult {
     	      this.dictionaryWordDisallowed = defaults.dictionaryWordDisallowed;
     	      this.disallowedChars = defaults.disallowedChars;
     	      this.disallowedSubstrings = defaults.disallowedSubstrings;
+    	      this.disallowedUserAttributeValues = defaults.disallowedUserAttributeValues;
+    	      this.distinctCharacters = defaults.distinctCharacters;
     	      this.domainOcid = defaults.domainOcid;
     	      this.externalId = defaults.externalId;
     	      this.firstNameDisallowed = defaults.firstNameDisallowed;
@@ -832,6 +860,19 @@ public final class GetDomainsPasswordPolicyResult {
         }
         public Builder disallowedSubstrings(String... disallowedSubstrings) {
             return disallowedSubstrings(List.of(disallowedSubstrings));
+        }
+        @CustomType.Setter
+        public Builder disallowedUserAttributeValues(List<String> disallowedUserAttributeValues) {
+            this.disallowedUserAttributeValues = Objects.requireNonNull(disallowedUserAttributeValues);
+            return this;
+        }
+        public Builder disallowedUserAttributeValues(String... disallowedUserAttributeValues) {
+            return disallowedUserAttributeValues(List.of(disallowedUserAttributeValues));
+        }
+        @CustomType.Setter
+        public Builder distinctCharacters(Integer distinctCharacters) {
+            this.distinctCharacters = Objects.requireNonNull(distinctCharacters);
+            return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
@@ -1079,6 +1120,8 @@ public final class GetDomainsPasswordPolicyResult {
             o.dictionaryWordDisallowed = dictionaryWordDisallowed;
             o.disallowedChars = disallowedChars;
             o.disallowedSubstrings = disallowedSubstrings;
+            o.disallowedUserAttributeValues = disallowedUserAttributeValues;
+            o.distinctCharacters = distinctCharacters;
             o.domainOcid = domainOcid;
             o.externalId = externalId;
             o.firstNameDisallowed = firstNameDisallowed;

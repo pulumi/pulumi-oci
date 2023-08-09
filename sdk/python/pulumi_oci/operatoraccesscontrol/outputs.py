@@ -151,6 +151,7 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
                  resource_type: str,
                  severity: str,
                  state: str,
+                 sub_resource_lists: Sequence[str],
                  system_message: str,
                  time_of_creation: str,
                  time_of_modification: str,
@@ -182,6 +183,7 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         :param str resource_type: A filter to return only lists of resources that match the entire given service type.
         :param str severity: Priority assigned to the access request by the operator
         :param str state: A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
+        :param Sequence[str] sub_resource_lists: The subresources requested for approval.
         :param str system_message: System message that will be displayed to the operator at login to the target resource.
         :param str time_of_creation: Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param str time_of_modification: Time when the access request was last modified in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
@@ -213,6 +215,7 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "severity", severity)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "sub_resource_lists", sub_resource_lists)
         pulumi.set(__self__, "system_message", system_message)
         pulumi.set(__self__, "time_of_creation", time_of_creation)
         pulumi.set(__self__, "time_of_modification", time_of_modification)
@@ -411,6 +414,14 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subResourceLists")
+    def sub_resource_lists(self) -> Sequence[str]:
+        """
+        The subresources requested for approval.
+        """
+        return pulumi.get(self, "sub_resource_lists")
 
     @property
     @pulumi.getter(name="systemMessage")
@@ -751,6 +762,7 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_auto_approve_during_maintenance: bool,
+                 is_default_assignment: bool,
                  is_enforced_always: bool,
                  is_log_forwarded: bool,
                  lifecycle_details: str,
@@ -779,6 +791,7 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param str id: The OCID of the operator control assignment.
         :param bool is_auto_approve_during_maintenance: The boolean if true would autoApprove during maintenance.
+        :param bool is_default_assignment: Whether the assignment is a default assignment.
         :param bool is_enforced_always: If set, then the target resource is always governed by the operator control.
         :param bool is_log_forwarded: If set indicates that the audit logs are being forwarded to the relevant remote logging server
         :param str lifecycle_details: More in detail about the lifeCycleState.
@@ -807,6 +820,7 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
+        pulumi.set(__self__, "is_default_assignment", is_default_assignment)
         pulumi.set(__self__, "is_enforced_always", is_enforced_always)
         pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -904,6 +918,14 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         The boolean if true would autoApprove during maintenance.
         """
         return pulumi.get(self, "is_auto_approve_during_maintenance")
+
+    @property
+    @pulumi.getter(name="isDefaultAssignment")
+    def is_default_assignment(self) -> bool:
+        """
+        Whether the assignment is a default assignment.
+        """
+        return pulumi.get(self, "is_default_assignment")
 
     @property
     @pulumi.getter(name="isEnforcedAlways")
@@ -1093,6 +1115,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
                  email_id_lists: Sequence[str],
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_default_operator_control: bool,
                  is_fully_pre_approved: bool,
                  last_modified_info: str,
                  operator_control_name: str,
@@ -1113,6 +1136,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         :param Sequence[str] email_id_lists: List of emailId.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param str id: The OCID of the operator control.
+        :param bool is_default_operator_control: Whether the operator control is a default Operator Control.
         :param bool is_fully_pre_approved: Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param str last_modified_info: Description associated with the latest modification of the operator control.
         :param str operator_control_name: Name of the operator control. The name must be unique.
@@ -1133,6 +1157,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         pulumi.set(__self__, "email_id_lists", email_id_lists)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_default_operator_control", is_default_operator_control)
         pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
         pulumi.set(__self__, "last_modified_info", last_modified_info)
         pulumi.set(__self__, "operator_control_name", operator_control_name)
@@ -1215,6 +1240,14 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         The OCID of the operator control.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isDefaultOperatorControl")
+    def is_default_operator_control(self) -> bool:
+        """
+        Whether the operator control is a default Operator Control.
+        """
+        return pulumi.get(self, "is_default_operator_control")
 
     @property
     @pulumi.getter(name="isFullyPreApproved")

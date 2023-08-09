@@ -24,6 +24,7 @@ class AutonomousDatabaseArgs:
                  autonomous_database_backup_id: Optional[pulumi.Input[str]] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
+                 backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[float]] = None,
@@ -53,6 +54,7 @@ class AutonomousDatabaseArgs:
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[int]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -89,6 +91,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
         :param pulumi.Input[str] autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+        :param pulumi.Input[int] backup_retention_period_in_days: (Updatable) Retention period, in days, for backups.
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
                
                For an Autonomous Database on dedicated infrastructure, the allowed values are:
@@ -96,9 +99,10 @@ class AutonomousDatabaseArgs:
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-               **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+               
+               **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
                * The data type must be an *integer*.
                * The minimum number of cores for all types of autonomous database is *1*
                * The maximum number of cores is as follows:
@@ -145,6 +149,7 @@ class AutonomousDatabaseArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
+        :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -152,10 +157,10 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
                
                The following points apply:
-               * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+               * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
                * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
                
-               For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+               For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
@@ -220,6 +225,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         if autonomous_maintenance_schedule_type is not None:
             pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
+        if backup_retention_period_in_days is not None:
+            pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
         if clone_type is not None:
@@ -278,6 +285,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
+        if local_adg_auto_failover_max_data_loss_limit is not None:
+            pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
         if max_cpu_core_count is not None:
             pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         if ncharacter_set is not None:
@@ -428,6 +437,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "autonomous_maintenance_schedule_type", value)
 
     @property
+    @pulumi.getter(name="backupRetentionPeriodInDays")
+    def backup_retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Retention period, in days, for backups.
+        """
+        return pulumi.get(self, "backup_retention_period_in_days")
+
+    @backup_retention_period_in_days.setter
+    def backup_retention_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "backup_retention_period_in_days", value)
+
+    @property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> Optional[pulumi.Input[str]]:
         """
@@ -471,7 +492,7 @@ class AutonomousDatabaseArgs:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> Optional[pulumi.Input[str]]:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         """
         return pulumi.get(self, "compute_model")
 
@@ -484,7 +505,8 @@ class AutonomousDatabaseArgs:
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-        **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+
+        **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
         * The data type must be an *integer*.
         * The minimum number of cores for all types of autonomous database is *1*
         * The maximum number of cores is as follows:
@@ -803,6 +825,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "license_model", value)
 
     @property
+    @pulumi.getter(name="localAdgAutoFailoverMaxDataLossLimit")
+    def local_adg_auto_failover_max_data_loss_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        """
+        return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
+
+    @local_adg_auto_failover_max_data_loss_limit.setter
+    def local_adg_auto_failover_max_data_loss_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "local_adg_auto_failover_max_data_loss_limit", value)
+
+    @property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -846,10 +880,10 @@ class AutonomousDatabaseArgs:
         (Updatable) The number of OCPU cores to be made available to the database.
 
         The following points apply:
-        * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+        * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
         * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
 
-        For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 
         **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         """
@@ -1210,6 +1244,7 @@ class _AutonomousDatabaseState:
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
                  local_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]] = None,
                  long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
@@ -1281,7 +1316,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
-        :param pulumi.Input[int] backup_retention_period_in_days: Retention period, in days, for backups.
+        :param pulumi.Input[int] backup_retention_period_in_days: (Updatable) Retention period, in days, for backups.
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
                
                For an Autonomous Database on dedicated infrastructure, the allowed values are:
@@ -1290,11 +1325,12 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
         :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-               **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+               
+               **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
                * The data type must be an *integer*.
                * The minimum number of cores for all types of autonomous database is *1*
                * The maximum number of cores is as follows:
@@ -1355,11 +1391,12 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param pulumi.Input[str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[str] next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -1367,10 +1404,10 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
                
                The following points apply:
-               * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+               * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
                * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
                
-               For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+               For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
@@ -1564,6 +1601,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "license_model", license_model)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if local_adg_auto_failover_max_data_loss_limit is not None:
+            pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
         if local_disaster_recovery_type is not None:
             pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         if local_standby_dbs is not None:
@@ -1817,7 +1856,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="backupRetentionPeriodInDays")
     def backup_retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
         """
-        Retention period, in days, for backups.
+        (Updatable) Retention period, in days, for backups.
         """
         return pulumi.get(self, "backup_retention_period_in_days")
 
@@ -1881,7 +1920,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> Optional[pulumi.Input[str]]:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         """
         return pulumi.get(self, "compute_model")
 
@@ -1918,7 +1957,8 @@ class _AutonomousDatabaseState:
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-        **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+
+        **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
         * The data type must be an *integer*.
         * The minimum number of cores for all types of autonomous database is *1*
         * The maximum number of cores is as follows:
@@ -2405,6 +2445,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="localAdgAutoFailoverMaxDataLossLimit")
+    def local_adg_auto_failover_max_data_loss_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        """
+        return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
+
+    @local_adg_auto_failover_max_data_loss_limit.setter
+    def local_adg_auto_failover_max_data_loss_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "local_adg_auto_failover_max_data_loss_limit", value)
+
+    @property
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -2456,7 +2508,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -2508,10 +2560,10 @@ class _AutonomousDatabaseState:
         (Updatable) The number of OCPU cores to be made available to the database.
 
         The following points apply:
-        * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+        * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
         * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
 
-        For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 
         **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         """
@@ -3146,6 +3198,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  autonomous_database_backup_id: Optional[pulumi.Input[str]] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
+                 backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -3177,6 +3230,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[int]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -3225,6 +3279,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
         :param pulumi.Input[str] autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+        :param pulumi.Input[int] backup_retention_period_in_days: (Updatable) Retention period, in days, for backups.
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
                
                For an Autonomous Database on dedicated infrastructure, the allowed values are:
@@ -3233,9 +3288,10 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
         :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-               **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+               
+               **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
                * The data type must be an *integer*.
                * The minimum number of cores for all types of autonomous database is *1*
                * The maximum number of cores is as follows:
@@ -3283,6 +3339,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
+        :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -3290,10 +3347,10 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
                
                The following points apply:
-               * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+               * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
                * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
                
-               For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+               For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
@@ -3384,6 +3441,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  autonomous_database_backup_id: Optional[pulumi.Input[str]] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
+                 backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -3415,6 +3473,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[int]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -3456,6 +3515,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["autonomous_database_backup_id"] = autonomous_database_backup_id
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
             __props__.__dict__["autonomous_maintenance_schedule_type"] = autonomous_maintenance_schedule_type
+            __props__.__dict__["backup_retention_period_in_days"] = backup_retention_period_in_days
             __props__.__dict__["character_set"] = character_set
             __props__.__dict__["clone_type"] = clone_type
             if compartment_id is None and not opts.urn:
@@ -3491,6 +3551,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["is_shrink_only"] = is_shrink_only
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["license_model"] = license_model
+            __props__.__dict__["local_adg_auto_failover_max_data_loss_limit"] = local_adg_auto_failover_max_data_loss_limit
             __props__.__dict__["max_cpu_core_count"] = max_cpu_core_count
             __props__.__dict__["ncharacter_set"] = ncharacter_set
             __props__.__dict__["nsg_ids"] = nsg_ids
@@ -3522,7 +3583,6 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["apex_details"] = None
             __props__.__dict__["available_upgrade_versions"] = None
             __props__.__dict__["backup_configs"] = None
-            __props__.__dict__["backup_retention_period_in_days"] = None
             __props__.__dict__["connection_strings"] = None
             __props__.__dict__["connection_urls"] = None
             __props__.__dict__["dataguard_region_type"] = None
@@ -3640,6 +3700,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
             local_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
             local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLocalStandbyDbArgs']]]]] = None,
             long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]]] = None,
@@ -3716,7 +3777,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupConfigArgs']]]] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
-        :param pulumi.Input[int] backup_retention_period_in_days: Retention period, in days, for backups.
+        :param pulumi.Input[int] backup_retention_period_in_days: (Updatable) Retention period, in days, for backups.
         :param pulumi.Input[str] character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
                
                For an Autonomous Database on dedicated infrastructure, the allowed values are:
@@ -3725,11 +3786,12 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
         :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseConnectionStringArgs']]]] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseConnectionUrlArgs']]]] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-               **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+               
+               **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
                * The data type must be an *integer*.
                * The minimum number of cores for all types of autonomous database is *1*
                * The maximum number of cores is as follows:
@@ -3790,11 +3852,12 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param pulumi.Input[str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLocalStandbyDbArgs']]]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[str] next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -3802,10 +3865,10 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
                
                The following points apply:
-               * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+               * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
                * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
                
-               For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+               For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
@@ -3945,6 +4008,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["local_adg_auto_failover_max_data_loss_limit"] = local_adg_auto_failover_max_data_loss_limit
         __props__.__dict__["local_disaster_recovery_type"] = local_disaster_recovery_type
         __props__.__dict__["local_standby_dbs"] = local_standby_dbs
         __props__.__dict__["long_term_backup_schedules"] = long_term_backup_schedules
@@ -4097,7 +4161,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="backupRetentionPeriodInDays")
     def backup_retention_period_in_days(self) -> pulumi.Output[int]:
         """
-        Retention period, in days, for backups.
+        (Updatable) Retention period, in days, for backups.
         """
         return pulumi.get(self, "backup_retention_period_in_days")
 
@@ -4141,7 +4205,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> pulumi.Output[str]:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         """
         return pulumi.get(self, "compute_model")
 
@@ -4166,7 +4230,8 @@ class AutonomousDatabase(pulumi.CustomResource):
     def cpu_core_count(self) -> pulumi.Output[int]:
         """
         (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-        **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+
+        **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
         * The data type must be an *integer*.
         * The minimum number of cores for all types of autonomous database is *1*
         * The maximum number of cores is as follows:
@@ -4497,6 +4562,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localAdgAutoFailoverMaxDataLossLimit")
+    def local_adg_auto_failover_max_data_loss_limit(self) -> pulumi.Output[int]:
+        """
+        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        """
+        return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
+
+    @property
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> pulumi.Output[str]:
         """
@@ -4532,7 +4605,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Output[int]:
         """
-        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -4568,10 +4641,10 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) The number of OCPU cores to be made available to the database.
 
         The following points apply:
-        * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+        * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
         * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
 
-        For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 
         **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         """

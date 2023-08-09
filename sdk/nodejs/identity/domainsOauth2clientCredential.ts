@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Add a user's oauth2 client credential
+ * Add a user's OAuth2 client credentials.
  *
  * ## Import
  *
@@ -115,7 +115,7 @@ export class DomainsOauth2clientCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly domainOcid!: pulumi.Output<string>;
     /**
-     * User credential expires on
+     * When the user's credentials expire.
      *
      * **Added In:** 2109090424
      *
@@ -186,7 +186,7 @@ export class DomainsOauth2clientCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
     /**
-     * Specifies if secret need to be reset
+     * Specifies whether the secret must be reset.
      *
      * **Added In:** 2109090424
      *
@@ -216,7 +216,7 @@ export class DomainsOauth2clientCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsOauth2clientCredentialMeta[]>;
     /**
-     * (Updatable) User name
+     * (Updatable) The username.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -230,7 +230,7 @@ export class DomainsOauth2clientCredential extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -275,7 +275,7 @@ export class DomainsOauth2clientCredential extends pulumi.CustomResource {
      */
     public readonly scopes!: pulumi.Output<outputs.Identity.DomainsOauth2clientCredentialScope[]>;
     /**
-     * User credential status
+     * The user's credential status.
      *
      * **Added In:** 2109090424
      *
@@ -323,7 +323,7 @@ export class DomainsOauth2clientCredential extends pulumi.CustomResource {
      */
     public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to oauth2 client credential
+     * The user linked to the OAuth2 client credential.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -489,7 +489,7 @@ export interface DomainsOauth2clientCredentialState {
      */
     domainOcid?: pulumi.Input<string>;
     /**
-     * User credential expires on
+     * When the user's credentials expire.
      *
      * **Added In:** 2109090424
      *
@@ -560,7 +560,7 @@ export interface DomainsOauth2clientCredentialState {
      */
     idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Specifies if secret need to be reset
+     * Specifies whether the secret must be reset.
      *
      * **Added In:** 2109090424
      *
@@ -590,7 +590,7 @@ export interface DomainsOauth2clientCredentialState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauth2clientCredentialMeta>[]>;
     /**
-     * (Updatable) User name
+     * (Updatable) The username.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -604,7 +604,7 @@ export interface DomainsOauth2clientCredentialState {
      */
     name?: pulumi.Input<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -649,7 +649,7 @@ export interface DomainsOauth2clientCredentialState {
      */
     scopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauth2clientCredentialScope>[]>;
     /**
-     * User credential status
+     * The user's credential status.
      *
      * **Added In:** 2109090424
      *
@@ -697,7 +697,7 @@ export interface DomainsOauth2clientCredentialState {
      */
     urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to oauth2 client credential
+     * The user linked to the OAuth2 client credential.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -742,7 +742,7 @@ export interface DomainsOauth2clientCredentialArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * User credential expires on
+     * When the user's credentials expire.
      *
      * **Added In:** 2109090424
      *
@@ -762,7 +762,7 @@ export interface DomainsOauth2clientCredentialArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * Specifies if secret need to be reset
+     * Specifies whether the secret must be reset.
      *
      * **Added In:** 2109090424
      *
@@ -778,7 +778,7 @@ export interface DomainsOauth2clientCredentialArgs {
      */
     isResetSecret?: pulumi.Input<boolean>;
     /**
-     * (Updatable) User name
+     * (Updatable) The username.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -792,7 +792,7 @@ export interface DomainsOauth2clientCredentialArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -837,7 +837,7 @@ export interface DomainsOauth2clientCredentialArgs {
      */
     scopes: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauth2clientCredentialScope>[]>;
     /**
-     * User credential status
+     * The user's credential status.
      *
      * **Added In:** 2109090424
      *
@@ -871,7 +871,7 @@ export interface DomainsOauth2clientCredentialArgs {
      */
     urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to oauth2 client credential
+     * The user linked to the OAuth2 client credential.
      *
      * **SCIM++ Properties:**
      * * caseExact: false

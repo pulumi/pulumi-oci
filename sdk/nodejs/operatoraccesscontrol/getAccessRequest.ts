@@ -140,6 +140,10 @@ export interface GetAccessRequestResult {
      */
     readonly state: string;
     /**
+     * The subresources requested for approval.
+     */
+    readonly subResourceLists: string[];
+    /**
      * System message that will be displayed to the operator at login to the target resource.
      */
     readonly systemMessage: string;

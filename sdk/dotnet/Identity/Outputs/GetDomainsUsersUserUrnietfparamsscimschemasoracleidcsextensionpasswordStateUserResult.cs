@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool CantExpire;
         /// <summary>
-        /// Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        /// Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
         /// </summary>
         public readonly bool Expired;
         /// <summary>

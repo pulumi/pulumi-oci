@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked {
     /**
-     * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      * **Added In:** 20.1.3
      * 
@@ -31,7 +31,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      */
     private @Nullable Boolean expired;
     /**
-     * @return (Updatable) The date and time that the current resource was locked
+     * @return (Updatable) The date and time that the current resource was locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -39,6 +39,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: dateTime
@@ -47,7 +48,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      */
     private @Nullable String lockDate;
     /**
-     * @return (Updatable) Indicates that the rev is locked
+     * @return (Updatable) Indicates that the recovery is locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -56,6 +57,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -64,12 +66,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      */
     private @Nullable Boolean on;
     /**
-     * @return (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+     * @return (Updatable) Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: integer
@@ -80,7 +84,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked() {}
     /**
-     * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      * **Added In:** 20.1.3
      * 
@@ -99,7 +103,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         return Optional.ofNullable(this.expired);
     }
     /**
-     * @return (Updatable) The date and time that the current resource was locked
+     * @return (Updatable) The date and time that the current resource was locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -107,6 +111,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: dateTime
@@ -117,7 +122,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         return Optional.ofNullable(this.lockDate);
     }
     /**
-     * @return (Updatable) Indicates that the rev is locked
+     * @return (Updatable) Indicates that the recovery is locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -126,6 +131,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -136,12 +142,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         return Optional.ofNullable(this.on);
     }
     /**
-     * @return (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+     * @return (Updatable) Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: integer

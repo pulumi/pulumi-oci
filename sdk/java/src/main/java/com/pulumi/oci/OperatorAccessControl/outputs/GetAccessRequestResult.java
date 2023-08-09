@@ -136,6 +136,11 @@ public final class GetAccessRequestResult {
      */
     private String state;
     /**
+     * @return The subresources requested for approval.
+     * 
+     */
+    private List<String> subResourceLists;
+    /**
      * @return System message that will be displayed to the operator at login to the target resource.
      * 
      */
@@ -339,6 +344,13 @@ public final class GetAccessRequestResult {
         return this.state;
     }
     /**
+     * @return The subresources requested for approval.
+     * 
+     */
+    public List<String> subResourceLists() {
+        return this.subResourceLists;
+    }
+    /**
      * @return System message that will be displayed to the operator at login to the target resource.
      * 
      */
@@ -415,6 +427,7 @@ public final class GetAccessRequestResult {
         private String resourceType;
         private String severity;
         private String state;
+        private List<String> subResourceLists;
         private String systemMessage;
         private String timeOfCreation;
         private String timeOfModification;
@@ -449,6 +462,7 @@ public final class GetAccessRequestResult {
     	      this.resourceType = defaults.resourceType;
     	      this.severity = defaults.severity;
     	      this.state = defaults.state;
+    	      this.subResourceLists = defaults.subResourceLists;
     	      this.systemMessage = defaults.systemMessage;
     	      this.timeOfCreation = defaults.timeOfCreation;
     	      this.timeOfModification = defaults.timeOfModification;
@@ -589,6 +603,14 @@ public final class GetAccessRequestResult {
             return this;
         }
         @CustomType.Setter
+        public Builder subResourceLists(List<String> subResourceLists) {
+            this.subResourceLists = Objects.requireNonNull(subResourceLists);
+            return this;
+        }
+        public Builder subResourceLists(String... subResourceLists) {
+            return subResourceLists(List.of(subResourceLists));
+        }
+        @CustomType.Setter
         public Builder systemMessage(String systemMessage) {
             this.systemMessage = Objects.requireNonNull(systemMessage);
             return this;
@@ -648,6 +670,7 @@ public final class GetAccessRequestResult {
             o.resourceType = resourceType;
             o.severity = severity;
             o.state = state;
+            o.subResourceLists = subResourceLists;
             o.systemMessage = systemMessage;
             o.timeOfCreation = timeOfCreation;
             o.timeOfModification = timeOfModification;

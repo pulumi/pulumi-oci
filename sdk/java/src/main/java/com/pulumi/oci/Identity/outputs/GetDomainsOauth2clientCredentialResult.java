@@ -44,7 +44,7 @@ public final class GetDomainsOauth2clientCredentialResult {
      */
     private String domainOcid;
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credentials expire.
      * 
      */
     private String expiresOn;
@@ -75,7 +75,7 @@ public final class GetDomainsOauth2clientCredentialResult {
      */
     private List<String> idcsPreventedOperations;
     /**
-     * @return Specifies if secret need to be reset
+     * @return Specifies whether the secret must be reset.
      * 
      */
     private Boolean isResetSecret;
@@ -85,13 +85,13 @@ public final class GetDomainsOauth2clientCredentialResult {
      */
     private List<GetDomainsOauth2clientCredentialMeta> metas;
     /**
-     * @return User name
+     * @return The username.
      * 
      */
     private String name;
     private String oAuth2clientCredentialId;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
@@ -107,7 +107,7 @@ public final class GetDomainsOauth2clientCredentialResult {
      */
     private List<GetDomainsOauth2clientCredentialScope> scopes;
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     private String status;
@@ -127,7 +127,7 @@ public final class GetDomainsOauth2clientCredentialResult {
      */
     private List<GetDomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     /**
-     * @return User linked to oauth2 client credential
+     * @return The user linked to the OAuth2 client credential.
      * 
      */
     private List<GetDomainsOauth2clientCredentialUser> users;
@@ -171,7 +171,7 @@ public final class GetDomainsOauth2clientCredentialResult {
         return this.domainOcid;
     }
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credentials expire.
      * 
      */
     public String expiresOn() {
@@ -216,7 +216,7 @@ public final class GetDomainsOauth2clientCredentialResult {
         return this.idcsPreventedOperations;
     }
     /**
-     * @return Specifies if secret need to be reset
+     * @return Specifies whether the secret must be reset.
      * 
      */
     public Boolean isResetSecret() {
@@ -230,7 +230,7 @@ public final class GetDomainsOauth2clientCredentialResult {
         return this.metas;
     }
     /**
-     * @return User name
+     * @return The username.
      * 
      */
     public String name() {
@@ -240,7 +240,7 @@ public final class GetDomainsOauth2clientCredentialResult {
         return this.oAuth2clientCredentialId;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -264,7 +264,7 @@ public final class GetDomainsOauth2clientCredentialResult {
         return this.scopes;
     }
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     public String status() {
@@ -292,7 +292,7 @@ public final class GetDomainsOauth2clientCredentialResult {
         return this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     }
     /**
-     * @return User linked to oauth2 client credential
+     * @return The user linked to the OAuth2 client credential.
      * 
      */
     public List<GetDomainsOauth2clientCredentialUser> users() {

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs>? _secQuestions;
 
         /// <summary>
-        /// (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+        /// (Updatable) The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [value]

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionResult
     {
         /// <summary>
-        /// Answer provided by an user for a security question.
+        /// The answer provided by a user for a security question.
         /// </summary>
         public readonly string Answer;
         /// <summary>
-        /// Hint for an answer given by user while setting up Security Question.
+        /// The hint for an answer that's given by user when setting up a security question.
         /// </summary>
         public readonly string HintText;
         /// <summary>

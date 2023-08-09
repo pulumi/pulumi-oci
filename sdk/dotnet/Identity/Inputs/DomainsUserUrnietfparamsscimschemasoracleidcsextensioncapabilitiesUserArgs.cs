@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Indicates weather a user can use api keys
+        /// (Updatable) Indicates whether a user can use API keys.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? CanUseApiKeys { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates weather a user can use auth tokens
+        /// (Updatable) Indicates whether a user can use Auth tokens.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -49,7 +49,25 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? CanUseAuthTokens { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates weather a user can use console password
+        /// (Updatable) Specifies whether user can access the Console.
+        /// 
+        /// **Added In:** 2206280902
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
+        /// </summary>
+        [Input("canUseConsole")]
+        public Input<bool>? CanUseConsole { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates whether a user can use Console passwords.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -67,7 +85,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? CanUseConsolePassword { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates weather a user can use customer secret keys
+        /// (Updatable) Indicates whether a user can use customer secret keys.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -85,7 +103,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? CanUseCustomerSecretKeys { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates weather a user can use db credentials
+        /// (Updatable) Indicates whether a user can use database credentials.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -103,7 +121,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? CanUseDbCredentials { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates weather a user can use oauth2 client credentials
+        /// (Updatable) Indicates whether a user can use OAuth2 client credentials.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -121,7 +139,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? CanUseOauth2clientCredentials { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates weather a user can use smtp credentials
+        /// (Updatable) Indicates whether a user can use SMTP credentials.
         /// 
         /// **Added In:** 2012271618
         /// 

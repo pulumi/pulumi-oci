@@ -79,6 +79,10 @@ export interface GetControlResult {
      */
     readonly id: string;
     /**
+     * Whether the operator control is a default Operator Control.
+     */
+    readonly isDefaultOperatorControl: boolean;
+    /**
      * Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      */
     readonly isFullyPreApproved: boolean;

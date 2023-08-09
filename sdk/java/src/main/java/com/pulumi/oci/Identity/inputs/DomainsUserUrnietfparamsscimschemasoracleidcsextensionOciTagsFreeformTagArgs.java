@@ -14,7 +14,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs();
 
     /**
-     * (Updatable) The value of of the User&#39;s api key.
+     * (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 
@@ -33,7 +33,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     private Output<String> key;
 
     /**
-     * @return (Updatable) The value of of the User&#39;s api key.
+     * @return (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 
@@ -117,7 +117,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         }
 
         /**
-         * @param key (Updatable) The value of of the User&#39;s api key.
+         * @param key (Updatable) The user&#39;s API key value.
          * 
          * **Added In:** 2106240046
          * 
@@ -140,7 +140,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         }
 
         /**
-         * @param key (Updatable) The value of of the User&#39;s api key.
+         * @param key (Updatable) The user&#39;s API key value.
          * 
          * **Added In:** 2106240046
          * 

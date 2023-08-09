@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Add a user's api key
+ * Create a user's API key.
  *
  * ## Import
  *
@@ -212,7 +212,7 @@ export class DomainsApiKey extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsApiKeyMeta[]>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -276,7 +276,7 @@ export class DomainsApiKey extends pulumi.CustomResource {
      */
     public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to api key
+     * The user linked to the API key.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -533,7 +533,7 @@ export interface DomainsApiKeyState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsApiKeyMeta>[]>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -597,7 +597,7 @@ export interface DomainsApiKeyState {
      */
     urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to api key
+     * The user linked to the API key.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -660,7 +660,7 @@ export interface DomainsApiKeyArgs {
      */
     key: pulumi.Input<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -710,7 +710,7 @@ export interface DomainsApiKeyArgs {
      */
     urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to api key
+     * The user linked to the API key.
      *
      * **SCIM++ Properties:**
      * * caseExact: false

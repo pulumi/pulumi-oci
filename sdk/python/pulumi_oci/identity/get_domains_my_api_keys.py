@@ -181,7 +181,7 @@ def get_domains_my_api_keys(authorization: Optional[str] = None,
     """
     This data source provides the list of My Api Keys in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Api Key
+    Search for a user's own API key.
 
     ## Example Usage
 
@@ -249,7 +249,7 @@ def get_domains_my_api_keys_output(authorization: Optional[pulumi.Input[Optional
     """
     This data source provides the list of My Api Keys in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Api Key
+    Search for a user's own API key.
 
     ## Example Usage
 

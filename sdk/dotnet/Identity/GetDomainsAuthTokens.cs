@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search AuthTokens
+        /// Search for Auth tokens.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search AuthTokens
+        /// Search for Auth tokens.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

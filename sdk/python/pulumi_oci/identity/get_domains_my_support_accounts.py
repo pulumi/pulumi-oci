@@ -181,7 +181,7 @@ def get_domains_my_support_accounts(authorization: Optional[str] = None,
     """
     This data source provides the list of My Support Accounts in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Support Accounts
+    Search for a user's own support account.
 
     ## Example Usage
 
@@ -249,7 +249,7 @@ def get_domains_my_support_accounts_output(authorization: Optional[pulumi.Input[
     """
     This data source provides the list of My Support Accounts in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Support Accounts
+    Search for a user's own support account.
 
     ## Example Usage
 

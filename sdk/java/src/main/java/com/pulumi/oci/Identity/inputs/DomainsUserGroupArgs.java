@@ -121,7 +121,7 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Membership Ocid
+     * (Updatable) The membership OCID.
      * 
      * **Added In:** 2103141444
      * 
@@ -139,7 +139,7 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     private @Nullable Output<String> membershipOcid;
 
     /**
-     * @return (Updatable) Membership Ocid
+     * @return (Updatable) The membership OCID.
      * 
      * **Added In:** 2103141444
      * 
@@ -195,7 +195,7 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Ocid of the User&#39;s Support Account.
+     * (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -214,7 +214,7 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -498,7 +498,7 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param membershipOcid (Updatable) Membership Ocid
+         * @param membershipOcid (Updatable) The membership OCID.
          * 
          * **Added In:** 2103141444
          * 
@@ -520,7 +520,7 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param membershipOcid (Updatable) Membership Ocid
+         * @param membershipOcid (Updatable) The membership OCID.
          * 
          * **Added In:** 2103141444
          * 
@@ -584,7 +584,7 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 
@@ -607,7 +607,7 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 

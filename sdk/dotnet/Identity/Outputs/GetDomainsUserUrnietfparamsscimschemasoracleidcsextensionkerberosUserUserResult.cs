@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserResult
     {
         /// <summary>
-        /// A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+        /// A list of kerberos realm users for an Oracle Identity Cloud Service User
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserResult> RealmUsers;
 

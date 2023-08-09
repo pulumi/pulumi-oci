@@ -64,6 +64,11 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      */
     private Boolean isAutoApproveDuringMaintenance;
     /**
+     * @return Whether the assignment is a default assignment.
+     * 
+     */
+    private Boolean isDefaultAssignment;
+    /**
      * @return If set, then the target resource is always governed by the operator control.
      * 
      */
@@ -221,6 +226,13 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         return this.isAutoApproveDuringMaintenance;
     }
     /**
+     * @return Whether the assignment is a default assignment.
+     * 
+     */
+    public Boolean isDefaultAssignment() {
+        return this.isDefaultAssignment;
+    }
+    /**
      * @return If set, then the target resource is always governed by the operator control.
      * 
      */
@@ -359,6 +371,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isAutoApproveDuringMaintenance;
+        private Boolean isDefaultAssignment;
         private Boolean isEnforcedAlways;
         private Boolean isLogForwarded;
         private String lifecycleDetails;
@@ -389,6 +402,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isAutoApproveDuringMaintenance = defaults.isAutoApproveDuringMaintenance;
+    	      this.isDefaultAssignment = defaults.isDefaultAssignment;
     	      this.isEnforcedAlways = defaults.isEnforcedAlways;
     	      this.isLogForwarded = defaults.isLogForwarded;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -456,6 +470,11 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         @CustomType.Setter
         public Builder isAutoApproveDuringMaintenance(Boolean isAutoApproveDuringMaintenance) {
             this.isAutoApproveDuringMaintenance = Objects.requireNonNull(isAutoApproveDuringMaintenance);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDefaultAssignment(Boolean isDefaultAssignment) {
+            this.isDefaultAssignment = Objects.requireNonNull(isDefaultAssignment);
             return this;
         }
         @CustomType.Setter
@@ -555,6 +574,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
             o.freeformTags = freeformTags;
             o.id = id;
             o.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
+            o.isDefaultAssignment = isDefaultAssignment;
             o.isEnforcedAlways = isEnforcedAlways;
             o.isLogForwarded = isLogForwarded;
             o.lifecycleDetails = lifecycleDetails;

@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Get user's api key
+// Get a user's API key.
 //
 // ## Example Usage
 //
@@ -102,7 +102,7 @@ type LookupDomainsApiKeyResult struct {
 	Key string `pulumi:"key"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsApiKeyMeta `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	Ocid                      string  `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -113,7 +113,7 @@ type LookupDomainsApiKeyResult struct {
 	TenancyOcid string `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUsers []GetDomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUsers"`
-	// User linked to api key
+	// The user linked to the API key.
 	Users []GetDomainsApiKeyUser `pulumi:"users"`
 }
 
@@ -245,7 +245,7 @@ func (o LookupDomainsApiKeyResultOutput) Metas() GetDomainsApiKeyMetaArrayOutput
 	return o.ApplyT(func(v LookupDomainsApiKeyResult) []GetDomainsApiKeyMeta { return v.Metas }).(GetDomainsApiKeyMetaArrayOutput)
 }
 
-// User's ocid
+// The user's OCID.
 func (o LookupDomainsApiKeyResultOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsApiKeyResult) string { return v.Ocid }).(pulumi.StringOutput)
 }
@@ -276,7 +276,7 @@ func (o LookupDomainsApiKeyResultOutput) Urnietfparamsscimschemasoracleidcsexten
 	}).(GetDomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput)
 }
 
-// User linked to api key
+// The user linked to the API key.
 func (o LookupDomainsApiKeyResultOutput) Users() GetDomainsApiKeyUserArrayOutput {
 	return o.ApplyT(func(v LookupDomainsApiKeyResult) []GetDomainsApiKeyUser { return v.Users }).(GetDomainsApiKeyUserArrayOutput)
 }

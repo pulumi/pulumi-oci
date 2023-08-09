@@ -93,6 +93,38 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int? CrlReloadDuration;
         /// <summary>
+        /// (Updatable) Set to true to enable EKU Validation
+        /// 
+        /// **Added In:** 2304270343
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
+        /// </summary>
+        public readonly bool? EkuValidationEnabled;
+        /// <summary>
+        /// (Updatable) List of EKU which needs to be validated
+        /// 
+        /// **Added In:** 2304270343
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public readonly ImmutableArray<string> EkuValues;
+        /// <summary>
         /// (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
         /// 
         /// **Added In:** 2010242156
@@ -266,6 +298,10 @@ namespace Pulumi.Oci.Identity.Outputs
 
             int? crlReloadDuration,
 
+            bool? ekuValidationEnabled,
+
+            ImmutableArray<string> ekuValues,
+
             bool? ocspAllowUnknownResponseStatus,
 
             bool? ocspEnableSignedResponse,
@@ -291,6 +327,8 @@ namespace Pulumi.Oci.Identity.Outputs
             CrlEnabled = crlEnabled;
             CrlLocation = crlLocation;
             CrlReloadDuration = crlReloadDuration;
+            EkuValidationEnabled = ekuValidationEnabled;
+            EkuValues = ekuValues;
             OcspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
             OcspEnableSignedResponse = ocspEnableSignedResponse;
             OcspEnabled = ocspEnabled;

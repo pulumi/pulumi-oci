@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get a DynamicResourceGroup
+        /// Get a Dynamic Resource Group.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get a DynamicResourceGroup
+        /// Get a Dynamic Resource Group.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

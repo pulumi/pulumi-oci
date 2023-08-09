@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? DbLoginAttempts { get; set; }
 
         /// <summary>
-        /// (Updatable) The Database User Name
+        /// (Updatable) The database username.
         /// 
         /// **Added In:** 2102181953
         /// 

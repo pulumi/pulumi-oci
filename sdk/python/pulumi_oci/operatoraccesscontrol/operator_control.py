@@ -225,6 +225,7 @@ class _OperatorControlState:
                  description: Optional[pulumi.Input[str]] = None,
                  email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_default_operator_control: Optional[pulumi.Input[bool]] = None,
                  is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
                  last_modified_info: Optional[pulumi.Input[str]] = None,
                  operator_control_name: Optional[pulumi.Input[str]] = None,
@@ -245,6 +246,7 @@ class _OperatorControlState:
         :param pulumi.Input[str] description: (Updatable) Description of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_id_lists: (Updatable) List of emailId.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[bool] is_default_operator_control: Whether the operator control is a default Operator Control.
         :param pulumi.Input[bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param pulumi.Input[str] last_modified_info: Description associated with the latest modification of the operator control.
         :param pulumi.Input[str] operator_control_name: (Updatable) Name of the operator control.
@@ -276,6 +278,8 @@ class _OperatorControlState:
             pulumi.set(__self__, "email_id_lists", email_id_lists)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_default_operator_control is not None:
+            pulumi.set(__self__, "is_default_operator_control", is_default_operator_control)
         if is_fully_pre_approved is not None:
             pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
         if last_modified_info is not None:
@@ -392,6 +396,18 @@ class _OperatorControlState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isDefaultOperatorControl")
+    def is_default_operator_control(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the operator control is a default Operator Control.
+        """
+        return pulumi.get(self, "is_default_operator_control")
+
+    @is_default_operator_control.setter
+    def is_default_operator_control(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_default_operator_control", value)
 
     @property
     @pulumi.getter(name="isFullyPreApproved")
@@ -646,6 +662,7 @@ class OperatorControl(pulumi.CustomResource):
             __props__.__dict__["resource_type"] = resource_type
             __props__.__dict__["system_message"] = system_message
             __props__.__dict__["approval_required_op_action_lists"] = None
+            __props__.__dict__["is_default_operator_control"] = None
             __props__.__dict__["last_modified_info"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_of_creation"] = None
@@ -669,6 +686,7 @@ class OperatorControl(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_default_operator_control: Optional[pulumi.Input[bool]] = None,
             is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
             last_modified_info: Optional[pulumi.Input[str]] = None,
             operator_control_name: Optional[pulumi.Input[str]] = None,
@@ -694,6 +712,7 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Description of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_id_lists: (Updatable) List of emailId.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[bool] is_default_operator_control: Whether the operator control is a default Operator Control.
         :param pulumi.Input[bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param pulumi.Input[str] last_modified_info: Description associated with the latest modification of the operator control.
         :param pulumi.Input[str] operator_control_name: (Updatable) Name of the operator control.
@@ -721,6 +740,7 @@ class OperatorControl(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["email_id_lists"] = email_id_lists
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_default_operator_control"] = is_default_operator_control
         __props__.__dict__["is_fully_pre_approved"] = is_fully_pre_approved
         __props__.__dict__["last_modified_info"] = last_modified_info
         __props__.__dict__["operator_control_name"] = operator_control_name
@@ -796,6 +816,14 @@ class OperatorControl(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isDefaultOperatorControl")
+    def is_default_operator_control(self) -> pulumi.Output[bool]:
+        """
+        Whether the operator control is a default Operator Control.
+        """
+        return pulumi.get(self, "is_default_operator_control")
 
     @property
     @pulumi.getter(name="isFullyPreApproved")

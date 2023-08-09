@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Users in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Users
+        /// Search for users.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Users in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Users
+        /// Search for users.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

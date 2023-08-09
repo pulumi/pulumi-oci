@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
     /// 
-    /// Create a Group
+    /// Create a group.
     /// 
     /// ## Import
     /// 
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Identity
         public Output<bool> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Group display name
+        /// (Updatable) The Group display name.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<string>> IdcsPreventedOperations { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        /// (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -226,7 +226,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsGroupMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A human readable name for Group as defined by the Service Consumer
+        /// (Updatable) A human readable name for the group as defined by the Service Consumer.
         /// 
         /// **Added In:** 2011192329
         /// 
@@ -332,7 +332,7 @@ namespace Pulumi.Oci.Identity
         public Output<Outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup> UrnietfparamsscimschemasoracleidcsextensiondynamicGroup { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Idcs Group
+        /// (Updatable) Oracle Identity Cloud Service Group
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensiongroupGroup")]
         public Output<Outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> UrnietfparamsscimschemasoracleidcsextensiongroupGroup { get; private set; } = null!;
@@ -420,7 +420,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Authorization { get; set; }
 
         /// <summary>
-        /// (Updatable) Group display name
+        /// (Updatable) The Group display name.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -463,7 +463,7 @@ namespace Pulumi.Oci.Identity
         private InputList<Inputs.DomainsGroupMemberArgs>? _members;
 
         /// <summary>
-        /// (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        /// (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -485,7 +485,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// (Updatable) A human readable name for Group as defined by the Service Consumer
+        /// (Updatable) A human readable name for the group as defined by the Service Consumer.
         /// 
         /// **Added In:** 2011192329
         /// 
@@ -581,7 +581,7 @@ namespace Pulumi.Oci.Identity
         public Input<Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs>? UrnietfparamsscimschemasoracleidcsextensiondynamicGroup { get; set; }
 
         /// <summary>
-        /// (Updatable) Idcs Group
+        /// (Updatable) Oracle Identity Cloud Service Group
         /// </summary>
         [Input("urnietfparamsscimschemasoracleidcsextensiongroupGroup")]
         public Input<Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs>? UrnietfparamsscimschemasoracleidcsextensiongroupGroup { get; set; }
@@ -663,7 +663,7 @@ namespace Pulumi.Oci.Identity
         public Input<bool>? DeleteInProgress { get; set; }
 
         /// <summary>
-        /// (Updatable) Group display name
+        /// (Updatable) The Group display name.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -799,7 +799,7 @@ namespace Pulumi.Oci.Identity
         private InputList<Inputs.DomainsGroupMemberGetArgs>? _members;
 
         /// <summary>
-        /// (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        /// (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -843,7 +843,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// (Updatable) A human readable name for Group as defined by the Service Consumer
+        /// (Updatable) A human readable name for the group as defined by the Service Consumer.
         /// 
         /// **Added In:** 2011192329
         /// 
@@ -967,7 +967,7 @@ namespace Pulumi.Oci.Identity
         public Input<Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupGetArgs>? UrnietfparamsscimschemasoracleidcsextensiondynamicGroup { get; set; }
 
         /// <summary>
-        /// (Updatable) Idcs Group
+        /// (Updatable) Oracle Identity Cloud Service Group
         /// </summary>
         [Input("urnietfparamsscimschemasoracleidcsextensiongroupGroup")]
         public Input<Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGetArgs>? UrnietfparamsscimschemasoracleidcsextensiongroupGroup { get; set; }

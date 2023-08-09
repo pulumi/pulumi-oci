@@ -22,7 +22,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs();
 
     /**
-     * (Updatable) A list of bypass codes belongs to user
+     * (Updatable) A list of bypass codes that belongs to the user.
      * 
      * **Added In:** 18.3.6
      * 
@@ -40,7 +40,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs>> bypassCodes;
 
     /**
-     * @return (Updatable) A list of bypass codes belongs to user
+     * @return (Updatable) A list of bypass codes that belongs to the user.
      * 
      * **Added In:** 18.3.6
      * 
@@ -103,6 +103,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: integer
@@ -120,6 +122,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      * * idcsAllowUpdatesInReadOnlyMode: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: integer
@@ -131,7 +135,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * 
      * **Added In:** 18.3.6
      * 
@@ -149,7 +153,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> mfaEnabledOn;
 
     /**
-     * @return (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * @return (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * 
      * **Added In:** 18.3.6
      * 
@@ -207,7 +211,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) User Opted for MFA
+     * (Updatable) The user opted for MFA.
      * 
      * **Added In:** 18.3.6
      * 
@@ -216,6 +220,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: string
@@ -226,7 +231,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> mfaStatus;
 
     /**
-     * @return (Updatable) User Opted for MFA
+     * @return (Updatable) The user opted for MFA.
      * 
      * **Added In:** 18.3.6
      * 
@@ -235,6 +240,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: string
@@ -246,7 +252,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) Preferred Authentication Factor Type
+     * (Updatable) The preferred authentication factor type.
      * 
      * **Added In:** 18.3.6
      * 
@@ -265,7 +271,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> preferredAuthenticationFactor;
 
     /**
-     * @return (Updatable) Preferred Authentication Factor Type
+     * @return (Updatable) The preferred authentication factor type.
      * 
      * **Added In:** 18.3.6
      * 
@@ -285,7 +291,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) Preferred Authentication method
+     * (Updatable) The preferred authentication method.
      * 
      * **Added In:** 2009232244
      * 
@@ -304,7 +310,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> preferredAuthenticationMethod;
 
     /**
-     * @return (Updatable) Preferred Authentication method
+     * @return (Updatable) The preferred authentication method.
      * 
      * **Added In:** 2009232244
      * 
@@ -324,7 +330,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) User preferred device
+     * (Updatable) The user&#39;s preferred device.
      * 
      * **Added In:** 18.3.6
      * 
@@ -343,7 +349,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs> preferredDevice;
 
     /**
-     * @return (Updatable) User preferred device
+     * @return (Updatable) The user&#39;s preferred device.
      * 
      * **Added In:** 18.3.6
      * 
@@ -363,7 +369,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) Preferred Third party vendor name
+     * (Updatable) The preferred third-party vendor name.
      * 
      * **Added In:** 19.2.1
      * 
@@ -382,7 +388,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> preferredThirdPartyVendor;
 
     /**
-     * @return (Updatable) Preferred Third party vendor name
+     * @return (Updatable) The preferred third-party vendor name.
      * 
      * **Added In:** 19.2.1
      * 
@@ -473,7 +479,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param bypassCodes (Updatable) A list of bypass codes belongs to user
+         * @param bypassCodes (Updatable) A list of bypass codes that belongs to the user.
          * 
          * **Added In:** 18.3.6
          * 
@@ -495,7 +501,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param bypassCodes (Updatable) A list of bypass codes belongs to user
+         * @param bypassCodes (Updatable) A list of bypass codes that belongs to the user.
          * 
          * **Added In:** 18.3.6
          * 
@@ -516,7 +522,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param bypassCodes (Updatable) A list of bypass codes belongs to user
+         * @param bypassCodes (Updatable) A list of bypass codes that belongs to the user.
          * 
          * **Added In:** 18.3.6
          * 
@@ -608,6 +614,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
          * * idcsAllowUpdatesInReadOnlyMode: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
+         * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: integer
@@ -629,6 +637,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
          * * idcsAllowUpdatesInReadOnlyMode: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
+         * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: integer
@@ -642,7 +652,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param mfaEnabledOn (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+         * @param mfaEnabledOn (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
          * 
          * **Added In:** 18.3.6
          * 
@@ -664,7 +674,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param mfaEnabledOn (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+         * @param mfaEnabledOn (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
          * 
          * **Added In:** 18.3.6
          * 
@@ -752,7 +762,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param mfaStatus (Updatable) User Opted for MFA
+         * @param mfaStatus (Updatable) The user opted for MFA.
          * 
          * **Added In:** 18.3.6
          * 
@@ -761,6 +771,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: string
@@ -775,7 +786,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param mfaStatus (Updatable) User Opted for MFA
+         * @param mfaStatus (Updatable) The user opted for MFA.
          * 
          * **Added In:** 18.3.6
          * 
@@ -784,6 +795,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: string
@@ -797,7 +809,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param preferredAuthenticationFactor (Updatable) Preferred Authentication Factor Type
+         * @param preferredAuthenticationFactor (Updatable) The preferred authentication factor type.
          * 
          * **Added In:** 18.3.6
          * 
@@ -820,7 +832,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param preferredAuthenticationFactor (Updatable) Preferred Authentication Factor Type
+         * @param preferredAuthenticationFactor (Updatable) The preferred authentication factor type.
          * 
          * **Added In:** 18.3.6
          * 
@@ -842,7 +854,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param preferredAuthenticationMethod (Updatable) Preferred Authentication method
+         * @param preferredAuthenticationMethod (Updatable) The preferred authentication method.
          * 
          * **Added In:** 2009232244
          * 
@@ -865,7 +877,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param preferredAuthenticationMethod (Updatable) Preferred Authentication method
+         * @param preferredAuthenticationMethod (Updatable) The preferred authentication method.
          * 
          * **Added In:** 2009232244
          * 
@@ -887,7 +899,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param preferredDevice (Updatable) User preferred device
+         * @param preferredDevice (Updatable) The user&#39;s preferred device.
          * 
          * **Added In:** 18.3.6
          * 
@@ -910,7 +922,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param preferredDevice (Updatable) User preferred device
+         * @param preferredDevice (Updatable) The user&#39;s preferred device.
          * 
          * **Added In:** 18.3.6
          * 
@@ -932,7 +944,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param preferredThirdPartyVendor (Updatable) Preferred Third party vendor name
+         * @param preferredThirdPartyVendor (Updatable) The preferred third-party vendor name.
          * 
          * **Added In:** 19.2.1
          * 
@@ -955,7 +967,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param preferredThirdPartyVendor (Updatable) Preferred Third party vendor name
+         * @param preferredThirdPartyVendor (Updatable) The preferred third-party vendor name.
          * 
          * **Added In:** 19.2.1
          * 

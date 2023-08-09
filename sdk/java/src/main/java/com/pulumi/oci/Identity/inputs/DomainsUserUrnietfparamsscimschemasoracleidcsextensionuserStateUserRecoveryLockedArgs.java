@@ -17,7 +17,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs();
 
     /**
-     * (Updatable) The date and time that the current resource was locked
+     * (Updatable) The date and time that the current resource was locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -25,6 +25,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: dateTime
@@ -35,7 +36,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<String> lockDate;
 
     /**
-     * @return (Updatable) The date and time that the current resource was locked
+     * @return (Updatable) The date and time that the current resource was locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -43,6 +44,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: dateTime
@@ -54,7 +56,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) Indicates that the rev is locked
+     * (Updatable) Indicates that the recovery is locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -63,6 +65,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -73,7 +76,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<Boolean> on;
 
     /**
-     * @return (Updatable) Indicates that the rev is locked
+     * @return (Updatable) Indicates that the recovery is locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -82,6 +85,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -118,7 +122,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param lockDate (Updatable) The date and time that the current resource was locked
+         * @param lockDate (Updatable) The date and time that the current resource was locked.
          * 
          * **Added In:** 19.1.4
          * 
@@ -126,6 +130,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: dateTime
@@ -140,7 +145,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param lockDate (Updatable) The date and time that the current resource was locked
+         * @param lockDate (Updatable) The date and time that the current resource was locked.
          * 
          * **Added In:** 19.1.4
          * 
@@ -148,6 +153,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: dateTime
@@ -161,7 +167,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param on (Updatable) Indicates that the rev is locked
+         * @param on (Updatable) Indicates that the recovery is locked.
          * 
          * **Added In:** 19.1.4
          * 
@@ -170,6 +176,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: boolean
@@ -184,7 +191,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param on (Updatable) Indicates that the rev is locked
+         * @param on (Updatable) Indicates that the recovery is locked.
          * 
          * **Added In:** 19.1.4
          * 
@@ -193,6 +200,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: boolean

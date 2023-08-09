@@ -114,6 +114,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Output<bool> IsAutoApproveDuringMaintenance { get; private set; } = null!;
 
         /// <summary>
+        /// Whether the assignment is a default assignment.
+        /// </summary>
+        [Output("isDefaultAssignment")]
+        public Output<bool> IsDefaultAssignment { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) If set, then the target resource is always governed by the operator control.
         /// </summary>
         [Output("isEnforcedAlways")]
@@ -456,6 +462,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         [Input("isAutoApproveDuringMaintenance")]
         public Input<bool>? IsAutoApproveDuringMaintenance { get; set; }
+
+        /// <summary>
+        /// Whether the assignment is a default assignment.
+        /// </summary>
+        [Input("isDefaultAssignment")]
+        public Input<bool>? IsDefaultAssignment { get; set; }
 
         /// <summary>
         /// (Updatable) If set, then the target resource is always governed by the operator control.

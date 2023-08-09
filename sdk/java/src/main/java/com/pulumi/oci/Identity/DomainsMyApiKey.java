@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Add a user&#39;s api key
+ * Add a user&#39;s own API key.
  * 
  * ## Example Usage
  * 
@@ -476,7 +476,7 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
         return this.metas;
     }
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -493,7 +493,7 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
     private Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -626,7 +626,7 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
         return this.tenancyOcid;
     }
     /**
-     * User linked to api key
+     * The user linked to the API key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -643,7 +643,7 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
     private Output<DomainsMyApiKeyUser> user;
 
     /**
-     * @return User linked to api key
+     * @return The user linked to the API key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false

@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string ExternalId;
         /// <summary>
-        /// Membership Ocid
+        /// The membership OCID.
         /// </summary>
         public readonly string MembershipOcid;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string NonUniqueDisplay;
         /// <summary>
-        /// Ocid of the User's Support Account.
+        /// The OCID of the user's support account.
         /// </summary>
         public readonly string Ocid;
         /// <summary>

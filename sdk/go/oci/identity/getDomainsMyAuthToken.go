@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Get user's auth token
+// Get a user's own Auth token.
 //
 // ## Example Usage
 //
@@ -76,7 +76,7 @@ type LookupDomainsMyAuthTokenResult struct {
 	Description string `pulumi:"description"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	DomainOcid string `pulumi:"domainOcid"`
-	// User credential expires on
+	// When the user's credential expire.
 	ExpiresOn string `pulumi:"expiresOn"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
 	Id string `pulumi:"id"`
@@ -92,18 +92,18 @@ type LookupDomainsMyAuthTokenResult struct {
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas         []GetDomainsMyAuthTokenMeta `pulumi:"metas"`
 	MyAuthTokenId string                      `pulumi:"myAuthTokenId"`
-	// User's ocid
+	// The user's OCID.
 	Ocid                      string  `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
-	// User credential status
+	// The user's credential status.
 	Status string `pulumi:"status"`
 	// A list of tags on this resource.
 	Tags []GetDomainsMyAuthTokenTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 	TenancyOcid string `pulumi:"tenancyOcid"`
-	// User linked to auth token
+	// The user linked to the Auth token.
 	Users []GetDomainsMyAuthTokenUser `pulumi:"users"`
 }
 
@@ -175,7 +175,7 @@ func (o LookupDomainsMyAuthTokenResultOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyAuthTokenResult) string { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
-// User credential expires on
+// When the user's credential expire.
 func (o LookupDomainsMyAuthTokenResultOutput) ExpiresOn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyAuthTokenResult) string { return v.ExpiresOn }).(pulumi.StringOutput)
 }
@@ -220,7 +220,7 @@ func (o LookupDomainsMyAuthTokenResultOutput) MyAuthTokenId() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupDomainsMyAuthTokenResult) string { return v.MyAuthTokenId }).(pulumi.StringOutput)
 }
 
-// User's ocid
+// The user's OCID.
 func (o LookupDomainsMyAuthTokenResultOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyAuthTokenResult) string { return v.Ocid }).(pulumi.StringOutput)
 }
@@ -234,7 +234,7 @@ func (o LookupDomainsMyAuthTokenResultOutput) Schemas() pulumi.StringArrayOutput
 	return o.ApplyT(func(v LookupDomainsMyAuthTokenResult) []string { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
-// User credential status
+// The user's credential status.
 func (o LookupDomainsMyAuthTokenResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyAuthTokenResult) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -249,7 +249,7 @@ func (o LookupDomainsMyAuthTokenResultOutput) TenancyOcid() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupDomainsMyAuthTokenResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
 }
 
-// User linked to auth token
+// The user linked to the Auth token.
 func (o LookupDomainsMyAuthTokenResultOutput) Users() GetDomainsMyAuthTokenUserArrayOutput {
 	return o.ApplyT(func(v LookupDomainsMyAuthTokenResult) []GetDomainsMyAuthTokenUser { return v.Users }).(GetDomainsMyAuthTokenUserArrayOutput)
 }

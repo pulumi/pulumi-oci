@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of My Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search user's customer secret key
+ * Search for a user's own customer secret key.
  *
  * ## Example Usage
  *
@@ -107,7 +107,7 @@ export interface GetDomainsMyCustomerSecretKeysResult {
 /**
  * This data source provides the list of My Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search user's customer secret key
+ * Search for a user's own customer secret key.
  *
  * ## Example Usage
  *

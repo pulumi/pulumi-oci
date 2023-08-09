@@ -66,7 +66,7 @@ class DomainsApiKeyArgs:
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -90,7 +90,7 @@ class DomainsApiKeyArgs:
                * type: complex
                * uniqueness: none
         :param pulumi.Input['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input['DomainsApiKeyUserArgs'] user: User linked to api key
+        :param pulumi.Input['DomainsApiKeyUserArgs'] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -241,7 +241,7 @@ class DomainsApiKeyArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -309,7 +309,7 @@ class DomainsApiKeyArgs:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsApiKeyUserArgs']]:
         """
-        User linked to api key
+        The user linked to the API key.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -474,7 +474,7 @@ class _DomainsApiKeyState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -520,7 +520,7 @@ class _DomainsApiKeyState:
                * type: string
                * uniqueness: none
         :param pulumi.Input['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input['DomainsApiKeyUserArgs'] user: User linked to api key
+        :param pulumi.Input['DomainsApiKeyUserArgs'] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -865,7 +865,7 @@ class _DomainsApiKeyState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -977,7 +977,7 @@ class _DomainsApiKeyState:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsApiKeyUserArgs']]:
         """
-        User linked to api key
+        The user linked to the API key.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1017,7 +1017,7 @@ class DomainsApiKey(pulumi.CustomResource):
         """
         This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's api key
+        Create a user's API key.
 
         ## Import
 
@@ -1054,7 +1054,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1089,7 +1089,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * type: complex
                * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[pulumi.InputType['DomainsApiKeyUserArgs']] user: User linked to api key
+        :param pulumi.Input[pulumi.InputType['DomainsApiKeyUserArgs']] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1110,7 +1110,7 @@ class DomainsApiKey(pulumi.CustomResource):
         """
         This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's api key
+        Create a user's API key.
 
         ## Import
 
@@ -1342,7 +1342,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1388,7 +1388,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[pulumi.InputType['DomainsApiKeyUserArgs']] user: User linked to api key
+        :param pulumi.Input[pulumi.InputType['DomainsApiKeyUserArgs']] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1656,7 +1656,7 @@ class DomainsApiKey(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1744,7 +1744,7 @@ class DomainsApiKey(pulumi.CustomResource):
     @pulumi.getter
     def user(self) -> pulumi.Output['outputs.DomainsApiKeyUser']:
         """
-        User linked to api key
+        The user linked to the API key.
 
         **SCIM++ Properties:**
         * caseExact: false

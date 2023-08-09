@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Password Policies
+        /// Search for password policies.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Password Policies
+        /// Search for password policies.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

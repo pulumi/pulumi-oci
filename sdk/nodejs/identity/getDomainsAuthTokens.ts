@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search AuthTokens
+ * Search for Auth tokens.
  *
  * ## Example Usage
  *
@@ -121,7 +121,7 @@ export interface GetDomainsAuthTokensResult {
 /**
  * This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search AuthTokens
+ * Search for Auth tokens.
  *
  * ## Example Usage
  *

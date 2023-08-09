@@ -24,7 +24,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
     public static final DomainsCustomerSecretKeyState Empty = new DomainsCustomerSecretKeyState();
 
     /**
-     * (Updatable) Access key
+     * (Updatable) The access key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -38,7 +38,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
     private @Nullable Output<String> accessKey;
 
     /**
-     * @return (Updatable) Access key
+     * @return (Updatable) The access key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -261,7 +261,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
     }
 
     /**
-     * User credential expires on
+     * When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -280,7 +280,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
     private @Nullable Output<String> expiresOn;
 
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -480,7 +480,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
     }
 
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -497,7 +497,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -565,7 +565,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
     }
 
     /**
-     * User credential status
+     * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -584,7 +584,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
     private @Nullable Output<String> status;
 
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -771,7 +771,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param accessKey (Updatable) Access key
+         * @param accessKey (Updatable) The access key.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -789,7 +789,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param accessKey (Updatable) Access key
+         * @param accessKey (Updatable) The access key.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1072,7 +1072,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user&#39;s credential expire.
          * 
          * **Added In:** 2109090424
          * 
@@ -1095,7 +1095,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user&#39;s credential expire.
          * 
          * **Added In:** 2109090424
          * 
@@ -1408,7 +1408,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1429,7 +1429,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1531,7 +1531,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param status User credential status
+         * @param status The user&#39;s credential status.
          * 
          * **Added In:** 2109090424
          * 
@@ -1554,7 +1554,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param status User credential status
+         * @param status The user&#39;s credential status.
          * 
          * **Added In:** 2109090424
          * 

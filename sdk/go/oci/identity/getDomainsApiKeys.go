@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Search Api Key
+// Search API keys.
 //
 // ## Example Usage
 //

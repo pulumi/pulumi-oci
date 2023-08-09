@@ -41,12 +41,20 @@ __all__ = [
     'GetLogAnalyticsPreferenceItemResult',
     'GetLogAnalyticsResourceCategoriesListCategoryResult',
     'GetLogAnalyticsResourceCategoriesListItemResult',
+    'GetNamespaceEffectivePropertiesEffectivePropertyCollectionResult',
+    'GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult',
+    'GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult',
+    'GetNamespaceEffectivePropertiesFilterResult',
     'GetNamespaceIngestTimeRuleActionResult',
     'GetNamespaceIngestTimeRuleConditionResult',
     'GetNamespaceIngestTimeRuleConditionAdditionalConditionResult',
     'GetNamespaceIngestTimeRulesFilterResult',
     'GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionResult',
     'GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult',
+    'GetNamespacePropertiesMetadataFilterResult',
+    'GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionResult',
+    'GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult',
+    'GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult',
     'GetNamespaceRulesFilterResult',
     'GetNamespaceRulesRuleSummaryCollectionResult',
     'GetNamespaceRulesRuleSummaryCollectionItemResult',
@@ -62,6 +70,9 @@ __all__ = [
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult',
     'GetNamespaceStorageEncryptionKeyInfoItemResult',
+    'GetNamespaceStorageOverlappingRecallsFilterResult',
+    'GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionResult',
+    'GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult',
     'GetNamespacesFilterResult',
     'GetNamespacesNamespaceCollectionResult',
     'GetNamespacesNamespaceCollectionItemResult',
@@ -281,7 +292,7 @@ class LogAnalyticsPreferencesManagementItem(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+        :param str name: The preference name.
         :param str value: The preference value.
         """
         if name is not None:
@@ -293,7 +304,7 @@ class LogAnalyticsPreferencesManagementItem(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+        The preference name.
         """
         return pulumi.get(self, "name")
 
@@ -2065,7 +2076,7 @@ class GetLogAnalyticsPreferenceItemResult(dict):
                  name: str,
                  value: str):
         """
-        :param str name: The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+        :param str name: The preference name.
         :param str value: The preference value.
         """
         pulumi.set(__self__, "name", name)
@@ -2075,7 +2086,7 @@ class GetLogAnalyticsPreferenceItemResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+        The preference name.
         """
         return pulumi.get(self, "name")
 
@@ -2199,6 +2210,148 @@ class GetLogAnalyticsResourceCategoriesListItemResult(dict):
         The resource type.
         """
         return pulumi.get(self, "resource_type")
+
+
+@pulumi.output_type
+class GetNamespaceEffectivePropertiesEffectivePropertyCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult']):
+        """
+        :param Sequence['GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs'] items: A list of properties and their effective values.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult']:
+        """
+        A list of properties and their effective values.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 effective_level: str,
+                 name: str,
+                 patterns: Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult'],
+                 value: str):
+        """
+        :param str effective_level: The effective level of the property value.
+        :param str name: The property name used for filtering.
+        :param Sequence['GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs'] patterns: A list of pattern level override values for the property.
+        :param str value: The effective value of the property. This is determined by considering the value set at the most effective level.
+        """
+        pulumi.set(__self__, "effective_level", effective_level)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "patterns", patterns)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="effectiveLevel")
+    def effective_level(self) -> str:
+        """
+        The effective level of the property value.
+        """
+        return pulumi.get(self, "effective_level")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The property name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def patterns(self) -> Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult']:
+        """
+        A list of pattern level override values for the property.
+        """
+        return pulumi.get(self, "patterns")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The effective value of the property. This is determined by considering the value set at the most effective level.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult(dict):
+    def __init__(__self__, *,
+                 effective_level: str,
+                 id: str,
+                 value: str):
+        """
+        :param str effective_level: The effective level of the property value.
+        :param str id: The pattern id.
+        :param str value: The effective value of the property. This is determined by considering the value set at the most effective level.
+        """
+        pulumi.set(__self__, "effective_level", effective_level)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="effectiveLevel")
+    def effective_level(self) -> str:
+        """
+        The effective level of the property value.
+        """
+        return pulumi.get(self, "effective_level")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The pattern id.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The effective value of the property. This is determined by considering the value set at the most effective level.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetNamespaceEffectivePropertiesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The property name used for filtering.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The property name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -2563,6 +2716,148 @@ class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult(dict)
         The date and time the resource was last updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetNamespacePropertiesMetadataFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The property name used for filtering.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The property name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs'] items: An array of properties along with their metadata summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult']:
+        """
+        An array of properties along with their metadata summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 default_value: str,
+                 description: str,
+                 display_name: str,
+                 levels: Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult'],
+                 name: str):
+        """
+        :param str default_value: The default property value.
+        :param str description: The property description.
+        :param str display_name: The property display name.
+        :param Sequence['GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs'] levels: A list of levels at which the property could be defined.
+        :param str name: The property name used for filtering.
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "levels", levels)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> str:
+        """
+        The default property value.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The property description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The property display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def levels(self) -> Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult']:
+        """
+        A list of levels at which the property could be defined.
+        """
+        return pulumi.get(self, "levels")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The property name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult(dict):
+    def __init__(__self__, *,
+                 constraints: str,
+                 name: str):
+        """
+        :param str constraints: The constraints that apply to the properties at a certain level.
+        :param str name: The property name used for filtering.
+        """
+        pulumi.set(__self__, "constraints", constraints)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def constraints(self) -> str:
+        """
+        The constraints that apply to the properties at a certain level.
+        """
+        return pulumi.get(self, "constraints")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The property name used for filtering.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -3484,6 +3779,146 @@ class GetNamespaceStorageEncryptionKeyInfoItemResult(dict):
         This is the type of data to be encrypted. It can be either active or archival.
         """
         return pulumi.get(self, "key_type")
+
+
+@pulumi.output_type
+class GetNamespaceStorageOverlappingRecallsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult']):
+        """
+        :param Sequence['GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs'] items: This is the array of overlapping recall requests
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult']:
+        """
+        This is the array of overlapping recall requests
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 created_by: str,
+                 log_sets: str,
+                 purpose: str,
+                 query_string: str,
+                 status: str,
+                 time_data_ended: str,
+                 time_data_started: str,
+                 time_started: str):
+        """
+        :param str created_by: This is the user who initiated the recall request
+        :param str log_sets: This is the list of logsets associated with this recall
+        :param str purpose: This is the purpose of the recall
+        :param str query_string: This is the query associated with the recall
+        :param str status: This is the status of the recall
+        :param str time_data_ended: This is the end of the time range for recalled data
+        :param str time_data_started: This is the start of the time range for recalled data
+        :param str time_started: This is the time when the recall operation was started for this recall request
+        """
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "log_sets", log_sets)
+        pulumi.set(__self__, "purpose", purpose)
+        pulumi.set(__self__, "query_string", query_string)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_data_ended", time_data_ended)
+        pulumi.set(__self__, "time_data_started", time_data_started)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        This is the user who initiated the recall request
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="logSets")
+    def log_sets(self) -> str:
+        """
+        This is the list of logsets associated with this recall
+        """
+        return pulumi.get(self, "log_sets")
+
+    @property
+    @pulumi.getter
+    def purpose(self) -> str:
+        """
+        This is the purpose of the recall
+        """
+        return pulumi.get(self, "purpose")
+
+    @property
+    @pulumi.getter(name="queryString")
+    def query_string(self) -> str:
+        """
+        This is the query associated with the recall
+        """
+        return pulumi.get(self, "query_string")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        This is the status of the recall
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeDataEnded")
+    def time_data_ended(self) -> str:
+        """
+        This is the end of the time range for recalled data
+        """
+        return pulumi.get(self, "time_data_ended")
+
+    @property
+    @pulumi.getter(name="timeDataStarted")
+    def time_data_started(self) -> str:
+        """
+        This is the start of the time range for recalled data
+        """
+        return pulumi.get(self, "time_data_started")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        This is the time when the recall operation was started for this recall request
+        """
+        return pulumi.get(self, "time_started")
 
 
 @pulumi.output_type

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Create a Group
+ * Create a group.
  *
  * ## Import
  *
@@ -88,7 +88,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Group display name
+     * (Updatable) The Group display name.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -187,7 +187,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
     /**
-     * (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -218,7 +218,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsGroupMeta[]>;
     /**
-     * (Updatable) A human readable name for Group as defined by the Service Consumer
+     * (Updatable) A human readable name for the group as defined by the Service Consumer.
      *
      * **Added In:** 2011192329
      *
@@ -306,7 +306,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      */
     public readonly urnietfparamsscimschemasoracleidcsextensiondynamicGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup>;
     /**
-     * (Updatable) Idcs Group
+     * (Updatable) Oracle Identity Cloud Service Group
      */
     public readonly urnietfparamsscimschemasoracleidcsextensiongroupGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup>;
     /**
@@ -447,7 +447,7 @@ export interface DomainsGroupState {
      */
     deleteInProgress?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Group display name
+     * (Updatable) The Group display name.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -546,7 +546,7 @@ export interface DomainsGroupState {
      */
     idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -577,7 +577,7 @@ export interface DomainsGroupState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupMeta>[]>;
     /**
-     * (Updatable) A human readable name for Group as defined by the Service Consumer
+     * (Updatable) A human readable name for the group as defined by the Service Consumer.
      *
      * **Added In:** 2011192329
      *
@@ -665,7 +665,7 @@ export interface DomainsGroupState {
      */
     urnietfparamsscimschemasoracleidcsextensiondynamicGroup?: pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup>;
     /**
-     * (Updatable) Idcs Group
+     * (Updatable) Oracle Identity Cloud Service Group
      */
     urnietfparamsscimschemasoracleidcsextensiongroupGroup?: pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup>;
     /**
@@ -695,7 +695,7 @@ export interface DomainsGroupArgs {
      */
     authorization?: pulumi.Input<string>;
     /**
-     * (Updatable) Group display name
+     * (Updatable) The Group display name.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -729,7 +729,7 @@ export interface DomainsGroupArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -746,7 +746,7 @@ export interface DomainsGroupArgs {
      */
     members?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupMember>[]>;
     /**
-     * (Updatable) A human readable name for Group as defined by the Service Consumer
+     * (Updatable) A human readable name for the group as defined by the Service Consumer.
      *
      * **Added In:** 2011192329
      *
@@ -816,7 +816,7 @@ export interface DomainsGroupArgs {
      */
     urnietfparamsscimschemasoracleidcsextensiondynamicGroup?: pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup>;
     /**
-     * (Updatable) Idcs Group
+     * (Updatable) Oracle Identity Cloud Service Group
      */
     urnietfparamsscimschemasoracleidcsextensiongroupGroup?: pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup>;
     /**

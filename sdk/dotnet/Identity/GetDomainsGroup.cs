@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get a Group - The Group search and get operations on users/members will throw an exception if it has more than 10K members, to avoid the exception use the pagination filter to get or search group members
+        /// Get a group. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get a Group - The Group search and get operations on users/members will throw an exception if it has more than 10K members, to avoid the exception use the pagination filter to get or search group members
+        /// Get a group. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly bool DeleteInProgress;
         /// <summary>
-        /// Group display name
+        /// The Group display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -233,7 +233,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<string> IdcsPreventedOperations;
         /// <summary>
-        /// Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        /// The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsGroupMemberResult> Members;
         /// <summary>
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsGroupMetaResult> Metas;
         /// <summary>
-        /// A human readable name for Group as defined by the Service Consumer
+        /// A human readable name for the group as defined by the Service Consumer.
         /// </summary>
         public readonly string NonUniqueDisplayName;
         /// <summary>
@@ -274,7 +274,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupResult> UrnietfparamsscimschemasoracleidcsextensiondynamicGroups;
         /// <summary>
-        /// Idcs Group
+        /// Oracle Identity Cloud Service Group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupResult> UrnietfparamsscimschemasoracleidcsextensiongroupGroups;
         /// <summary>

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Create a Password Policy
+ * Create a password policy.
  * 
  * ## Example Usage
  * 
@@ -66,6 +66,8 @@ import javax.annotation.Nullable;
  *             .dictionaryWordDisallowed(var_.password_policy_dictionary_word_disallowed())
  *             .disallowedChars(var_.password_policy_disallowed_chars())
  *             .disallowedSubstrings(var_.password_policy_disallowed_substrings())
+ *             .disallowedUserAttributeValues(var_.password_policy_disallowed_user_attribute_values())
+ *             .distinctCharacters(var_.password_policy_distinct_characters())
  *             .externalId(&#34;externalId&#34;)
  *             .firstNameDisallowed(var_.password_policy_first_name_disallowed())
  *             .forcePasswordReset(var_.password_policy_force_password_reset())
@@ -486,6 +488,78 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> disallowedSubstrings() {
         return this.disallowedSubstrings;
+    }
+    /**
+     * (Updatable) List of User attributes whose values are not allowed in the password.
+     * 
+     * **Added In:** 2303212224
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="disallowedUserAttributeValues", type=List.class, parameters={String.class})
+    private Output<List<String>> disallowedUserAttributeValues;
+
+    /**
+     * @return (Updatable) List of User attributes whose values are not allowed in the password.
+     * 
+     * **Added In:** 2303212224
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Output<List<String>> disallowedUserAttributeValues() {
+        return this.disallowedUserAttributeValues;
+    }
+    /**
+     * (Updatable) The number of distinct characters between old password and new password
+     * 
+     * **Added In:** 2303212224
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="distinctCharacters", type=Integer.class, parameters={})
+    private Output<Integer> distinctCharacters;
+
+    /**
+     * @return (Updatable) The number of distinct characters between old password and new password
+     * 
+     * **Added In:** 2303212224
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
+     */
+    public Output<Integer> distinctCharacters() {
+        return this.distinctCharacters;
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.

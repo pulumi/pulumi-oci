@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser {
     /**
-     * @return A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+     * @return A list of kerberos realm users for an Oracle Identity Cloud Service User
      * 
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser() {}
     /**
-     * @return A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+     * @return A list of kerberos realm users for an Oracle Identity Cloud Service User
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers() {

@@ -309,6 +309,8 @@ type GetAccessRequestsAccessRequestCollectionItem struct {
 	Severity string `pulumi:"severity"`
 	// A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
 	State string `pulumi:"state"`
+	// The subresources requested for approval.
+	SubResourceLists []string `pulumi:"subResourceLists"`
 	// System message that will be displayed to the operator at login to the target resource.
 	SystemMessage string `pulumi:"systemMessage"`
 	// Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
@@ -383,6 +385,8 @@ type GetAccessRequestsAccessRequestCollectionItemArgs struct {
 	Severity pulumi.StringInput `pulumi:"severity"`
 	// A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
+	// The subresources requested for approval.
+	SubResourceLists pulumi.StringArrayInput `pulumi:"subResourceLists"`
 	// System message that will be displayed to the operator at login to the target resource.
 	SystemMessage pulumi.StringInput `pulumi:"systemMessage"`
 	// Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
@@ -566,6 +570,11 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) Severity() pulumi.St
 // A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
 func (o GetAccessRequestsAccessRequestCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The subresources requested for approval.
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) SubResourceLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) []string { return v.SubResourceLists }).(pulumi.StringArrayOutput)
 }
 
 // System message that will be displayed to the operator at login to the target resource.
@@ -1533,6 +1542,8 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItem struct {
 	Id string `pulumi:"id"`
 	// The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance bool `pulumi:"isAutoApproveDuringMaintenance"`
+	// Whether the assignment is a default assignment.
+	IsDefaultAssignment bool `pulumi:"isDefaultAssignment"`
 	// If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways bool `pulumi:"isEnforcedAlways"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
@@ -1601,6 +1612,8 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance pulumi.BoolInput `pulumi:"isAutoApproveDuringMaintenance"`
+	// Whether the assignment is a default assignment.
+	IsDefaultAssignment pulumi.BoolInput `pulumi:"isDefaultAssignment"`
 	// If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways pulumi.BoolInput `pulumi:"isEnforcedAlways"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
@@ -1743,6 +1756,13 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Id()
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsAutoApproveDuringMaintenance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool {
 		return v.IsAutoApproveDuringMaintenance
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the assignment is a default assignment.
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsDefaultAssignment() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool {
+		return v.IsDefaultAssignment
 	}).(pulumi.BoolOutput)
 }
 
@@ -2084,6 +2104,8 @@ type GetControlsOperatorControlCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the operator control.
 	Id string `pulumi:"id"`
+	// Whether the operator control is a default Operator Control.
+	IsDefaultOperatorControl bool `pulumi:"isDefaultOperatorControl"`
 	// Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
@@ -2136,6 +2158,8 @@ type GetControlsOperatorControlCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the operator control.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Whether the operator control is a default Operator Control.
+	IsDefaultOperatorControl pulumi.BoolInput `pulumi:"isDefaultOperatorControl"`
 	// Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved pulumi.BoolInput `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
@@ -2252,6 +2276,11 @@ func (o GetControlsOperatorControlCollectionItemOutput) FreeformTags() pulumi.Ma
 // The OCID of the operator control.
 func (o GetControlsOperatorControlCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether the operator control is a default Operator Control.
+func (o GetControlsOperatorControlCollectionItemOutput) IsDefaultOperatorControl() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) bool { return v.IsDefaultOperatorControl }).(pulumi.BoolOutput)
 }
 
 // Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.

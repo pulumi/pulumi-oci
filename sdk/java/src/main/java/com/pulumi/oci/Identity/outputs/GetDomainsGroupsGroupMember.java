@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsGroupsGroupMember {
     /**
-     * @return The DateTime the member was added to the Group.
+     * @return The date and time that the member was added to the group.
      * 
      */
     private String dateAdded;
@@ -20,7 +20,7 @@ public final class GetDomainsGroupsGroupMember {
      */
     private String display;
     /**
-     * @return Membership Ocid
+     * @return The membership OCID.
      * 
      */
     private String membershipOcid;
@@ -52,7 +52,7 @@ public final class GetDomainsGroupsGroupMember {
 
     private GetDomainsGroupsGroupMember() {}
     /**
-     * @return The DateTime the member was added to the Group.
+     * @return The date and time that the member was added to the group.
      * 
      */
     public String dateAdded() {
@@ -66,7 +66,7 @@ public final class GetDomainsGroupsGroupMember {
         return this.display;
     }
     /**
-     * @return Membership Ocid
+     * @return The membership OCID.
      * 
      */
     public String membershipOcid() {

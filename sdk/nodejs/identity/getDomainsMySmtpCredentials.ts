@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of My Smtp Credentials in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search smtp credentials
+ * Search for a user's own SMTP credential.
  *
  * ## Example Usage
  *
@@ -107,7 +107,7 @@ export interface GetDomainsMySmtpCredentialsResult {
 /**
  * This data source provides the list of My Smtp Credentials in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search smtp credentials
+ * Search for a user's own SMTP credential.
  *
  * ## Example Usage
  *

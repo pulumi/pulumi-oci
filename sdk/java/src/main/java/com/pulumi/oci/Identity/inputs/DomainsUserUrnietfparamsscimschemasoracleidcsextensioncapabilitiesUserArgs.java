@@ -16,7 +16,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs();
 
     /**
-     * (Updatable) Indicates weather a user can use api keys
+     * (Updatable) Indicates whether a user can use API keys.
      * 
      * **Added In:** 2012271618
      * 
@@ -35,7 +35,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     private @Nullable Output<Boolean> canUseApiKeys;
 
     /**
-     * @return (Updatable) Indicates weather a user can use api keys
+     * @return (Updatable) Indicates whether a user can use API keys.
      * 
      * **Added In:** 2012271618
      * 
@@ -55,7 +55,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     }
 
     /**
-     * (Updatable) Indicates weather a user can use auth tokens
+     * (Updatable) Indicates whether a user can use Auth tokens.
      * 
      * **Added In:** 2012271618
      * 
@@ -74,7 +74,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     private @Nullable Output<Boolean> canUseAuthTokens;
 
     /**
-     * @return (Updatable) Indicates weather a user can use auth tokens
+     * @return (Updatable) Indicates whether a user can use Auth tokens.
      * 
      * **Added In:** 2012271618
      * 
@@ -94,7 +94,46 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     }
 
     /**
-     * (Updatable) Indicates weather a user can use console password
+     * (Updatable) Specifies whether user can access the Console.
+     * 
+     * **Added In:** 2206280902
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="canUseConsole")
+    private @Nullable Output<Boolean> canUseConsole;
+
+    /**
+     * @return (Updatable) Specifies whether user can access the Console.
+     * 
+     * **Added In:** 2206280902
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<Boolean>> canUseConsole() {
+        return Optional.ofNullable(this.canUseConsole);
+    }
+
+    /**
+     * (Updatable) Indicates whether a user can use Console passwords.
      * 
      * **Added In:** 2012271618
      * 
@@ -113,7 +152,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     private @Nullable Output<Boolean> canUseConsolePassword;
 
     /**
-     * @return (Updatable) Indicates weather a user can use console password
+     * @return (Updatable) Indicates whether a user can use Console passwords.
      * 
      * **Added In:** 2012271618
      * 
@@ -133,7 +172,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     }
 
     /**
-     * (Updatable) Indicates weather a user can use customer secret keys
+     * (Updatable) Indicates whether a user can use customer secret keys.
      * 
      * **Added In:** 2012271618
      * 
@@ -152,7 +191,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     private @Nullable Output<Boolean> canUseCustomerSecretKeys;
 
     /**
-     * @return (Updatable) Indicates weather a user can use customer secret keys
+     * @return (Updatable) Indicates whether a user can use customer secret keys.
      * 
      * **Added In:** 2012271618
      * 
@@ -172,7 +211,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     }
 
     /**
-     * (Updatable) Indicates weather a user can use db credentials
+     * (Updatable) Indicates whether a user can use database credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -191,7 +230,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     private @Nullable Output<Boolean> canUseDbCredentials;
 
     /**
-     * @return (Updatable) Indicates weather a user can use db credentials
+     * @return (Updatable) Indicates whether a user can use database credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -211,7 +250,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     }
 
     /**
-     * (Updatable) Indicates weather a user can use oauth2 client credentials
+     * (Updatable) Indicates whether a user can use OAuth2 client credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -230,7 +269,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     private @Nullable Output<Boolean> canUseOauth2clientCredentials;
 
     /**
-     * @return (Updatable) Indicates weather a user can use oauth2 client credentials
+     * @return (Updatable) Indicates whether a user can use OAuth2 client credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -250,7 +289,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     }
 
     /**
-     * (Updatable) Indicates weather a user can use smtp credentials
+     * (Updatable) Indicates whether a user can use SMTP credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -269,7 +308,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     private @Nullable Output<Boolean> canUseSmtpCredentials;
 
     /**
-     * @return (Updatable) Indicates weather a user can use smtp credentials
+     * @return (Updatable) Indicates whether a user can use SMTP credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -293,6 +332,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs(DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs $) {
         this.canUseApiKeys = $.canUseApiKeys;
         this.canUseAuthTokens = $.canUseAuthTokens;
+        this.canUseConsole = $.canUseConsole;
         this.canUseConsolePassword = $.canUseConsolePassword;
         this.canUseCustomerSecretKeys = $.canUseCustomerSecretKeys;
         this.canUseDbCredentials = $.canUseDbCredentials;
@@ -319,7 +359,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseApiKeys (Updatable) Indicates weather a user can use api keys
+         * @param canUseApiKeys (Updatable) Indicates whether a user can use API keys.
          * 
          * **Added In:** 2012271618
          * 
@@ -342,7 +382,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseApiKeys (Updatable) Indicates weather a user can use api keys
+         * @param canUseApiKeys (Updatable) Indicates whether a user can use API keys.
          * 
          * **Added In:** 2012271618
          * 
@@ -364,7 +404,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseAuthTokens (Updatable) Indicates weather a user can use auth tokens
+         * @param canUseAuthTokens (Updatable) Indicates whether a user can use Auth tokens.
          * 
          * **Added In:** 2012271618
          * 
@@ -387,7 +427,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseAuthTokens (Updatable) Indicates weather a user can use auth tokens
+         * @param canUseAuthTokens (Updatable) Indicates whether a user can use Auth tokens.
          * 
          * **Added In:** 2012271618
          * 
@@ -409,7 +449,52 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseConsolePassword (Updatable) Indicates weather a user can use console password
+         * @param canUseConsole (Updatable) Specifies whether user can access the Console.
+         * 
+         * **Added In:** 2206280902
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canUseConsole(@Nullable Output<Boolean> canUseConsole) {
+            $.canUseConsole = canUseConsole;
+            return this;
+        }
+
+        /**
+         * @param canUseConsole (Updatable) Specifies whether user can access the Console.
+         * 
+         * **Added In:** 2206280902
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canUseConsole(Boolean canUseConsole) {
+            return canUseConsole(Output.of(canUseConsole));
+        }
+
+        /**
+         * @param canUseConsolePassword (Updatable) Indicates whether a user can use Console passwords.
          * 
          * **Added In:** 2012271618
          * 
@@ -432,7 +517,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseConsolePassword (Updatable) Indicates weather a user can use console password
+         * @param canUseConsolePassword (Updatable) Indicates whether a user can use Console passwords.
          * 
          * **Added In:** 2012271618
          * 
@@ -454,7 +539,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseCustomerSecretKeys (Updatable) Indicates weather a user can use customer secret keys
+         * @param canUseCustomerSecretKeys (Updatable) Indicates whether a user can use customer secret keys.
          * 
          * **Added In:** 2012271618
          * 
@@ -477,7 +562,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseCustomerSecretKeys (Updatable) Indicates weather a user can use customer secret keys
+         * @param canUseCustomerSecretKeys (Updatable) Indicates whether a user can use customer secret keys.
          * 
          * **Added In:** 2012271618
          * 
@@ -499,7 +584,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseDbCredentials (Updatable) Indicates weather a user can use db credentials
+         * @param canUseDbCredentials (Updatable) Indicates whether a user can use database credentials.
          * 
          * **Added In:** 2012271618
          * 
@@ -522,7 +607,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseDbCredentials (Updatable) Indicates weather a user can use db credentials
+         * @param canUseDbCredentials (Updatable) Indicates whether a user can use database credentials.
          * 
          * **Added In:** 2012271618
          * 
@@ -544,7 +629,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseOauth2clientCredentials (Updatable) Indicates weather a user can use oauth2 client credentials
+         * @param canUseOauth2clientCredentials (Updatable) Indicates whether a user can use OAuth2 client credentials.
          * 
          * **Added In:** 2012271618
          * 
@@ -567,7 +652,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseOauth2clientCredentials (Updatable) Indicates weather a user can use oauth2 client credentials
+         * @param canUseOauth2clientCredentials (Updatable) Indicates whether a user can use OAuth2 client credentials.
          * 
          * **Added In:** 2012271618
          * 
@@ -589,7 +674,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseSmtpCredentials (Updatable) Indicates weather a user can use smtp credentials
+         * @param canUseSmtpCredentials (Updatable) Indicates whether a user can use SMTP credentials.
          * 
          * **Added In:** 2012271618
          * 
@@ -612,7 +697,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         }
 
         /**
-         * @param canUseSmtpCredentials (Updatable) Indicates weather a user can use smtp credentials
+         * @param canUseSmtpCredentials (Updatable) Indicates whether a user can use SMTP credentials.
          * 
          * **Added In:** 2012271618
          * 

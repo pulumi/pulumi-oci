@@ -15,6 +15,8 @@ if typing.TYPE_CHECKING:
     aianomalydetection = __aianomalydetection
     import pulumi_oci.aidocument as __aidocument
     aidocument = __aidocument
+    import pulumi_oci.ailanguage as __ailanguage
+    ailanguage = __ailanguage
     import pulumi_oci.aivision as __aivision
     aivision = __aivision
     import pulumi_oci.analytics as __analytics
@@ -225,6 +227,7 @@ else:
     adm = _utilities.lazy_import('pulumi_oci.adm')
     aianomalydetection = _utilities.lazy_import('pulumi_oci.aianomalydetection')
     aidocument = _utilities.lazy_import('pulumi_oci.aidocument')
+    ailanguage = _utilities.lazy_import('pulumi_oci.ailanguage')
     aivision = _utilities.lazy_import('pulumi_oci.aivision')
     analytics = _utilities.lazy_import('pulumi_oci.analytics')
     announcementsservice = _utilities.lazy_import('pulumi_oci.announcementsservice')
@@ -410,6 +413,30 @@ _utilities.register(
   "fqn": "pulumi_oci.aidocument",
   "classes": {
    "oci:AiDocument/project:Project": "Project"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiLanguage/endpoint",
+  "fqn": "pulumi_oci.ailanguage",
+  "classes": {
+   "oci:AiLanguage/endpoint:Endpoint": "Endpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiLanguage/model",
+  "fqn": "pulumi_oci.ailanguage",
+  "classes": {
+   "oci:AiLanguage/model:Model": "Model"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiLanguage/project",
+  "fqn": "pulumi_oci.ailanguage",
+  "classes": {
+   "oci:AiLanguage/project:Project": "Project"
   }
  },
  {
@@ -3174,10 +3201,34 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Identity/domainsAccountRecoverySetting",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting": "DomainsAccountRecoverySetting"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Identity/domainsApiKey",
   "fqn": "pulumi_oci.identity",
   "classes": {
    "oci:Identity/domainsApiKey:DomainsApiKey": "DomainsApiKey"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsApp",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsApp:DomainsApp": "DomainsApp"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsAppRole",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsAppRole:DomainsAppRole": "DomainsAppRole"
   }
  },
  {
@@ -3214,6 +3265,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Identity/domainsGrant",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsGrant:DomainsGrant": "DomainsGrant"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Identity/domainsGroup",
   "fqn": "pulumi_oci.identity",
   "classes": {
@@ -3226,6 +3285,14 @@ _utilities.register(
   "fqn": "pulumi_oci.identity",
   "classes": {
    "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider": "DomainsIdentityProvider"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsIdentitySetting",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsIdentitySetting:DomainsIdentitySetting": "DomainsIdentitySetting"
   }
  },
  {
@@ -3270,6 +3337,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Identity/domainsMyRequest",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsMyRequest:DomainsMyRequest": "DomainsMyRequest"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Identity/domainsMySmtpCredential",
   "fqn": "pulumi_oci.identity",
   "classes": {
@@ -3306,6 +3381,22 @@ _utilities.register(
   "fqn": "pulumi_oci.identity",
   "classes": {
    "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy": "DomainsPasswordPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsSecurityQuestion",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion": "DomainsSecurityQuestion"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsSecurityQuestionSetting",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting": "DomainsSecurityQuestionSetting"
   }
  },
  {

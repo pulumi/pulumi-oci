@@ -51,7 +51,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      */
     private String creationMechanism;
     /**
-     * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+     * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps;
@@ -65,6 +65,11 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      * 
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants;
+    /**
+     * @return Specifies date time when a User&#39;s group membership was last modified.
+     * 
+     */
+    private String groupMembershipLastModified;
     /**
      * @return Description:
      * 
@@ -100,6 +105,11 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      * 
      */
     private String notificationEmailTemplateId;
+    /**
+     * @return User&#39;s preferred landing page following login, logout and reset password.
+     * 
+     */
+    private String preferredUiLandingPage;
     /**
      * @return A supplemental status indicating the reason why a user is disabled
      * 
@@ -175,7 +185,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         return this.creationMechanism;
     }
     /**
-     * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+     * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps() {
@@ -194,6 +204,13 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants() {
         return this.grants;
+    }
+    /**
+     * @return Specifies date time when a User&#39;s group membership was last modified.
+     * 
+     */
+    public String groupMembershipLastModified() {
+        return this.groupMembershipLastModified;
     }
     /**
      * @return Description:
@@ -243,6 +260,13 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      */
     public String notificationEmailTemplateId() {
         return this.notificationEmailTemplateId;
+    }
+    /**
+     * @return User&#39;s preferred landing page following login, logout and reset password.
+     * 
+     */
+    public String preferredUiLandingPage() {
+        return this.preferredUiLandingPage;
     }
     /**
      * @return A supplemental status indicating the reason why a user is disabled
@@ -305,6 +329,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps;
         private Boolean doNotShowGettingStarted;
         private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants;
+        private String groupMembershipLastModified;
         private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups;
         private Boolean isAccountRecoveryEnrolled;
         private Boolean isAuthenticationDelegated;
@@ -312,6 +337,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         private Boolean isGroupMembershipNormalized;
         private Boolean isGroupMembershipSyncedToUsersGroups;
         private String notificationEmailTemplateId;
+        private String preferredUiLandingPage;
         private String status;
         private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts;
         private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps;
@@ -330,6 +356,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
     	      this.delegatedAuthenticationTargetApps = defaults.delegatedAuthenticationTargetApps;
     	      this.doNotShowGettingStarted = defaults.doNotShowGettingStarted;
     	      this.grants = defaults.grants;
+    	      this.groupMembershipLastModified = defaults.groupMembershipLastModified;
     	      this.idcsAppRolesLimitedToGroups = defaults.idcsAppRolesLimitedToGroups;
     	      this.isAccountRecoveryEnrolled = defaults.isAccountRecoveryEnrolled;
     	      this.isAuthenticationDelegated = defaults.isAuthenticationDelegated;
@@ -337,6 +364,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
     	      this.isGroupMembershipNormalized = defaults.isGroupMembershipNormalized;
     	      this.isGroupMembershipSyncedToUsersGroups = defaults.isGroupMembershipSyncedToUsersGroups;
     	      this.notificationEmailTemplateId = defaults.notificationEmailTemplateId;
+    	      this.preferredUiLandingPage = defaults.preferredUiLandingPage;
     	      this.status = defaults.status;
     	      this.supportAccounts = defaults.supportAccounts;
     	      this.syncedFromApps = defaults.syncedFromApps;
@@ -406,6 +434,11 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
             return grants(List.of(grants));
         }
         @CustomType.Setter
+        public Builder groupMembershipLastModified(String groupMembershipLastModified) {
+            this.groupMembershipLastModified = Objects.requireNonNull(groupMembershipLastModified);
+            return this;
+        }
+        @CustomType.Setter
         public Builder idcsAppRolesLimitedToGroups(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups) {
             this.idcsAppRolesLimitedToGroups = Objects.requireNonNull(idcsAppRolesLimitedToGroups);
             return this;
@@ -441,6 +474,11 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         @CustomType.Setter
         public Builder notificationEmailTemplateId(String notificationEmailTemplateId) {
             this.notificationEmailTemplateId = Objects.requireNonNull(notificationEmailTemplateId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder preferredUiLandingPage(String preferredUiLandingPage) {
+            this.preferredUiLandingPage = Objects.requireNonNull(preferredUiLandingPage);
             return this;
         }
         @CustomType.Setter
@@ -493,6 +531,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
             o.delegatedAuthenticationTargetApps = delegatedAuthenticationTargetApps;
             o.doNotShowGettingStarted = doNotShowGettingStarted;
             o.grants = grants;
+            o.groupMembershipLastModified = groupMembershipLastModified;
             o.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
             o.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
             o.isAuthenticationDelegated = isAuthenticationDelegated;
@@ -500,6 +539,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
             o.isGroupMembershipNormalized = isGroupMembershipNormalized;
             o.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             o.notificationEmailTemplateId = notificationEmailTemplateId;
+            o.preferredUiLandingPage = preferredUiLandingPage;
             o.status = status;
             o.supportAccounts = supportAccounts;
             o.syncedFromApps = syncedFromApps;

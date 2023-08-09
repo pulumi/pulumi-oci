@@ -38,19 +38,31 @@ import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketPl
 import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulePlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesPlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoPlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsPlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountPlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizePlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesPlainArgs;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsCategoriesListResult;
@@ -68,13 +80,19 @@ import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsPreferenceResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsResourceCategoriesListResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsUnprocessedDataBucketResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogSetsCountResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceEffectivePropertiesResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceIngestTimeRuleResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceIngestTimeRulesResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespacePropertiesMetadataResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceRulesResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceRulesSummaryResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTasksResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageEncryptionKeyInfoResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageOverlappingRecallsResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageRecallCountResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageRecalledDataSizeResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -1907,7 +1925,7 @@ public final class LogAnalyticsFunctions {
     /**
      * This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
-     * Lists the preferences of the tenant. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      * 
      * ## Example Usage
      * ```java
@@ -1946,7 +1964,7 @@ public final class LogAnalyticsFunctions {
     /**
      * This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
-     * Lists the preferences of the tenant. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      * 
      * ## Example Usage
      * ```java
@@ -1985,7 +2003,7 @@ public final class LogAnalyticsFunctions {
     /**
      * This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
-     * Lists the preferences of the tenant. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      * 
      * ## Example Usage
      * ```java
@@ -2024,7 +2042,7 @@ public final class LogAnalyticsFunctions {
     /**
      * This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
-     * Lists the preferences of the tenant. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      * 
      * ## Example Usage
      * ```java
@@ -2697,6 +2715,186 @@ public final class LogAnalyticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespace:getNamespace", TypeShape.of(GetNamespaceResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of effective properties for the specified resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
+     *             .namespace(var_.namespace_effective_property_namespace())
+     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .entityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .isIncludePatterns(var_.namespace_effective_property_is_include_patterns())
+     *             .name(var_.namespace_effective_property_name())
+     *             .patternId(oci_log_analytics_pattern.test_pattern().id())
+     *             .sourceName(var_.namespace_effective_property_source_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceEffectivePropertiesResult> getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs args) {
+        return getNamespaceEffectiveProperties(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of effective properties for the specified resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
+     *             .namespace(var_.namespace_effective_property_namespace())
+     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .entityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .isIncludePatterns(var_.namespace_effective_property_is_include_patterns())
+     *             .name(var_.namespace_effective_property_name())
+     *             .patternId(oci_log_analytics_pattern.test_pattern().id())
+     *             .sourceName(var_.namespace_effective_property_source_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceEffectivePropertiesResult> getNamespaceEffectivePropertiesPlain(GetNamespaceEffectivePropertiesPlainArgs args) {
+        return getNamespaceEffectivePropertiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of effective properties for the specified resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
+     *             .namespace(var_.namespace_effective_property_namespace())
+     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .entityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .isIncludePatterns(var_.namespace_effective_property_is_include_patterns())
+     *             .name(var_.namespace_effective_property_name())
+     *             .patternId(oci_log_analytics_pattern.test_pattern().id())
+     *             .sourceName(var_.namespace_effective_property_source_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceEffectivePropertiesResult> getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", TypeShape.of(GetNamespaceEffectivePropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of effective properties for the specified resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
+     *             .namespace(var_.namespace_effective_property_namespace())
+     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .entityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .isIncludePatterns(var_.namespace_effective_property_is_include_patterns())
+     *             .name(var_.namespace_effective_property_name())
+     *             .patternId(oci_log_analytics_pattern.test_pattern().id())
+     *             .sourceName(var_.namespace_effective_property_source_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceEffectivePropertiesResult> getNamespaceEffectivePropertiesPlain(GetNamespaceEffectivePropertiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", TypeShape.of(GetNamespaceEffectivePropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
@@ -3037,6 +3235,178 @@ public final class LogAnalyticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", TypeShape.of(GetNamespaceIngestTimeRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of properties along with their metadata.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespacePropertiesMetadata = LogAnalyticsFunctions.getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs.builder()
+     *             .namespace(var_.namespace_properties_metadata_namespace())
+     *             .constraints(var_.namespace_properties_metadata_constraints())
+     *             .displayText(var_.namespace_properties_metadata_display_text())
+     *             .level(var_.namespace_properties_metadata_level())
+     *             .name(var_.namespace_properties_metadata_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs args) {
+        return getNamespacePropertiesMetadata(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of properties along with their metadata.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespacePropertiesMetadata = LogAnalyticsFunctions.getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs.builder()
+     *             .namespace(var_.namespace_properties_metadata_namespace())
+     *             .constraints(var_.namespace_properties_metadata_constraints())
+     *             .displayText(var_.namespace_properties_metadata_display_text())
+     *             .level(var_.namespace_properties_metadata_level())
+     *             .name(var_.namespace_properties_metadata_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadataPlain(GetNamespacePropertiesMetadataPlainArgs args) {
+        return getNamespacePropertiesMetadataPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of properties along with their metadata.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespacePropertiesMetadata = LogAnalyticsFunctions.getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs.builder()
+     *             .namespace(var_.namespace_properties_metadata_namespace())
+     *             .constraints(var_.namespace_properties_metadata_constraints())
+     *             .displayText(var_.namespace_properties_metadata_display_text())
+     *             .level(var_.namespace_properties_metadata_level())
+     *             .name(var_.namespace_properties_metadata_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", TypeShape.of(GetNamespacePropertiesMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of properties along with their metadata.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespacePropertiesMetadata = LogAnalyticsFunctions.getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs.builder()
+     *             .namespace(var_.namespace_properties_metadata_namespace())
+     *             .constraints(var_.namespace_properties_metadata_constraints())
+     *             .displayText(var_.namespace_properties_metadata_display_text())
+     *             .level(var_.namespace_properties_metadata_level())
+     *             .name(var_.namespace_properties_metadata_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadataPlain(GetNamespacePropertiesMetadataPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", TypeShape.of(GetNamespacePropertiesMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
@@ -3207,6 +3577,166 @@ public final class LogAnalyticsFunctions {
      */
     public static CompletableFuture<GetNamespaceRulesResult> getNamespaceRulesPlain(GetNamespaceRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceRules:getNamespaceRules", TypeShape.of(GetNamespaceRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns the count of detection rules in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRulesSummary = LogAnalyticsFunctions.getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_rules_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceRulesSummaryResult> getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs args) {
+        return getNamespaceRulesSummary(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns the count of detection rules in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRulesSummary = LogAnalyticsFunctions.getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_rules_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceRulesSummaryResult> getNamespaceRulesSummaryPlain(GetNamespaceRulesSummaryPlainArgs args) {
+        return getNamespaceRulesSummaryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns the count of detection rules in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRulesSummary = LogAnalyticsFunctions.getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_rules_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceRulesSummaryResult> getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", TypeShape.of(GetNamespaceRulesSummaryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns the count of detection rules in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRulesSummary = LogAnalyticsFunctions.getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_rules_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceRulesSummaryResult> getNamespaceRulesSummaryPlain(GetNamespaceRulesSummaryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", TypeShape.of(GetNamespaceRulesSummaryResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -3691,6 +4221,490 @@ public final class LogAnalyticsFunctions {
      */
     public static CompletableFuture<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfoPlain(GetNamespaceStorageEncryptionKeyInfoPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", TypeShape.of(GetNamespaceStorageEncryptionKeyInfoResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the list of overlapping recalls made in the given timeframe
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageOverlappingRecalls = LogAnalyticsFunctions.getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs.builder()
+     *             .namespace(var_.namespace_storage_overlapping_recall_namespace())
+     *             .timeDataEnded(var_.namespace_storage_overlapping_recall_time_data_ended())
+     *             .timeDataStarted(var_.namespace_storage_overlapping_recall_time_data_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs args) {
+        return getNamespaceStorageOverlappingRecalls(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the list of overlapping recalls made in the given timeframe
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageOverlappingRecalls = LogAnalyticsFunctions.getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs.builder()
+     *             .namespace(var_.namespace_storage_overlapping_recall_namespace())
+     *             .timeDataEnded(var_.namespace_storage_overlapping_recall_time_data_ended())
+     *             .timeDataStarted(var_.namespace_storage_overlapping_recall_time_data_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecallsPlain(GetNamespaceStorageOverlappingRecallsPlainArgs args) {
+        return getNamespaceStorageOverlappingRecallsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the list of overlapping recalls made in the given timeframe
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageOverlappingRecalls = LogAnalyticsFunctions.getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs.builder()
+     *             .namespace(var_.namespace_storage_overlapping_recall_namespace())
+     *             .timeDataEnded(var_.namespace_storage_overlapping_recall_time_data_ended())
+     *             .timeDataStarted(var_.namespace_storage_overlapping_recall_time_data_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", TypeShape.of(GetNamespaceStorageOverlappingRecallsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the list of overlapping recalls made in the given timeframe
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageOverlappingRecalls = LogAnalyticsFunctions.getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs.builder()
+     *             .namespace(var_.namespace_storage_overlapping_recall_namespace())
+     *             .timeDataEnded(var_.namespace_storage_overlapping_recall_time_data_ended())
+     *             .timeDataStarted(var_.namespace_storage_overlapping_recall_time_data_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecallsPlain(GetNamespaceStorageOverlappingRecallsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", TypeShape.of(GetNamespaceStorageOverlappingRecallsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the number of recalls made and the maximum recalls that can be made
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecallCount = LogAnalyticsFunctions.getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs.builder()
+     *             .namespace(var_.namespace_storage_recall_count_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs args) {
+        return getNamespaceStorageRecallCount(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the number of recalls made and the maximum recalls that can be made
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecallCount = LogAnalyticsFunctions.getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs.builder()
+     *             .namespace(var_.namespace_storage_recall_count_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCountPlain(GetNamespaceStorageRecallCountPlainArgs args) {
+        return getNamespaceStorageRecallCountPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the number of recalls made and the maximum recalls that can be made
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecallCount = LogAnalyticsFunctions.getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs.builder()
+     *             .namespace(var_.namespace_storage_recall_count_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", TypeShape.of(GetNamespaceStorageRecallCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the number of recalls made and the maximum recalls that can be made
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecallCount = LogAnalyticsFunctions.getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs.builder()
+     *             .namespace(var_.namespace_storage_recall_count_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCountPlain(GetNamespaceStorageRecallCountPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", TypeShape.of(GetNamespaceStorageRecallCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the datasize of recalls for a given timeframe
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecalledDataSize = LogAnalyticsFunctions.getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs.builder()
+     *             .namespace(var_.namespace_storage_recalled_data_size_namespace())
+     *             .timeDataEnded(var_.namespace_storage_recalled_data_size_time_data_ended())
+     *             .timeDataStarted(var_.namespace_storage_recalled_data_size_time_data_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs args) {
+        return getNamespaceStorageRecalledDataSize(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the datasize of recalls for a given timeframe
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecalledDataSize = LogAnalyticsFunctions.getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs.builder()
+     *             .namespace(var_.namespace_storage_recalled_data_size_namespace())
+     *             .timeDataEnded(var_.namespace_storage_recalled_data_size_time_data_ended())
+     *             .timeDataStarted(var_.namespace_storage_recalled_data_size_time_data_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSizePlain(GetNamespaceStorageRecalledDataSizePlainArgs args) {
+        return getNamespaceStorageRecalledDataSizePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the datasize of recalls for a given timeframe
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecalledDataSize = LogAnalyticsFunctions.getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs.builder()
+     *             .namespace(var_.namespace_storage_recalled_data_size_namespace())
+     *             .timeDataEnded(var_.namespace_storage_recalled_data_size_time_data_ended())
+     *             .timeDataStarted(var_.namespace_storage_recalled_data_size_time_data_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", TypeShape.of(GetNamespaceStorageRecalledDataSizeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the datasize of recalls for a given timeframe
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecalledDataSize = LogAnalyticsFunctions.getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs.builder()
+     *             .namespace(var_.namespace_storage_recalled_data_size_namespace())
+     *             .timeDataEnded(var_.namespace_storage_recalled_data_size_time_data_ended())
+     *             .timeDataStarted(var_.namespace_storage_recalled_data_size_time_data_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSizePlain(GetNamespaceStorageRecalledDataSizePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", TypeShape.of(GetNamespaceStorageRecalledDataSizeResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.

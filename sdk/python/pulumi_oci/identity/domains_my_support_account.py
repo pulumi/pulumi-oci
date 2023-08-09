@@ -901,7 +901,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
         """
         This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Create a Support Account
+        Create a user's own support account.
 
         ## Import
 
@@ -981,7 +981,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
         """
         This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Create a Support Account
+        Create a user's own support account.
 
         ## Import
 

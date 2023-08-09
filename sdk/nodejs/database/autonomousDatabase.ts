@@ -92,9 +92,9 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly backupConfigs!: pulumi.Output<outputs.Database.AutonomousDatabaseBackupConfig[]>;
     /**
-     * Retention period, in days, for backups.
+     * (Updatable) Retention period, in days, for backups.
      */
-    public /*out*/ readonly backupRetentionPeriodInDays!: pulumi.Output<number>;
+    public readonly backupRetentionPeriodInDays!: pulumi.Output<number>;
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      *
@@ -116,7 +116,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly computeCount!: pulumi.Output<number>;
     /**
-     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      */
     public readonly computeModel!: pulumi.Output<string>;
     /**
@@ -129,7 +129,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
     public /*out*/ readonly connectionUrls!: pulumi.Output<outputs.Database.AutonomousDatabaseConnectionUrl[]>;
     /**
      * (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-     * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     *
+     * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
      * * The data type must be an *integer*.
      * * The minimum number of cores for all types of autonomous database is *1*
      * * The maximum number of cores is as follows:
@@ -307,6 +308,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     */
+    public readonly localAdgAutoFailoverMaxDataLossLimit!: pulumi.Output<number>;
+    /**
      * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     public /*out*/ readonly localDisasterRecoveryType!: pulumi.Output<string>;
@@ -323,7 +328,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly maxCpuCoreCount!: pulumi.Output<number>;
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      */
     public /*out*/ readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
     /**
@@ -343,10 +348,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * (Updatable) The number of OCPU cores to be made available to the database.
      *
      * The following points apply:
-     * * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+     * * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
      * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
      *
-     * For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      *
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      */
@@ -644,6 +649,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["localAdgAutoFailoverMaxDataLossLimit"] = state ? state.localAdgAutoFailoverMaxDataLossLimit : undefined;
             resourceInputs["localDisasterRecoveryType"] = state ? state.localDisasterRecoveryType : undefined;
             resourceInputs["localStandbyDbs"] = state ? state.localStandbyDbs : undefined;
             resourceInputs["longTermBackupSchedules"] = state ? state.longTermBackupSchedules : undefined;
@@ -716,6 +722,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["autonomousDatabaseBackupId"] = args ? args.autonomousDatabaseBackupId : undefined;
             resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
             resourceInputs["autonomousMaintenanceScheduleType"] = args ? args.autonomousMaintenanceScheduleType : undefined;
+            resourceInputs["backupRetentionPeriodInDays"] = args ? args.backupRetentionPeriodInDays : undefined;
             resourceInputs["characterSet"] = args ? args.characterSet : undefined;
             resourceInputs["cloneType"] = args ? args.cloneType : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
@@ -747,6 +754,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isShrinkOnly"] = args ? args.isShrinkOnly : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["localAdgAutoFailoverMaxDataLossLimit"] = args ? args.localAdgAutoFailoverMaxDataLossLimit : undefined;
             resourceInputs["maxCpuCoreCount"] = args ? args.maxCpuCoreCount : undefined;
             resourceInputs["ncharacterSet"] = args ? args.ncharacterSet : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
@@ -778,7 +786,6 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["apexDetails"] = undefined /*out*/;
             resourceInputs["availableUpgradeVersions"] = undefined /*out*/;
             resourceInputs["backupConfigs"] = undefined /*out*/;
-            resourceInputs["backupRetentionPeriodInDays"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;
             resourceInputs["connectionUrls"] = undefined /*out*/;
             resourceInputs["dataguardRegionType"] = undefined /*out*/;
@@ -883,7 +890,7 @@ export interface AutonomousDatabaseState {
      */
     backupConfigs?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseBackupConfig>[]>;
     /**
-     * Retention period, in days, for backups.
+     * (Updatable) Retention period, in days, for backups.
      */
     backupRetentionPeriodInDays?: pulumi.Input<number>;
     /**
@@ -907,7 +914,7 @@ export interface AutonomousDatabaseState {
      */
     computeCount?: pulumi.Input<number>;
     /**
-     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      */
     computeModel?: pulumi.Input<string>;
     /**
@@ -920,7 +927,8 @@ export interface AutonomousDatabaseState {
     connectionUrls?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseConnectionUrl>[]>;
     /**
      * (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-     * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     *
+     * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
      * * The data type must be an *integer*.
      * * The minimum number of cores for all types of autonomous database is *1*
      * * The maximum number of cores is as follows:
@@ -1098,6 +1106,10 @@ export interface AutonomousDatabaseState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     */
+    localAdgAutoFailoverMaxDataLossLimit?: pulumi.Input<number>;
+    /**
      * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     localDisasterRecoveryType?: pulumi.Input<string>;
@@ -1114,7 +1126,7 @@ export interface AutonomousDatabaseState {
      */
     maxCpuCoreCount?: pulumi.Input<number>;
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -1134,10 +1146,10 @@ export interface AutonomousDatabaseState {
      * (Updatable) The number of OCPU cores to be made available to the database.
      *
      * The following points apply:
-     * * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+     * * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
      * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
      *
-     * For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      *
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      */
@@ -1394,6 +1406,10 @@ export interface AutonomousDatabaseArgs {
      */
     autonomousMaintenanceScheduleType?: pulumi.Input<string>;
     /**
+     * (Updatable) Retention period, in days, for backups.
+     */
+    backupRetentionPeriodInDays?: pulumi.Input<number>;
+    /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      *
      * For an Autonomous Database on dedicated infrastructure, the allowed values are:
@@ -1414,12 +1430,13 @@ export interface AutonomousDatabaseArgs {
      */
     computeCount?: pulumi.Input<number>;
     /**
-     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      */
     computeModel?: pulumi.Input<string>;
     /**
      * (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
-     * **Note:** This parameter cannot be used with the `ocpuCount` parameter.
+     *
+     * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
      * * The data type must be an *integer*.
      * * The minimum number of cores for all types of autonomous database is *1*
      * * The maximum number of cores is as follows:
@@ -1545,6 +1562,10 @@ export interface AutonomousDatabaseArgs {
      */
     licenseModel?: pulumi.Input<string>;
     /**
+     * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     */
+    localAdgAutoFailoverMaxDataLossLimit?: pulumi.Input<number>;
+    /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      */
     maxCpuCoreCount?: pulumi.Input<number>;
@@ -1561,10 +1582,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) The number of OCPU cores to be made available to the database.
      *
      * The following points apply:
-     * * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+     * * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
      * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
      *
-     * For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      *
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      */

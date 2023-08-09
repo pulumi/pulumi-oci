@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string NickName;
         /// <summary>
-        /// Ocid of the User's Support Account.
+        /// The OCID of the user's support account.
         /// </summary>
         public readonly string Ocid;
         /// <summary>
@@ -182,7 +182,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserResult> UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
         /// <summary>
-        /// Db Credentials User extension
+        /// The database credentials user extension.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserResult> UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
         /// <summary>
@@ -210,7 +210,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserResult> UrnietfparamsscimschemasoracleidcsextensionposixUsers;
         /// <summary>
-        /// This extension defines attributes used to store Security Questions of User.
+        /// This extension defines the attributes used to store the security questions of a user.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserResult> UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
         /// <summary>
@@ -238,11 +238,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserResult> UrnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
         /// <summary>
-        /// This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+        /// This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserResult> UrnietfparamsscimschemasoracleidcsextensionuserStateUsers;
         /// <summary>
-        /// Oracle Cloud Infrastructure IAM User
+        /// Oracle Identity Cloud Service User
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserResult> UrnietfparamsscimschemasoracleidcsextensionuserUsers;
         /// <summary>

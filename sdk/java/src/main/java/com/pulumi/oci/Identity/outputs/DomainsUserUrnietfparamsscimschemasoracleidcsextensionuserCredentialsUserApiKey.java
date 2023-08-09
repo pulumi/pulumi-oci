@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey {
     /**
-     * @return (Updatable) The value of of the User&#39;s api key.
+     * @return (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 
@@ -29,7 +29,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
      */
     private @Nullable String key;
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -81,7 +81,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey() {}
     /**
-     * @return (Updatable) The value of of the User&#39;s api key.
+     * @return (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 
@@ -100,7 +100,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Password Policy
+ * Get a password policy.
  *
  * ## Example Usage
  *
@@ -117,6 +117,14 @@ export interface GetDomainsPasswordPolicyResult {
      * A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
      */
     readonly disallowedSubstrings: string[];
+    /**
+     * List of User attributes whose values are not allowed in the password.
+     */
+    readonly disallowedUserAttributeValues: string[];
+    /**
+     * The number of distinct characters between old password and new password
+     */
+    readonly distinctCharacters: number;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
@@ -280,7 +288,7 @@ export interface GetDomainsPasswordPolicyResult {
 /**
  * This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Password Policy
+ * Get a password policy.
  *
  * ## Example Usage
  *

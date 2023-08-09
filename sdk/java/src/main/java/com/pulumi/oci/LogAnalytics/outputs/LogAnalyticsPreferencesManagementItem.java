@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LogAnalyticsPreferencesManagementItem {
     /**
-     * @return The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * @return The preference name.
      * 
      */
     private @Nullable String name;
@@ -24,7 +24,7 @@ public final class LogAnalyticsPreferencesManagementItem {
 
     private LogAnalyticsPreferencesManagementItem() {}
     /**
-     * @return The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+     * @return The preference name.
      * 
      */
     public Optional<String> name() {

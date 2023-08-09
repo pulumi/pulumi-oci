@@ -10,62 +10,62 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsCustomerSecretKeyUser {
     /**
-     * @return User display name
+     * @return The user&#39;s display name.
      * 
      */
     private String display;
     /**
-     * @return User name
+     * @return The user&#39;s name.
      * 
      */
     private String name;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
     /**
-     * @return The URI that corresponds to the user linked to this credential
+     * @return The URI that corresponds to the user linked to this credential.
      * 
      */
     private String ref;
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      */
     private String value;
 
     private GetDomainsCustomerSecretKeyUser() {}
     /**
-     * @return User display name
+     * @return The user&#39;s display name.
      * 
      */
     public String display() {
         return this.display;
     }
     /**
-     * @return User name
+     * @return The user&#39;s name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
         return this.ocid;
     }
     /**
-     * @return The URI that corresponds to the user linked to this credential
+     * @return The URI that corresponds to the user linked to this credential.
      * 
      */
     public String ref() {
         return this.ref;
     }
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      */
     public String value() {

@@ -208,7 +208,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     }
 
     /**
-     * User credential expires on
+     * When the user&#39;s credentials expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -227,7 +227,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     private @Nullable Output<String> expiresOn;
 
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credentials expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -392,7 +392,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     }
 
     /**
-     * Specifies if secret need to be reset
+     * Specifies whether the secret must be reset.
      * 
      * **Added In:** 2109090424
      * 
@@ -411,7 +411,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     private @Nullable Output<Boolean> isResetSecret;
 
     /**
-     * @return Specifies if secret need to be reset
+     * @return Specifies whether the secret must be reset.
      * 
      * **Added In:** 2109090424
      * 
@@ -466,7 +466,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) User name
+     * (Updatable) The username.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -483,7 +483,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) User name
+     * @return (Updatable) The username.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -501,7 +501,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     }
 
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -518,7 +518,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -619,7 +619,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     }
 
     /**
-     * User credential status
+     * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -638,7 +638,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     private @Nullable Output<String> status;
 
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -743,7 +743,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     }
 
     /**
-     * User linked to oauth2 client credential
+     * The user linked to the OAuth2 client credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -760,7 +760,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     private @Nullable Output<DomainsOauth2clientCredentialUserArgs> user;
 
     /**
-     * @return User linked to oauth2 client credential
+     * @return The user linked to the OAuth2 client credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -1061,7 +1061,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user&#39;s credentials expire.
          * 
          * **Added In:** 2109090424
          * 
@@ -1084,7 +1084,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user&#39;s credentials expire.
          * 
          * **Added In:** 2109090424
          * 
@@ -1336,7 +1336,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param isResetSecret Specifies if secret need to be reset
+         * @param isResetSecret Specifies whether the secret must be reset.
          * 
          * **Added In:** 2109090424
          * 
@@ -1359,7 +1359,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param isResetSecret Specifies if secret need to be reset
+         * @param isResetSecret Specifies whether the secret must be reset.
          * 
          * **Added In:** 2109090424
          * 
@@ -1442,7 +1442,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param name (Updatable) User name
+         * @param name (Updatable) The username.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -1463,7 +1463,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param name (Updatable) User name
+         * @param name (Updatable) The username.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -1483,7 +1483,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1504,7 +1504,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1664,7 +1664,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param status User credential status
+         * @param status The user&#39;s credential status.
          * 
          * **Added In:** 2109090424
          * 
@@ -1687,7 +1687,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param status User credential status
+         * @param status The user&#39;s credential status.
          * 
          * **Added In:** 2109090424
          * 
@@ -1832,7 +1832,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param user User linked to oauth2 client credential
+         * @param user The user linked to the OAuth2 client credential.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -1853,7 +1853,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         }
 
         /**
-         * @param user User linked to oauth2 client credential
+         * @param user The user linked to the OAuth2 client credential.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false

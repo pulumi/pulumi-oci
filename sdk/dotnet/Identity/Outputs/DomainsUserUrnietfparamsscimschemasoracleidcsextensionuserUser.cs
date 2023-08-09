@@ -79,6 +79,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: immutable
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: never
         /// * type: boolean
@@ -94,6 +95,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: immutable
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: request
         /// * type: string
@@ -101,7 +103,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? CreationMechanism;
         /// <summary>
-        /// (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \"syncedFromApp\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+        /// (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \"syncedFromApp\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
         /// 
         /// **Added In:** 17.4.6
         /// 
@@ -143,6 +145,21 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> Grants;
+        /// <summary>
+        /// (Updatable) Specifies date time when a User's group membership was last modified.
+        /// 
+        /// **Added In:** 2304270343
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: dateTime
+        /// * uniqueness: none
+        /// </summary>
+        public readonly string? GroupMembershipLastModified;
         /// <summary>
         /// (Updatable) Description:
         /// 
@@ -200,6 +217,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: boolean
@@ -252,6 +270,22 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * uniqueness: none
         /// </summary>
         public readonly string? NotificationEmailTemplateId;
+        /// <summary>
+        /// (Updatable) User's preferred landing page following login, logout and reset password.
+        /// 
+        /// **Added In:** 2302092332
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public readonly string? PreferredUiLandingPage;
         /// <summary>
         /// (Updatable) A supplemental status indicating the reason why a user is disabled
         /// 
@@ -366,6 +400,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants,
 
+            string? groupMembershipLastModified,
+
             ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups,
 
             bool? isAccountRecoveryEnrolled,
@@ -379,6 +415,8 @@ namespace Pulumi.Oci.Identity.Outputs
             bool? isGroupMembershipSyncedToUsersGroups,
 
             string? notificationEmailTemplateId,
+
+            string? preferredUiLandingPage,
 
             string? status,
 
@@ -401,6 +439,7 @@ namespace Pulumi.Oci.Identity.Outputs
             DelegatedAuthenticationTargetApp = delegatedAuthenticationTargetApp;
             DoNotShowGettingStarted = doNotShowGettingStarted;
             Grants = grants;
+            GroupMembershipLastModified = groupMembershipLastModified;
             IdcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
             IsAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
             IsAuthenticationDelegated = isAuthenticationDelegated;
@@ -408,6 +447,7 @@ namespace Pulumi.Oci.Identity.Outputs
             IsGroupMembershipNormalized = isGroupMembershipNormalized;
             IsGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             NotificationEmailTemplateId = notificationEmailTemplateId;
+            PreferredUiLandingPage = preferredUiLandingPage;
             Status = status;
             SupportAccounts = supportAccounts;
             SyncedFromApp = syncedFromApp;

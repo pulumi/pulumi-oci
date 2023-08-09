@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
     public sealed class LogAnalyticsPreferencesManagementItem
     {
         /// <summary>
-        /// The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+        /// The preference name.
         /// </summary>
         public readonly string? Name;
         /// <summary>

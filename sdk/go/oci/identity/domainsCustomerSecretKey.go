@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Add a user's customer secret key
+// Create a user's customer secret key.
 //
 // ## Import
 //
@@ -28,7 +28,7 @@ import (
 type DomainsCustomerSecretKey struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Access key
+	// (Updatable) The access key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -97,7 +97,7 @@ type DomainsCustomerSecretKey struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -168,7 +168,7 @@ type DomainsCustomerSecretKey struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsCustomerSecretKeyMetaArrayOutput `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -194,7 +194,7 @@ type DomainsCustomerSecretKey struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayOutput `pulumi:"schemas"`
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -284,7 +284,7 @@ func GetDomainsCustomerSecretKey(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DomainsCustomerSecretKey resources.
 type domainsCustomerSecretKeyState struct {
-	// (Updatable) Access key
+	// (Updatable) The access key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -353,7 +353,7 @@ type domainsCustomerSecretKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid *string `pulumi:"domainOcid"`
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -424,7 +424,7 @@ type domainsCustomerSecretKeyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsCustomerSecretKeyMeta `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -450,7 +450,7 @@ type domainsCustomerSecretKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -505,7 +505,7 @@ type domainsCustomerSecretKeyState struct {
 }
 
 type DomainsCustomerSecretKeyState struct {
-	// (Updatable) Access key
+	// (Updatable) The access key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -574,7 +574,7 @@ type DomainsCustomerSecretKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringPtrInput
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -645,7 +645,7 @@ type DomainsCustomerSecretKeyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsCustomerSecretKeyMetaArrayInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -671,7 +671,7 @@ type DomainsCustomerSecretKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -754,7 +754,7 @@ type domainsCustomerSecretKeyArgs struct {
 	// * required: false
 	// * returned: default
 	DisplayName *string `pulumi:"displayName"`
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -770,7 +770,7 @@ type domainsCustomerSecretKeyArgs struct {
 	ExpiresOn *string `pulumi:"expiresOn"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -796,7 +796,7 @@ type domainsCustomerSecretKeyArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -864,7 +864,7 @@ type DomainsCustomerSecretKeyArgs struct {
 	// * required: false
 	// * returned: default
 	DisplayName pulumi.StringPtrInput
-	// User credential expires on
+	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -880,7 +880,7 @@ type DomainsCustomerSecretKeyArgs struct {
 	ExpiresOn pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -906,7 +906,7 @@ type DomainsCustomerSecretKeyArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -1035,7 +1035,7 @@ func (o DomainsCustomerSecretKeyOutput) ToDomainsCustomerSecretKeyOutputWithCont
 	return o
 }
 
-// (Updatable) Access key
+// (Updatable) The access key.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1131,7 +1131,7 @@ func (o DomainsCustomerSecretKeyOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
-// User credential expires on
+// When the user's credential expire.
 //
 // **Added In:** 2109090424
 //
@@ -1227,7 +1227,7 @@ func (o DomainsCustomerSecretKeyOutput) Metas() DomainsCustomerSecretKeyMetaArra
 	return o.ApplyT(func(v *DomainsCustomerSecretKey) DomainsCustomerSecretKeyMetaArrayOutput { return v.Metas }).(DomainsCustomerSecretKeyMetaArrayOutput)
 }
 
-// User's ocid
+// The user's OCID.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1262,7 +1262,7 @@ func (o DomainsCustomerSecretKeyOutput) Schemas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringArrayOutput { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
-// User credential status
+// The user's credential status.
 //
 // **Added In:** 2109090424
 //

@@ -44,6 +44,8 @@ type OperatorControl struct {
 	EmailIdLists pulumi.StringArrayOutput `pulumi:"emailIdLists"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// Whether the operator control is a default Operator Control.
+	IsDefaultOperatorControl pulumi.BoolOutput `pulumi:"isDefaultOperatorControl"`
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved pulumi.BoolOutput `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
@@ -130,6 +132,8 @@ type operatorControlState struct {
 	EmailIdLists []string `pulumi:"emailIdLists"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Whether the operator control is a default Operator Control.
+	IsDefaultOperatorControl *bool `pulumi:"isDefaultOperatorControl"`
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved *bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
@@ -172,6 +176,8 @@ type OperatorControlState struct {
 	EmailIdLists pulumi.StringArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags pulumi.MapInput
+	// Whether the operator control is a default Operator Control.
+	IsDefaultOperatorControl pulumi.BoolPtrInput
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved pulumi.BoolPtrInput
 	// Description associated with the latest modification of the operator control.
@@ -387,6 +393,11 @@ func (o OperatorControlOutput) EmailIdLists() pulumi.StringArrayOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 func (o OperatorControlOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *OperatorControl) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Whether the operator control is a default Operator Control.
+func (o OperatorControlOutput) IsDefaultOperatorControl() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.BoolOutput { return v.IsDefaultOperatorControl }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.

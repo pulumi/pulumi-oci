@@ -14,31 +14,35 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserResult
     {
         /// <summary>
-        /// Indicates weather a user can use api keys
+        /// Indicates whether a user can use API keys.
         /// </summary>
         public readonly bool CanUseApiKeys;
         /// <summary>
-        /// Indicates weather a user can use auth tokens
+        /// Indicates whether a user can use Auth tokens.
         /// </summary>
         public readonly bool CanUseAuthTokens;
         /// <summary>
-        /// Indicates weather a user can use console password
+        /// Specifies whether user can access the Console.
+        /// </summary>
+        public readonly bool CanUseConsole;
+        /// <summary>
+        /// Indicates whether a user can use Console passwords.
         /// </summary>
         public readonly bool CanUseConsolePassword;
         /// <summary>
-        /// Indicates weather a user can use customer secret keys
+        /// Indicates whether a user can use customer secret keys.
         /// </summary>
         public readonly bool CanUseCustomerSecretKeys;
         /// <summary>
-        /// Indicates weather a user can use db credentials
+        /// Indicates whether a user can use database credentials.
         /// </summary>
         public readonly bool CanUseDbCredentials;
         /// <summary>
-        /// Indicates weather a user can use oauth2 client credentials
+        /// Indicates whether a user can use OAuth2 client credentials.
         /// </summary>
         public readonly bool CanUseOauth2clientCredentials;
         /// <summary>
-        /// Indicates weather a user can use smtp credentials
+        /// Indicates whether a user can use SMTP credentials.
         /// </summary>
         public readonly bool CanUseSmtpCredentials;
 
@@ -47,6 +51,8 @@ namespace Pulumi.Oci.Identity.Outputs
             bool canUseApiKeys,
 
             bool canUseAuthTokens,
+
+            bool canUseConsole,
 
             bool canUseConsolePassword,
 
@@ -60,6 +66,7 @@ namespace Pulumi.Oci.Identity.Outputs
         {
             CanUseApiKeys = canUseApiKeys;
             CanUseAuthTokens = canUseAuthTokens;
+            CanUseConsole = canUseConsole;
             CanUseConsolePassword = canUseConsolePassword;
             CanUseCustomerSecretKeys = canUseCustomerSecretKeys;
             CanUseDbCredentials = canUseDbCredentials;

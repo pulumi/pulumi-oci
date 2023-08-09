@@ -157,7 +157,7 @@ public final class GetDomainsUserResult {
      */
     private String nickName;
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     private String ocid;
@@ -238,7 +238,7 @@ public final class GetDomainsUserResult {
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
     /**
-     * @return Db Credentials User extension
+     * @return The database credentials user extension.
      * 
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
@@ -273,7 +273,7 @@ public final class GetDomainsUserResult {
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUsers;
     /**
-     * @return This extension defines attributes used to store Security Questions of User.
+     * @return This extension defines the attributes used to store the security questions of a user.
      * 
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
@@ -308,12 +308,12 @@ public final class GetDomainsUserResult {
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
     /**
-     * @return This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * @return This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
     /**
-     * @return Oracle Cloud Infrastructure IAM User
+     * @return Oracle Identity Cloud Service User
      * 
      */
     private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers;
@@ -499,7 +499,7 @@ public final class GetDomainsUserResult {
         return this.nickName;
     }
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     public String ocid() {
@@ -614,7 +614,7 @@ public final class GetDomainsUserResult {
         return this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
     }
     /**
-     * @return Db Credentials User extension
+     * @return The database credentials user extension.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers() {
@@ -663,7 +663,7 @@ public final class GetDomainsUserResult {
         return this.urnietfparamsscimschemasoracleidcsextensionposixUsers;
     }
     /**
-     * @return This extension defines attributes used to store Security Questions of User.
+     * @return This extension defines the attributes used to store the security questions of a user.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers() {
@@ -712,14 +712,14 @@ public final class GetDomainsUserResult {
         return this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
     }
     /**
-     * @return This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * @return This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers() {
         return this.urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
     }
     /**
-     * @return Oracle Cloud Infrastructure IAM User
+     * @return Oracle Identity Cloud Service User
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers() {

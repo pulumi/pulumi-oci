@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? ExternalId { get; set; }
 
         /// <summary>
-        /// (Updatable) Membership Ocid
+        /// (Updatable) The membership OCID.
         /// 
         /// **Added In:** 2103141444
         /// 
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? NonUniqueDisplay { get; set; }
 
         /// <summary>
-        /// (Updatable) Ocid of the User's Support Account.
+        /// (Updatable) The OCID of the user's support account.
         /// 
         /// **Added In:** 2103141444
         /// 

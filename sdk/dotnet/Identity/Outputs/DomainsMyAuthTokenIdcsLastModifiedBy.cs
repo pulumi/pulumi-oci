@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsMyAuthTokenIdcsLastModifiedBy
     {
         /// <summary>
-        /// (Updatable) User display name
+        /// (Updatable) The user's display name.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// User's id
+        /// The user's ID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

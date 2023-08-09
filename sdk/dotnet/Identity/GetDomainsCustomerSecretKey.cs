@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's customer secret key
+        /// Get a user's customer secret key.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's customer secret key
+        /// Get a user's customer secret key.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -188,7 +188,7 @@ namespace Pulumi.Oci.Identity
     public sealed class GetDomainsCustomerSecretKeyResult
     {
         /// <summary>
-        /// Access key
+        /// The access key.
         /// </summary>
         public readonly string AccessKey;
         public readonly ImmutableArray<string> AttributeSets;
@@ -216,7 +216,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly string DomainOcid;
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// </summary>
         public readonly string ExpiresOn;
         /// <summary>
@@ -245,7 +245,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsCustomerSecretKeyMetaResult> Metas;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         public readonly string? ResourceTypeSchemaVersion;
@@ -254,7 +254,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<string> Schemas;
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// </summary>
         public readonly string Status;
         /// <summary>

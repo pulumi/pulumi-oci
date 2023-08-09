@@ -85,6 +85,11 @@ export const getNamespace: typeof import("./getNamespace").getNamespace = null a
 export const getNamespaceOutput: typeof import("./getNamespace").getNamespaceOutput = null as any;
 utilities.lazyLoad(exports, ["getNamespace","getNamespaceOutput"], () => require("./getNamespace"));
 
+export { GetNamespaceEffectivePropertiesArgs, GetNamespaceEffectivePropertiesResult, GetNamespaceEffectivePropertiesOutputArgs } from "./getNamespaceEffectiveProperties";
+export const getNamespaceEffectiveProperties: typeof import("./getNamespaceEffectiveProperties").getNamespaceEffectiveProperties = null as any;
+export const getNamespaceEffectivePropertiesOutput: typeof import("./getNamespaceEffectiveProperties").getNamespaceEffectivePropertiesOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceEffectiveProperties","getNamespaceEffectivePropertiesOutput"], () => require("./getNamespaceEffectiveProperties"));
+
 export { GetNamespaceIngestTimeRuleArgs, GetNamespaceIngestTimeRuleResult, GetNamespaceIngestTimeRuleOutputArgs } from "./getNamespaceIngestTimeRule";
 export const getNamespaceIngestTimeRule: typeof import("./getNamespaceIngestTimeRule").getNamespaceIngestTimeRule = null as any;
 export const getNamespaceIngestTimeRuleOutput: typeof import("./getNamespaceIngestTimeRule").getNamespaceIngestTimeRuleOutput = null as any;
@@ -95,10 +100,20 @@ export const getNamespaceIngestTimeRules: typeof import("./getNamespaceIngestTim
 export const getNamespaceIngestTimeRulesOutput: typeof import("./getNamespaceIngestTimeRules").getNamespaceIngestTimeRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getNamespaceIngestTimeRules","getNamespaceIngestTimeRulesOutput"], () => require("./getNamespaceIngestTimeRules"));
 
+export { GetNamespacePropertiesMetadataArgs, GetNamespacePropertiesMetadataResult, GetNamespacePropertiesMetadataOutputArgs } from "./getNamespacePropertiesMetadata";
+export const getNamespacePropertiesMetadata: typeof import("./getNamespacePropertiesMetadata").getNamespacePropertiesMetadata = null as any;
+export const getNamespacePropertiesMetadataOutput: typeof import("./getNamespacePropertiesMetadata").getNamespacePropertiesMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespacePropertiesMetadata","getNamespacePropertiesMetadataOutput"], () => require("./getNamespacePropertiesMetadata"));
+
 export { GetNamespaceRulesArgs, GetNamespaceRulesResult, GetNamespaceRulesOutputArgs } from "./getNamespaceRules";
 export const getNamespaceRules: typeof import("./getNamespaceRules").getNamespaceRules = null as any;
 export const getNamespaceRulesOutput: typeof import("./getNamespaceRules").getNamespaceRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getNamespaceRules","getNamespaceRulesOutput"], () => require("./getNamespaceRules"));
+
+export { GetNamespaceRulesSummaryArgs, GetNamespaceRulesSummaryResult, GetNamespaceRulesSummaryOutputArgs } from "./getNamespaceRulesSummary";
+export const getNamespaceRulesSummary: typeof import("./getNamespaceRulesSummary").getNamespaceRulesSummary = null as any;
+export const getNamespaceRulesSummaryOutput: typeof import("./getNamespaceRulesSummary").getNamespaceRulesSummaryOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceRulesSummary","getNamespaceRulesSummaryOutput"], () => require("./getNamespaceRulesSummary"));
 
 export { GetNamespaceScheduledTaskArgs, GetNamespaceScheduledTaskResult, GetNamespaceScheduledTaskOutputArgs } from "./getNamespaceScheduledTask";
 export const getNamespaceScheduledTask: typeof import("./getNamespaceScheduledTask").getNamespaceScheduledTask = null as any;
@@ -114,6 +129,21 @@ export { GetNamespaceStorageEncryptionKeyInfoArgs, GetNamespaceStorageEncryption
 export const getNamespaceStorageEncryptionKeyInfo: typeof import("./getNamespaceStorageEncryptionKeyInfo").getNamespaceStorageEncryptionKeyInfo = null as any;
 export const getNamespaceStorageEncryptionKeyInfoOutput: typeof import("./getNamespaceStorageEncryptionKeyInfo").getNamespaceStorageEncryptionKeyInfoOutput = null as any;
 utilities.lazyLoad(exports, ["getNamespaceStorageEncryptionKeyInfo","getNamespaceStorageEncryptionKeyInfoOutput"], () => require("./getNamespaceStorageEncryptionKeyInfo"));
+
+export { GetNamespaceStorageOverlappingRecallsArgs, GetNamespaceStorageOverlappingRecallsResult, GetNamespaceStorageOverlappingRecallsOutputArgs } from "./getNamespaceStorageOverlappingRecalls";
+export const getNamespaceStorageOverlappingRecalls: typeof import("./getNamespaceStorageOverlappingRecalls").getNamespaceStorageOverlappingRecalls = null as any;
+export const getNamespaceStorageOverlappingRecallsOutput: typeof import("./getNamespaceStorageOverlappingRecalls").getNamespaceStorageOverlappingRecallsOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceStorageOverlappingRecalls","getNamespaceStorageOverlappingRecallsOutput"], () => require("./getNamespaceStorageOverlappingRecalls"));
+
+export { GetNamespaceStorageRecallCountArgs, GetNamespaceStorageRecallCountResult, GetNamespaceStorageRecallCountOutputArgs } from "./getNamespaceStorageRecallCount";
+export const getNamespaceStorageRecallCount: typeof import("./getNamespaceStorageRecallCount").getNamespaceStorageRecallCount = null as any;
+export const getNamespaceStorageRecallCountOutput: typeof import("./getNamespaceStorageRecallCount").getNamespaceStorageRecallCountOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceStorageRecallCount","getNamespaceStorageRecallCountOutput"], () => require("./getNamespaceStorageRecallCount"));
+
+export { GetNamespaceStorageRecalledDataSizeArgs, GetNamespaceStorageRecalledDataSizeResult, GetNamespaceStorageRecalledDataSizeOutputArgs } from "./getNamespaceStorageRecalledDataSize";
+export const getNamespaceStorageRecalledDataSize: typeof import("./getNamespaceStorageRecalledDataSize").getNamespaceStorageRecalledDataSize = null as any;
+export const getNamespaceStorageRecalledDataSizeOutput: typeof import("./getNamespaceStorageRecalledDataSize").getNamespaceStorageRecalledDataSizeOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceStorageRecalledDataSize","getNamespaceStorageRecalledDataSizeOutput"], () => require("./getNamespaceStorageRecalledDataSize"));
 
 export { GetNamespacesArgs, GetNamespacesResult, GetNamespacesOutputArgs } from "./getNamespaces";
 export const getNamespaces: typeof import("./getNamespaces").getNamespaces = null as any;

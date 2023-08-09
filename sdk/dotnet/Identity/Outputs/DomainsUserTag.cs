@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserTag
     {
         /// <summary>
-        /// (Updatable) The value of of the User's api key.
+        /// (Updatable) The user's API key value.
         /// 
         /// **Added In:** 2106240046
         /// 

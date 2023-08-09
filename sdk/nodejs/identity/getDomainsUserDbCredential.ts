@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a User's DbCredentials
+ * Get a user's database (DB) credentials.
  *
  * ## Example Usage
  *
@@ -82,7 +82,7 @@ export interface GetDomainsUserDbCredentialResult {
      */
     readonly compartmentOcid: string;
     /**
-     * The db password of the user
+     * The user's database password.
      */
     readonly dbPassword: string;
     /**
@@ -98,11 +98,11 @@ export interface GetDomainsUserDbCredentialResult {
      */
     readonly domainOcid: string;
     /**
-     * Indicates that the db password has expired
+     * Indicates that the database password has expired.
      */
     readonly expired: boolean;
     /**
-     * User credential expires on
+     * When the user credential expires.
      */
     readonly expiresOn: string;
     /**
@@ -127,7 +127,7 @@ export interface GetDomainsUserDbCredentialResult {
      */
     readonly idcsPreventedOperations: string[];
     /**
-     * A DateTime that specifies the date and time when the current db password was set
+     * A DateTime that specifies the date and time when the current database password was set.
      */
     readonly lastSetDate: string;
     /**
@@ -135,24 +135,24 @@ export interface GetDomainsUserDbCredentialResult {
      */
     readonly metas: outputs.Identity.GetDomainsUserDbCredentialMeta[];
     /**
-     * The db password of the user with mixed salt
+     * The user's database password with mixed salt.
      */
     readonly mixedDbPassword: string;
     /**
-     * The mixed salt of the password
+     * The mixed salt of the password.
      */
     readonly mixedSalt: string;
     /**
-     * User name
+     * The username.
      */
     readonly name: string;
     /**
-     * User's ocid
+     * The user's OCID.
      */
     readonly ocid: string;
     readonly resourceTypeSchemaVersion?: string;
     /**
-     * The salt of the password
+     * The salt of the password.
      */
     readonly salt: string;
     /**
@@ -177,14 +177,14 @@ export interface GetDomainsUserDbCredentialResult {
     readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUsers: outputs.Identity.GetDomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser[];
     readonly userDbCredentialId: string;
     /**
-     * User linked to db credential
+     * The user linked to the database credential.
      */
     readonly users: outputs.Identity.GetDomainsUserDbCredentialUser[];
 }
 /**
  * This data source provides details about a specific User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a User's DbCredentials
+ * Get a user's database (DB) credentials.
  *
  * ## Example Usage
  *

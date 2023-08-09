@@ -14,7 +14,7 @@ import (
 
 // This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Add a user's oauth2 client credential
+// Create a user's own OAuth2 client credential.
 //
 // ## Import
 //
@@ -77,7 +77,7 @@ type DomainsMyOauth2clientCredential struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
-	// User credential expires on
+	// When the user's credentials expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -136,7 +136,7 @@ type DomainsMyOauth2clientCredential struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayOutput `pulumi:"idcsPreventedOperations"`
-	// Specifies if secret need to be reset
+	// Specifies whether the secret must be reset.
 	//
 	// **Added In:** 2109090424
 	//
@@ -162,7 +162,7 @@ type DomainsMyOauth2clientCredential struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMyOauth2clientCredentialMetaArrayOutput `pulumi:"metas"`
-	// (Updatable) User name
+	// (Updatable) The username.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -174,7 +174,7 @@ type DomainsMyOauth2clientCredential struct {
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringOutput `pulumi:"name"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -211,7 +211,7 @@ type DomainsMyOauth2clientCredential struct {
 	// * required: true
 	// * returned: default
 	Scopes DomainsMyOauth2clientCredentialScopeArrayOutput `pulumi:"scopes"`
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -249,7 +249,7 @@ type DomainsMyOauth2clientCredential struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
-	// User linked to oauth2 client credential
+	// The user linked to the OAuth2 client credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -351,7 +351,7 @@ type domainsMyOauth2clientCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid *string `pulumi:"domainOcid"`
-	// User credential expires on
+	// When the user's credentials expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -410,7 +410,7 @@ type domainsMyOauth2clientCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
-	// Specifies if secret need to be reset
+	// Specifies whether the secret must be reset.
 	//
 	// **Added In:** 2109090424
 	//
@@ -436,7 +436,7 @@ type domainsMyOauth2clientCredentialState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsMyOauth2clientCredentialMeta `pulumi:"metas"`
-	// (Updatable) User name
+	// (Updatable) The username.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -448,7 +448,7 @@ type domainsMyOauth2clientCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	Name *string `pulumi:"name"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -485,7 +485,7 @@ type domainsMyOauth2clientCredentialState struct {
 	// * required: true
 	// * returned: default
 	Scopes []DomainsMyOauth2clientCredentialScope `pulumi:"scopes"`
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -523,7 +523,7 @@ type domainsMyOauth2clientCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid *string `pulumi:"tenancyOcid"`
-	// User linked to oauth2 client credential
+	// The user linked to the OAuth2 client credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -587,7 +587,7 @@ type DomainsMyOauth2clientCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringPtrInput
-	// User credential expires on
+	// When the user's credentials expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -646,7 +646,7 @@ type DomainsMyOauth2clientCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayInput
-	// Specifies if secret need to be reset
+	// Specifies whether the secret must be reset.
 	//
 	// **Added In:** 2109090424
 	//
@@ -672,7 +672,7 @@ type DomainsMyOauth2clientCredentialState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMyOauth2clientCredentialMetaArrayInput
-	// (Updatable) User name
+	// (Updatable) The username.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -684,7 +684,7 @@ type DomainsMyOauth2clientCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringPtrInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -721,7 +721,7 @@ type DomainsMyOauth2clientCredentialState struct {
 	// * required: true
 	// * returned: default
 	Scopes DomainsMyOauth2clientCredentialScopeArrayInput
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -759,7 +759,7 @@ type DomainsMyOauth2clientCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid pulumi.StringPtrInput
-	// User linked to oauth2 client credential
+	// The user linked to the OAuth2 client credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -791,7 +791,7 @@ type domainsMyOauth2clientCredentialArgs struct {
 	// * required: false
 	// * returned: default
 	Description *string `pulumi:"description"`
-	// User credential expires on
+	// When the user's credentials expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -807,7 +807,7 @@ type domainsMyOauth2clientCredentialArgs struct {
 	ExpiresOn *string `pulumi:"expiresOn"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	// Specifies if secret need to be reset
+	// Specifies whether the secret must be reset.
 	//
 	// **Added In:** 2109090424
 	//
@@ -821,7 +821,7 @@ type domainsMyOauth2clientCredentialArgs struct {
 	// * type: boolean
 	// * uniqueness: none
 	IsResetSecret *bool `pulumi:"isResetSecret"`
-	// (Updatable) User name
+	// (Updatable) The username.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -833,7 +833,7 @@ type domainsMyOauth2clientCredentialArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Name *string `pulumi:"name"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -870,7 +870,7 @@ type domainsMyOauth2clientCredentialArgs struct {
 	// * required: true
 	// * returned: default
 	Scopes []DomainsMyOauth2clientCredentialScope `pulumi:"scopes"`
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -896,7 +896,7 @@ type domainsMyOauth2clientCredentialArgs struct {
 	// * type: complex
 	// * uniqueness: none
 	Tags []DomainsMyOauth2clientCredentialTag `pulumi:"tags"`
-	// User linked to oauth2 client credential
+	// The user linked to the OAuth2 client credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -925,7 +925,7 @@ type DomainsMyOauth2clientCredentialArgs struct {
 	// * required: false
 	// * returned: default
 	Description pulumi.StringPtrInput
-	// User credential expires on
+	// When the user's credentials expire.
 	//
 	// **Added In:** 2109090424
 	//
@@ -941,7 +941,7 @@ type DomainsMyOauth2clientCredentialArgs struct {
 	ExpiresOn pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
-	// Specifies if secret need to be reset
+	// Specifies whether the secret must be reset.
 	//
 	// **Added In:** 2109090424
 	//
@@ -955,7 +955,7 @@ type DomainsMyOauth2clientCredentialArgs struct {
 	// * type: boolean
 	// * uniqueness: none
 	IsResetSecret pulumi.BoolPtrInput
-	// (Updatable) User name
+	// (Updatable) The username.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -967,7 +967,7 @@ type DomainsMyOauth2clientCredentialArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringPtrInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -1004,7 +1004,7 @@ type DomainsMyOauth2clientCredentialArgs struct {
 	// * required: true
 	// * returned: default
 	Scopes DomainsMyOauth2clientCredentialScopeArrayInput
-	// User credential status
+	// The user's credential status.
 	//
 	// **Added In:** 2109090424
 	//
@@ -1030,7 +1030,7 @@ type DomainsMyOauth2clientCredentialArgs struct {
 	// * type: complex
 	// * uniqueness: none
 	Tags DomainsMyOauth2clientCredentialTagArrayInput
-	// User linked to oauth2 client credential
+	// The user linked to the OAuth2 client credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -1195,7 +1195,7 @@ func (o DomainsMyOauth2clientCredentialOutput) DomainOcid() pulumi.StringOutput 
 	return o.ApplyT(func(v *DomainsMyOauth2clientCredential) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
-// User credential expires on
+// When the user's credentials expire.
 //
 // **Added In:** 2109090424
 //
@@ -1276,7 +1276,7 @@ func (o DomainsMyOauth2clientCredentialOutput) IdcsPreventedOperations() pulumi.
 	return o.ApplyT(func(v *DomainsMyOauth2clientCredential) pulumi.StringArrayOutput { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
-// Specifies if secret need to be reset
+// Specifies whether the secret must be reset.
 //
 // **Added In:** 2109090424
 //
@@ -1310,7 +1310,7 @@ func (o DomainsMyOauth2clientCredentialOutput) Metas() DomainsMyOauth2clientCred
 	}).(DomainsMyOauth2clientCredentialMetaArrayOutput)
 }
 
-// (Updatable) User name
+// (Updatable) The username.
 //
 // **SCIM++ Properties:**
 // * caseExact: false
@@ -1325,7 +1325,7 @@ func (o DomainsMyOauth2clientCredentialOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyOauth2clientCredential) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// User's ocid
+// The user's OCID.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1376,7 +1376,7 @@ func (o DomainsMyOauth2clientCredentialOutput) Scopes() DomainsMyOauth2clientCre
 	}).(DomainsMyOauth2clientCredentialScopeArrayOutput)
 }
 
-// User credential status
+// The user's credential status.
 //
 // **Added In:** 2109090424
 //
@@ -1423,7 +1423,7 @@ func (o DomainsMyOauth2clientCredentialOutput) TenancyOcid() pulumi.StringOutput
 	return o.ApplyT(func(v *DomainsMyOauth2clientCredential) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
 }
 
-// User linked to oauth2 client credential
+// The user linked to the OAuth2 client credential.
 //
 // **SCIM++ Properties:**
 // * caseExact: false

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -11,6 +12,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class MigrationExcludeObject {
+    /**
+     * @return (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+     * 
+     */
+    private @Nullable Boolean isOmitExcludedTableFromReplication;
     /**
      * @return (Updatable) Name of the object (regular expression is allowed)
      * 
@@ -28,6 +34,13 @@ public final class MigrationExcludeObject {
     private @Nullable String type;
 
     private MigrationExcludeObject() {}
+    /**
+     * @return (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+     * 
+     */
+    public Optional<Boolean> isOmitExcludedTableFromReplication() {
+        return Optional.ofNullable(this.isOmitExcludedTableFromReplication);
+    }
     /**
      * @return (Updatable) Name of the object (regular expression is allowed)
      * 
@@ -59,17 +72,24 @@ public final class MigrationExcludeObject {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean isOmitExcludedTableFromReplication;
         private String object;
         private String owner;
         private @Nullable String type;
         public Builder() {}
         public Builder(MigrationExcludeObject defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isOmitExcludedTableFromReplication = defaults.isOmitExcludedTableFromReplication;
     	      this.object = defaults.object;
     	      this.owner = defaults.owner;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder isOmitExcludedTableFromReplication(@Nullable Boolean isOmitExcludedTableFromReplication) {
+            this.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
+            return this;
+        }
         @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
@@ -87,6 +107,7 @@ public final class MigrationExcludeObject {
         }
         public MigrationExcludeObject build() {
             final var o = new MigrationExcludeObject();
+            o.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
             o.object = object;
             o.owner = owner;
             o.type = type;

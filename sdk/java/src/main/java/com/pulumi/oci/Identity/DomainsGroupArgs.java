@@ -69,7 +69,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Group display name
+     * (Updatable) The Group display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -88,7 +88,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Group display name
+     * @return (Updatable) The Group display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -158,7 +158,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -178,7 +178,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<List<DomainsGroupMemberArgs>> members;
 
     /**
-     * @return (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * @return (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -199,7 +199,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A human readable name for Group as defined by the Service Consumer
+     * (Updatable) A human readable name for the group as defined by the Service Consumer.
      * 
      * **Added In:** 2011192329
      * 
@@ -218,7 +218,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> nonUniqueDisplayName;
 
     /**
-     * @return (Updatable) A human readable name for Group as defined by the Service Consumer
+     * @return (Updatable) A human readable name for the group as defined by the Service Consumer.
      * 
      * **Added In:** 2011192329
      * 
@@ -388,14 +388,14 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Idcs Group
+     * (Updatable) Oracle Identity Cloud Service Group
      * 
      */
     @Import(name="urnietfparamsscimschemasoracleidcsextensiongroupGroup")
     private @Nullable Output<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs> urnietfparamsscimschemasoracleidcsextensiongroupGroup;
 
     /**
-     * @return (Updatable) Idcs Group
+     * @return (Updatable) Oracle Identity Cloud Service Group
      * 
      */
     public Optional<Output<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs>> urnietfparamsscimschemasoracleidcsextensiongroupGroup() {
@@ -546,7 +546,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Group display name
+         * @param displayName (Updatable) The Group display name.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -569,7 +569,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Group display name
+         * @param displayName (Updatable) The Group display name.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -653,7 +653,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param members (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+         * @param members (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -677,7 +677,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param members (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+         * @param members (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -700,7 +700,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param members (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+         * @param members (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -723,7 +723,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nonUniqueDisplayName (Updatable) A human readable name for Group as defined by the Service Consumer
+         * @param nonUniqueDisplayName (Updatable) A human readable name for the group as defined by the Service Consumer.
          * 
          * **Added In:** 2011192329
          * 
@@ -746,7 +746,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nonUniqueDisplayName (Updatable) A human readable name for Group as defined by the Service Consumer
+         * @param nonUniqueDisplayName (Updatable) A human readable name for the group as defined by the Service Consumer.
          * 
          * **Added In:** 2011192329
          * 
@@ -994,7 +994,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensiongroupGroup (Updatable) Idcs Group
+         * @param urnietfparamsscimschemasoracleidcsextensiongroupGroup (Updatable) Oracle Identity Cloud Service Group
          * 
          * @return builder
          * 
@@ -1005,7 +1005,7 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensiongroupGroup (Updatable) Idcs Group
+         * @param urnietfparamsscimschemasoracleidcsextensiongroupGroup (Updatable) Oracle Identity Cloud Service Group
          * 
          * @return builder
          * 

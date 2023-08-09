@@ -110,6 +110,10 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The subresources requested for approval.
+        /// </summary>
+        public readonly ImmutableArray<string> SubResourceLists;
+        /// <summary>
         /// System message that will be displayed to the operator at login to the target resource.
         /// </summary>
         public readonly string SystemMessage;
@@ -184,6 +188,8 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
 
             string state,
 
+            ImmutableArray<string> subResourceLists,
+
             string systemMessage,
 
             string timeOfCreation,
@@ -220,6 +226,7 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
             ResourceType = resourceType;
             Severity = severity;
             State = state;
+            SubResourceLists = subResourceLists;
             SystemMessage = systemMessage;
             TimeOfCreation = timeOfCreation;
             TimeOfModification = timeOfModification;

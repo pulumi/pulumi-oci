@@ -14,7 +14,7 @@ import (
 
 // This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Add a user's api key
+// Add a user's own API key.
 //
 // ## Import
 //
@@ -158,7 +158,7 @@ type DomainsMyApiKey struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMyApiKeyMetaArrayOutput `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -208,7 +208,7 @@ type DomainsMyApiKey struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -391,7 +391,7 @@ type domainsMyApiKeyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsMyApiKeyMeta `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -441,7 +441,7 @@ type domainsMyApiKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid *string `pulumi:"tenancyOcid"`
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -586,7 +586,7 @@ type DomainsMyApiKeyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMyApiKeyMetaArrayInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -636,7 +636,7 @@ type DomainsMyApiKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid pulumi.StringPtrInput
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -682,7 +682,7 @@ type domainsMyApiKeyArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Key string `pulumi:"key"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -720,7 +720,7 @@ type domainsMyApiKeyArgs struct {
 	// * type: complex
 	// * uniqueness: none
 	Tags []DomainsMyApiKeyTag `pulumi:"tags"`
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -763,7 +763,7 @@ type DomainsMyApiKeyArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Key pulumi.StringInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -801,7 +801,7 @@ type DomainsMyApiKeyArgs struct {
 	// * type: complex
 	// * uniqueness: none
 	Tags DomainsMyApiKeyTagArrayInput
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -1071,7 +1071,7 @@ func (o DomainsMyApiKeyOutput) Metas() DomainsMyApiKeyMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsMyApiKey) DomainsMyApiKeyMetaArrayOutput { return v.Metas }).(DomainsMyApiKeyMetaArrayOutput)
 }
 
-// User's ocid
+// The user's OCID.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1136,7 +1136,7 @@ func (o DomainsMyApiKeyOutput) TenancyOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyApiKey) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
 }
 
-// User linked to api key
+// The user linked to the API key.
 //
 // **SCIM++ Properties:**
 // * caseExact: false

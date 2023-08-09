@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Add a user&#39;s oauth2 client credential
+ * Add a user&#39;s OAuth2 client credentials.
  * 
  * ## Example Usage
  * 
@@ -277,7 +277,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
         return this.domainOcid;
     }
     /**
-     * User credential expires on
+     * When the user&#39;s credentials expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -296,7 +296,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     private Output<String> expiresOn;
 
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credentials expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -455,7 +455,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
         return this.idcsPreventedOperations;
     }
     /**
-     * Specifies if secret need to be reset
+     * Specifies whether the secret must be reset.
      * 
      * **Added In:** 2109090424
      * 
@@ -474,7 +474,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     private Output<Boolean> isResetSecret;
 
     /**
-     * @return Specifies if secret need to be reset
+     * @return Specifies whether the secret must be reset.
      * 
      * **Added In:** 2109090424
      * 
@@ -527,7 +527,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
         return this.metas;
     }
     /**
-     * (Updatable) User name
+     * (Updatable) The username.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -544,7 +544,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     private Output<String> name;
 
     /**
-     * @return (Updatable) User name
+     * @return (Updatable) The username.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -561,7 +561,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
         return this.name;
     }
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -578,7 +578,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     private Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -675,7 +675,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
         return this.scopes;
     }
     /**
-     * User credential status
+     * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -694,7 +694,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     private Output<String> status;
 
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -795,7 +795,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
         return this.urnietfparamsscimschemasoracleidcsextensionselfChangeUser;
     }
     /**
-     * User linked to oauth2 client credential
+     * The user linked to the OAuth2 client credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -812,7 +812,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     private Output<DomainsOauth2clientCredentialUser> user;
 
     /**
-     * @return User linked to oauth2 client credential
+     * @return The user linked to the OAuth2 client credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false

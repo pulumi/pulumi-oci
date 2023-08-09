@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserResult
     {
         /// <summary>
-        /// Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        /// Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
         /// </summary>
         public readonly string PrincipalName;
         /// <summary>
-        /// Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        /// Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
         /// </summary>
         public readonly string RealmName;
         /// <summary>

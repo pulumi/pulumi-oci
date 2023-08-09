@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser {
     /**
-     * @return (Updatable) Indicates weather a user can use api keys
+     * @return (Updatable) Indicates whether a user can use API keys.
      * 
      * **Added In:** 2012271618
      * 
@@ -29,7 +29,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
      */
     private @Nullable Boolean canUseApiKeys;
     /**
-     * @return (Updatable) Indicates weather a user can use auth tokens
+     * @return (Updatable) Indicates whether a user can use Auth tokens.
      * 
      * **Added In:** 2012271618
      * 
@@ -46,7 +46,24 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
      */
     private @Nullable Boolean canUseAuthTokens;
     /**
-     * @return (Updatable) Indicates weather a user can use console password
+     * @return (Updatable) Specifies whether user can access the Console.
+     * 
+     * **Added In:** 2206280902
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable Boolean canUseConsole;
+    /**
+     * @return (Updatable) Indicates whether a user can use Console passwords.
      * 
      * **Added In:** 2012271618
      * 
@@ -63,7 +80,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
      */
     private @Nullable Boolean canUseConsolePassword;
     /**
-     * @return (Updatable) Indicates weather a user can use customer secret keys
+     * @return (Updatable) Indicates whether a user can use customer secret keys.
      * 
      * **Added In:** 2012271618
      * 
@@ -80,7 +97,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
      */
     private @Nullable Boolean canUseCustomerSecretKeys;
     /**
-     * @return (Updatable) Indicates weather a user can use db credentials
+     * @return (Updatable) Indicates whether a user can use database credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -97,7 +114,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
      */
     private @Nullable Boolean canUseDbCredentials;
     /**
-     * @return (Updatable) Indicates weather a user can use oauth2 client credentials
+     * @return (Updatable) Indicates whether a user can use OAuth2 client credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -114,7 +131,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
      */
     private @Nullable Boolean canUseOauth2clientCredentials;
     /**
-     * @return (Updatable) Indicates weather a user can use smtp credentials
+     * @return (Updatable) Indicates whether a user can use SMTP credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -133,7 +150,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser() {}
     /**
-     * @return (Updatable) Indicates weather a user can use api keys
+     * @return (Updatable) Indicates whether a user can use API keys.
      * 
      * **Added In:** 2012271618
      * 
@@ -152,7 +169,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         return Optional.ofNullable(this.canUseApiKeys);
     }
     /**
-     * @return (Updatable) Indicates weather a user can use auth tokens
+     * @return (Updatable) Indicates whether a user can use Auth tokens.
      * 
      * **Added In:** 2012271618
      * 
@@ -171,7 +188,26 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         return Optional.ofNullable(this.canUseAuthTokens);
     }
     /**
-     * @return (Updatable) Indicates weather a user can use console password
+     * @return (Updatable) Specifies whether user can access the Console.
+     * 
+     * **Added In:** 2206280902
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Boolean> canUseConsole() {
+        return Optional.ofNullable(this.canUseConsole);
+    }
+    /**
+     * @return (Updatable) Indicates whether a user can use Console passwords.
      * 
      * **Added In:** 2012271618
      * 
@@ -190,7 +226,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         return Optional.ofNullable(this.canUseConsolePassword);
     }
     /**
-     * @return (Updatable) Indicates weather a user can use customer secret keys
+     * @return (Updatable) Indicates whether a user can use customer secret keys.
      * 
      * **Added In:** 2012271618
      * 
@@ -209,7 +245,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         return Optional.ofNullable(this.canUseCustomerSecretKeys);
     }
     /**
-     * @return (Updatable) Indicates weather a user can use db credentials
+     * @return (Updatable) Indicates whether a user can use database credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -228,7 +264,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         return Optional.ofNullable(this.canUseDbCredentials);
     }
     /**
-     * @return (Updatable) Indicates weather a user can use oauth2 client credentials
+     * @return (Updatable) Indicates whether a user can use OAuth2 client credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -247,7 +283,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         return Optional.ofNullable(this.canUseOauth2clientCredentials);
     }
     /**
-     * @return (Updatable) Indicates weather a user can use smtp credentials
+     * @return (Updatable) Indicates whether a user can use SMTP credentials.
      * 
      * **Added In:** 2012271618
      * 
@@ -277,6 +313,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     public static final class Builder {
         private @Nullable Boolean canUseApiKeys;
         private @Nullable Boolean canUseAuthTokens;
+        private @Nullable Boolean canUseConsole;
         private @Nullable Boolean canUseConsolePassword;
         private @Nullable Boolean canUseCustomerSecretKeys;
         private @Nullable Boolean canUseDbCredentials;
@@ -287,6 +324,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     	      Objects.requireNonNull(defaults);
     	      this.canUseApiKeys = defaults.canUseApiKeys;
     	      this.canUseAuthTokens = defaults.canUseAuthTokens;
+    	      this.canUseConsole = defaults.canUseConsole;
     	      this.canUseConsolePassword = defaults.canUseConsolePassword;
     	      this.canUseCustomerSecretKeys = defaults.canUseCustomerSecretKeys;
     	      this.canUseDbCredentials = defaults.canUseDbCredentials;
@@ -302,6 +340,11 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
         @CustomType.Setter
         public Builder canUseAuthTokens(@Nullable Boolean canUseAuthTokens) {
             this.canUseAuthTokens = canUseAuthTokens;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder canUseConsole(@Nullable Boolean canUseConsole) {
+            this.canUseConsole = canUseConsole;
             return this;
         }
         @CustomType.Setter
@@ -333,6 +376,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
             final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser();
             o.canUseApiKeys = canUseApiKeys;
             o.canUseAuthTokens = canUseAuthTokens;
+            o.canUseConsole = canUseConsole;
             o.canUseConsolePassword = canUseConsolePassword;
             o.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
             o.canUseDbCredentials = canUseDbCredentials;

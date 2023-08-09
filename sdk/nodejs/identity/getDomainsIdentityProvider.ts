@@ -200,6 +200,10 @@ export interface GetDomainsIdentityProviderResult {
      */
     readonly jitUserProvIgnoreErrorOnAbsentGroups: boolean;
     /**
+     * Records the notification timestamp for the IdP whose signing certificate is about to expire
+     */
+    readonly lastNotificationSentTime: string;
+    /**
      * HTTP binding to use for logout.
      */
     readonly logoutBinding: string;

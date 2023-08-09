@@ -123,7 +123,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * User credential expires on
+     * When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -142,7 +142,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> expiresOn;
 
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -177,7 +177,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -194,7 +194,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -262,7 +262,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * User credential status
+     * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -281,7 +281,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> status;
 
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -566,7 +566,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user&#39;s credential expire.
          * 
          * **Added In:** 2109090424
          * 
@@ -589,7 +589,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user&#39;s credential expire.
          * 
          * **Added In:** 2109090424
          * 
@@ -632,7 +632,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -653,7 +653,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -755,7 +755,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status User credential status
+         * @param status The user&#39;s credential status.
          * 
          * **Added In:** 2109090424
          * 
@@ -778,7 +778,7 @@ public final class DomainsCustomerSecretKeyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status User credential status
+         * @param status The user&#39;s credential status.
          * 
          * **Added In:** 2109090424
          * 

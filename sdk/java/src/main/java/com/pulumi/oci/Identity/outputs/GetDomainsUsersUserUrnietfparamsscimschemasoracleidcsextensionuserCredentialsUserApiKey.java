@@ -10,12 +10,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey {
     /**
-     * @return The value of of the User&#39;s api key.
+     * @return The user&#39;s API key value.
      * 
      */
     private String key;
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     private String ocid;
@@ -32,14 +32,14 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey() {}
     /**
-     * @return The value of of the User&#39;s api key.
+     * @return The user&#39;s API key value.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     public String ocid() {

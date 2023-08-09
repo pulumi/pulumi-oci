@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Get user's oauth2 client credential
+// Get a user's own OAuth2 client credential.
 //
 // ## Example Usage
 //
@@ -76,7 +76,7 @@ type LookupDomainsMyOauth2clientCredentialResult struct {
 	Description string `pulumi:"description"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	DomainOcid string `pulumi:"domainOcid"`
-	// User credential expires on
+	// When the user's credentials expire.
 	ExpiresOn string `pulumi:"expiresOn"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
 	Id string `pulumi:"id"`
@@ -89,27 +89,27 @@ type LookupDomainsMyOauth2clientCredentialResult struct {
 	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
-	// Specifies if secret need to be reset
+	// Specifies whether the secret must be reset.
 	IsResetSecret bool `pulumi:"isResetSecret"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas                      []GetDomainsMyOauth2clientCredentialMeta `pulumi:"metas"`
 	MyOauth2clientCredentialId string                                   `pulumi:"myOauth2clientCredentialId"`
-	// User name
+	// The username.
 	Name string `pulumi:"name"`
-	// User's ocid
+	// The user's OCID.
 	Ocid                      string  `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// Scopes
 	Scopes []GetDomainsMyOauth2clientCredentialScope `pulumi:"scopes"`
-	// User credential status
+	// The user's credential status.
 	Status string `pulumi:"status"`
 	// A list of tags on this resource.
 	Tags []GetDomainsMyOauth2clientCredentialTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 	TenancyOcid string `pulumi:"tenancyOcid"`
-	// User linked to oauth2 client credential
+	// The user linked to the OAuth2 client credential.
 	Users []GetDomainsMyOauth2clientCredentialUser `pulumi:"users"`
 }
 
@@ -181,7 +181,7 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) DomainOcid() pulumi.S
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
-// User credential expires on
+// When the user's credentials expire.
 func (o LookupDomainsMyOauth2clientCredentialResultOutput) ExpiresOn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.ExpiresOn }).(pulumi.StringOutput)
 }
@@ -219,7 +219,7 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) IdcsPreventedOperatio
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) []string { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
-// Specifies if secret need to be reset
+// Specifies whether the secret must be reset.
 func (o LookupDomainsMyOauth2clientCredentialResultOutput) IsResetSecret() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) bool { return v.IsResetSecret }).(pulumi.BoolOutput)
 }
@@ -235,12 +235,12 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) MyOauth2clientCredent
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.MyOauth2clientCredentialId }).(pulumi.StringOutput)
 }
 
-// User name
+// The username.
 func (o LookupDomainsMyOauth2clientCredentialResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// User's ocid
+// The user's OCID.
 func (o LookupDomainsMyOauth2clientCredentialResultOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.Ocid }).(pulumi.StringOutput)
 }
@@ -261,7 +261,7 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) Scopes() GetDomainsMy
 	}).(GetDomainsMyOauth2clientCredentialScopeArrayOutput)
 }
 
-// User credential status
+// The user's credential status.
 func (o LookupDomainsMyOauth2clientCredentialResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -278,7 +278,7 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) TenancyOcid() pulumi.
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
 }
 
-// User linked to oauth2 client credential
+// The user linked to the OAuth2 client credential.
 func (o LookupDomainsMyOauth2clientCredentialResultOutput) Users() GetDomainsMyOauth2clientCredentialUserArrayOutput {
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) []GetDomainsMyOauth2clientCredentialUser {
 		return v.Users

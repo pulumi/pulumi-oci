@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a User
+ * Get a user.
  *
  * ## Example Usage
  *
@@ -163,7 +163,7 @@ export interface GetDomainsUserResult {
      */
     readonly nickName: string;
     /**
-     * Ocid of the User's Support Account.
+     * The OCID of the user's support account.
      */
     readonly ocid: string;
     /**
@@ -228,7 +228,7 @@ export interface GetDomainsUserResult {
      */
     readonly urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers: outputs.Identity.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser[];
     /**
-     * Db Credentials User extension
+     * The database credentials user extension.
      */
     readonly urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers: outputs.Identity.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser[];
     /**
@@ -256,7 +256,7 @@ export interface GetDomainsUserResult {
      */
     readonly urnietfparamsscimschemasoracleidcsextensionposixUsers: outputs.Identity.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser[];
     /**
-     * This extension defines attributes used to store Security Questions of User.
+     * This extension defines the attributes used to store the security questions of a user.
      */
     readonly urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers: outputs.Identity.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser[];
     /**
@@ -284,11 +284,11 @@ export interface GetDomainsUserResult {
      */
     readonly urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers: outputs.Identity.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser[];
     /**
-     * This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
     readonly urnietfparamsscimschemasoracleidcsextensionuserStateUsers: outputs.Identity.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser[];
     /**
-     * Oracle Cloud Infrastructure IAM User
+     * Oracle Identity Cloud Service User
      */
     readonly urnietfparamsscimschemasoracleidcsextensionuserUsers: outputs.Identity.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser[];
     /**
@@ -311,7 +311,7 @@ export interface GetDomainsUserResult {
 /**
  * This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a User
+ * Get a user.
  *
  * ## Example Usage
  *

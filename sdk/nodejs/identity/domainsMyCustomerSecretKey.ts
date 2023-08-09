@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Add a user's customer secret key
+ * Add a user's own customer secret key.
  *
  * ## Import
  *
@@ -48,7 +48,7 @@ export class DomainsMyCustomerSecretKey extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Access key
+     * (Updatable) The access key.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -127,7 +127,7 @@ export class DomainsMyCustomerSecretKey extends pulumi.CustomResource {
      */
     public /*out*/ readonly domainOcid!: pulumi.Output<string>;
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * **Added In:** 2109090424
      *
@@ -212,7 +212,7 @@ export class DomainsMyCustomerSecretKey extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsMyCustomerSecretKeyMeta[]>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -244,7 +244,7 @@ export class DomainsMyCustomerSecretKey extends pulumi.CustomResource {
      */
     public readonly schemas!: pulumi.Output<string[]>;
     /**
-     * User credential status
+     * The user's credential status.
      *
      * **Added In:** 2109090424
      *
@@ -376,7 +376,7 @@ export class DomainsMyCustomerSecretKey extends pulumi.CustomResource {
  */
 export interface DomainsMyCustomerSecretKeyState {
     /**
-     * (Updatable) Access key
+     * (Updatable) The access key.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -455,7 +455,7 @@ export interface DomainsMyCustomerSecretKeyState {
      */
     domainOcid?: pulumi.Input<string>;
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * **Added In:** 2109090424
      *
@@ -540,7 +540,7 @@ export interface DomainsMyCustomerSecretKeyState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyCustomerSecretKeyMeta>[]>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -572,7 +572,7 @@ export interface DomainsMyCustomerSecretKeyState {
      */
     schemas?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * User credential status
+     * The user's credential status.
      *
      * **Added In:** 2109090424
      *
@@ -662,7 +662,7 @@ export interface DomainsMyCustomerSecretKeyArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * **Added In:** 2109090424
      *
@@ -682,7 +682,7 @@ export interface DomainsMyCustomerSecretKeyArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -714,7 +714,7 @@ export interface DomainsMyCustomerSecretKeyArgs {
      */
     schemas: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * User credential status
+     * The user's credential status.
      *
      * **Added In:** 2109090424
      *

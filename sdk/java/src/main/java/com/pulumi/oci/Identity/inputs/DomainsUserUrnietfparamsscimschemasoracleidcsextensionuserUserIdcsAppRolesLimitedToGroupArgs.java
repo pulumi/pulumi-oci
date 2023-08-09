@@ -49,7 +49,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+     * (Updatable) The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
      * 
      * **Added In:** 19.2.1
      * 
@@ -68,7 +68,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private Output<String> idcsAppRoleId;
 
     /**
-     * @return (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+     * @return (Updatable) The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
      * 
      * **Added In:** 19.2.1
      * 
@@ -88,7 +88,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) Ocid of the User&#39;s Support Account.
+     * (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -107,7 +107,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -270,7 +270,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param idcsAppRoleId (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+         * @param idcsAppRoleId (Updatable) The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
          * 
          * **Added In:** 19.2.1
          * 
@@ -293,7 +293,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param idcsAppRoleId (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+         * @param idcsAppRoleId (Updatable) The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
          * 
          * **Added In:** 19.2.1
          * 
@@ -315,7 +315,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 
@@ -338,7 +338,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 

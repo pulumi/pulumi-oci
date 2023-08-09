@@ -15,7 +15,7 @@ public final class GetDomainsUsersUserIdcsCreatedBy {
      */
     private String display;
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     private String ocid;
@@ -44,7 +44,7 @@ public final class GetDomainsUsersUserIdcsCreatedBy {
         return this.display;
     }
     /**
-     * @return Ocid of the User&#39;s Support Account.
+     * @return The OCID of the user&#39;s support account.
      * 
      */
     public String ocid() {

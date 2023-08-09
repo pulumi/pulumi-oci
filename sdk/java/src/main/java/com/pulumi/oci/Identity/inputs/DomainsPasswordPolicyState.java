@@ -406,6 +406,80 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     }
 
     /**
+     * (Updatable) List of User attributes whose values are not allowed in the password.
+     * 
+     * **Added In:** 2303212224
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="disallowedUserAttributeValues")
+    private @Nullable Output<List<String>> disallowedUserAttributeValues;
+
+    /**
+     * @return (Updatable) List of User attributes whose values are not allowed in the password.
+     * 
+     * **Added In:** 2303212224
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<List<String>>> disallowedUserAttributeValues() {
+        return Optional.ofNullable(this.disallowedUserAttributeValues);
+    }
+
+    /**
+     * (Updatable) The number of distinct characters between old password and new password
+     * 
+     * **Added In:** 2303212224
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="distinctCharacters")
+    private @Nullable Output<Integer> distinctCharacters;
+
+    /**
+     * @return (Updatable) The number of distinct characters between old password and new password
+     * 
+     * **Added In:** 2303212224
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<Integer>> distinctCharacters() {
+        return Optional.ofNullable(this.distinctCharacters);
+    }
+
+    /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      * **SCIM++ Properties:**
@@ -1739,6 +1813,8 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         this.dictionaryWordDisallowed = $.dictionaryWordDisallowed;
         this.disallowedChars = $.disallowedChars;
         this.disallowedSubstrings = $.disallowedSubstrings;
+        this.disallowedUserAttributeValues = $.disallowedUserAttributeValues;
+        this.distinctCharacters = $.distinctCharacters;
         this.domainOcid = $.domainOcid;
         this.externalId = $.externalId;
         this.firstNameDisallowed = $.firstNameDisallowed;
@@ -2305,6 +2381,113 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
          */
         public Builder disallowedSubstrings(String... disallowedSubstrings) {
             return disallowedSubstrings(List.of(disallowedSubstrings));
+        }
+
+        /**
+         * @param disallowedUserAttributeValues (Updatable) List of User attributes whose values are not allowed in the password.
+         * 
+         * **Added In:** 2303212224
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disallowedUserAttributeValues(@Nullable Output<List<String>> disallowedUserAttributeValues) {
+            $.disallowedUserAttributeValues = disallowedUserAttributeValues;
+            return this;
+        }
+
+        /**
+         * @param disallowedUserAttributeValues (Updatable) List of User attributes whose values are not allowed in the password.
+         * 
+         * **Added In:** 2303212224
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disallowedUserAttributeValues(List<String> disallowedUserAttributeValues) {
+            return disallowedUserAttributeValues(Output.of(disallowedUserAttributeValues));
+        }
+
+        /**
+         * @param disallowedUserAttributeValues (Updatable) List of User attributes whose values are not allowed in the password.
+         * 
+         * **Added In:** 2303212224
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disallowedUserAttributeValues(String... disallowedUserAttributeValues) {
+            return disallowedUserAttributeValues(List.of(disallowedUserAttributeValues));
+        }
+
+        /**
+         * @param distinctCharacters (Updatable) The number of distinct characters between old password and new password
+         * 
+         * **Added In:** 2303212224
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distinctCharacters(@Nullable Output<Integer> distinctCharacters) {
+            $.distinctCharacters = distinctCharacters;
+            return this;
+        }
+
+        /**
+         * @param distinctCharacters (Updatable) The number of distinct characters between old password and new password
+         * 
+         * **Added In:** 2303212224
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distinctCharacters(Integer distinctCharacters) {
+            return distinctCharacters(Output.of(distinctCharacters));
         }
 
         /**

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser
     {
         /// <summary>
-        /// (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        /// (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsPii: true
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? PrincipalName;
         /// <summary>
-        /// (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        /// (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: true

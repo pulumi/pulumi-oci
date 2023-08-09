@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsCustomerSecretKeysCustomerSecretKeyResult
     {
         /// <summary>
-        /// Access key
+        /// The access key.
         /// </summary>
         public readonly string AccessKey;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string DomainOcid;
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// </summary>
         public readonly string ExpiresOn;
         /// <summary>
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsCustomerSecretKeysCustomerSecretKeyMetaResult> Metas;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         /// <summary>
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Schemas;
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// </summary>
         public readonly string Status;
         /// <summary>

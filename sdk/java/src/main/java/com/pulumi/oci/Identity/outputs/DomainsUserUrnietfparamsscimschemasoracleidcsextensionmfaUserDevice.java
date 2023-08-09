@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice {
     /**
-     * @return (Updatable) Authentication method.
+     * @return (Updatable) The authentication method.
      * 
      * **Added In:** 2009232244
      * 
@@ -42,7 +42,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Device authentication factor status.
+     * @return (Updatable) The device authentication factor status.
      * 
      * **Added In:** 18.4.2
      * 
@@ -75,7 +75,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String factorType;
     /**
-     * @return (Updatable) Last Sync time for device.
+     * @return (Updatable) The last sync time for device.
      * 
      * **Added In:** 18.4.2
      * 
@@ -122,7 +122,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String status;
     /**
-     * @return (Updatable) Third party factor vendor name.
+     * @return (Updatable) The third-party factor vendor name.
      * 
      * **Added In:** 2009232244
      * 
@@ -157,7 +157,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice() {}
     /**
-     * @return (Updatable) Authentication method.
+     * @return (Updatable) The authentication method.
      * 
      * **Added In:** 2009232244
      * 
@@ -191,7 +191,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Device authentication factor status.
+     * @return (Updatable) The device authentication factor status.
      * 
      * **Added In:** 18.4.2
      * 
@@ -228,7 +228,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.factorType);
     }
     /**
-     * @return (Updatable) Last Sync time for device.
+     * @return (Updatable) The last sync time for device.
      * 
      * **Added In:** 18.4.2
      * 
@@ -281,7 +281,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return (Updatable) Third party factor vendor name.
+     * @return (Updatable) The third-party factor vendor name.
      * 
      * **Added In:** 2009232244
      * 

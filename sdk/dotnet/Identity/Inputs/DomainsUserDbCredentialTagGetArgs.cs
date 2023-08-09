@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// User's id
+        /// The user's identifier.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

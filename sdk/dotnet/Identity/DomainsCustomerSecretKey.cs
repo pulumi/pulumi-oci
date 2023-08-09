@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
     /// 
-    /// Add a user's customer secret key
+    /// Create a user's customer secret key.
     /// 
     /// ## Import
     /// 
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Identity
     public partial class DomainsCustomerSecretKey : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Access key
+        /// (Updatable) The access key.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> DomainOcid { get; private set; } = null!;
 
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -230,7 +230,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsCustomerSecretKeyMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -268,7 +268,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<string>> Schemas { get; private set; } = null!;
 
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -436,7 +436,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -460,7 +460,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> IdcsEndpoint { get; set; } = null!;
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -504,7 +504,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -574,7 +574,7 @@ namespace Pulumi.Oci.Identity
     public sealed class DomainsCustomerSecretKeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Access key
+        /// (Updatable) The access key.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -685,7 +685,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? DomainOcid { get; set; }
 
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -808,7 +808,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -852,7 +852,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// 
         /// **Added In:** 2109090424
         /// 

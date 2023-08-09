@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyResult
     {
         /// <summary>
-        /// The value of of the User's api key.
+        /// The user's API key value.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// Ocid of the User's Support Account.
+        /// The OCID of the user's support account.
         /// </summary>
         public readonly string Ocid;
         /// <summary>

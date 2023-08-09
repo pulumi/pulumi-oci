@@ -104,7 +104,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * The db password of the user
+     * The user&#39;s database password.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -117,7 +117,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<String> dbPassword;
 
     /**
-     * @return The db password of the user
+     * @return The user&#39;s database password.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -234,7 +234,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Indicates that the db password has expired
+     * (Updatable) Indicates that the database password has expired.
      * 
      * **SCIM++ Properties:**
      * * type: boolean
@@ -246,7 +246,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<Boolean> expired;
 
     /**
-     * @return (Updatable) Indicates that the db password has expired
+     * @return (Updatable) Indicates that the database password has expired.
      * 
      * **SCIM++ Properties:**
      * * type: boolean
@@ -259,7 +259,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * User credential expires on
+     * When the user credential expires.
      * 
      * **Added In:** 2109090424
      * 
@@ -278,7 +278,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<String> expiresOn;
 
     /**
-     * @return User credential expires on
+     * @return When the user credential expires.
      * 
      * **Added In:** 2109090424
      * 
@@ -443,7 +443,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) A DateTime that specifies the date and time when the current db password was set
+     * (Updatable) A DateTime that specifies the date and time when the current database password was set.
      * 
      * **SCIM++ Properties:**
      * * type: dateTime
@@ -455,7 +455,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<String> lastSetDate;
 
     /**
-     * @return (Updatable) A DateTime that specifies the date and time when the current db password was set
+     * @return (Updatable) A DateTime that specifies the date and time when the current database password was set.
      * 
      * **SCIM++ Properties:**
      * * type: dateTime
@@ -503,7 +503,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The db password of the user with mixed salt
+     * (Updatable) The user&#39;s database password with mixed salt.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -516,7 +516,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<String> mixedDbPassword;
 
     /**
-     * @return (Updatable) The db password of the user with mixed salt
+     * @return (Updatable) The user&#39;s database password with mixed salt.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -530,7 +530,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The mixed salt of the password
+     * (Updatable) The mixed salt of the password.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -543,7 +543,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<String> mixedSalt;
 
     /**
-     * @return (Updatable) The mixed salt of the password
+     * @return (Updatable) The mixed salt of the password.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -557,7 +557,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) User name
+     * (Updatable) The username.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -574,7 +574,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) User name
+     * @return (Updatable) The username.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -592,7 +592,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -609,7 +609,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -642,7 +642,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The salt of the password
+     * (Updatable) The salt of the password.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -655,7 +655,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<String> salt;
 
     /**
-     * @return (Updatable) The salt of the password
+     * @return (Updatable) The salt of the password.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -828,7 +828,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * User linked to db credential
+     * The user linked to the database credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -846,7 +846,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     private @Nullable Output<DomainsUserDbCredentialUserArgs> user;
 
     /**
-     * @return User linked to db credential
+     * @return The user linked to the database credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -1031,7 +1031,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param dbPassword The db password of the user
+         * @param dbPassword The user&#39;s database password.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -1048,7 +1048,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param dbPassword The db password of the user
+         * @param dbPassword The user&#39;s database password.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -1185,7 +1185,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param expired (Updatable) Indicates that the db password has expired
+         * @param expired (Updatable) Indicates that the database password has expired.
          * 
          * **SCIM++ Properties:**
          * * type: boolean
@@ -1201,7 +1201,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param expired (Updatable) Indicates that the db password has expired
+         * @param expired (Updatable) Indicates that the database password has expired.
          * 
          * **SCIM++ Properties:**
          * * type: boolean
@@ -1216,7 +1216,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user credential expires.
          * 
          * **Added In:** 2109090424
          * 
@@ -1239,7 +1239,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user credential expires.
          * 
          * **Added In:** 2109090424
          * 
@@ -1491,7 +1491,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param lastSetDate (Updatable) A DateTime that specifies the date and time when the current db password was set
+         * @param lastSetDate (Updatable) A DateTime that specifies the date and time when the current database password was set.
          * 
          * **SCIM++ Properties:**
          * * type: dateTime
@@ -1507,7 +1507,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param lastSetDate (Updatable) A DateTime that specifies the date and time when the current db password was set
+         * @param lastSetDate (Updatable) A DateTime that specifies the date and time when the current database password was set.
          * 
          * **SCIM++ Properties:**
          * * type: dateTime
@@ -1583,7 +1583,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param mixedDbPassword (Updatable) The db password of the user with mixed salt
+         * @param mixedDbPassword (Updatable) The user&#39;s database password with mixed salt.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -1600,7 +1600,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param mixedDbPassword (Updatable) The db password of the user with mixed salt
+         * @param mixedDbPassword (Updatable) The user&#39;s database password with mixed salt.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -1616,7 +1616,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param mixedSalt (Updatable) The mixed salt of the password
+         * @param mixedSalt (Updatable) The mixed salt of the password.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -1633,7 +1633,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param mixedSalt (Updatable) The mixed salt of the password
+         * @param mixedSalt (Updatable) The mixed salt of the password.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -1649,7 +1649,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) User name
+         * @param name (Updatable) The username.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -1670,7 +1670,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) User name
+         * @param name (Updatable) The username.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -1690,7 +1690,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1711,7 +1711,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1752,7 +1752,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param salt (Updatable) The salt of the password
+         * @param salt (Updatable) The salt of the password.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -1769,7 +1769,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param salt (Updatable) The salt of the password
+         * @param salt (Updatable) The salt of the password.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -2014,7 +2014,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param user User linked to db credential
+         * @param user The user linked to the database credential.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -2036,7 +2036,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param user User linked to db credential
+         * @param user The user linked to the database credential.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false

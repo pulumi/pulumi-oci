@@ -304,6 +304,7 @@ class _OperatorControlAssignmentState:
                  error_message: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
+                 is_default_assignment: Optional[pulumi.Input[bool]] = None,
                  is_enforced_always: Optional[pulumi.Input[bool]] = None,
                  is_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -332,6 +333,7 @@ class _OperatorControlAssignmentState:
         :param pulumi.Input[str] error_message: The message describing the error occurred during Assignment operation.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
+        :param pulumi.Input[bool] is_default_assignment: Whether the assignment is a default assignment.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
         :param pulumi.Input[bool] is_log_forwarded: (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         :param pulumi.Input[str] lifecycle_details: More in detail about the lifeCycleState.
@@ -372,6 +374,8 @@ class _OperatorControlAssignmentState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_approve_during_maintenance is not None:
             pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
+        if is_default_assignment is not None:
+            pulumi.set(__self__, "is_default_assignment", is_default_assignment)
         if is_enforced_always is not None:
             pulumi.set(__self__, "is_enforced_always", is_enforced_always)
         if is_log_forwarded is not None:
@@ -514,6 +518,18 @@ class _OperatorControlAssignmentState:
     @is_auto_approve_during_maintenance.setter
     def is_auto_approve_during_maintenance(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_auto_approve_during_maintenance", value)
+
+    @property
+    @pulumi.getter(name="isDefaultAssignment")
+    def is_default_assignment(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the assignment is a default assignment.
+        """
+        return pulumi.get(self, "is_default_assignment")
+
+    @is_default_assignment.setter
+    def is_default_assignment(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_default_assignment", value)
 
     @property
     @pulumi.getter(name="isEnforcedAlways")
@@ -931,6 +947,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
             __props__.__dict__["detachment_description"] = None
             __props__.__dict__["error_code"] = None
             __props__.__dict__["error_message"] = None
+            __props__.__dict__["is_default_assignment"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_of_assignment"] = None
@@ -955,6 +972,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
             error_message: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
+            is_default_assignment: Optional[pulumi.Input[bool]] = None,
             is_enforced_always: Optional[pulumi.Input[bool]] = None,
             is_log_forwarded: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -988,6 +1006,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] error_message: The message describing the error occurred during Assignment operation.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
+        :param pulumi.Input[bool] is_default_assignment: Whether the assignment is a default assignment.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
         :param pulumi.Input[bool] is_log_forwarded: (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         :param pulumi.Input[str] lifecycle_details: More in detail about the lifeCycleState.
@@ -1023,6 +1042,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
         __props__.__dict__["error_message"] = error_message
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_auto_approve_during_maintenance"] = is_auto_approve_during_maintenance
+        __props__.__dict__["is_default_assignment"] = is_default_assignment
         __props__.__dict__["is_enforced_always"] = is_enforced_always
         __props__.__dict__["is_log_forwarded"] = is_log_forwarded
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -1113,6 +1133,14 @@ class OperatorControlAssignment(pulumi.CustomResource):
         (Updatable) The boolean if true would autoApprove during maintenance.
         """
         return pulumi.get(self, "is_auto_approve_during_maintenance")
+
+    @property
+    @pulumi.getter(name="isDefaultAssignment")
+    def is_default_assignment(self) -> pulumi.Output[bool]:
+        """
+        Whether the assignment is a default assignment.
+        """
+        return pulumi.get(self, "is_default_assignment")
 
     @property
     @pulumi.getter(name="isEnforcedAlways")

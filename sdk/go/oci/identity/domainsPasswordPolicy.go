@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Create a Password Policy
+// Create a password policy.
 //
 // ## Import
 //
@@ -147,6 +147,32 @@ type DomainsPasswordPolicy struct {
 	// * type: string
 	// * uniqueness: none
 	DisallowedSubstrings pulumi.StringArrayOutput `pulumi:"disallowedSubstrings"`
+	// (Updatable) List of User attributes whose values are not allowed in the password.
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	DisallowedUserAttributeValues pulumi.StringArrayOutput `pulumi:"disallowedUserAttributeValues"`
+	// (Updatable) The number of distinct characters between old password and new password
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
+	DistinctCharacters pulumi.IntOutput `pulumi:"distinctCharacters"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -750,6 +776,32 @@ type domainsPasswordPolicyState struct {
 	// * type: string
 	// * uniqueness: none
 	DisallowedSubstrings []string `pulumi:"disallowedSubstrings"`
+	// (Updatable) List of User attributes whose values are not allowed in the password.
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	DisallowedUserAttributeValues []string `pulumi:"disallowedUserAttributeValues"`
+	// (Updatable) The number of distinct characters between old password and new password
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
+	DistinctCharacters *int `pulumi:"distinctCharacters"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -1311,6 +1363,32 @@ type DomainsPasswordPolicyState struct {
 	// * type: string
 	// * uniqueness: none
 	DisallowedSubstrings pulumi.StringArrayInput
+	// (Updatable) List of User attributes whose values are not allowed in the password.
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	DisallowedUserAttributeValues pulumi.StringArrayInput
+	// (Updatable) The number of distinct characters between old password and new password
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
+	DistinctCharacters pulumi.IntPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -1840,6 +1918,32 @@ type domainsPasswordPolicyArgs struct {
 	// * type: string
 	// * uniqueness: none
 	DisallowedSubstrings []string `pulumi:"disallowedSubstrings"`
+	// (Updatable) List of User attributes whose values are not allowed in the password.
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	DisallowedUserAttributeValues []string `pulumi:"disallowedUserAttributeValues"`
+	// (Updatable) The number of distinct characters between old password and new password
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
+	DistinctCharacters *int `pulumi:"distinctCharacters"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 	//
 	// **SCIM++ Properties:**
@@ -2287,6 +2391,32 @@ type DomainsPasswordPolicyArgs struct {
 	// * type: string
 	// * uniqueness: none
 	DisallowedSubstrings pulumi.StringArrayInput
+	// (Updatable) List of User attributes whose values are not allowed in the password.
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	DisallowedUserAttributeValues pulumi.StringArrayInput
+	// (Updatable) The number of distinct characters between old password and new password
+	//
+	// **Added In:** 2303212224
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
+	DistinctCharacters pulumi.IntPtrInput
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 	//
 	// **SCIM++ Properties:**
@@ -2894,6 +3024,38 @@ func (o DomainsPasswordPolicyOutput) DisallowedChars() pulumi.StringOutput {
 // * uniqueness: none
 func (o DomainsPasswordPolicyOutput) DisallowedSubstrings() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringArrayOutput { return v.DisallowedSubstrings }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) List of User attributes whose values are not allowed in the password.
+//
+// **Added In:** 2303212224
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
+func (o DomainsPasswordPolicyOutput) DisallowedUserAttributeValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringArrayOutput { return v.DisallowedUserAttributeValues }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The number of distinct characters between old password and new password
+//
+// **Added In:** 2303212224
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
+func (o DomainsPasswordPolicyOutput) DistinctCharacters() pulumi.IntOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.DistinctCharacters }).(pulumi.IntOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.

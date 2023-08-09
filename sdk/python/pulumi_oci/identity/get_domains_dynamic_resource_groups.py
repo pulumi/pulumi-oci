@@ -201,7 +201,7 @@ def get_domains_dynamic_resource_groups(attribute_sets: Optional[Sequence[str]] 
     """
     This data source provides the list of Dynamic Resource Groups in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search DynamicResourceGroups
+    Search for Dynamic Resource Groups.
 
     ## Example Usage
 
@@ -279,7 +279,7 @@ def get_domains_dynamic_resource_groups_output(attribute_sets: Optional[pulumi.I
     """
     This data source provides the list of Dynamic Resource Groups in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search DynamicResourceGroups
+    Search for Dynamic Resource Groups.
 
     ## Example Usage
 

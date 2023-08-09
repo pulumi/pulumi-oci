@@ -98,7 +98,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> AuthenticatorSelectionUserVerification { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Number of domain levels IDCS should use for origin comparision
+        /// (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
         /// 
         /// **Added In:** 2109020413
         /// 

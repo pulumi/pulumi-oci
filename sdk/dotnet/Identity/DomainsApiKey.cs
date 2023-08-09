@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
     /// 
-    /// Add a user's api key
+    /// Create a user's API key.
     /// 
     /// ## Import
     /// 
@@ -220,7 +220,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsApiKeyMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -296,7 +296,7 @@ namespace Pulumi.Oci.Identity
         public Output<Outputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; private set; } = null!;
 
         /// <summary>
-        /// User linked to api key
+        /// The user linked to the API key.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -419,7 +419,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -491,7 +491,7 @@ namespace Pulumi.Oci.Identity
         public Input<Inputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs>? UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; set; }
 
         /// <summary>
-        /// User linked to api key
+        /// The user linked to the API key.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -739,7 +739,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -827,7 +827,7 @@ namespace Pulumi.Oci.Identity
         public Input<Inputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserGetArgs>? UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; set; }
 
         /// <summary>
-        /// User linked to api key
+        /// The user linked to the API key.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false

@@ -3729,6 +3729,8 @@ func (o MigrationDumpTransferDetailsTargetPtrOutput) WalletLocation() pulumi.Str
 }
 
 type MigrationExcludeObject struct {
+	// (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication *bool `pulumi:"isOmitExcludedTableFromReplication"`
 	// (Updatable) Name of the object (regular expression is allowed)
 	Object string `pulumi:"object"`
 	// (Updatable) Owner of the object (regular expression is allowed)
@@ -3749,6 +3751,8 @@ type MigrationExcludeObjectInput interface {
 }
 
 type MigrationExcludeObjectArgs struct {
+	// (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication pulumi.BoolPtrInput `pulumi:"isOmitExcludedTableFromReplication"`
 	// (Updatable) Name of the object (regular expression is allowed)
 	Object pulumi.StringInput `pulumi:"object"`
 	// (Updatable) Owner of the object (regular expression is allowed)
@@ -3806,6 +3810,11 @@ func (o MigrationExcludeObjectOutput) ToMigrationExcludeObjectOutput() Migration
 
 func (o MigrationExcludeObjectOutput) ToMigrationExcludeObjectOutputWithContext(ctx context.Context) MigrationExcludeObjectOutput {
 	return o
+}
+
+// (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+func (o MigrationExcludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationExcludeObject) *bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Name of the object (regular expression is allowed)
@@ -5431,6 +5440,8 @@ func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) PerformanceProfile(
 }
 
 type MigrationIncludeObject struct {
+	// (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication *bool `pulumi:"isOmitExcludedTableFromReplication"`
 	// (Updatable) Name of the object (regular expression is allowed)
 	Object string `pulumi:"object"`
 	// (Updatable) Owner of the object (regular expression is allowed)
@@ -5451,6 +5462,8 @@ type MigrationIncludeObjectInput interface {
 }
 
 type MigrationIncludeObjectArgs struct {
+	// (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication pulumi.BoolPtrInput `pulumi:"isOmitExcludedTableFromReplication"`
 	// (Updatable) Name of the object (regular expression is allowed)
 	Object pulumi.StringInput `pulumi:"object"`
 	// (Updatable) Owner of the object (regular expression is allowed)
@@ -5508,6 +5521,11 @@ func (o MigrationIncludeObjectOutput) ToMigrationIncludeObjectOutput() Migration
 
 func (o MigrationIncludeObjectOutput) ToMigrationIncludeObjectOutputWithContext(ctx context.Context) MigrationIncludeObjectOutput {
 	return o
+}
+
+// (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+func (o MigrationIncludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationIncludeObject) *bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Name of the object (regular expression is allowed)
@@ -9919,6 +9937,8 @@ func (o GetMigrationDumpTransferDetailTargetArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetMigrationExcludeObject struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication bool `pulumi:"isOmitExcludedTableFromReplication"`
 	// Name of the object (regular expression is allowed)
 	Object string `pulumi:"object"`
 	// Owner of the object (regular expression is allowed)
@@ -9939,6 +9959,8 @@ type GetMigrationExcludeObjectInput interface {
 }
 
 type GetMigrationExcludeObjectArgs struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication pulumi.BoolInput `pulumi:"isOmitExcludedTableFromReplication"`
 	// Name of the object (regular expression is allowed)
 	Object pulumi.StringInput `pulumi:"object"`
 	// Owner of the object (regular expression is allowed)
@@ -9996,6 +10018,11 @@ func (o GetMigrationExcludeObjectOutput) ToGetMigrationExcludeObjectOutput() Get
 
 func (o GetMigrationExcludeObjectOutput) ToGetMigrationExcludeObjectOutputWithContext(ctx context.Context) GetMigrationExcludeObjectOutput {
 	return o
+}
+
+// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+func (o GetMigrationExcludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationExcludeObject) bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolOutput)
 }
 
 // Name of the object (regular expression is allowed)
@@ -11069,6 +11096,8 @@ func (o GetMigrationGoldenGateDetailSettingReplicatArrayOutput) Index(i pulumi.I
 }
 
 type GetMigrationIncludeObject struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication bool `pulumi:"isOmitExcludedTableFromReplication"`
 	// Name of the object (regular expression is allowed)
 	Object string `pulumi:"object"`
 	// Owner of the object (regular expression is allowed)
@@ -11089,6 +11118,8 @@ type GetMigrationIncludeObjectInput interface {
 }
 
 type GetMigrationIncludeObjectArgs struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication pulumi.BoolInput `pulumi:"isOmitExcludedTableFromReplication"`
 	// Name of the object (regular expression is allowed)
 	Object pulumi.StringInput `pulumi:"object"`
 	// Owner of the object (regular expression is allowed)
@@ -11146,6 +11177,11 @@ func (o GetMigrationIncludeObjectOutput) ToGetMigrationIncludeObjectOutput() Get
 
 func (o GetMigrationIncludeObjectOutput) ToGetMigrationIncludeObjectOutputWithContext(ctx context.Context) GetMigrationIncludeObjectOutput {
 	return o
+}
+
+// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+func (o GetMigrationIncludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationIncludeObject) bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolOutput)
 }
 
 // Name of the object (regular expression is allowed)
@@ -13664,6 +13700,8 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput)
 }
 
 type GetMigrationsMigrationCollectionItemExcludeObject struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication bool `pulumi:"isOmitExcludedTableFromReplication"`
 	// Name of the object (regular expression is allowed)
 	Object string `pulumi:"object"`
 	// Owner of the object (regular expression is allowed)
@@ -13684,6 +13722,8 @@ type GetMigrationsMigrationCollectionItemExcludeObjectInput interface {
 }
 
 type GetMigrationsMigrationCollectionItemExcludeObjectArgs struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication pulumi.BoolInput `pulumi:"isOmitExcludedTableFromReplication"`
 	// Name of the object (regular expression is allowed)
 	Object pulumi.StringInput `pulumi:"object"`
 	// Owner of the object (regular expression is allowed)
@@ -13741,6 +13781,13 @@ func (o GetMigrationsMigrationCollectionItemExcludeObjectOutput) ToGetMigrations
 
 func (o GetMigrationsMigrationCollectionItemExcludeObjectOutput) ToGetMigrationsMigrationCollectionItemExcludeObjectOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemExcludeObjectOutput {
 	return o
+}
+
+// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+func (o GetMigrationsMigrationCollectionItemExcludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemExcludeObject) bool {
+		return v.IsOmitExcludedTableFromReplication
+	}).(pulumi.BoolOutput)
 }
 
 // Name of the object (regular expression is allowed)
@@ -14850,6 +14897,8 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray
 }
 
 type GetMigrationsMigrationCollectionItemIncludeObject struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication bool `pulumi:"isOmitExcludedTableFromReplication"`
 	// Name of the object (regular expression is allowed)
 	Object string `pulumi:"object"`
 	// Owner of the object (regular expression is allowed)
@@ -14870,6 +14919,8 @@ type GetMigrationsMigrationCollectionItemIncludeObjectInput interface {
 }
 
 type GetMigrationsMigrationCollectionItemIncludeObjectArgs struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+	IsOmitExcludedTableFromReplication pulumi.BoolInput `pulumi:"isOmitExcludedTableFromReplication"`
 	// Name of the object (regular expression is allowed)
 	Object pulumi.StringInput `pulumi:"object"`
 	// Owner of the object (regular expression is allowed)
@@ -14927,6 +14978,13 @@ func (o GetMigrationsMigrationCollectionItemIncludeObjectOutput) ToGetMigrations
 
 func (o GetMigrationsMigrationCollectionItemIncludeObjectOutput) ToGetMigrationsMigrationCollectionItemIncludeObjectOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemIncludeObjectOutput {
 	return o
+}
+
+// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+func (o GetMigrationsMigrationCollectionItemIncludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemIncludeObject) bool {
+		return v.IsOmitExcludedTableFromReplication
+	}).(pulumi.BoolOutput)
 }
 
 // Name of the object (regular expression is allowed)

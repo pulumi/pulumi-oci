@@ -25,7 +25,7 @@ public final class DomainsMyUserDbCredentialTag {
      */
     private String key;
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -62,7 +62,7 @@ public final class DomainsMyUserDbCredentialTag {
         return this.key;
     }
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true

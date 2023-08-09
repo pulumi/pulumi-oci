@@ -212,6 +212,84 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     }
 
     /**
+     * (Updatable) Set to true to enable EKU Validation
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="ekuValidationEnabled")
+    private @Nullable Output<Boolean> ekuValidationEnabled;
+
+    /**
+     * @return (Updatable) Set to true to enable EKU Validation
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<Boolean>> ekuValidationEnabled() {
+        return Optional.ofNullable(this.ekuValidationEnabled);
+    }
+
+    /**
+     * (Updatable) List of EKU which needs to be validated
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="ekuValues")
+    private @Nullable Output<List<String>> ekuValues;
+
+    /**
+     * @return (Updatable) List of EKU which needs to be validated
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<List<String>>> ekuValues() {
+        return Optional.ofNullable(this.ekuValues);
+    }
+
+    /**
      * (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
      * 
      * **Added In:** 2010242156
@@ -611,6 +689,8 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         this.crlEnabled = $.crlEnabled;
         this.crlLocation = $.crlLocation;
         this.crlReloadDuration = $.crlReloadDuration;
+        this.ekuValidationEnabled = $.ekuValidationEnabled;
+        this.ekuValues = $.ekuValues;
         this.ocspAllowUnknownResponseStatus = $.ocspAllowUnknownResponseStatus;
         this.ocspEnableSignedResponse = $.ocspEnableSignedResponse;
         this.ocspEnabled = $.ocspEnabled;
@@ -862,6 +942,118 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
          */
         public Builder crlReloadDuration(Integer crlReloadDuration) {
             return crlReloadDuration(Output.of(crlReloadDuration));
+        }
+
+        /**
+         * @param ekuValidationEnabled (Updatable) Set to true to enable EKU Validation
+         * 
+         * **Added In:** 2304270343
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ekuValidationEnabled(@Nullable Output<Boolean> ekuValidationEnabled) {
+            $.ekuValidationEnabled = ekuValidationEnabled;
+            return this;
+        }
+
+        /**
+         * @param ekuValidationEnabled (Updatable) Set to true to enable EKU Validation
+         * 
+         * **Added In:** 2304270343
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ekuValidationEnabled(Boolean ekuValidationEnabled) {
+            return ekuValidationEnabled(Output.of(ekuValidationEnabled));
+        }
+
+        /**
+         * @param ekuValues (Updatable) List of EKU which needs to be validated
+         * 
+         * **Added In:** 2304270343
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ekuValues(@Nullable Output<List<String>> ekuValues) {
+            $.ekuValues = ekuValues;
+            return this;
+        }
+
+        /**
+         * @param ekuValues (Updatable) List of EKU which needs to be validated
+         * 
+         * **Added In:** 2304270343
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ekuValues(List<String> ekuValues) {
+            return ekuValues(Output.of(ekuValues));
+        }
+
+        /**
+         * @param ekuValues (Updatable) List of EKU which needs to be validated
+         * 
+         * **Added In:** 2304270343
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ekuValues(String... ekuValues) {
+            return ekuValues(List.of(ekuValues));
         }
 
         /**

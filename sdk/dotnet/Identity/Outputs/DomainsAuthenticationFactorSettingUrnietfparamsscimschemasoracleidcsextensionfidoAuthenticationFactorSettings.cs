@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string AuthenticatorSelectionUserVerification;
         /// <summary>
-        /// (Updatable) Number of domain levels IDCS should use for origin comparision
+        /// (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
         /// 
         /// **Added In:** 2109020413
         /// 

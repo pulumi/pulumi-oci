@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The value of of the User's api key.
+        /// (Updatable) The user's API key value.
         /// 
         /// **Added In:** 2106240046
         /// 
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) Ocid of the User's Support Account.
+        /// (Updatable) The OCID of the user's support account.
         /// 
         /// **Added In:** 2103141444
         /// 

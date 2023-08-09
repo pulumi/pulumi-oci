@@ -13,13 +13,14 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The last failed login date
+        /// (Updatable) The last failed login date.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * idcsAllowUpdatesInReadOnlyMode: true
         /// * multiValued: false
         /// * mutability: readOnly
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: request
         /// * type: dateTime
@@ -29,13 +30,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? LastFailedLoginDate { get; set; }
 
         /// <summary>
-        /// (Updatable) The last successful login date
+        /// (Updatable) The last successful login date.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: true
         /// * idcsAllowUpdatesInReadOnlyMode: true
         /// * multiValued: false
         /// * mutability: readOnly
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: request
         /// * type: dateTime
@@ -45,7 +47,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? LastSuccessfulLoginDate { get; set; }
 
         /// <summary>
-        /// (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+        /// (Updatable) A complex attribute that indicates an account is locked (blocking any new sessions).
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
@@ -69,6 +71,8 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * idcsAllowUpdatesInReadOnlyMode: true
         /// * multiValued: false
         /// * mutability: readOnly
+        /// * idcsRequiresWriteForAccessFlows: true
+        /// * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
         /// * required: false
         /// * returned: request
         /// * type: integer
@@ -78,7 +82,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? LoginAttempts { get; set; }
 
         /// <summary>
-        /// (Updatable) Maximum number of concurrent sessions for a User
+        /// (Updatable) The maximum number of concurrent sessions for a user.
         /// 
         /// **Added In:** 20.1.3
         /// 
@@ -97,13 +101,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? MaxConcurrentSessions { get; set; }
 
         /// <summary>
-        /// (Updatable) The previous successful login date
+        /// (Updatable) The previous successful login date.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: request
         /// * type: dateTime
@@ -121,6 +126,7 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: request
         /// * type: integer
@@ -147,7 +153,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? RecoveryEnrollAttempts { get; set; }
 
         /// <summary>
-        /// (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+        /// (Updatable) A complex attribute that indicates a password recovery is locked (blocking any new sessions).
         /// 
         /// **Added In:** 19.1.4
         /// 

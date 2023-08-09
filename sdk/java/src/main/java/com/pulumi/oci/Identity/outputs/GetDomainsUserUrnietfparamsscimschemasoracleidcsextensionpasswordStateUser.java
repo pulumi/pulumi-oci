@@ -28,7 +28,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
      */
     private Boolean cantExpire;
     /**
-     * @return Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      */
     private Boolean expired;
@@ -76,7 +76,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
         return this.cantExpire;
     }
     /**
-     * @return Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      */
     public Boolean expired() {

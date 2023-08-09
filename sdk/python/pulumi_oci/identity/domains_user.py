@@ -227,7 +227,7 @@ class DomainsUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -359,19 +359,19 @@ class DomainsUserArgs:
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs'] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs'] urnietfparamsscimschemasoracleidcsextensionadaptive_user: (Updatable) This extension defines attributes to manage user's risk score.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs'] urnietfparamsscimschemasoracleidcsextensioncapabilities_user: (Updatable) User's Capabilities
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs'] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) Db Credentials User extension
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs'] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) The database credentials user extension.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs'] urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: (Updatable) Kerberos User extension
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs'] urnietfparamsscimschemasoracleidcsextensionmfa_user: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs'] urnietfparamsscimschemasoracleidcsextensionpasswordless_user: (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs'] urnietfparamsscimschemasoracleidcsextensionposix_user: (Updatable) POSIX User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs'] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines attributes used to store Security Questions of User.
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs'] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines the attributes used to store the security questions of a user.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_change_user: (Updatable) Controls whether a user can update themselves or not via User related APIs
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_registration_user: (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs'] urnietfparamsscimschemasoracleidcsextensionsff_user: (Updatable) SFF Auth Keys User extension
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs'] urnietfparamsscimschemasoracleidcsextensionsocial_account_user: (Updatable) Social User extension
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs'] urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: (Updatable) Terms Of Use extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Cloud Infrastructure IAM User
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Identity Cloud Service User
         :param pulumi.Input[str] user_type: (Updatable) Used to identify the organization-to-user relationship
                
                **SCIM++ Properties:**
@@ -841,7 +841,7 @@ class DomainsUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -1138,7 +1138,7 @@ class DomainsUserArgs:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")
     def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]:
         """
-        (Updatable) Db Credentials User extension
+        (Updatable) The database credentials user extension.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user")
 
@@ -1198,7 +1198,7 @@ class DomainsUserArgs:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")
     def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]:
         """
-        (Updatable) This extension defines attributes used to store Security Questions of User.
+        (Updatable) This extension defines the attributes used to store the security questions of a user.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user")
 
@@ -1270,7 +1270,7 @@ class DomainsUserArgs:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]:
         """
-        (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+        (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user")
 
@@ -1282,7 +1282,7 @@ class DomainsUserArgs:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]:
         """
-        (Updatable) Oracle Cloud Infrastructure IAM User
+        (Updatable) Oracle Identity Cloud Service User
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_user")
 
@@ -1633,7 +1633,7 @@ class _DomainsUserState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -1787,22 +1787,22 @@ class _DomainsUserState:
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs'] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs'] urnietfparamsscimschemasoracleidcsextensionadaptive_user: (Updatable) This extension defines attributes to manage user's risk score.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs'] urnietfparamsscimschemasoracleidcsextensioncapabilities_user: (Updatable) User's Capabilities
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs'] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) Db Credentials User extension
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs'] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) The database credentials user extension.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]] urnietfparamsscimschemasoracleidcsextensiondb_user_users: (Updatable) DB User extension
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs'] urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: (Updatable) Kerberos User extension
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs'] urnietfparamsscimschemasoracleidcsextensionmfa_user: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]] urnietfparamsscimschemasoracleidcsextensionpassword_state_users: (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs'] urnietfparamsscimschemasoracleidcsextensionpasswordless_user: (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs'] urnietfparamsscimschemasoracleidcsextensionposix_user: (Updatable) POSIX User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs'] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines attributes used to store Security Questions of User.
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs'] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines the attributes used to store the security questions of a user.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_change_user: (Updatable) Controls whether a user can update themselves or not via User related APIs
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_registration_user: (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs'] urnietfparamsscimschemasoracleidcsextensionsff_user: (Updatable) SFF Auth Keys User extension
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs'] urnietfparamsscimschemasoracleidcsextensionsocial_account_user: (Updatable) Social User extension
         :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs'] urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: (Updatable) Terms Of Use extension
         :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]] urnietfparamsscimschemasoracleidcsextensionuser_credentials_users: (Updatable) User's credentials
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Cloud Infrastructure IAM User
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Identity Cloud Service User
         :param pulumi.Input[str] user_name: (Updatable) User name
                
                **SCIM++ Properties:**
@@ -2462,7 +2462,7 @@ class _DomainsUserState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -2803,7 +2803,7 @@ class _DomainsUserState:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")
     def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]:
         """
-        (Updatable) Db Credentials User extension
+        (Updatable) The database credentials user extension.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user")
 
@@ -2887,7 +2887,7 @@ class _DomainsUserState:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")
     def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]:
         """
-        (Updatable) This extension defines attributes used to store Security Questions of User.
+        (Updatable) This extension defines the attributes used to store the security questions of a user.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user")
 
@@ -2971,7 +2971,7 @@ class _DomainsUserState:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]:
         """
-        (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+        (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user")
 
@@ -2983,7 +2983,7 @@ class _DomainsUserState:
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]:
         """
-        (Updatable) Oracle Cloud Infrastructure IAM User
+        (Updatable) Oracle Identity Cloud Service User
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_user")
 
@@ -3119,7 +3119,7 @@ class DomainsUser(pulumi.CustomResource):
         """
         This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Create a User
+        Create a user.
 
         ## Import
 
@@ -3268,7 +3268,7 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -3411,19 +3411,19 @@ class DomainsUser(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] urnietfparamsscimschemasoracleidcsextensionadaptive_user: (Updatable) This extension defines attributes to manage user's risk score.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] urnietfparamsscimschemasoracleidcsextensioncapabilities_user: (Updatable) User's Capabilities
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) Db Credentials User extension
+        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) The database credentials user extension.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: (Updatable) Kerberos User extension
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] urnietfparamsscimschemasoracleidcsextensionmfa_user: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] urnietfparamsscimschemasoracleidcsextensionpasswordless_user: (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] urnietfparamsscimschemasoracleidcsextensionposix_user: (Updatable) POSIX User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines attributes used to store Security Questions of User.
+        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines the attributes used to store the security questions of a user.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: (Updatable) Controls whether a user can update themselves or not via User related APIs
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_registration_user: (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] urnietfparamsscimschemasoracleidcsextensionsff_user: (Updatable) SFF Auth Keys User extension
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] urnietfparamsscimschemasoracleidcsextensionsocial_account_user: (Updatable) Social User extension
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: (Updatable) Terms Of Use extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Cloud Infrastructure IAM User
+        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Identity Cloud Service User
         :param pulumi.Input[str] user_name: (Updatable) User name
                
                **SCIM++ Properties:**
@@ -3472,7 +3472,7 @@ class DomainsUser(pulumi.CustomResource):
         """
         This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Create a User
+        Create a user.
 
         ## Import
 
@@ -3931,7 +3931,7 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Ocid of the User's Support Account.
+        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
                
                **Added In:** 2103141444
                
@@ -4085,22 +4085,22 @@ class DomainsUser(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] urnietfparamsscimschemasoracleidcsextensionadaptive_user: (Updatable) This extension defines attributes to manage user's risk score.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] urnietfparamsscimschemasoracleidcsextensioncapabilities_user: (Updatable) User's Capabilities
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) Db Credentials User extension
+        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) The database credentials user extension.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]] urnietfparamsscimschemasoracleidcsextensiondb_user_users: (Updatable) DB User extension
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: (Updatable) Kerberos User extension
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] urnietfparamsscimschemasoracleidcsextensionmfa_user: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]] urnietfparamsscimschemasoracleidcsextensionpassword_state_users: (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] urnietfparamsscimschemasoracleidcsextensionpasswordless_user: (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] urnietfparamsscimschemasoracleidcsextensionposix_user: (Updatable) POSIX User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines attributes used to store Security Questions of User.
+        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines the attributes used to store the security questions of a user.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: (Updatable) Controls whether a user can update themselves or not via User related APIs
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_registration_user: (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] urnietfparamsscimschemasoracleidcsextensionsff_user: (Updatable) SFF Auth Keys User extension
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] urnietfparamsscimschemasoracleidcsextensionsocial_account_user: (Updatable) Social User extension
         :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: (Updatable) Terms Of Use extension
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]] urnietfparamsscimschemasoracleidcsextensionuser_credentials_users: (Updatable) User's credentials
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Cloud Infrastructure IAM User
+        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Identity Cloud Service User
         :param pulumi.Input[str] user_name: (Updatable) User name
                
                **SCIM++ Properties:**
@@ -4609,7 +4609,7 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        (Updatable) Ocid of the User's Support Account.
+        (Updatable) The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -4882,7 +4882,7 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")
     def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser']:
         """
-        (Updatable) Db Credentials User extension
+        (Updatable) The database credentials user extension.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user")
 
@@ -4938,7 +4938,7 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")
     def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser']:
         """
-        (Updatable) This extension defines attributes used to store Security Questions of User.
+        (Updatable) This extension defines the attributes used to store the security questions of a user.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user")
 
@@ -4994,7 +4994,7 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser']:
         """
-        (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+        (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user")
 
@@ -5002,7 +5002,7 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser']:
         """
-        (Updatable) Oracle Cloud Infrastructure IAM User
+        (Updatable) Oracle Identity Cloud Service User
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_user")
 

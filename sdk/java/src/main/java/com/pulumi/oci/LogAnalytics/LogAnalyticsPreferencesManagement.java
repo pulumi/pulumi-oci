@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
  * 
- * Updates the tenant preferences. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
+ * Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
  * 
  * ## Example Usage
  * ```java

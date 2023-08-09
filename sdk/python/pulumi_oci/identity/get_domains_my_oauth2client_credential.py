@@ -137,7 +137,7 @@ class GetDomainsMyOauth2clientCredentialResult:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> str:
         """
-        User credential expires on
+        When the user's credentials expire.
         """
         return pulumi.get(self, "expires_on")
 
@@ -190,7 +190,7 @@ class GetDomainsMyOauth2clientCredentialResult:
     @pulumi.getter(name="isResetSecret")
     def is_reset_secret(self) -> bool:
         """
-        Specifies if secret need to be reset
+        Specifies whether the secret must be reset.
         """
         return pulumi.get(self, "is_reset_secret")
 
@@ -211,7 +211,7 @@ class GetDomainsMyOauth2clientCredentialResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        User name
+        The username.
         """
         return pulumi.get(self, "name")
 
@@ -219,7 +219,7 @@ class GetDomainsMyOauth2clientCredentialResult:
     @pulumi.getter
     def ocid(self) -> str:
         """
-        User's ocid
+        The user's OCID.
         """
         return pulumi.get(self, "ocid")
 
@@ -248,7 +248,7 @@ class GetDomainsMyOauth2clientCredentialResult:
     @pulumi.getter
     def status(self) -> str:
         """
-        User credential status
+        The user's credential status.
         """
         return pulumi.get(self, "status")
 
@@ -272,7 +272,7 @@ class GetDomainsMyOauth2clientCredentialResult:
     @pulumi.getter
     def users(self) -> Sequence['outputs.GetDomainsMyOauth2clientCredentialUserResult']:
         """
-        User linked to oauth2 client credential
+        The user linked to the OAuth2 client credential.
         """
         return pulumi.get(self, "users")
 
@@ -317,7 +317,7 @@ def get_domains_my_oauth2client_credential(authorization: Optional[str] = None,
     """
     This data source provides details about a specific My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get user's oauth2 client credential
+    Get a user's own OAuth2 client credential.
 
     ## Example Usage
 
@@ -381,7 +381,7 @@ def get_domains_my_oauth2client_credential_output(authorization: Optional[pulumi
     """
     This data source provides details about a specific My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get user's oauth2 client credential
+    Get a user's own OAuth2 client credential.
 
     ## Example Usage
 

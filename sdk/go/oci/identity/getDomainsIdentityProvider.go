@@ -138,6 +138,8 @@ type LookupDomainsIdentityProviderResult struct {
 	JitUserProvGroupStaticListEnabled bool `pulumi:"jitUserProvGroupStaticListEnabled"`
 	// Set to true to indicate ignoring absence of group while provisioning
 	JitUserProvIgnoreErrorOnAbsentGroups bool `pulumi:"jitUserProvIgnoreErrorOnAbsentGroups"`
+	// Records the notification timestamp for the IdP whose signing certificate is about to expire
+	LastNotificationSentTime string `pulumi:"lastNotificationSentTime"`
 	// HTTP binding to use for logout.
 	LogoutBinding string `pulumi:"logoutBinding"`
 	// Set to true to enable logout.
@@ -425,6 +427,11 @@ func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupStaticListEna
 // Set to true to indicate ignoring absence of group while provisioning
 func (o LookupDomainsIdentityProviderResultOutput) JitUserProvIgnoreErrorOnAbsentGroups() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.JitUserProvIgnoreErrorOnAbsentGroups }).(pulumi.BoolOutput)
+}
+
+// Records the notification timestamp for the IdP whose signing certificate is about to expire
+func (o LookupDomainsIdentityProviderResultOutput) LastNotificationSentTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.LastNotificationSentTime }).(pulumi.StringOutput)
 }
 
 // HTTP binding to use for logout.

@@ -31,7 +31,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      */
     private String display;
     /**
-     * @return The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+     * @return The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
      * 
      */
     private String legacyGroupName;
@@ -81,7 +81,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         return this.display;
     }
     /**
-     * @return The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+     * @return The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
      * 
      */
     public String legacyGroupName() {

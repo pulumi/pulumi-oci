@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser {
     /**
-     * @return (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsPii: true
@@ -27,7 +27,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
      */
     private @Nullable String principalName;
     /**
-     * @return (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
@@ -76,7 +76,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser() {}
     /**
-     * @return (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsPii: true
@@ -93,7 +93,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         return Optional.ofNullable(this.principalName);
     }
     /**
-     * @return (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true

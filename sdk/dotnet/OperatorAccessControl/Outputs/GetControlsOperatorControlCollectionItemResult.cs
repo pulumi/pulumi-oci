@@ -50,6 +50,10 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Whether the operator control is a default Operator Control.
+        /// </summary>
+        public readonly bool IsDefaultOperatorControl;
+        /// <summary>
         /// Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         /// </summary>
         public readonly bool IsFullyPreApproved;
@@ -110,6 +114,8 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
 
             string id,
 
+            bool isDefaultOperatorControl,
+
             bool isFullyPreApproved,
 
             string lastModifiedInfo,
@@ -139,6 +145,7 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
             EmailIdLists = emailIdLists;
             FreeformTags = freeformTags;
             Id = id;
+            IsDefaultOperatorControl = isDefaultOperatorControl;
             IsFullyPreApproved = isFullyPreApproved;
             LastModifiedInfo = lastModifiedInfo;
             OperatorControlName = operatorControlName;

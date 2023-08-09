@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of My Groups in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Search My Groups
+// Search for 'My Groups'.
 //
 // ## Example Usage
 //

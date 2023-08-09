@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of My Support Accounts in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Support Accounts
+        /// Search for a user's own support account.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of My Support Accounts in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Support Accounts
+        /// Search for a user's own support account.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

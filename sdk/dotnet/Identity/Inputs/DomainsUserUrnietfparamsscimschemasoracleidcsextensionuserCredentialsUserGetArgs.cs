@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyGetArgs>? _apiKeys;
 
         /// <summary>
-        /// (Updatable) A list of api keys corresponding to user.
+        /// (Updatable) A list of API keys corresponding to user.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenGetArgs>? _authTokens;
 
         /// <summary>
-        /// (Updatable) A list of auth tokens corresponding to user.
+        /// (Updatable) A list of Auth tokens corresponding to user.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialGetArgs>? _dbCredentials;
 
         /// <summary>
-        /// (Updatable) A list of db credentials corresponding to user.
+        /// (Updatable) A list of database credentials corresponding to user.
         /// 
         /// **Added In:** 2102181953
         /// 
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialGetArgs>? _oAuth2clientCredentials;
 
         /// <summary>
-        /// (Updatable) A list of oauth2 client credentials corresponding to user.
+        /// (Updatable) A list of OAuth2 client credentials corresponding to a user.
         /// 
         /// **Added In:** 2012271618
         /// 
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialGetArgs>? _smtpCredentials;
 
         /// <summary>
-        /// (Updatable) A list of smtp credentials corresponding to user.
+        /// (Updatable) A list of SMTP credentials corresponding to user.
         /// 
         /// **Added In:** 2012271618
         /// 

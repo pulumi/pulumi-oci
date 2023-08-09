@@ -202,7 +202,7 @@ class GetDomainsMyApiKeyResult:
     @pulumi.getter
     def ocid(self) -> str:
         """
-        User's ocid
+        The user's OCID.
         """
         return pulumi.get(self, "ocid")
 
@@ -239,7 +239,7 @@ class GetDomainsMyApiKeyResult:
     @pulumi.getter
     def users(self) -> Sequence['outputs.GetDomainsMyApiKeyUserResult']:
         """
-        User linked to api key
+        The user linked to the API key.
         """
         return pulumi.get(self, "users")
 
@@ -281,7 +281,7 @@ def get_domains_my_api_key(authorization: Optional[str] = None,
     """
     This data source provides details about a specific My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get user's api key
+    Get a user's own API key.
 
     ## Example Usage
 
@@ -342,7 +342,7 @@ def get_domains_my_api_key_output(authorization: Optional[pulumi.Input[Optional[
     """
     This data source provides details about a specific My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get user's api key
+    Get a user's own API key.
 
     ## Example Usage
 

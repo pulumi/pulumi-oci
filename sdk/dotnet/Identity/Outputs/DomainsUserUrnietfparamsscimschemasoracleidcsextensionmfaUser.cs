@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     {
         /// <summary>
-        /// (Updatable) A list of bypass codes belongs to user
+        /// (Updatable) A list of bypass codes that belongs to the user.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -51,6 +51,8 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsAllowUpdatesInReadOnlyMode: true
         /// * multiValued: false
         /// * mutability: readOnly
+        /// * idcsRequiresWriteForAccessFlows: true
+        /// * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
         /// * required: false
         /// * returned: request
         /// * type: integer
@@ -58,7 +60,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int? LoginAttempts;
         /// <summary>
-        /// (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        /// (Updatable) The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -89,7 +91,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> MfaIgnoredApps;
         /// <summary>
-        /// (Updatable) User Opted for MFA
+        /// (Updatable) The user opted for MFA.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -98,6 +100,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -105,7 +108,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? MfaStatus;
         /// <summary>
-        /// (Updatable) Preferred Authentication Factor Type
+        /// (Updatable) The preferred authentication factor type.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -121,7 +124,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? PreferredAuthenticationFactor;
         /// <summary>
-        /// (Updatable) Preferred Authentication method
+        /// (Updatable) The preferred authentication method.
         /// 
         /// **Added In:** 2009232244
         /// 
@@ -137,7 +140,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? PreferredAuthenticationMethod;
         /// <summary>
-        /// (Updatable) User preferred device
+        /// (Updatable) The user's preferred device.
         /// 
         /// **Added In:** 18.3.6
         /// 
@@ -153,7 +156,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice? PreferredDevice;
         /// <summary>
-        /// (Updatable) Preferred Third party vendor name
+        /// (Updatable) The preferred third-party vendor name.
         /// 
         /// **Added In:** 19.2.1
         /// 

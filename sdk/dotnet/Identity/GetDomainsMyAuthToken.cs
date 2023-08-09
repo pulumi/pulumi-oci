@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's auth token
+        /// Get a user's own Auth token.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's auth token
+        /// Get a user's own Auth token.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly string DomainOcid;
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// </summary>
         public readonly string ExpiresOn;
         /// <summary>
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.Identity
         public readonly ImmutableArray<Outputs.GetDomainsMyAuthTokenMetaResult> Metas;
         public readonly string MyAuthTokenId;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         public readonly string? ResourceTypeSchemaVersion;
@@ -204,7 +204,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<string> Schemas;
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// </summary>
         public readonly string Status;
         /// <summary>
@@ -216,7 +216,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly string TenancyOcid;
         /// <summary>
-        /// User linked to auth token
+        /// The user linked to the Auth token.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsMyAuthTokenUserResult> Users;
 

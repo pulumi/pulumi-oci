@@ -26,7 +26,7 @@ public final class DomainsUserIdcsLastModifiedBy {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -108,7 +108,7 @@ public final class DomainsUserIdcsLastModifiedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 

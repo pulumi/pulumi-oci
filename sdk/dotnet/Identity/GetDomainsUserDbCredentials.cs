@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search a User's DBCredentials
+        /// Search for a user's database (DB) credentials.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search a User's DBCredentials
+        /// Search for a user's database (DB) credentials.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked {
     /**
-     * @return The date and time that the current resource was locked
+     * @return The date and time that the current resource was locked.
      * 
      */
     private String lockDate;
     /**
-     * @return Indicates that the rev is locked
+     * @return Indicates that the recovery is locked.
      * 
      */
     private Boolean on;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked() {}
     /**
-     * @return The date and time that the current resource was locked
+     * @return The date and time that the current resource was locked.
      * 
      */
     public String lockDate() {
         return this.lockDate;
     }
     /**
-     * @return Indicates that the rev is locked
+     * @return Indicates that the recovery is locked.
      * 
      */
     public Boolean on() {

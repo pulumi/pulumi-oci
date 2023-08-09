@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Dynamic Resource Groups in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Search DynamicResourceGroups
+// Search for Dynamic Resource Groups.
 //
 // ## Example Usage
 //

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserResult
     {
         /// <summary>
-        /// A list of api keys corresponding to user.
+        /// A list of API keys corresponding to user.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyResult> ApiKeys;
         /// <summary>
-        /// A list of auth tokens corresponding to user.
+        /// A list of Auth tokens corresponding to user.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenResult> AuthTokens;
         /// <summary>
@@ -26,15 +26,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyResult> CustomerSecretKeys;
         /// <summary>
-        /// A list of db credentials corresponding to user.
+        /// A list of database credentials corresponding to user.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialResult> DbCredentials;
         /// <summary>
-        /// A list of oauth2 client credentials corresponding to user.
+        /// A list of OAuth2 client credentials corresponding to a user.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialResult> OAuth2clientCredentials;
         /// <summary>
-        /// A list of smtp credentials corresponding to user.
+        /// A list of SMTP credentials corresponding to user.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialResult> SmtpCredentials;
 

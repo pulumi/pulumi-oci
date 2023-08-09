@@ -457,7 +457,7 @@ public final class DomainsApiKeyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -474,7 +474,7 @@ public final class DomainsApiKeyState extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -627,7 +627,7 @@ public final class DomainsApiKeyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * User linked to api key
+     * The user linked to the API key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -644,7 +644,7 @@ public final class DomainsApiKeyState extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<DomainsApiKeyUserArgs> user;
 
     /**
-     * @return User linked to api key
+     * @return The user linked to the API key.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -1315,7 +1315,7 @@ public final class DomainsApiKeyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1336,7 +1336,7 @@ public final class DomainsApiKeyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1561,7 +1561,7 @@ public final class DomainsApiKeyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param user User linked to api key
+         * @param user The user linked to the API key.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -1582,7 +1582,7 @@ public final class DomainsApiKeyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param user User linked to api key
+         * @param user The user linked to the API key.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false

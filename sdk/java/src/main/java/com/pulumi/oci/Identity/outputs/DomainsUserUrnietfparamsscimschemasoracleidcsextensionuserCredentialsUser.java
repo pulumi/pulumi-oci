@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser {
     /**
-     * @return (Updatable) A list of api keys corresponding to user.
+     * @return (Updatable) A list of API keys corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -34,7 +34,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys;
     /**
-     * @return (Updatable) A list of auth tokens corresponding to user.
+     * @return (Updatable) A list of Auth tokens corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -68,7 +68,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys;
     /**
-     * @return (Updatable) A list of db credentials corresponding to user.
+     * @return (Updatable) A list of database credentials corresponding to user.
      * 
      * **Added In:** 2102181953
      * 
@@ -85,7 +85,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials;
     /**
-     * @return (Updatable) A list of oauth2 client credentials corresponding to user.
+     * @return (Updatable) A list of OAuth2 client credentials corresponding to a user.
      * 
      * **Added In:** 2012271618
      * 
@@ -102,7 +102,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials;
     /**
-     * @return (Updatable) A list of smtp credentials corresponding to user.
+     * @return (Updatable) A list of SMTP credentials corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -121,7 +121,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser() {}
     /**
-     * @return (Updatable) A list of api keys corresponding to user.
+     * @return (Updatable) A list of API keys corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -140,7 +140,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         return this.apiKeys == null ? List.of() : this.apiKeys;
     }
     /**
-     * @return (Updatable) A list of auth tokens corresponding to user.
+     * @return (Updatable) A list of Auth tokens corresponding to user.
      * 
      * **Added In:** 2012271618
      * 
@@ -178,7 +178,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         return this.customerSecretKeys == null ? List.of() : this.customerSecretKeys;
     }
     /**
-     * @return (Updatable) A list of db credentials corresponding to user.
+     * @return (Updatable) A list of database credentials corresponding to user.
      * 
      * **Added In:** 2102181953
      * 
@@ -197,7 +197,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         return this.dbCredentials == null ? List.of() : this.dbCredentials;
     }
     /**
-     * @return (Updatable) A list of oauth2 client credentials corresponding to user.
+     * @return (Updatable) A list of OAuth2 client credentials corresponding to a user.
      * 
      * **Added In:** 2012271618
      * 
@@ -216,7 +216,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         return this.oAuth2clientCredentials == null ? List.of() : this.oAuth2clientCredentials;
     }
     /**
-     * @return (Updatable) A list of smtp credentials corresponding to user.
+     * @return (Updatable) A list of SMTP credentials corresponding to user.
      * 
      * **Added In:** 2012271618
      * 

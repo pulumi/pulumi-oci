@@ -18,7 +18,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs();
 
     /**
-     * (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      * **Added In:** 20.1.3
      * 
@@ -37,7 +37,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<Boolean> expired;
 
     /**
-     * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      * **Added In:** 20.1.3
      * 
@@ -57,7 +57,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) The date and time that the current resource was locked
+     * (Updatable) The date and time that the current resource was locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -65,6 +65,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: dateTime
@@ -75,7 +76,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<String> lockDate;
 
     /**
-     * @return (Updatable) The date and time that the current resource was locked
+     * @return (Updatable) The date and time that the current resource was locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -83,6 +84,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: dateTime
@@ -94,7 +96,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) Indicates that the rev is locked
+     * (Updatable) Indicates that the recovery is locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -103,6 +105,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -113,7 +116,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<Boolean> on;
 
     /**
-     * @return (Updatable) Indicates that the rev is locked
+     * @return (Updatable) Indicates that the recovery is locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -122,6 +125,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -133,12 +137,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+     * (Updatable) Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: integer
@@ -149,12 +155,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<Integer> reason;
 
     /**
-     * @return (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+     * @return (Updatable) Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: integer
@@ -193,7 +201,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param expired (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+         * @param expired (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
          * 
          * **Added In:** 20.1.3
          * 
@@ -216,7 +224,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param expired (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+         * @param expired (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
          * 
          * **Added In:** 20.1.3
          * 
@@ -238,7 +246,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param lockDate (Updatable) The date and time that the current resource was locked
+         * @param lockDate (Updatable) The date and time that the current resource was locked.
          * 
          * **Added In:** 19.1.4
          * 
@@ -246,6 +254,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: dateTime
@@ -260,7 +269,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param lockDate (Updatable) The date and time that the current resource was locked
+         * @param lockDate (Updatable) The date and time that the current resource was locked.
          * 
          * **Added In:** 19.1.4
          * 
@@ -268,6 +277,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: dateTime
@@ -281,7 +291,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param on (Updatable) Indicates that the rev is locked
+         * @param on (Updatable) Indicates that the recovery is locked.
          * 
          * **Added In:** 19.1.4
          * 
@@ -290,6 +300,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: boolean
@@ -304,7 +315,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param on (Updatable) Indicates that the rev is locked
+         * @param on (Updatable) Indicates that the recovery is locked.
          * 
          * **Added In:** 19.1.4
          * 
@@ -313,6 +324,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: boolean
@@ -326,12 +338,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param reason (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+         * @param reason (Updatable) Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
+         * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: integer
@@ -346,12 +360,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param reason (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+         * @param reason (Updatable) Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
+         * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: integer

@@ -201,7 +201,7 @@ def get_domains_api_keys(api_key_count: Optional[int] = None,
     """
     This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Api Key
+    Search API keys.
 
     ## Example Usage
 
@@ -279,7 +279,7 @@ def get_domains_api_keys_output(api_key_count: Optional[pulumi.Input[Optional[in
     """
     This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Api Key
+    Search API keys.
 
     ## Example Usage
 

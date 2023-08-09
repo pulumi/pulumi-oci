@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser {
     /**
-     * @return (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+     * @return (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value]
@@ -28,7 +28,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser() {}
     /**
-     * @return (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+     * @return (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value]

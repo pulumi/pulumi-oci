@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialResult
     {
         /// <summary>
-        /// Ocid of the User's Support Account.
+        /// The OCID of the user's support account.
         /// </summary>
         public readonly string Ocid;
         /// <summary>

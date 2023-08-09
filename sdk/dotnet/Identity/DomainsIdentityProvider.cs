@@ -536,6 +536,24 @@ namespace Pulumi.Oci.Identity
         public Output<bool> JitUserProvIgnoreErrorOnAbsentGroups { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+        /// 
+        /// **Added In:** 2302092332
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
+        /// </summary>
+        [Output("lastNotificationSentTime")]
+        public Output<string> LastNotificationSentTime { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) HTTP binding to use for logout.
         /// 
         /// **SCIM++ Properties:**
@@ -2439,6 +2457,24 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Input("jitUserProvIgnoreErrorOnAbsentGroups")]
         public Input<bool>? JitUserProvIgnoreErrorOnAbsentGroups { get; set; }
+
+        /// <summary>
+        /// (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+        /// 
+        /// **Added In:** 2302092332
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
+        /// </summary>
+        [Input("lastNotificationSentTime")]
+        public Input<string>? LastNotificationSentTime { get; set; }
 
         /// <summary>
         /// (Updatable) HTTP binding to use for logout.

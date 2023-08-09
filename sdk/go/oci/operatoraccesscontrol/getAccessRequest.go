@@ -107,6 +107,8 @@ type GetAccessRequestResult struct {
 	Severity string `pulumi:"severity"`
 	// The current state of the AccessRequest.
 	State string `pulumi:"state"`
+	// The subresources requested for approval.
+	SubResourceLists []string `pulumi:"subResourceLists"`
 	// System message that will be displayed to the operator at login to the target resource.
 	SystemMessage string `pulumi:"systemMessage"`
 	// Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
@@ -281,6 +283,11 @@ func (o GetAccessRequestResultOutput) Severity() pulumi.StringOutput {
 // The current state of the AccessRequest.
 func (o GetAccessRequestResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessRequestResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The subresources requested for approval.
+func (o GetAccessRequestResultOutput) SubResourceLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) []string { return v.SubResourceLists }).(pulumi.StringArrayOutput)
 }
 
 // System message that will be displayed to the operator at login to the target resource.

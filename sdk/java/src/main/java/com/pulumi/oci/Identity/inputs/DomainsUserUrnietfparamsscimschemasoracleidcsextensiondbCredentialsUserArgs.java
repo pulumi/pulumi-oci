@@ -54,7 +54,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
     }
 
     /**
-     * (Updatable) The Database User Name
+     * (Updatable) The database username.
      * 
      * **Added In:** 2102181953
      * 
@@ -73,7 +73,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
     private @Nullable Output<String> dbUserName;
 
     /**
-     * @return (Updatable) The Database User Name
+     * @return (Updatable) The database username.
      * 
      * **Added In:** 2102181953
      * 
@@ -161,7 +161,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
         }
 
         /**
-         * @param dbUserName (Updatable) The Database User Name
+         * @param dbUserName (Updatable) The database username.
          * 
          * **Added In:** 2102181953
          * 
@@ -184,7 +184,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
         }
 
         /**
-         * @param dbUserName (Updatable) The Database User Name
+         * @param dbUserName (Updatable) The database username.
          * 
          * **Added In:** 2102181953
          * 

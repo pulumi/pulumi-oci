@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked
     {
         /// <summary>
-        /// (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        /// (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
         /// 
         /// **Added In:** 20.1.3
         /// 
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool? Expired;
         /// <summary>
-        /// (Updatable) The date and time that the current resource was locked
+        /// (Updatable) The date and time that the current resource was locked.
         /// 
         /// **Added In:** 19.1.4
         /// 
@@ -38,6 +38,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: dateTime
@@ -45,7 +46,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? LockDate;
         /// <summary>
-        /// (Updatable) Indicates that the rev is locked
+        /// (Updatable) Indicates that the recovery is locked.
         /// 
         /// **Added In:** 19.1.4
         /// 
@@ -54,6 +55,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
+        /// * idcsRequiresWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: boolean
@@ -61,12 +63,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool? On;
         /// <summary>
-        /// (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+        /// (Updatable) Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
+        /// * idcsRequiresWriteForAccessFlows: true
+        /// * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: integer

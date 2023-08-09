@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Api Key
+ * Search API keys.
  *
  * ## Example Usage
  *
@@ -121,7 +121,7 @@ export interface GetDomainsApiKeysResult {
 /**
  * This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Api Key
+ * Search API keys.
  *
  * ## Example Usage
  *

@@ -57,7 +57,7 @@ public final class DomainsUserGroup {
      */
     private @Nullable String externalId;
     /**
-     * @return (Updatable) Membership Ocid
+     * @return (Updatable) The membership OCID.
      * 
      * **Added In:** 2103141444
      * 
@@ -89,7 +89,7 @@ public final class DomainsUserGroup {
      */
     private @Nullable String nonUniqueDisplay;
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -206,7 +206,7 @@ public final class DomainsUserGroup {
         return Optional.ofNullable(this.externalId);
     }
     /**
-     * @return (Updatable) Membership Ocid
+     * @return (Updatable) The membership OCID.
      * 
      * **Added In:** 2103141444
      * 
@@ -242,7 +242,7 @@ public final class DomainsUserGroup {
         return Optional.ofNullable(this.nonUniqueDisplay);
     }
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 

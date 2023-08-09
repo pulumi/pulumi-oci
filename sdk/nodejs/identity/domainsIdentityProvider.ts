@@ -492,6 +492,22 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      */
     public readonly jitUserProvIgnoreErrorOnAbsentGroups!: pulumi.Output<boolean>;
     /**
+     * (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+     *
+     * **Added In:** 2302092332
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     */
+    public /*out*/ readonly lastNotificationSentTime!: pulumi.Output<string>;
+    /**
      * (Updatable) HTTP binding to use for logout.
      *
      * **SCIM++ Properties:**
@@ -938,6 +954,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
             resourceInputs["jitUserProvGroupSamlAttributeName"] = state ? state.jitUserProvGroupSamlAttributeName : undefined;
             resourceInputs["jitUserProvGroupStaticListEnabled"] = state ? state.jitUserProvGroupStaticListEnabled : undefined;
             resourceInputs["jitUserProvIgnoreErrorOnAbsentGroups"] = state ? state.jitUserProvIgnoreErrorOnAbsentGroups : undefined;
+            resourceInputs["lastNotificationSentTime"] = state ? state.lastNotificationSentTime : undefined;
             resourceInputs["logoutBinding"] = state ? state.logoutBinding : undefined;
             resourceInputs["logoutEnabled"] = state ? state.logoutEnabled : undefined;
             resourceInputs["logoutRequestUrl"] = state ? state.logoutRequestUrl : undefined;
@@ -1040,6 +1057,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
             resourceInputs["idcsLastModifiedBies"] = undefined /*out*/;
             resourceInputs["idcsLastUpgradedInRelease"] = undefined /*out*/;
             resourceInputs["idcsPreventedOperations"] = undefined /*out*/;
+            resourceInputs["lastNotificationSentTime"] = undefined /*out*/;
             resourceInputs["metas"] = undefined /*out*/;
             resourceInputs["tenancyOcid"] = undefined /*out*/;
             resourceInputs["tenantProviderId"] = undefined /*out*/;
@@ -1497,6 +1515,22 @@ export interface DomainsIdentityProviderState {
      * * uniqueness: none
      */
     jitUserProvIgnoreErrorOnAbsentGroups?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
+     *
+     * **Added In:** 2302092332
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     */
+    lastNotificationSentTime?: pulumi.Input<string>;
     /**
      * (Updatable) HTTP binding to use for logout.
      *

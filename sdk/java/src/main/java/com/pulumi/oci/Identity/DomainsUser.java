@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Create a User
+ * Create a user.
  * 
  * ## Example Usage
  * 
@@ -141,13 +141,18 @@ import javax.annotation.Nullable;
  *             .authorization(var_.user_authorization())
  *             .description(var_.user_description())
  *             .displayName(var_.user_display_name())
- *             .emails(DomainsUserEmailArgs.builder()
- *                 .type(var_.user_emails_type())
- *                 .value(var_.user_emails_value())
- *                 .primary(var_.user_emails_primary())
- *                 .secondary(var_.user_emails_secondary())
- *                 .verified(var_.user_emails_verified())
- *                 .build())
+ *             .emails(            
+ *                 DomainsUserEmailArgs.builder()
+ *                     .type(var_.user_emails_type())
+ *                     .value(var_.user_emails_value())
+ *                     .primary(true)
+ *                     .secondary(var_.user_emails_secondary())
+ *                     .verified(var_.user_emails_verified())
+ *                     .build(),
+ *                 DomainsUserEmailArgs.builder()
+ *                     .type(&#34;recovery&#34;)
+ *                     .value(var_.user_emails_value())
+ *                     .build())
  *             .entitlements(DomainsUserEntitlementArgs.builder()
  *                 .type(var_.user_entitlements_type())
  *                 .value(var_.user_entitlements_value())
@@ -349,6 +354,7 @@ import javax.annotation.Nullable;
  *                 .isGroupMembershipNormalized(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_normalized())
  *                 .isGroupMembershipSyncedToUsersGroups(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_synced_to_users_groups())
  *                 .notificationEmailTemplateId(oci_identity_domains_notification_email_template.test_notification_email_template().id())
+ *                 .preferredUiLandingPage(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_preferred_ui_landing_page())
  *                 .syncedFromApp(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs.builder()
  *                     .type(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_type())
  *                     .value(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_value())
@@ -1131,7 +1137,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
         return this.nickName;
     }
     /**
-     * (Updatable) Ocid of the User&#39;s Support Account.
+     * (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -1150,7 +1156,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     private Output<String> ocid;
 
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -1643,14 +1649,14 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
         return this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser;
     }
     /**
-     * (Updatable) Db Credentials User extension
+     * (Updatable) The database credentials user extension.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser.class, parameters={})
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser;
 
     /**
-     * @return (Updatable) Db Credentials User extension
+     * @return (Updatable) The database credentials user extension.
      * 
      */
     public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser() {
@@ -1741,14 +1747,14 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
         return this.urnietfparamsscimschemasoracleidcsextensionposixUser;
     }
     /**
-     * (Updatable) This extension defines attributes used to store Security Questions of User.
+     * (Updatable) This extension defines the attributes used to store the security questions of a user.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser.class, parameters={})
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser;
 
     /**
-     * @return (Updatable) This extension defines attributes used to store Security Questions of User.
+     * @return (Updatable) This extension defines the attributes used to store the security questions of a user.
      * 
      */
     public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser() {
@@ -1839,28 +1845,28 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
         return this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
     }
     /**
-     * (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser.class, parameters={})
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUser;
 
     /**
-     * @return (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * @return (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUser() {
         return this.urnietfparamsscimschemasoracleidcsextensionuserStateUser;
     }
     /**
-     * (Updatable) Oracle Cloud Infrastructure IAM User
+     * (Updatable) Oracle Identity Cloud Service User
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionuserUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser.class, parameters={})
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUser;
 
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure IAM User
+     * @return (Updatable) Oracle Identity Cloud Service User
      * 
      */
     public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUser() {

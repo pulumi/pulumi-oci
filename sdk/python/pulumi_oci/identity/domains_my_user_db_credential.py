@@ -29,7 +29,7 @@ class DomainsMyUserDbCredentialArgs:
                  user: Optional[pulumi.Input['DomainsMyUserDbCredentialUserArgs']] = None):
         """
         The set of arguments for constructing a DomainsMyUserDbCredential resource.
-        :param pulumi.Input[str] db_password: The db password of the user
+        :param pulumi.Input[str] db_password: The user's database password.
                
                **SCIM++ Properties:**
                * type: string
@@ -59,7 +59,7 @@ class DomainsMyUserDbCredentialArgs:
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user credential expires.
                
                **Added In:** 2109090424
                
@@ -72,7 +72,7 @@ class DomainsMyUserDbCredentialArgs:
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -108,7 +108,7 @@ class DomainsMyUserDbCredentialArgs:
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input['DomainsMyUserDbCredentialUserArgs'] user: User linked to db credential
+        :param pulumi.Input['DomainsMyUserDbCredentialUserArgs'] user: The user linked to the database credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -145,7 +145,7 @@ class DomainsMyUserDbCredentialArgs:
     @pulumi.getter(name="dbPassword")
     def db_password(self) -> pulumi.Input[str]:
         """
-        The db password of the user
+        The user's database password.
 
         **SCIM++ Properties:**
         * type: string
@@ -230,7 +230,7 @@ class DomainsMyUserDbCredentialArgs:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential expires on
+        When the user credential expires.
 
         **Added In:** 2109090424
 
@@ -254,7 +254,7 @@ class DomainsMyUserDbCredentialArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -334,7 +334,7 @@ class DomainsMyUserDbCredentialArgs:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsMyUserDbCredentialUserArgs']]:
         """
-        User linked to db credential
+        The user linked to the database credential.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -397,7 +397,7 @@ class _DomainsMyUserDbCredentialState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] db_password: The db password of the user
+        :param pulumi.Input[str] db_password: The user's database password.
                
                **SCIM++ Properties:**
                * type: string
@@ -436,13 +436,13 @@ class _DomainsMyUserDbCredentialState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[bool] expired: (Updatable) Indicates that the db password has expired
+        :param pulumi.Input[bool] expired: (Updatable) Indicates that the database password has expired.
                
                **SCIM++ Properties:**
                * type: boolean
                * mutability: readOnly
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user credential expires.
                
                **Added In:** 2109090424
                
@@ -495,7 +495,7 @@ class _DomainsMyUserDbCredentialState:
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] last_set_date: (Updatable) A DateTime that specifies the date and time when the current db password was set
+        :param pulumi.Input[str] last_set_date: (Updatable) A DateTime that specifies the date and time when the current database password was set.
                
                **SCIM++ Properties:**
                * type: dateTime
@@ -512,21 +512,21 @@ class _DomainsMyUserDbCredentialState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] mixed_db_password: (Updatable) The db password of the user with mixed salt
+        :param pulumi.Input[str] mixed_db_password: (Updatable) The user's database password with mixed salt.
                
                **SCIM++ Properties:**
                * type: string
                * mutability: readOnly
                * returned: default
                * required: false
-        :param pulumi.Input[str] mixed_salt: (Updatable) The mixed salt of the password
+        :param pulumi.Input[str] mixed_salt: (Updatable) The mixed salt of the password.
                
                **SCIM++ Properties:**
                * type: string
                * mutability: readOnly
                * returned: default
                * required: false
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -537,7 +537,7 @@ class _DomainsMyUserDbCredentialState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -549,7 +549,7 @@ class _DomainsMyUserDbCredentialState:
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[str] salt: (Updatable) The salt of the password
+        :param pulumi.Input[str] salt: (Updatable) The salt of the password.
                
                **SCIM++ Properties:**
                * type: string
@@ -602,7 +602,7 @@ class _DomainsMyUserDbCredentialState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input['DomainsMyUserDbCredentialUserArgs'] user: User linked to db credential
+        :param pulumi.Input['DomainsMyUserDbCredentialUserArgs'] user: The user linked to the database credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -706,7 +706,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter(name="dbPassword")
     def db_password(self) -> Optional[pulumi.Input[str]]:
         """
-        The db password of the user
+        The user's database password.
 
         **SCIM++ Properties:**
         * type: string
@@ -789,7 +789,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter
     def expired(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates that the db password has expired
+        (Updatable) Indicates that the database password has expired.
 
         **SCIM++ Properties:**
         * type: boolean
@@ -806,7 +806,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential expires on
+        When the user credential expires.
 
         **Added In:** 2109090424
 
@@ -925,7 +925,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter(name="lastSetDate")
     def last_set_date(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A DateTime that specifies the date and time when the current db password was set
+        (Updatable) A DateTime that specifies the date and time when the current database password was set.
 
         **SCIM++ Properties:**
         * type: dateTime
@@ -964,7 +964,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter(name="mixedDbPassword")
     def mixed_db_password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The db password of the user with mixed salt
+        (Updatable) The user's database password with mixed salt.
 
         **SCIM++ Properties:**
         * type: string
@@ -982,7 +982,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter(name="mixedSalt")
     def mixed_salt(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The mixed salt of the password
+        (Updatable) The mixed salt of the password.
 
         **SCIM++ Properties:**
         * type: string
@@ -1000,7 +1000,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1022,7 +1022,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1056,7 +1056,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter
     def salt(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The salt of the password
+        (Updatable) The salt of the password.
 
         **SCIM++ Properties:**
         * type: string
@@ -1164,7 +1164,7 @@ class _DomainsMyUserDbCredentialState:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsMyUserDbCredentialUserArgs']]:
         """
-        User linked to db credential
+        The user linked to the database credential.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1204,7 +1204,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
         """
         This resource provides the My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Set a User's DbCredential
+        Create a user's own database (DB) credential.
 
         ## Import
 
@@ -1217,7 +1217,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] db_password: The db password of the user
+        :param pulumi.Input[str] db_password: The user's database password.
                
                **SCIM++ Properties:**
                * type: string
@@ -1234,7 +1234,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user credential expires.
                
                **Added In:** 2109090424
                
@@ -1248,7 +1248,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * type: dateTime
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1295,7 +1295,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyUserDbCredentialUserArgs']] user: User linked to db credential
+        :param pulumi.Input[pulumi.InputType['DomainsMyUserDbCredentialUserArgs']] user: The user linked to the database credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1317,7 +1317,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
         """
         This resource provides the My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Set a User's DbCredential
+        Create a user's own database (DB) credential.
 
         ## Import
 
@@ -1451,7 +1451,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] db_password: The db password of the user
+        :param pulumi.Input[str] db_password: The user's database password.
                
                **SCIM++ Properties:**
                * type: string
@@ -1490,13 +1490,13 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[bool] expired: (Updatable) Indicates that the db password has expired
+        :param pulumi.Input[bool] expired: (Updatable) Indicates that the database password has expired.
                
                **SCIM++ Properties:**
                * type: boolean
                * mutability: readOnly
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user credential expires.
                
                **Added In:** 2109090424
                
@@ -1549,7 +1549,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] last_set_date: (Updatable) A DateTime that specifies the date and time when the current db password was set
+        :param pulumi.Input[str] last_set_date: (Updatable) A DateTime that specifies the date and time when the current database password was set.
                
                **SCIM++ Properties:**
                * type: dateTime
@@ -1566,21 +1566,21 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] mixed_db_password: (Updatable) The db password of the user with mixed salt
+        :param pulumi.Input[str] mixed_db_password: (Updatable) The user's database password with mixed salt.
                
                **SCIM++ Properties:**
                * type: string
                * mutability: readOnly
                * returned: default
                * required: false
-        :param pulumi.Input[str] mixed_salt: (Updatable) The mixed salt of the password
+        :param pulumi.Input[str] mixed_salt: (Updatable) The mixed salt of the password.
                
                **SCIM++ Properties:**
                * type: string
                * mutability: readOnly
                * returned: default
                * required: false
-        :param pulumi.Input[str] name: (Updatable) User name
+        :param pulumi.Input[str] name: (Updatable) The username.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1591,7 +1591,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1603,7 +1603,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[str] salt: (Updatable) The salt of the password
+        :param pulumi.Input[str] salt: (Updatable) The salt of the password.
                
                **SCIM++ Properties:**
                * type: string
@@ -1656,7 +1656,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyUserDbCredentialUserArgs']] user: User linked to db credential
+        :param pulumi.Input[pulumi.InputType['DomainsMyUserDbCredentialUserArgs']] user: The user linked to the database credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1731,7 +1731,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter(name="dbPassword")
     def db_password(self) -> pulumi.Output[str]:
         """
-        The db password of the user
+        The user's database password.
 
         **SCIM++ Properties:**
         * type: string
@@ -1798,7 +1798,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter
     def expired(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Indicates that the db password has expired
+        (Updatable) Indicates that the database password has expired.
 
         **SCIM++ Properties:**
         * type: boolean
@@ -1811,7 +1811,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> pulumi.Output[str]:
         """
-        User credential expires on
+        When the user credential expires.
 
         **Added In:** 2109090424
 
@@ -1906,7 +1906,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter(name="lastSetDate")
     def last_set_date(self) -> pulumi.Output[str]:
         """
-        (Updatable) A DateTime that specifies the date and time when the current db password was set
+        (Updatable) A DateTime that specifies the date and time when the current database password was set.
 
         **SCIM++ Properties:**
         * type: dateTime
@@ -1937,7 +1937,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter(name="mixedDbPassword")
     def mixed_db_password(self) -> pulumi.Output[str]:
         """
-        (Updatable) The db password of the user with mixed salt
+        (Updatable) The user's database password with mixed salt.
 
         **SCIM++ Properties:**
         * type: string
@@ -1951,7 +1951,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter(name="mixedSalt")
     def mixed_salt(self) -> pulumi.Output[str]:
         """
-        (Updatable) The mixed salt of the password
+        (Updatable) The mixed salt of the password.
 
         **SCIM++ Properties:**
         * type: string
@@ -1965,7 +1965,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) User name
+        (Updatable) The username.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1983,7 +1983,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -2009,7 +2009,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter
     def salt(self) -> pulumi.Output[str]:
         """
-        (Updatable) The salt of the password
+        (Updatable) The salt of the password.
 
         **SCIM++ Properties:**
         * type: string
@@ -2097,7 +2097,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
     @pulumi.getter
     def user(self) -> pulumi.Output['outputs.DomainsMyUserDbCredentialUser']:
         """
-        User linked to db credential
+        The user linked to the database credential.
 
         **SCIM++ Properties:**
         * caseExact: false

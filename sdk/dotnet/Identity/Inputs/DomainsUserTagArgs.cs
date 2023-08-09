@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The value of of the User's api key.
+        /// (Updatable) The user's API key value.
         /// 
         /// **Added In:** 2106240046
         /// 

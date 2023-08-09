@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Support Account
+ * Get a user's own support account.
  *
  * ## Example Usage
  *
@@ -138,7 +138,7 @@ export interface GetDomainsMySupportAccountResult {
 /**
  * This data source provides details about a specific My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Support Account
+ * Get a user's own support account.
  *
  * ## Example Usage
  *

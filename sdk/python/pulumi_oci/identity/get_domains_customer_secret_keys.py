@@ -201,7 +201,7 @@ def get_domains_customer_secret_keys(attribute_sets: Optional[Sequence[str]] = N
     """
     This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search user's customer secret key
+    Search for a user's customer secret keys.
 
     ## Example Usage
 
@@ -279,7 +279,7 @@ def get_domains_customer_secret_keys_output(attribute_sets: Optional[pulumi.Inpu
     """
     This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search user's customer secret key
+    Search for a user's customer secret keys.
 
     ## Example Usage
 

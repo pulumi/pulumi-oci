@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Create a DynamicResourceGroup
+ * Create a Dynamic Resource Group.
  *
  * ## Import
  *

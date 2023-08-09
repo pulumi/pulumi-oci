@@ -201,7 +201,7 @@ def get_domains_users(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides the list of Users in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Users
+    Search for users.
 
     ## Example Usage
 
@@ -279,7 +279,7 @@ def get_domains_users_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     """
     This data source provides the list of Users in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Users
+    Search for users.
 
     ## Example Usage
 

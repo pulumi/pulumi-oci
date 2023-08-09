@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get a Password Policy
+        /// Get a password policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get a Password Policy
+        /// Get a password policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -230,6 +230,14 @@ namespace Pulumi.Oci.Identity
         /// A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
         /// </summary>
         public readonly ImmutableArray<string> DisallowedSubstrings;
+        /// <summary>
+        /// List of User attributes whose values are not allowed in the password.
+        /// </summary>
+        public readonly ImmutableArray<string> DisallowedUserAttributeValues;
+        /// <summary>
+        /// The number of distinct characters between old password and new password
+        /// </summary>
+        public readonly int DistinctCharacters;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
@@ -418,6 +426,10 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<string> disallowedSubstrings,
 
+            ImmutableArray<string> disallowedUserAttributeValues,
+
+            int distinctCharacters,
+
             string domainOcid,
 
             string externalId,
@@ -515,6 +527,8 @@ namespace Pulumi.Oci.Identity
             DictionaryWordDisallowed = dictionaryWordDisallowed;
             DisallowedChars = disallowedChars;
             DisallowedSubstrings = disallowedSubstrings;
+            DisallowedUserAttributeValues = disallowedUserAttributeValues;
+            DistinctCharacters = distinctCharacters;
             DomainOcid = domainOcid;
             ExternalId = externalId;
             FirstNameDisallowed = firstNameDisallowed;

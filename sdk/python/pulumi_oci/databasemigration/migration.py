@@ -849,6 +849,7 @@ class Migration(pulumi.CustomResource):
             exclude_objects=[oci.database_migration.MigrationExcludeObjectArgs(
                 object=var["migration_exclude_objects_object"],
                 owner=var["migration_exclude_objects_owner"],
+                is_omit_excluded_table_from_replication=var["migration_exclude_objects_is_omit_excluded_table_from_replication"],
                 type=var["migration_exclude_objects_type"],
             )],
             freeform_tags={
@@ -893,6 +894,7 @@ class Migration(pulumi.CustomResource):
             include_objects=[oci.database_migration.MigrationIncludeObjectArgs(
                 object=var["migration_include_objects_object"],
                 owner=var["migration_include_objects_owner"],
+                is_omit_excluded_table_from_replication=var["migration_include_objects_is_omit_excluded_table_from_replication"],
                 type=var["migration_include_objects_type"],
             )],
             source_container_database_connection_id=oci_database_migration_connection["test_connection"]["id"],
@@ -1018,6 +1020,7 @@ class Migration(pulumi.CustomResource):
             exclude_objects=[oci.database_migration.MigrationExcludeObjectArgs(
                 object=var["migration_exclude_objects_object"],
                 owner=var["migration_exclude_objects_owner"],
+                is_omit_excluded_table_from_replication=var["migration_exclude_objects_is_omit_excluded_table_from_replication"],
                 type=var["migration_exclude_objects_type"],
             )],
             freeform_tags={
@@ -1062,6 +1065,7 @@ class Migration(pulumi.CustomResource):
             include_objects=[oci.database_migration.MigrationIncludeObjectArgs(
                 object=var["migration_include_objects_object"],
                 owner=var["migration_include_objects_owner"],
+                is_omit_excluded_table_from_replication=var["migration_include_objects_is_omit_excluded_table_from_replication"],
                 type=var["migration_include_objects_type"],
             )],
             source_container_database_connection_id=oci_database_migration_connection["test_connection"]["id"],

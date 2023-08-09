@@ -88,6 +88,8 @@ type OperatorControlAssignment struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance pulumi.BoolOutput `pulumi:"isAutoApproveDuringMaintenance"`
+	// Whether the assignment is a default assignment.
+	IsDefaultAssignment pulumi.BoolOutput `pulumi:"isDefaultAssignment"`
 	// (Updatable) If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways pulumi.BoolOutput `pulumi:"isEnforcedAlways"`
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
@@ -196,6 +198,8 @@ type operatorControlAssignmentState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance *bool `pulumi:"isAutoApproveDuringMaintenance"`
+	// Whether the assignment is a default assignment.
+	IsDefaultAssignment *bool `pulumi:"isDefaultAssignment"`
 	// (Updatable) If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways *bool `pulumi:"isEnforcedAlways"`
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
@@ -254,6 +258,8 @@ type OperatorControlAssignmentState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance pulumi.BoolPtrInput
+	// Whether the assignment is a default assignment.
+	IsDefaultAssignment pulumi.BoolPtrInput
 	// (Updatable) If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways pulumi.BoolPtrInput
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
@@ -508,6 +514,11 @@ func (o OperatorControlAssignmentOutput) FreeformTags() pulumi.MapOutput {
 // (Updatable) The boolean if true would autoApprove during maintenance.
 func (o OperatorControlAssignmentOutput) IsAutoApproveDuringMaintenance() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolOutput { return v.IsAutoApproveDuringMaintenance }).(pulumi.BoolOutput)
+}
+
+// Whether the assignment is a default assignment.
+func (o OperatorControlAssignmentOutput) IsDefaultAssignment() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolOutput { return v.IsDefaultAssignment }).(pulumi.BoolOutput)
 }
 
 // (Updatable) If set, then the target resource is always governed by the operator control.

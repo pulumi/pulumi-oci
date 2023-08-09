@@ -28,7 +28,7 @@ public final class GetDomainsUserDbCredentialResult {
      */
     private String compartmentOcid;
     /**
-     * @return The db password of the user
+     * @return The user&#39;s database password.
      * 
      */
     private String dbPassword;
@@ -48,12 +48,12 @@ public final class GetDomainsUserDbCredentialResult {
      */
     private String domainOcid;
     /**
-     * @return Indicates that the db password has expired
+     * @return Indicates that the database password has expired.
      * 
      */
     private Boolean expired;
     /**
-     * @return User credential expires on
+     * @return When the user credential expires.
      * 
      */
     private String expiresOn;
@@ -84,7 +84,7 @@ public final class GetDomainsUserDbCredentialResult {
      */
     private List<String> idcsPreventedOperations;
     /**
-     * @return A DateTime that specifies the date and time when the current db password was set
+     * @return A DateTime that specifies the date and time when the current database password was set.
      * 
      */
     private String lastSetDate;
@@ -94,28 +94,28 @@ public final class GetDomainsUserDbCredentialResult {
      */
     private List<GetDomainsUserDbCredentialMeta> metas;
     /**
-     * @return The db password of the user with mixed salt
+     * @return The user&#39;s database password with mixed salt.
      * 
      */
     private String mixedDbPassword;
     /**
-     * @return The mixed salt of the password
+     * @return The mixed salt of the password.
      * 
      */
     private String mixedSalt;
     /**
-     * @return User name
+     * @return The username.
      * 
      */
     private String name;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
     private @Nullable String resourceTypeSchemaVersion;
     /**
-     * @return The salt of the password
+     * @return The salt of the password.
      * 
      */
     private String salt;
@@ -146,7 +146,7 @@ public final class GetDomainsUserDbCredentialResult {
     private List<GetDomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     private String userDbCredentialId;
     /**
-     * @return User linked to db credential
+     * @return The user linked to the database credential.
      * 
      */
     private List<GetDomainsUserDbCredentialUser> users;
@@ -169,7 +169,7 @@ public final class GetDomainsUserDbCredentialResult {
         return this.compartmentOcid;
     }
     /**
-     * @return The db password of the user
+     * @return The user&#39;s database password.
      * 
      */
     public String dbPassword() {
@@ -197,14 +197,14 @@ public final class GetDomainsUserDbCredentialResult {
         return this.domainOcid;
     }
     /**
-     * @return Indicates that the db password has expired
+     * @return Indicates that the database password has expired.
      * 
      */
     public Boolean expired() {
         return this.expired;
     }
     /**
-     * @return User credential expires on
+     * @return When the user credential expires.
      * 
      */
     public String expiresOn() {
@@ -249,7 +249,7 @@ public final class GetDomainsUserDbCredentialResult {
         return this.idcsPreventedOperations;
     }
     /**
-     * @return A DateTime that specifies the date and time when the current db password was set
+     * @return A DateTime that specifies the date and time when the current database password was set.
      * 
      */
     public String lastSetDate() {
@@ -263,28 +263,28 @@ public final class GetDomainsUserDbCredentialResult {
         return this.metas;
     }
     /**
-     * @return The db password of the user with mixed salt
+     * @return The user&#39;s database password with mixed salt.
      * 
      */
     public String mixedDbPassword() {
         return this.mixedDbPassword;
     }
     /**
-     * @return The mixed salt of the password
+     * @return The mixed salt of the password.
      * 
      */
     public String mixedSalt() {
         return this.mixedSalt;
     }
     /**
-     * @return User name
+     * @return The username.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -294,7 +294,7 @@ public final class GetDomainsUserDbCredentialResult {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
     }
     /**
-     * @return The salt of the password
+     * @return The salt of the password.
      * 
      */
     public String salt() {
@@ -339,7 +339,7 @@ public final class GetDomainsUserDbCredentialResult {
         return this.userDbCredentialId;
     }
     /**
-     * @return User linked to db credential
+     * @return The user linked to the database credential.
      * 
      */
     public List<GetDomainsUserDbCredentialUser> users() {

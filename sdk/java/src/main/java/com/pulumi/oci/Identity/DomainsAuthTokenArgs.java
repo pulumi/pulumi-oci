@@ -98,7 +98,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * User credential expires on
+     * When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -117,7 +117,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
     private @Nullable Output<String> expiresOn;
 
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      * **Added In:** 2109090424
      * 
@@ -152,7 +152,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -169,7 +169,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -237,7 +237,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * User credential status
+     * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -256,7 +256,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
     private @Nullable Output<String> status;
 
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
      * 
@@ -326,7 +326,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * User linked to auth token
+     * The user linked to the Auth token.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -343,7 +343,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
     private @Nullable Output<DomainsAuthTokenUserArgs> user;
 
     /**
-     * @return User linked to auth token
+     * @return The user linked to the Auth token.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -509,7 +509,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user&#39;s credential expire.
          * 
          * **Added In:** 2109090424
          * 
@@ -532,7 +532,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user&#39;s credential expire.
          * 
          * **Added In:** 2109090424
          * 
@@ -575,7 +575,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -596,7 +596,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -698,7 +698,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status User credential status
+         * @param status The user&#39;s credential status.
          * 
          * **Added In:** 2109090424
          * 
@@ -721,7 +721,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status User credential status
+         * @param status The user&#39;s credential status.
          * 
          * **Added In:** 2109090424
          * 
@@ -825,7 +825,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param user User linked to auth token
+         * @param user The user linked to the Auth token.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -846,7 +846,7 @@ public final class DomainsAuthTokenArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param user User linked to auth token
+         * @param user The user linked to the Auth token.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false

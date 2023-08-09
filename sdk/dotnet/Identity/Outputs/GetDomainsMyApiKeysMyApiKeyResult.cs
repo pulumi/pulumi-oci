@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsMyApiKeysMyApiKeyMetaResult> Metas;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         /// <summary>
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string TenancyOcid;
         /// <summary>
-        /// User linked to api key
+        /// The user linked to the API key.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsMyApiKeysMyApiKeyUserResult> Users;
 

@@ -201,7 +201,7 @@ def get_domains_smtp_credentials(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search smtp credentials
+    Search for SMTP credentials.
 
     ## Example Usage
 
@@ -279,7 +279,7 @@ def get_domains_smtp_credentials_output(attribute_sets: Optional[pulumi.Input[Op
     """
     This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search smtp credentials
+    Search for SMTP credentials.
 
     ## Example Usage
 

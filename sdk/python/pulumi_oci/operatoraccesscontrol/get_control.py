@@ -21,7 +21,7 @@ class GetControlResult:
     """
     A collection of values returned by getControl.
     """
-    def __init__(__self__, approval_required_op_action_lists=None, approver_groups_lists=None, approvers_lists=None, compartment_id=None, defined_tags=None, description=None, email_id_lists=None, freeform_tags=None, id=None, is_fully_pre_approved=None, last_modified_info=None, operator_control_id=None, operator_control_name=None, pre_approved_op_action_lists=None, resource_type=None, state=None, system_message=None, time_of_creation=None, time_of_deletion=None, time_of_modification=None):
+    def __init__(__self__, approval_required_op_action_lists=None, approver_groups_lists=None, approvers_lists=None, compartment_id=None, defined_tags=None, description=None, email_id_lists=None, freeform_tags=None, id=None, is_default_operator_control=None, is_fully_pre_approved=None, last_modified_info=None, operator_control_id=None, operator_control_name=None, pre_approved_op_action_lists=None, resource_type=None, state=None, system_message=None, time_of_creation=None, time_of_deletion=None, time_of_modification=None):
         if approval_required_op_action_lists and not isinstance(approval_required_op_action_lists, list):
             raise TypeError("Expected argument 'approval_required_op_action_lists' to be a list")
         pulumi.set(__self__, "approval_required_op_action_lists", approval_required_op_action_lists)
@@ -49,6 +49,9 @@ class GetControlResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_default_operator_control and not isinstance(is_default_operator_control, bool):
+            raise TypeError("Expected argument 'is_default_operator_control' to be a bool")
+        pulumi.set(__self__, "is_default_operator_control", is_default_operator_control)
         if is_fully_pre_approved and not isinstance(is_fully_pre_approved, bool):
             raise TypeError("Expected argument 'is_fully_pre_approved' to be a bool")
         pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
@@ -156,6 +159,14 @@ class GetControlResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isDefaultOperatorControl")
+    def is_default_operator_control(self) -> bool:
+        """
+        Whether the operator control is a default Operator Control.
+        """
+        return pulumi.get(self, "is_default_operator_control")
+
+    @property
     @pulumi.getter(name="isFullyPreApproved")
     def is_fully_pre_approved(self) -> bool:
         """
@@ -256,6 +267,7 @@ class AwaitableGetControlResult(GetControlResult):
             email_id_lists=self.email_id_lists,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_default_operator_control=self.is_default_operator_control,
             is_fully_pre_approved=self.is_fully_pre_approved,
             last_modified_info=self.last_modified_info,
             operator_control_id=self.operator_control_id,
@@ -303,6 +315,7 @@ def get_control(operator_control_id: Optional[str] = None,
         email_id_lists=pulumi.get(__ret__, 'email_id_lists'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_default_operator_control=pulumi.get(__ret__, 'is_default_operator_control'),
         is_fully_pre_approved=pulumi.get(__ret__, 'is_fully_pre_approved'),
         last_modified_info=pulumi.get(__ret__, 'last_modified_info'),
         operator_control_id=pulumi.get(__ret__, 'operator_control_id'),

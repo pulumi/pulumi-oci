@@ -98,7 +98,7 @@ public final class GetDomainsApiKeysApiKey {
      */
     private List<GetDomainsApiKeysApiKeyMeta> metas;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
@@ -128,7 +128,7 @@ public final class GetDomainsApiKeysApiKey {
      */
     private List<GetDomainsApiKeysApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     /**
-     * @return User linked to api key
+     * @return The user linked to the API key.
      * 
      */
     private List<GetDomainsApiKeysApiKeyUser> users;
@@ -247,7 +247,7 @@ public final class GetDomainsApiKeysApiKey {
         return this.metas;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -289,7 +289,7 @@ public final class GetDomainsApiKeysApiKey {
         return this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     }
     /**
-     * @return User linked to api key
+     * @return The user linked to the API key.
      * 
      */
     public List<GetDomainsApiKeysApiKeyUser> users() {

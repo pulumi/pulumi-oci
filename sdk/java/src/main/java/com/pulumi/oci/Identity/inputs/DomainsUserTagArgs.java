@@ -14,7 +14,7 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
     public static final DomainsUserTagArgs Empty = new DomainsUserTagArgs();
 
     /**
-     * (Updatable) The value of of the User&#39;s api key.
+     * (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 
@@ -33,7 +33,7 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
     private Output<String> key;
 
     /**
-     * @return (Updatable) The value of of the User&#39;s api key.
+     * @return (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 
@@ -117,7 +117,7 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key (Updatable) The value of of the User&#39;s api key.
+         * @param key (Updatable) The user&#39;s API key value.
          * 
          * **Added In:** 2106240046
          * 
@@ -140,7 +140,7 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key (Updatable) The value of of the User&#39;s api key.
+         * @param key (Updatable) The user&#39;s API key value.
          * 
          * **Added In:** 2106240046
          * 

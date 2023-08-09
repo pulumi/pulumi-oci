@@ -34,7 +34,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * The db password of the user
+     * The user&#39;s database password.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -47,7 +47,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
     private Output<String> dbPassword;
 
     /**
-     * @return The db password of the user
+     * @return The user&#39;s database password.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -94,7 +94,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * User credential expires on
+     * When the user credential expires.
      * 
      * **Added In:** 2109090424
      * 
@@ -113,7 +113,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> expiresOn;
 
     /**
-     * @return User credential expires on
+     * @return When the user credential expires.
      * 
      * **Added In:** 2109090424
      * 
@@ -148,7 +148,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -165,7 +165,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -307,7 +307,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * User linked to db credential
+     * The user linked to the database credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -325,7 +325,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
     private @Nullable Output<DomainsMyUserDbCredentialUserArgs> user;
 
     /**
-     * @return User linked to db credential
+     * @return The user linked to the database credential.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -399,7 +399,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dbPassword The db password of the user
+         * @param dbPassword The user&#39;s database password.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -416,7 +416,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dbPassword The db password of the user
+         * @param dbPassword The user&#39;s database password.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -471,7 +471,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user credential expires.
          * 
          * **Added In:** 2109090424
          * 
@@ -494,7 +494,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param expiresOn User credential expires on
+         * @param expiresOn When the user credential expires.
          * 
          * **Added In:** 2109090424
          * 
@@ -537,7 +537,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -558,7 +558,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -766,7 +766,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param user User linked to db credential
+         * @param user The user linked to the database credential.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -788,7 +788,7 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param user User linked to db credential
+         * @param user The user linked to the database credential.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false

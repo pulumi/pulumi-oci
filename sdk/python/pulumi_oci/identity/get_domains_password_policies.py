@@ -201,7 +201,7 @@ def get_domains_password_policies(attribute_sets: Optional[Sequence[str]] = None
     """
     This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Password Policies
+    Search for password policies.
 
     ## Example Usage
 
@@ -279,7 +279,7 @@ def get_domains_password_policies_output(attribute_sets: Optional[pulumi.Input[O
     """
     This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Password Policies
+    Search for password policies.
 
     ## Example Usage
 

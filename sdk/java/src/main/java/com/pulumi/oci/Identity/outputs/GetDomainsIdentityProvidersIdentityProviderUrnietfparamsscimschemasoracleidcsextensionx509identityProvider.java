@@ -38,6 +38,16 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
      */
     private Integer crlReloadDuration;
     /**
+     * @return Set to true to enable EKU Validation
+     * 
+     */
+    private Boolean ekuValidationEnabled;
+    /**
+     * @return List of EKU which needs to be validated
+     * 
+     */
+    private List<String> ekuValues;
+    /**
      * @return Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
      * 
      */
@@ -125,6 +135,20 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
         return this.crlReloadDuration;
     }
     /**
+     * @return Set to true to enable EKU Validation
+     * 
+     */
+    public Boolean ekuValidationEnabled() {
+        return this.ekuValidationEnabled;
+    }
+    /**
+     * @return List of EKU which needs to be validated
+     * 
+     */
+    public List<String> ekuValues() {
+        return this.ekuValues;
+    }
+    /**
      * @return Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
      * 
      */
@@ -209,6 +233,8 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
         private Boolean crlEnabled;
         private String crlLocation;
         private Integer crlReloadDuration;
+        private Boolean ekuValidationEnabled;
+        private List<String> ekuValues;
         private Boolean ocspAllowUnknownResponseStatus;
         private Boolean ocspEnableSignedResponse;
         private Boolean ocspEnabled;
@@ -227,6 +253,8 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
     	      this.crlEnabled = defaults.crlEnabled;
     	      this.crlLocation = defaults.crlLocation;
     	      this.crlReloadDuration = defaults.crlReloadDuration;
+    	      this.ekuValidationEnabled = defaults.ekuValidationEnabled;
+    	      this.ekuValues = defaults.ekuValues;
     	      this.ocspAllowUnknownResponseStatus = defaults.ocspAllowUnknownResponseStatus;
     	      this.ocspEnableSignedResponse = defaults.ocspEnableSignedResponse;
     	      this.ocspEnabled = defaults.ocspEnabled;
@@ -263,6 +291,19 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
         public Builder crlReloadDuration(Integer crlReloadDuration) {
             this.crlReloadDuration = Objects.requireNonNull(crlReloadDuration);
             return this;
+        }
+        @CustomType.Setter
+        public Builder ekuValidationEnabled(Boolean ekuValidationEnabled) {
+            this.ekuValidationEnabled = Objects.requireNonNull(ekuValidationEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ekuValues(List<String> ekuValues) {
+            this.ekuValues = Objects.requireNonNull(ekuValues);
+            return this;
+        }
+        public Builder ekuValues(String... ekuValues) {
+            return ekuValues(List.of(ekuValues));
         }
         @CustomType.Setter
         public Builder ocspAllowUnknownResponseStatus(Boolean ocspAllowUnknownResponseStatus) {
@@ -327,6 +368,8 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
             o.crlEnabled = crlEnabled;
             o.crlLocation = crlLocation;
             o.crlReloadDuration = crlReloadDuration;
+            o.ekuValidationEnabled = ekuValidationEnabled;
+            o.ekuValues = ekuValues;
             o.ocspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
             o.ocspEnableSignedResponse = ocspEnableSignedResponse;
             o.ocspEnabled = ocspEnabled;

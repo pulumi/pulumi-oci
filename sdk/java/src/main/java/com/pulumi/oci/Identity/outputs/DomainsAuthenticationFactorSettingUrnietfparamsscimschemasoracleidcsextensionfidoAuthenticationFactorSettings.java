@@ -95,7 +95,7 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
      */
     private String authenticatorSelectionUserVerification;
     /**
-     * @return (Updatable) Number of domain levels IDCS should use for origin comparision
+     * @return (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * 
      * **Added In:** 2109020413
      * 
@@ -255,7 +255,7 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         return this.authenticatorSelectionUserVerification;
     }
     /**
-     * @return (Updatable) Number of domain levels IDCS should use for origin comparision
+     * @return (Updatable) Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * 
      * **Added In:** 2109020413
      * 

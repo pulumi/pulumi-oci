@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Add a user's auth token
+ * Create a user's Auth token.
  *
  * ## Import
  *
@@ -115,7 +115,7 @@ export class DomainsAuthToken extends pulumi.CustomResource {
      */
     public /*out*/ readonly domainOcid!: pulumi.Output<string>;
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * **Added In:** 2109090424
      *
@@ -200,7 +200,7 @@ export class DomainsAuthToken extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsAuthTokenMeta[]>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -232,7 +232,7 @@ export class DomainsAuthToken extends pulumi.CustomResource {
      */
     public readonly schemas!: pulumi.Output<string[]>;
     /**
-     * User credential status
+     * The user's credential status.
      *
      * **Added In:** 2109090424
      *
@@ -280,7 +280,7 @@ export class DomainsAuthToken extends pulumi.CustomResource {
      */
     public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to auth token
+     * The user linked to the Auth token.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -437,7 +437,7 @@ export interface DomainsAuthTokenState {
      */
     domainOcid?: pulumi.Input<string>;
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * **Added In:** 2109090424
      *
@@ -522,7 +522,7 @@ export interface DomainsAuthTokenState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthTokenMeta>[]>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -554,7 +554,7 @@ export interface DomainsAuthTokenState {
      */
     schemas?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * User credential status
+     * The user's credential status.
      *
      * **Added In:** 2109090424
      *
@@ -602,7 +602,7 @@ export interface DomainsAuthTokenState {
      */
     urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to auth token
+     * The user linked to the Auth token.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -647,7 +647,7 @@ export interface DomainsAuthTokenArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * **Added In:** 2109090424
      *
@@ -667,7 +667,7 @@ export interface DomainsAuthTokenArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -699,7 +699,7 @@ export interface DomainsAuthTokenArgs {
      */
     schemas: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * User credential status
+     * The user's credential status.
      *
      * **Added In:** 2109090424
      *
@@ -733,7 +733,7 @@ export interface DomainsAuthTokenArgs {
      */
     urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to auth token
+     * The user linked to the Auth token.
      *
      * **SCIM++ Properties:**
      * * caseExact: false

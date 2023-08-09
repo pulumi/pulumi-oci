@@ -16,7 +16,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
     public static final DomainsMyAuthTokenUserArgs Empty = new DomainsMyAuthTokenUserArgs();
 
     /**
-     * (Updatable) User display name
+     * (Updatable) The user&#39;s display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -33,7 +33,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) User display name
+     * @return (Updatable) The user&#39;s display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -51,7 +51,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) User name
+     * (Updatable) The username.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -68,7 +68,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) User name
+     * @return (Updatable) The username.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -86,7 +86,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * User&#39;s ocid
+     * The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -103,7 +103,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -156,7 +156,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * User&#39;s id
+     * The user&#39;s ID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -176,7 +176,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
     private @Nullable Output<String> value;
 
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -225,7 +225,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param display (Updatable) User display name
+         * @param display (Updatable) The user&#39;s display name.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -246,7 +246,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param display (Updatable) User display name
+         * @param display (Updatable) The user&#39;s display name.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -266,7 +266,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param name (Updatable) User name
+         * @param name (Updatable) The username.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -287,7 +287,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param name (Updatable) User name
+         * @param name (Updatable) The username.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -307,7 +307,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -328,7 +328,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The user&#39;s OCID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -389,7 +389,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The user&#39;s ID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -413,7 +413,7 @@ public final class DomainsMyAuthTokenUserArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The user&#39;s ID.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true

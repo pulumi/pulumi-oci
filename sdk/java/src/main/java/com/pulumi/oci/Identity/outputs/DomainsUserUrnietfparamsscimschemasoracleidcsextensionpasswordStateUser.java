@@ -60,7 +60,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
      */
     private @Nullable Boolean cantExpire;
     /**
-     * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      * **Added In:** 20.1.3
      * 
@@ -191,7 +191,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         return Optional.ofNullable(this.cantExpire);
     }
     /**
-     * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * @return (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
      * 
      * **Added In:** 20.1.3
      * 

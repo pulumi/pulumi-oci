@@ -16,12 +16,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser {
     /**
-     * @return A list of api keys corresponding to user.
+     * @return A list of API keys corresponding to user.
      * 
      */
     private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys;
     /**
-     * @return A list of auth tokens corresponding to user.
+     * @return A list of Auth tokens corresponding to user.
      * 
      */
     private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens;
@@ -31,31 +31,31 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      */
     private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys;
     /**
-     * @return A list of db credentials corresponding to user.
+     * @return A list of database credentials corresponding to user.
      * 
      */
     private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials;
     /**
-     * @return A list of oauth2 client credentials corresponding to user.
+     * @return A list of OAuth2 client credentials corresponding to a user.
      * 
      */
     private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials;
     /**
-     * @return A list of smtp credentials corresponding to user.
+     * @return A list of SMTP credentials corresponding to user.
      * 
      */
     private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser() {}
     /**
-     * @return A list of api keys corresponding to user.
+     * @return A list of API keys corresponding to user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys() {
         return this.apiKeys;
     }
     /**
-     * @return A list of auth tokens corresponding to user.
+     * @return A list of Auth tokens corresponding to user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens() {
@@ -69,21 +69,21 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         return this.customerSecretKeys;
     }
     /**
-     * @return A list of db credentials corresponding to user.
+     * @return A list of database credentials corresponding to user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials() {
         return this.dbCredentials;
     }
     /**
-     * @return A list of oauth2 client credentials corresponding to user.
+     * @return A list of OAuth2 client credentials corresponding to a user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials() {
         return this.oAuth2clientCredentials;
     }
     /**
-     * @return A list of smtp credentials corresponding to user.
+     * @return A list of SMTP credentials corresponding to user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials() {

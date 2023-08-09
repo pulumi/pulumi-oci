@@ -10,12 +10,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion {
     /**
-     * @return Answer provided by an user for a security question.
+     * @return The answer provided by a user for a security question.
      * 
      */
     private String answer;
     /**
-     * @return Hint for an answer given by user while setting up Security Question.
+     * @return The hint for an answer that&#39;s given by user when setting up a security question.
      * 
      */
     private String hintText;
@@ -32,14 +32,14 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion() {}
     /**
-     * @return Answer provided by an user for a security question.
+     * @return The answer provided by a user for a security question.
      * 
      */
     public String answer() {
         return this.answer;
     }
     /**
-     * @return Hint for an answer given by user while setting up Security Question.
+     * @return The hint for an answer that&#39;s given by user when setting up a security question.
      * 
      */
     public String hintText() {

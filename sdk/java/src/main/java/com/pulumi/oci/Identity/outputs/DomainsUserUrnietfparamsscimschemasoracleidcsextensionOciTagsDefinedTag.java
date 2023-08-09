@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag {
     /**
-     * @return (Updatable) The value of of the User&#39;s api key.
+     * @return (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 
@@ -62,7 +62,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag() {}
     /**
-     * @return (Updatable) The value of of the User&#39;s api key.
+     * @return (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Group - The Group search and get operations on users/members will throw an exception if it has more than 10K members, to avoid the exception use the pagination filter to get or search group members
+ * Get a group. <b>Important:</b> The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
  *
  * ## Example Usage
  *
@@ -86,7 +86,7 @@ export interface GetDomainsGroupResult {
      */
     readonly deleteInProgress: boolean;
     /**
-     * Group display name
+     * The Group display name.
      */
     readonly displayName: string;
     /**
@@ -120,7 +120,7 @@ export interface GetDomainsGroupResult {
      */
     readonly idcsPreventedOperations: string[];
     /**
-     * Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      */
     readonly members: outputs.Identity.GetDomainsGroupMember[];
     /**
@@ -128,7 +128,7 @@ export interface GetDomainsGroupResult {
      */
     readonly metas: outputs.Identity.GetDomainsGroupMeta[];
     /**
-     * A human readable name for Group as defined by the Service Consumer
+     * A human readable name for the group as defined by the Service Consumer.
      */
     readonly nonUniqueDisplayName: string;
     /**
@@ -161,7 +161,7 @@ export interface GetDomainsGroupResult {
      */
     readonly urnietfparamsscimschemasoracleidcsextensiondynamicGroups: outputs.Identity.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup[];
     /**
-     * Idcs Group
+     * Oracle Identity Cloud Service Group
      */
     readonly urnietfparamsscimschemasoracleidcsextensiongroupGroups: outputs.Identity.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup[];
     /**
@@ -176,7 +176,7 @@ export interface GetDomainsGroupResult {
 /**
  * This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Group - The Group search and get operations on users/members will throw an exception if it has more than 10K members, to avoid the exception use the pagination filter to get or search group members
+ * Get a group. <b>Important:</b> The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
  *
  * ## Example Usage
  *

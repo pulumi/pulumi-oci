@@ -37,8 +37,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Domain{}
 	case "oci:Identity/domainReplicationToRegion:DomainReplicationToRegion":
 		r = &DomainReplicationToRegion{}
+	case "oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting":
+		r = &DomainsAccountRecoverySetting{}
 	case "oci:Identity/domainsApiKey:DomainsApiKey":
 		r = &DomainsApiKey{}
+	case "oci:Identity/domainsApp:DomainsApp":
+		r = &DomainsApp{}
+	case "oci:Identity/domainsAppRole:DomainsAppRole":
+		r = &DomainsAppRole{}
 	case "oci:Identity/domainsAuthToken:DomainsAuthToken":
 		r = &DomainsAuthToken{}
 	case "oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting":
@@ -47,10 +53,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DomainsCustomerSecretKey{}
 	case "oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup":
 		r = &DomainsDynamicResourceGroup{}
+	case "oci:Identity/domainsGrant:DomainsGrant":
+		r = &DomainsGrant{}
 	case "oci:Identity/domainsGroup:DomainsGroup":
 		r = &DomainsGroup{}
 	case "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider":
 		r = &DomainsIdentityProvider{}
+	case "oci:Identity/domainsIdentitySetting:DomainsIdentitySetting":
+		r = &DomainsIdentitySetting{}
 	case "oci:Identity/domainsKmsiSetting:DomainsKmsiSetting":
 		r = &DomainsKmsiSetting{}
 	case "oci:Identity/domainsMyApiKey:DomainsMyApiKey":
@@ -61,6 +71,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DomainsMyCustomerSecretKey{}
 	case "oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential":
 		r = &DomainsMyOauth2clientCredential{}
+	case "oci:Identity/domainsMyRequest:DomainsMyRequest":
+		r = &DomainsMyRequest{}
 	case "oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential":
 		r = &DomainsMySmtpCredential{}
 	case "oci:Identity/domainsMySupportAccount:DomainsMySupportAccount":
@@ -71,6 +83,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DomainsOauth2clientCredential{}
 	case "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy":
 		r = &DomainsPasswordPolicy{}
+	case "oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion":
+		r = &DomainsSecurityQuestion{}
+	case "oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting":
+		r = &DomainsSecurityQuestionSetting{}
 	case "oci:Identity/domainsSmtpCredential:DomainsSmtpCredential":
 		r = &DomainsSmtpCredential{}
 	case "oci:Identity/domainsUser:DomainsUser":
@@ -162,7 +178,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Identity/domainsAccountRecoverySetting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Identity/domainsApiKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsApp",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsAppRole",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -187,12 +218,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Identity/domainsGrant",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Identity/domainsGroup",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Identity/domainsIdentityProvider",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsIdentitySetting",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -222,6 +263,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Identity/domainsMyRequest",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Identity/domainsMySmtpCredential",
 		&module{version},
 	)
@@ -243,6 +289,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Identity/domainsPasswordPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsSecurityQuestion",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsSecurityQuestionSetting",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

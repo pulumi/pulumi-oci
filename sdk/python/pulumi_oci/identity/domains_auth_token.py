@@ -56,7 +56,7 @@ class DomainsAuthTokenArgs:
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credential expire.
                
                **Added In:** 2109090424
                
@@ -69,7 +69,7 @@ class DomainsAuthTokenArgs:
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -81,7 +81,7 @@ class DomainsAuthTokenArgs:
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -106,7 +106,7 @@ class DomainsAuthTokenArgs:
                * type: complex
                * uniqueness: none
         :param pulumi.Input['DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input['DomainsAuthTokenUserArgs'] user: User linked to auth token
+        :param pulumi.Input['DomainsAuthTokenUserArgs'] user: The user linked to the Auth token.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -238,7 +238,7 @@ class DomainsAuthTokenArgs:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 
@@ -262,7 +262,7 @@ class DomainsAuthTokenArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -296,7 +296,7 @@ class DomainsAuthTokenArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -354,7 +354,7 @@ class DomainsAuthTokenArgs:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsAuthTokenUserArgs']]:
         """
-        User linked to auth token
+        The user linked to the Auth token.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -446,7 +446,7 @@ class _DomainsAuthTokenState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credential expire.
                
                **Added In:** 2109090424
                
@@ -510,7 +510,7 @@ class _DomainsAuthTokenState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -533,7 +533,7 @@ class _DomainsAuthTokenState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -569,7 +569,7 @@ class _DomainsAuthTokenState:
                * type: string
                * uniqueness: none
         :param pulumi.Input['DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input['DomainsAuthTokenUserArgs'] user: User linked to auth token
+        :param pulumi.Input['DomainsAuthTokenUserArgs'] user: The user linked to the Auth token.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -753,7 +753,7 @@ class _DomainsAuthTokenState:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 
@@ -894,7 +894,7 @@ class _DomainsAuthTokenState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -950,7 +950,7 @@ class _DomainsAuthTokenState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -1030,7 +1030,7 @@ class _DomainsAuthTokenState:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsAuthTokenUserArgs']]:
         """
-        User linked to auth token
+        The user linked to the Auth token.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -1071,7 +1071,7 @@ class DomainsAuthToken(pulumi.CustomResource):
         """
         This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's auth token
+        Create a user's Auth token.
 
         ## Import
 
@@ -1096,7 +1096,7 @@ class DomainsAuthToken(pulumi.CustomResource):
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credential expire.
                
                **Added In:** 2109090424
                
@@ -1110,7 +1110,7 @@ class DomainsAuthToken(pulumi.CustomResource):
                * type: dateTime
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1133,7 +1133,7 @@ class DomainsAuthToken(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -1158,7 +1158,7 @@ class DomainsAuthToken(pulumi.CustomResource):
                * type: complex
                * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[pulumi.InputType['DomainsAuthTokenUserArgs']] user: User linked to auth token
+        :param pulumi.Input[pulumi.InputType['DomainsAuthTokenUserArgs']] user: The user linked to the Auth token.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1179,7 +1179,7 @@ class DomainsAuthToken(pulumi.CustomResource):
         """
         This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's auth token
+        Create a user's Auth token.
 
         ## Import
 
@@ -1337,7 +1337,7 @@ class DomainsAuthToken(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credential expire.
                
                **Added In:** 2109090424
                
@@ -1401,7 +1401,7 @@ class DomainsAuthToken(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1424,7 +1424,7 @@ class DomainsAuthToken(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -1460,7 +1460,7 @@ class DomainsAuthToken(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[pulumi.InputType['DomainsAuthTokenUserArgs']] user: User linked to auth token
+        :param pulumi.Input[pulumi.InputType['DomainsAuthTokenUserArgs']] user: The user linked to the Auth token.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1599,7 +1599,7 @@ class DomainsAuthToken(pulumi.CustomResource):
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> pulumi.Output[str]:
         """
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 
@@ -1712,7 +1712,7 @@ class DomainsAuthToken(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1756,7 +1756,7 @@ class DomainsAuthToken(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -1820,7 +1820,7 @@ class DomainsAuthToken(pulumi.CustomResource):
     @pulumi.getter
     def user(self) -> pulumi.Output['outputs.DomainsAuthTokenUser']:
         """
-        User linked to auth token
+        The user linked to the Auth token.
 
         **SCIM++ Properties:**
         * caseExact: false

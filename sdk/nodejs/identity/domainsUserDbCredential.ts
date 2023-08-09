@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Set a User's DbCredential
+ * Create a user's database (DB) credentials.
  *
  * ## Import
  *
@@ -74,7 +74,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
     /**
-     * The db password of the user
+     * The user's database password.
      *
      * **SCIM++ Properties:**
      * * type: string
@@ -125,7 +125,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly domainOcid!: pulumi.Output<string>;
     /**
-     * (Updatable) Indicates that the db password has expired
+     * (Updatable) Indicates that the database password has expired.
      *
      * **SCIM++ Properties:**
      * * type: boolean
@@ -134,7 +134,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly expired!: pulumi.Output<boolean>;
     /**
-     * User credential expires on
+     * When the user credential expires.
      *
      * **Added In:** 2109090424
      *
@@ -205,7 +205,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
     /**
-     * (Updatable) A DateTime that specifies the date and time when the current db password was set
+     * (Updatable) A DateTime that specifies the date and time when the current database password was set.
      *
      * **SCIM++ Properties:**
      * * type: dateTime
@@ -228,7 +228,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialMeta[]>;
     /**
-     * (Updatable) The db password of the user with mixed salt
+     * (Updatable) The user's database password with mixed salt.
      *
      * **SCIM++ Properties:**
      * * type: string
@@ -238,7 +238,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly mixedDbPassword!: pulumi.Output<string>;
     /**
-     * (Updatable) The mixed salt of the password
+     * (Updatable) The mixed salt of the password.
      *
      * **SCIM++ Properties:**
      * * type: string
@@ -248,7 +248,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly mixedSalt!: pulumi.Output<string>;
     /**
-     * (Updatable) User name
+     * (Updatable) The username.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -262,7 +262,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly name!: pulumi.Output<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -280,7 +280,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The salt of the password
+     * (Updatable) The salt of the password.
      *
      * **SCIM++ Properties:**
      * * type: string
@@ -352,7 +352,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to db credential
+     * The user linked to the database credential.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -488,7 +488,7 @@ export interface DomainsUserDbCredentialState {
      */
     compartmentOcid?: pulumi.Input<string>;
     /**
-     * The db password of the user
+     * The user's database password.
      *
      * **SCIM++ Properties:**
      * * type: string
@@ -539,7 +539,7 @@ export interface DomainsUserDbCredentialState {
      */
     domainOcid?: pulumi.Input<string>;
     /**
-     * (Updatable) Indicates that the db password has expired
+     * (Updatable) Indicates that the database password has expired.
      *
      * **SCIM++ Properties:**
      * * type: boolean
@@ -548,7 +548,7 @@ export interface DomainsUserDbCredentialState {
      */
     expired?: pulumi.Input<boolean>;
     /**
-     * User credential expires on
+     * When the user credential expires.
      *
      * **Added In:** 2109090424
      *
@@ -619,7 +619,7 @@ export interface DomainsUserDbCredentialState {
      */
     idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) A DateTime that specifies the date and time when the current db password was set
+     * (Updatable) A DateTime that specifies the date and time when the current database password was set.
      *
      * **SCIM++ Properties:**
      * * type: dateTime
@@ -642,7 +642,7 @@ export interface DomainsUserDbCredentialState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialMeta>[]>;
     /**
-     * (Updatable) The db password of the user with mixed salt
+     * (Updatable) The user's database password with mixed salt.
      *
      * **SCIM++ Properties:**
      * * type: string
@@ -652,7 +652,7 @@ export interface DomainsUserDbCredentialState {
      */
     mixedDbPassword?: pulumi.Input<string>;
     /**
-     * (Updatable) The mixed salt of the password
+     * (Updatable) The mixed salt of the password.
      *
      * **SCIM++ Properties:**
      * * type: string
@@ -662,7 +662,7 @@ export interface DomainsUserDbCredentialState {
      */
     mixedSalt?: pulumi.Input<string>;
     /**
-     * (Updatable) User name
+     * (Updatable) The username.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -676,7 +676,7 @@ export interface DomainsUserDbCredentialState {
      */
     name?: pulumi.Input<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -694,7 +694,7 @@ export interface DomainsUserDbCredentialState {
      */
     resourceTypeSchemaVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) The salt of the password
+     * (Updatable) The salt of the password.
      *
      * **SCIM++ Properties:**
      * * type: string
@@ -766,7 +766,7 @@ export interface DomainsUserDbCredentialState {
      */
     urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to db credential
+     * The user linked to the database credential.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -799,7 +799,7 @@ export interface DomainsUserDbCredentialArgs {
      */
     authorization?: pulumi.Input<string>;
     /**
-     * The db password of the user
+     * The user's database password.
      *
      * **SCIM++ Properties:**
      * * type: string
@@ -822,7 +822,7 @@ export interface DomainsUserDbCredentialArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * User credential expires on
+     * When the user credential expires.
      *
      * **Added In:** 2109090424
      *
@@ -842,7 +842,7 @@ export interface DomainsUserDbCredentialArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -908,7 +908,7 @@ export interface DomainsUserDbCredentialArgs {
      */
     urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
-     * User linked to db credential
+     * The user linked to the database credential.
      *
      * **SCIM++ Properties:**
      * * caseExact: false

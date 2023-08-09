@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of O Auth2 Client Credentials in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search oauth2 client credentials
+ * Search for a user's OAuth2 client credentials.
  *
  * ## Example Usage
  *
@@ -121,7 +121,7 @@ export interface GetDomainsOauth2clientCredentialsResult {
 /**
  * This data source provides the list of O Auth2 Client Credentials in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search oauth2 client credentials
+ * Search for a user's OAuth2 client credentials.
  *
  * ## Example Usage
  *

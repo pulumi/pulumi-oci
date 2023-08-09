@@ -25,7 +25,7 @@ public final class DomainsMyApiKeyTag {
      */
     private String key;
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -62,7 +62,7 @@ public final class DomainsMyApiKeyTag {
         return this.key;
     }
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true

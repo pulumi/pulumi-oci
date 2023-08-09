@@ -99,6 +99,40 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
      */
     private @Nullable Integer crlReloadDuration;
     /**
+     * @return (Updatable) Set to true to enable EKU Validation
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable Boolean ekuValidationEnabled;
+    /**
+     * @return (Updatable) List of EKU which needs to be validated
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable List<String> ekuValues;
+    /**
      * @return (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
      * 
      * **Added In:** 2010242156
@@ -366,6 +400,44 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         return Optional.ofNullable(this.crlReloadDuration);
     }
     /**
+     * @return (Updatable) Set to true to enable EKU Validation
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Boolean> ekuValidationEnabled() {
+        return Optional.ofNullable(this.ekuValidationEnabled);
+    }
+    /**
+     * @return (Updatable) List of EKU which needs to be validated
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public List<String> ekuValues() {
+        return this.ekuValues == null ? List.of() : this.ekuValues;
+    }
+    /**
      * @return (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
      * 
      * **Added In:** 2010242156
@@ -571,6 +643,8 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         private @Nullable Boolean crlEnabled;
         private @Nullable String crlLocation;
         private @Nullable Integer crlReloadDuration;
+        private @Nullable Boolean ekuValidationEnabled;
+        private @Nullable List<String> ekuValues;
         private @Nullable Boolean ocspAllowUnknownResponseStatus;
         private @Nullable Boolean ocspEnableSignedResponse;
         private @Nullable Boolean ocspEnabled;
@@ -589,6 +663,8 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     	      this.crlEnabled = defaults.crlEnabled;
     	      this.crlLocation = defaults.crlLocation;
     	      this.crlReloadDuration = defaults.crlReloadDuration;
+    	      this.ekuValidationEnabled = defaults.ekuValidationEnabled;
+    	      this.ekuValues = defaults.ekuValues;
     	      this.ocspAllowUnknownResponseStatus = defaults.ocspAllowUnknownResponseStatus;
     	      this.ocspEnableSignedResponse = defaults.ocspEnableSignedResponse;
     	      this.ocspEnabled = defaults.ocspEnabled;
@@ -625,6 +701,19 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         public Builder crlReloadDuration(@Nullable Integer crlReloadDuration) {
             this.crlReloadDuration = crlReloadDuration;
             return this;
+        }
+        @CustomType.Setter
+        public Builder ekuValidationEnabled(@Nullable Boolean ekuValidationEnabled) {
+            this.ekuValidationEnabled = ekuValidationEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ekuValues(@Nullable List<String> ekuValues) {
+            this.ekuValues = ekuValues;
+            return this;
+        }
+        public Builder ekuValues(String... ekuValues) {
+            return ekuValues(List.of(ekuValues));
         }
         @CustomType.Setter
         public Builder ocspAllowUnknownResponseStatus(@Nullable Boolean ocspAllowUnknownResponseStatus) {
@@ -689,6 +778,8 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
             o.crlEnabled = crlEnabled;
             o.crlLocation = crlLocation;
             o.crlReloadDuration = crlReloadDuration;
+            o.ekuValidationEnabled = ekuValidationEnabled;
+            o.ekuValues = ekuValues;
             o.ocspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
             o.ocspEnableSignedResponse = ocspEnableSignedResponse;
             o.ocspEnabled = ocspEnabled;

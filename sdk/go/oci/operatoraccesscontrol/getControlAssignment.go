@@ -78,6 +78,8 @@ type GetControlAssignmentResult struct {
 	Id string `pulumi:"id"`
 	// The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance bool `pulumi:"isAutoApproveDuringMaintenance"`
+	// Whether the assignment is a default assignment.
+	IsDefaultAssignment bool `pulumi:"isDefaultAssignment"`
 	// If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways bool `pulumi:"isEnforcedAlways"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
@@ -201,6 +203,11 @@ func (o GetControlAssignmentResultOutput) Id() pulumi.StringOutput {
 // The boolean if true would autoApprove during maintenance.
 func (o GetControlAssignmentResultOutput) IsAutoApproveDuringMaintenance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetControlAssignmentResult) bool { return v.IsAutoApproveDuringMaintenance }).(pulumi.BoolOutput)
+}
+
+// Whether the assignment is a default assignment.
+func (o GetControlAssignmentResultOutput) IsDefaultAssignment() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetControlAssignmentResult) bool { return v.IsDefaultAssignment }).(pulumi.BoolOutput)
 }
 
 // If set, then the target resource is always governed by the operator control.

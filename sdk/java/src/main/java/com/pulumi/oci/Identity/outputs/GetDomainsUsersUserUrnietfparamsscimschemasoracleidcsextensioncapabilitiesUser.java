@@ -10,86 +10,98 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser {
     /**
-     * @return Indicates weather a user can use api keys
+     * @return Indicates whether a user can use API keys.
      * 
      */
     private Boolean canUseApiKeys;
     /**
-     * @return Indicates weather a user can use auth tokens
+     * @return Indicates whether a user can use Auth tokens.
      * 
      */
     private Boolean canUseAuthTokens;
     /**
-     * @return Indicates weather a user can use console password
+     * @return Specifies whether user can access the Console.
+     * 
+     */
+    private Boolean canUseConsole;
+    /**
+     * @return Indicates whether a user can use Console passwords.
      * 
      */
     private Boolean canUseConsolePassword;
     /**
-     * @return Indicates weather a user can use customer secret keys
+     * @return Indicates whether a user can use customer secret keys.
      * 
      */
     private Boolean canUseCustomerSecretKeys;
     /**
-     * @return Indicates weather a user can use db credentials
+     * @return Indicates whether a user can use database credentials.
      * 
      */
     private Boolean canUseDbCredentials;
     /**
-     * @return Indicates weather a user can use oauth2 client credentials
+     * @return Indicates whether a user can use OAuth2 client credentials.
      * 
      */
     private Boolean canUseOauth2clientCredentials;
     /**
-     * @return Indicates weather a user can use smtp credentials
+     * @return Indicates whether a user can use SMTP credentials.
      * 
      */
     private Boolean canUseSmtpCredentials;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser() {}
     /**
-     * @return Indicates weather a user can use api keys
+     * @return Indicates whether a user can use API keys.
      * 
      */
     public Boolean canUseApiKeys() {
         return this.canUseApiKeys;
     }
     /**
-     * @return Indicates weather a user can use auth tokens
+     * @return Indicates whether a user can use Auth tokens.
      * 
      */
     public Boolean canUseAuthTokens() {
         return this.canUseAuthTokens;
     }
     /**
-     * @return Indicates weather a user can use console password
+     * @return Specifies whether user can access the Console.
+     * 
+     */
+    public Boolean canUseConsole() {
+        return this.canUseConsole;
+    }
+    /**
+     * @return Indicates whether a user can use Console passwords.
      * 
      */
     public Boolean canUseConsolePassword() {
         return this.canUseConsolePassword;
     }
     /**
-     * @return Indicates weather a user can use customer secret keys
+     * @return Indicates whether a user can use customer secret keys.
      * 
      */
     public Boolean canUseCustomerSecretKeys() {
         return this.canUseCustomerSecretKeys;
     }
     /**
-     * @return Indicates weather a user can use db credentials
+     * @return Indicates whether a user can use database credentials.
      * 
      */
     public Boolean canUseDbCredentials() {
         return this.canUseDbCredentials;
     }
     /**
-     * @return Indicates weather a user can use oauth2 client credentials
+     * @return Indicates whether a user can use OAuth2 client credentials.
      * 
      */
     public Boolean canUseOauth2clientCredentials() {
         return this.canUseOauth2clientCredentials;
     }
     /**
-     * @return Indicates weather a user can use smtp credentials
+     * @return Indicates whether a user can use SMTP credentials.
      * 
      */
     public Boolean canUseSmtpCredentials() {
@@ -107,6 +119,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     public static final class Builder {
         private Boolean canUseApiKeys;
         private Boolean canUseAuthTokens;
+        private Boolean canUseConsole;
         private Boolean canUseConsolePassword;
         private Boolean canUseCustomerSecretKeys;
         private Boolean canUseDbCredentials;
@@ -117,6 +130,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     	      Objects.requireNonNull(defaults);
     	      this.canUseApiKeys = defaults.canUseApiKeys;
     	      this.canUseAuthTokens = defaults.canUseAuthTokens;
+    	      this.canUseConsole = defaults.canUseConsole;
     	      this.canUseConsolePassword = defaults.canUseConsolePassword;
     	      this.canUseCustomerSecretKeys = defaults.canUseCustomerSecretKeys;
     	      this.canUseDbCredentials = defaults.canUseDbCredentials;
@@ -132,6 +146,11 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         @CustomType.Setter
         public Builder canUseAuthTokens(Boolean canUseAuthTokens) {
             this.canUseAuthTokens = Objects.requireNonNull(canUseAuthTokens);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder canUseConsole(Boolean canUseConsole) {
+            this.canUseConsole = Objects.requireNonNull(canUseConsole);
             return this;
         }
         @CustomType.Setter
@@ -163,6 +182,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser();
             o.canUseApiKeys = canUseApiKeys;
             o.canUseAuthTokens = canUseAuthTokens;
+            o.canUseConsole = canUseConsole;
             o.canUseConsolePassword = canUseConsolePassword;
             o.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
             o.canUseDbCredentials = canUseDbCredentials;

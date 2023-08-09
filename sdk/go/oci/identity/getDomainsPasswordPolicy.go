@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Get a Password Policy
+// Get a password policy.
 //
 // ## Example Usage
 //
@@ -96,6 +96,10 @@ type LookupDomainsPasswordPolicyResult struct {
 	DisallowedChars string `pulumi:"disallowedChars"`
 	// A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
 	DisallowedSubstrings []string `pulumi:"disallowedSubstrings"`
+	// List of User attributes whose values are not allowed in the password.
+	DisallowedUserAttributeValues []string `pulumi:"disallowedUserAttributeValues"`
+	// The number of distinct characters between old password and new password
+	DistinctCharacters int `pulumi:"distinctCharacters"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	DomainOcid string `pulumi:"domainOcid"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -289,6 +293,16 @@ func (o LookupDomainsPasswordPolicyResultOutput) DisallowedChars() pulumi.String
 // A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
 func (o LookupDomainsPasswordPolicyResultOutput) DisallowedSubstrings() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDomainsPasswordPolicyResult) []string { return v.DisallowedSubstrings }).(pulumi.StringArrayOutput)
+}
+
+// List of User attributes whose values are not allowed in the password.
+func (o LookupDomainsPasswordPolicyResultOutput) DisallowedUserAttributeValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupDomainsPasswordPolicyResult) []string { return v.DisallowedUserAttributeValues }).(pulumi.StringArrayOutput)
+}
+
+// The number of distinct characters between old password and new password
+func (o LookupDomainsPasswordPolicyResultOutput) DistinctCharacters() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDomainsPasswordPolicyResult) int { return v.DistinctCharacters }).(pulumi.IntOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.

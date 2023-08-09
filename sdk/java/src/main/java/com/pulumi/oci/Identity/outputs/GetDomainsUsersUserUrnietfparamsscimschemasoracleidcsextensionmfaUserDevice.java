@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice {
     /**
-     * @return Authentication method.
+     * @return The authentication method.
      * 
      */
     private String authenticationMethod;
@@ -20,7 +20,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      */
     private String display;
     /**
-     * @return Device authentication factor status.
+     * @return The device authentication factor status.
      * 
      */
     private String factorStatus;
@@ -30,7 +30,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      */
     private String factorType;
     /**
-     * @return Last Sync time for device.
+     * @return The last sync time for device.
      * 
      */
     private String lastSyncTime;
@@ -45,7 +45,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      */
     private String status;
     /**
-     * @return Third party factor vendor name.
+     * @return The third-party factor vendor name.
      * 
      */
     private String thirdPartyVendorName;
@@ -57,7 +57,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice() {}
     /**
-     * @return Authentication method.
+     * @return The authentication method.
      * 
      */
     public String authenticationMethod() {
@@ -71,7 +71,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         return this.display;
     }
     /**
-     * @return Device authentication factor status.
+     * @return The device authentication factor status.
      * 
      */
     public String factorStatus() {
@@ -85,7 +85,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         return this.factorType;
     }
     /**
-     * @return Last Sync time for device.
+     * @return The last sync time for device.
      * 
      */
     public String lastSyncTime() {
@@ -106,7 +106,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         return this.status;
     }
     /**
-     * @return Third party factor vendor name.
+     * @return The third-party factor vendor name.
      * 
      */
     public String thirdPartyVendorName() {

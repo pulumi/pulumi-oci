@@ -10,12 +10,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser {
     /**
-     * @return Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      */
     private String principalName;
     /**
-     * @return Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      */
     private String realmName;
@@ -32,14 +32,14 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerb
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser() {}
     /**
-     * @return Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      */
     public String principalName() {
         return this.principalName;
     }
     /**
-     * @return Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      */
     public String realmName() {

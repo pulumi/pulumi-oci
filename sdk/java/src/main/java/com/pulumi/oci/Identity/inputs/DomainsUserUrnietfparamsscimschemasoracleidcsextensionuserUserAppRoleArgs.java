@@ -151,7 +151,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+     * (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
@@ -167,7 +167,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> legacyGroupName;
 
     /**
-     * @return (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+     * @return (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
@@ -482,7 +482,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param legacyGroupName (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+         * @param legacyGroupName (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: true
@@ -502,7 +502,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param legacyGroupName (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+         * @param legacyGroupName (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: true

@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsGroupMember {
     /**
-     * @return (Updatable) The DateTime the member was added to the Group.
+     * @return (Updatable) The date and time that the member was added to the group.
      * 
      * **Added In:** 2012271618
      * 
@@ -43,7 +43,7 @@ public final class DomainsGroupMember {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Membership Ocid
+     * @return (Updatable) The membership OCID.
      * 
      * **Added In:** 2102181953
      * 
@@ -143,7 +143,7 @@ public final class DomainsGroupMember {
 
     private DomainsGroupMember() {}
     /**
-     * @return (Updatable) The DateTime the member was added to the Group.
+     * @return (Updatable) The date and time that the member was added to the group.
      * 
      * **Added In:** 2012271618
      * 
@@ -178,7 +178,7 @@ public final class DomainsGroupMember {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Membership Ocid
+     * @return (Updatable) The membership OCID.
      * 
      * **Added In:** 2102181953
      * 

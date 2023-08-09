@@ -14,7 +14,7 @@ import (
 
 // This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Create a User
+// Create a user.
 //
 // ## Import
 //
@@ -283,7 +283,7 @@ type DomainsUser struct {
 	// * type: string
 	// * uniqueness: none
 	NickName pulumi.StringOutput `pulumi:"nickName"`
-	// (Updatable) Ocid of the User's Support Account.
+	// (Updatable) The OCID of the user's support account.
 	//
 	// **Added In:** 2103141444
 	//
@@ -454,7 +454,7 @@ type DomainsUser struct {
 	UrnietfparamsscimschemasoracleidcsextensionadaptiveUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionadaptiveUser"`
 	// (Updatable) User's Capabilities
 	UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser"`
-	// (Updatable) Db Credentials User extension
+	// (Updatable) The database credentials user extension.
 	UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser"`
 	// (Updatable) DB User extension
 	UrnietfparamsscimschemasoracleidcsextensiondbUserUsers DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbUserUsers"`
@@ -468,7 +468,7 @@ type DomainsUser struct {
 	UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionpasswordlessUser"`
 	// (Updatable) POSIX User extension
 	UrnietfparamsscimschemasoracleidcsextensionposixUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionposixUser"`
-	// (Updatable) This extension defines attributes used to store Security Questions of User.
+	// (Updatable) This extension defines the attributes used to store the security questions of a user.
 	UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser"`
 	// (Updatable) Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
@@ -482,9 +482,9 @@ type DomainsUser struct {
 	UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser"`
 	// (Updatable) User's credentials
 	UrnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers"`
-	// (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+	// (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
 	UrnietfparamsscimschemasoracleidcsextensionuserStateUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserStateUser"`
-	// (Updatable) Oracle Cloud Infrastructure IAM User
+	// (Updatable) Oracle Identity Cloud Service User
 	UrnietfparamsscimschemasoracleidcsextensionuserUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserUser"`
 	// (Updatable) User name
 	//
@@ -833,7 +833,7 @@ type domainsUserState struct {
 	// * type: string
 	// * uniqueness: none
 	NickName *string `pulumi:"nickName"`
-	// (Updatable) Ocid of the User's Support Account.
+	// (Updatable) The OCID of the user's support account.
 	//
 	// **Added In:** 2103141444
 	//
@@ -1004,7 +1004,7 @@ type domainsUserState struct {
 	UrnietfparamsscimschemasoracleidcsextensionadaptiveUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionadaptiveUser"`
 	// (Updatable) User's Capabilities
 	UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser `pulumi:"urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser"`
-	// (Updatable) Db Credentials User extension
+	// (Updatable) The database credentials user extension.
 	UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser"`
 	// (Updatable) DB User extension
 	UrnietfparamsscimschemasoracleidcsextensiondbUserUsers []DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbUserUsers"`
@@ -1018,7 +1018,7 @@ type domainsUserState struct {
 	UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionpasswordlessUser"`
 	// (Updatable) POSIX User extension
 	UrnietfparamsscimschemasoracleidcsextensionposixUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionposixUser"`
-	// (Updatable) This extension defines attributes used to store Security Questions of User.
+	// (Updatable) This extension defines the attributes used to store the security questions of a user.
 	UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser"`
 	// (Updatable) Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
@@ -1032,9 +1032,9 @@ type domainsUserState struct {
 	UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser `pulumi:"urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser"`
 	// (Updatable) User's credentials
 	UrnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers []DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers"`
-	// (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+	// (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
 	UrnietfparamsscimschemasoracleidcsextensionuserStateUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserStateUser"`
-	// (Updatable) Oracle Cloud Infrastructure IAM User
+	// (Updatable) Oracle Identity Cloud Service User
 	UrnietfparamsscimschemasoracleidcsextensionuserUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserUser"`
 	// (Updatable) User name
 	//
@@ -1335,7 +1335,7 @@ type DomainsUserState struct {
 	// * type: string
 	// * uniqueness: none
 	NickName pulumi.StringPtrInput
-	// (Updatable) Ocid of the User's Support Account.
+	// (Updatable) The OCID of the user's support account.
 	//
 	// **Added In:** 2103141444
 	//
@@ -1506,7 +1506,7 @@ type DomainsUserState struct {
 	UrnietfparamsscimschemasoracleidcsextensionadaptiveUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserPtrInput
 	// (Updatable) User's Capabilities
 	UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserPtrInput
-	// (Updatable) Db Credentials User extension
+	// (Updatable) The database credentials user extension.
 	UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserPtrInput
 	// (Updatable) DB User extension
 	UrnietfparamsscimschemasoracleidcsextensiondbUserUsers DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayInput
@@ -1520,7 +1520,7 @@ type DomainsUserState struct {
 	UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserPtrInput
 	// (Updatable) POSIX User extension
 	UrnietfparamsscimschemasoracleidcsextensionposixUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserPtrInput
-	// (Updatable) This extension defines attributes used to store Security Questions of User.
+	// (Updatable) This extension defines the attributes used to store the security questions of a user.
 	UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserPtrInput
 	// (Updatable) Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrInput
@@ -1534,9 +1534,9 @@ type DomainsUserState struct {
 	UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserPtrInput
 	// (Updatable) User's credentials
 	UrnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayInput
-	// (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+	// (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
 	UrnietfparamsscimschemasoracleidcsextensionuserStateUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserPtrInput
-	// (Updatable) Oracle Cloud Infrastructure IAM User
+	// (Updatable) Oracle Identity Cloud Service User
 	UrnietfparamsscimschemasoracleidcsextensionuserUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserPtrInput
 	// (Updatable) User name
 	//
@@ -1738,7 +1738,7 @@ type domainsUserArgs struct {
 	// * type: string
 	// * uniqueness: none
 	NickName *string `pulumi:"nickName"`
-	// (Updatable) Ocid of the User's Support Account.
+	// (Updatable) The OCID of the user's support account.
 	//
 	// **Added In:** 2103141444
 	//
@@ -1897,7 +1897,7 @@ type domainsUserArgs struct {
 	UrnietfparamsscimschemasoracleidcsextensionadaptiveUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionadaptiveUser"`
 	// (Updatable) User's Capabilities
 	UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser `pulumi:"urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser"`
-	// (Updatable) Db Credentials User extension
+	// (Updatable) The database credentials user extension.
 	UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser"`
 	// (Updatable) Kerberos User extension
 	UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionkerberosUserUser"`
@@ -1907,7 +1907,7 @@ type domainsUserArgs struct {
 	UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionpasswordlessUser"`
 	// (Updatable) POSIX User extension
 	UrnietfparamsscimschemasoracleidcsextensionposixUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionposixUser"`
-	// (Updatable) This extension defines attributes used to store Security Questions of User.
+	// (Updatable) This extension defines the attributes used to store the security questions of a user.
 	UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser"`
 	// (Updatable) Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
@@ -1919,9 +1919,9 @@ type domainsUserArgs struct {
 	UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionsocialAccountUser"`
 	// (Updatable) Terms Of Use extension
 	UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser `pulumi:"urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser"`
-	// (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+	// (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
 	UrnietfparamsscimschemasoracleidcsextensionuserStateUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserStateUser"`
-	// (Updatable) Oracle Cloud Infrastructure IAM User
+	// (Updatable) Oracle Identity Cloud Service User
 	UrnietfparamsscimschemasoracleidcsextensionuserUser *DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionuserUser"`
 	// (Updatable) User name
 	//
@@ -2120,7 +2120,7 @@ type DomainsUserArgs struct {
 	// * type: string
 	// * uniqueness: none
 	NickName pulumi.StringPtrInput
-	// (Updatable) Ocid of the User's Support Account.
+	// (Updatable) The OCID of the user's support account.
 	//
 	// **Added In:** 2103141444
 	//
@@ -2279,7 +2279,7 @@ type DomainsUserArgs struct {
 	UrnietfparamsscimschemasoracleidcsextensionadaptiveUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserPtrInput
 	// (Updatable) User's Capabilities
 	UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserPtrInput
-	// (Updatable) Db Credentials User extension
+	// (Updatable) The database credentials user extension.
 	UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserPtrInput
 	// (Updatable) Kerberos User extension
 	UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserPtrInput
@@ -2289,7 +2289,7 @@ type DomainsUserArgs struct {
 	UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserPtrInput
 	// (Updatable) POSIX User extension
 	UrnietfparamsscimschemasoracleidcsextensionposixUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserPtrInput
-	// (Updatable) This extension defines attributes used to store Security Questions of User.
+	// (Updatable) This extension defines the attributes used to store the security questions of a user.
 	UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserPtrInput
 	// (Updatable) Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrInput
@@ -2301,9 +2301,9 @@ type DomainsUserArgs struct {
 	UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserPtrInput
 	// (Updatable) Terms Of Use extension
 	UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserPtrInput
-	// (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+	// (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
 	UrnietfparamsscimschemasoracleidcsextensionuserStateUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserPtrInput
-	// (Updatable) Oracle Cloud Infrastructure IAM User
+	// (Updatable) Oracle Identity Cloud Service User
 	UrnietfparamsscimschemasoracleidcsextensionuserUser DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserPtrInput
 	// (Updatable) User name
 	//
@@ -2762,7 +2762,7 @@ func (o DomainsUserOutput) NickName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.NickName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Ocid of the User's Support Account.
+// (Updatable) The OCID of the user's support account.
 //
 // **Added In:** 2103141444
 //
@@ -2992,7 +2992,7 @@ func (o DomainsUserOutput) Urnietfparamsscimschemasoracleidcsextensioncapabiliti
 	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput)
 }
 
-// (Updatable) Db Credentials User extension
+// (Updatable) The database credentials user extension.
 func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
 	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser
@@ -3041,7 +3041,7 @@ func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionposixUser(
 	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput)
 }
 
-// (Updatable) This extension defines attributes used to store Security Questions of User.
+// (Updatable) This extension defines the attributes used to store the security questions of a user.
 func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
 	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser
@@ -3090,14 +3090,14 @@ func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionuserCreden
 	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput)
 }
 
-// (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+// (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
 func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionuserStateUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput {
 	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionuserStateUser
 	}).(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput)
 }
 
-// (Updatable) Oracle Cloud Infrastructure IAM User
+// (Updatable) Oracle Identity Cloud Service User
 func (o DomainsUserOutput) UrnietfparamsscimschemasoracleidcsextensionuserUser() DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput {
 	return o.ApplyT(func(v *DomainsUser) DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionuserUser

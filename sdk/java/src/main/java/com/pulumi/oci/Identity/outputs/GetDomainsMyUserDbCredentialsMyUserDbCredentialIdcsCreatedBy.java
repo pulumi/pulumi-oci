@@ -10,17 +10,17 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsMyUserDbCredentialsMyUserDbCredentialIdcsCreatedBy {
     /**
-     * @return User display name
+     * @return The user display name.
      * 
      */
     private String display;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
     /**
-     * @return The URI that corresponds to the user linked to this credential
+     * @return The URI that corresponds to the user linked to this credential.
      * 
      */
     private String ref;
@@ -30,28 +30,28 @@ public final class GetDomainsMyUserDbCredentialsMyUserDbCredentialIdcsCreatedBy 
      */
     private String type;
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s identifier.
      * 
      */
     private String value;
 
     private GetDomainsMyUserDbCredentialsMyUserDbCredentialIdcsCreatedBy() {}
     /**
-     * @return User display name
+     * @return The user display name.
      * 
      */
     public String display() {
         return this.display;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
         return this.ocid;
     }
     /**
-     * @return The URI that corresponds to the user linked to this credential
+     * @return The URI that corresponds to the user linked to this credential.
      * 
      */
     public String ref() {
@@ -65,7 +65,7 @@ public final class GetDomainsMyUserDbCredentialsMyUserDbCredentialIdcsCreatedBy 
         return this.type;
     }
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s identifier.
      * 
      */
     public String value() {

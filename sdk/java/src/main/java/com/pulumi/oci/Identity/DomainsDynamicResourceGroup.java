@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Create a DynamicResourceGroup
+ * Create a Dynamic Resource Group.
  * 
  * ## Example Usage
  * 

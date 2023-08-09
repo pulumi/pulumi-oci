@@ -10,17 +10,17 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsMyAuthTokensMyAuthTokenUser {
     /**
-     * @return User display name
+     * @return The user&#39;s display name.
      * 
      */
     private String display;
     /**
-     * @return User name
+     * @return The username.
      * 
      */
     private String name;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
@@ -30,28 +30,28 @@ public final class GetDomainsMyAuthTokensMyAuthTokenUser {
      */
     private String ref;
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      */
     private String value;
 
     private GetDomainsMyAuthTokensMyAuthTokenUser() {}
     /**
-     * @return User display name
+     * @return The user&#39;s display name.
      * 
      */
     public String display() {
         return this.display;
     }
     /**
-     * @return User name
+     * @return The username.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -65,7 +65,7 @@ public final class GetDomainsMyAuthTokensMyAuthTokenUser {
         return this.ref;
     }
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      */
     public String value() {

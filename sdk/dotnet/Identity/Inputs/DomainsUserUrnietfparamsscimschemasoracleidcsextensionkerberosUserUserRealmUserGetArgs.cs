@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        /// (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsPii: true
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? PrincipalName { get; set; }
 
         /// <summary>
-        /// (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        /// (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: true

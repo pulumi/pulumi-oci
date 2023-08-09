@@ -330,6 +330,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        /// </summary>
+        public readonly int LocalAdgAutoFailoverMaxDataLossLimit;
+        /// <summary>
         /// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         public readonly string LocalDisasterRecoveryType;
@@ -656,6 +660,8 @@ namespace Pulumi.Oci.Database
 
             string lifecycleDetails,
 
+            int localAdgAutoFailoverMaxDataLossLimit,
+
             string localDisasterRecoveryType,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseLocalStandbyDbResult> localStandbyDbs,
@@ -831,6 +837,7 @@ namespace Pulumi.Oci.Database
             KmsKeyVersionId = kmsKeyVersionId;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
+            LocalAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
             LocalDisasterRecoveryType = localDisasterRecoveryType;
             LocalStandbyDbs = localStandbyDbs;
             LongTermBackupSchedules = longTermBackupSchedules;

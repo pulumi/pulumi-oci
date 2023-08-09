@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Add a user's api key
+// Create a user's API key.
 //
 // ## Import
 //
@@ -162,7 +162,7 @@ type DomainsApiKey struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsApiKeyMetaArrayOutput `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -214,7 +214,7 @@ type DomainsApiKey struct {
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -401,7 +401,7 @@ type domainsApiKeyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsApiKeyMeta `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -453,7 +453,7 @@ type domainsApiKeyState struct {
 	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser *DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -602,7 +602,7 @@ type DomainsApiKeyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsApiKeyMetaArrayInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -654,7 +654,7 @@ type DomainsApiKeyState struct {
 	TenancyOcid pulumi.StringPtrInput
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrInput
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -704,7 +704,7 @@ type domainsApiKeyArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Key string `pulumi:"key"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -744,7 +744,7 @@ type domainsApiKeyArgs struct {
 	Tags []DomainsApiKeyTag `pulumi:"tags"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser *DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -791,7 +791,7 @@ type DomainsApiKeyArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Key pulumi.StringInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -831,7 +831,7 @@ type DomainsApiKeyArgs struct {
 	Tags DomainsApiKeyTagArrayInput
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrInput
-	// User linked to api key
+	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -1111,7 +1111,7 @@ func (o DomainsApiKeyOutput) Metas() DomainsApiKeyMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsApiKey) DomainsApiKeyMetaArrayOutput { return v.Metas }).(DomainsApiKeyMetaArrayOutput)
 }
 
-// User's ocid
+// The user's OCID.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1183,7 +1183,7 @@ func (o DomainsApiKeyOutput) UrnietfparamsscimschemasoracleidcsextensionselfChan
 	}).(DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
 }
 
-// User linked to api key
+// The user linked to the API key.
 //
 // **SCIM++ Properties:**
 // * caseExact: false

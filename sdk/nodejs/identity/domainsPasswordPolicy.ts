@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Create a Password Policy
+ * Create a password policy.
  *
  * ## Import
  *
@@ -192,6 +192,36 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * uniqueness: none
      */
     public readonly disallowedSubstrings!: pulumi.Output<string[]>;
+    /**
+     * (Updatable) List of User attributes whose values are not allowed in the password.
+     *
+     * **Added In:** 2303212224
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    public readonly disallowedUserAttributeValues!: pulumi.Output<string[]>;
+    /**
+     * (Updatable) The number of distinct characters between old password and new password
+     *
+     * **Added In:** 2303212224
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     */
+    public readonly distinctCharacters!: pulumi.Output<number>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -739,6 +769,8 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
             resourceInputs["dictionaryWordDisallowed"] = state ? state.dictionaryWordDisallowed : undefined;
             resourceInputs["disallowedChars"] = state ? state.disallowedChars : undefined;
             resourceInputs["disallowedSubstrings"] = state ? state.disallowedSubstrings : undefined;
+            resourceInputs["disallowedUserAttributeValues"] = state ? state.disallowedUserAttributeValues : undefined;
+            resourceInputs["distinctCharacters"] = state ? state.distinctCharacters : undefined;
             resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
             resourceInputs["externalId"] = state ? state.externalId : undefined;
             resourceInputs["firstNameDisallowed"] = state ? state.firstNameDisallowed : undefined;
@@ -797,6 +829,8 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
             resourceInputs["dictionaryWordDisallowed"] = args ? args.dictionaryWordDisallowed : undefined;
             resourceInputs["disallowedChars"] = args ? args.disallowedChars : undefined;
             resourceInputs["disallowedSubstrings"] = args ? args.disallowedSubstrings : undefined;
+            resourceInputs["disallowedUserAttributeValues"] = args ? args.disallowedUserAttributeValues : undefined;
+            resourceInputs["distinctCharacters"] = args ? args.distinctCharacters : undefined;
             resourceInputs["externalId"] = args ? args.externalId : undefined;
             resourceInputs["firstNameDisallowed"] = args ? args.firstNameDisallowed : undefined;
             resourceInputs["forcePasswordReset"] = args ? args.forcePasswordReset : undefined;
@@ -997,6 +1031,36 @@ export interface DomainsPasswordPolicyState {
      * * uniqueness: none
      */
     disallowedSubstrings?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) List of User attributes whose values are not allowed in the password.
+     *
+     * **Added In:** 2303212224
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    disallowedUserAttributeValues?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The number of distinct characters between old password and new password
+     *
+     * **Added In:** 2303212224
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     */
+    distinctCharacters?: pulumi.Input<number>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -1626,6 +1690,36 @@ export interface DomainsPasswordPolicyArgs {
      * * uniqueness: none
      */
     disallowedSubstrings?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) List of User attributes whose values are not allowed in the password.
+     *
+     * **Added In:** 2303212224
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    disallowedUserAttributeValues?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The number of distinct characters between old password and new password
+     *
+     * **Added In:** 2303212224
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     */
+    distinctCharacters?: pulumi.Input<number>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *

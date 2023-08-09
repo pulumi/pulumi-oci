@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedResult
     {
         /// <summary>
-        /// The date and time that the current resource was locked
+        /// The date and time that the current resource was locked.
         /// </summary>
         public readonly string LockDate;
         /// <summary>
-        /// Indicates that the rev is locked
+        /// Indicates that the recovery is locked.
         /// </summary>
         public readonly bool On;
 

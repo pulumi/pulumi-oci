@@ -15,7 +15,7 @@ public final class GetDomainsMyCustomerSecretKeyTag {
      */
     private String key;
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      */
     private String value;
@@ -29,7 +29,7 @@ public final class GetDomainsMyCustomerSecretKeyTag {
         return this.key;
     }
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      */
     public String value() {

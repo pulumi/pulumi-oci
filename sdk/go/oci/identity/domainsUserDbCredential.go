@@ -14,7 +14,7 @@ import (
 
 // This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Set a User's DbCredential
+// Create a user's database (DB) credentials.
 //
 // ## Import
 //
@@ -46,7 +46,7 @@ type DomainsUserDbCredential struct {
 	// * type: string
 	// * uniqueness: none
 	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
-	// The db password of the user
+	// The user's database password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -89,14 +89,14 @@ type DomainsUserDbCredential struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
-	// (Updatable) Indicates that the db password has expired
+	// (Updatable) Indicates that the database password has expired.
 	//
 	// **SCIM++ Properties:**
 	// * type: boolean
 	// * mutability: readOnly
 	// * returned: default
 	Expired pulumi.BoolOutput `pulumi:"expired"`
-	// User credential expires on
+	// When the user credential expires.
 	//
 	// **Added In:** 2109090424
 	//
@@ -155,7 +155,7 @@ type DomainsUserDbCredential struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayOutput `pulumi:"idcsPreventedOperations"`
-	// (Updatable) A DateTime that specifies the date and time when the current db password was set
+	// (Updatable) A DateTime that specifies the date and time when the current database password was set.
 	//
 	// **SCIM++ Properties:**
 	// * type: dateTime
@@ -174,7 +174,7 @@ type DomainsUserDbCredential struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsUserDbCredentialMetaArrayOutput `pulumi:"metas"`
-	// (Updatable) The db password of the user with mixed salt
+	// (Updatable) The user's database password with mixed salt.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -182,7 +182,7 @@ type DomainsUserDbCredential struct {
 	// * returned: default
 	// * required: false
 	MixedDbPassword pulumi.StringOutput `pulumi:"mixedDbPassword"`
-	// (Updatable) The mixed salt of the password
+	// (Updatable) The mixed salt of the password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -190,7 +190,7 @@ type DomainsUserDbCredential struct {
 	// * returned: default
 	// * required: false
 	MixedSalt pulumi.StringOutput `pulumi:"mixedSalt"`
-	// (Updatable) User name
+	// (Updatable) The username.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -202,7 +202,7 @@ type DomainsUserDbCredential struct {
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringOutput `pulumi:"name"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -216,7 +216,7 @@ type DomainsUserDbCredential struct {
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
-	// (Updatable) The salt of the password
+	// (Updatable) The salt of the password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -276,7 +276,7 @@ type DomainsUserDbCredential struct {
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
-	// User linked to db credential
+	// The user linked to the database credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -355,7 +355,7 @@ type domainsUserDbCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	CompartmentOcid *string `pulumi:"compartmentOcid"`
-	// The db password of the user
+	// The user's database password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -398,14 +398,14 @@ type domainsUserDbCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid *string `pulumi:"domainOcid"`
-	// (Updatable) Indicates that the db password has expired
+	// (Updatable) Indicates that the database password has expired.
 	//
 	// **SCIM++ Properties:**
 	// * type: boolean
 	// * mutability: readOnly
 	// * returned: default
 	Expired *bool `pulumi:"expired"`
-	// User credential expires on
+	// When the user credential expires.
 	//
 	// **Added In:** 2109090424
 	//
@@ -464,7 +464,7 @@ type domainsUserDbCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
-	// (Updatable) A DateTime that specifies the date and time when the current db password was set
+	// (Updatable) A DateTime that specifies the date and time when the current database password was set.
 	//
 	// **SCIM++ Properties:**
 	// * type: dateTime
@@ -483,7 +483,7 @@ type domainsUserDbCredentialState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsUserDbCredentialMeta `pulumi:"metas"`
-	// (Updatable) The db password of the user with mixed salt
+	// (Updatable) The user's database password with mixed salt.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -491,7 +491,7 @@ type domainsUserDbCredentialState struct {
 	// * returned: default
 	// * required: false
 	MixedDbPassword *string `pulumi:"mixedDbPassword"`
-	// (Updatable) The mixed salt of the password
+	// (Updatable) The mixed salt of the password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -499,7 +499,7 @@ type domainsUserDbCredentialState struct {
 	// * returned: default
 	// * required: false
 	MixedSalt *string `pulumi:"mixedSalt"`
-	// (Updatable) User name
+	// (Updatable) The username.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -511,7 +511,7 @@ type domainsUserDbCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	Name *string `pulumi:"name"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -525,7 +525,7 @@ type domainsUserDbCredentialState struct {
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
-	// (Updatable) The salt of the password
+	// (Updatable) The salt of the password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -585,7 +585,7 @@ type domainsUserDbCredentialState struct {
 	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser *DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
-	// User linked to db credential
+	// The user linked to the database credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -619,7 +619,7 @@ type DomainsUserDbCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	CompartmentOcid pulumi.StringPtrInput
-	// The db password of the user
+	// The user's database password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -662,14 +662,14 @@ type DomainsUserDbCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringPtrInput
-	// (Updatable) Indicates that the db password has expired
+	// (Updatable) Indicates that the database password has expired.
 	//
 	// **SCIM++ Properties:**
 	// * type: boolean
 	// * mutability: readOnly
 	// * returned: default
 	Expired pulumi.BoolPtrInput
-	// User credential expires on
+	// When the user credential expires.
 	//
 	// **Added In:** 2109090424
 	//
@@ -728,7 +728,7 @@ type DomainsUserDbCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayInput
-	// (Updatable) A DateTime that specifies the date and time when the current db password was set
+	// (Updatable) A DateTime that specifies the date and time when the current database password was set.
 	//
 	// **SCIM++ Properties:**
 	// * type: dateTime
@@ -747,7 +747,7 @@ type DomainsUserDbCredentialState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsUserDbCredentialMetaArrayInput
-	// (Updatable) The db password of the user with mixed salt
+	// (Updatable) The user's database password with mixed salt.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -755,7 +755,7 @@ type DomainsUserDbCredentialState struct {
 	// * returned: default
 	// * required: false
 	MixedDbPassword pulumi.StringPtrInput
-	// (Updatable) The mixed salt of the password
+	// (Updatable) The mixed salt of the password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -763,7 +763,7 @@ type DomainsUserDbCredentialState struct {
 	// * returned: default
 	// * required: false
 	MixedSalt pulumi.StringPtrInput
-	// (Updatable) User name
+	// (Updatable) The username.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -775,7 +775,7 @@ type DomainsUserDbCredentialState struct {
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringPtrInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -789,7 +789,7 @@ type DomainsUserDbCredentialState struct {
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
-	// (Updatable) The salt of the password
+	// (Updatable) The salt of the password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -849,7 +849,7 @@ type DomainsUserDbCredentialState struct {
 	TenancyOcid pulumi.StringPtrInput
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrInput
-	// User linked to db credential
+	// The user linked to the database credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -875,7 +875,7 @@ type domainsUserDbCredentialArgs struct {
 	Attributes *string `pulumi:"attributes"`
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
-	// The db password of the user
+	// The user's database password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -894,7 +894,7 @@ type domainsUserDbCredentialArgs struct {
 	// * required: false
 	// * returned: default
 	Description *string `pulumi:"description"`
-	// User credential expires on
+	// When the user credential expires.
 	//
 	// **Added In:** 2109090424
 	//
@@ -910,7 +910,7 @@ type domainsUserDbCredentialArgs struct {
 	ExpiresOn *string `pulumi:"expiresOn"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -964,7 +964,7 @@ type domainsUserDbCredentialArgs struct {
 	Tags []DomainsUserDbCredentialTag `pulumi:"tags"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser *DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
-	// User linked to db credential
+	// The user linked to the database credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -987,7 +987,7 @@ type DomainsUserDbCredentialArgs struct {
 	Attributes pulumi.StringPtrInput
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
-	// The db password of the user
+	// The user's database password.
 	//
 	// **SCIM++ Properties:**
 	// * type: string
@@ -1006,7 +1006,7 @@ type DomainsUserDbCredentialArgs struct {
 	// * required: false
 	// * returned: default
 	Description pulumi.StringPtrInput
-	// User credential expires on
+	// When the user credential expires.
 	//
 	// **Added In:** 2109090424
 	//
@@ -1022,7 +1022,7 @@ type DomainsUserDbCredentialArgs struct {
 	ExpiresOn pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
-	// User's ocid
+	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -1076,7 +1076,7 @@ type DomainsUserDbCredentialArgs struct {
 	Tags DomainsUserDbCredentialTagArrayInput
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrInput
-	// User linked to db credential
+	// The user linked to the database credential.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
@@ -1208,7 +1208,7 @@ func (o DomainsUserDbCredentialOutput) CompartmentOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
 }
 
-// The db password of the user
+// The user's database password.
 //
 // **SCIM++ Properties:**
 // * type: string
@@ -1263,7 +1263,7 @@ func (o DomainsUserDbCredentialOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
-// (Updatable) Indicates that the db password has expired
+// (Updatable) Indicates that the database password has expired.
 //
 // **SCIM++ Properties:**
 // * type: boolean
@@ -1273,7 +1273,7 @@ func (o DomainsUserDbCredentialOutput) Expired() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.BoolOutput { return v.Expired }).(pulumi.BoolOutput)
 }
 
-// User credential expires on
+// When the user credential expires.
 //
 // **Added In:** 2109090424
 //
@@ -1354,7 +1354,7 @@ func (o DomainsUserDbCredentialOutput) IdcsPreventedOperations() pulumi.StringAr
 	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringArrayOutput { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) A DateTime that specifies the date and time when the current db password was set
+// (Updatable) A DateTime that specifies the date and time when the current database password was set.
 //
 // **SCIM++ Properties:**
 // * type: dateTime
@@ -1379,7 +1379,7 @@ func (o DomainsUserDbCredentialOutput) Metas() DomainsUserDbCredentialMetaArrayO
 	return o.ApplyT(func(v *DomainsUserDbCredential) DomainsUserDbCredentialMetaArrayOutput { return v.Metas }).(DomainsUserDbCredentialMetaArrayOutput)
 }
 
-// (Updatable) The db password of the user with mixed salt
+// (Updatable) The user's database password with mixed salt.
 //
 // **SCIM++ Properties:**
 // * type: string
@@ -1390,7 +1390,7 @@ func (o DomainsUserDbCredentialOutput) MixedDbPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.MixedDbPassword }).(pulumi.StringOutput)
 }
 
-// (Updatable) The mixed salt of the password
+// (Updatable) The mixed salt of the password.
 //
 // **SCIM++ Properties:**
 // * type: string
@@ -1401,7 +1401,7 @@ func (o DomainsUserDbCredentialOutput) MixedSalt() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.MixedSalt }).(pulumi.StringOutput)
 }
 
-// (Updatable) User name
+// (Updatable) The username.
 //
 // **SCIM++ Properties:**
 // * caseExact: false
@@ -1416,7 +1416,7 @@ func (o DomainsUserDbCredentialOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// User's ocid
+// The user's OCID.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1436,7 +1436,7 @@ func (o DomainsUserDbCredentialOutput) ResourceTypeSchemaVersion() pulumi.String
 	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.ResourceTypeSchemaVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The salt of the password
+// (Updatable) The salt of the password.
 //
 // **SCIM++ Properties:**
 // * type: string
@@ -1516,7 +1516,7 @@ func (o DomainsUserDbCredentialOutput) Urnietfparamsscimschemasoracleidcsextensi
 	}).(DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
 }
 
-// User linked to db credential
+// The user linked to the database credential.
 //
 // **SCIM++ Properties:**
 // * caseExact: false

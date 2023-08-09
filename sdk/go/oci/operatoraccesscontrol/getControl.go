@@ -76,6 +76,8 @@ type GetControlResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the operator control.
 	Id string `pulumi:"id"`
+	// Whether the operator control is a default Operator Control.
+	IsDefaultOperatorControl bool `pulumi:"isDefaultOperatorControl"`
 	// Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
@@ -180,6 +182,11 @@ func (o GetControlResultOutput) FreeformTags() pulumi.MapOutput {
 // The OCID of the operator control.
 func (o GetControlResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether the operator control is a default Operator Control.
+func (o GetControlResultOutput) IsDefaultOperatorControl() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetControlResult) bool { return v.IsDefaultOperatorControl }).(pulumi.BoolOutput)
 }
 
 // Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.

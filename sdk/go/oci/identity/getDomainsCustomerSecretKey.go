@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Get user's customer secret key
+// Get a user's customer secret key.
 //
 // ## Example Usage
 //
@@ -73,7 +73,7 @@ type LookupDomainsCustomerSecretKeyArgs struct {
 
 // A collection of values returned by getDomainsCustomerSecretKey.
 type LookupDomainsCustomerSecretKeyResult struct {
-	// Access key
+	// The access key.
 	AccessKey     string   `pulumi:"accessKey"`
 	AttributeSets []string `pulumi:"attributeSets"`
 	Attributes    *string  `pulumi:"attributes"`
@@ -89,7 +89,7 @@ type LookupDomainsCustomerSecretKeyResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	DomainOcid string `pulumi:"domainOcid"`
-	// User credential expires on
+	// When the user's credential expire.
 	ExpiresOn string `pulumi:"expiresOn"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
 	Id string `pulumi:"id"`
@@ -104,12 +104,12 @@ type LookupDomainsCustomerSecretKeyResult struct {
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsCustomerSecretKeyMeta `pulumi:"metas"`
-	// User's ocid
+	// The user's OCID.
 	Ocid                      string  `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
-	// User credential status
+	// The user's credential status.
 	Status string `pulumi:"status"`
 	// A list of tags on this resource.
 	Tags []GetDomainsCustomerSecretKeyTag `pulumi:"tags"`
@@ -169,7 +169,7 @@ func (o LookupDomainsCustomerSecretKeyResultOutput) ToLookupDomainsCustomerSecre
 	return o
 }
 
-// Access key
+// The access key.
 func (o LookupDomainsCustomerSecretKeyResultOutput) AccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsCustomerSecretKeyResult) string { return v.AccessKey }).(pulumi.StringOutput)
 }
@@ -215,7 +215,7 @@ func (o LookupDomainsCustomerSecretKeyResultOutput) DomainOcid() pulumi.StringOu
 	return o.ApplyT(func(v LookupDomainsCustomerSecretKeyResult) string { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
-// User credential expires on
+// When the user's credential expire.
 func (o LookupDomainsCustomerSecretKeyResultOutput) ExpiresOn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsCustomerSecretKeyResult) string { return v.ExpiresOn }).(pulumi.StringOutput)
 }
@@ -258,7 +258,7 @@ func (o LookupDomainsCustomerSecretKeyResultOutput) Metas() GetDomainsCustomerSe
 	return o.ApplyT(func(v LookupDomainsCustomerSecretKeyResult) []GetDomainsCustomerSecretKeyMeta { return v.Metas }).(GetDomainsCustomerSecretKeyMetaArrayOutput)
 }
 
-// User's ocid
+// The user's OCID.
 func (o LookupDomainsCustomerSecretKeyResultOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsCustomerSecretKeyResult) string { return v.Ocid }).(pulumi.StringOutput)
 }
@@ -272,7 +272,7 @@ func (o LookupDomainsCustomerSecretKeyResultOutput) Schemas() pulumi.StringArray
 	return o.ApplyT(func(v LookupDomainsCustomerSecretKeyResult) []string { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
-// User credential status
+// The user's credential status.
 func (o LookupDomainsCustomerSecretKeyResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsCustomerSecretKeyResult) string { return v.Status }).(pulumi.StringOutput)
 }

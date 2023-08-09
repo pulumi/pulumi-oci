@@ -177,6 +177,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: immutable
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: never
      * * type: boolean
@@ -195,6 +196,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: immutable
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: never
      * * type: boolean
@@ -214,6 +216,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: string
@@ -232,6 +235,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: request
      * * type: string
@@ -243,7 +247,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+     * (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      * **Added In:** 17.4.6
      * 
@@ -262,7 +266,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs> delegatedAuthenticationTargetApp;
 
     /**
-     * @return (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+     * @return (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      * **Added In:** 17.4.6
      * 
@@ -347,6 +351,43 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs>>> grants() {
         return Optional.ofNullable(this.grants);
+    }
+
+    /**
+     * (Updatable) Specifies date time when a User&#39;s group membership was last modified.
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="groupMembershipLastModified")
+    private @Nullable Output<String> groupMembershipLastModified;
+
+    /**
+     * @return (Updatable) Specifies date time when a User&#39;s group membership was last modified.
+     * 
+     * **Added In:** 2304270343
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<String>> groupMembershipLastModified() {
+        return Optional.ofNullable(this.groupMembershipLastModified);
     }
 
     /**
@@ -474,6 +515,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -493,6 +535,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -614,6 +657,45 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     public Optional<Output<String>> notificationEmailTemplateId() {
         return Optional.ofNullable(this.notificationEmailTemplateId);
+    }
+
+    /**
+     * (Updatable) User&#39;s preferred landing page following login, logout and reset password.
+     * 
+     * **Added In:** 2302092332
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="preferredUiLandingPage")
+    private @Nullable Output<String> preferredUiLandingPage;
+
+    /**
+     * @return (Updatable) User&#39;s preferred landing page following login, logout and reset password.
+     * 
+     * **Added In:** 2302092332
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<String>> preferredUiLandingPage() {
+        return Optional.ofNullable(this.preferredUiLandingPage);
     }
 
     /**
@@ -856,6 +938,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         this.delegatedAuthenticationTargetApp = $.delegatedAuthenticationTargetApp;
         this.doNotShowGettingStarted = $.doNotShowGettingStarted;
         this.grants = $.grants;
+        this.groupMembershipLastModified = $.groupMembershipLastModified;
         this.idcsAppRolesLimitedToGroups = $.idcsAppRolesLimitedToGroups;
         this.isAccountRecoveryEnrolled = $.isAccountRecoveryEnrolled;
         this.isAuthenticationDelegated = $.isAuthenticationDelegated;
@@ -863,6 +946,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         this.isGroupMembershipNormalized = $.isGroupMembershipNormalized;
         this.isGroupMembershipSyncedToUsersGroups = $.isGroupMembershipSyncedToUsersGroups;
         this.notificationEmailTemplateId = $.notificationEmailTemplateId;
+        this.preferredUiLandingPage = $.preferredUiLandingPage;
         this.status = $.status;
         this.supportAccounts = $.supportAccounts;
         this.syncedFromApp = $.syncedFromApp;
@@ -1124,6 +1208,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: immutable
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: never
          * * type: boolean
@@ -1146,6 +1231,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: immutable
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: never
          * * type: boolean
@@ -1167,6 +1253,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: immutable
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: string
@@ -1189,6 +1276,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: immutable
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: request
          * * type: string
@@ -1202,7 +1290,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+         * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
          * 
          * **Added In:** 17.4.6
          * 
@@ -1225,7 +1313,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+         * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
          * 
          * **Added In:** 17.4.6
          * 
@@ -1343,6 +1431,49 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
          */
         public Builder grants(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs... grants) {
             return grants(List.of(grants));
+        }
+
+        /**
+         * @param groupMembershipLastModified (Updatable) Specifies date time when a User&#39;s group membership was last modified.
+         * 
+         * **Added In:** 2304270343
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder groupMembershipLastModified(@Nullable Output<String> groupMembershipLastModified) {
+            $.groupMembershipLastModified = groupMembershipLastModified;
+            return this;
+        }
+
+        /**
+         * @param groupMembershipLastModified (Updatable) Specifies date time when a User&#39;s group membership was last modified.
+         * 
+         * **Added In:** 2304270343
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder groupMembershipLastModified(String groupMembershipLastModified) {
+            return groupMembershipLastModified(Output.of(groupMembershipLastModified));
         }
 
         /**
@@ -1509,6 +1640,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: boolean
@@ -1532,6 +1664,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
+         * * idcsRequiresWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: boolean
@@ -1673,6 +1806,51 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
          */
         public Builder notificationEmailTemplateId(String notificationEmailTemplateId) {
             return notificationEmailTemplateId(Output.of(notificationEmailTemplateId));
+        }
+
+        /**
+         * @param preferredUiLandingPage (Updatable) User&#39;s preferred landing page following login, logout and reset password.
+         * 
+         * **Added In:** 2302092332
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredUiLandingPage(@Nullable Output<String> preferredUiLandingPage) {
+            $.preferredUiLandingPage = preferredUiLandingPage;
+            return this;
+        }
+
+        /**
+         * @param preferredUiLandingPage (Updatable) User&#39;s preferred landing page following login, logout and reset password.
+         * 
+         * **Added In:** 2302092332
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredUiLandingPage(String preferredUiLandingPage) {
+            return preferredUiLandingPage(Output.of(preferredUiLandingPage));
         }
 
         /**

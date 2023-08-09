@@ -16,7 +16,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs();
 
     /**
-     * (Updatable) The value of of the User&#39;s api key.
+     * (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 
@@ -35,7 +35,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The value of of the User&#39;s api key.
+     * @return (Updatable) The user&#39;s API key value.
      * 
      * **Added In:** 2106240046
      * 
@@ -55,7 +55,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     }
 
     /**
-     * (Updatable) Ocid of the User&#39;s Support Account.
+     * (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -74,7 +74,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -197,7 +197,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param key (Updatable) The value of of the User&#39;s api key.
+         * @param key (Updatable) The user&#39;s API key value.
          * 
          * **Added In:** 2106240046
          * 
@@ -220,7 +220,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param key (Updatable) The value of of the User&#39;s api key.
+         * @param key (Updatable) The user&#39;s API key value.
          * 
          * **Added In:** 2106240046
          * 
@@ -242,7 +242,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 
@@ -265,7 +265,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 

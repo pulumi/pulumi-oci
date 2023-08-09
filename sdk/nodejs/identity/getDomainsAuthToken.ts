@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's auth token
+ * Get a user's Auth token.
  *
  * ## Example Usage
  *
@@ -95,7 +95,7 @@ export interface GetDomainsAuthTokenResult {
      */
     readonly domainOcid: string;
     /**
-     * User credential expires on
+     * When the user's credential expire.
      */
     readonly expiresOn: string;
     /**
@@ -124,7 +124,7 @@ export interface GetDomainsAuthTokenResult {
      */
     readonly metas: outputs.Identity.GetDomainsAuthTokenMeta[];
     /**
-     * User's ocid
+     * The user's OCID.
      */
     readonly ocid: string;
     readonly resourceTypeSchemaVersion?: string;
@@ -133,7 +133,7 @@ export interface GetDomainsAuthTokenResult {
      */
     readonly schemas: string[];
     /**
-     * User credential status
+     * The user's credential status.
      */
     readonly status: string;
     /**
@@ -149,14 +149,14 @@ export interface GetDomainsAuthTokenResult {
      */
     readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUsers: outputs.Identity.GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser[];
     /**
-     * User linked to auth token
+     * The user linked to the Auth token.
      */
     readonly users: outputs.Identity.GetDomainsAuthTokenUser[];
 }
 /**
  * This data source provides details about a specific Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's auth token
+ * Get a user's Auth token.
  *
  * ## Example Usage
  *

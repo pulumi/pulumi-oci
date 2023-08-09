@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's api key
+        /// Get a user's API key.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's api key
+        /// Get a user's API key.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsApiKeyMetaResult> Metas;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         public readonly string? ResourceTypeSchemaVersion;
@@ -262,7 +262,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult> UrnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
         /// <summary>
-        /// User linked to api key
+        /// The user linked to the API key.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsApiKeyUserResult> Users;
 

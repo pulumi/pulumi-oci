@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// Get a Group - The Group search and get operations on users/members will throw an exception if it has more than 10K members, to avoid the exception use the pagination filter to get or search group members
+// Get a group. <b>Important:</b> The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
 //
 // ## Example Usage
 //
@@ -80,7 +80,7 @@ type LookupDomainsGroupResult struct {
 	CompartmentOcid string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	DeleteInProgress bool `pulumi:"deleteInProgress"`
-	// Group display name
+	// The Group display name.
 	DisplayName string `pulumi:"displayName"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	DomainOcid string `pulumi:"domainOcid"`
@@ -98,11 +98,11 @@ type LookupDomainsGroupResult struct {
 	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
-	// Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+	// The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
 	Members []GetDomainsGroupMember `pulumi:"members"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsGroupMeta `pulumi:"metas"`
-	// A human readable name for Group as defined by the Service Consumer
+	// A human readable name for the group as defined by the Service Consumer.
 	NonUniqueDisplayName string `pulumi:"nonUniqueDisplayName"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	Ocid                      string  `pulumi:"ocid"`
@@ -119,7 +119,7 @@ type LookupDomainsGroupResult struct {
 	UrnietfparamsscimschemasoracleidcsextensiondbcsGroups []GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbcsGroups"`
 	// Dynamic Group
 	UrnietfparamsscimschemasoracleidcsextensiondynamicGroups []GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup `pulumi:"urnietfparamsscimschemasoracleidcsextensiondynamicGroups"`
-	// Idcs Group
+	// Oracle Identity Cloud Service Group
 	UrnietfparamsscimschemasoracleidcsextensiongroupGroups []GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup `pulumi:"urnietfparamsscimschemasoracleidcsextensiongroupGroups"`
 	// POSIX Group extension
 	UrnietfparamsscimschemasoracleidcsextensionposixGroups []GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup `pulumi:"urnietfparamsscimschemasoracleidcsextensionposixGroups"`
@@ -197,7 +197,7 @@ func (o LookupDomainsGroupResultOutput) DeleteInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDomainsGroupResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
 }
 
-// Group display name
+// The Group display name.
 func (o LookupDomainsGroupResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -245,7 +245,7 @@ func (o LookupDomainsGroupResultOutput) IdcsPreventedOperations() pulumi.StringA
 	return o.ApplyT(func(v LookupDomainsGroupResult) []string { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
-// Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+// The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
 func (o LookupDomainsGroupResultOutput) Members() GetDomainsGroupMemberArrayOutput {
 	return o.ApplyT(func(v LookupDomainsGroupResult) []GetDomainsGroupMember { return v.Members }).(GetDomainsGroupMemberArrayOutput)
 }
@@ -255,7 +255,7 @@ func (o LookupDomainsGroupResultOutput) Metas() GetDomainsGroupMetaArrayOutput {
 	return o.ApplyT(func(v LookupDomainsGroupResult) []GetDomainsGroupMeta { return v.Metas }).(GetDomainsGroupMetaArrayOutput)
 }
 
-// A human readable name for Group as defined by the Service Consumer
+// A human readable name for the group as defined by the Service Consumer.
 func (o LookupDomainsGroupResultOutput) NonUniqueDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.NonUniqueDisplayName }).(pulumi.StringOutput)
 }
@@ -305,7 +305,7 @@ func (o LookupDomainsGroupResultOutput) Urnietfparamsscimschemasoracleidcsextens
 	}).(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArrayOutput)
 }
 
-// Idcs Group
+// Oracle Identity Cloud Service Group
 func (o LookupDomainsGroupResultOutput) UrnietfparamsscimschemasoracleidcsextensiongroupGroups() GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArrayOutput {
 	return o.ApplyT(func(v LookupDomainsGroupResult) []GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup {
 		return v.UrnietfparamsscimschemasoracleidcsextensiongroupGroups

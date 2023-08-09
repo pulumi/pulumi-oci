@@ -210,7 +210,7 @@ def get_domains_my_groups(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides the list of My Groups in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search My Groups
+    Search for 'My Groups'.
 
     ## Example Usage
 
@@ -288,7 +288,7 @@ def get_domains_my_groups_output(attribute_sets: Optional[pulumi.Input[Optional[
     """
     This data source provides the list of My Groups in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search My Groups
+    Search for 'My Groups'.
 
     ## Example Usage
 

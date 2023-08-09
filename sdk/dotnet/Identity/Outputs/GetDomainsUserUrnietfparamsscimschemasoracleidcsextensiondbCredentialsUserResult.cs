@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int DbLoginAttempts;
         /// <summary>
-        /// The Database User Name
+        /// The database username.
         /// </summary>
         public readonly string DbUserName;
 

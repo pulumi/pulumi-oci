@@ -66,6 +66,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> DisallowedSubstrings;
         /// <summary>
+        /// List of User attributes whose values are not allowed in the password.
+        /// </summary>
+        public readonly ImmutableArray<string> DisallowedUserAttributeValues;
+        /// <summary>
+        /// The number of distinct characters between old password and new password
+        /// </summary>
+        public readonly int DistinctCharacters;
+        /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
         public readonly string DomainOcid;
@@ -258,6 +266,10 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<string> disallowedSubstrings,
 
+            ImmutableArray<string> disallowedUserAttributeValues,
+
+            int distinctCharacters,
+
             string domainOcid,
 
             string externalId,
@@ -353,6 +365,8 @@ namespace Pulumi.Oci.Identity.Outputs
             DictionaryWordDisallowed = dictionaryWordDisallowed;
             DisallowedChars = disallowedChars;
             DisallowedSubstrings = disallowedSubstrings;
+            DisallowedUserAttributeValues = disallowedUserAttributeValues;
+            DistinctCharacters = distinctCharacters;
             DomainOcid = domainOcid;
             ExternalId = externalId;
             FirstNameDisallowed = firstNameDisallowed;

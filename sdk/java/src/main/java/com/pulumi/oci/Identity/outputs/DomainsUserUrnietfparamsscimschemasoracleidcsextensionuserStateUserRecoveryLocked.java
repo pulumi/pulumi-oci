@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked {
     /**
-     * @return (Updatable) The date and time that the current resource was locked
+     * @return (Updatable) The date and time that the current resource was locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -21,6 +21,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: dateTime
@@ -29,7 +30,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      */
     private @Nullable String lockDate;
     /**
-     * @return (Updatable) Indicates that the rev is locked
+     * @return (Updatable) Indicates that the recovery is locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -38,6 +39,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -48,7 +50,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked() {}
     /**
-     * @return (Updatable) The date and time that the current resource was locked
+     * @return (Updatable) The date and time that the current resource was locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -56,6 +58,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: dateTime
@@ -66,7 +69,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         return Optional.ofNullable(this.lockDate);
     }
     /**
-     * @return (Updatable) Indicates that the rev is locked
+     * @return (Updatable) Indicates that the recovery is locked.
      * 
      * **Added In:** 19.1.4
      * 
@@ -75,6 +78,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
+     * * idcsRequiresWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean

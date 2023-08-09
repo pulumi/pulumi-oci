@@ -38,7 +38,7 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
      */
     private String authenticatorSelectionUserVerification;
     /**
-     * @return Number of domain levels IDCS should use for origin comparision
+     * @return Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * 
      */
     private Integer domainValidationLevel;
@@ -95,7 +95,7 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         return this.authenticatorSelectionUserVerification;
     }
     /**
-     * @return Number of domain levels IDCS should use for origin comparision
+     * @return Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * 
      */
     public Integer domainValidationLevel() {

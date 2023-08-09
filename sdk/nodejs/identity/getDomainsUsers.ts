@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Users in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Users
+ * Search for users.
  *
  * ## Example Usage
  *
@@ -121,7 +121,7 @@ export interface GetDomainsUsersResult {
 /**
  * This data source provides the list of Users in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Users
+ * Search for users.
  *
  * ## Example Usage
  *

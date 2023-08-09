@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAuthTokenIdcsLastModifiedBy {
     /**
-     * @return (Updatable) User display name
+     * @return (Updatable) The user&#39;s display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -27,7 +27,7 @@ public final class DomainsAuthTokenIdcsLastModifiedBy {
      */
     private @Nullable String display;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -72,7 +72,7 @@ public final class DomainsAuthTokenIdcsLastModifiedBy {
      */
     private @Nullable String type;
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -92,7 +92,7 @@ public final class DomainsAuthTokenIdcsLastModifiedBy {
 
     private DomainsAuthTokenIdcsLastModifiedBy() {}
     /**
-     * @return (Updatable) User display name
+     * @return (Updatable) The user&#39;s display name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -109,7 +109,7 @@ public final class DomainsAuthTokenIdcsLastModifiedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -160,7 +160,7 @@ public final class DomainsAuthTokenIdcsLastModifiedBy {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s ID.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true

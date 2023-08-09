@@ -83,6 +83,10 @@ export interface GetControlAssignmentResult {
      */
     readonly isAutoApproveDuringMaintenance: boolean;
     /**
+     * Whether the assignment is a default assignment.
+     */
+    readonly isDefaultAssignment: boolean;
+    /**
      * If set, then the target resource is always governed by the operator control.
      */
     readonly isEnforcedAlways: boolean;

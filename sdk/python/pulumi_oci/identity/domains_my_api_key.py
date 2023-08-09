@@ -61,7 +61,7 @@ class DomainsMyApiKeyArgs:
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -84,7 +84,7 @@ class DomainsMyApiKeyArgs:
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input['DomainsMyApiKeyUserArgs'] user: User linked to api key
+        :param pulumi.Input['DomainsMyApiKeyUserArgs'] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -205,7 +205,7 @@ class DomainsMyApiKeyArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -261,7 +261,7 @@ class DomainsMyApiKeyArgs:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsMyApiKeyUserArgs']]:
         """
-        User linked to api key
+        The user linked to the API key.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -421,7 +421,7 @@ class _DomainsMyApiKeyState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -466,7 +466,7 @@ class _DomainsMyApiKeyState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input['DomainsMyApiKeyUserArgs'] user: User linked to api key
+        :param pulumi.Input['DomainsMyApiKeyUserArgs'] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -781,7 +781,7 @@ class _DomainsMyApiKeyState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -881,7 +881,7 @@ class _DomainsMyApiKeyState:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['DomainsMyApiKeyUserArgs']]:
         """
-        User linked to api key
+        The user linked to the API key.
 
         **SCIM++ Properties:**
         * caseExact: false
@@ -918,7 +918,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
         """
         This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's api key
+        Add a user's own API key.
 
         ## Import
 
@@ -953,7 +953,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -987,7 +987,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyApiKeyUserArgs']] user: User linked to api key
+        :param pulumi.Input[pulumi.InputType['DomainsMyApiKeyUserArgs']] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1008,7 +1008,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
         """
         This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's api key
+        Add a user's own API key.
 
         ## Import
 
@@ -1229,7 +1229,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1274,7 +1274,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyApiKeyUserArgs']] user: User linked to api key
+        :param pulumi.Input[pulumi.InputType['DomainsMyApiKeyUserArgs']] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1523,7 +1523,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1603,7 +1603,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
     @pulumi.getter
     def user(self) -> pulumi.Output['outputs.DomainsMyApiKeyUser']:
         """
-        User linked to api key
+        The user linked to the API key.
 
         **SCIM++ Properties:**
         * caseExact: false

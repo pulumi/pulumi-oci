@@ -155,6 +155,21 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
     }
 
     /**
+     * Whether the assignment is a default assignment.
+     * 
+     */
+    @Import(name="isDefaultAssignment")
+    private @Nullable Output<Boolean> isDefaultAssignment;
+
+    /**
+     * @return Whether the assignment is a default assignment.
+     * 
+     */
+    public Optional<Output<Boolean>> isDefaultAssignment() {
+        return Optional.ofNullable(this.isDefaultAssignment);
+    }
+
+    /**
      * (Updatable) If set, then the target resource is always governed by the operator control.
      * 
      */
@@ -427,6 +442,7 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
         this.errorMessage = $.errorMessage;
         this.freeformTags = $.freeformTags;
         this.isAutoApproveDuringMaintenance = $.isAutoApproveDuringMaintenance;
+        this.isDefaultAssignment = $.isDefaultAssignment;
         this.isEnforcedAlways = $.isEnforcedAlways;
         this.isLogForwarded = $.isLogForwarded;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -651,6 +667,27 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
          */
         public Builder isAutoApproveDuringMaintenance(Boolean isAutoApproveDuringMaintenance) {
             return isAutoApproveDuringMaintenance(Output.of(isAutoApproveDuringMaintenance));
+        }
+
+        /**
+         * @param isDefaultAssignment Whether the assignment is a default assignment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultAssignment(@Nullable Output<Boolean> isDefaultAssignment) {
+            $.isDefaultAssignment = isDefaultAssignment;
+            return this;
+        }
+
+        /**
+         * @param isDefaultAssignment Whether the assignment is a default assignment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultAssignment(Boolean isDefaultAssignment) {
+            return isDefaultAssignment(Output.of(isDefaultAssignment));
         }
 
         /**

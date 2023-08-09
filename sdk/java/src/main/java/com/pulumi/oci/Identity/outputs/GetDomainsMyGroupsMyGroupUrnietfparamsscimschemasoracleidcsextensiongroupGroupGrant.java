@@ -15,7 +15,10 @@ public final class GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsex
      */
     private String appId;
     /**
-     * @return Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:\n - &#39;ADMINISTRATOR_TO_USER&#39; is for a direct grant to a specific User.\n - &#39;ADMINISTRATOR_TO_GROUP&#39; is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+     * @return Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:
+     * * &#39;ADMINISTRATOR_TO_USER&#39; is for a direct grant to a specific User.
+     * * &#39;ADMINISTRATOR_TO_GROUP&#39; is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+     * * &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * 
      */
     private String grantMechanism;
@@ -39,7 +42,10 @@ public final class GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsex
         return this.appId;
     }
     /**
-     * @return Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:\n - &#39;ADMINISTRATOR_TO_USER&#39; is for a direct grant to a specific User.\n - &#39;ADMINISTRATOR_TO_GROUP&#39; is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+     * @return Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:
+     * * &#39;ADMINISTRATOR_TO_USER&#39; is for a direct grant to a specific User.
+     * * &#39;ADMINISTRATOR_TO_GROUP&#39; is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+     * * &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * 
      */
     public String grantMechanism() {

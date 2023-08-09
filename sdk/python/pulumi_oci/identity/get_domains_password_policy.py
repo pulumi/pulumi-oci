@@ -22,7 +22,7 @@ class GetDomainsPasswordPolicyResult:
     """
     A collection of values returned by getDomainsPasswordPolicy.
     """
-    def __init__(__self__, allowed_chars=None, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, configured_password_policy_rules=None, delete_in_progress=None, description=None, dictionary_delimiter=None, dictionary_location=None, dictionary_word_disallowed=None, disallowed_chars=None, disallowed_substrings=None, domain_ocid=None, external_id=None, first_name_disallowed=None, force_password_reset=None, groups=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, last_name_disallowed=None, lockout_duration=None, max_incorrect_attempts=None, max_length=None, max_repeated_chars=None, max_special_chars=None, metas=None, min_alpha_numerals=None, min_alphas=None, min_length=None, min_lower_case=None, min_numerals=None, min_password_age=None, min_special_chars=None, min_unique_chars=None, min_upper_case=None, name=None, num_passwords_in_history=None, ocid=None, password_expire_warning=None, password_expires_after=None, password_policy_id=None, password_strength=None, priority=None, required_chars=None, resource_type_schema_version=None, schemas=None, starts_with_alphabet=None, tags=None, tenancy_ocid=None, user_name_disallowed=None):
+    def __init__(__self__, allowed_chars=None, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, configured_password_policy_rules=None, delete_in_progress=None, description=None, dictionary_delimiter=None, dictionary_location=None, dictionary_word_disallowed=None, disallowed_chars=None, disallowed_substrings=None, disallowed_user_attribute_values=None, distinct_characters=None, domain_ocid=None, external_id=None, first_name_disallowed=None, force_password_reset=None, groups=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, last_name_disallowed=None, lockout_duration=None, max_incorrect_attempts=None, max_length=None, max_repeated_chars=None, max_special_chars=None, metas=None, min_alpha_numerals=None, min_alphas=None, min_length=None, min_lower_case=None, min_numerals=None, min_password_age=None, min_special_chars=None, min_unique_chars=None, min_upper_case=None, name=None, num_passwords_in_history=None, ocid=None, password_expire_warning=None, password_expires_after=None, password_policy_id=None, password_strength=None, priority=None, required_chars=None, resource_type_schema_version=None, schemas=None, starts_with_alphabet=None, tags=None, tenancy_ocid=None, user_name_disallowed=None):
         if allowed_chars and not isinstance(allowed_chars, str):
             raise TypeError("Expected argument 'allowed_chars' to be a str")
         pulumi.set(__self__, "allowed_chars", allowed_chars)
@@ -62,6 +62,12 @@ class GetDomainsPasswordPolicyResult:
         if disallowed_substrings and not isinstance(disallowed_substrings, list):
             raise TypeError("Expected argument 'disallowed_substrings' to be a list")
         pulumi.set(__self__, "disallowed_substrings", disallowed_substrings)
+        if disallowed_user_attribute_values and not isinstance(disallowed_user_attribute_values, list):
+            raise TypeError("Expected argument 'disallowed_user_attribute_values' to be a list")
+        pulumi.set(__self__, "disallowed_user_attribute_values", disallowed_user_attribute_values)
+        if distinct_characters and not isinstance(distinct_characters, int):
+            raise TypeError("Expected argument 'distinct_characters' to be a int")
+        pulumi.set(__self__, "distinct_characters", distinct_characters)
         if domain_ocid and not isinstance(domain_ocid, str):
             raise TypeError("Expected argument 'domain_ocid' to be a str")
         pulumi.set(__self__, "domain_ocid", domain_ocid)
@@ -283,6 +289,22 @@ class GetDomainsPasswordPolicyResult:
         A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
         """
         return pulumi.get(self, "disallowed_substrings")
+
+    @property
+    @pulumi.getter(name="disallowedUserAttributeValues")
+    def disallowed_user_attribute_values(self) -> Sequence[str]:
+        """
+        List of User attributes whose values are not allowed in the password.
+        """
+        return pulumi.get(self, "disallowed_user_attribute_values")
+
+    @property
+    @pulumi.getter(name="distinctCharacters")
+    def distinct_characters(self) -> int:
+        """
+        The number of distinct characters between old password and new password
+        """
+        return pulumi.get(self, "distinct_characters")
 
     @property
     @pulumi.getter(name="domainOcid")
@@ -631,6 +653,8 @@ class AwaitableGetDomainsPasswordPolicyResult(GetDomainsPasswordPolicyResult):
             dictionary_word_disallowed=self.dictionary_word_disallowed,
             disallowed_chars=self.disallowed_chars,
             disallowed_substrings=self.disallowed_substrings,
+            disallowed_user_attribute_values=self.disallowed_user_attribute_values,
+            distinct_characters=self.distinct_characters,
             domain_ocid=self.domain_ocid,
             external_id=self.external_id,
             first_name_disallowed=self.first_name_disallowed,
@@ -685,7 +709,7 @@ def get_domains_password_policy(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a Password Policy
+    Get a password policy.
 
     ## Example Usage
 
@@ -733,6 +757,8 @@ def get_domains_password_policy(attribute_sets: Optional[Sequence[str]] = None,
         dictionary_word_disallowed=pulumi.get(__ret__, 'dictionary_word_disallowed'),
         disallowed_chars=pulumi.get(__ret__, 'disallowed_chars'),
         disallowed_substrings=pulumi.get(__ret__, 'disallowed_substrings'),
+        disallowed_user_attribute_values=pulumi.get(__ret__, 'disallowed_user_attribute_values'),
+        distinct_characters=pulumi.get(__ret__, 'distinct_characters'),
         domain_ocid=pulumi.get(__ret__, 'domain_ocid'),
         external_id=pulumi.get(__ret__, 'external_id'),
         first_name_disallowed=pulumi.get(__ret__, 'first_name_disallowed'),
@@ -788,7 +814,7 @@ def get_domains_password_policy_output(attribute_sets: Optional[pulumi.Input[Opt
     """
     This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a Password Policy
+    Get a password policy.
 
     ## Example Usage
 

@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
     /// 
-    /// Add user's auth token
+    /// Create a user's own Auth token.
     /// 
     /// ## Import
     /// 
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> DomainOcid { get; private set; } = null!;
 
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsMyAuthTokenMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -232,7 +232,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<string>> Schemas { get; private set; } = null!;
 
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -282,7 +282,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
-        /// User linked to auth token
+        /// The user linked to the Auth token.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -365,7 +365,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -389,7 +389,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> IdcsEndpoint { get; set; } = null!;
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -433,7 +433,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -473,7 +473,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// User linked to auth token
+        /// The user linked to the Auth token.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -566,7 +566,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? DomainOcid { get; set; }
 
         /// <summary>
-        /// User credential expires on
+        /// When the user's credential expire.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -689,7 +689,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -733,7 +733,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -789,7 +789,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? TenancyOcid { get; set; }
 
         /// <summary>
-        /// User linked to auth token
+        /// The user linked to the Auth token.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false

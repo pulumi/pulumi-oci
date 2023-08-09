@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
     /// 
-    /// Set a User's DbCredential
+    /// Create a user's database (DB) credentials.
     /// 
     /// ## Import
     /// 
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
-        /// The db password of the user
+        /// The user's database password.
         /// 
         /// **SCIM++ Properties:**
         /// * type: string
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> DomainOcid { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates that the db password has expired
+        /// (Updatable) Indicates that the database password has expired.
         /// 
         /// **SCIM++ Properties:**
         /// * type: boolean
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Identity
         public Output<bool> Expired { get; private set; } = null!;
 
         /// <summary>
-        /// User credential expires on
+        /// When the user credential expires.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -213,7 +213,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<string>> IdcsPreventedOperations { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A DateTime that specifies the date and time when the current db password was set
+        /// (Updatable) A DateTime that specifies the date and time when the current database password was set.
         /// 
         /// **SCIM++ Properties:**
         /// * type: dateTime
@@ -240,7 +240,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsUserDbCredentialMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The db password of the user with mixed salt
+        /// (Updatable) The user's database password with mixed salt.
         /// 
         /// **SCIM++ Properties:**
         /// * type: string
@@ -252,7 +252,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> MixedDbPassword { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The mixed salt of the password
+        /// (Updatable) The mixed salt of the password.
         /// 
         /// **SCIM++ Properties:**
         /// * type: string
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> MixedSalt { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) User name
+        /// (Updatable) The username.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -280,7 +280,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -302,7 +302,7 @@ namespace Pulumi.Oci.Identity
         public Output<string?> ResourceTypeSchemaVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The salt of the password
+        /// (Updatable) The salt of the password.
         /// 
         /// **SCIM++ Properties:**
         /// * type: string
@@ -386,7 +386,7 @@ namespace Pulumi.Oci.Identity
         public Output<Outputs.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; private set; } = null!;
 
         /// <summary>
-        /// User linked to db credential
+        /// The user linked to the database credential.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -480,7 +480,7 @@ namespace Pulumi.Oci.Identity
         private Input<string>? _dbPassword;
 
         /// <summary>
-        /// The db password of the user
+        /// The user's database password.
         /// 
         /// **SCIM++ Properties:**
         /// * type: string
@@ -514,7 +514,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// User credential expires on
+        /// When the user credential expires.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -538,7 +538,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> IdcsEndpoint { get; set; } = null!;
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -628,7 +628,7 @@ namespace Pulumi.Oci.Identity
         public Input<Inputs.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs>? UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; set; }
 
         /// <summary>
-        /// User linked to db credential
+        /// The user linked to the database credential.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -696,7 +696,7 @@ namespace Pulumi.Oci.Identity
         private Input<string>? _dbPassword;
 
         /// <summary>
-        /// The db password of the user
+        /// The user's database password.
         /// 
         /// **SCIM++ Properties:**
         /// * type: string
@@ -762,7 +762,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? DomainOcid { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates that the db password has expired
+        /// (Updatable) Indicates that the database password has expired.
         /// 
         /// **SCIM++ Properties:**
         /// * type: boolean
@@ -773,7 +773,7 @@ namespace Pulumi.Oci.Identity
         public Input<bool>? Expired { get; set; }
 
         /// <summary>
-        /// User credential expires on
+        /// When the user credential expires.
         /// 
         /// **Added In:** 2109090424
         /// 
@@ -874,7 +874,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// (Updatable) A DateTime that specifies the date and time when the current db password was set
+        /// (Updatable) A DateTime that specifies the date and time when the current database password was set.
         /// 
         /// **SCIM++ Properties:**
         /// * type: dateTime
@@ -907,7 +907,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// (Updatable) The db password of the user with mixed salt
+        /// (Updatable) The user's database password with mixed salt.
         /// 
         /// **SCIM++ Properties:**
         /// * type: string
@@ -919,7 +919,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? MixedDbPassword { get; set; }
 
         /// <summary>
-        /// (Updatable) The mixed salt of the password
+        /// (Updatable) The mixed salt of the password.
         /// 
         /// **SCIM++ Properties:**
         /// * type: string
@@ -931,7 +931,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? MixedSalt { get; set; }
 
         /// <summary>
-        /// (Updatable) User name
+        /// (Updatable) The username.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -947,7 +947,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -969,7 +969,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? ResourceTypeSchemaVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) The salt of the password
+        /// (Updatable) The salt of the password.
         /// 
         /// **SCIM++ Properties:**
         /// * type: string
@@ -1065,7 +1065,7 @@ namespace Pulumi.Oci.Identity
         public Input<Inputs.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserGetArgs>? UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; set; }
 
         /// <summary>
-        /// User linked to db credential
+        /// The user linked to the database credential.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false

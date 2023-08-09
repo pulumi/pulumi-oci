@@ -514,7 +514,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Ocid of the User&#39;s Support Account.
+     * (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -533,7 +533,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * @return (Updatable) The OCID of the user&#39;s support account.
      * 
      * **Added In:** 2103141444
      * 
@@ -1008,14 +1008,14 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Db Credentials User extension
+     * (Updatable) The database credentials user extension.
      * 
      */
     @Import(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser;
 
     /**
-     * @return (Updatable) Db Credentials User extension
+     * @return (Updatable) The database credentials user extension.
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs>> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser() {
@@ -1083,14 +1083,14 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) This extension defines attributes used to store Security Questions of User.
+     * (Updatable) This extension defines the attributes used to store the security questions of a user.
      * 
      */
     @Import(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser;
 
     /**
-     * @return (Updatable) This extension defines attributes used to store Security Questions of User.
+     * @return (Updatable) This extension defines the attributes used to store the security questions of a user.
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs>> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser() {
@@ -1173,14 +1173,14 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     @Import(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs> urnietfparamsscimschemasoracleidcsextensionuserStateUser;
 
     /**
-     * @return (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+     * @return (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs>> urnietfparamsscimschemasoracleidcsextensionuserStateUser() {
@@ -1188,14 +1188,14 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Oracle Cloud Infrastructure IAM User
+     * (Updatable) Oracle Identity Cloud Service User
      * 
      */
     @Import(name="urnietfparamsscimschemasoracleidcsextensionuserUser")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs> urnietfparamsscimschemasoracleidcsextensionuserUser;
 
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure IAM User
+     * @return (Updatable) Oracle Identity Cloud Service User
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs>> urnietfparamsscimschemasoracleidcsextensionuserUser() {
@@ -2038,7 +2038,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 
@@ -2061,7 +2061,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * @param ocid (Updatable) The OCID of the user&#39;s support account.
          * 
          * **Added In:** 2103141444
          * 
@@ -2728,7 +2728,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser (Updatable) Db Credentials User extension
+         * @param urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser (Updatable) The database credentials user extension.
          * 
          * @return builder
          * 
@@ -2739,7 +2739,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser (Updatable) Db Credentials User extension
+         * @param urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser (Updatable) The database credentials user extension.
          * 
          * @return builder
          * 
@@ -2833,7 +2833,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser (Updatable) This extension defines attributes used to store Security Questions of User.
+         * @param urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser (Updatable) This extension defines the attributes used to store the security questions of a user.
          * 
          * @return builder
          * 
@@ -2844,7 +2844,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser (Updatable) This extension defines attributes used to store Security Questions of User.
+         * @param urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser (Updatable) This extension defines the attributes used to store the security questions of a user.
          * 
          * @return builder
          * 
@@ -2959,7 +2959,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensionuserStateUser (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+         * @param urnietfparamsscimschemasoracleidcsextensionuserStateUser (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
          * 
          * @return builder
          * 
@@ -2970,7 +2970,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensionuserStateUser (Updatable) This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+         * @param urnietfparamsscimschemasoracleidcsextensionuserStateUser (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
          * 
          * @return builder
          * 
@@ -2980,7 +2980,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensionuserUser (Updatable) Oracle Cloud Infrastructure IAM User
+         * @param urnietfparamsscimschemasoracleidcsextensionuserUser (Updatable) Oracle Identity Cloud Service User
          * 
          * @return builder
          * 
@@ -2991,7 +2991,7 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urnietfparamsscimschemasoracleidcsextensionuserUser (Updatable) Oracle Cloud Infrastructure IAM User
+         * @param urnietfparamsscimschemasoracleidcsextensionuserUser (Updatable) Oracle Identity Cloud Service User
          * 
          * @return builder
          * 

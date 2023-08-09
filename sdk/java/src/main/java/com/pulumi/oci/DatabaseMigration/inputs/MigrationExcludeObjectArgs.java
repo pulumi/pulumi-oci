@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,6 +15,21 @@ import javax.annotation.Nullable;
 public final class MigrationExcludeObjectArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MigrationExcludeObjectArgs Empty = new MigrationExcludeObjectArgs();
+
+    /**
+     * (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+     * 
+     */
+    @Import(name="isOmitExcludedTableFromReplication")
+    private @Nullable Output<Boolean> isOmitExcludedTableFromReplication;
+
+    /**
+     * @return (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+     * 
+     */
+    public Optional<Output<Boolean>> isOmitExcludedTableFromReplication() {
+        return Optional.ofNullable(this.isOmitExcludedTableFromReplication);
+    }
 
     /**
      * (Updatable) Name of the object (regular expression is allowed)
@@ -63,6 +79,7 @@ public final class MigrationExcludeObjectArgs extends com.pulumi.resources.Resou
     private MigrationExcludeObjectArgs() {}
 
     private MigrationExcludeObjectArgs(MigrationExcludeObjectArgs $) {
+        this.isOmitExcludedTableFromReplication = $.isOmitExcludedTableFromReplication;
         this.object = $.object;
         this.owner = $.owner;
         this.type = $.type;
@@ -84,6 +101,27 @@ public final class MigrationExcludeObjectArgs extends com.pulumi.resources.Resou
 
         public Builder(MigrationExcludeObjectArgs defaults) {
             $ = new MigrationExcludeObjectArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param isOmitExcludedTableFromReplication (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOmitExcludedTableFromReplication(@Nullable Output<Boolean> isOmitExcludedTableFromReplication) {
+            $.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
+            return this;
+        }
+
+        /**
+         * @param isOmitExcludedTableFromReplication (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOmitExcludedTableFromReplication(Boolean isOmitExcludedTableFromReplication) {
+            return isOmitExcludedTableFromReplication(Output.of(isOmitExcludedTableFromReplication));
         }
 
         /**

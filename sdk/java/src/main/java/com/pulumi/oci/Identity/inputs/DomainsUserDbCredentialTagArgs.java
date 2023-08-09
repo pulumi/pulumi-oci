@@ -49,7 +49,7 @@ public final class DomainsUserDbCredentialTagArgs extends com.pulumi.resources.R
     }
 
     /**
-     * User&#39;s id
+     * The user&#39;s identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -69,7 +69,7 @@ public final class DomainsUserDbCredentialTagArgs extends com.pulumi.resources.R
     private Output<String> value;
 
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -156,7 +156,7 @@ public final class DomainsUserDbCredentialTagArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The user&#39;s identifier.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -180,7 +180,7 @@ public final class DomainsUserDbCredentialTagArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The user&#39;s identifier.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true

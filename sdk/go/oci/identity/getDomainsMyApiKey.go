@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Get user's api key
+// Get a user's own API key.
 //
 // ## Example Usage
 //
@@ -94,7 +94,7 @@ type LookupDomainsMyApiKeyResult struct {
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas      []GetDomainsMyApiKeyMeta `pulumi:"metas"`
 	MyApiKeyId string                   `pulumi:"myApiKeyId"`
-	// User's ocid
+	// The user's OCID.
 	Ocid                      string  `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -103,7 +103,7 @@ type LookupDomainsMyApiKeyResult struct {
 	Tags []GetDomainsMyApiKeyTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 	TenancyOcid string `pulumi:"tenancyOcid"`
-	// User linked to api key
+	// The user linked to the API key.
 	Users []GetDomainsMyApiKeyUser `pulumi:"users"`
 }
 
@@ -225,7 +225,7 @@ func (o LookupDomainsMyApiKeyResultOutput) MyApiKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyApiKeyResult) string { return v.MyApiKeyId }).(pulumi.StringOutput)
 }
 
-// User's ocid
+// The user's OCID.
 func (o LookupDomainsMyApiKeyResultOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyApiKeyResult) string { return v.Ocid }).(pulumi.StringOutput)
 }
@@ -249,7 +249,7 @@ func (o LookupDomainsMyApiKeyResultOutput) TenancyOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsMyApiKeyResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
 }
 
-// User linked to api key
+// The user linked to the API key.
 func (o LookupDomainsMyApiKeyResultOutput) Users() GetDomainsMyApiKeyUserArrayOutput {
 	return o.ApplyT(func(v LookupDomainsMyApiKeyResult) []GetDomainsMyApiKeyUser { return v.Users }).(GetDomainsMyApiKeyUserArrayOutput)
 }

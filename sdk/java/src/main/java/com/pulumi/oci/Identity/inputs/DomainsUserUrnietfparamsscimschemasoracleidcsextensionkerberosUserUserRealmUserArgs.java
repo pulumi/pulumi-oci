@@ -16,7 +16,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs();
 
     /**
-     * (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsPii: true
@@ -33,7 +33,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     private @Nullable Output<String> principalName;
 
     /**
-     * @return (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsPii: true
@@ -51,7 +51,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     }
 
     /**
-     * (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
@@ -67,7 +67,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     private @Nullable Output<String> realmName;
 
     /**
-     * @return (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * @return (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
@@ -187,7 +187,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param principalName (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+         * @param principalName (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * 
          * **SCIM++ Properties:**
          * * idcsPii: true
@@ -208,7 +208,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param principalName (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+         * @param principalName (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * 
          * **SCIM++ Properties:**
          * * idcsPii: true
@@ -228,7 +228,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param realmName (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+         * @param realmName (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: true
@@ -248,7 +248,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param realmName (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+         * @param realmName (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: true

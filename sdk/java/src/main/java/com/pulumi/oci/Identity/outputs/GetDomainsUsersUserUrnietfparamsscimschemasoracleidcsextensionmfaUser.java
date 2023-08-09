@@ -16,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser {
     /**
-     * @return A list of bypass codes belongs to user
+     * @return A list of bypass codes that belongs to the user.
      * 
      */
     private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes;
@@ -31,7 +31,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      */
     private Integer loginAttempts;
     /**
-     * @return This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * @return The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * 
      */
     private String mfaEnabledOn;
@@ -41,27 +41,27 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      */
     private List<String> mfaIgnoredApps;
     /**
-     * @return User Opted for MFA
+     * @return The user opted for MFA.
      * 
      */
     private String mfaStatus;
     /**
-     * @return Preferred Authentication Factor Type
+     * @return The preferred authentication factor type.
      * 
      */
     private String preferredAuthenticationFactor;
     /**
-     * @return Preferred Authentication method
+     * @return The preferred authentication method.
      * 
      */
     private String preferredAuthenticationMethod;
     /**
-     * @return User preferred device
+     * @return The user&#39;s preferred device.
      * 
      */
     private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices;
     /**
-     * @return Preferred Third party vendor name
+     * @return The preferred third-party vendor name.
      * 
      */
     private String preferredThirdPartyVendor;
@@ -73,7 +73,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser() {}
     /**
-     * @return A list of bypass codes belongs to user
+     * @return A list of bypass codes that belongs to the user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes() {
@@ -94,7 +94,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         return this.loginAttempts;
     }
     /**
-     * @return This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * @return The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * 
      */
     public String mfaEnabledOn() {
@@ -108,35 +108,35 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         return this.mfaIgnoredApps;
     }
     /**
-     * @return User Opted for MFA
+     * @return The user opted for MFA.
      * 
      */
     public String mfaStatus() {
         return this.mfaStatus;
     }
     /**
-     * @return Preferred Authentication Factor Type
+     * @return The preferred authentication factor type.
      * 
      */
     public String preferredAuthenticationFactor() {
         return this.preferredAuthenticationFactor;
     }
     /**
-     * @return Preferred Authentication method
+     * @return The preferred authentication method.
      * 
      */
     public String preferredAuthenticationMethod() {
         return this.preferredAuthenticationMethod;
     }
     /**
-     * @return User preferred device
+     * @return The user&#39;s preferred device.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices() {
         return this.preferredDevices;
     }
     /**
-     * @return Preferred Third party vendor name
+     * @return The preferred third-party vendor name.
      * 
      */
     public String preferredThirdPartyVendor() {

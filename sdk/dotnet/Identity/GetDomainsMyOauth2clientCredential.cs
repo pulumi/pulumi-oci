@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's oauth2 client credential
+        /// Get a user's own OAuth2 client credential.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides details about a specific My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Get user's oauth2 client credential
+        /// Get a user's own OAuth2 client credential.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly string DomainOcid;
         /// <summary>
-        /// User credential expires on
+        /// When the user's credentials expire.
         /// </summary>
         public readonly string ExpiresOn;
         /// <summary>
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<string> IdcsPreventedOperations;
         /// <summary>
-        /// Specifies if secret need to be reset
+        /// Specifies whether the secret must be reset.
         /// </summary>
         public readonly bool IsResetSecret;
         /// <summary>
@@ -199,11 +199,11 @@ namespace Pulumi.Oci.Identity
         public readonly ImmutableArray<Outputs.GetDomainsMyOauth2clientCredentialMetaResult> Metas;
         public readonly string MyOauth2clientCredentialId;
         /// <summary>
-        /// User name
+        /// The username.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// User's ocid
+        /// The user's OCID.
         /// </summary>
         public readonly string Ocid;
         public readonly string? ResourceTypeSchemaVersion;
@@ -216,7 +216,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsMyOauth2clientCredentialScopeResult> Scopes;
         /// <summary>
-        /// User credential status
+        /// The user's credential status.
         /// </summary>
         public readonly string Status;
         /// <summary>
@@ -228,7 +228,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly string TenancyOcid;
         /// <summary>
-        /// User linked to oauth2 client credential
+        /// The user linked to the OAuth2 client credential.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsMyOauth2clientCredentialUserResult> Users;
 

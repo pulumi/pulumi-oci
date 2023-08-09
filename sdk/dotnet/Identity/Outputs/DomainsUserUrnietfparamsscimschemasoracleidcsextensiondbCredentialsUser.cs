@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int? DbLoginAttempts;
         /// <summary>
-        /// (Updatable) The Database User Name
+        /// (Updatable) The database username.
         /// 
         /// **Added In:** 2102181953
         /// 

@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+        /// (Updatable) The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
         /// 
         /// **Added In:** 19.2.1
         /// 
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> IdcsAppRoleId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Ocid of the User's Support Account.
+        /// (Updatable) The OCID of the user's support account.
         /// 
         /// **Added In:** 2103141444
         /// 

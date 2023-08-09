@@ -63,7 +63,7 @@ class DomainsCustomerSecretKeyArgs:
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credential expire.
                
                **Added In:** 2109090424
                
@@ -76,7 +76,7 @@ class DomainsCustomerSecretKeyArgs:
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -88,7 +88,7 @@ class DomainsCustomerSecretKeyArgs:
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -264,7 +264,7 @@ class DomainsCustomerSecretKeyArgs:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 
@@ -288,7 +288,7 @@ class DomainsCustomerSecretKeyArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -322,7 +322,7 @@ class DomainsCustomerSecretKeyArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -428,7 +428,7 @@ class _DomainsCustomerSecretKeyState:
                  user: Optional[pulumi.Input['DomainsCustomerSecretKeyUserArgs']] = None):
         """
         Input properties used for looking up and filtering DomainsCustomerSecretKey resources.
-        :param pulumi.Input[str] access_key: (Updatable) Access key
+        :param pulumi.Input[str] access_key: (Updatable) The access key.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -488,7 +488,7 @@ class _DomainsCustomerSecretKeyState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credential expire.
                
                **Added In:** 2109090424
                
@@ -552,7 +552,7 @@ class _DomainsCustomerSecretKeyState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -575,7 +575,7 @@ class _DomainsCustomerSecretKeyState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -676,7 +676,7 @@ class _DomainsCustomerSecretKeyState:
     @pulumi.getter(name="accessKey")
     def access_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Access key
+        (Updatable) The access key.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -835,7 +835,7 @@ class _DomainsCustomerSecretKeyState:
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 
@@ -976,7 +976,7 @@ class _DomainsCustomerSecretKeyState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1032,7 +1032,7 @@ class _DomainsCustomerSecretKeyState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -1154,7 +1154,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
         """
         This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's customer secret key
+        Create a user's customer secret key.
 
         ## Import
 
@@ -1185,7 +1185,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credential expire.
                
                **Added In:** 2109090424
                
@@ -1199,7 +1199,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * type: dateTime
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1222,7 +1222,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -1268,7 +1268,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
         """
         This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Add a user's customer secret key
+        Create a user's customer secret key.
 
         ## Import
 
@@ -1385,7 +1385,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] access_key: (Updatable) Access key
+        :param pulumi.Input[str] access_key: (Updatable) The access key.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1445,7 +1445,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] expires_on: User credential expires on
+        :param pulumi.Input[str] expires_on: When the user's credential expire.
                
                **Added In:** 2109090424
                
@@ -1509,7 +1509,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: The user's OCID.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1532,7 +1532,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] status: User credential status
+        :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
                
@@ -1614,7 +1614,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
     @pulumi.getter(name="accessKey")
     def access_key(self) -> pulumi.Output[str]:
         """
-        (Updatable) Access key
+        (Updatable) The access key.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1737,7 +1737,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
     @pulumi.getter(name="expiresOn")
     def expires_on(self) -> pulumi.Output[str]:
         """
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 
@@ -1850,7 +1850,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1894,7 +1894,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 

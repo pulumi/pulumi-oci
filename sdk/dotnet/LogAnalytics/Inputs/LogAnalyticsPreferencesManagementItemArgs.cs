@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
     public sealed class LogAnalyticsPreferencesManagementItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+        /// The preference name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

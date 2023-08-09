@@ -267,6 +267,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     */
+    readonly localAdgAutoFailoverMaxDataLossLimit: number;
+    /**
      * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     readonly localDisasterRecoveryType: string;

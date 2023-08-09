@@ -15,7 +15,7 @@ public final class GetDomainsMyUserDbCredentialTag {
      */
     private String key;
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s identifier.
      * 
      */
     private String value;
@@ -29,7 +29,7 @@ public final class GetDomainsMyUserDbCredentialTag {
         return this.key;
     }
     /**
-     * @return User&#39;s id
+     * @return The user&#39;s identifier.
      * 
      */
     public String value() {

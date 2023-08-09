@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's customer secret key
+ * Get a user's customer secret key.
  *
  * ## Example Usage
  *
@@ -75,7 +75,7 @@ export interface GetDomainsCustomerSecretKeyArgs {
  */
 export interface GetDomainsCustomerSecretKeyResult {
     /**
-     * Access key
+     * The access key.
      */
     readonly accessKey: string;
     readonly attributeSets?: string[];
@@ -103,7 +103,7 @@ export interface GetDomainsCustomerSecretKeyResult {
      */
     readonly domainOcid: string;
     /**
-     * User credential expires on
+     * When the user's credential expire.
      */
     readonly expiresOn: string;
     /**
@@ -132,7 +132,7 @@ export interface GetDomainsCustomerSecretKeyResult {
      */
     readonly metas: outputs.Identity.GetDomainsCustomerSecretKeyMeta[];
     /**
-     * User's ocid
+     * The user's OCID.
      */
     readonly ocid: string;
     readonly resourceTypeSchemaVersion?: string;
@@ -141,7 +141,7 @@ export interface GetDomainsCustomerSecretKeyResult {
      */
     readonly schemas: string[];
     /**
-     * User credential status
+     * The user's credential status.
      */
     readonly status: string;
     /**
@@ -164,7 +164,7 @@ export interface GetDomainsCustomerSecretKeyResult {
 /**
  * This data source provides details about a specific Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get user's customer secret key
+ * Get a user's customer secret key.
  *
  * ## Example Usage
  *

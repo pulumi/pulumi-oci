@@ -174,6 +174,8 @@ type LookupAutonomousDatabaseResult struct {
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+	LocalAdgAutoFailoverMaxDataLossLimit int `pulumi:"localAdgAutoFailoverMaxDataLossLimit"`
 	// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 	LocalDisasterRecoveryType string `pulumi:"localDisasterRecoveryType"`
 	// Autonomous Data Guard standby database details.
@@ -619,6 +621,11 @@ func (o LookupAutonomousDatabaseResultOutput) LicenseModel() pulumi.StringOutput
 // Additional information about the current lifecycle state.
 func (o LookupAutonomousDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+func (o LookupAutonomousDatabaseResultOutput) LocalAdgAutoFailoverMaxDataLossLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.LocalAdgAutoFailoverMaxDataLossLimit }).(pulumi.IntOutput)
 }
 
 // Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.

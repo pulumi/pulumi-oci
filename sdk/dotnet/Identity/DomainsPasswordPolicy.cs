@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
     /// 
-    /// Create a Password Policy
+    /// Create a password policy.
     /// 
     /// ## Import
     /// 
@@ -195,6 +195,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Output("disallowedSubstrings")]
         public Output<ImmutableArray<string>> DisallowedSubstrings { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) List of User attributes whose values are not allowed in the password.
+        /// 
+        /// **Added In:** 2303212224
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Output("disallowedUserAttributeValues")]
+        public Output<ImmutableArray<string>> DisallowedUserAttributeValues { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The number of distinct characters between old password and new password
+        /// 
+        /// **Added In:** 2303212224
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
+        /// </summary>
+        [Output("distinctCharacters")]
+        public Output<int> DistinctCharacters { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -981,6 +1015,46 @@ namespace Pulumi.Oci.Identity
             set => _disallowedSubstrings = value;
         }
 
+        [Input("disallowedUserAttributeValues")]
+        private InputList<string>? _disallowedUserAttributeValues;
+
+        /// <summary>
+        /// (Updatable) List of User attributes whose values are not allowed in the password.
+        /// 
+        /// **Added In:** 2303212224
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public InputList<string> DisallowedUserAttributeValues
+        {
+            get => _disallowedUserAttributeValues ?? (_disallowedUserAttributeValues = new InputList<string>());
+            set => _disallowedUserAttributeValues = value;
+        }
+
+        /// <summary>
+        /// (Updatable) The number of distinct characters between old password and new password
+        /// 
+        /// **Added In:** 2303212224
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
+        /// </summary>
+        [Input("distinctCharacters")]
+        public Input<int>? DistinctCharacters { get; set; }
+
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
         /// 
@@ -1698,6 +1772,46 @@ namespace Pulumi.Oci.Identity
             get => _disallowedSubstrings ?? (_disallowedSubstrings = new InputList<string>());
             set => _disallowedSubstrings = value;
         }
+
+        [Input("disallowedUserAttributeValues")]
+        private InputList<string>? _disallowedUserAttributeValues;
+
+        /// <summary>
+        /// (Updatable) List of User attributes whose values are not allowed in the password.
+        /// 
+        /// **Added In:** 2303212224
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public InputList<string> DisallowedUserAttributeValues
+        {
+            get => _disallowedUserAttributeValues ?? (_disallowedUserAttributeValues = new InputList<string>());
+            set => _disallowedUserAttributeValues = value;
+        }
+
+        /// <summary>
+        /// (Updatable) The number of distinct characters between old password and new password
+        /// 
+        /// **Added In:** 2303212224
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
+        /// </summary>
+        [Input("distinctCharacters")]
+        public Input<int>? DistinctCharacters { get; set; }
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.

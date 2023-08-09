@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Display;
         /// <summary>
-        /// Ocid of the User's Support Account.
+        /// The OCID of the user's support account.
         /// </summary>
         public readonly string Ocid;
         /// <summary>

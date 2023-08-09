@@ -29,7 +29,7 @@ public final class GetDomainsMyGroupsMyGroup {
      */
     private Boolean deleteInProgress;
     /**
-     * @return Group display name
+     * @return The Group display name.
      * 
      */
     private String displayName;
@@ -69,7 +69,7 @@ public final class GetDomainsMyGroupsMyGroup {
      */
     private List<String> idcsPreventedOperations;
     /**
-     * @return Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * @return The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * 
      */
     private List<GetDomainsMyGroupsMyGroupMember> members;
@@ -79,7 +79,7 @@ public final class GetDomainsMyGroupsMyGroup {
      */
     private List<GetDomainsMyGroupsMyGroupMeta> metas;
     /**
-     * @return A human readable name for Group as defined by the Service Consumer
+     * @return A human readable name for the group as defined by the Service Consumer.
      * 
      */
     private String nonUniqueDisplayName;
@@ -104,7 +104,7 @@ public final class GetDomainsMyGroupsMyGroup {
      */
     private String tenancyOcid;
     /**
-     * @return Idcs Group
+     * @return Oracle Identity Cloud Service Group
      * 
      */
     private List<GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups;
@@ -130,7 +130,7 @@ public final class GetDomainsMyGroupsMyGroup {
         return this.deleteInProgress;
     }
     /**
-     * @return Group display name
+     * @return The Group display name.
      * 
      */
     public String displayName() {
@@ -186,7 +186,7 @@ public final class GetDomainsMyGroupsMyGroup {
         return this.idcsPreventedOperations;
     }
     /**
-     * @return Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * @return The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * 
      */
     public List<GetDomainsMyGroupsMyGroupMember> members() {
@@ -200,7 +200,7 @@ public final class GetDomainsMyGroupsMyGroup {
         return this.metas;
     }
     /**
-     * @return A human readable name for Group as defined by the Service Consumer
+     * @return A human readable name for the group as defined by the Service Consumer.
      * 
      */
     public String nonUniqueDisplayName() {
@@ -235,7 +235,7 @@ public final class GetDomainsMyGroupsMyGroup {
         return this.tenancyOcid;
     }
     /**
-     * @return Idcs Group
+     * @return Oracle Identity Cloud Service Group
      * 
      */
     public List<GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups() {

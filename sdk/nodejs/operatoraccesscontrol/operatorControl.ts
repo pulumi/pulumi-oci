@@ -78,6 +78,10 @@ export class OperatorControl extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * Whether the operator control is a default Operator Control.
+     */
+    public /*out*/ readonly isDefaultOperatorControl!: pulumi.Output<boolean>;
+    /**
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      */
     public readonly isFullyPreApproved!: pulumi.Output<boolean>;
@@ -143,6 +147,7 @@ export class OperatorControl extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["emailIdLists"] = state ? state.emailIdLists : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isDefaultOperatorControl"] = state ? state.isDefaultOperatorControl : undefined;
             resourceInputs["isFullyPreApproved"] = state ? state.isFullyPreApproved : undefined;
             resourceInputs["lastModifiedInfo"] = state ? state.lastModifiedInfo : undefined;
             resourceInputs["operatorControlName"] = state ? state.operatorControlName : undefined;
@@ -183,6 +188,7 @@ export class OperatorControl extends pulumi.CustomResource {
             resourceInputs["resourceType"] = args ? args.resourceType : undefined;
             resourceInputs["systemMessage"] = args ? args.systemMessage : undefined;
             resourceInputs["approvalRequiredOpActionLists"] = undefined /*out*/;
+            resourceInputs["isDefaultOperatorControl"] = undefined /*out*/;
             resourceInputs["lastModifiedInfo"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeOfCreation"] = undefined /*out*/;
@@ -230,6 +236,10 @@ export interface OperatorControlState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Whether the operator control is a default Operator Control.
+     */
+    isDefaultOperatorControl?: pulumi.Input<boolean>;
     /**
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      */

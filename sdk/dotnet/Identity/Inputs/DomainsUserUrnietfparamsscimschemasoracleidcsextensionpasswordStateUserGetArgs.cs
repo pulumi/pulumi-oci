@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? CantExpire { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        /// (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
         /// 
         /// **Added In:** 20.1.3
         /// 

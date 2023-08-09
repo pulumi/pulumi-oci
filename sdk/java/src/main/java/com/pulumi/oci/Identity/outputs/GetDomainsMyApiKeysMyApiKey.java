@@ -87,7 +87,7 @@ public final class GetDomainsMyApiKeysMyApiKey {
      */
     private List<GetDomainsMyApiKeysMyApiKeyMeta> metas;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
@@ -112,7 +112,7 @@ public final class GetDomainsMyApiKeysMyApiKey {
      */
     private String tenancyOcid;
     /**
-     * @return User linked to api key
+     * @return The user linked to the API key.
      * 
      */
     private List<GetDomainsMyApiKeysMyApiKeyUser> users;
@@ -217,7 +217,7 @@ public final class GetDomainsMyApiKeysMyApiKey {
         return this.metas;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -252,7 +252,7 @@ public final class GetDomainsMyApiKeysMyApiKey {
         return this.tenancyOcid;
     }
     /**
-     * @return User linked to api key
+     * @return The user linked to the API key.
      * 
      */
     public List<GetDomainsMyApiKeysMyApiKeyUser> users() {

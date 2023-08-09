@@ -102,6 +102,48 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? CrlReloadDuration { get; set; }
 
         /// <summary>
+        /// (Updatable) Set to true to enable EKU Validation
+        /// 
+        /// **Added In:** 2304270343
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
+        /// </summary>
+        [Input("ekuValidationEnabled")]
+        public Input<bool>? EkuValidationEnabled { get; set; }
+
+        [Input("ekuValues")]
+        private InputList<string>? _ekuValues;
+
+        /// <summary>
+        /// (Updatable) List of EKU which needs to be validated
+        /// 
+        /// **Added In:** 2304270343
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public InputList<string> EkuValues
+        {
+            get => _ekuValues ?? (_ekuValues = new InputList<string>());
+            set => _ekuValues = value;
+        }
+
+        /// <summary>
         /// (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
         /// 
         /// **Added In:** 2010242156

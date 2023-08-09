@@ -14,15 +14,15 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserResult
     {
         /// <summary>
-        /// The last failed login date
+        /// The last failed login date.
         /// </summary>
         public readonly string LastFailedLoginDate;
         /// <summary>
-        /// The last successful login date
+        /// The last successful login date.
         /// </summary>
         public readonly string LastSuccessfulLoginDate;
         /// <summary>
-        /// A complex attribute that indicates an account is locked (blocking new sessions)
+        /// A complex attribute that indicates an account is locked (blocking any new sessions).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedResult> Lockeds;
         /// <summary>
@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int LoginAttempts;
         /// <summary>
-        /// Maximum number of concurrent sessions for a User
+        /// The maximum number of concurrent sessions for a user.
         /// </summary>
         public readonly int MaxConcurrentSessions;
         /// <summary>
-        /// The previous successful login date
+        /// The previous successful login date.
         /// </summary>
         public readonly string PreviousSuccessfulLoginDate;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int RecoveryEnrollAttempts;
         /// <summary>
-        /// A complex attribute that indicates an password recovery is locked (blocking new sessions)
+        /// A complex attribute that indicates a password recovery is locked (blocking any new sessions).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedResult> RecoveryLockeds;
 

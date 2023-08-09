@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of My Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Search AuthTokens
+// Search for a user's own Auth token.
 //
 // ## Example Usage
 //

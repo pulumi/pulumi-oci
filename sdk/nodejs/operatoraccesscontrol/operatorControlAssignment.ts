@@ -109,6 +109,10 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
      */
     public readonly isAutoApproveDuringMaintenance!: pulumi.Output<boolean>;
     /**
+     * Whether the assignment is a default assignment.
+     */
+    public /*out*/ readonly isDefaultAssignment!: pulumi.Output<boolean>;
+    /**
      * (Updatable) If set, then the target resource is always governed by the operator control.
      */
     public readonly isEnforcedAlways!: pulumi.Output<boolean>;
@@ -203,6 +207,7 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
             resourceInputs["errorMessage"] = state ? state.errorMessage : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isAutoApproveDuringMaintenance"] = state ? state.isAutoApproveDuringMaintenance : undefined;
+            resourceInputs["isDefaultAssignment"] = state ? state.isDefaultAssignment : undefined;
             resourceInputs["isEnforcedAlways"] = state ? state.isEnforcedAlways : undefined;
             resourceInputs["isLogForwarded"] = state ? state.isLogForwarded : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -264,6 +269,7 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
             resourceInputs["detachmentDescription"] = undefined /*out*/;
             resourceInputs["errorCode"] = undefined /*out*/;
             resourceInputs["errorMessage"] = undefined /*out*/;
+            resourceInputs["isDefaultAssignment"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeOfAssignment"] = undefined /*out*/;
@@ -315,6 +321,10 @@ export interface OperatorControlAssignmentState {
      * (Updatable) The boolean if true would autoApprove during maintenance.
      */
     isAutoApproveDuringMaintenance?: pulumi.Input<boolean>;
+    /**
+     * Whether the assignment is a default assignment.
+     */
+    isDefaultAssignment?: pulumi.Input<boolean>;
     /**
      * (Updatable) If set, then the target resource is always governed by the operator control.
      */

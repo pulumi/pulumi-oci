@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserResult
     {
         /// <summary>
-        /// A list of bypass codes belongs to user
+        /// A list of bypass codes that belongs to the user.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeResult> BypassCodes;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int LoginAttempts;
         /// <summary>
-        /// This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        /// The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
         /// </summary>
         public readonly string MfaEnabledOn;
         /// <summary>
@@ -34,23 +34,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> MfaIgnoredApps;
         /// <summary>
-        /// User Opted for MFA
+        /// The user opted for MFA.
         /// </summary>
         public readonly string MfaStatus;
         /// <summary>
-        /// Preferred Authentication Factor Type
+        /// The preferred authentication factor type.
         /// </summary>
         public readonly string PreferredAuthenticationFactor;
         /// <summary>
-        /// Preferred Authentication method
+        /// The preferred authentication method.
         /// </summary>
         public readonly string PreferredAuthenticationMethod;
         /// <summary>
-        /// User preferred device
+        /// The user's preferred device.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceResult> PreferredDevices;
         /// <summary>
-        /// Preferred Third party vendor name
+        /// The preferred third-party vendor name.
         /// </summary>
         public readonly string PreferredThirdPartyVendor;
         /// <summary>

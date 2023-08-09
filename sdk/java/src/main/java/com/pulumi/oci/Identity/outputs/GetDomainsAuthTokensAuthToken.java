@@ -53,7 +53,7 @@ public final class GetDomainsAuthTokensAuthToken {
      */
     private String domainOcid;
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      */
     private String expiresOn;
@@ -93,7 +93,7 @@ public final class GetDomainsAuthTokensAuthToken {
      */
     private List<GetDomainsAuthTokensAuthTokenMeta> metas;
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     private String ocid;
@@ -108,7 +108,7 @@ public final class GetDomainsAuthTokensAuthToken {
      */
     private List<String> schemas;
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     private String status;
@@ -128,7 +128,7 @@ public final class GetDomainsAuthTokensAuthToken {
      */
     private List<GetDomainsAuthTokensAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     /**
-     * @return User linked to auth token
+     * @return The user linked to the Auth token.
      * 
      */
     private List<GetDomainsAuthTokensAuthTokenUser> users;
@@ -184,7 +184,7 @@ public final class GetDomainsAuthTokensAuthToken {
         return this.domainOcid;
     }
     /**
-     * @return User credential expires on
+     * @return When the user&#39;s credential expire.
      * 
      */
     public String expiresOn() {
@@ -240,7 +240,7 @@ public final class GetDomainsAuthTokensAuthToken {
         return this.metas;
     }
     /**
-     * @return User&#39;s ocid
+     * @return The user&#39;s OCID.
      * 
      */
     public String ocid() {
@@ -261,7 +261,7 @@ public final class GetDomainsAuthTokensAuthToken {
         return this.schemas;
     }
     /**
-     * @return User credential status
+     * @return The user&#39;s credential status.
      * 
      */
     public String status() {
@@ -289,7 +289,7 @@ public final class GetDomainsAuthTokensAuthToken {
         return this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     }
     /**
-     * @return User linked to auth token
+     * @return The user linked to the Auth token.
      * 
      */
     public List<GetDomainsAuthTokensAuthTokenUser> users() {

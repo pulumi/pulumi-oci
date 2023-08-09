@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Authentication method.
+        /// (Updatable) The authentication method.
         /// 
         /// **Added In:** 2009232244
         /// 
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) Device authentication factor status.
+        /// (Updatable) The device authentication factor status.
         /// 
         /// **Added In:** 18.4.2
         /// 
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? FactorType { get; set; }
 
         /// <summary>
-        /// (Updatable) Last Sync time for device.
+        /// (Updatable) The last sync time for device.
         /// 
         /// **Added In:** 18.4.2
         /// 
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// (Updatable) Third party factor vendor name.
+        /// (Updatable) The third-party factor vendor name.
         /// 
         /// **Added In:** 2009232244
         /// 

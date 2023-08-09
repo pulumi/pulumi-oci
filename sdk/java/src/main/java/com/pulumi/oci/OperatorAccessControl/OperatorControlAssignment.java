@@ -206,6 +206,20 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
         return this.isAutoApproveDuringMaintenance;
     }
     /**
+     * Whether the assignment is a default assignment.
+     * 
+     */
+    @Export(name="isDefaultAssignment", type=Boolean.class, parameters={})
+    private Output<Boolean> isDefaultAssignment;
+
+    /**
+     * @return Whether the assignment is a default assignment.
+     * 
+     */
+    public Output<Boolean> isDefaultAssignment() {
+        return this.isDefaultAssignment;
+    }
+    /**
      * (Updatable) If set, then the target resource is always governed by the operator control.
      * 
      */

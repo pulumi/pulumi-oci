@@ -39,6 +39,7 @@ const (
 	aiAnomalyDetectionMod           = "AiAnomalyDetection"           // AI Anomaly Detection
 	aiDocumentMod                   = "AiDocument"                   // AI Document
 	aiVisionMod                     = "AiVision"                     // AI Vision
+	aiLanguageMod                   = "AiLanguage"                   // AI Language
 	analyticsMod                    = "Analytics"                    // Analytics
 	apiGatewayMod                   = "ApiGateway"                   // API Gateway
 	admMod                          = "Adm"                          // ADM
@@ -149,6 +150,7 @@ var mappedMods = map[string]string{
 	"ai_anomaly_detection":           aiAnomalyDetectionMod,
 	"ai_document":                    aiDocumentMod,
 	"ai_vision":                      aiVisionMod,
+	"ai_language":                    aiLanguageMod,
 	"analytics":                      analyticsMod,
 	"apigateway":                     apiGatewayMod,
 	"adm":                            admMod,

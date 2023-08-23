@@ -63,7 +63,7 @@ export interface GetAutoScalingConfigurationResult {
     readonly id: string;
     readonly isEnabled: boolean;
     /**
-     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
      */
     readonly nodeType: string;
     /**

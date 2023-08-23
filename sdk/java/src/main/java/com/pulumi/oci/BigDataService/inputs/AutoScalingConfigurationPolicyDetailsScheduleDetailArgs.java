@@ -34,14 +34,14 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs exten
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Time of day and horizontal scaling configuration.
      * 
      */
     @Import(name="timeAndHorizontalScalingConfigs")
     private @Nullable Output<List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs>> timeAndHorizontalScalingConfigs;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Time of day and horizontal scaling configuration.
      * 
      */
     public Optional<Output<List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs>>> timeAndHorizontalScalingConfigs() {
@@ -49,14 +49,14 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs exten
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Time of day and vertical scaling configuration
      * 
      */
     @Import(name="timeAndVerticalScalingConfigs")
     private @Nullable Output<List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs>> timeAndVerticalScalingConfigs;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Time of day and vertical scaling configuration
      * 
      */
     public Optional<Output<List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs>>> timeAndVerticalScalingConfigs() {
@@ -111,7 +111,7 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs exten
         }
 
         /**
-         * @param timeAndHorizontalScalingConfigs (Updatable)
+         * @param timeAndHorizontalScalingConfigs (Updatable) Time of day and horizontal scaling configuration.
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs exten
         }
 
         /**
-         * @param timeAndHorizontalScalingConfigs (Updatable)
+         * @param timeAndHorizontalScalingConfigs (Updatable) Time of day and horizontal scaling configuration.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs exten
         }
 
         /**
-         * @param timeAndHorizontalScalingConfigs (Updatable)
+         * @param timeAndHorizontalScalingConfigs (Updatable) Time of day and horizontal scaling configuration.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs exten
         }
 
         /**
-         * @param timeAndVerticalScalingConfigs (Updatable)
+         * @param timeAndVerticalScalingConfigs (Updatable) Time of day and vertical scaling configuration
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs exten
         }
 
         /**
-         * @param timeAndVerticalScalingConfigs (Updatable)
+         * @param timeAndVerticalScalingConfigs (Updatable) Time of day and vertical scaling configuration
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs exten
         }
 
         /**
-         * @param timeAndVerticalScalingConfigs (Updatable)
+         * @param timeAndVerticalScalingConfigs (Updatable) Time of day and vertical scaling configuration
          * 
          * @return builder
          * 

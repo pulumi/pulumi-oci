@@ -259,6 +259,18 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// The area assigned to In-Memory tables in Autonomous Database.
+        /// </summary>
+        [Output("inMemoryAreaInGbs")]
+        public Output<int> InMemoryAreaInGbs { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        /// </summary>
+        [Output("inMemoryPercentage")]
+        public Output<int> InMemoryPercentage { get; private set; } = null!;
+
+        /// <summary>
         /// The infrastructure type this resource belongs to.
         /// </summary>
         [Output("infrastructureType")]
@@ -1041,6 +1053,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        /// </summary>
+        [Input("inMemoryPercentage")]
+        public Input<int>? InMemoryPercentage { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         /// 
         /// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -1641,6 +1659,18 @@ namespace Pulumi.Oci.Database
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// The area assigned to In-Memory tables in Autonomous Database.
+        /// </summary>
+        [Input("inMemoryAreaInGbs")]
+        public Input<int>? InMemoryAreaInGbs { get; set; }
+
+        /// <summary>
+        /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        /// </summary>
+        [Input("inMemoryPercentage")]
+        public Input<int>? InMemoryPercentage { get; set; }
 
         /// <summary>
         /// The infrastructure type this resource belongs to.

@@ -28,6 +28,27 @@ import * as utilities from "../utilities";
  * use [UpdateInternetGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/InternetGateway/UpdateInternetGateway) to easily disable/enable
  * the gateway without changing the route rule.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInternetGateway = new oci.core.InternetGateway("testInternetGateway", {
+ *     compartmentId: _var.compartment_id,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ *     enabled: _var.internet_gateway_enabled,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: _var.internet_gateway_display_name,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     routeTableId: oci_core_route_table.test_route_table.id,
+ * });
+ * ```
+ *
  * ## Import
  *
  * InternetGateways can be imported using the `id`, e.g.

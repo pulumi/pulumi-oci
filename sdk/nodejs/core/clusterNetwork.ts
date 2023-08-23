@@ -9,8 +9,17 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Cluster Network resource in Oracle Cloud Infrastructure Core service.
  *
- * Creates a cluster network. For more information about cluster networks, see
- * [Managing Cluster Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+ * Creates a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+ * A cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+ * instances that are connected with an ultra low-latency remote direct memory access (RDMA) network.
+ * Cluster networks with instance pools use instance pools to manage groups of identical instances.
+ *
+ * Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
+ * instances that are managed as a group.
+ *
+ * If you want to manage instances in the RDMA network independently of each other or use different types of instances
+ * in the network group, create a compute cluster by using the [CreateComputeCluster](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCluster/CreateComputeCluster)
+ * operation.
  *
  * To determine whether capacity is available for a specific shape before you create a cluster network,
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
@@ -42,6 +51,10 @@ import * as utilities from "../utilities";
  *             subnetId: oci_core_subnet.test_subnet.id,
  *             displayName: _var.cluster_network_placement_configuration_secondary_vnic_subnets_display_name,
  *         }],
+ *     },
+ *     clusterConfiguration: {
+ *         hpcIslandId: oci_core_hpc_island.test_hpc_island.id,
+ *         networkBlockIds: _var.cluster_network_cluster_configuration_network_block_ids,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -90,6 +103,12 @@ export class ClusterNetwork extends pulumi.CustomResource {
     }
 
     /**
+     * The HPC cluster configuration requested when launching instances of a cluster network.
+     *
+     * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+     */
+    public readonly clusterConfiguration!: pulumi.Output<outputs.Core.ClusterNetworkClusterConfiguration>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -106,7 +125,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      */
     public /*out*/ readonly hpcIslandId!: pulumi.Output<string>;
     /**
@@ -116,7 +135,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
      */
     public readonly instancePools!: pulumi.Output<outputs.Core.ClusterNetworkInstancePool[]>;
     /**
-     * The list of network block OCIDs of the HPC island.
+     * The list of network block OCIDs.
      */
     public /*out*/ readonly networkBlockIds!: pulumi.Output<string[]>;
     /**
@@ -149,6 +168,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterNetworkState | undefined;
+            resourceInputs["clusterConfiguration"] = state ? state.clusterConfiguration : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -171,6 +191,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
             if ((!args || args.placementConfiguration === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'placementConfiguration'");
             }
+            resourceInputs["clusterConfiguration"] = args ? args.clusterConfiguration : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -193,6 +214,12 @@ export class ClusterNetwork extends pulumi.CustomResource {
  */
 export interface ClusterNetworkState {
     /**
+     * The HPC cluster configuration requested when launching instances of a cluster network.
+     *
+     * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+     */
+    clusterConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkClusterConfiguration>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
     compartmentId?: pulumi.Input<string>;
@@ -209,7 +236,7 @@ export interface ClusterNetworkState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      */
     hpcIslandId?: pulumi.Input<string>;
     /**
@@ -219,7 +246,7 @@ export interface ClusterNetworkState {
      */
     instancePools?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePool>[]>;
     /**
-     * The list of network block OCIDs of the HPC island.
+     * The list of network block OCIDs.
      */
     networkBlockIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -244,6 +271,12 @@ export interface ClusterNetworkState {
  * The set of arguments for constructing a ClusterNetwork resource.
  */
 export interface ClusterNetworkArgs {
+    /**
+     * The HPC cluster configuration requested when launching instances of a cluster network.
+     *
+     * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+     */
+    clusterConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkClusterConfiguration>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */

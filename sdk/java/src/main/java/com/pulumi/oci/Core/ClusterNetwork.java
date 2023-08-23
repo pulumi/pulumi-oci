@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.ClusterNetworkArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkState;
+import com.pulumi.oci.Core.outputs.ClusterNetworkClusterConfiguration;
 import com.pulumi.oci.Core.outputs.ClusterNetworkInstancePool;
 import com.pulumi.oci.Core.outputs.ClusterNetworkPlacementConfiguration;
 import com.pulumi.oci.Utilities;
@@ -21,8 +22,17 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Cluster Network resource in Oracle Cloud Infrastructure Core service.
  * 
- * Creates a cluster network. For more information about cluster networks, see
- * [Managing Cluster Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+ * Creates a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+ * A cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+ * instances that are connected with an ultra low-latency remote direct memory access (RDMA) network.
+ * Cluster networks with instance pools use instance pools to manage groups of identical instances.
+ * 
+ * Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
+ * instances that are managed as a group.
+ * 
+ * If you want to manage instances in the RDMA network independently of each other or use different types of instances
+ * in the network group, create a compute cluster by using the [CreateComputeCluster](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCluster/CreateComputeCluster)
+ * operation.
  * 
  * To determine whether capacity is available for a specific shape before you create a cluster network,
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
@@ -39,6 +49,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.ClusterNetworkArgs;
  * import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolArgs;
  * import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationArgs;
+ * import com.pulumi.oci.Core.inputs.ClusterNetworkClusterConfigurationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -69,6 +80,10 @@ import javax.annotation.Nullable;
  *                     .displayName(var_.cluster_network_placement_configuration_secondary_vnic_subnets_display_name())
  *                     .build())
  *                 .build())
+ *             .clusterConfiguration(ClusterNetworkClusterConfigurationArgs.builder()
+ *                 .hpcIslandId(oci_core_hpc_island.test_hpc_island().id())
+ *                 .networkBlockIds(var_.cluster_network_cluster_configuration_network_block_ids())
+ *                 .build())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.cluster_network_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
@@ -89,6 +104,24 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Core/clusterNetwork:ClusterNetwork")
 public class ClusterNetwork extends com.pulumi.resources.CustomResource {
+    /**
+     * The HPC cluster configuration requested when launching instances of a cluster network.
+     * 
+     * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+     * 
+     */
+    @Export(name="clusterConfiguration", type=ClusterNetworkClusterConfiguration.class, parameters={})
+    private Output<ClusterNetworkClusterConfiguration> clusterConfiguration;
+
+    /**
+     * @return The HPC cluster configuration requested when launching instances of a cluster network.
+     * 
+     * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+     * 
+     */
+    public Output<ClusterNetworkClusterConfiguration> clusterConfiguration() {
+        return this.clusterConfiguration;
+    }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
@@ -146,14 +179,14 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     @Export(name="hpcIslandId", type=String.class, parameters={})
     private Output<String> hpcIslandId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     public Output<String> hpcIslandId() {
@@ -178,14 +211,14 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.instancePools;
     }
     /**
-     * The list of network block OCIDs of the HPC island.
+     * The list of network block OCIDs.
      * 
      */
     @Export(name="networkBlockIds", type=List.class, parameters={String.class})
     private Output<List<String>> networkBlockIds;
 
     /**
-     * @return The list of network block OCIDs of the HPC island.
+     * @return The list of network block OCIDs.
      * 
      */
     public Output<List<String>> networkBlockIds() {

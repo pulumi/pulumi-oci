@@ -32,6 +32,7 @@ namespace Pulumi.Oci.BigDataService
         ///     var testBdsInstancePatchHistories = Oci.BigDataService.GetBdsInstancePatchHistories.Invoke(new()
         ///     {
         ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         PatchType = @var.Bds_instance_patch_history_patch_type,
         ///         PatchVersion = @var.Bds_instance_patch_history_patch_version,
         ///         State = @var.Bds_instance_patch_history_state,
         ///     });
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.BigDataService
         ///     var testBdsInstancePatchHistories = Oci.BigDataService.GetBdsInstancePatchHistories.Invoke(new()
         ///     {
         ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         PatchType = @var.Bds_instance_patch_history_patch_type,
         ///         PatchVersion = @var.Bds_instance_patch_history_patch_version,
         ///         State = @var.Bds_instance_patch_history_state,
         ///     });
@@ -94,6 +96,12 @@ namespace Pulumi.Oci.BigDataService
             get => _filters ?? (_filters = new List<Inputs.GetBdsInstancePatchHistoriesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// The type of a BDS patch history entity.
+        /// </summary>
+        [Input("patchType")]
+        public string? PatchType { get; set; }
 
         /// <summary>
         /// The version of the patch
@@ -130,6 +138,12 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
+        /// The type of a BDS patch history entity.
+        /// </summary>
+        [Input("patchType")]
+        public Input<string>? PatchType { get; set; }
+
+        /// <summary>
         /// The version of the patch
         /// </summary>
         [Input("patchVersion")]
@@ -161,6 +175,10 @@ namespace Pulumi.Oci.BigDataService
         /// The list of patch_histories.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBdsInstancePatchHistoriesPatchHistoryResult> PatchHistories;
+        /// <summary>
+        /// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+        /// </summary>
+        public readonly string? PatchType;
         public readonly string? PatchVersion;
         /// <summary>
         /// The status of this patch.
@@ -177,6 +195,8 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetBdsInstancePatchHistoriesPatchHistoryResult> patchHistories,
 
+            string? patchType,
+
             string? patchVersion,
 
             string? state)
@@ -185,6 +205,7 @@ namespace Pulumi.Oci.BigDataService
             Filters = filters;
             Id = id;
             PatchHistories = patchHistories;
+            PatchType = patchType;
             PatchVersion = patchVersion;
             State = state;
         }

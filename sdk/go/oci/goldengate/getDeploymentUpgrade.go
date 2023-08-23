@@ -75,6 +75,10 @@ type GetDeploymentUpgradeResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+	IsCancelAllowed bool `pulumi:"isCancelAllowed"`
+	// Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+	IsRescheduleAllowed bool `pulumi:"isRescheduleAllowed"`
 	// Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
 	// * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
 	// * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
@@ -101,10 +105,14 @@ type GetDeploymentUpgradeResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeFinished string `pulumi:"timeFinished"`
+	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOggVersionSupportedUntil string `pulumi:"timeOggVersionSupportedUntil"`
 	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeReleased string `pulumi:"timeReleased"`
 	// The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeSchedule string `pulumi:"timeSchedule"`
+	// Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeScheduleMax string `pulumi:"timeScheduleMax"`
 	// The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeSnoozedUntil string `pulumi:"timeSnoozedUntil"`
 	// The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -195,6 +203,16 @@ func (o GetDeploymentUpgradeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+func (o GetDeploymentUpgradeResultOutput) IsCancelAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) bool { return v.IsCancelAllowed }).(pulumi.BoolOutput)
+}
+
+// Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+func (o GetDeploymentUpgradeResultOutput) IsRescheduleAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) bool { return v.IsRescheduleAllowed }).(pulumi.BoolOutput)
+}
+
 // Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
 // * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
 // * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
@@ -257,6 +275,11 @@ func (o GetDeploymentUpgradeResultOutput) TimeFinished() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeFinished }).(pulumi.StringOutput)
 }
 
+// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentUpgradeResultOutput) TimeOggVersionSupportedUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeOggVersionSupportedUntil }).(pulumi.StringOutput)
+}
+
 // The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentUpgradeResultOutput) TimeReleased() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeReleased }).(pulumi.StringOutput)
@@ -265,6 +288,11 @@ func (o GetDeploymentUpgradeResultOutput) TimeReleased() pulumi.StringOutput {
 // The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentUpgradeResultOutput) TimeSchedule() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeSchedule }).(pulumi.StringOutput)
+}
+
+// Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentUpgradeResultOutput) TimeScheduleMax() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeScheduleMax }).(pulumi.StringOutput)
 }
 
 // The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

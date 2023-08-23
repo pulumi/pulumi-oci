@@ -10,6 +10,11 @@ import java.util.Objects;
 @CustomType
 public final class GetBdsInstancePatchHistoriesPatchHistory {
     /**
+     * @return The type of a BDS patch history entity.
+     * 
+     */
+    private String patchType;
+    /**
      * @return The status of the patch.
      * 
      */
@@ -26,6 +31,13 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
     private String version;
 
     private GetBdsInstancePatchHistoriesPatchHistory() {}
+    /**
+     * @return The type of a BDS patch history entity.
+     * 
+     */
+    public String patchType() {
+        return this.patchType;
+    }
     /**
      * @return The status of the patch.
      * 
@@ -57,17 +69,24 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String patchType;
         private String state;
         private String timeUpdated;
         private String version;
         public Builder() {}
         public Builder(GetBdsInstancePatchHistoriesPatchHistory defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.patchType = defaults.patchType;
     	      this.state = defaults.state;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder patchType(String patchType) {
+            this.patchType = Objects.requireNonNull(patchType);
+            return this;
+        }
         @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
@@ -85,6 +104,7 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
         }
         public GetBdsInstancePatchHistoriesPatchHistory build() {
             final var o = new GetBdsInstancePatchHistoriesPatchHistory();
+            o.patchType = patchType;
             o.state = state;
             o.timeUpdated = timeUpdated;
             o.version = version;

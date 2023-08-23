@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *             .hostnameLabel(var_.private_ip_hostname_label())
  *             .ipAddress(var_.private_ip_ip_address())
  *             .vlanId(oci_core_vlan.test_vlan().id())
- *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+ *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().vnic_id())
  *             .build());
  * 
  *     }

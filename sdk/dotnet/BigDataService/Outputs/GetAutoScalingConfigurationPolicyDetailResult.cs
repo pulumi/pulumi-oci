@@ -37,6 +37,9 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// Configration for a metric based vertical scale-up policy.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScaleUpConfigResult> ScaleUpConfigs;
+        /// <summary>
+        /// Details of a horizontal scaling schedule.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScheduleDetailResult> ScheduleDetails;
         /// <summary>
         /// The time zone of the execution schedule, in IANA time zone database name format

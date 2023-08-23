@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
  *
- * Gets information about the specified cluster network.
+ * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
  *
  * ## Example Usage
  *
@@ -44,6 +44,7 @@ export interface GetClusterNetworkArgs {
  * A collection of values returned by getClusterNetwork.
  */
 export interface GetClusterNetworkResult {
+    readonly clusterConfigurations: outputs.Core.GetClusterNetworkClusterConfiguration[];
     readonly clusterNetworkId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -62,7 +63,7 @@ export interface GetClusterNetworkResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      */
     readonly hpcIslandId: string;
     /**
@@ -97,7 +98,7 @@ export interface GetClusterNetworkResult {
 /**
  * This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
  *
- * Gets information about the specified cluster network.
+ * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
  *
  * ## Example Usage
  *

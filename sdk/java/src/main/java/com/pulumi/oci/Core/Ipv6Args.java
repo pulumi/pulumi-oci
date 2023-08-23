@@ -78,14 +78,14 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      * 
      */
     @Import(name="ipv6subnetCidr")
     private @Nullable Output<String> ipv6subnetCidr;
 
     /**
-     * @return The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     * @return The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      * 
      */
     public Optional<Output<String>> ipv6subnetCidr() {
@@ -227,7 +227,7 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6subnetCidr The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+         * @param ipv6subnetCidr The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6subnetCidr The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+         * @param ipv6subnetCidr The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
          * 
          * @return builder
          * 

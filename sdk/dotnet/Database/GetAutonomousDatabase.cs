@@ -244,6 +244,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The area assigned to In-Memory tables in Autonomous Database.
+        /// </summary>
+        public readonly int InMemoryAreaInGbs;
+        /// <summary>
+        /// The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        /// </summary>
+        public readonly int InMemoryPercentage;
+        /// <summary>
         /// The infrastructure type this resource belongs to.
         /// </summary>
         public readonly string InfrastructureType;
@@ -614,6 +622,10 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            int inMemoryAreaInGbs,
+
+            int inMemoryPercentage,
+
             string infrastructureType,
 
             bool isAccessControlEnabled,
@@ -814,6 +826,8 @@ namespace Pulumi.Oci.Database
             FailedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             FreeformTags = freeformTags;
             Id = id;
+            InMemoryAreaInGbs = inMemoryAreaInGbs;
+            InMemoryPercentage = inMemoryPercentage;
             InfrastructureType = infrastructureType;
             IsAccessControlEnabled = isAccessControlEnabled;
             IsAutoScalingEnabled = isAutoScalingEnabled;

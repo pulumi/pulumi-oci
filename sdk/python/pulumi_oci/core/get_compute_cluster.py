@@ -54,7 +54,7 @@ class GetComputeClusterResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+        The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -62,7 +62,7 @@ class GetComputeClusterResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -99,7 +99,7 @@ class GetComputeClusterResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
         """
         return pulumi.get(self, "id")
 
@@ -115,7 +115,7 @@ class GetComputeClusterResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -142,7 +142,8 @@ def get_compute_cluster(compute_cluster_id: Optional[str] = None,
     """
     This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
 
-    Gets information about the specified compute cluster.
+    Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+    is a remote direct memory access (RDMA) network group.
 
     ## Example Usage
 
@@ -154,7 +155,7 @@ def get_compute_cluster(compute_cluster_id: Optional[str] = None,
     ```
 
 
-    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.  A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
     """
     __args__ = dict()
     __args__['computeClusterId'] = compute_cluster_id
@@ -179,7 +180,8 @@ def get_compute_cluster_output(compute_cluster_id: Optional[pulumi.Input[str]] =
     """
     This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
 
-    Gets information about the specified compute cluster.
+    Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+    is a remote direct memory access (RDMA) network group.
 
     ## Example Usage
 
@@ -191,6 +193,6 @@ def get_compute_cluster_output(compute_cluster_id: Optional[pulumi.Input[str]] =
     ```
 
 
-    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.  A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
     """
     ...

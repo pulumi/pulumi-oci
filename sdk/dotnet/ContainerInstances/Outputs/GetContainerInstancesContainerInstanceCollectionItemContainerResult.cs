@@ -54,6 +54,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult> ResourceConfigs;
+        public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult> SecurityContexts;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state.
         /// </summary>
@@ -110,6 +111,8 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
             ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult> resourceConfigs,
 
+            ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult> securityContexts,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -141,6 +144,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
             IsResourcePrincipalDisabled = isResourcePrincipalDisabled;
             LifecycleDetails = lifecycleDetails;
             ResourceConfigs = resourceConfigs;
+            SecurityContexts = securityContexts;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

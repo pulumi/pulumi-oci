@@ -14,7 +14,8 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
         /// 
-        /// Gets information about the specified cluster network.
+        /// Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +45,8 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
         /// 
-        /// Gets information about the specified cluster network.
+        /// Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -105,6 +107,7 @@ namespace Pulumi.Oci.Core
     [OutputType]
     public sealed class GetClusterNetworkResult
     {
+        public readonly ImmutableArray<Outputs.GetClusterNetworkClusterConfigurationResult> ClusterConfigurations;
         public readonly string ClusterNetworkId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -123,7 +126,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
         /// </summary>
         public readonly string HpcIslandId;
         /// <summary>
@@ -157,6 +160,8 @@ namespace Pulumi.Oci.Core
 
         [OutputConstructor]
         private GetClusterNetworkResult(
+            ImmutableArray<Outputs.GetClusterNetworkClusterConfigurationResult> clusterConfigurations,
+
             string clusterNetworkId,
 
             string compartmentId,
@@ -183,6 +188,7 @@ namespace Pulumi.Oci.Core
 
             string timeUpdated)
         {
+            ClusterConfigurations = clusterConfigurations;
             ClusterNetworkId = clusterNetworkId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

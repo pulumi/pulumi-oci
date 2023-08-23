@@ -164,9 +164,14 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public readonly bool IsHighAvailability;
         /// <summary>
+        /// Boolean flag specifying whether or not Kafka should be configured.
+        /// </summary>
+        public readonly bool IsKafkaConfigured;
+        /// <summary>
         /// Boolean flag specifying whether or not the cluster should be set up as secure.
         /// </summary>
         public readonly bool IsSecure;
+        public readonly ImmutableArray<Outputs.GetBdsInstanceKafkaBrokerNodeResult> KafkaBrokerNodes;
         public readonly string KerberosRealmName;
         /// <summary>
         /// The OCID of the Key Management master encryption key.
@@ -185,6 +190,11 @@ namespace Pulumi.Oci.BigDataService
         /// The number of nodes that form the cluster.
         /// </summary>
         public readonly int NumberOfNodes;
+        /// <summary>
+        /// Number of nodes that require a maintenance reboot
+        /// </summary>
+        public readonly int NumberOfNodesRequiringMaintenanceReboot;
+        public readonly string OsPatchVersion;
         /// <summary>
         /// The state of the cluster.
         /// </summary>
@@ -240,7 +250,11 @@ namespace Pulumi.Oci.BigDataService
 
             bool isHighAvailability,
 
+            bool isKafkaConfigured,
+
             bool isSecure,
+
+            ImmutableArray<Outputs.GetBdsInstanceKafkaBrokerNodeResult> kafkaBrokerNodes,
 
             string kerberosRealmName,
 
@@ -253,6 +267,10 @@ namespace Pulumi.Oci.BigDataService
             ImmutableArray<Outputs.GetBdsInstanceNodeResult> nodes,
 
             int numberOfNodes,
+
+            int numberOfNodesRequiringMaintenanceReboot,
+
+            string osPatchVersion,
 
             string state,
 
@@ -283,13 +301,17 @@ namespace Pulumi.Oci.BigDataService
             IsCloudSqlConfigured = isCloudSqlConfigured;
             IsForceStopJobs = isForceStopJobs;
             IsHighAvailability = isHighAvailability;
+            IsKafkaConfigured = isKafkaConfigured;
             IsSecure = isSecure;
+            KafkaBrokerNodes = kafkaBrokerNodes;
             KerberosRealmName = kerberosRealmName;
             KmsKeyId = kmsKeyId;
             MasterNodes = masterNodes;
             NetworkConfigs = networkConfigs;
             Nodes = nodes;
             NumberOfNodes = numberOfNodes;
+            NumberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
+            OsPatchVersion = osPatchVersion;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

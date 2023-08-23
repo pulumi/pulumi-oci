@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkClusterConfiguration;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkInstancePool;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkPlacementConfiguration;
 import java.lang.Object;
@@ -14,6 +15,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetClusterNetworksClusterNetwork {
+    private List<GetClusterNetworksClusterNetworkClusterConfiguration> clusterConfigurations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -35,7 +37,7 @@ public final class GetClusterNetworksClusterNetwork {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
     private String hpcIslandId;
@@ -76,6 +78,9 @@ public final class GetClusterNetworksClusterNetwork {
     private String timeUpdated;
 
     private GetClusterNetworksClusterNetwork() {}
+    public List<GetClusterNetworksClusterNetworkClusterConfiguration> clusterConfigurations() {
+        return this.clusterConfigurations;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -105,7 +110,7 @@ public final class GetClusterNetworksClusterNetwork {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
     public String hpcIslandId() {
@@ -170,6 +175,7 @@ public final class GetClusterNetworksClusterNetwork {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetClusterNetworksClusterNetworkClusterConfiguration> clusterConfigurations;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -185,6 +191,7 @@ public final class GetClusterNetworksClusterNetwork {
         public Builder() {}
         public Builder(GetClusterNetworksClusterNetwork defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterConfigurations = defaults.clusterConfigurations;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -199,6 +206,14 @@ public final class GetClusterNetworksClusterNetwork {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder clusterConfigurations(List<GetClusterNetworksClusterNetworkClusterConfiguration> clusterConfigurations) {
+            this.clusterConfigurations = Objects.requireNonNull(clusterConfigurations);
+            return this;
+        }
+        public Builder clusterConfigurations(GetClusterNetworksClusterNetworkClusterConfiguration... clusterConfigurations) {
+            return clusterConfigurations(List.of(clusterConfigurations));
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -270,6 +285,7 @@ public final class GetClusterNetworksClusterNetwork {
         }
         public GetClusterNetworksClusterNetwork build() {
             final var o = new GetClusterNetworksClusterNetwork();
+            o.clusterConfigurations = clusterConfigurations;
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
             o.displayName = displayName;

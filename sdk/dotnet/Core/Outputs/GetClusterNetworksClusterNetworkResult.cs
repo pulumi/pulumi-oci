@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetClusterNetworksClusterNetworkResult
     {
+        public readonly ImmutableArray<Outputs.GetClusterNetworksClusterNetworkClusterConfigurationResult> ClusterConfigurations;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -30,7 +31,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
         /// </summary>
         public readonly string HpcIslandId;
         /// <summary>
@@ -64,6 +65,8 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetClusterNetworksClusterNetworkResult(
+            ImmutableArray<Outputs.GetClusterNetworksClusterNetworkClusterConfigurationResult> clusterConfigurations,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -88,6 +91,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             string timeUpdated)
         {
+            ClusterConfigurations = clusterConfigurations;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

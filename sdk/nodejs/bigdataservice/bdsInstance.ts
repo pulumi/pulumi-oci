@@ -11,88 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new BDS instance.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testBdsInstance = new oci.bigdataservice.BdsInstance("testBdsInstance", {
- *     clusterAdminPassword: _var.bds_instance_cluster_admin_password,
- *     clusterPublicKey: _var.bds_instance_cluster_public_key,
- *     clusterVersion: _var.bds_instance_cluster_version,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.bds_instance_display_name,
- *     isHighAvailability: _var.bds_instance_is_high_availability,
- *     isSecure: _var.bds_instance_is_secure,
- *     masterNode: {
- *         shape: _var.bds_instance_nodes_shape,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         numberOfNodes: _var.bds_instance_number_of_nodes,
- *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
- *         shapeConfig: {
- *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
- *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
- *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
- *         },
- *     },
- *     utilNode: {
- *         shape: _var.bds_instance_nodes_shape,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         numberOfNodes: _var.bds_instance_number_of_nodes,
- *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
- *         shapeConfig: {
- *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
- *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
- *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
- *         },
- *     },
- *     workerNode: {
- *         shape: _var.bds_instance_nodes_shape,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         numberOfNodes: _var.bds_instance_number_of_nodes,
- *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
- *         shapeConfig: {
- *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
- *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
- *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
- *         },
- *     },
- *     computeOnlyWorkerNode: {
- *         shape: _var.bds_instance_nodes_shape,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         numberOfNodes: _var.bds_instance_number_of_nodes,
- *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
- *         shapeConfig: {
- *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
- *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
- *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
- *         },
- *     },
- *     edgeNode: {
- *         shape: _var.bds_instance_nodes_shape,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         numberOfNodes: _var.bds_instance_number_of_nodes,
- *         blockVolumeSizeInGbs: _var.bds_instance_nodes_block_volume_size_in_gbs,
- *         shapeConfig: {
- *             memoryInGbs: _var.bds_instance_nodes_shape_config_memory_in_gbs,
- *             nvmes: _var.bds_instance_nodes_shape_config_nvmes,
- *             ocpus: _var.bds_instance_nodes_shape_config_ocpus,
- *         },
- *     },
- *     bootstrapScriptUrl: _var.bds_instance_bootstrap_script_url,
- *     clusterProfile: _var.bds_instance_cluster_profile,
- *     definedTags: _var.bds_instance_defined_tags,
- *     freeformTags: _var.bds_instance_freeform_tags,
- *     kerberosRealmName: _var.bds_instance_kerberos_realm_name,
- *     kmsKeyId: _var.bds_instance_kms_key_id,
- *     networkConfig: {
- *         cidrBlock: _var.bds_instance_network_config_cidr_block,
- *         isNatGatewayRequired: _var.bds_instance_network_config_is_nat_gateway_required,
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * BdsInstances can be imported using the `id`, e.g.
@@ -192,9 +110,17 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public readonly isHighAvailability!: pulumi.Output<boolean>;
     /**
+     * Boolean flag specifying whether or not Kafka should be configured.
+     */
+    public readonly isKafkaConfigured!: pulumi.Output<boolean | undefined>;
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      */
     public readonly isSecure!: pulumi.Output<boolean>;
+    /**
+     * The kafka broker node in the BDS instance
+     */
+    public readonly kafkaBrokerNode!: pulumi.Output<outputs.BigDataService.BdsInstanceKafkaBrokerNode | undefined>;
     /**
      * The user-defined kerberos realm name.
      */
@@ -208,17 +134,25 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public readonly masterNode!: pulumi.Output<outputs.BigDataService.BdsInstanceMasterNode>;
     /**
-     * Additional configuration of customer's network.
+     * Additional configuration of the user's network.
      */
     public readonly networkConfig!: pulumi.Output<outputs.BigDataService.BdsInstanceNetworkConfig>;
     /**
-     * The list of nodes in the BDS instance
+     * The list of nodes in the Big Data Service cluster.
      */
     public /*out*/ readonly nodes!: pulumi.Output<outputs.BigDataService.BdsInstanceNode[]>;
     /**
      * The amount of worker nodes should be created
      */
     public /*out*/ readonly numberOfNodes!: pulumi.Output<number>;
+    /**
+     * Number of nodes that require a maintenance reboot
+     */
+    public /*out*/ readonly numberOfNodesRequiringMaintenanceReboot!: pulumi.Output<number>;
+    /**
+     * (Updatable) The version of the patch to be upated.
+     */
+    public readonly osPatchVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
@@ -267,13 +201,17 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["isCloudSqlConfigured"] = state ? state.isCloudSqlConfigured : undefined;
             resourceInputs["isForceStopJobs"] = state ? state.isForceStopJobs : undefined;
             resourceInputs["isHighAvailability"] = state ? state.isHighAvailability : undefined;
+            resourceInputs["isKafkaConfigured"] = state ? state.isKafkaConfigured : undefined;
             resourceInputs["isSecure"] = state ? state.isSecure : undefined;
+            resourceInputs["kafkaBrokerNode"] = state ? state.kafkaBrokerNode : undefined;
             resourceInputs["kerberosRealmName"] = state ? state.kerberosRealmName : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["masterNode"] = state ? state.masterNode : undefined;
             resourceInputs["networkConfig"] = state ? state.networkConfig : undefined;
             resourceInputs["nodes"] = state ? state.nodes : undefined;
             resourceInputs["numberOfNodes"] = state ? state.numberOfNodes : undefined;
+            resourceInputs["numberOfNodesRequiringMaintenanceReboot"] = state ? state.numberOfNodesRequiringMaintenanceReboot : undefined;
+            resourceInputs["osPatchVersion"] = state ? state.osPatchVersion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -326,11 +264,14 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["isCloudSqlConfigured"] = args ? args.isCloudSqlConfigured : undefined;
             resourceInputs["isForceStopJobs"] = args ? args.isForceStopJobs : undefined;
             resourceInputs["isHighAvailability"] = args ? args.isHighAvailability : undefined;
+            resourceInputs["isKafkaConfigured"] = args ? args.isKafkaConfigured : undefined;
             resourceInputs["isSecure"] = args ? args.isSecure : undefined;
+            resourceInputs["kafkaBrokerNode"] = args ? args.kafkaBrokerNode : undefined;
             resourceInputs["kerberosRealmName"] = args ? args.kerberosRealmName : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["masterNode"] = args ? args.masterNode : undefined;
             resourceInputs["networkConfig"] = args ? args.networkConfig : undefined;
+            resourceInputs["osPatchVersion"] = args ? args.osPatchVersion : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["utilNode"] = args ? args.utilNode : undefined;
             resourceInputs["workerNode"] = args ? args.workerNode : undefined;
@@ -338,6 +279,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["nodes"] = undefined /*out*/;
             resourceInputs["numberOfNodes"] = undefined /*out*/;
+            resourceInputs["numberOfNodesRequiringMaintenanceReboot"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -415,9 +357,17 @@ export interface BdsInstanceState {
      */
     isHighAvailability?: pulumi.Input<boolean>;
     /**
+     * Boolean flag specifying whether or not Kafka should be configured.
+     */
+    isKafkaConfigured?: pulumi.Input<boolean>;
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      */
     isSecure?: pulumi.Input<boolean>;
+    /**
+     * The kafka broker node in the BDS instance
+     */
+    kafkaBrokerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceKafkaBrokerNode>;
     /**
      * The user-defined kerberos realm name.
      */
@@ -431,17 +381,25 @@ export interface BdsInstanceState {
      */
     masterNode?: pulumi.Input<inputs.BigDataService.BdsInstanceMasterNode>;
     /**
-     * Additional configuration of customer's network.
+     * Additional configuration of the user's network.
      */
     networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig>;
     /**
-     * The list of nodes in the BDS instance
+     * The list of nodes in the Big Data Service cluster.
      */
     nodes?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceNode>[]>;
     /**
      * The amount of worker nodes should be created
      */
     numberOfNodes?: pulumi.Input<number>;
+    /**
+     * Number of nodes that require a maintenance reboot
+     */
+    numberOfNodesRequiringMaintenanceReboot?: pulumi.Input<number>;
+    /**
+     * (Updatable) The version of the patch to be upated.
+     */
+    osPatchVersion?: pulumi.Input<string>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
@@ -520,9 +478,17 @@ export interface BdsInstanceArgs {
      */
     isHighAvailability: pulumi.Input<boolean>;
     /**
+     * Boolean flag specifying whether or not Kafka should be configured.
+     */
+    isKafkaConfigured?: pulumi.Input<boolean>;
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      */
     isSecure: pulumi.Input<boolean>;
+    /**
+     * The kafka broker node in the BDS instance
+     */
+    kafkaBrokerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceKafkaBrokerNode>;
     /**
      * The user-defined kerberos realm name.
      */
@@ -536,9 +502,13 @@ export interface BdsInstanceArgs {
      */
     masterNode: pulumi.Input<inputs.BigDataService.BdsInstanceMasterNode>;
     /**
-     * Additional configuration of customer's network.
+     * Additional configuration of the user's network.
      */
     networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig>;
+    /**
+     * (Updatable) The version of the patch to be upated.
+     */
+    osPatchVersion?: pulumi.Input<string>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */

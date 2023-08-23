@@ -13,6 +13,7 @@ import com.pulumi.oci.BigDataService.outputs.BdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceClusterDetail;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceComputeOnlyWorkerNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceEdgeNode;
+import com.pulumi.oci.BigDataService.outputs.BdsInstanceKafkaBrokerNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceMasterNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceNetworkConfig;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceNode;
@@ -34,6 +35,7 @@ import javax.annotation.Nullable;
  * Creates a new BDS instance.
  * 
  * ## Example Usage
+ * 
  * ```java
  * package generated_program;
  * 
@@ -52,6 +54,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeShapeConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeShapeConfigArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -124,6 +128,17 @@ import javax.annotation.Nullable;
  *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
  *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
  *                 .shapeConfig(BdsInstanceEdgeNodeShapeConfigArgs.builder()
+ *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .nvmes(var_.bds_instance_nodes_shape_config_nvmes())
+ *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
+ *                     .build())
+ *                 .build())
+ *             .kafkaBrokerNode(BdsInstanceKafkaBrokerNodeArgs.builder()
+ *                 .shape(var_.bds_instance_nodes_shape())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
+ *                 .shapeConfig(BdsInstanceKafkaBrokerNodeShapeConfigArgs.builder()
  *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
  *                     .nvmes(var_.bds_instance_nodes_shape_config_nvmes())
  *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
@@ -379,6 +394,20 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.isHighAvailability;
     }
     /**
+     * Boolean flag specifying whether or not Kafka should be configured.
+     * 
+     */
+    @Export(name="isKafkaConfigured", type=Boolean.class, parameters={})
+    private Output</* @Nullable */ Boolean> isKafkaConfigured;
+
+    /**
+     * @return Boolean flag specifying whether or not Kafka should be configured.
+     * 
+     */
+    public Output<Optional<Boolean>> isKafkaConfigured() {
+        return Codegen.optional(this.isKafkaConfigured);
+    }
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
@@ -391,6 +420,20 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isSecure() {
         return this.isSecure;
+    }
+    /**
+     * The kafka broker node in the BDS instance
+     * 
+     */
+    @Export(name="kafkaBrokerNode", type=BdsInstanceKafkaBrokerNode.class, parameters={})
+    private Output</* @Nullable */ BdsInstanceKafkaBrokerNode> kafkaBrokerNode;
+
+    /**
+     * @return The kafka broker node in the BDS instance
+     * 
+     */
+    public Output<Optional<BdsInstanceKafkaBrokerNode>> kafkaBrokerNode() {
+        return Codegen.optional(this.kafkaBrokerNode);
     }
     /**
      * The user-defined kerberos realm name.
@@ -435,28 +478,28 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.masterNode;
     }
     /**
-     * Additional configuration of customer&#39;s network.
+     * Additional configuration of the user&#39;s network.
      * 
      */
     @Export(name="networkConfig", type=BdsInstanceNetworkConfig.class, parameters={})
     private Output<BdsInstanceNetworkConfig> networkConfig;
 
     /**
-     * @return Additional configuration of customer&#39;s network.
+     * @return Additional configuration of the user&#39;s network.
      * 
      */
     public Output<BdsInstanceNetworkConfig> networkConfig() {
         return this.networkConfig;
     }
     /**
-     * The list of nodes in the BDS instance
+     * The list of nodes in the Big Data Service cluster.
      * 
      */
     @Export(name="nodes", type=List.class, parameters={BdsInstanceNode.class})
     private Output<List<BdsInstanceNode>> nodes;
 
     /**
-     * @return The list of nodes in the BDS instance
+     * @return The list of nodes in the Big Data Service cluster.
      * 
      */
     public Output<List<BdsInstanceNode>> nodes() {
@@ -475,6 +518,34 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> numberOfNodes() {
         return this.numberOfNodes;
+    }
+    /**
+     * Number of nodes that require a maintenance reboot
+     * 
+     */
+    @Export(name="numberOfNodesRequiringMaintenanceReboot", type=Integer.class, parameters={})
+    private Output<Integer> numberOfNodesRequiringMaintenanceReboot;
+
+    /**
+     * @return Number of nodes that require a maintenance reboot
+     * 
+     */
+    public Output<Integer> numberOfNodesRequiringMaintenanceReboot() {
+        return this.numberOfNodesRequiringMaintenanceReboot;
+    }
+    /**
+     * (Updatable) The version of the patch to be upated.
+     * 
+     */
+    @Export(name="osPatchVersion", type=String.class, parameters={})
+    private Output</* @Nullable */ String> osPatchVersion;
+
+    /**
+     * @return (Updatable) The version of the patch to be upated.
+     * 
+     */
+    public Output<Optional<String>> osPatchVersion() {
+        return Codegen.optional(this.osPatchVersion);
     }
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

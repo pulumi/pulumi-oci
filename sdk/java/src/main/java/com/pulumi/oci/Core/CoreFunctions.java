@@ -3691,7 +3691,7 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets information about the specified cluster network.
+     * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
      * ```java
@@ -3730,7 +3730,7 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets information about the specified cluster network.
+     * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
      * ```java
@@ -3769,7 +3769,7 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets information about the specified cluster network.
+     * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
      * ```java
@@ -3808,7 +3808,7 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets information about the specified cluster network.
+     * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
      * ```java
@@ -3847,7 +3847,7 @@ public final class CoreFunctions {
     /**
      * This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
      * 
-     * Lists the instances in the specified cluster network.
+     * Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
      * ```java
@@ -3888,7 +3888,7 @@ public final class CoreFunctions {
     /**
      * This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
      * 
-     * Lists the instances in the specified cluster network.
+     * Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
      * ```java
@@ -3929,7 +3929,7 @@ public final class CoreFunctions {
     /**
      * This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
      * 
-     * Lists the instances in the specified cluster network.
+     * Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
      * ```java
@@ -3970,7 +3970,7 @@ public final class CoreFunctions {
     /**
      * This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
      * 
-     * Lists the instances in the specified cluster network.
+     * Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
      * ```java
@@ -4011,7 +4011,8 @@ public final class CoreFunctions {
     /**
      * This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
      * 
-     * Lists the cluster networks in the specified compartment.
+     * Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+     * in the specified compartment.
      * 
      * ## Example Usage
      * ```java
@@ -4052,7 +4053,8 @@ public final class CoreFunctions {
     /**
      * This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
      * 
-     * Lists the cluster networks in the specified compartment.
+     * Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+     * in the specified compartment.
      * 
      * ## Example Usage
      * ```java
@@ -4093,7 +4095,8 @@ public final class CoreFunctions {
     /**
      * This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
      * 
-     * Lists the cluster networks in the specified compartment.
+     * Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+     * in the specified compartment.
      * 
      * ## Example Usage
      * ```java
@@ -4134,7 +4137,8 @@ public final class CoreFunctions {
     /**
      * This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
      * 
-     * Lists the cluster networks in the specified compartment.
+     * Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+     * in the specified compartment.
      * 
      * ## Example Usage
      * ```java
@@ -4995,7 +4999,8 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets information about the specified compute cluster.
+     * Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
      * ```java
@@ -5034,7 +5039,8 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets information about the specified compute cluster.
+     * Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
      * ```java
@@ -5073,7 +5079,8 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets information about the specified compute cluster.
+     * Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
      * ```java
@@ -5112,7 +5119,8 @@ public final class CoreFunctions {
     /**
      * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
      * 
-     * Gets information about the specified compute cluster.
+     * Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
      * ```java

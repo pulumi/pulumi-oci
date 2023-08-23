@@ -140,6 +140,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> LifecycleSubState { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Defines the maintenance configuration for create operation.
+        /// </summary>
+        [Output("maintenanceConfiguration")]
+        public Output<Outputs.DeploymentMaintenanceConfiguration> MaintenanceConfiguration { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         /// </summary>
         [Output("maintenanceWindow")]
@@ -216,6 +222,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("timeOfNextMaintenance")]
         public Output<string> TimeOfNextMaintenance { get; private set; } = null!;
+
+        /// <summary>
+        /// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        [Output("timeOggVersionSupportedUntil")]
+        public Output<string> TimeOggVersionSupportedUntil { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -358,6 +370,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("licenseModel", required: true)]
         public Input<string> LicenseModel { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Defines the maintenance configuration for create operation.
+        /// </summary>
+        [Input("maintenanceConfiguration")]
+        public Input<Inputs.DeploymentMaintenanceConfigurationArgs>? MaintenanceConfiguration { get; set; }
 
         /// <summary>
         /// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -536,6 +554,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? LifecycleSubState { get; set; }
 
         /// <summary>
+        /// (Updatable) Defines the maintenance configuration for create operation.
+        /// </summary>
+        [Input("maintenanceConfiguration")]
+        public Input<Inputs.DeploymentMaintenanceConfigurationGetArgs>? MaintenanceConfiguration { get; set; }
+
+        /// <summary>
         /// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         /// </summary>
         [Input("maintenanceWindow")]
@@ -624,6 +648,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("timeOfNextMaintenance")]
         public Input<string>? TimeOfNextMaintenance { get; set; }
+
+        /// <summary>
+        /// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        [Input("timeOggVersionSupportedUntil")]
+        public Input<string>? TimeOggVersionSupportedUntil { get; set; }
 
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

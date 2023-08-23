@@ -8,6 +8,7 @@ import com.pulumi.oci.Core.outputs.ClusterNetworkPlacementConfigurationSecondary
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,6 +18,7 @@ public final class ClusterNetworkPlacementConfiguration {
      * 
      */
     private String availabilityDomain;
+    private @Nullable String placementConstraint;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
      * 
@@ -35,6 +37,9 @@ public final class ClusterNetworkPlacementConfiguration {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    public Optional<String> placementConstraint() {
+        return Optional.ofNullable(this.placementConstraint);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
@@ -61,12 +66,14 @@ public final class ClusterNetworkPlacementConfiguration {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private @Nullable String placementConstraint;
         private String primarySubnetId;
         private @Nullable List<ClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
         public Builder() {}
         public Builder(ClusterNetworkPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.placementConstraint = defaults.placementConstraint;
     	      this.primarySubnetId = defaults.primarySubnetId;
     	      this.secondaryVnicSubnets = defaults.secondaryVnicSubnets;
         }
@@ -74,6 +81,11 @@ public final class ClusterNetworkPlacementConfiguration {
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder placementConstraint(@Nullable String placementConstraint) {
+            this.placementConstraint = placementConstraint;
             return this;
         }
         @CustomType.Setter
@@ -92,6 +104,7 @@ public final class ClusterNetworkPlacementConfiguration {
         public ClusterNetworkPlacementConfiguration build() {
             final var o = new ClusterNetworkPlacementConfiguration();
             o.availabilityDomain = availabilityDomain;
+            o.placementConstraint = placementConstraint;
             o.primarySubnetId = primarySubnetId;
             o.secondaryVnicSubnets = secondaryVnicSubnets;
             return o;

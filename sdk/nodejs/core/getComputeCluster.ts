@@ -7,7 +7,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
  *
- * Gets information about the specified compute cluster.
+ * Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+ * is a remote direct memory access (RDMA) network group.
  *
  * ## Example Usage
  *
@@ -33,7 +34,7 @@ export function getComputeCluster(args: GetComputeClusterArgs, opts?: pulumi.Inv
  */
 export interface GetComputeClusterArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.  A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      */
     computeClusterId: string;
 }
@@ -43,11 +44,11 @@ export interface GetComputeClusterArgs {
  */
 export interface GetComputeClusterResult {
     /**
-     * The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
      */
     readonly availabilityDomain: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
      */
     readonly compartmentId: string;
     readonly computeClusterId: string;
@@ -64,7 +65,7 @@ export interface GetComputeClusterResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
      */
     readonly id: string;
     /**
@@ -72,14 +73,15 @@ export interface GetComputeClusterResult {
      */
     readonly state: string;
     /**
-     * The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
 }
 /**
  * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
  *
- * Gets information about the specified compute cluster.
+ * Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+ * is a remote direct memory access (RDMA) network group.
  *
  * ## Example Usage
  *
@@ -101,7 +103,7 @@ export function getComputeClusterOutput(args: GetComputeClusterOutputArgs, opts?
  */
 export interface GetComputeClusterOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.  A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      */
     computeClusterId: pulumi.Input<string>;
 }

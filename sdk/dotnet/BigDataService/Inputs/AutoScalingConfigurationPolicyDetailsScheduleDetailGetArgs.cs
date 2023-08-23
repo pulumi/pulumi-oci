@@ -22,7 +22,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         private InputList<Inputs.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigGetArgs>? _timeAndHorizontalScalingConfigs;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Time of day and horizontal scaling configuration.
         /// </summary>
         public InputList<Inputs.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigGetArgs> TimeAndHorizontalScalingConfigs
         {
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         private InputList<Inputs.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigGetArgs>? _timeAndVerticalScalingConfigs;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Time of day and vertical scaling configuration
         /// </summary>
         public InputList<Inputs.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigGetArgs> TimeAndVerticalScalingConfigs
         {

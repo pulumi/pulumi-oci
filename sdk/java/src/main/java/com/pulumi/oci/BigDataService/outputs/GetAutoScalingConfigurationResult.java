@@ -28,7 +28,7 @@ public final class GetAutoScalingConfigurationResult {
     private String id;
     private Boolean isEnabled;
     /**
-     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
      * 
      */
     private String nodeType;
@@ -86,7 +86,7 @@ public final class GetAutoScalingConfigurationResult {
         return this.isEnabled;
     }
     /**
-     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
      * 
      */
     public String nodeType() {

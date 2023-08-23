@@ -334,6 +334,26 @@ class InternetGateway(pulumi.CustomResource):
         use [UpdateInternetGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/InternetGateway/UpdateInternetGateway) to easily disable/enable
         the gateway without changing the route rule.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_internet_gateway = oci.core.InternetGateway("testInternetGateway",
+            compartment_id=var["compartment_id"],
+            vcn_id=oci_core_vcn["test_vcn"]["id"],
+            enabled=var["internet_gateway_enabled"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=var["internet_gateway_display_name"],
+            freeform_tags={
+                "Department": "Finance",
+            },
+            route_table_id=oci_core_route_table["test_route_table"]["id"])
+        ```
+
         ## Import
 
         InternetGateways can be imported using the `id`, e.g.
@@ -385,6 +405,26 @@ class InternetGateway(pulumi.CustomResource):
         traffic will flow to/from the internet even if there's a route rule that enables that traffic. You can later
         use [UpdateInternetGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/InternetGateway/UpdateInternetGateway) to easily disable/enable
         the gateway without changing the route rule.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_internet_gateway = oci.core.InternetGateway("testInternetGateway",
+            compartment_id=var["compartment_id"],
+            vcn_id=oci_core_vcn["test_vcn"]["id"],
+            enabled=var["internet_gateway_enabled"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=var["internet_gateway_display_name"],
+            freeform_tags={
+                "Department": "Finance",
+            },
+            route_table_id=oci_core_route_table["test_route_table"]["id"])
+        ```
 
         ## Import
 

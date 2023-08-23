@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.ClusterNetworkClusterConfigurationArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationArgs;
 import java.lang.Object;
@@ -19,6 +20,25 @@ import javax.annotation.Nullable;
 public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs {
 
     public static final ClusterNetworkState Empty = new ClusterNetworkState();
+
+    /**
+     * The HPC cluster configuration requested when launching instances of a cluster network.
+     * 
+     * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+     * 
+     */
+    @Import(name="clusterConfiguration")
+    private @Nullable Output<ClusterNetworkClusterConfigurationArgs> clusterConfiguration;
+
+    /**
+     * @return The HPC cluster configuration requested when launching instances of a cluster network.
+     * 
+     * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+     * 
+     */
+    public Optional<Output<ClusterNetworkClusterConfigurationArgs>> clusterConfiguration() {
+        return Optional.ofNullable(this.clusterConfiguration);
+    }
 
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -81,14 +101,14 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     @Import(name="hpcIslandId")
     private @Nullable Output<String> hpcIslandId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     public Optional<Output<String>> hpcIslandId() {
@@ -115,14 +135,14 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The list of network block OCIDs of the HPC island.
+     * The list of network block OCIDs.
      * 
      */
     @Import(name="networkBlockIds")
     private @Nullable Output<List<String>> networkBlockIds;
 
     /**
-     * @return The list of network block OCIDs of the HPC island.
+     * @return The list of network block OCIDs.
      * 
      */
     public Optional<Output<List<String>>> networkBlockIds() {
@@ -192,6 +212,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     private ClusterNetworkState() {}
 
     private ClusterNetworkState(ClusterNetworkState $) {
+        this.clusterConfiguration = $.clusterConfiguration;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -221,6 +242,31 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
 
         public Builder(ClusterNetworkState defaults) {
             $ = new ClusterNetworkState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterConfiguration The HPC cluster configuration requested when launching instances of a cluster network.
+         * 
+         * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterConfiguration(@Nullable Output<ClusterNetworkClusterConfigurationArgs> clusterConfiguration) {
+            $.clusterConfiguration = clusterConfiguration;
+            return this;
+        }
+
+        /**
+         * @param clusterConfiguration The HPC cluster configuration requested when launching instances of a cluster network.
+         * 
+         * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterConfiguration(ClusterNetworkClusterConfigurationArgs clusterConfiguration) {
+            return clusterConfiguration(Output.of(clusterConfiguration));
         }
 
         /**
@@ -308,7 +354,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
          * 
          * @return builder
          * 
@@ -319,7 +365,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
          * 
          * @return builder
          * 
@@ -366,7 +412,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param networkBlockIds The list of network block OCIDs of the HPC island.
+         * @param networkBlockIds The list of network block OCIDs.
          * 
          * @return builder
          * 
@@ -377,7 +423,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param networkBlockIds The list of network block OCIDs of the HPC island.
+         * @param networkBlockIds The list of network block OCIDs.
          * 
          * @return builder
          * 
@@ -387,7 +433,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param networkBlockIds The list of network block OCIDs of the HPC island.
+         * @param networkBlockIds The list of network block OCIDs.
          * 
          * @return builder
          * 

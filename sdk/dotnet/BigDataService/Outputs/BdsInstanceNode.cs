@@ -50,13 +50,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly int? MemoryInGbs;
         /// <summary>
-        /// BDS instance node type
+        /// The Big Data Service cluster node type.
         /// </summary>
         public readonly string? NodeType;
         /// <summary>
         /// The total number of OCPUs available to the node.
-        /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -81,6 +79,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// The time the BDS instance was created. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string? TimeCreated;
+        /// <summary>
+        /// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+        /// </summary>
+        public readonly string? TimeMaintenanceRebootDue;
 
         [OutputConstructor]
         private BdsInstanceNode(
@@ -114,7 +116,9 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string? subnetId,
 
-            string? timeCreated)
+            string? timeCreated,
+
+            string? timeMaintenanceRebootDue)
         {
             AttachedBlockVolumes = attachedBlockVolumes;
             AvailabilityDomain = availabilityDomain;
@@ -132,6 +136,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;
+            TimeMaintenanceRebootDue = timeMaintenanceRebootDue;
         }
     }
 }

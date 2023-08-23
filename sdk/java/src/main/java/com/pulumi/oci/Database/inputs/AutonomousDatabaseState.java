@@ -604,6 +604,36 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * The area assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    @Import(name="inMemoryAreaInGbs")
+    private @Nullable Output<Integer> inMemoryAreaInGbs;
+
+    /**
+     * @return The area assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    public Optional<Output<Integer>> inMemoryAreaInGbs() {
+        return Optional.ofNullable(this.inMemoryAreaInGbs);
+    }
+
+    /**
+     * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    @Import(name="inMemoryPercentage")
+    private @Nullable Output<Integer> inMemoryPercentage;
+
+    /**
+     * @return (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    public Optional<Output<Integer>> inMemoryPercentage() {
+        return Optional.ofNullable(this.inMemoryPercentage);
+    }
+
+    /**
      * The infrastructure type this resource belongs to.
      * 
      */
@@ -1949,6 +1979,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.displayName = $.displayName;
         this.failedDataRecoveryInSeconds = $.failedDataRecoveryInSeconds;
         this.freeformTags = $.freeformTags;
+        this.inMemoryAreaInGbs = $.inMemoryAreaInGbs;
+        this.inMemoryPercentage = $.inMemoryPercentage;
         this.infrastructureType = $.infrastructureType;
         this.isAccessControlEnabled = $.isAccessControlEnabled;
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
@@ -2890,6 +2922,48 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param inMemoryAreaInGbs The area assigned to In-Memory tables in Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inMemoryAreaInGbs(@Nullable Output<Integer> inMemoryAreaInGbs) {
+            $.inMemoryAreaInGbs = inMemoryAreaInGbs;
+            return this;
+        }
+
+        /**
+         * @param inMemoryAreaInGbs The area assigned to In-Memory tables in Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inMemoryAreaInGbs(Integer inMemoryAreaInGbs) {
+            return inMemoryAreaInGbs(Output.of(inMemoryAreaInGbs));
+        }
+
+        /**
+         * @param inMemoryPercentage (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inMemoryPercentage(@Nullable Output<Integer> inMemoryPercentage) {
+            $.inMemoryPercentage = inMemoryPercentage;
+            return this;
+        }
+
+        /**
+         * @param inMemoryPercentage (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inMemoryPercentage(Integer inMemoryPercentage) {
+            return inMemoryPercentage(Output.of(inMemoryPercentage));
         }
 
         /**

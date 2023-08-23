@@ -14,12 +14,12 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetVcnsVirtualNetworkResult
     {
         /// <summary>
-        /// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+        /// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
         /// </summary>
         public readonly ImmutableArray<string> Byoipv6cidrBlocks;
         public readonly ImmutableArray<Outputs.GetVcnsVirtualNetworkByoipv6cidrDetailResult> Byoipv6cidrDetails;
         /// <summary>
-        /// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+        /// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
         /// </summary>
         public readonly string CidrBlock;
         /// <summary>
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+        /// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
         /// </summary>
         public readonly ImmutableArray<string> Ipv6cidrBlocks;
         /// <summary>
-        /// For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+        /// For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
         /// </summary>
         public readonly ImmutableArray<string> Ipv6privateCidrBlocks;
         public readonly bool IsIpv6enabled;

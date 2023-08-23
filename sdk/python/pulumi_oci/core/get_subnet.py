@@ -168,7 +168,7 @@ class GetSubnetResult:
     @pulumi.getter(name="ipv6cidrBlock")
     def ipv6cidr_block(self) -> str:
         """
-        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
+        For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
         """
         return pulumi.get(self, "ipv6cidr_block")
 
@@ -176,7 +176,7 @@ class GetSubnetResult:
     @pulumi.getter(name="ipv6cidrBlocks")
     def ipv6cidr_blocks(self) -> Sequence[str]:
         """
-        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+        The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
         """
         return pulumi.get(self, "ipv6cidr_blocks")
 

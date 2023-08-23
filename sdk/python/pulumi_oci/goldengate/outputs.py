@@ -15,6 +15,7 @@ __all__ = [
     'ConnectionBootstrapServer',
     'ConnectionIngressIp',
     'DeploymentDeploymentDiagnosticData',
+    'DeploymentMaintenanceConfiguration',
     'DeploymentMaintenanceWindow',
     'DeploymentOggData',
     'GetConnectionAdditionalAttributeResult',
@@ -36,6 +37,7 @@ __all__ = [
     'GetDeploymentBackupsDeploymentBackupCollectionItemResult',
     'GetDeploymentBackupsFilterResult',
     'GetDeploymentDeploymentDiagnosticDataResult',
+    'GetDeploymentMaintenanceConfigurationResult',
     'GetDeploymentMaintenanceWindowResult',
     'GetDeploymentOggDataResult',
     'GetDeploymentTypeItemResult',
@@ -51,6 +53,7 @@ __all__ = [
     'GetDeploymentsDeploymentCollectionResult',
     'GetDeploymentsDeploymentCollectionItemResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult',
+    'GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult',
     'GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult',
     'GetDeploymentsDeploymentCollectionItemOggDataResult',
     'GetDeploymentsFilterResult',
@@ -293,6 +296,98 @@ class DeploymentDeploymentDiagnosticData(dict):
         The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_diagnostic_start")
+
+
+@pulumi.output_type
+class DeploymentMaintenanceConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bundleReleaseUpgradePeriodInDays":
+            suggest = "bundle_release_upgrade_period_in_days"
+        elif key == "interimReleaseUpgradePeriodInDays":
+            suggest = "interim_release_upgrade_period_in_days"
+        elif key == "isInterimReleaseAutoUpgradeEnabled":
+            suggest = "is_interim_release_auto_upgrade_enabled"
+        elif key == "majorReleaseUpgradePeriodInDays":
+            suggest = "major_release_upgrade_period_in_days"
+        elif key == "securityPatchUpgradePeriodInDays":
+            suggest = "security_patch_upgrade_period_in_days"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentMaintenanceConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentMaintenanceConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentMaintenanceConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bundle_release_upgrade_period_in_days: Optional[int] = None,
+                 interim_release_upgrade_period_in_days: Optional[int] = None,
+                 is_interim_release_auto_upgrade_enabled: Optional[bool] = None,
+                 major_release_upgrade_period_in_days: Optional[int] = None,
+                 security_patch_upgrade_period_in_days: Optional[int] = None):
+        """
+        :param int bundle_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+        :param int interim_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+        :param bool is_interim_release_auto_upgrade_enabled: (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+        :param int major_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+        :param int security_patch_upgrade_period_in_days: (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+        """
+        if bundle_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        if interim_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        if is_interim_release_auto_upgrade_enabled is not None:
+            pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        if major_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        if security_patch_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+
+    @property
+    @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
+    def bundle_release_upgrade_period_in_days(self) -> Optional[int]:
+        """
+        (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "bundle_release_upgrade_period_in_days")
+
+    @property
+    @pulumi.getter(name="interimReleaseUpgradePeriodInDays")
+    def interim_release_upgrade_period_in_days(self) -> Optional[int]:
+        """
+        (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+        """
+        return pulumi.get(self, "interim_release_upgrade_period_in_days")
+
+    @property
+    @pulumi.getter(name="isInterimReleaseAutoUpgradeEnabled")
+    def is_interim_release_auto_upgrade_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+        """
+        return pulumi.get(self, "is_interim_release_auto_upgrade_enabled")
+
+    @property
+    @pulumi.getter(name="majorReleaseUpgradePeriodInDays")
+    def major_release_upgrade_period_in_days(self) -> Optional[int]:
+        """
+        (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "major_release_upgrade_period_in_days")
+
+    @property
+    @pulumi.getter(name="securityPatchUpgradePeriodInDays")
+    def security_patch_upgrade_period_in_days(self) -> Optional[int]:
+        """
+        (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "security_patch_upgrade_period_in_days")
 
 
 @pulumi.output_type
@@ -2189,6 +2284,68 @@ class GetDeploymentDeploymentDiagnosticDataResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentMaintenanceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 bundle_release_upgrade_period_in_days: int,
+                 interim_release_upgrade_period_in_days: int,
+                 is_interim_release_auto_upgrade_enabled: bool,
+                 major_release_upgrade_period_in_days: int,
+                 security_patch_upgrade_period_in_days: int):
+        """
+        :param int bundle_release_upgrade_period_in_days: Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+        :param int interim_release_upgrade_period_in_days: Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+        :param bool is_interim_release_auto_upgrade_enabled: By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+        :param int major_release_upgrade_period_in_days: Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+        :param int security_patch_upgrade_period_in_days: Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+        """
+        pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+
+    @property
+    @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
+    def bundle_release_upgrade_period_in_days(self) -> int:
+        """
+        Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "bundle_release_upgrade_period_in_days")
+
+    @property
+    @pulumi.getter(name="interimReleaseUpgradePeriodInDays")
+    def interim_release_upgrade_period_in_days(self) -> int:
+        """
+        Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+        """
+        return pulumi.get(self, "interim_release_upgrade_period_in_days")
+
+    @property
+    @pulumi.getter(name="isInterimReleaseAutoUpgradeEnabled")
+    def is_interim_release_auto_upgrade_enabled(self) -> bool:
+        """
+        By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+        """
+        return pulumi.get(self, "is_interim_release_auto_upgrade_enabled")
+
+    @property
+    @pulumi.getter(name="majorReleaseUpgradePeriodInDays")
+    def major_release_upgrade_period_in_days(self) -> int:
+        """
+        Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "major_release_upgrade_period_in_days")
+
+    @property
+    @pulumi.getter(name="securityPatchUpgradePeriodInDays")
+    def security_patch_upgrade_period_in_days(self) -> int:
+        """
+        Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "security_patch_upgrade_period_in_days")
+
+
+@pulumi.output_type
 class GetDeploymentMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  day: str,
@@ -2507,6 +2664,8 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_cancel_allowed: bool,
+                 is_reschedule_allowed: bool,
                  is_rollback_allowed: bool,
                  is_security_fix: bool,
                  is_snoozed: bool,
@@ -2519,8 +2678,10 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
                  system_tags: Mapping[str, Any],
                  time_created: str,
                  time_finished: str,
+                 time_ogg_version_supported_until: str,
                  time_released: str,
                  time_schedule: str,
+                 time_schedule_max: str,
                  time_snoozed_until: str,
                  time_started: str,
                  time_updated: str):
@@ -2533,6 +2694,8 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
+        :param bool is_cancel_allowed: Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+        :param bool is_reschedule_allowed: Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
         :param bool is_rollback_allowed: Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
                * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
                * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
@@ -2547,8 +2710,10 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_finished: The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_released: The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_schedule: The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_schedule_max: Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_snoozed_until: The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_started: The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -2561,6 +2726,8 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_cancel_allowed", is_cancel_allowed)
+        pulumi.set(__self__, "is_reschedule_allowed", is_reschedule_allowed)
         pulumi.set(__self__, "is_rollback_allowed", is_rollback_allowed)
         pulumi.set(__self__, "is_security_fix", is_security_fix)
         pulumi.set(__self__, "is_snoozed", is_snoozed)
@@ -2573,8 +2740,10 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
         pulumi.set(__self__, "time_released", time_released)
         pulumi.set(__self__, "time_schedule", time_schedule)
+        pulumi.set(__self__, "time_schedule_max", time_schedule_max)
         pulumi.set(__self__, "time_snoozed_until", time_snoozed_until)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -2642,6 +2811,22 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCancelAllowed")
+    def is_cancel_allowed(self) -> bool:
+        """
+        Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+        """
+        return pulumi.get(self, "is_cancel_allowed")
+
+    @property
+    @pulumi.getter(name="isRescheduleAllowed")
+    def is_reschedule_allowed(self) -> bool:
+        """
+        Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+        """
+        return pulumi.get(self, "is_reschedule_allowed")
 
     @property
     @pulumi.getter(name="isRollbackAllowed")
@@ -2742,6 +2927,14 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         return pulumi.get(self, "time_finished")
 
     @property
+    @pulumi.getter(name="timeOggVersionSupportedUntil")
+    def time_ogg_version_supported_until(self) -> str:
+        """
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_ogg_version_supported_until")
+
+    @property
     @pulumi.getter(name="timeReleased")
     def time_released(self) -> str:
         """
@@ -2756,6 +2949,14 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_schedule")
+
+    @property
+    @pulumi.getter(name="timeScheduleMax")
+    def time_schedule_max(self) -> str:
+        """
+        Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_schedule_max")
 
     @property
     @pulumi.getter(name="timeSnoozedUntil")
@@ -2834,19 +3035,22 @@ class GetDeploymentVersionsDeploymentVersionCollectionItemResult(dict):
                  is_security_fix: bool,
                  ogg_version: str,
                  release_type: str,
-                 time_released: str):
+                 time_released: str,
+                 time_supported_until: str):
         """
         :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
         :param bool is_security_fix: Indicates if OGG release contains security fix.
         :param str ogg_version: Version of OGG
         :param str release_type: The type of release.
         :param str time_released: The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "is_security_fix", is_security_fix)
         pulumi.set(__self__, "ogg_version", ogg_version)
         pulumi.set(__self__, "release_type", release_type)
         pulumi.set(__self__, "time_released", time_released)
+        pulumi.set(__self__, "time_supported_until", time_supported_until)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -2887,6 +3091,14 @@ class GetDeploymentVersionsDeploymentVersionCollectionItemResult(dict):
         The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_released")
+
+    @property
+    @pulumi.getter(name="timeSupportedUntil")
+    def time_supported_until(self) -> str:
+        """
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_supported_until")
 
 
 @pulumi.output_type
@@ -2951,6 +3163,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  license_model: str,
                  lifecycle_details: str,
                  lifecycle_sub_state: str,
+                 maintenance_configurations: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult'],
                  maintenance_windows: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult'],
                  next_maintenance_action_type: str,
                  next_maintenance_description: str,
@@ -2964,6 +3177,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  system_tags: Mapping[str, Any],
                  time_created: str,
                  time_of_next_maintenance: str,
+                 time_ogg_version_supported_until: str,
                  time_updated: str,
                  time_upgrade_required: str):
         """
@@ -2987,6 +3201,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str license_model: The Oracle license model that applies to a Deployment.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs'] maintenance_configurations: Attributes for configuring automatic deployment maintenance.
         :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs'] maintenance_windows: Defines the maintenance window, when automatic actions can be performed.
         :param str next_maintenance_action_type: Type of the next maintenance.
         :param str next_maintenance_description: Description of the next maintenance.
@@ -3000,6 +3215,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
@@ -3023,6 +3239,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
         pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
@@ -3036,6 +3253,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
+        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
 
@@ -3200,6 +3418,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
+    @pulumi.getter(name="maintenanceConfigurations")
+    def maintenance_configurations(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult']:
+        """
+        Attributes for configuring automatic deployment maintenance.
+        """
+        return pulumi.get(self, "maintenance_configurations")
+
+    @property
     @pulumi.getter(name="maintenanceWindows")
     def maintenance_windows(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult']:
         """
@@ -3304,6 +3530,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "time_of_next_maintenance")
 
     @property
+    @pulumi.getter(name="timeOggVersionSupportedUntil")
+    def time_ogg_version_supported_until(self) -> str:
+        """
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_ogg_version_supported_until")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -3391,6 +3625,68 @@ class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult(dict)
         The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_diagnostic_start")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 bundle_release_upgrade_period_in_days: int,
+                 interim_release_upgrade_period_in_days: int,
+                 is_interim_release_auto_upgrade_enabled: bool,
+                 major_release_upgrade_period_in_days: int,
+                 security_patch_upgrade_period_in_days: int):
+        """
+        :param int bundle_release_upgrade_period_in_days: Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+        :param int interim_release_upgrade_period_in_days: Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+        :param bool is_interim_release_auto_upgrade_enabled: By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+        :param int major_release_upgrade_period_in_days: Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+        :param int security_patch_upgrade_period_in_days: Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+        """
+        pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+
+    @property
+    @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
+    def bundle_release_upgrade_period_in_days(self) -> int:
+        """
+        Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "bundle_release_upgrade_period_in_days")
+
+    @property
+    @pulumi.getter(name="interimReleaseUpgradePeriodInDays")
+    def interim_release_upgrade_period_in_days(self) -> int:
+        """
+        Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+        """
+        return pulumi.get(self, "interim_release_upgrade_period_in_days")
+
+    @property
+    @pulumi.getter(name="isInterimReleaseAutoUpgradeEnabled")
+    def is_interim_release_auto_upgrade_enabled(self) -> bool:
+        """
+        By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+        """
+        return pulumi.get(self, "is_interim_release_auto_upgrade_enabled")
+
+    @property
+    @pulumi.getter(name="majorReleaseUpgradePeriodInDays")
+    def major_release_upgrade_period_in_days(self) -> int:
+        """
+        Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "major_release_upgrade_period_in_days")
+
+    @property
+    @pulumi.getter(name="securityPatchUpgradePeriodInDays")
+    def security_patch_upgrade_period_in_days(self) -> int:
+        """
+        Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "security_patch_upgrade_period_in_days")
 
 
 @pulumi.output_type

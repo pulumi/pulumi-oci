@@ -32,6 +32,13 @@ public final class ClusterNetworkPlacementConfigurationArgs extends com.pulumi.r
         return this.availabilityDomain;
     }
 
+    @Import(name="placementConstraint")
+    private @Nullable Output<String> placementConstraint;
+
+    public Optional<Output<String>> placementConstraint() {
+        return Optional.ofNullable(this.placementConstraint);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
      * 
@@ -66,6 +73,7 @@ public final class ClusterNetworkPlacementConfigurationArgs extends com.pulumi.r
 
     private ClusterNetworkPlacementConfigurationArgs(ClusterNetworkPlacementConfigurationArgs $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.placementConstraint = $.placementConstraint;
         this.primarySubnetId = $.primarySubnetId;
         this.secondaryVnicSubnets = $.secondaryVnicSubnets;
     }
@@ -107,6 +115,15 @@ public final class ClusterNetworkPlacementConfigurationArgs extends com.pulumi.r
          */
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        public Builder placementConstraint(@Nullable Output<String> placementConstraint) {
+            $.placementConstraint = placementConstraint;
+            return this;
+        }
+
+        public Builder placementConstraint(String placementConstraint) {
+            return placementConstraint(Output.of(placementConstraint));
         }
 
         /**

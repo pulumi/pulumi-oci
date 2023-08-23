@@ -38,7 +38,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly Outputs.AutoScalingConfigurationPolicyDetailsScaleUpConfig? ScaleUpConfig;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Details of a horizontal scaling schedule.
         /// </summary>
         public readonly ImmutableArray<Outputs.AutoScalingConfigurationPolicyDetailsScheduleDetail> ScheduleDetails;
         /// <summary>

@@ -15,6 +15,7 @@ __all__ = [
     'GetContainerInstanceContainerHealthCheckResult',
     'GetContainerInstanceContainerHealthCheckHeaderResult',
     'GetContainerInstanceContainerResourceConfigResult',
+    'GetContainerInstanceContainerSecurityContextResult',
     'GetContainerInstanceContainerVolumeMountResult',
     'GetContainerInstanceDnsConfigResult',
     'GetContainerInstanceImagePullSecretResult',
@@ -38,6 +39,7 @@ __all__ = [
     'GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult',
     'GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult',
     'GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult',
+    'GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult',
     'GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult',
     'GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult',
     'GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult',
@@ -68,6 +70,7 @@ class GetContainerInstanceContainerResult(dict):
                  is_resource_principal_disabled: bool,
                  lifecycle_details: str,
                  resource_configs: Sequence['outputs.GetContainerInstanceContainerResourceConfigResult'],
+                 security_contexts: Sequence['outputs.GetContainerInstanceContainerSecurityContextResult'],
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
@@ -107,6 +110,7 @@ class GetContainerInstanceContainerResult(dict):
         pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "resource_configs", resource_configs)
+        pulumi.set(__self__, "security_contexts", security_contexts)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -226,6 +230,11 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="resourceConfigs")
     def resource_configs(self) -> Sequence['outputs.GetContainerInstanceContainerResourceConfigResult']:
         return pulumi.get(self, "resource_configs")
+
+    @property
+    @pulumi.getter(name="securityContexts")
+    def security_contexts(self) -> Sequence['outputs.GetContainerInstanceContainerSecurityContextResult']:
+        return pulumi.get(self, "security_contexts")
 
     @property
     @pulumi.getter
@@ -430,6 +439,46 @@ class GetContainerInstanceContainerResourceConfigResult(dict):
     @pulumi.getter(name="vcpusLimit")
     def vcpus_limit(self) -> float:
         return pulumi.get(self, "vcpus_limit")
+
+
+@pulumi.output_type
+class GetContainerInstanceContainerSecurityContextResult(dict):
+    def __init__(__self__, *,
+                 is_non_root_user_check_enabled: bool,
+                 is_root_file_system_readonly: bool,
+                 run_as_group: int,
+                 run_as_user: int,
+                 security_context_type: str):
+        pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
+        pulumi.set(__self__, "run_as_group", run_as_group)
+        pulumi.set(__self__, "run_as_user", run_as_user)
+        pulumi.set(__self__, "security_context_type", security_context_type)
+
+    @property
+    @pulumi.getter(name="isNonRootUserCheckEnabled")
+    def is_non_root_user_check_enabled(self) -> bool:
+        return pulumi.get(self, "is_non_root_user_check_enabled")
+
+    @property
+    @pulumi.getter(name="isRootFileSystemReadonly")
+    def is_root_file_system_readonly(self) -> bool:
+        return pulumi.get(self, "is_root_file_system_readonly")
+
+    @property
+    @pulumi.getter(name="runAsGroup")
+    def run_as_group(self) -> int:
+        return pulumi.get(self, "run_as_group")
+
+    @property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> int:
+        return pulumi.get(self, "run_as_user")
+
+    @property
+    @pulumi.getter(name="securityContextType")
+    def security_context_type(self) -> str:
+        return pulumi.get(self, "security_context_type")
 
 
 @pulumi.output_type
@@ -1530,6 +1579,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
                  is_resource_principal_disabled: bool,
                  lifecycle_details: str,
                  resource_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult'],
+                 security_contexts: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult'],
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
@@ -1568,6 +1618,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
         pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "resource_configs", resource_configs)
+        pulumi.set(__self__, "security_contexts", security_contexts)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -1684,6 +1735,11 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter(name="resourceConfigs")
     def resource_configs(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult']:
         return pulumi.get(self, "resource_configs")
+
+    @property
+    @pulumi.getter(name="securityContexts")
+    def security_contexts(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult']:
+        return pulumi.get(self, "security_contexts")
 
     @property
     @pulumi.getter
@@ -1888,6 +1944,46 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfi
     @pulumi.getter(name="vcpusLimit")
     def vcpus_limit(self) -> float:
         return pulumi.get(self, "vcpus_limit")
+
+
+@pulumi.output_type
+class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult(dict):
+    def __init__(__self__, *,
+                 is_non_root_user_check_enabled: bool,
+                 is_root_file_system_readonly: bool,
+                 run_as_group: int,
+                 run_as_user: int,
+                 security_context_type: str):
+        pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
+        pulumi.set(__self__, "run_as_group", run_as_group)
+        pulumi.set(__self__, "run_as_user", run_as_user)
+        pulumi.set(__self__, "security_context_type", security_context_type)
+
+    @property
+    @pulumi.getter(name="isNonRootUserCheckEnabled")
+    def is_non_root_user_check_enabled(self) -> bool:
+        return pulumi.get(self, "is_non_root_user_check_enabled")
+
+    @property
+    @pulumi.getter(name="isRootFileSystemReadonly")
+    def is_root_file_system_readonly(self) -> bool:
+        return pulumi.get(self, "is_root_file_system_readonly")
+
+    @property
+    @pulumi.getter(name="runAsGroup")
+    def run_as_group(self) -> int:
+        return pulumi.get(self, "run_as_group")
+
+    @property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> int:
+        return pulumi.get(self, "run_as_user")
+
+    @property
+    @pulumi.getter(name="securityContextType")
+    def security_context_type(self) -> str:
+        return pulumi.get(self, "security_context_type")
 
 
 @pulumi.output_type

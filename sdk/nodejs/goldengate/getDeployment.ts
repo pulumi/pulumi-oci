@@ -126,6 +126,10 @@ export interface GetDeploymentResult {
      */
     readonly lifecycleSubState: string;
     /**
+     * Attributes for configuring automatic deployment maintenance.
+     */
+    readonly maintenanceConfigurations: outputs.GoldenGate.GetDeploymentMaintenanceConfiguration[];
+    /**
      * Defines the maintenance window, when automatic actions can be performed.
      */
     readonly maintenanceWindows: outputs.GoldenGate.GetDeploymentMaintenanceWindow[];
@@ -177,6 +181,10 @@ export interface GetDeploymentResult {
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeOfNextMaintenance: string;
+    /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    readonly timeOggVersionSupportedUntil: string;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */

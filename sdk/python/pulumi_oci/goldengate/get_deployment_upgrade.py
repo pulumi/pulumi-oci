@@ -21,7 +21,7 @@ class GetDeploymentUpgradeResult:
     """
     A collection of values returned by getDeploymentUpgrade.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, deployment_id=None, deployment_upgrade_id=None, deployment_upgrade_type=None, description=None, display_name=None, freeform_tags=None, id=None, is_rollback_allowed=None, is_security_fix=None, is_snoozed=None, lifecycle_details=None, lifecycle_sub_state=None, ogg_version=None, previous_ogg_version=None, release_type=None, state=None, system_tags=None, time_created=None, time_finished=None, time_released=None, time_schedule=None, time_snoozed_until=None, time_started=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, deployment_id=None, deployment_upgrade_id=None, deployment_upgrade_type=None, description=None, display_name=None, freeform_tags=None, id=None, is_cancel_allowed=None, is_reschedule_allowed=None, is_rollback_allowed=None, is_security_fix=None, is_snoozed=None, lifecycle_details=None, lifecycle_sub_state=None, ogg_version=None, previous_ogg_version=None, release_type=None, state=None, system_tags=None, time_created=None, time_finished=None, time_ogg_version_supported_until=None, time_released=None, time_schedule=None, time_schedule_max=None, time_snoozed_until=None, time_started=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -49,6 +49,12 @@ class GetDeploymentUpgradeResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_cancel_allowed and not isinstance(is_cancel_allowed, bool):
+            raise TypeError("Expected argument 'is_cancel_allowed' to be a bool")
+        pulumi.set(__self__, "is_cancel_allowed", is_cancel_allowed)
+        if is_reschedule_allowed and not isinstance(is_reschedule_allowed, bool):
+            raise TypeError("Expected argument 'is_reschedule_allowed' to be a bool")
+        pulumi.set(__self__, "is_reschedule_allowed", is_reschedule_allowed)
         if is_rollback_allowed and not isinstance(is_rollback_allowed, bool):
             raise TypeError("Expected argument 'is_rollback_allowed' to be a bool")
         pulumi.set(__self__, "is_rollback_allowed", is_rollback_allowed)
@@ -85,12 +91,18 @@ class GetDeploymentUpgradeResult:
         if time_finished and not isinstance(time_finished, str):
             raise TypeError("Expected argument 'time_finished' to be a str")
         pulumi.set(__self__, "time_finished", time_finished)
+        if time_ogg_version_supported_until and not isinstance(time_ogg_version_supported_until, str):
+            raise TypeError("Expected argument 'time_ogg_version_supported_until' to be a str")
+        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
         if time_released and not isinstance(time_released, str):
             raise TypeError("Expected argument 'time_released' to be a str")
         pulumi.set(__self__, "time_released", time_released)
         if time_schedule and not isinstance(time_schedule, str):
             raise TypeError("Expected argument 'time_schedule' to be a str")
         pulumi.set(__self__, "time_schedule", time_schedule)
+        if time_schedule_max and not isinstance(time_schedule_max, str):
+            raise TypeError("Expected argument 'time_schedule_max' to be a str")
+        pulumi.set(__self__, "time_schedule_max", time_schedule_max)
         if time_snoozed_until and not isinstance(time_snoozed_until, str):
             raise TypeError("Expected argument 'time_snoozed_until' to be a str")
         pulumi.set(__self__, "time_snoozed_until", time_snoozed_until)
@@ -169,6 +181,22 @@ class GetDeploymentUpgradeResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCancelAllowed")
+    def is_cancel_allowed(self) -> bool:
+        """
+        Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+        """
+        return pulumi.get(self, "is_cancel_allowed")
+
+    @property
+    @pulumi.getter(name="isRescheduleAllowed")
+    def is_reschedule_allowed(self) -> bool:
+        """
+        Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+        """
+        return pulumi.get(self, "is_reschedule_allowed")
 
     @property
     @pulumi.getter(name="isRollbackAllowed")
@@ -269,6 +297,14 @@ class GetDeploymentUpgradeResult:
         return pulumi.get(self, "time_finished")
 
     @property
+    @pulumi.getter(name="timeOggVersionSupportedUntil")
+    def time_ogg_version_supported_until(self) -> str:
+        """
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_ogg_version_supported_until")
+
+    @property
     @pulumi.getter(name="timeReleased")
     def time_released(self) -> str:
         """
@@ -283,6 +319,14 @@ class GetDeploymentUpgradeResult:
         The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_schedule")
+
+    @property
+    @pulumi.getter(name="timeScheduleMax")
+    def time_schedule_max(self) -> str:
+        """
+        Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_schedule_max")
 
     @property
     @pulumi.getter(name="timeSnoozedUntil")
@@ -324,6 +368,8 @@ class AwaitableGetDeploymentUpgradeResult(GetDeploymentUpgradeResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_cancel_allowed=self.is_cancel_allowed,
+            is_reschedule_allowed=self.is_reschedule_allowed,
             is_rollback_allowed=self.is_rollback_allowed,
             is_security_fix=self.is_security_fix,
             is_snoozed=self.is_snoozed,
@@ -336,8 +382,10 @@ class AwaitableGetDeploymentUpgradeResult(GetDeploymentUpgradeResult):
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_finished=self.time_finished,
+            time_ogg_version_supported_until=self.time_ogg_version_supported_until,
             time_released=self.time_released,
             time_schedule=self.time_schedule,
+            time_schedule_max=self.time_schedule_max,
             time_snoozed_until=self.time_snoozed_until,
             time_started=self.time_started,
             time_updated=self.time_updated)
@@ -377,6 +425,8 @@ def get_deployment_upgrade(deployment_upgrade_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_cancel_allowed=pulumi.get(__ret__, 'is_cancel_allowed'),
+        is_reschedule_allowed=pulumi.get(__ret__, 'is_reschedule_allowed'),
         is_rollback_allowed=pulumi.get(__ret__, 'is_rollback_allowed'),
         is_security_fix=pulumi.get(__ret__, 'is_security_fix'),
         is_snoozed=pulumi.get(__ret__, 'is_snoozed'),
@@ -389,8 +439,10 @@ def get_deployment_upgrade(deployment_upgrade_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
+        time_ogg_version_supported_until=pulumi.get(__ret__, 'time_ogg_version_supported_until'),
         time_released=pulumi.get(__ret__, 'time_released'),
         time_schedule=pulumi.get(__ret__, 'time_schedule'),
+        time_schedule_max=pulumi.get(__ret__, 'time_schedule_max'),
         time_snoozed_until=pulumi.get(__ret__, 'time_snoozed_until'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))

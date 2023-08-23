@@ -2099,6 +2099,8 @@ type ContainerInstanceContainer struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The size and amount of resources available to the container.
 	ResourceConfig *ContainerInstanceContainerResourceConfig `pulumi:"resourceConfig"`
+	// Security context for container.
+	SecurityContext *ContainerInstanceContainerSecurityContext `pulumi:"securityContext"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
@@ -2173,6 +2175,8 @@ type ContainerInstanceContainerArgs struct {
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The size and amount of resources available to the container.
 	ResourceConfig ContainerInstanceContainerResourceConfigPtrInput `pulumi:"resourceConfig"`
+	// Security context for container.
+	SecurityContext ContainerInstanceContainerSecurityContextPtrInput `pulumi:"securityContext"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
@@ -2335,6 +2339,13 @@ func (o ContainerInstanceContainerOutput) LifecycleDetails() pulumi.StringPtrOut
 // The size and amount of resources available to the container.
 func (o ContainerInstanceContainerOutput) ResourceConfig() ContainerInstanceContainerResourceConfigPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *ContainerInstanceContainerResourceConfig { return v.ResourceConfig }).(ContainerInstanceContainerResourceConfigPtrOutput)
+}
+
+// Security context for container.
+func (o ContainerInstanceContainerOutput) SecurityContext() ContainerInstanceContainerSecurityContextPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) *ContainerInstanceContainerSecurityContext {
+		return v.SecurityContext
+	}).(ContainerInstanceContainerSecurityContextPtrOutput)
 }
 
 // (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -2896,6 +2907,219 @@ func (o ContainerInstanceContainerResourceConfigPtrOutput) VcpusLimit() pulumi.F
 		}
 		return v.VcpusLimit
 	}).(pulumi.Float64PtrOutput)
+}
+
+type ContainerInstanceContainerSecurityContext struct {
+	// Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+	IsNonRootUserCheckEnabled *bool `pulumi:"isNonRootUserCheckEnabled"`
+	// Determines if the container will have a read-only root file system. Default value is false.
+	IsRootFileSystemReadonly *bool `pulumi:"isRootFileSystemReadonly"`
+	// The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+	RunAsGroup *int `pulumi:"runAsGroup"`
+	// The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+	RunAsUser *int `pulumi:"runAsUser"`
+	// The type of security context
+	SecurityContextType *string `pulumi:"securityContextType"`
+}
+
+// ContainerInstanceContainerSecurityContextInput is an input type that accepts ContainerInstanceContainerSecurityContextArgs and ContainerInstanceContainerSecurityContextOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerSecurityContextInput` via:
+//
+//	ContainerInstanceContainerSecurityContextArgs{...}
+type ContainerInstanceContainerSecurityContextInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerSecurityContextOutput() ContainerInstanceContainerSecurityContextOutput
+	ToContainerInstanceContainerSecurityContextOutputWithContext(context.Context) ContainerInstanceContainerSecurityContextOutput
+}
+
+type ContainerInstanceContainerSecurityContextArgs struct {
+	// Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+	IsNonRootUserCheckEnabled pulumi.BoolPtrInput `pulumi:"isNonRootUserCheckEnabled"`
+	// Determines if the container will have a read-only root file system. Default value is false.
+	IsRootFileSystemReadonly pulumi.BoolPtrInput `pulumi:"isRootFileSystemReadonly"`
+	// The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+	RunAsGroup pulumi.IntPtrInput `pulumi:"runAsGroup"`
+	// The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+	RunAsUser pulumi.IntPtrInput `pulumi:"runAsUser"`
+	// The type of security context
+	SecurityContextType pulumi.StringPtrInput `pulumi:"securityContextType"`
+}
+
+func (ContainerInstanceContainerSecurityContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerSecurityContext)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerSecurityContextArgs) ToContainerInstanceContainerSecurityContextOutput() ContainerInstanceContainerSecurityContextOutput {
+	return i.ToContainerInstanceContainerSecurityContextOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerSecurityContextArgs) ToContainerInstanceContainerSecurityContextOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextOutput)
+}
+
+func (i ContainerInstanceContainerSecurityContextArgs) ToContainerInstanceContainerSecurityContextPtrOutput() ContainerInstanceContainerSecurityContextPtrOutput {
+	return i.ToContainerInstanceContainerSecurityContextPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerSecurityContextArgs) ToContainerInstanceContainerSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextOutput).ToContainerInstanceContainerSecurityContextPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceContainerSecurityContextPtrInput is an input type that accepts ContainerInstanceContainerSecurityContextArgs, ContainerInstanceContainerSecurityContextPtr and ContainerInstanceContainerSecurityContextPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerSecurityContextPtrInput` via:
+//
+//	        ContainerInstanceContainerSecurityContextArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceContainerSecurityContextPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerSecurityContextPtrOutput() ContainerInstanceContainerSecurityContextPtrOutput
+	ToContainerInstanceContainerSecurityContextPtrOutputWithContext(context.Context) ContainerInstanceContainerSecurityContextPtrOutput
+}
+
+type containerInstanceContainerSecurityContextPtrType ContainerInstanceContainerSecurityContextArgs
+
+func ContainerInstanceContainerSecurityContextPtr(v *ContainerInstanceContainerSecurityContextArgs) ContainerInstanceContainerSecurityContextPtrInput {
+	return (*containerInstanceContainerSecurityContextPtrType)(v)
+}
+
+func (*containerInstanceContainerSecurityContextPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceContainerSecurityContext)(nil)).Elem()
+}
+
+func (i *containerInstanceContainerSecurityContextPtrType) ToContainerInstanceContainerSecurityContextPtrOutput() ContainerInstanceContainerSecurityContextPtrOutput {
+	return i.ToContainerInstanceContainerSecurityContextPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceContainerSecurityContextPtrType) ToContainerInstanceContainerSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextPtrOutput)
+}
+
+type ContainerInstanceContainerSecurityContextOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerSecurityContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerSecurityContext)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerSecurityContextOutput) ToContainerInstanceContainerSecurityContextOutput() ContainerInstanceContainerSecurityContextOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerSecurityContextOutput) ToContainerInstanceContainerSecurityContextOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerSecurityContextOutput) ToContainerInstanceContainerSecurityContextPtrOutput() ContainerInstanceContainerSecurityContextPtrOutput {
+	return o.ToContainerInstanceContainerSecurityContextPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceContainerSecurityContextOutput) ToContainerInstanceContainerSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceContainerSecurityContext) *ContainerInstanceContainerSecurityContext {
+		return &v
+	}).(ContainerInstanceContainerSecurityContextPtrOutput)
+}
+
+// Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+func (o ContainerInstanceContainerSecurityContextOutput) IsNonRootUserCheckEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerSecurityContext) *bool { return v.IsNonRootUserCheckEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Determines if the container will have a read-only root file system. Default value is false.
+func (o ContainerInstanceContainerSecurityContextOutput) IsRootFileSystemReadonly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerSecurityContext) *bool { return v.IsRootFileSystemReadonly }).(pulumi.BoolPtrOutput)
+}
+
+// The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+func (o ContainerInstanceContainerSecurityContextOutput) RunAsGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerSecurityContext) *int { return v.RunAsGroup }).(pulumi.IntPtrOutput)
+}
+
+// The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+func (o ContainerInstanceContainerSecurityContextOutput) RunAsUser() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerSecurityContext) *int { return v.RunAsUser }).(pulumi.IntPtrOutput)
+}
+
+// The type of security context
+func (o ContainerInstanceContainerSecurityContextOutput) SecurityContextType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerSecurityContext) *string { return v.SecurityContextType }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceContainerSecurityContextPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerSecurityContextPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceContainerSecurityContext)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerSecurityContextPtrOutput) ToContainerInstanceContainerSecurityContextPtrOutput() ContainerInstanceContainerSecurityContextPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerSecurityContextPtrOutput) ToContainerInstanceContainerSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerSecurityContextPtrOutput) Elem() ContainerInstanceContainerSecurityContextOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContext) ContainerInstanceContainerSecurityContext {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceContainerSecurityContext
+		return ret
+	}).(ContainerInstanceContainerSecurityContextOutput)
+}
+
+// Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+func (o ContainerInstanceContainerSecurityContextPtrOutput) IsNonRootUserCheckEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContext) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsNonRootUserCheckEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Determines if the container will have a read-only root file system. Default value is false.
+func (o ContainerInstanceContainerSecurityContextPtrOutput) IsRootFileSystemReadonly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContext) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsRootFileSystemReadonly
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+func (o ContainerInstanceContainerSecurityContextPtrOutput) RunAsGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContext) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RunAsGroup
+	}).(pulumi.IntPtrOutput)
+}
+
+// The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+func (o ContainerInstanceContainerSecurityContextPtrOutput) RunAsUser() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContext) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RunAsUser
+	}).(pulumi.IntPtrOutput)
+}
+
+// The type of security context
+func (o ContainerInstanceContainerSecurityContextPtrOutput) SecurityContextType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityContextType
+	}).(pulumi.StringPtrOutput)
 }
 
 type ContainerInstanceContainerVolumeMount struct {
@@ -17000,6 +17224,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerHealthCheckHeaderArrayInput)(nil)).Elem(), ContainerInstanceContainerHealthCheckHeaderArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerResourceConfigInput)(nil)).Elem(), ContainerInstanceContainerResourceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerResourceConfigPtrInput)(nil)).Elem(), ContainerInstanceContainerResourceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerSecurityContextInput)(nil)).Elem(), ContainerInstanceContainerSecurityContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerSecurityContextPtrInput)(nil)).Elem(), ContainerInstanceContainerSecurityContextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerVolumeMountInput)(nil)).Elem(), ContainerInstanceContainerVolumeMountArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerVolumeMountArrayInput)(nil)).Elem(), ContainerInstanceContainerVolumeMountArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceDnsConfigInput)(nil)).Elem(), ContainerInstanceDnsConfigArgs{})
@@ -17248,6 +17474,8 @@ func init() {
 	pulumi.RegisterOutputType(ContainerInstanceContainerHealthCheckHeaderArrayOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceContainerResourceConfigOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceContainerResourceConfigPtrOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerSecurityContextOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerSecurityContextPtrOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceContainerVolumeMountOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceContainerVolumeMountArrayOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceDnsConfigOutput{})

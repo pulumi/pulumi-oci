@@ -28,6 +28,7 @@ __all__ = [
     'ContainerInstanceContainerHealthCheckArgs',
     'ContainerInstanceContainerHealthCheckHeaderArgs',
     'ContainerInstanceContainerResourceConfigArgs',
+    'ContainerInstanceContainerSecurityContextArgs',
     'ContainerInstanceContainerVolumeMountArgs',
     'ContainerInstanceDnsConfigArgs',
     'ContainerInstanceImagePullSecretArgs',
@@ -837,6 +838,7 @@ class ContainerInstanceContainerArgs:
                  is_resource_principal_disabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  resource_config: Optional[pulumi.Input['ContainerInstanceContainerResourceConfigArgs']] = None,
+                 security_context: Optional[pulumi.Input['ContainerInstanceContainerSecurityContextArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -872,6 +874,7 @@ class ContainerInstanceContainerArgs:
                This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
         :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param pulumi.Input['ContainerInstanceContainerResourceConfigArgs'] resource_config: The size and amount of resources available to the container.
+        :param pulumi.Input['ContainerInstanceContainerSecurityContextArgs'] security_context: Security context for container.
         :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -916,6 +919,8 @@ class ContainerInstanceContainerArgs:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if resource_config is not None:
             pulumi.set(__self__, "resource_config", resource_config)
+        if security_context is not None:
+            pulumi.set(__self__, "security_context", security_context)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -1140,6 +1145,18 @@ class ContainerInstanceContainerArgs:
     @resource_config.setter
     def resource_config(self, value: Optional[pulumi.Input['ContainerInstanceContainerResourceConfigArgs']]):
         pulumi.set(self, "resource_config", value)
+
+    @property
+    @pulumi.getter(name="securityContext")
+    def security_context(self) -> Optional[pulumi.Input['ContainerInstanceContainerSecurityContextArgs']]:
+        """
+        Security context for container.
+        """
+        return pulumi.get(self, "security_context")
+
+    @security_context.setter
+    def security_context(self, value: Optional[pulumi.Input['ContainerInstanceContainerSecurityContextArgs']]):
+        pulumi.set(self, "security_context", value)
 
     @property
     @pulumi.getter
@@ -1541,6 +1558,93 @@ class ContainerInstanceContainerResourceConfigArgs:
     @vcpus_limit.setter
     def vcpus_limit(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "vcpus_limit", value)
+
+
+@pulumi.input_type
+class ContainerInstanceContainerSecurityContextArgs:
+    def __init__(__self__, *,
+                 is_non_root_user_check_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_root_file_system_readonly: Optional[pulumi.Input[bool]] = None,
+                 run_as_group: Optional[pulumi.Input[int]] = None,
+                 run_as_user: Optional[pulumi.Input[int]] = None,
+                 security_context_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_non_root_user_check_enabled: Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+        :param pulumi.Input[bool] is_root_file_system_readonly: Determines if the container will have a read-only root file system. Default value is false.
+        :param pulumi.Input[int] run_as_group: The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+        :param pulumi.Input[int] run_as_user: The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+        :param pulumi.Input[str] security_context_type: The type of security context
+        """
+        if is_non_root_user_check_enabled is not None:
+            pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        if is_root_file_system_readonly is not None:
+            pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
+        if run_as_group is not None:
+            pulumi.set(__self__, "run_as_group", run_as_group)
+        if run_as_user is not None:
+            pulumi.set(__self__, "run_as_user", run_as_user)
+        if security_context_type is not None:
+            pulumi.set(__self__, "security_context_type", security_context_type)
+
+    @property
+    @pulumi.getter(name="isNonRootUserCheckEnabled")
+    def is_non_root_user_check_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+        """
+        return pulumi.get(self, "is_non_root_user_check_enabled")
+
+    @is_non_root_user_check_enabled.setter
+    def is_non_root_user_check_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_non_root_user_check_enabled", value)
+
+    @property
+    @pulumi.getter(name="isRootFileSystemReadonly")
+    def is_root_file_system_readonly(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Determines if the container will have a read-only root file system. Default value is false.
+        """
+        return pulumi.get(self, "is_root_file_system_readonly")
+
+    @is_root_file_system_readonly.setter
+    def is_root_file_system_readonly(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_root_file_system_readonly", value)
+
+    @property
+    @pulumi.getter(name="runAsGroup")
+    def run_as_group(self) -> Optional[pulumi.Input[int]]:
+        """
+        The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+        """
+        return pulumi.get(self, "run_as_group")
+
+    @run_as_group.setter
+    def run_as_group(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "run_as_group", value)
+
+    @property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> Optional[pulumi.Input[int]]:
+        """
+        The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+        """
+        return pulumi.get(self, "run_as_user")
+
+    @run_as_user.setter
+    def run_as_user(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "run_as_user", value)
+
+    @property
+    @pulumi.getter(name="securityContextType")
+    def security_context_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of security context
+        """
+        return pulumi.get(self, "security_context_type")
+
+    @security_context_type.setter
+    def security_context_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_context_type", value)
 
 
 @pulumi.input_type

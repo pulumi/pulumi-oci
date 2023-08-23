@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceCloudSqlDetailArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeArgs;
+import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceMasterNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceUtilNodeArgs;
@@ -236,6 +237,21 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Boolean flag specifying whether or not Kafka should be configured.
+     * 
+     */
+    @Import(name="isKafkaConfigured")
+    private @Nullable Output<Boolean> isKafkaConfigured;
+
+    /**
+     * @return Boolean flag specifying whether or not Kafka should be configured.
+     * 
+     */
+    public Optional<Output<Boolean>> isKafkaConfigured() {
+        return Optional.ofNullable(this.isKafkaConfigured);
+    }
+
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
@@ -248,6 +264,21 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<Boolean> isSecure() {
         return this.isSecure;
+    }
+
+    /**
+     * The kafka broker node in the BDS instance
+     * 
+     */
+    @Import(name="kafkaBrokerNode")
+    private @Nullable Output<BdsInstanceKafkaBrokerNodeArgs> kafkaBrokerNode;
+
+    /**
+     * @return The kafka broker node in the BDS instance
+     * 
+     */
+    public Optional<Output<BdsInstanceKafkaBrokerNodeArgs>> kafkaBrokerNode() {
+        return Optional.ofNullable(this.kafkaBrokerNode);
     }
 
     /**
@@ -296,18 +327,33 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Additional configuration of customer&#39;s network.
+     * Additional configuration of the user&#39;s network.
      * 
      */
     @Import(name="networkConfig")
     private @Nullable Output<BdsInstanceNetworkConfigArgs> networkConfig;
 
     /**
-     * @return Additional configuration of customer&#39;s network.
+     * @return Additional configuration of the user&#39;s network.
      * 
      */
     public Optional<Output<BdsInstanceNetworkConfigArgs>> networkConfig() {
         return Optional.ofNullable(this.networkConfig);
+    }
+
+    /**
+     * (Updatable) The version of the patch to be upated.
+     * 
+     */
+    @Import(name="osPatchVersion")
+    private @Nullable Output<String> osPatchVersion;
+
+    /**
+     * @return (Updatable) The version of the patch to be upated.
+     * 
+     */
+    public Optional<Output<String>> osPatchVersion() {
+        return Optional.ofNullable(this.osPatchVersion);
     }
 
     /**
@@ -365,11 +411,14 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.isCloudSqlConfigured = $.isCloudSqlConfigured;
         this.isForceStopJobs = $.isForceStopJobs;
         this.isHighAvailability = $.isHighAvailability;
+        this.isKafkaConfigured = $.isKafkaConfigured;
         this.isSecure = $.isSecure;
+        this.kafkaBrokerNode = $.kafkaBrokerNode;
         this.kerberosRealmName = $.kerberosRealmName;
         this.kmsKeyId = $.kmsKeyId;
         this.masterNode = $.masterNode;
         this.networkConfig = $.networkConfig;
+        this.osPatchVersion = $.osPatchVersion;
         this.state = $.state;
         this.utilNode = $.utilNode;
         this.workerNode = $.workerNode;
@@ -695,6 +744,27 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isKafkaConfigured Boolean flag specifying whether or not Kafka should be configured.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isKafkaConfigured(@Nullable Output<Boolean> isKafkaConfigured) {
+            $.isKafkaConfigured = isKafkaConfigured;
+            return this;
+        }
+
+        /**
+         * @param isKafkaConfigured Boolean flag specifying whether or not Kafka should be configured.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isKafkaConfigured(Boolean isKafkaConfigured) {
+            return isKafkaConfigured(Output.of(isKafkaConfigured));
+        }
+
+        /**
          * @param isSecure Boolean flag specifying whether or not the cluster should be setup as secure.
          * 
          * @return builder
@@ -713,6 +783,27 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isSecure(Boolean isSecure) {
             return isSecure(Output.of(isSecure));
+        }
+
+        /**
+         * @param kafkaBrokerNode The kafka broker node in the BDS instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kafkaBrokerNode(@Nullable Output<BdsInstanceKafkaBrokerNodeArgs> kafkaBrokerNode) {
+            $.kafkaBrokerNode = kafkaBrokerNode;
+            return this;
+        }
+
+        /**
+         * @param kafkaBrokerNode The kafka broker node in the BDS instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kafkaBrokerNode(BdsInstanceKafkaBrokerNodeArgs kafkaBrokerNode) {
+            return kafkaBrokerNode(Output.of(kafkaBrokerNode));
         }
 
         /**
@@ -779,7 +870,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkConfig Additional configuration of customer&#39;s network.
+         * @param networkConfig Additional configuration of the user&#39;s network.
          * 
          * @return builder
          * 
@@ -790,13 +881,34 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkConfig Additional configuration of customer&#39;s network.
+         * @param networkConfig Additional configuration of the user&#39;s network.
          * 
          * @return builder
          * 
          */
         public Builder networkConfig(BdsInstanceNetworkConfigArgs networkConfig) {
             return networkConfig(Output.of(networkConfig));
+        }
+
+        /**
+         * @param osPatchVersion (Updatable) The version of the patch to be upated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osPatchVersion(@Nullable Output<String> osPatchVersion) {
+            $.osPatchVersion = osPatchVersion;
+            return this;
+        }
+
+        /**
+         * @param osPatchVersion (Updatable) The version of the patch to be upated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osPatchVersion(String osPatchVersion) {
+            return osPatchVersion(Output.of(osPatchVersion));
         }
 
         /**

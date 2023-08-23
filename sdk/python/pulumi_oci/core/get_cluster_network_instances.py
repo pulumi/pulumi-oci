@@ -108,7 +108,7 @@ def get_cluster_network_instances(cluster_network_id: Optional[str] = None,
     """
     This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
 
-    Lists the instances in the specified cluster network.
+    Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
 
     ## Example Usage
 
@@ -152,7 +152,7 @@ def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Inp
     """
     This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
 
-    Lists the instances in the specified cluster network.
+    Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
 
     ## Example Usage
 

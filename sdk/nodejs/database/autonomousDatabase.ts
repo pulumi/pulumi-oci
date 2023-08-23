@@ -211,6 +211,14 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * The area assigned to In-Memory tables in Autonomous Database.
+     */
+    public /*out*/ readonly inMemoryAreaInGbs!: pulumi.Output<number>;
+    /**
+     * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     */
+    public readonly inMemoryPercentage!: pulumi.Output<number>;
+    /**
      * The infrastructure type this resource belongs to.
      */
     public /*out*/ readonly infrastructureType!: pulumi.Output<string>;
@@ -626,6 +634,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["failedDataRecoveryInSeconds"] = state ? state.failedDataRecoveryInSeconds : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["inMemoryAreaInGbs"] = state ? state.inMemoryAreaInGbs : undefined;
+            resourceInputs["inMemoryPercentage"] = state ? state.inMemoryPercentage : undefined;
             resourceInputs["infrastructureType"] = state ? state.infrastructureType : undefined;
             resourceInputs["isAccessControlEnabled"] = state ? state.isAccessControlEnabled : undefined;
             resourceInputs["isAutoScalingEnabled"] = state ? state.isAutoScalingEnabled : undefined;
@@ -741,6 +751,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["inMemoryPercentage"] = args ? args.inMemoryPercentage : undefined;
             resourceInputs["isAccessControlEnabled"] = args ? args.isAccessControlEnabled : undefined;
             resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
             resourceInputs["isAutoScalingForStorageEnabled"] = args ? args.isAutoScalingForStorageEnabled : undefined;
@@ -791,6 +802,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["dataguardRegionType"] = undefined /*out*/;
             resourceInputs["disasterRecoveryRegionType"] = undefined /*out*/;
             resourceInputs["failedDataRecoveryInSeconds"] = undefined /*out*/;
+            resourceInputs["inMemoryAreaInGbs"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
             resourceInputs["isPreview"] = undefined /*out*/;
             resourceInputs["isReconnectCloneEnabled"] = undefined /*out*/;
@@ -1008,6 +1020,14 @@ export interface AutonomousDatabaseState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * The area assigned to In-Memory tables in Autonomous Database.
+     */
+    inMemoryAreaInGbs?: pulumi.Input<number>;
+    /**
+     * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     */
+    inMemoryPercentage?: pulumi.Input<number>;
     /**
      * The infrastructure type this resource belongs to.
      */
@@ -1504,6 +1524,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     */
+    inMemoryPercentage?: pulumi.Input<number>;
     /**
      * (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      *

@@ -65,10 +65,10 @@ class SubnetArgs:
                For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
                
                Example: `2001:0db8:0123:1111::/64`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-               * The CIDR blocks must be valid.
-               * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-               * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+               * The prefixes must be valid.
+               * Multiple prefixes must not overlap each other or the on-premises network prefix.
+               * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
         :param pulumi.Input[bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
                
                For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
@@ -78,7 +78,7 @@ class SubnetArgs:
                Example: `true`
         :param pulumi.Input[bool] prohibit_public_ip_on_vnic: Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
                
-               If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+               If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
                
                Example: `true`
         :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
@@ -260,10 +260,10 @@ class SubnetArgs:
     @pulumi.getter(name="ipv6cidrBlocks")
     def ipv6cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-        * The CIDR blocks must be valid.
-        * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+        * The prefixes must be valid.
+        * Multiple prefixes must not overlap each other or the on-premises network prefix.
+        * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
         """
         return pulumi.get(self, "ipv6cidr_blocks")
 
@@ -295,7 +295,7 @@ class SubnetArgs:
         """
         Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
 
-        If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+        If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
 
         Example: `true`
         """
@@ -385,10 +385,10 @@ class _SubnetState:
                For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
                
                Example: `2001:0db8:0123:1111::/64`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-               * The CIDR blocks must be valid.
-               * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-               * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+               * The prefixes must be valid.
+               * Multiple prefixes must not overlap each other or the on-premises network prefix.
+               * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
         :param pulumi.Input[str] ipv6virtual_router_ip: For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
         :param pulumi.Input[bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
                
@@ -399,7 +399,7 @@ class _SubnetState:
                Example: `true`
         :param pulumi.Input[bool] prohibit_public_ip_on_vnic: Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
                
-               If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+               If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
                
                Example: `true`
         :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
@@ -590,10 +590,10 @@ class _SubnetState:
     @pulumi.getter(name="ipv6cidrBlocks")
     def ipv6cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-        * The CIDR blocks must be valid.
-        * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+        * The prefixes must be valid.
+        * Multiple prefixes must not overlap each other or the on-premises network prefix.
+        * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
         """
         return pulumi.get(self, "ipv6cidr_blocks")
 
@@ -637,7 +637,7 @@ class _SubnetState:
         """
         Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
 
-        If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+        If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
 
         Example: `true`
         """
@@ -871,10 +871,10 @@ class Subnet(pulumi.CustomResource):
                For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
                
                Example: `2001:0db8:0123:1111::/64`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-               * The CIDR blocks must be valid.
-               * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-               * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+               * The prefixes must be valid.
+               * Multiple prefixes must not overlap each other or the on-premises network prefix.
+               * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
         :param pulumi.Input[bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
                
                For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
@@ -884,7 +884,7 @@ class Subnet(pulumi.CustomResource):
                Example: `true`
         :param pulumi.Input[bool] prohibit_public_ip_on_vnic: Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
                
-               If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+               If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
                
                Example: `true`
         :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
@@ -1105,10 +1105,10 @@ class Subnet(pulumi.CustomResource):
                For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
                
                Example: `2001:0db8:0123:1111::/64`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-               * The CIDR blocks must be valid.
-               * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-               * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+               * The prefixes must be valid.
+               * Multiple prefixes must not overlap each other or the on-premises network prefix.
+               * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
         :param pulumi.Input[str] ipv6virtual_router_ip: For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
         :param pulumi.Input[bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
                
@@ -1119,7 +1119,7 @@ class Subnet(pulumi.CustomResource):
                Example: `true`
         :param pulumi.Input[bool] prohibit_public_ip_on_vnic: Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
                
-               If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+               If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
                
                Example: `true`
         :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
@@ -1258,10 +1258,10 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="ipv6cidrBlocks")
     def ipv6cidr_blocks(self) -> pulumi.Output[Sequence[str]]:
         """
-        (Updatable) The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-        * The CIDR blocks must be valid.
-        * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+        * The prefixes must be valid.
+        * Multiple prefixes must not overlap each other or the on-premises network prefix.
+        * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
         """
         return pulumi.get(self, "ipv6cidr_blocks")
 
@@ -1293,7 +1293,7 @@ class Subnet(pulumi.CustomResource):
         """
         Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
 
-        If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+        If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
 
         Example: `true`
         """

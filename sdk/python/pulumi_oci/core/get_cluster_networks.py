@@ -111,7 +111,8 @@ def get_cluster_networks(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
 
-    Lists the cluster networks in the specified compartment.
+    Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+    in the specified compartment.
 
     ## Example Usage
 
@@ -155,7 +156,8 @@ def get_cluster_networks_output(compartment_id: Optional[pulumi.Input[str]] = No
     """
     This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
 
-    Lists the cluster networks in the specified compartment.
+    Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+    in the specified compartment.
 
     ## Example Usage
 

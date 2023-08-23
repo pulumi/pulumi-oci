@@ -35,9 +35,12 @@ class BdsInstanceArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
+                 is_kafka_configured: Optional[pulumi.Input[bool]] = None,
+                 kafka_broker_node: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']] = None,
                  kerberos_realm_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
+                 os_patch_version: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BdsInstance resource.
@@ -57,9 +60,12 @@ class BdsInstanceArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+        :param pulumi.Input[bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
+        :param pulumi.Input['BdsInstanceKafkaBrokerNodeArgs'] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[str] kerberos_realm_name: The user-defined kerberos realm name.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
-        :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: Additional configuration of customer's network.
+        :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: Additional configuration of the user's network.
+        :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
@@ -90,12 +96,18 @@ class BdsInstanceArgs:
             pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
         if is_force_stop_jobs is not None:
             pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
+        if is_kafka_configured is not None:
+            pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
+        if kafka_broker_node is not None:
+            pulumi.set(__self__, "kafka_broker_node", kafka_broker_node)
         if kerberos_realm_name is not None:
             pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if network_config is not None:
             pulumi.set(__self__, "network_config", network_config)
+        if os_patch_version is not None:
+            pulumi.set(__self__, "os_patch_version", os_patch_version)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -319,6 +331,30 @@ class BdsInstanceArgs:
         pulumi.set(self, "is_force_stop_jobs", value)
 
     @property
+    @pulumi.getter(name="isKafkaConfigured")
+    def is_kafka_configured(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag specifying whether or not Kafka should be configured.
+        """
+        return pulumi.get(self, "is_kafka_configured")
+
+    @is_kafka_configured.setter
+    def is_kafka_configured(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_kafka_configured", value)
+
+    @property
+    @pulumi.getter(name="kafkaBrokerNode")
+    def kafka_broker_node(self) -> Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']]:
+        """
+        The kafka broker node in the BDS instance
+        """
+        return pulumi.get(self, "kafka_broker_node")
+
+    @kafka_broker_node.setter
+    def kafka_broker_node(self, value: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']]):
+        pulumi.set(self, "kafka_broker_node", value)
+
+    @property
     @pulumi.getter(name="kerberosRealmName")
     def kerberos_realm_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -346,13 +382,25 @@ class BdsInstanceArgs:
     @pulumi.getter(name="networkConfig")
     def network_config(self) -> Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']]:
         """
-        Additional configuration of customer's network.
+        Additional configuration of the user's network.
         """
         return pulumi.get(self, "network_config")
 
     @network_config.setter
     def network_config(self, value: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']]):
         pulumi.set(self, "network_config", value)
+
+    @property
+    @pulumi.getter(name="osPatchVersion")
+    def os_patch_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the patch to be upated.
+        """
+        return pulumi.get(self, "os_patch_version")
+
+    @os_patch_version.setter
+    def os_patch_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_patch_version", value)
 
     @property
     @pulumi.getter
@@ -387,13 +435,17 @@ class _BdsInstanceState:
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_high_availability: Optional[pulumi.Input[bool]] = None,
+                 is_kafka_configured: Optional[pulumi.Input[bool]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
+                 kafka_broker_node: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']] = None,
                  kerberos_realm_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  master_node: Optional[pulumi.Input['BdsInstanceMasterNodeArgs']] = None,
                  network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]]] = None,
                  number_of_nodes: Optional[pulumi.Input[int]] = None,
+                 number_of_nodes_requiring_maintenance_reboot: Optional[pulumi.Input[int]] = None,
+                 os_patch_version: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -416,13 +468,17 @@ class _BdsInstanceState:
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
+        :param pulumi.Input[bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
         :param pulumi.Input[bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
+        :param pulumi.Input['BdsInstanceKafkaBrokerNodeArgs'] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[str] kerberos_realm_name: The user-defined kerberos realm name.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
         :param pulumi.Input['BdsInstanceMasterNodeArgs'] master_node: The master node in the BDS instance
-        :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: Additional configuration of customer's network.
-        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]] nodes: The list of nodes in the BDS instance
+        :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: Additional configuration of the user's network.
+        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]] nodes: The list of nodes in the Big Data Service cluster.
         :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
+        :param pulumi.Input[int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
+        :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
@@ -462,8 +518,12 @@ class _BdsInstanceState:
             pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         if is_high_availability is not None:
             pulumi.set(__self__, "is_high_availability", is_high_availability)
+        if is_kafka_configured is not None:
+            pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
         if is_secure is not None:
             pulumi.set(__self__, "is_secure", is_secure)
+        if kafka_broker_node is not None:
+            pulumi.set(__self__, "kafka_broker_node", kafka_broker_node)
         if kerberos_realm_name is not None:
             pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
         if kms_key_id is not None:
@@ -476,6 +536,10 @@ class _BdsInstanceState:
             pulumi.set(__self__, "nodes", nodes)
         if number_of_nodes is not None:
             pulumi.set(__self__, "number_of_nodes", number_of_nodes)
+        if number_of_nodes_requiring_maintenance_reboot is not None:
+            pulumi.set(__self__, "number_of_nodes_requiring_maintenance_reboot", number_of_nodes_requiring_maintenance_reboot)
+        if os_patch_version is not None:
+            pulumi.set(__self__, "os_patch_version", os_patch_version)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -686,6 +750,18 @@ class _BdsInstanceState:
         pulumi.set(self, "is_high_availability", value)
 
     @property
+    @pulumi.getter(name="isKafkaConfigured")
+    def is_kafka_configured(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag specifying whether or not Kafka should be configured.
+        """
+        return pulumi.get(self, "is_kafka_configured")
+
+    @is_kafka_configured.setter
+    def is_kafka_configured(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_kafka_configured", value)
+
+    @property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -696,6 +772,18 @@ class _BdsInstanceState:
     @is_secure.setter
     def is_secure(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_secure", value)
+
+    @property
+    @pulumi.getter(name="kafkaBrokerNode")
+    def kafka_broker_node(self) -> Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']]:
+        """
+        The kafka broker node in the BDS instance
+        """
+        return pulumi.get(self, "kafka_broker_node")
+
+    @kafka_broker_node.setter
+    def kafka_broker_node(self, value: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']]):
+        pulumi.set(self, "kafka_broker_node", value)
 
     @property
     @pulumi.getter(name="kerberosRealmName")
@@ -737,7 +825,7 @@ class _BdsInstanceState:
     @pulumi.getter(name="networkConfig")
     def network_config(self) -> Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']]:
         """
-        Additional configuration of customer's network.
+        Additional configuration of the user's network.
         """
         return pulumi.get(self, "network_config")
 
@@ -749,7 +837,7 @@ class _BdsInstanceState:
     @pulumi.getter
     def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]]]:
         """
-        The list of nodes in the BDS instance
+        The list of nodes in the Big Data Service cluster.
         """
         return pulumi.get(self, "nodes")
 
@@ -768,6 +856,30 @@ class _BdsInstanceState:
     @number_of_nodes.setter
     def number_of_nodes(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "number_of_nodes", value)
+
+    @property
+    @pulumi.getter(name="numberOfNodesRequiringMaintenanceReboot")
+    def number_of_nodes_requiring_maintenance_reboot(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of nodes that require a maintenance reboot
+        """
+        return pulumi.get(self, "number_of_nodes_requiring_maintenance_reboot")
+
+    @number_of_nodes_requiring_maintenance_reboot.setter
+    def number_of_nodes_requiring_maintenance_reboot(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "number_of_nodes_requiring_maintenance_reboot", value)
+
+    @property
+    @pulumi.getter(name="osPatchVersion")
+    def os_patch_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the patch to be upated.
+        """
+        return pulumi.get(self, "os_patch_version")
+
+    @os_patch_version.setter
+    def os_patch_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_patch_version", value)
 
     @property
     @pulumi.getter
@@ -847,11 +959,14 @@ class BdsInstance(pulumi.CustomResource):
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_high_availability: Optional[pulumi.Input[bool]] = None,
+                 is_kafka_configured: Optional[pulumi.Input[bool]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
+                 kafka_broker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceKafkaBrokerNodeArgs']]] = None,
                  kerberos_realm_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  master_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']]] = None,
                  network_config: Optional[pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']]] = None,
+                 os_patch_version: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  util_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']]] = None,
                  worker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceWorkerNodeArgs']]] = None,
@@ -860,87 +975,6 @@ class BdsInstance(pulumi.CustomResource):
         This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
 
         Creates a new BDS instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_bds_instance = oci.big_data_service.BdsInstance("testBdsInstance",
-            cluster_admin_password=var["bds_instance_cluster_admin_password"],
-            cluster_public_key=var["bds_instance_cluster_public_key"],
-            cluster_version=var["bds_instance_cluster_version"],
-            compartment_id=var["compartment_id"],
-            display_name=var["bds_instance_display_name"],
-            is_high_availability=var["bds_instance_is_high_availability"],
-            is_secure=var["bds_instance_is_secure"],
-            master_node=oci.big_data_service.BdsInstanceMasterNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceMasterNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            util_node=oci.big_data_service.BdsInstanceUtilNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceUtilNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            worker_node=oci.big_data_service.BdsInstanceWorkerNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceWorkerNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            compute_only_worker_node=oci.big_data_service.BdsInstanceComputeOnlyWorkerNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            edge_node=oci.big_data_service.BdsInstanceEdgeNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceEdgeNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            bootstrap_script_url=var["bds_instance_bootstrap_script_url"],
-            cluster_profile=var["bds_instance_cluster_profile"],
-            defined_tags=var["bds_instance_defined_tags"],
-            freeform_tags=var["bds_instance_freeform_tags"],
-            kerberos_realm_name=var["bds_instance_kerberos_realm_name"],
-            kms_key_id=var["bds_instance_kms_key_id"],
-            network_config=oci.big_data_service.BdsInstanceNetworkConfigArgs(
-                cidr_block=var["bds_instance_network_config_cidr_block"],
-                is_nat_gateway_required=var["bds_instance_network_config_is_nat_gateway_required"],
-            ))
-        ```
 
         ## Import
 
@@ -965,11 +999,14 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
+        :param pulumi.Input[bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
         :param pulumi.Input[bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
+        :param pulumi.Input[pulumi.InputType['BdsInstanceKafkaBrokerNodeArgs']] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[str] kerberos_realm_name: The user-defined kerberos realm name.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
         :param pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']] master_node: The master node in the BDS instance
-        :param pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']] network_config: Additional configuration of customer's network.
+        :param pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']] network_config: Additional configuration of the user's network.
+        :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']] util_node: The utility node in the BDS instance
         """
@@ -983,87 +1020,6 @@ class BdsInstance(pulumi.CustomResource):
         This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
 
         Creates a new BDS instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_bds_instance = oci.big_data_service.BdsInstance("testBdsInstance",
-            cluster_admin_password=var["bds_instance_cluster_admin_password"],
-            cluster_public_key=var["bds_instance_cluster_public_key"],
-            cluster_version=var["bds_instance_cluster_version"],
-            compartment_id=var["compartment_id"],
-            display_name=var["bds_instance_display_name"],
-            is_high_availability=var["bds_instance_is_high_availability"],
-            is_secure=var["bds_instance_is_secure"],
-            master_node=oci.big_data_service.BdsInstanceMasterNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceMasterNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            util_node=oci.big_data_service.BdsInstanceUtilNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceUtilNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            worker_node=oci.big_data_service.BdsInstanceWorkerNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceWorkerNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            compute_only_worker_node=oci.big_data_service.BdsInstanceComputeOnlyWorkerNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            edge_node=oci.big_data_service.BdsInstanceEdgeNodeArgs(
-                shape=var["bds_instance_nodes_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                number_of_nodes=var["bds_instance_number_of_nodes"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
-                shape_config=oci.big_data_service.BdsInstanceEdgeNodeShapeConfigArgs(
-                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
-                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
-                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
-                ),
-            ),
-            bootstrap_script_url=var["bds_instance_bootstrap_script_url"],
-            cluster_profile=var["bds_instance_cluster_profile"],
-            defined_tags=var["bds_instance_defined_tags"],
-            freeform_tags=var["bds_instance_freeform_tags"],
-            kerberos_realm_name=var["bds_instance_kerberos_realm_name"],
-            kms_key_id=var["bds_instance_kms_key_id"],
-            network_config=oci.big_data_service.BdsInstanceNetworkConfigArgs(
-                cidr_block=var["bds_instance_network_config_cidr_block"],
-                is_nat_gateway_required=var["bds_instance_network_config_is_nat_gateway_required"],
-            ))
-        ```
 
         ## Import
 
@@ -1103,11 +1059,14 @@ class BdsInstance(pulumi.CustomResource):
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_high_availability: Optional[pulumi.Input[bool]] = None,
+                 is_kafka_configured: Optional[pulumi.Input[bool]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
+                 kafka_broker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceKafkaBrokerNodeArgs']]] = None,
                  kerberos_realm_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  master_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']]] = None,
                  network_config: Optional[pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']]] = None,
+                 os_patch_version: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  util_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']]] = None,
                  worker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceWorkerNodeArgs']]] = None,
@@ -1147,15 +1106,18 @@ class BdsInstance(pulumi.CustomResource):
             if is_high_availability is None and not opts.urn:
                 raise TypeError("Missing required property 'is_high_availability'")
             __props__.__dict__["is_high_availability"] = is_high_availability
+            __props__.__dict__["is_kafka_configured"] = is_kafka_configured
             if is_secure is None and not opts.urn:
                 raise TypeError("Missing required property 'is_secure'")
             __props__.__dict__["is_secure"] = is_secure
+            __props__.__dict__["kafka_broker_node"] = kafka_broker_node
             __props__.__dict__["kerberos_realm_name"] = kerberos_realm_name
             __props__.__dict__["kms_key_id"] = kms_key_id
             if master_node is None and not opts.urn:
                 raise TypeError("Missing required property 'master_node'")
             __props__.__dict__["master_node"] = master_node
             __props__.__dict__["network_config"] = network_config
+            __props__.__dict__["os_patch_version"] = os_patch_version
             __props__.__dict__["state"] = state
             if util_node is None and not opts.urn:
                 raise TypeError("Missing required property 'util_node'")
@@ -1167,6 +1129,7 @@ class BdsInstance(pulumi.CustomResource):
             __props__.__dict__["created_by"] = None
             __props__.__dict__["nodes"] = None
             __props__.__dict__["number_of_nodes"] = None
+            __props__.__dict__["number_of_nodes_requiring_maintenance_reboot"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["clusterAdminPassword"])
@@ -1198,13 +1161,17 @@ class BdsInstance(pulumi.CustomResource):
             is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
             is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
             is_high_availability: Optional[pulumi.Input[bool]] = None,
+            is_kafka_configured: Optional[pulumi.Input[bool]] = None,
             is_secure: Optional[pulumi.Input[bool]] = None,
+            kafka_broker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceKafkaBrokerNodeArgs']]] = None,
             kerberos_realm_name: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             master_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']]] = None,
             network_config: Optional[pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']]] = None,
             nodes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceNodeArgs']]]]] = None,
             number_of_nodes: Optional[pulumi.Input[int]] = None,
+            number_of_nodes_requiring_maintenance_reboot: Optional[pulumi.Input[int]] = None,
+            os_patch_version: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -1232,13 +1199,17 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
+        :param pulumi.Input[bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
         :param pulumi.Input[bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
+        :param pulumi.Input[pulumi.InputType['BdsInstanceKafkaBrokerNodeArgs']] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[str] kerberos_realm_name: The user-defined kerberos realm name.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
         :param pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']] master_node: The master node in the BDS instance
-        :param pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']] network_config: Additional configuration of customer's network.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceNodeArgs']]]] nodes: The list of nodes in the BDS instance
+        :param pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']] network_config: Additional configuration of the user's network.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceNodeArgs']]]] nodes: The list of nodes in the Big Data Service cluster.
         :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
+        :param pulumi.Input[int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
+        :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
@@ -1265,13 +1236,17 @@ class BdsInstance(pulumi.CustomResource):
         __props__.__dict__["is_cloud_sql_configured"] = is_cloud_sql_configured
         __props__.__dict__["is_force_stop_jobs"] = is_force_stop_jobs
         __props__.__dict__["is_high_availability"] = is_high_availability
+        __props__.__dict__["is_kafka_configured"] = is_kafka_configured
         __props__.__dict__["is_secure"] = is_secure
+        __props__.__dict__["kafka_broker_node"] = kafka_broker_node
         __props__.__dict__["kerberos_realm_name"] = kerberos_realm_name
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["master_node"] = master_node
         __props__.__dict__["network_config"] = network_config
         __props__.__dict__["nodes"] = nodes
         __props__.__dict__["number_of_nodes"] = number_of_nodes
+        __props__.__dict__["number_of_nodes_requiring_maintenance_reboot"] = number_of_nodes_requiring_maintenance_reboot
+        __props__.__dict__["os_patch_version"] = os_patch_version
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -1410,12 +1385,28 @@ class BdsInstance(pulumi.CustomResource):
         return pulumi.get(self, "is_high_availability")
 
     @property
+    @pulumi.getter(name="isKafkaConfigured")
+    def is_kafka_configured(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Boolean flag specifying whether or not Kafka should be configured.
+        """
+        return pulumi.get(self, "is_kafka_configured")
+
+    @property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> pulumi.Output[bool]:
         """
         Boolean flag specifying whether or not the cluster should be setup as secure.
         """
         return pulumi.get(self, "is_secure")
+
+    @property
+    @pulumi.getter(name="kafkaBrokerNode")
+    def kafka_broker_node(self) -> pulumi.Output[Optional['outputs.BdsInstanceKafkaBrokerNode']]:
+        """
+        The kafka broker node in the BDS instance
+        """
+        return pulumi.get(self, "kafka_broker_node")
 
     @property
     @pulumi.getter(name="kerberosRealmName")
@@ -1445,7 +1436,7 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter(name="networkConfig")
     def network_config(self) -> pulumi.Output['outputs.BdsInstanceNetworkConfig']:
         """
-        Additional configuration of customer's network.
+        Additional configuration of the user's network.
         """
         return pulumi.get(self, "network_config")
 
@@ -1453,7 +1444,7 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter
     def nodes(self) -> pulumi.Output[Sequence['outputs.BdsInstanceNode']]:
         """
-        The list of nodes in the BDS instance
+        The list of nodes in the Big Data Service cluster.
         """
         return pulumi.get(self, "nodes")
 
@@ -1464,6 +1455,22 @@ class BdsInstance(pulumi.CustomResource):
         The amount of worker nodes should be created
         """
         return pulumi.get(self, "number_of_nodes")
+
+    @property
+    @pulumi.getter(name="numberOfNodesRequiringMaintenanceReboot")
+    def number_of_nodes_requiring_maintenance_reboot(self) -> pulumi.Output[int]:
+        """
+        Number of nodes that require a maintenance reboot
+        """
+        return pulumi.get(self, "number_of_nodes_requiring_maintenance_reboot")
+
+    @property
+    @pulumi.getter(name="osPatchVersion")
+    def os_patch_version(self) -> pulumi.Output[Optional[str]]:
+        """
+        (Updatable) The version of the patch to be upated.
+        """
+        return pulumi.get(self, "os_patch_version")
 
     @property
     @pulumi.getter

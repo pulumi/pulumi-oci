@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
  *
- * Lists the cluster networks in the specified compartment.
+ * Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+ * in the specified compartment.
  *
  * ## Example Usage
  *
@@ -83,7 +84,8 @@ export interface GetClusterNetworksResult {
 /**
  * This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
  *
- * Lists the cluster networks in the specified compartment.
+ * Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+ * in the specified compartment.
  *
  * ## Example Usage
  *

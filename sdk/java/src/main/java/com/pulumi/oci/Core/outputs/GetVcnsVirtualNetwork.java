@@ -15,13 +15,13 @@ import java.util.Objects;
 @CustomType
 public final class GetVcnsVirtualNetwork {
     /**
-     * @return The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * @return The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      * 
      */
     private List<String> byoipv6cidrBlocks;
     private List<GetVcnsVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails;
     /**
-     * @return Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+     * @return Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
      * 
      */
     private String cidrBlock;
@@ -76,12 +76,12 @@ public final class GetVcnsVirtualNetwork {
      */
     private String id;
     /**
-     * @return For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN&#39;s IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+     * @return For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      * 
      */
     private List<String> ipv6cidrBlocks;
     /**
-     * @return For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN&#39;s IP address space.
+     * @return For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN&#39;s IP address space.
      * 
      */
     private List<String> ipv6privateCidrBlocks;
@@ -105,7 +105,7 @@ public final class GetVcnsVirtualNetwork {
 
     private GetVcnsVirtualNetwork() {}
     /**
-     * @return The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * @return The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      * 
      */
     public List<String> byoipv6cidrBlocks() {
@@ -115,7 +115,7 @@ public final class GetVcnsVirtualNetwork {
         return this.byoipv6cidrDetails;
     }
     /**
-     * @return Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+     * @return Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
      * 
      */
     public String cidrBlock() {
@@ -192,14 +192,14 @@ public final class GetVcnsVirtualNetwork {
         return this.id;
     }
     /**
-     * @return For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN&#39;s IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+     * @return For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      * 
      */
     public List<String> ipv6cidrBlocks() {
         return this.ipv6cidrBlocks;
     }
     /**
-     * @return For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN&#39;s IP address space.
+     * @return For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN&#39;s IP address space.
      * 
      */
     public List<String> ipv6privateCidrBlocks() {

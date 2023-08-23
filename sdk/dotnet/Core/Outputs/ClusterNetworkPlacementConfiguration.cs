@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
+        public readonly string? PlacementConstraint;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
         /// </summary>
@@ -30,11 +31,14 @@ namespace Pulumi.Oci.Core.Outputs
         private ClusterNetworkPlacementConfiguration(
             string availabilityDomain,
 
+            string? placementConstraint,
+
             string primarySubnetId,
 
             ImmutableArray<Outputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets)
         {
             AvailabilityDomain = availabilityDomain;
+            PlacementConstraint = placementConstraint;
             PrimarySubnetId = primarySubnetId;
             SecondaryVnicSubnets = secondaryVnicSubnets;
         }

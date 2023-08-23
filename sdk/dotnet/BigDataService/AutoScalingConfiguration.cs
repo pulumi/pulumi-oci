@@ -110,7 +110,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         /// </summary>
         [Output("nodeType")]
         public Output<string> NodeType { get; private set; } = null!;
@@ -240,7 +240,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<bool> IsEnabled { get; set; } = null!;
 
         /// <summary>
-        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         /// </summary>
         [Input("nodeType", required: true)]
         public Input<string> NodeType { get; set; } = null!;
@@ -310,7 +310,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         /// </summary>
         [Input("nodeType")]
         public Input<string>? NodeType { get; set; }

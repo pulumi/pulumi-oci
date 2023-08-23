@@ -29,6 +29,7 @@ __all__ = [
     'ContainerInstanceContainerHealthCheck',
     'ContainerInstanceContainerHealthCheckHeader',
     'ContainerInstanceContainerResourceConfig',
+    'ContainerInstanceContainerSecurityContext',
     'ContainerInstanceContainerVolumeMount',
     'ContainerInstanceDnsConfig',
     'ContainerInstanceImagePullSecret',
@@ -1010,6 +1011,8 @@ class ContainerInstanceContainer(dict):
             suggest = "lifecycle_details"
         elif key == "resourceConfig":
             suggest = "resource_config"
+        elif key == "securityContext":
+            suggest = "security_context"
         elif key == "systemTags":
             suggest = "system_tags"
         elif key == "timeCreated":
@@ -1052,6 +1055,7 @@ class ContainerInstanceContainer(dict):
                  is_resource_principal_disabled: Optional[bool] = None,
                  lifecycle_details: Optional[str] = None,
                  resource_config: Optional['outputs.ContainerInstanceContainerResourceConfig'] = None,
+                 security_context: Optional['outputs.ContainerInstanceContainerSecurityContext'] = None,
                  state: Optional[str] = None,
                  system_tags: Optional[Mapping[str, Any]] = None,
                  time_created: Optional[str] = None,
@@ -1087,6 +1091,7 @@ class ContainerInstanceContainer(dict):
                This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
         :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param 'ContainerInstanceContainerResourceConfigArgs' resource_config: The size and amount of resources available to the container.
+        :param 'ContainerInstanceContainerSecurityContextArgs' security_context: Security context for container.
         :param str state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -1131,6 +1136,8 @@ class ContainerInstanceContainer(dict):
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if resource_config is not None:
             pulumi.set(__self__, "resource_config", resource_config)
+        if security_context is not None:
+            pulumi.set(__self__, "security_context", security_context)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -1287,6 +1294,14 @@ class ContainerInstanceContainer(dict):
         The size and amount of resources available to the container.
         """
         return pulumi.get(self, "resource_config")
+
+    @property
+    @pulumi.getter(name="securityContext")
+    def security_context(self) -> Optional['outputs.ContainerInstanceContainerSecurityContext']:
+        """
+        Security context for container.
+        """
+        return pulumi.get(self, "security_context")
 
     @property
     @pulumi.getter
@@ -1638,6 +1653,98 @@ class ContainerInstanceContainerResourceConfig(dict):
         A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
         """
         return pulumi.get(self, "vcpus_limit")
+
+
+@pulumi.output_type
+class ContainerInstanceContainerSecurityContext(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isNonRootUserCheckEnabled":
+            suggest = "is_non_root_user_check_enabled"
+        elif key == "isRootFileSystemReadonly":
+            suggest = "is_root_file_system_readonly"
+        elif key == "runAsGroup":
+            suggest = "run_as_group"
+        elif key == "runAsUser":
+            suggest = "run_as_user"
+        elif key == "securityContextType":
+            suggest = "security_context_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ContainerInstanceContainerSecurityContext. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ContainerInstanceContainerSecurityContext.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ContainerInstanceContainerSecurityContext.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_non_root_user_check_enabled: Optional[bool] = None,
+                 is_root_file_system_readonly: Optional[bool] = None,
+                 run_as_group: Optional[int] = None,
+                 run_as_user: Optional[int] = None,
+                 security_context_type: Optional[str] = None):
+        """
+        :param bool is_non_root_user_check_enabled: Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+        :param bool is_root_file_system_readonly: Determines if the container will have a read-only root file system. Default value is false.
+        :param int run_as_group: The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+        :param int run_as_user: The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+        :param str security_context_type: The type of security context
+        """
+        if is_non_root_user_check_enabled is not None:
+            pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        if is_root_file_system_readonly is not None:
+            pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
+        if run_as_group is not None:
+            pulumi.set(__self__, "run_as_group", run_as_group)
+        if run_as_user is not None:
+            pulumi.set(__self__, "run_as_user", run_as_user)
+        if security_context_type is not None:
+            pulumi.set(__self__, "security_context_type", security_context_type)
+
+    @property
+    @pulumi.getter(name="isNonRootUserCheckEnabled")
+    def is_non_root_user_check_enabled(self) -> Optional[bool]:
+        """
+        Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+        """
+        return pulumi.get(self, "is_non_root_user_check_enabled")
+
+    @property
+    @pulumi.getter(name="isRootFileSystemReadonly")
+    def is_root_file_system_readonly(self) -> Optional[bool]:
+        """
+        Determines if the container will have a read-only root file system. Default value is false.
+        """
+        return pulumi.get(self, "is_root_file_system_readonly")
+
+    @property
+    @pulumi.getter(name="runAsGroup")
+    def run_as_group(self) -> Optional[int]:
+        """
+        The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+        """
+        return pulumi.get(self, "run_as_group")
+
+    @property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> Optional[int]:
+        """
+        The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+        """
+        return pulumi.get(self, "run_as_user")
+
+    @property
+    @pulumi.getter(name="securityContextType")
+    def security_context_type(self) -> Optional[str]:
+        """
+        The type of security context
+        """
+        return pulumi.get(self, "security_context_type")
 
 
 @pulumi.output_type

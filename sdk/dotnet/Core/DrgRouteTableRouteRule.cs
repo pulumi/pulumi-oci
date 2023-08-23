@@ -69,6 +69,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+        /// 
+        /// Potential values:
+        /// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         /// </summary>
         [Output("drgRouteTableId")]
         public Output<string> DrgRouteTableId { get; private set; } = null!;
@@ -169,6 +172,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+        /// 
+        /// Potential values:
+        /// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         /// </summary>
         [Input("drgRouteTableId", required: true)]
         public Input<string> DrgRouteTableId { get; set; } = null!;
@@ -219,6 +225,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+        /// 
+        /// Potential values:
+        /// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         /// </summary>
         [Input("drgRouteTableId")]
         public Input<string>? DrgRouteTableId { get; set; }

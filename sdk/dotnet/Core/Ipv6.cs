@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Core
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
-        /// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        /// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         /// </summary>
         [Output("ipv6subnetCidr")]
         public Output<string> Ipv6subnetCidr { get; private set; } = null!;
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        /// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         /// </summary>
         [Input("ipv6subnetCidr")]
         public Input<string>? Ipv6subnetCidr { get; set; }
@@ -267,7 +267,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        /// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         /// </summary>
         [Input("ipv6subnetCidr")]
         public Input<string>? Ipv6subnetCidr { get; set; }

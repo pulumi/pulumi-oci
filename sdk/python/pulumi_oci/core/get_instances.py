@@ -172,7 +172,7 @@ def get_instances(availability_domain: Optional[str] = None,
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param str capacity_reservation_id: The OCID of the compute capacity reservation.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
     """
@@ -236,7 +236,7 @@ def get_instances_output(availability_domain: Optional[pulumi.Input[Optional[str
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param str capacity_reservation_id: The OCID of the compute capacity reservation.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
     """

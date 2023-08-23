@@ -50,6 +50,13 @@ import * as utilities from "../utilities";
  *             memoryLimitInGbs: _var.container_instance_containers_resource_config_memory_limit_in_gbs,
  *             vcpusLimit: _var.container_instance_containers_resource_config_vcpus_limit,
  *         },
+ *         securityContext: {
+ *             isNonRootUserCheckEnabled: _var.container_instance_containers_security_context_is_non_root_user_check_enabled,
+ *             isRootFileSystemReadonly: _var.container_instance_containers_security_context_is_root_file_system_readonly,
+ *             runAsGroup: _var.container_instance_containers_security_context_run_as_group,
+ *             runAsUser: _var.container_instance_containers_security_context_run_as_user,
+ *             securityContextType: _var.container_instance_containers_security_context_security_context_type,
+ *         },
  *         volumeMounts: [{
  *             mountPath: _var.container_instance_containers_volume_mounts_mount_path,
  *             volumeName: _var.container_instance_containers_volume_mounts_volume_name,

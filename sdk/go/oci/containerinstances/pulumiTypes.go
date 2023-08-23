@@ -38,8 +38,9 @@ type GetContainerInstanceContainer struct {
 	ImageUrl                    string                                     `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled bool                                       `pulumi:"isResourcePrincipalDisabled"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-	LifecycleDetails string                                        `pulumi:"lifecycleDetails"`
-	ResourceConfigs  []GetContainerInstanceContainerResourceConfig `pulumi:"resourceConfigs"`
+	LifecycleDetails string                                         `pulumi:"lifecycleDetails"`
+	ResourceConfigs  []GetContainerInstanceContainerResourceConfig  `pulumi:"resourceConfigs"`
+	SecurityContexts []GetContainerInstanceContainerSecurityContext `pulumi:"securityContexts"`
 	// The current state of the container instance.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
@@ -89,8 +90,9 @@ type GetContainerInstanceContainerArgs struct {
 	ImageUrl                    pulumi.StringInput                                 `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled pulumi.BoolInput                                   `pulumi:"isResourcePrincipalDisabled"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-	LifecycleDetails pulumi.StringInput                                    `pulumi:"lifecycleDetails"`
-	ResourceConfigs  GetContainerInstanceContainerResourceConfigArrayInput `pulumi:"resourceConfigs"`
+	LifecycleDetails pulumi.StringInput                                     `pulumi:"lifecycleDetails"`
+	ResourceConfigs  GetContainerInstanceContainerResourceConfigArrayInput  `pulumi:"resourceConfigs"`
+	SecurityContexts GetContainerInstanceContainerSecurityContextArrayInput `pulumi:"securityContexts"`
 	// The current state of the container instance.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
@@ -234,6 +236,12 @@ func (o GetContainerInstanceContainerOutput) ResourceConfigs() GetContainerInsta
 	return o.ApplyT(func(v GetContainerInstanceContainer) []GetContainerInstanceContainerResourceConfig {
 		return v.ResourceConfigs
 	}).(GetContainerInstanceContainerResourceConfigArrayOutput)
+}
+
+func (o GetContainerInstanceContainerOutput) SecurityContexts() GetContainerInstanceContainerSecurityContextArrayOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainer) []GetContainerInstanceContainerSecurityContext {
+		return v.SecurityContexts
+	}).(GetContainerInstanceContainerSecurityContextArrayOutput)
 }
 
 // The current state of the container instance.
@@ -671,6 +679,124 @@ func (o GetContainerInstanceContainerResourceConfigArrayOutput) Index(i pulumi.I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstanceContainerResourceConfig {
 		return vs[0].([]GetContainerInstanceContainerResourceConfig)[vs[1].(int)]
 	}).(GetContainerInstanceContainerResourceConfigOutput)
+}
+
+type GetContainerInstanceContainerSecurityContext struct {
+	IsNonRootUserCheckEnabled bool   `pulumi:"isNonRootUserCheckEnabled"`
+	IsRootFileSystemReadonly  bool   `pulumi:"isRootFileSystemReadonly"`
+	RunAsGroup                int    `pulumi:"runAsGroup"`
+	RunAsUser                 int    `pulumi:"runAsUser"`
+	SecurityContextType       string `pulumi:"securityContextType"`
+}
+
+// GetContainerInstanceContainerSecurityContextInput is an input type that accepts GetContainerInstanceContainerSecurityContextArgs and GetContainerInstanceContainerSecurityContextOutput values.
+// You can construct a concrete instance of `GetContainerInstanceContainerSecurityContextInput` via:
+//
+//	GetContainerInstanceContainerSecurityContextArgs{...}
+type GetContainerInstanceContainerSecurityContextInput interface {
+	pulumi.Input
+
+	ToGetContainerInstanceContainerSecurityContextOutput() GetContainerInstanceContainerSecurityContextOutput
+	ToGetContainerInstanceContainerSecurityContextOutputWithContext(context.Context) GetContainerInstanceContainerSecurityContextOutput
+}
+
+type GetContainerInstanceContainerSecurityContextArgs struct {
+	IsNonRootUserCheckEnabled pulumi.BoolInput   `pulumi:"isNonRootUserCheckEnabled"`
+	IsRootFileSystemReadonly  pulumi.BoolInput   `pulumi:"isRootFileSystemReadonly"`
+	RunAsGroup                pulumi.IntInput    `pulumi:"runAsGroup"`
+	RunAsUser                 pulumi.IntInput    `pulumi:"runAsUser"`
+	SecurityContextType       pulumi.StringInput `pulumi:"securityContextType"`
+}
+
+func (GetContainerInstanceContainerSecurityContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainerInstanceContainerSecurityContext)(nil)).Elem()
+}
+
+func (i GetContainerInstanceContainerSecurityContextArgs) ToGetContainerInstanceContainerSecurityContextOutput() GetContainerInstanceContainerSecurityContextOutput {
+	return i.ToGetContainerInstanceContainerSecurityContextOutputWithContext(context.Background())
+}
+
+func (i GetContainerInstanceContainerSecurityContextArgs) ToGetContainerInstanceContainerSecurityContextOutputWithContext(ctx context.Context) GetContainerInstanceContainerSecurityContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerSecurityContextOutput)
+}
+
+// GetContainerInstanceContainerSecurityContextArrayInput is an input type that accepts GetContainerInstanceContainerSecurityContextArray and GetContainerInstanceContainerSecurityContextArrayOutput values.
+// You can construct a concrete instance of `GetContainerInstanceContainerSecurityContextArrayInput` via:
+//
+//	GetContainerInstanceContainerSecurityContextArray{ GetContainerInstanceContainerSecurityContextArgs{...} }
+type GetContainerInstanceContainerSecurityContextArrayInput interface {
+	pulumi.Input
+
+	ToGetContainerInstanceContainerSecurityContextArrayOutput() GetContainerInstanceContainerSecurityContextArrayOutput
+	ToGetContainerInstanceContainerSecurityContextArrayOutputWithContext(context.Context) GetContainerInstanceContainerSecurityContextArrayOutput
+}
+
+type GetContainerInstanceContainerSecurityContextArray []GetContainerInstanceContainerSecurityContextInput
+
+func (GetContainerInstanceContainerSecurityContextArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainerInstanceContainerSecurityContext)(nil)).Elem()
+}
+
+func (i GetContainerInstanceContainerSecurityContextArray) ToGetContainerInstanceContainerSecurityContextArrayOutput() GetContainerInstanceContainerSecurityContextArrayOutput {
+	return i.ToGetContainerInstanceContainerSecurityContextArrayOutputWithContext(context.Background())
+}
+
+func (i GetContainerInstanceContainerSecurityContextArray) ToGetContainerInstanceContainerSecurityContextArrayOutputWithContext(ctx context.Context) GetContainerInstanceContainerSecurityContextArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerSecurityContextArrayOutput)
+}
+
+type GetContainerInstanceContainerSecurityContextOutput struct{ *pulumi.OutputState }
+
+func (GetContainerInstanceContainerSecurityContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainerInstanceContainerSecurityContext)(nil)).Elem()
+}
+
+func (o GetContainerInstanceContainerSecurityContextOutput) ToGetContainerInstanceContainerSecurityContextOutput() GetContainerInstanceContainerSecurityContextOutput {
+	return o
+}
+
+func (o GetContainerInstanceContainerSecurityContextOutput) ToGetContainerInstanceContainerSecurityContextOutputWithContext(ctx context.Context) GetContainerInstanceContainerSecurityContextOutput {
+	return o
+}
+
+func (o GetContainerInstanceContainerSecurityContextOutput) IsNonRootUserCheckEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainerSecurityContext) bool { return v.IsNonRootUserCheckEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetContainerInstanceContainerSecurityContextOutput) IsRootFileSystemReadonly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainerSecurityContext) bool { return v.IsRootFileSystemReadonly }).(pulumi.BoolOutput)
+}
+
+func (o GetContainerInstanceContainerSecurityContextOutput) RunAsGroup() pulumi.IntOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainerSecurityContext) int { return v.RunAsGroup }).(pulumi.IntOutput)
+}
+
+func (o GetContainerInstanceContainerSecurityContextOutput) RunAsUser() pulumi.IntOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainerSecurityContext) int { return v.RunAsUser }).(pulumi.IntOutput)
+}
+
+func (o GetContainerInstanceContainerSecurityContextOutput) SecurityContextType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainerSecurityContext) string { return v.SecurityContextType }).(pulumi.StringOutput)
+}
+
+type GetContainerInstanceContainerSecurityContextArrayOutput struct{ *pulumi.OutputState }
+
+func (GetContainerInstanceContainerSecurityContextArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainerInstanceContainerSecurityContext)(nil)).Elem()
+}
+
+func (o GetContainerInstanceContainerSecurityContextArrayOutput) ToGetContainerInstanceContainerSecurityContextArrayOutput() GetContainerInstanceContainerSecurityContextArrayOutput {
+	return o
+}
+
+func (o GetContainerInstanceContainerSecurityContextArrayOutput) ToGetContainerInstanceContainerSecurityContextArrayOutputWithContext(ctx context.Context) GetContainerInstanceContainerSecurityContextArrayOutput {
+	return o
+}
+
+func (o GetContainerInstanceContainerSecurityContextArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceContainerSecurityContextOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstanceContainerSecurityContext {
+		return vs[0].([]GetContainerInstanceContainerSecurityContext)[vs[1].(int)]
+	}).(GetContainerInstanceContainerSecurityContextOutput)
 }
 
 type GetContainerInstanceContainerVolumeMount struct {
@@ -3201,8 +3327,9 @@ type GetContainerInstancesContainerInstanceCollectionItemContainer struct {
 	ImageUrl                    string                                                                     `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled bool                                                                       `pulumi:"isResourcePrincipalDisabled"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-	LifecycleDetails string                                                                        `pulumi:"lifecycleDetails"`
-	ResourceConfigs  []GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig `pulumi:"resourceConfigs"`
+	LifecycleDetails string                                                                         `pulumi:"lifecycleDetails"`
+	ResourceConfigs  []GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig  `pulumi:"resourceConfigs"`
+	SecurityContexts []GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext `pulumi:"securityContexts"`
 	// A filter to only return resources that match the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
@@ -3251,8 +3378,9 @@ type GetContainerInstancesContainerInstanceCollectionItemContainerArgs struct {
 	ImageUrl                    pulumi.StringInput                                                                 `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled pulumi.BoolInput                                                                   `pulumi:"isResourcePrincipalDisabled"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-	LifecycleDetails pulumi.StringInput                                                                    `pulumi:"lifecycleDetails"`
-	ResourceConfigs  GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayInput `pulumi:"resourceConfigs"`
+	LifecycleDetails pulumi.StringInput                                                                     `pulumi:"lifecycleDetails"`
+	ResourceConfigs  GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayInput  `pulumi:"resourceConfigs"`
+	SecurityContexts GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayInput `pulumi:"securityContexts"`
 	// A filter to only return resources that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
@@ -3409,6 +3537,12 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Res
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) []GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig {
 		return v.ResourceConfigs
 	}).(GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutput)
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) SecurityContexts() GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) []GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext {
+		return v.SecurityContexts
+	}).(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput)
 }
 
 // A filter to only return resources that match the given lifecycle state.
@@ -3878,6 +4012,134 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerResourceCon
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig {
 		return vs[0].([]GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig)[vs[1].(int)]
 	}).(GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput)
+}
+
+type GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext struct {
+	IsNonRootUserCheckEnabled bool   `pulumi:"isNonRootUserCheckEnabled"`
+	IsRootFileSystemReadonly  bool   `pulumi:"isRootFileSystemReadonly"`
+	RunAsGroup                int    `pulumi:"runAsGroup"`
+	RunAsUser                 int    `pulumi:"runAsUser"`
+	SecurityContextType       string `pulumi:"securityContextType"`
+}
+
+// GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs and GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput values.
+// You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextInput` via:
+//
+//	GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs{...}
+type GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextInput interface {
+	pulumi.Input
+
+	ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput() GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput
+	ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutputWithContext(context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput
+}
+
+type GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs struct {
+	IsNonRootUserCheckEnabled pulumi.BoolInput   `pulumi:"isNonRootUserCheckEnabled"`
+	IsRootFileSystemReadonly  pulumi.BoolInput   `pulumi:"isRootFileSystemReadonly"`
+	RunAsGroup                pulumi.IntInput    `pulumi:"runAsGroup"`
+	RunAsUser                 pulumi.IntInput    `pulumi:"runAsUser"`
+	SecurityContextType       pulumi.StringInput `pulumi:"securityContextType"`
+}
+
+func (GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext)(nil)).Elem()
+}
+
+func (i GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput() GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput {
+	return i.ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutputWithContext(context.Background())
+}
+
+func (i GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput)
+}
+
+// GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArray and GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput values.
+// You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayInput` via:
+//
+//	GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArray{ GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs{...} }
+type GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayInput interface {
+	pulumi.Input
+
+	ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput() GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput
+	ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutputWithContext(context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput
+}
+
+type GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArray []GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextInput
+
+func (GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext)(nil)).Elem()
+}
+
+func (i GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArray) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput() GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput {
+	return i.ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutputWithContext(context.Background())
+}
+
+func (i GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArray) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput)
+}
+
+type GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput struct{ *pulumi.OutputState }
+
+func (GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext)(nil)).Elem()
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput() GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput {
+	return o
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput {
+	return o
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) IsNonRootUserCheckEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext) bool {
+		return v.IsNonRootUserCheckEnabled
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) IsRootFileSystemReadonly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext) bool {
+		return v.IsRootFileSystemReadonly
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) RunAsGroup() pulumi.IntOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext) int {
+		return v.RunAsGroup
+	}).(pulumi.IntOutput)
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) RunAsUser() pulumi.IntOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext) int {
+		return v.RunAsUser
+	}).(pulumi.IntOutput)
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) SecurityContextType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext) string {
+		return v.SecurityContextType
+	}).(pulumi.StringOutput)
+}
+
+type GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput struct{ *pulumi.OutputState }
+
+func (GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext)(nil)).Elem()
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput() GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput {
+	return o
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput {
+	return o
+}
+
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext {
+		return vs[0].([]GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext)[vs[1].(int)]
+	}).(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput)
 }
 
 type GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount struct {
@@ -4905,6 +5167,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstanceContainerHealthCheckHeaderArrayInput)(nil)).Elem(), GetContainerInstanceContainerHealthCheckHeaderArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstanceContainerResourceConfigInput)(nil)).Elem(), GetContainerInstanceContainerResourceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstanceContainerResourceConfigArrayInput)(nil)).Elem(), GetContainerInstanceContainerResourceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstanceContainerSecurityContextInput)(nil)).Elem(), GetContainerInstanceContainerSecurityContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstanceContainerSecurityContextArrayInput)(nil)).Elem(), GetContainerInstanceContainerSecurityContextArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstanceContainerVolumeMountInput)(nil)).Elem(), GetContainerInstanceContainerVolumeMountArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstanceContainerVolumeMountArrayInput)(nil)).Elem(), GetContainerInstanceContainerVolumeMountArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstanceDnsConfigInput)(nil)).Elem(), GetContainerInstanceDnsConfigArgs{})
@@ -4951,6 +5215,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayInput)(nil)).Elem(), GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigInput)(nil)).Elem(), GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayInput)(nil)).Elem(), GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextInput)(nil)).Elem(), GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayInput)(nil)).Elem(), GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountInput)(nil)).Elem(), GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayInput)(nil)).Elem(), GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerInstancesContainerInstanceCollectionItemDnsConfigInput)(nil)).Elem(), GetContainerInstancesContainerInstanceCollectionItemDnsConfigArgs{})
@@ -4975,6 +5241,8 @@ func init() {
 	pulumi.RegisterOutputType(GetContainerInstanceContainerHealthCheckHeaderArrayOutput{})
 	pulumi.RegisterOutputType(GetContainerInstanceContainerResourceConfigOutput{})
 	pulumi.RegisterOutputType(GetContainerInstanceContainerResourceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetContainerInstanceContainerSecurityContextOutput{})
+	pulumi.RegisterOutputType(GetContainerInstanceContainerSecurityContextArrayOutput{})
 	pulumi.RegisterOutputType(GetContainerInstanceContainerVolumeMountOutput{})
 	pulumi.RegisterOutputType(GetContainerInstanceContainerVolumeMountArrayOutput{})
 	pulumi.RegisterOutputType(GetContainerInstanceDnsConfigOutput{})
@@ -5021,6 +5289,8 @@ func init() {
 	pulumi.RegisterOutputType(GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayOutput{})
 	pulumi.RegisterOutputType(GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput{})
 	pulumi.RegisterOutputType(GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput{})
+	pulumi.RegisterOutputType(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput{})
 	pulumi.RegisterOutputType(GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutput{})
 	pulumi.RegisterOutputType(GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayOutput{})
 	pulumi.RegisterOutputType(GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput{})

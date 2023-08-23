@@ -18,13 +18,19 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Compute Cluster resource in Oracle Cloud Infrastructure Core service.
  * 
- * Creates an empty compute cluster, which is a remote direct memory access (RDMA) network group.
+ * Creates an empty [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
+ * is a remote direct memory access (RDMA) network group.
+ * 
  * After the compute cluster is created, you can use the compute cluster&#39;s OCID with the
  * [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) operation to create instances in the compute cluster.
- * For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+ * The instances must be created in the same compartment and availability domain as the cluster.
  * 
- * To create a cluster network that uses intance pools to manage groups of identical instances,
- * see [CreateClusterNetwork](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ClusterNetwork/CreateClusterNetwork).
+ * Use compute clusters when you want to manage instances in the cluster individually, or when you want
+ * to use different types of instances in the RDMA network group.
+ * 
+ * If you want predictable capacity for a specific number of identical instances that are managed as a group,
+ * create a cluster network that uses instance pools by using the
+ * [CreateClusterNetwork](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ClusterNetwork/CreateClusterNetwork) operation.
  * 
  * ## Example Usage
  * ```java
@@ -72,28 +78,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/computeCluster:ComputeCluster")
 public class ComputeCluster extends com.pulumi.resources.CustomResource {
     /**
-     * The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Export(name="availabilityDomain", type=String.class, parameters={})
     private Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * @return The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -162,14 +168,14 @@ public class ComputeCluster extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {

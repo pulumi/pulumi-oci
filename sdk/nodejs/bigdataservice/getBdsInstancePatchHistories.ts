@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testBdsInstancePatchHistories = oci.BigDataService.getBdsInstancePatchHistories({
  *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
+ *     patchType: _var.bds_instance_patch_history_patch_type,
  *     patchVersion: _var.bds_instance_patch_history_patch_version,
  *     state: _var.bds_instance_patch_history_state,
  * });
@@ -30,6 +31,7 @@ export function getBdsInstancePatchHistories(args: GetBdsInstancePatchHistoriesA
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", {
         "bdsInstanceId": args.bdsInstanceId,
         "filters": args.filters,
+        "patchType": args.patchType,
         "patchVersion": args.patchVersion,
         "state": args.state,
     }, opts);
@@ -44,6 +46,10 @@ export interface GetBdsInstancePatchHistoriesArgs {
      */
     bdsInstanceId: string;
     filters?: inputs.BigDataService.GetBdsInstancePatchHistoriesFilter[];
+    /**
+     * The type of a BDS patch history entity.
+     */
+    patchType?: string;
     /**
      * The version of the patch
      */
@@ -68,6 +74,10 @@ export interface GetBdsInstancePatchHistoriesResult {
      * The list of patch_histories.
      */
     readonly patchHistories: outputs.BigDataService.GetBdsInstancePatchHistoriesPatchHistory[];
+    /**
+     * The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+     */
+    readonly patchType?: string;
     readonly patchVersion?: string;
     /**
      * The status of this patch.
@@ -87,6 +97,7 @@ export interface GetBdsInstancePatchHistoriesResult {
  *
  * const testBdsInstancePatchHistories = oci.BigDataService.getBdsInstancePatchHistories({
  *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
+ *     patchType: _var.bds_instance_patch_history_patch_type,
  *     patchVersion: _var.bds_instance_patch_history_patch_version,
  *     state: _var.bds_instance_patch_history_state,
  * });
@@ -105,6 +116,10 @@ export interface GetBdsInstancePatchHistoriesOutputArgs {
      */
     bdsInstanceId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstancePatchHistoriesFilterArgs>[]>;
+    /**
+     * The type of a BDS patch history entity.
+     */
+    patchType?: pulumi.Input<string>;
     /**
      * The version of the patch
      */

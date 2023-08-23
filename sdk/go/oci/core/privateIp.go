@@ -42,7 +42,7 @@ import (
 //				HostnameLabel: pulumi.Any(_var.Private_ip_hostname_label),
 //				IpAddress:     pulumi.Any(_var.Private_ip_ip_address),
 //				VlanId:        pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//				VnicId:        pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//				VnicId:        pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Vnic_id),
 //			})
 //			if err != nil {
 //				return err

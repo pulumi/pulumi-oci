@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerInstances.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceContainerHealthCheck;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceContainerResourceConfig;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceContainerSecurityContext;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceContainerVolumeMount;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -70,6 +71,7 @@ public final class GetContainerInstanceContainer {
      */
     private String lifecycleDetails;
     private List<GetContainerInstanceContainerResourceConfig> resourceConfigs;
+    private List<GetContainerInstanceContainerSecurityContext> securityContexts;
     /**
      * @return The current state of the container instance.
      * 
@@ -182,6 +184,9 @@ public final class GetContainerInstanceContainer {
     public List<GetContainerInstanceContainerResourceConfig> resourceConfigs() {
         return this.resourceConfigs;
     }
+    public List<GetContainerInstanceContainerSecurityContext> securityContexts() {
+        return this.securityContexts;
+    }
     /**
      * @return The current state of the container instance.
      * 
@@ -246,6 +251,7 @@ public final class GetContainerInstanceContainer {
         private Boolean isResourcePrincipalDisabled;
         private String lifecycleDetails;
         private List<GetContainerInstanceContainerResourceConfig> resourceConfigs;
+        private List<GetContainerInstanceContainerSecurityContext> securityContexts;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
@@ -273,6 +279,7 @@ public final class GetContainerInstanceContainer {
     	      this.isResourcePrincipalDisabled = defaults.isResourcePrincipalDisabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.resourceConfigs = defaults.resourceConfigs;
+    	      this.securityContexts = defaults.securityContexts;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -380,6 +387,14 @@ public final class GetContainerInstanceContainer {
             return resourceConfigs(List.of(resourceConfigs));
         }
         @CustomType.Setter
+        public Builder securityContexts(List<GetContainerInstanceContainerSecurityContext> securityContexts) {
+            this.securityContexts = Objects.requireNonNull(securityContexts);
+            return this;
+        }
+        public Builder securityContexts(GetContainerInstanceContainerSecurityContext... securityContexts) {
+            return securityContexts(List.of(securityContexts));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -436,6 +451,7 @@ public final class GetContainerInstanceContainer {
             o.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
             o.lifecycleDetails = lifecycleDetails;
             o.resourceConfigs = resourceConfigs;
+            o.securityContexts = securityContexts;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;

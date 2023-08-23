@@ -31,7 +31,7 @@ public final class InstancePoolPlacementConfiguration {
      */
     private @Nullable List<String> faultDomains;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
      * 
      */
     private String primarySubnetId;
@@ -65,7 +65,7 @@ public final class InstancePoolPlacementConfiguration {
         return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
      * 
      */
     public String primarySubnetId() {

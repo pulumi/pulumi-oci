@@ -181,6 +181,14 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly id: string;
     /**
+     * The area assigned to In-Memory tables in Autonomous Database.
+     */
+    readonly inMemoryAreaInGbs: number;
+    /**
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     */
+    readonly inMemoryPercentage: number;
+    /**
      * The infrastructure type this resource belongs to.
      */
     readonly infrastructureType: string;

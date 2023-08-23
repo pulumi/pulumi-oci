@@ -73,15 +73,13 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<int>? MemoryInGbs { get; set; }
 
         /// <summary>
-        /// BDS instance node type
+        /// The Big Data Service cluster node type.
         /// </summary>
         [Input("nodeType")]
         public Input<string>? NodeType { get; set; }
 
         /// <summary>
         /// The total number of OCPUs available to the node.
-        /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -117,6 +115,12 @@ namespace Pulumi.Oci.BigDataService.Inputs
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+        /// </summary>
+        [Input("timeMaintenanceRebootDue")]
+        public Input<string>? TimeMaintenanceRebootDue { get; set; }
 
         public BdsInstanceNodeArgs()
         {

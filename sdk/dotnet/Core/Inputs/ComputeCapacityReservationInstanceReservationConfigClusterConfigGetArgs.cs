@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class ComputeCapacityReservationInstanceReservationConfigClusterConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         /// </summary>
         [Input("hpcIslandId", required: true)]
         public Input<string> HpcIslandId { get; set; } = null!;
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Inputs
         private InputList<string>? _networkBlockIds;
 
         /// <summary>
-        /// (Updatable) The list of OCID of the network blocks.
+        /// (Updatable) The list of OCIDs of the network blocks.
         /// </summary>
         public InputList<string> NetworkBlockIds
         {

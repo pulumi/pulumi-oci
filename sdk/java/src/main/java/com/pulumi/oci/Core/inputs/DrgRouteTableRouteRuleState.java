@@ -72,12 +72,18 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
      * 
+     * Potential values:
+     * * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
+     * 
      */
     @Import(name="drgRouteTableId")
     private @Nullable Output<String> drgRouteTableId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+     * 
+     * Potential values:
+     * * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      * 
      */
     public Optional<Output<String>> drgRouteTableId() {
@@ -269,6 +275,9 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
         /**
          * @param drgRouteTableId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
          * 
+         * Potential values:
+         * * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
+         * 
          * @return builder
          * 
          */
@@ -279,6 +288,9 @@ public final class DrgRouteTableRouteRuleState extends com.pulumi.resources.Reso
 
         /**
          * @param drgRouteTableId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+         * 
+         * Potential values:
+         * * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
          * 
          * @return builder
          * 

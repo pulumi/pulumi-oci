@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerHealthCheckArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerResourceConfigArgs;
+import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerSecurityContextArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerVolumeMountArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -287,6 +288,21 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
+     * Security context for container.
+     * 
+     */
+    @Import(name="securityContext")
+    private @Nullable Output<ContainerInstanceContainerSecurityContextArgs> securityContext;
+
+    /**
+     * @return Security context for container.
+     * 
+     */
+    public Optional<Output<ContainerInstanceContainerSecurityContextArgs>> securityContext() {
+        return Optional.ofNullable(this.securityContext);
+    }
+
+    /**
      * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      * ** IMPORTANT **
@@ -409,6 +425,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         this.isResourcePrincipalDisabled = $.isResourcePrincipalDisabled;
         this.lifecycleDetails = $.lifecycleDetails;
         this.resourceConfig = $.resourceConfig;
+        this.securityContext = $.securityContext;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -825,6 +842,27 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
          */
         public Builder resourceConfig(ContainerInstanceContainerResourceConfigArgs resourceConfig) {
             return resourceConfig(Output.of(resourceConfig));
+        }
+
+        /**
+         * @param securityContext Security context for container.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityContext(@Nullable Output<ContainerInstanceContainerSecurityContextArgs> securityContext) {
+            $.securityContext = securityContext;
+            return this;
+        }
+
+        /**
+         * @param securityContext Security context for container.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityContext(ContainerInstanceContainerSecurityContextArgs securityContext) {
+            return securityContext(Output.of(securityContext));
         }
 
         /**

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.ClusterNetworkClusterConfigurationArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationArgs;
 import java.lang.Object;
@@ -19,6 +20,25 @@ import javax.annotation.Nullable;
 public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ClusterNetworkArgs Empty = new ClusterNetworkArgs();
+
+    /**
+     * The HPC cluster configuration requested when launching instances of a cluster network.
+     * 
+     * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+     * 
+     */
+    @Import(name="clusterConfiguration")
+    private @Nullable Output<ClusterNetworkClusterConfigurationArgs> clusterConfiguration;
+
+    /**
+     * @return The HPC cluster configuration requested when launching instances of a cluster network.
+     * 
+     * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+     * 
+     */
+    public Optional<Output<ClusterNetworkClusterConfigurationArgs>> clusterConfiguration() {
+        return Optional.ofNullable(this.clusterConfiguration);
+    }
 
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -117,6 +137,7 @@ public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs 
     private ClusterNetworkArgs() {}
 
     private ClusterNetworkArgs(ClusterNetworkArgs $) {
+        this.clusterConfiguration = $.clusterConfiguration;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -141,6 +162,31 @@ public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs 
 
         public Builder(ClusterNetworkArgs defaults) {
             $ = new ClusterNetworkArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterConfiguration The HPC cluster configuration requested when launching instances of a cluster network.
+         * 
+         * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterConfiguration(@Nullable Output<ClusterNetworkClusterConfigurationArgs> clusterConfiguration) {
+            $.clusterConfiguration = clusterConfiguration;
+            return this;
+        }
+
+        /**
+         * @param clusterConfiguration The HPC cluster configuration requested when launching instances of a cluster network.
+         * 
+         * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterConfiguration(ClusterNetworkClusterConfigurationArgs clusterConfiguration) {
+            return clusterConfiguration(Output.of(clusterConfiguration));
         }
 
         /**

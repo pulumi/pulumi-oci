@@ -48,7 +48,7 @@ public final class AutoScalingConfigurationPolicyDetails {
      */
     private @Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfig scaleUpConfig;
     /**
-     * @return (Updatable)
+     * @return (Updatable) Details of a horizontal scaling schedule.
      * 
      */
     private @Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetail> scheduleDetails;
@@ -110,7 +110,7 @@ public final class AutoScalingConfigurationPolicyDetails {
         return Optional.ofNullable(this.scaleUpConfig);
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) Details of a horizontal scaling schedule.
      * 
      */
     public List<AutoScalingConfigurationPolicyDetailsScheduleDetail> scheduleDetails() {

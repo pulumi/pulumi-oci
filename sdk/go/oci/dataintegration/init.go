@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:DataIntegration/workspace:Workspace":
 		r = &Workspace{}
+	case "oci:DataIntegration/workspaceApplication:WorkspaceApplication":
+		r = &WorkspaceApplication{}
 	case "oci:DataIntegration/workspaceFolder:WorkspaceFolder":
 		r = &WorkspaceFolder{}
 	case "oci:DataIntegration/workspaceProject:WorkspaceProject":
@@ -43,6 +45,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataIntegration/workspace",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataIntegration/workspaceApplication",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

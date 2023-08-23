@@ -41,6 +41,7 @@ class AutonomousDatabaseArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 in_memory_percentage: Optional[pulumi.Input[int]] = None,
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
@@ -131,6 +132,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] in_memory_percentage: (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
         :param pulumi.Input[bool] is_access_control_enabled: (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
                
                This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -259,6 +261,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if in_memory_percentage is not None:
+            pulumi.set(__self__, "in_memory_percentage", in_memory_percentage)
         if is_access_control_enabled is not None:
             pulumi.set(__self__, "is_access_control_enabled", is_access_control_enabled)
         if is_auto_scaling_enabled is not None:
@@ -662,6 +666,18 @@ class AutonomousDatabaseArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="inMemoryPercentage")
+    def in_memory_percentage(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        """
+        return pulumi.get(self, "in_memory_percentage")
+
+    @in_memory_percentage.setter
+    def in_memory_percentage(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "in_memory_percentage", value)
 
     @property
     @pulumi.getter(name="isAccessControlEnabled")
@@ -1221,6 +1237,8 @@ class _AutonomousDatabaseState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  failed_data_recovery_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 in_memory_area_in_gbs: Optional[pulumi.Input[int]] = None,
+                 in_memory_percentage: Optional[pulumi.Input[int]] = None,
                  infrastructure_type: Optional[pulumi.Input[str]] = None,
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1363,6 +1381,8 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param pulumi.Input[int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
+        :param pulumi.Input[int] in_memory_percentage: (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
         :param pulumi.Input[str] infrastructure_type: The infrastructure type this resource belongs to.
         :param pulumi.Input[bool] is_access_control_enabled: (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
                
@@ -1555,6 +1575,10 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if in_memory_area_in_gbs is not None:
+            pulumi.set(__self__, "in_memory_area_in_gbs", in_memory_area_in_gbs)
+        if in_memory_percentage is not None:
+            pulumi.set(__self__, "in_memory_percentage", in_memory_percentage)
         if infrastructure_type is not None:
             pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         if is_access_control_enabled is not None:
@@ -2162,6 +2186,30 @@ class _AutonomousDatabaseState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="inMemoryAreaInGbs")
+    def in_memory_area_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The area assigned to In-Memory tables in Autonomous Database.
+        """
+        return pulumi.get(self, "in_memory_area_in_gbs")
+
+    @in_memory_area_in_gbs.setter
+    def in_memory_area_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "in_memory_area_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="inMemoryPercentage")
+    def in_memory_percentage(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        """
+        return pulumi.get(self, "in_memory_percentage")
+
+    @in_memory_percentage.setter
+    def in_memory_percentage(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "in_memory_percentage", value)
 
     @property
     @pulumi.getter(name="infrastructureType")
@@ -3217,6 +3265,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 in_memory_percentage: Optional[pulumi.Input[int]] = None,
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
@@ -3321,6 +3370,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] in_memory_percentage: (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
         :param pulumi.Input[bool] is_access_control_enabled: (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
                
                This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -3460,6 +3510,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 in_memory_percentage: Optional[pulumi.Input[int]] = None,
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
@@ -3538,6 +3589,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["in_memory_percentage"] = in_memory_percentage
             __props__.__dict__["is_access_control_enabled"] = is_access_control_enabled
             __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
             __props__.__dict__["is_auto_scaling_for_storage_enabled"] = is_auto_scaling_for_storage_enabled
@@ -3588,6 +3640,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["dataguard_region_type"] = None
             __props__.__dict__["disaster_recovery_region_type"] = None
             __props__.__dict__["failed_data_recovery_in_seconds"] = None
+            __props__.__dict__["in_memory_area_in_gbs"] = None
             __props__.__dict__["infrastructure_type"] = None
             __props__.__dict__["is_preview"] = None
             __props__.__dict__["is_reconnect_clone_enabled"] = None
@@ -3677,6 +3730,8 @@ class AutonomousDatabase(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             failed_data_recovery_in_seconds: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            in_memory_area_in_gbs: Optional[pulumi.Input[int]] = None,
+            in_memory_percentage: Optional[pulumi.Input[int]] = None,
             infrastructure_type: Optional[pulumi.Input[str]] = None,
             is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
             is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
@@ -3824,6 +3879,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param pulumi.Input[int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
+        :param pulumi.Input[int] in_memory_percentage: (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
         :param pulumi.Input[str] infrastructure_type: The infrastructure type this resource belongs to.
         :param pulumi.Input[bool] is_access_control_enabled: (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
                
@@ -3985,6 +4042,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["failed_data_recovery_in_seconds"] = failed_data_recovery_in_seconds
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["in_memory_area_in_gbs"] = in_memory_area_in_gbs
+        __props__.__dict__["in_memory_percentage"] = in_memory_percentage
         __props__.__dict__["infrastructure_type"] = infrastructure_type
         __props__.__dict__["is_access_control_enabled"] = is_access_control_enabled
         __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
@@ -4371,6 +4430,22 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="inMemoryAreaInGbs")
+    def in_memory_area_in_gbs(self) -> pulumi.Output[int]:
+        """
+        The area assigned to In-Memory tables in Autonomous Database.
+        """
+        return pulumi.get(self, "in_memory_area_in_gbs")
+
+    @property
+    @pulumi.getter(name="inMemoryPercentage")
+    def in_memory_percentage(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        """
+        return pulumi.get(self, "in_memory_percentage")
 
     @property
     @pulumi.getter(name="infrastructureType")

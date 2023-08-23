@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
         /// </summary>
         [Input("primarySubnetId", required: true)]
         public Input<string> PrimarySubnetId { get; set; } = null!;

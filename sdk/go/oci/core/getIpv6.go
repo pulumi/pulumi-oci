@@ -71,7 +71,7 @@ type LookupIpv6Result struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
 	Id string `pulumi:"id"`
-	// The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
+	// The IPv6 address of the `IPv6` object. The address is within the IPv6 prefix of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
 	IpAddress      string `pulumi:"ipAddress"`
 	Ipv6id         string `pulumi:"ipv6id"`
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
@@ -148,7 +148,7 @@ func (o LookupIpv6ResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIpv6Result) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
+// The IPv6 address of the `IPv6` object. The address is within the IPv6 prefix of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
 func (o LookupIpv6ResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIpv6Result) string { return v.IpAddress }).(pulumi.StringOutput)
 }

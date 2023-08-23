@@ -154,11 +154,11 @@ namespace Pulumi.Oci.Core
     public sealed class GetComputeClustersResult
     {
         /// <summary>
-        /// The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+        /// The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

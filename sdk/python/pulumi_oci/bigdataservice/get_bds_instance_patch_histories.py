@@ -23,7 +23,7 @@ class GetBdsInstancePatchHistoriesResult:
     """
     A collection of values returned by getBdsInstancePatchHistories.
     """
-    def __init__(__self__, bds_instance_id=None, filters=None, id=None, patch_histories=None, patch_version=None, state=None):
+    def __init__(__self__, bds_instance_id=None, filters=None, id=None, patch_histories=None, patch_type=None, patch_version=None, state=None):
         if bds_instance_id and not isinstance(bds_instance_id, str):
             raise TypeError("Expected argument 'bds_instance_id' to be a str")
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -36,6 +36,9 @@ class GetBdsInstancePatchHistoriesResult:
         if patch_histories and not isinstance(patch_histories, list):
             raise TypeError("Expected argument 'patch_histories' to be a list")
         pulumi.set(__self__, "patch_histories", patch_histories)
+        if patch_type and not isinstance(patch_type, str):
+            raise TypeError("Expected argument 'patch_type' to be a str")
+        pulumi.set(__self__, "patch_type", patch_type)
         if patch_version and not isinstance(patch_version, str):
             raise TypeError("Expected argument 'patch_version' to be a str")
         pulumi.set(__self__, "patch_version", patch_version)
@@ -70,6 +73,14 @@ class GetBdsInstancePatchHistoriesResult:
         return pulumi.get(self, "patch_histories")
 
     @property
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> Optional[str]:
+        """
+        The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+        """
+        return pulumi.get(self, "patch_type")
+
+    @property
     @pulumi.getter(name="patchVersion")
     def patch_version(self) -> Optional[str]:
         return pulumi.get(self, "patch_version")
@@ -93,12 +104,14 @@ class AwaitableGetBdsInstancePatchHistoriesResult(GetBdsInstancePatchHistoriesRe
             filters=self.filters,
             id=self.id,
             patch_histories=self.patch_histories,
+            patch_type=self.patch_type,
             patch_version=self.patch_version,
             state=self.state)
 
 
 def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
                                      filters: Optional[Sequence[pulumi.InputType['GetBdsInstancePatchHistoriesFilterArgs']]] = None,
+                                     patch_type: Optional[str] = None,
                                      patch_version: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstancePatchHistoriesResult:
@@ -114,18 +127,21 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
+        patch_type=var["bds_instance_patch_history_patch_type"],
         patch_version=var["bds_instance_patch_history_patch_version"],
         state=var["bds_instance_patch_history_state"])
     ```
 
 
     :param str bds_instance_id: The OCID of the cluster.
+    :param str patch_type: The type of a BDS patch history entity.
     :param str patch_version: The version of the patch
     :param str state: The status of the patch.
     """
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
     __args__['filters'] = filters
+    __args__['patchType'] = patch_type
     __args__['patchVersion'] = patch_version
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -136,6 +152,7 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         patch_histories=pulumi.get(__ret__, 'patch_histories'),
+        patch_type=pulumi.get(__ret__, 'patch_type'),
         patch_version=pulumi.get(__ret__, 'patch_version'),
         state=pulumi.get(__ret__, 'state'))
 
@@ -143,6 +160,7 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
 @_utilities.lift_output_func(get_bds_instance_patch_histories)
 def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBdsInstancePatchHistoriesFilterArgs']]]]] = None,
+                                            patch_type: Optional[pulumi.Input[Optional[str]]] = None,
                                             patch_version: Optional[pulumi.Input[Optional[str]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstancePatchHistoriesResult]:
@@ -158,12 +176,14 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
     import pulumi_oci as oci
 
     test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
+        patch_type=var["bds_instance_patch_history_patch_type"],
         patch_version=var["bds_instance_patch_history_patch_version"],
         state=var["bds_instance_patch_history_state"])
     ```
 
 
     :param str bds_instance_id: The OCID of the cluster.
+    :param str patch_type: The type of a BDS patch history entity.
     :param str patch_version: The version of the patch
     :param str state: The status of the patch.
     """

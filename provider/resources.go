@@ -2411,10 +2411,15 @@ func Provider() tfbridge.ProviderInfo {
 	err := x.ComputeDefaults(&prov, x.TokensKnownModules("oci_", "", mappedModKeys,
 		func(mod, name string) (string, error) {
 			m, ok := moduleNameMap[strings.ToLower(mod)]
-			if !ok && mod == "recovery" {
-				m = recoveryMod
-			} else if !ok {
-				return "", fmt.Errorf("'%s' has unmapped module '%s'", name, mod)
+			if !ok {
+				switch mod {
+				case "recovery":
+					m = recoveryMod
+				case "bds":
+					m = bigDataServiceMod
+				default:
+					return "", fmt.Errorf("'%s' has unmapped module '%s'", name, mod)
+				}
 			}
 			return tfbridge.MakeResource(mainPkg, m, name).String(), nil
 		}))

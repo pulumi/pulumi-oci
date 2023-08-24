@@ -137,14 +137,14 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
         return this.ipAddress;
     }
     /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      * 
      */
     @Export(name="ipv6subnetCidr", type=String.class, parameters={})
     private Output<String> ipv6subnetCidr;
 
     /**
-     * @return The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     * @return The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      * 
      */
     public Output<String> ipv6subnetCidr() {

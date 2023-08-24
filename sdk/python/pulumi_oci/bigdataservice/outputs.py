@@ -38,6 +38,8 @@ __all__ = [
     'BdsInstanceComputeOnlyWorkerNodeShapeConfig',
     'BdsInstanceEdgeNode',
     'BdsInstanceEdgeNodeShapeConfig',
+    'BdsInstanceKafkaBrokerNode',
+    'BdsInstanceKafkaBrokerNodeShapeConfig',
     'BdsInstanceMasterNode',
     'BdsInstanceMasterNodeShapeConfig',
     'BdsInstanceNetworkConfig',
@@ -98,6 +100,12 @@ __all__ = [
     'GetBdsInstanceComputeOnlyWorkerNodeShapeConfigResult',
     'GetBdsInstanceEdgeNodeResult',
     'GetBdsInstanceEdgeNodeShapeConfigResult',
+    'GetBdsInstanceGetOsPatchFilterResult',
+    'GetBdsInstanceGetOsPatchTargetPackageResult',
+    'GetBdsInstanceKafkaBrokerNodeResult',
+    'GetBdsInstanceKafkaBrokerNodeShapeConfigResult',
+    'GetBdsInstanceListOsPatchesFilterResult',
+    'GetBdsInstanceListOsPatchesOsPatchResult',
     'GetBdsInstanceMasterNodeResult',
     'GetBdsInstanceMasterNodeShapeConfigResult',
     'GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationResult',
@@ -121,6 +129,8 @@ __all__ = [
     'GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigResult',
     'GetBdsInstancesBdsInstanceEdgeNodeResult',
     'GetBdsInstancesBdsInstanceEdgeNodeShapeConfigResult',
+    'GetBdsInstancesBdsInstanceKafkaBrokerNodeResult',
+    'GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigResult',
     'GetBdsInstancesBdsInstanceMasterNodeResult',
     'GetBdsInstancesBdsInstanceMasterNodeShapeConfigResult',
     'GetBdsInstancesBdsInstanceNetworkConfigResult',
@@ -229,7 +239,7 @@ class AutoScalingConfigurationPolicyDetails(dict):
         :param 'AutoScalingConfigurationPolicyDetailsScaleInConfigArgs' scale_in_config: (Updatable) Configration for a metric based horizontal scale-in policy.
         :param 'AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs' scale_out_config: (Updatable) Configration for a metric based horizontal scale-out policy.
         :param 'AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs' scale_up_config: (Updatable) Configration for a metric based vertical scale-up policy.
-        :param Sequence['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs'] schedule_details: (Updatable)
+        :param Sequence['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs'] schedule_details: (Updatable) Details of a horizontal scaling schedule.
         :param str timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
                
                
@@ -307,7 +317,7 @@ class AutoScalingConfigurationPolicyDetails(dict):
     @pulumi.getter(name="scheduleDetails")
     def schedule_details(self) -> Optional[Sequence['outputs.AutoScalingConfigurationPolicyDetailsScheduleDetail']]:
         """
-        (Updatable)
+        (Updatable) Details of a horizontal scaling schedule.
         """
         return pulumi.get(self, "schedule_details")
 
@@ -1097,8 +1107,8 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetail(dict):
                  time_and_vertical_scaling_configs: Optional[Sequence['outputs.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig']] = None):
         """
         :param str schedule_type: (Updatable) The type of schedule.
-        :param Sequence['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs'] time_and_horizontal_scaling_configs: (Updatable)
-        :param Sequence['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs'] time_and_vertical_scaling_configs: (Updatable)
+        :param Sequence['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs'] time_and_horizontal_scaling_configs: (Updatable) Time of day and horizontal scaling configuration.
+        :param Sequence['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs'] time_and_vertical_scaling_configs: (Updatable) Time of day and vertical scaling configuration
         """
         if schedule_type is not None:
             pulumi.set(__self__, "schedule_type", schedule_type)
@@ -1119,7 +1129,7 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetail(dict):
     @pulumi.getter(name="timeAndHorizontalScalingConfigs")
     def time_and_horizontal_scaling_configs(self) -> Optional[Sequence['outputs.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig']]:
         """
-        (Updatable)
+        (Updatable) Time of day and horizontal scaling configuration.
         """
         return pulumi.get(self, "time_and_horizontal_scaling_configs")
 
@@ -1127,7 +1137,7 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetail(dict):
     @pulumi.getter(name="timeAndVerticalScalingConfigs")
     def time_and_vertical_scaling_configs(self) -> Optional[Sequence['outputs.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig']]:
         """
-        (Updatable)
+        (Updatable) Time of day and vertical scaling configuration
         """
         return pulumi.get(self, "time_and_vertical_scaling_configs")
 
@@ -1437,8 +1447,6 @@ class BdsInstanceCloudSqlDetail(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1519,8 +1527,6 @@ class BdsInstanceCloudSqlDetail(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1923,8 +1929,6 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1956,8 +1960,6 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2078,8 +2080,6 @@ class BdsInstanceEdgeNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2111,8 +2111,153 @@ class BdsInstanceEdgeNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "ocpus")
 
 
+@pulumi.output_type
+class BdsInstanceKafkaBrokerNode(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "numberOfKafkaNodes":
+            suggest = "number_of_kafka_nodes"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "blockVolumeSizeInGbs":
+            suggest = "block_volume_size_in_gbs"
+        elif key == "shapeConfig":
+            suggest = "shape_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceKafkaBrokerNode. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceKafkaBrokerNode.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceKafkaBrokerNode.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 number_of_kafka_nodes: int,
+                 shape: str,
+                 subnet_id: str,
+                 block_volume_size_in_gbs: Optional[str] = None,
+                 shape_config: Optional['outputs.BdsInstanceKafkaBrokerNodeShapeConfig'] = None):
+        """
+        :param str shape: Shape of the node
+        :param str subnet_id: The OCID of the subnet in which the node should be created
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param 'BdsInstanceKafkaBrokerNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
+        """
+        pulumi.set(__self__, "number_of_kafka_nodes", number_of_kafka_nodes)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if block_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
+
+    @property
+    @pulumi.getter(name="numberOfKafkaNodes")
+    def number_of_kafka_nodes(self) -> int:
+        return pulumi.get(self, "number_of_kafka_nodes")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the node
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet in which the node should be created
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> Optional[str]:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional['outputs.BdsInstanceKafkaBrokerNodeShapeConfig']:
+        """
+        The shape configuration requested for the node.
+        """
+        return pulumi.get(self, "shape_config")
+
+
+@pulumi.output_type
+class BdsInstanceKafkaBrokerNodeShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceKafkaBrokerNodeShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceKafkaBrokerNodeShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceKafkaBrokerNodeShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[int] = None,
+                 nvmes: Optional[int] = None,
+                 ocpus: Optional[int] = None):
+        """
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param int ocpus: The total number of OCPUs available to the node.
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[int]:
+        """
+        The total amount of memory available to the node, in gigabytes
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[int]:
+        """
+        The total number of OCPUs available to the node.
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2233,8 +2378,6 @@ class BdsInstanceMasterNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2266,8 +2409,6 @@ class BdsInstanceMasterNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2353,6 +2494,8 @@ class BdsInstanceNode(dict):
             suggest = "subnet_id"
         elif key == "timeCreated":
             suggest = "time_created"
+        elif key == "timeMaintenanceRebootDue":
+            suggest = "time_maintenance_reboot_due"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in BdsInstanceNode. Access the value via the '{suggest}' property getter instead.")
@@ -2381,7 +2524,8 @@ class BdsInstanceNode(dict):
                  ssh_fingerprint: Optional[str] = None,
                  state: Optional[str] = None,
                  subnet_id: Optional[str] = None,
-                 time_created: Optional[str] = None):
+                 time_created: Optional[str] = None,
+                 time_maintenance_reboot_due: Optional[str] = None):
         """
         :param Sequence['BdsInstanceNodeAttachedBlockVolumeArgs'] attached_block_volumes: The list of block volumes attached to a given node.
         :param str availability_domain: The name of the availability domain the node is running in
@@ -2392,10 +2536,8 @@ class BdsInstanceNode(dict):
         :param str instance_id: The OCID of the underlying compute instance
         :param str ip_address: IP address of the node
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param str node_type: BDS instance node type
+        :param str node_type: The Big Data Service cluster node type.
         :param int ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str shape: Shape of the node
@@ -2403,6 +2545,7 @@ class BdsInstanceNode(dict):
         :param str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param str subnet_id: The OCID of the subnet in which the node should be created
         :param str time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
+        :param str time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
         """
         if attached_block_volumes is not None:
             pulumi.set(__self__, "attached_block_volumes", attached_block_volumes)
@@ -2436,6 +2579,8 @@ class BdsInstanceNode(dict):
             pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_maintenance_reboot_due is not None:
+            pulumi.set(__self__, "time_maintenance_reboot_due", time_maintenance_reboot_due)
 
     @property
     @pulumi.getter(name="attachedBlockVolumes")
@@ -2513,7 +2658,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[str]:
         """
-        BDS instance node type
+        The Big Data Service cluster node type.
         """
         return pulumi.get(self, "node_type")
 
@@ -2522,8 +2667,6 @@ class BdsInstanceNode(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2568,6 +2711,14 @@ class BdsInstanceNode(dict):
         The time the BDS instance was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeMaintenanceRebootDue")
+    def time_maintenance_reboot_due(self) -> Optional[str]:
+        """
+        The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_maintenance_reboot_due")
 
 
 @pulumi.output_type
@@ -2734,8 +2885,6 @@ class BdsInstanceUtilNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2767,8 +2916,6 @@ class BdsInstanceUtilNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2889,8 +3036,6 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2922,8 +3067,6 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2978,6 +3121,7 @@ class GetAutoScalingConfigurationPolicyDetailResult(dict):
         :param Sequence['GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs'] scale_in_configs: Configration for a metric based horizontal scale-in policy.
         :param Sequence['GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs'] scale_out_configs: Configration for a metric based horizontal scale-out policy.
         :param Sequence['GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs'] scale_up_configs: Configration for a metric based vertical scale-up policy.
+        :param Sequence['GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs'] schedule_details: Details of a horizontal scaling schedule.
         :param str timezone: The time zone of the execution schedule, in IANA time zone database name format
         :param str trigger_type: The type of autoscaling trigger.
         """
@@ -3042,6 +3186,9 @@ class GetAutoScalingConfigurationPolicyDetailResult(dict):
     @property
     @pulumi.getter(name="scheduleDetails")
     def schedule_details(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyDetailScheduleDetailResult']:
+        """
+        Details of a horizontal scaling schedule.
+        """
         return pulumi.get(self, "schedule_details")
 
     @property
@@ -3549,6 +3696,8 @@ class GetAutoScalingConfigurationPolicyDetailScheduleDetailResult(dict):
                  time_and_vertical_scaling_configs: Sequence['outputs.GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigResult']):
         """
         :param str schedule_type: The type of schedule.
+        :param Sequence['GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs'] time_and_horizontal_scaling_configs: Time of day and horizontal scaling configuration.
+        :param Sequence['GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs'] time_and_vertical_scaling_configs: Time of day and vertical scaling configuration
         """
         pulumi.set(__self__, "schedule_type", schedule_type)
         pulumi.set(__self__, "time_and_horizontal_scaling_configs", time_and_horizontal_scaling_configs)
@@ -3565,11 +3714,17 @@ class GetAutoScalingConfigurationPolicyDetailScheduleDetailResult(dict):
     @property
     @pulumi.getter(name="timeAndHorizontalScalingConfigs")
     def time_and_horizontal_scaling_configs(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigResult']:
+        """
+        Time of day and horizontal scaling configuration.
+        """
         return pulumi.get(self, "time_and_horizontal_scaling_configs")
 
     @property
     @pulumi.getter(name="timeAndVerticalScalingConfigs")
     def time_and_vertical_scaling_configs(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigResult']:
+        """
+        Time of day and vertical scaling configuration
+        """
         return pulumi.get(self, "time_and_vertical_scaling_configs")
 
 
@@ -5045,6 +5200,245 @@ class GetBdsInstanceEdgeNodeShapeConfigResult(dict):
 
 
 @pulumi.output_type
+class GetBdsInstanceGetOsPatchFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceGetOsPatchTargetPackageResult(dict):
+    def __init__(__self__, *,
+                 package_name: str,
+                 related_cv_es: Sequence[str],
+                 target_version: str,
+                 update_type: str):
+        """
+        :param str package_name: The package's name.
+        :param Sequence[str] related_cv_es: Related CVEs of the package update.
+        :param str target_version: The target version of the package.
+        :param str update_type: The action that current package will be executed on the cluster.
+        """
+        pulumi.set(__self__, "package_name", package_name)
+        pulumi.set(__self__, "related_cv_es", related_cv_es)
+        pulumi.set(__self__, "target_version", target_version)
+        pulumi.set(__self__, "update_type", update_type)
+
+    @property
+    @pulumi.getter(name="packageName")
+    def package_name(self) -> str:
+        """
+        The package's name.
+        """
+        return pulumi.get(self, "package_name")
+
+    @property
+    @pulumi.getter(name="relatedCvEs")
+    def related_cv_es(self) -> Sequence[str]:
+        """
+        Related CVEs of the package update.
+        """
+        return pulumi.get(self, "related_cv_es")
+
+    @property
+    @pulumi.getter(name="targetVersion")
+    def target_version(self) -> str:
+        """
+        The target version of the package.
+        """
+        return pulumi.get(self, "target_version")
+
+    @property
+    @pulumi.getter(name="updateType")
+    def update_type(self) -> str:
+        """
+        The action that current package will be executed on the cluster.
+        """
+        return pulumi.get(self, "update_type")
+
+
+@pulumi.output_type
+class GetBdsInstanceKafkaBrokerNodeResult(dict):
+    def __init__(__self__, *,
+                 block_volume_size_in_gbs: str,
+                 number_of_kafka_nodes: int,
+                 shape: str,
+                 shape_configs: Sequence['outputs.GetBdsInstanceKafkaBrokerNodeShapeConfigResult'],
+                 subnet_id: str):
+        """
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param str shape: Shape of the node.
+        :param str subnet_id: The OCID of the subnet in which the node is to be created.
+        """
+        pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
+        pulumi.set(__self__, "number_of_kafka_nodes", number_of_kafka_nodes)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_configs", shape_configs)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> str:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="numberOfKafkaNodes")
+    def number_of_kafka_nodes(self) -> int:
+        return pulumi.get(self, "number_of_kafka_nodes")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the node.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetBdsInstanceKafkaBrokerNodeShapeConfigResult']:
+        return pulumi.get(self, "shape_configs")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet in which the node is to be created.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetBdsInstanceKafkaBrokerNodeShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: int,
+                 nvmes: int,
+                 ocpus: int):
+        """
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param int ocpus: The total number of OCPUs available to the node.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> int:
+        """
+        The total amount of memory available to the node, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> int:
+        """
+        The total number of OCPUs available to the node.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetBdsInstanceListOsPatchesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceListOsPatchesOsPatchResult(dict):
+    def __init__(__self__, *,
+                 bds_instance_id: str,
+                 os_patch_version: str,
+                 release_date: str):
+        """
+        :param str bds_instance_id: The OCID of the cluster.
+        :param str os_patch_version: Patch version of the os patch.
+        :param str release_date: The time when the OS patch was released.
+        """
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "os_patch_version", os_patch_version)
+        pulumi.set(__self__, "release_date", release_date)
+
+    @property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @property
+    @pulumi.getter(name="osPatchVersion")
+    def os_patch_version(self) -> str:
+        """
+        Patch version of the os patch.
+        """
+        return pulumi.get(self, "os_patch_version")
+
+    @property
+    @pulumi.getter(name="releaseDate")
+    def release_date(self) -> str:
+        """
+        The time when the OS patch was released.
+        """
+        return pulumi.get(self, "release_date")
+
+
+@pulumi.output_type
 class GetBdsInstanceMasterNodeResult(dict):
     def __init__(__self__, *,
                  block_volume_size_in_gbs: str,
@@ -5343,7 +5737,8 @@ class GetBdsInstanceNodeResult(dict):
                  ssh_fingerprint: str,
                  state: str,
                  subnet_id: str,
-                 time_created: str):
+                 time_created: str,
+                 time_maintenance_reboot_due: str):
         """
         :param Sequence['GetBdsInstanceNodeAttachedBlockVolumeArgs'] attached_block_volumes: The list of block volumes attached to a given node.
         :param str availability_domain: The name of the availability domain in which the node is running.
@@ -5361,6 +5756,7 @@ class GetBdsInstanceNodeResult(dict):
         :param str state: The state of the cluster.
         :param str subnet_id: The OCID of the subnet in which the node is to be created.
         :param str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
         """
         pulumi.set(__self__, "attached_block_volumes", attached_block_volumes)
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -5378,6 +5774,7 @@ class GetBdsInstanceNodeResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_maintenance_reboot_due", time_maintenance_reboot_due)
 
     @property
     @pulumi.getter(name="attachedBlockVolumes")
@@ -5507,6 +5904,14 @@ class GetBdsInstanceNodeResult(dict):
         """
         return pulumi.get(self, "time_created")
 
+    @property
+    @pulumi.getter(name="timeMaintenanceRebootDue")
+    def time_maintenance_reboot_due(self) -> str:
+        """
+        The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_maintenance_reboot_due")
+
 
 @pulumi.output_type
 class GetBdsInstanceNodeAttachedBlockVolumeResult(dict):
@@ -5567,17 +5972,28 @@ class GetBdsInstancePatchHistoriesFilterResult(dict):
 @pulumi.output_type
 class GetBdsInstancePatchHistoriesPatchHistoryResult(dict):
     def __init__(__self__, *,
+                 patch_type: str,
                  state: str,
                  time_updated: str,
                  version: str):
         """
+        :param str patch_type: The type of a BDS patch history entity.
         :param str state: The status of the patch.
         :param str time_updated: The time when the patch history was last updated.
         :param str version: The version of the patch.
         """
+        pulumi.set(__self__, "patch_type", patch_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> str:
+        """
+        The type of a BDS patch history entity.
+        """
+        return pulumi.get(self, "patch_type")
 
     @property
     @pulumi.getter
@@ -5877,13 +6293,17 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  is_cloud_sql_configured: bool,
                  is_force_stop_jobs: bool,
                  is_high_availability: bool,
+                 is_kafka_configured: bool,
                  is_secure: bool,
+                 kafka_broker_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceKafkaBrokerNodeResult'],
                  kerberos_realm_name: str,
                  kms_key_id: str,
                  master_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceMasterNodeResult'],
                  network_configs: Sequence['outputs.GetBdsInstancesBdsInstanceNetworkConfigResult'],
                  nodes: Sequence['outputs.GetBdsInstancesBdsInstanceNodeResult'],
                  number_of_nodes: int,
+                 number_of_nodes_requiring_maintenance_reboot: int,
+                 os_patch_version: str,
                  state: str,
                  time_created: str,
                  time_updated: str,
@@ -5903,11 +6323,13 @@ class GetBdsInstancesBdsInstanceResult(dict):
         :param str id: The OCID of the Big Data Service resource.
         :param bool is_cloud_sql_configured: Boolean flag specifying whether or not Cloud SQL should be configured.
         :param bool is_high_availability: Boolean flag specifying whether or not the cluster is highly available (HA)
+        :param bool is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
         :param bool is_secure: Boolean flag specifying whether or not the cluster should be set up as secure.
         :param str kms_key_id: The OCID of the Key Management master encryption key.
         :param Sequence['GetBdsInstancesBdsInstanceNetworkConfigArgs'] network_configs: Additional configuration of the user's network.
         :param Sequence['GetBdsInstancesBdsInstanceNodeArgs'] nodes: The list of nodes in the cluster.
         :param int number_of_nodes: The number of nodes that form the cluster.
+        :param int number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param str state: The state of the cluster.
         :param str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param str time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
@@ -5930,13 +6352,17 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
         pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         pulumi.set(__self__, "is_high_availability", is_high_availability)
+        pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
         pulumi.set(__self__, "is_secure", is_secure)
+        pulumi.set(__self__, "kafka_broker_nodes", kafka_broker_nodes)
         pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "master_nodes", master_nodes)
         pulumi.set(__self__, "network_configs", network_configs)
         pulumi.set(__self__, "nodes", nodes)
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
+        pulumi.set(__self__, "number_of_nodes_requiring_maintenance_reboot", number_of_nodes_requiring_maintenance_reboot)
+        pulumi.set(__self__, "os_patch_version", os_patch_version)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -6073,12 +6499,25 @@ class GetBdsInstancesBdsInstanceResult(dict):
         return pulumi.get(self, "is_high_availability")
 
     @property
+    @pulumi.getter(name="isKafkaConfigured")
+    def is_kafka_configured(self) -> bool:
+        """
+        Boolean flag specifying whether or not Kafka should be configured.
+        """
+        return pulumi.get(self, "is_kafka_configured")
+
+    @property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> bool:
         """
         Boolean flag specifying whether or not the cluster should be set up as secure.
         """
         return pulumi.get(self, "is_secure")
+
+    @property
+    @pulumi.getter(name="kafkaBrokerNodes")
+    def kafka_broker_nodes(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceKafkaBrokerNodeResult']:
+        return pulumi.get(self, "kafka_broker_nodes")
 
     @property
     @pulumi.getter(name="kerberosRealmName")
@@ -6121,6 +6560,19 @@ class GetBdsInstancesBdsInstanceResult(dict):
         The number of nodes that form the cluster.
         """
         return pulumi.get(self, "number_of_nodes")
+
+    @property
+    @pulumi.getter(name="numberOfNodesRequiringMaintenanceReboot")
+    def number_of_nodes_requiring_maintenance_reboot(self) -> int:
+        """
+        Number of nodes that require a maintenance reboot
+        """
+        return pulumi.get(self, "number_of_nodes_requiring_maintenance_reboot")
+
+    @property
+    @pulumi.getter(name="osPatchVersion")
+    def os_patch_version(self) -> str:
+        return pulumi.get(self, "os_patch_version")
 
     @property
     @pulumi.getter
@@ -6650,6 +7102,100 @@ class GetBdsInstancesBdsInstanceEdgeNodeShapeConfigResult(dict):
 
 
 @pulumi.output_type
+class GetBdsInstancesBdsInstanceKafkaBrokerNodeResult(dict):
+    def __init__(__self__, *,
+                 block_volume_size_in_gbs: str,
+                 number_of_kafka_nodes: int,
+                 shape: str,
+                 shape_configs: Sequence['outputs.GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigResult'],
+                 subnet_id: str):
+        """
+        :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param str shape: Shape of the node.
+        :param str subnet_id: The OCID of the subnet in which the node is to be created.
+        """
+        pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
+        pulumi.set(__self__, "number_of_kafka_nodes", number_of_kafka_nodes)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_configs", shape_configs)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> str:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="numberOfKafkaNodes")
+    def number_of_kafka_nodes(self) -> int:
+        return pulumi.get(self, "number_of_kafka_nodes")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the node.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigResult']:
+        return pulumi.get(self, "shape_configs")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet in which the node is to be created.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: int,
+                 nvmes: int,
+                 ocpus: int):
+        """
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param int ocpus: The total number of OCPUs available to the node.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> int:
+        """
+        The total amount of memory available to the node, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> int:
+        """
+        The total number of OCPUs available to the node.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
 class GetBdsInstancesBdsInstanceMasterNodeResult(dict):
     def __init__(__self__, *,
                  block_volume_size_in_gbs: str,
@@ -6794,7 +7340,8 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
                  ssh_fingerprint: str,
                  state: str,
                  subnet_id: str,
-                 time_created: str):
+                 time_created: str,
+                 time_maintenance_reboot_due: str):
         """
         :param Sequence['GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArgs'] attached_block_volumes: The list of block volumes attached to a given node.
         :param str availability_domain: The name of the availability domain in which the node is running.
@@ -6812,6 +7359,7 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         :param str state: The state of the cluster.
         :param str subnet_id: The OCID of the subnet in which the node is to be created.
         :param str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
         """
         pulumi.set(__self__, "attached_block_volumes", attached_block_volumes)
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -6829,6 +7377,7 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_maintenance_reboot_due", time_maintenance_reboot_due)
 
     @property
     @pulumi.getter(name="attachedBlockVolumes")
@@ -6957,6 +7506,14 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeMaintenanceRebootDue")
+    def time_maintenance_reboot_due(self) -> str:
+        """
+        The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_maintenance_reboot_due")
 
 
 @pulumi.output_type

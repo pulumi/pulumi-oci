@@ -64,14 +64,14 @@ public final class InstancePoolPlacementConfigurationArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
      * 
      */
     @Import(name="primarySubnetId", required=true)
     private Output<String> primarySubnetId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
      * 
      */
     public Output<String> primarySubnetId() {
@@ -197,7 +197,7 @@ public final class InstancePoolPlacementConfigurationArgs extends com.pulumi.res
         }
 
         /**
-         * @param primarySubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         * @param primarySubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class InstancePoolPlacementConfigurationArgs extends com.pulumi.res
         }
 
         /**
-         * @param primarySubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         * @param primarySubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
          * 
          * @return builder
          * 

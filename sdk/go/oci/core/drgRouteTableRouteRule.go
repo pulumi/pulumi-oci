@@ -67,6 +67,9 @@ type DrgRouteTableRouteRule struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType pulumi.StringOutput `pulumi:"destinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	DrgRouteTableId pulumi.StringOutput `pulumi:"drgRouteTableId"`
 	// Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
 	IsBlackhole pulumi.BoolOutput `pulumi:"isBlackhole"`
@@ -135,6 +138,9 @@ type drgRouteTableRouteRuleState struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType *string `pulumi:"destinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	DrgRouteTableId *string `pulumi:"drgRouteTableId"`
 	// Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
 	IsBlackhole *bool `pulumi:"isBlackhole"`
@@ -162,6 +168,9 @@ type DrgRouteTableRouteRuleState struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	DrgRouteTableId pulumi.StringPtrInput
 	// Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
 	IsBlackhole pulumi.BoolPtrInput
@@ -191,6 +200,9 @@ type drgRouteTableRouteRuleArgs struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType string `pulumi:"destinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	DrgRouteTableId string `pulumi:"drgRouteTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
 	//
@@ -209,6 +221,9 @@ type DrgRouteTableRouteRuleArgs struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	DrgRouteTableId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
 	//
@@ -323,6 +338,9 @@ func (o DrgRouteTableRouteRuleOutput) DestinationType() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+//
+// Potential values:
+// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 func (o DrgRouteTableRouteRuleOutput) DrgRouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.StringOutput { return v.DrgRouteTableId }).(pulumi.StringOutput)
 }

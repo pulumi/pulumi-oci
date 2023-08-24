@@ -33,6 +33,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeReleased;
+        /// <summary>
+        /// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeSupportedUntil;
 
         [OutputConstructor]
         private GetDeploymentVersionsDeploymentVersionCollectionItemResult(
@@ -44,13 +48,16 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string releaseType,
 
-            string timeReleased)
+            string timeReleased,
+
+            string timeSupportedUntil)
         {
             DeploymentType = deploymentType;
             IsSecurityFix = isSecurityFix;
             OggVersion = oggVersion;
             ReleaseType = releaseType;
             TimeReleased = timeReleased;
+            TimeSupportedUntil = timeSupportedUntil;
         }
     }
 }

@@ -17,14 +17,14 @@ public final class ComputeCapacityReservationInstanceReservationConfigClusterCon
     public static final ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs Empty = new ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     @Import(name="hpcIslandId", required=true)
     private Output<String> hpcIslandId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     public Output<String> hpcIslandId() {
@@ -32,14 +32,14 @@ public final class ComputeCapacityReservationInstanceReservationConfigClusterCon
     }
 
     /**
-     * (Updatable) The list of OCID of the network blocks.
+     * (Updatable) The list of OCIDs of the network blocks.
      * 
      */
     @Import(name="networkBlockIds")
     private @Nullable Output<List<String>> networkBlockIds;
 
     /**
-     * @return (Updatable) The list of OCID of the network blocks.
+     * @return (Updatable) The list of OCIDs of the network blocks.
      * 
      */
     public Optional<Output<List<String>>> networkBlockIds() {
@@ -72,7 +72,7 @@ public final class ComputeCapacityReservationInstanceReservationConfigClusterCon
         }
 
         /**
-         * @param hpcIslandId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+         * @param hpcIslandId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ComputeCapacityReservationInstanceReservationConfigClusterCon
         }
 
         /**
-         * @param hpcIslandId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+         * @param hpcIslandId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ComputeCapacityReservationInstanceReservationConfigClusterCon
         }
 
         /**
-         * @param networkBlockIds (Updatable) The list of OCID of the network blocks.
+         * @param networkBlockIds (Updatable) The list of OCIDs of the network blocks.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ComputeCapacityReservationInstanceReservationConfigClusterCon
         }
 
         /**
-         * @param networkBlockIds (Updatable) The list of OCID of the network blocks.
+         * @param networkBlockIds (Updatable) The list of OCIDs of the network blocks.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class ComputeCapacityReservationInstanceReservationConfigClusterCon
         }
 
         /**
-         * @param networkBlockIds (Updatable) The list of OCID of the network blocks.
+         * @param networkBlockIds (Updatable) The list of OCIDs of the network blocks.
          * 
          * @return builder
          * 

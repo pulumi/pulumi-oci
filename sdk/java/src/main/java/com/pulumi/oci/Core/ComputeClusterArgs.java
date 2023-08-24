@@ -18,14 +18,14 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
     public static final ComputeClusterArgs Empty = new ComputeClusterArgs();
 
     /**
-     * The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Import(name="availabilityDomain", required=true)
     private Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * @return The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Output<String> availabilityDomain() {
@@ -33,14 +33,14 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -127,7 +127,7 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param availabilityDomain The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param availabilityDomain The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * 
          * @return builder
          * 

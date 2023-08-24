@@ -31,7 +31,7 @@ class Ipv6Args:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] ip_address: An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
-        :param pulumi.Input[str] ipv6subnet_cidr: The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        :param pulumi.Input[str] ipv6subnet_cidr: The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         """
         pulumi.set(__self__, "vnic_id", vnic_id)
         if defined_tags is not None:
@@ -113,7 +113,7 @@ class Ipv6Args:
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
         """
-        The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         """
         return pulumi.get(self, "ipv6subnet_cidr")
 
@@ -142,7 +142,7 @@ class _Ipv6State:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] ip_address: An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
-        :param pulumi.Input[str] ipv6subnet_cidr: The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        :param pulumi.Input[str] ipv6subnet_cidr: The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         :param pulumi.Input[str] state: The IPv6's current state.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
         :param pulumi.Input[str] time_created: The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -237,7 +237,7 @@ class _Ipv6State:
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
         """
-        The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         """
         return pulumi.get(self, "ipv6subnet_cidr")
 
@@ -348,7 +348,7 @@ class Ipv6(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] ip_address: An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
-        :param pulumi.Input[str] ipv6subnet_cidr: The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        :param pulumi.Input[str] ipv6subnet_cidr: The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         :param pulumi.Input[str] vnic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet. 
                
                
@@ -467,7 +467,7 @@ class Ipv6(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] ip_address: An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
-        :param pulumi.Input[str] ipv6subnet_cidr: The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        :param pulumi.Input[str] ipv6subnet_cidr: The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         :param pulumi.Input[str] state: The IPv6's current state.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
         :param pulumi.Input[str] time_created: The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -537,7 +537,7 @@ class Ipv6(pulumi.CustomResource):
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> pulumi.Output[str]:
         """
-        The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         """
         return pulumi.get(self, "ipv6subnet_cidr")
 

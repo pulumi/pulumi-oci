@@ -94,6 +94,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string LifecycleSubState;
         /// <summary>
+        /// Attributes for configuring automatic deployment maintenance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult> MaintenanceConfigurations;
+        /// <summary>
         /// Defines the maintenance window, when automatic actions can be performed.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult> MaintenanceWindows;
@@ -146,6 +150,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string TimeOfNextMaintenance;
         /// <summary>
+        /// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeOggVersionSupportedUntil;
+        /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeUpdated;
@@ -196,6 +204,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string lifecycleSubState,
 
+            ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult> maintenanceConfigurations,
+
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult> maintenanceWindows,
 
             string nextMaintenanceActionType,
@@ -222,6 +232,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string timeOfNextMaintenance,
 
+            string timeOggVersionSupportedUntil,
+
             string timeUpdated,
 
             string timeUpgradeRequired)
@@ -246,6 +258,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
             LifecycleSubState = lifecycleSubState;
+            MaintenanceConfigurations = maintenanceConfigurations;
             MaintenanceWindows = maintenanceWindows;
             NextMaintenanceActionType = nextMaintenanceActionType;
             NextMaintenanceDescription = nextMaintenanceDescription;
@@ -259,6 +272,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeOfNextMaintenance = timeOfNextMaintenance;
+            TimeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             TimeUpdated = timeUpdated;
             TimeUpgradeRequired = timeUpgradeRequired;
         }

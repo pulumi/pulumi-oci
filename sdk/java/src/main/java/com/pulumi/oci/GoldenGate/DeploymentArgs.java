@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceConfigurationArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceWindowArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentOggDataArgs;
 import java.lang.Boolean;
@@ -203,6 +204,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Defines the maintenance configuration for create operation.
+     * 
+     */
+    @Import(name="maintenanceConfiguration")
+    private @Nullable Output<DeploymentMaintenanceConfigurationArgs> maintenanceConfiguration;
+
+    /**
+     * @return (Updatable) Defines the maintenance configuration for create operation.
+     * 
+     */
+    public Optional<Output<DeploymentMaintenanceConfigurationArgs>> maintenanceConfiguration() {
+        return Optional.ofNullable(this.maintenanceConfiguration);
+    }
+
+    /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      * 
      */
@@ -292,6 +308,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
         this.isPublic = $.isPublic;
         this.licenseModel = $.licenseModel;
+        this.maintenanceConfiguration = $.maintenanceConfiguration;
         this.maintenanceWindow = $.maintenanceWindow;
         this.nsgIds = $.nsgIds;
         this.oggData = $.oggData;
@@ -567,6 +584,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder licenseModel(String licenseModel) {
             return licenseModel(Output.of(licenseModel));
+        }
+
+        /**
+         * @param maintenanceConfiguration (Updatable) Defines the maintenance configuration for create operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceConfiguration(@Nullable Output<DeploymentMaintenanceConfigurationArgs> maintenanceConfiguration) {
+            $.maintenanceConfiguration = maintenanceConfiguration;
+            return this;
+        }
+
+        /**
+         * @param maintenanceConfiguration (Updatable) Defines the maintenance configuration for create operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceConfiguration(DeploymentMaintenanceConfigurationArgs maintenanceConfiguration) {
+            return maintenanceConfiguration(Output.of(maintenanceConfiguration));
         }
 
         /**

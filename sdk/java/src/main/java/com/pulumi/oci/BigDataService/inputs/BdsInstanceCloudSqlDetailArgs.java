@@ -111,7 +111,6 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
 
     /**
      * The total number of OCPUs available to the node.
-     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
@@ -121,7 +120,6 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
 
     /**
      * @return The total number of OCPUs available to the node.
-     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
@@ -314,7 +312,6 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
 
         /**
          * @param ocpus The total number of OCPUs available to the node.
-         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
@@ -328,7 +325,6 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
 
         /**
          * @param ocpus The total number of OCPUs available to the node.
-         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 

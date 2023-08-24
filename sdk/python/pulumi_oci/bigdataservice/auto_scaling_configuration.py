@@ -28,7 +28,7 @@ class AutoScalingConfigurationArgs:
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs'] policy_details: (Updatable) Policy definition for the autoscale configuration.
@@ -94,7 +94,7 @@ class AutoScalingConfigurationArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> pulumi.Input[str]:
         """
-        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         """
         return pulumi.get(self, "node_type")
 
@@ -168,7 +168,7 @@ class _AutoScalingConfigurationState:
         :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs'] policy_details: (Updatable) Policy definition for the autoscale configuration.
                
@@ -258,7 +258,7 @@ class _AutoScalingConfigurationState:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[str]]:
         """
-        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         """
         return pulumi.get(self, "node_type")
 
@@ -414,7 +414,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
                
@@ -574,7 +574,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
                
@@ -643,7 +643,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="nodeType")
     def node_type(self) -> pulumi.Output[str]:
         """
-        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         """
         return pulumi.get(self, "node_type")
 

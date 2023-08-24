@@ -69,7 +69,7 @@ type LookupAutoScalingConfigurationResult struct {
 	// The unique identifier for the autoscale configuration.
 	Id        string `pulumi:"id"`
 	IsEnabled bool   `pulumi:"isEnabled"`
-	// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+	// A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
 	NodeType string `pulumi:"nodeType"`
 	// This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policies []GetAutoScalingConfigurationPolicy `pulumi:"policies"`
@@ -149,7 +149,7 @@ func (o LookupAutoScalingConfigurationResultOutput) IsEnabled() pulumi.BoolOutpu
 	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+// A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
 func (o LookupAutoScalingConfigurationResultOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.NodeType }).(pulumi.StringOutput)
 }

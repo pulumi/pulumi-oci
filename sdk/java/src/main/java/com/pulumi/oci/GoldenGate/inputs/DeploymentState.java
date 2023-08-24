@@ -6,6 +6,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentDeploymentDiagnosticDataArgs;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceConfigurationArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceWindowArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentOggDataArgs;
 import java.lang.Boolean;
@@ -309,6 +310,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Defines the maintenance configuration for create operation.
+     * 
+     */
+    @Import(name="maintenanceConfiguration")
+    private @Nullable Output<DeploymentMaintenanceConfigurationArgs> maintenanceConfiguration;
+
+    /**
+     * @return (Updatable) Defines the maintenance configuration for create operation.
+     * 
+     */
+    public Optional<Output<DeploymentMaintenanceConfigurationArgs>> maintenanceConfiguration() {
+        return Optional.ofNullable(this.maintenanceConfiguration);
+    }
+
+    /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      * 
      */
@@ -504,6 +520,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    @Import(name="timeOggVersionSupportedUntil")
+    private @Nullable Output<String> timeOggVersionSupportedUntil;
+
+    /**
+     * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public Optional<Output<String>> timeOggVersionSupportedUntil() {
+        return Optional.ofNullable(this.timeOggVersionSupportedUntil);
+    }
+
+    /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -555,6 +586,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
         this.lifecycleSubState = $.lifecycleSubState;
+        this.maintenanceConfiguration = $.maintenanceConfiguration;
         this.maintenanceWindow = $.maintenanceWindow;
         this.nextMaintenanceActionType = $.nextMaintenanceActionType;
         this.nextMaintenanceDescription = $.nextMaintenanceDescription;
@@ -568,6 +600,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeOfNextMaintenance = $.timeOfNextMaintenance;
+        this.timeOggVersionSupportedUntil = $.timeOggVersionSupportedUntil;
         this.timeUpdated = $.timeUpdated;
         this.timeUpgradeRequired = $.timeUpgradeRequired;
     }
@@ -1000,6 +1033,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param maintenanceConfiguration (Updatable) Defines the maintenance configuration for create operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceConfiguration(@Nullable Output<DeploymentMaintenanceConfigurationArgs> maintenanceConfiguration) {
+            $.maintenanceConfiguration = maintenanceConfiguration;
+            return this;
+        }
+
+        /**
+         * @param maintenanceConfiguration (Updatable) Defines the maintenance configuration for create operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceConfiguration(DeploymentMaintenanceConfigurationArgs maintenanceConfiguration) {
+            return maintenanceConfiguration(Output.of(maintenanceConfiguration));
+        }
+
+        /**
          * @param maintenanceWindow (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
          * 
          * @return builder
@@ -1280,6 +1334,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeOfNextMaintenance(String timeOfNextMaintenance) {
             return timeOfNextMaintenance(Output.of(timeOfNextMaintenance));
+        }
+
+        /**
+         * @param timeOggVersionSupportedUntil The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOggVersionSupportedUntil(@Nullable Output<String> timeOggVersionSupportedUntil) {
+            $.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
+            return this;
+        }
+
+        /**
+         * @param timeOggVersionSupportedUntil The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOggVersionSupportedUntil(String timeOggVersionSupportedUntil) {
+            return timeOggVersionSupportedUntil(Output.of(timeOggVersionSupportedUntil));
         }
 
         /**

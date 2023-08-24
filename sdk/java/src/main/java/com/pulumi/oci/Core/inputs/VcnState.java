@@ -21,14 +21,14 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
     public static final VcnState Empty = new VcnState();
 
     /**
-     * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      * 
      */
     @Import(name="byoipv6cidrBlocks")
     private @Nullable Output<List<String>> byoipv6cidrBlocks;
 
     /**
-     * @return The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * @return The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      * 
      */
     public Optional<Output<List<String>>> byoipv6cidrBlocks() {
@@ -36,14 +36,14 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      * 
      */
     @Import(name="byoipv6cidrDetails")
     private @Nullable Output<List<VcnByoipv6cidrDetailArgs>> byoipv6cidrDetails;
 
     /**
-     * @return The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * @return The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      * 
      */
     public Optional<Output<List<VcnByoipv6cidrDetailArgs>>> byoipv6cidrDetails() {
@@ -51,14 +51,14 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+     * **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
      * 
      */
     @Import(name="cidrBlock")
     private @Nullable Output<String> cidrBlock;
 
     /**
-     * @return **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+     * @return **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
      * 
      */
     public Optional<Output<String>> cidrBlock() {
@@ -69,8 +69,8 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-     *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+     *   **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
      * 
      */
     @Import(name="cidrBlocks")
@@ -80,8 +80,8 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
      * @return (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-     *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+     *   **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
      * 
      */
     public Optional<Output<List<String>>> cidrBlocks() {
@@ -219,14 +219,14 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN&#39;s IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+     * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      * 
      */
     @Import(name="ipv6cidrBlocks")
     private @Nullable Output<List<String>> ipv6cidrBlocks;
 
     /**
-     * @return For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN&#39;s IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+     * @return For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      * 
      */
     public Optional<Output<List<String>>> ipv6cidrBlocks() {
@@ -236,10 +236,10 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
     /**
      * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
      * * The CIDR blocks must be valid.
-     * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+     * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+     * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      * 
-     * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+     * **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
      * 
      */
     @Import(name="ipv6privateCidrBlocks")
@@ -248,10 +248,10 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
      * * The CIDR blocks must be valid.
-     * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+     * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+     * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      * 
-     * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+     * **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
      * 
      */
     public Optional<Output<List<String>>> ipv6privateCidrBlocks() {
@@ -382,7 +382,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param byoipv6cidrBlocks The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * @param byoipv6cidrBlocks The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param byoipv6cidrBlocks The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * @param byoipv6cidrBlocks The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param byoipv6cidrBlocks The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * @param byoipv6cidrBlocks The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param byoipv6cidrDetails The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * @param byoipv6cidrDetails The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param byoipv6cidrDetails The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * @param byoipv6cidrDetails The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param byoipv6cidrDetails The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * @param byoipv6cidrDetails The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cidrBlock **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+         * @param cidrBlock **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cidrBlock **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+         * @param cidrBlock **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
          * 
          * @return builder
          * 
@@ -468,8 +468,8 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
          * @param cidrBlocks (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
          * * The CIDR blocks must be valid.
          * * They must not overlap with each other or with the on-premises network CIDR block.
-         * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-         *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+         * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+         *   **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
          * 
          * @return builder
          * 
@@ -483,8 +483,8 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
          * @param cidrBlocks (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
          * * The CIDR blocks must be valid.
          * * They must not overlap with each other or with the on-premises network CIDR block.
-         * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-         *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+         * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+         *   **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
          * 
          * @return builder
          * 
@@ -497,8 +497,8 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
          * @param cidrBlocks (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
          * * The CIDR blocks must be valid.
          * * They must not overlap with each other or with the on-premises network CIDR block.
-         * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-         *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+         * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+         *   **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
          * 
          * @return builder
          * 
@@ -686,7 +686,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6cidrBlocks For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN&#39;s IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+         * @param ipv6cidrBlocks For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
          * 
          * @return builder
          * 
@@ -697,7 +697,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6cidrBlocks For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN&#39;s IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+         * @param ipv6cidrBlocks For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
          * 
          * @return builder
          * 
@@ -707,7 +707,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6cidrBlocks For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN&#39;s IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+         * @param ipv6cidrBlocks For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
          * 
          * @return builder
          * 
@@ -719,10 +719,10 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ipv6privateCidrBlocks The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
          * * The CIDR blocks must be valid.
-         * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-         * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+         * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+         * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
          * 
-         * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+         * **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
          * 
          * @return builder
          * 
@@ -735,10 +735,10 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ipv6privateCidrBlocks The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
          * * The CIDR blocks must be valid.
-         * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-         * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+         * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+         * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
          * 
-         * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+         * **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
          * 
          * @return builder
          * 
@@ -750,10 +750,10 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ipv6privateCidrBlocks The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
          * * The CIDR blocks must be valid.
-         * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-         * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+         * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+         * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
          * 
-         * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+         * **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
          * 
          * @return builder
          * 

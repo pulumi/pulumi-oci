@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
     ///         HostnameLabel = @var.Private_ip_hostname_label,
     ///         IpAddress = @var.Private_ip_ip_address,
     ///         VlanId = oci_core_vlan.Test_vlan.Id,
-    ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+    ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Vnic_id,
     ///     });
     /// 
     /// });

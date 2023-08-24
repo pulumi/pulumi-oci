@@ -20,12 +20,12 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetail {
      */
     private @Nullable String scheduleType;
     /**
-     * @return (Updatable)
+     * @return (Updatable) Time of day and horizontal scaling configuration.
      * 
      */
     private @Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs;
     /**
-     * @return (Updatable)
+     * @return (Updatable) Time of day and vertical scaling configuration
      * 
      */
     private @Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs;
@@ -39,14 +39,14 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetail {
         return Optional.ofNullable(this.scheduleType);
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) Time of day and horizontal scaling configuration.
      * 
      */
     public List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs() {
         return this.timeAndHorizontalScalingConfigs == null ? List.of() : this.timeAndHorizontalScalingConfigs;
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) Time of day and vertical scaling configuration
      * 
      */
     public List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs() {

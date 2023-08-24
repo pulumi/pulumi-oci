@@ -16,6 +16,7 @@ public final class GetClusterNetworkPlacementConfiguration {
      * 
      */
     private String availabilityDomain;
+    private String placementConstraint;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
      * 
@@ -34,6 +35,9 @@ public final class GetClusterNetworkPlacementConfiguration {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    public String placementConstraint() {
+        return this.placementConstraint;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
@@ -60,12 +64,14 @@ public final class GetClusterNetworkPlacementConfiguration {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private String placementConstraint;
         private String primarySubnetId;
         private List<GetClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
         public Builder() {}
         public Builder(GetClusterNetworkPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.placementConstraint = defaults.placementConstraint;
     	      this.primarySubnetId = defaults.primarySubnetId;
     	      this.secondaryVnicSubnets = defaults.secondaryVnicSubnets;
         }
@@ -73,6 +79,11 @@ public final class GetClusterNetworkPlacementConfiguration {
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder placementConstraint(String placementConstraint) {
+            this.placementConstraint = Objects.requireNonNull(placementConstraint);
             return this;
         }
         @CustomType.Setter
@@ -91,6 +102,7 @@ public final class GetClusterNetworkPlacementConfiguration {
         public GetClusterNetworkPlacementConfiguration build() {
             final var o = new GetClusterNetworkPlacementConfiguration();
             o.availabilityDomain = availabilityDomain;
+            o.placementConstraint = placementConstraint;
             o.primarySubnetId = primarySubnetId;
             o.secondaryVnicSubnets = secondaryVnicSubnets;
             return o;

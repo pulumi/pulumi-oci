@@ -77,6 +77,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+        /// </summary>
+        public readonly string TimeMaintenanceRebootDue;
 
         [OutputConstructor]
         private GetBdsInstancesBdsInstanceNodeResult(
@@ -110,7 +114,9 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string subnetId,
 
-            string timeCreated)
+            string timeCreated,
+
+            string timeMaintenanceRebootDue)
         {
             AttachedBlockVolumes = attachedBlockVolumes;
             AvailabilityDomain = availabilityDomain;
@@ -128,6 +134,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;
+            TimeMaintenanceRebootDue = timeMaintenanceRebootDue;
         }
     }
 }

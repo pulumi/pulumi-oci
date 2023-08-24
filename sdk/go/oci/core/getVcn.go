@@ -58,7 +58,7 @@ type LookupVcnArgs struct {
 
 // A collection of values returned by getVcn.
 type LookupVcnResult struct {
-	// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+	// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 	Byoipv6cidrBlocks  []string                  `pulumi:"byoipv6cidrBlocks"`
 	Byoipv6cidrDetails []GetVcnByoipv6cidrDetail `pulumi:"byoipv6cidrDetails"`
 	// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
@@ -83,9 +83,9 @@ type LookupVcnResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id string `pulumi:"id"`
-	// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+	// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
 	Ipv6cidrBlocks []string `pulumi:"ipv6cidrBlocks"`
-	// For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+	// For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
 	Ipv6privateCidrBlocks        []string `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                bool     `pulumi:"isIpv6enabled"`
 	IsOracleGuaAllocationEnabled bool     `pulumi:"isOracleGuaAllocationEnabled"`
@@ -136,7 +136,7 @@ func (o LookupVcnResultOutput) ToLookupVcnResultOutputWithContext(ctx context.Co
 	return o
 }
 
-// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 func (o LookupVcnResultOutput) Byoipv6cidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupVcnResult) []string { return v.Byoipv6cidrBlocks }).(pulumi.StringArrayOutput)
 }
@@ -200,12 +200,12 @@ func (o LookupVcnResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVcnResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
 func (o LookupVcnResultOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupVcnResult) []string { return v.Ipv6cidrBlocks }).(pulumi.StringArrayOutput)
 }
 
-// For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+// For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
 func (o LookupVcnResultOutput) Ipv6privateCidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupVcnResult) []string { return v.Ipv6privateCidrBlocks }).(pulumi.StringArrayOutput)
 }

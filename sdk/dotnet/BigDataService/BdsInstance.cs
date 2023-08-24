@@ -14,106 +14,6 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// Creates a new BDS instance.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testBdsInstance = new Oci.BigDataService.BdsInstance("testBdsInstance", new()
-    ///     {
-    ///         ClusterAdminPassword = @var.Bds_instance_cluster_admin_password,
-    ///         ClusterPublicKey = @var.Bds_instance_cluster_public_key,
-    ///         ClusterVersion = @var.Bds_instance_cluster_version,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Bds_instance_display_name,
-    ///         IsHighAvailability = @var.Bds_instance_is_high_availability,
-    ///         IsSecure = @var.Bds_instance_is_secure,
-    ///         MasterNode = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeArgs
-    ///         {
-    ///             Shape = @var.Bds_instance_nodes_shape,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
-    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
-    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
-    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
-    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
-    ///             },
-    ///         },
-    ///         UtilNode = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeArgs
-    ///         {
-    ///             Shape = @var.Bds_instance_nodes_shape,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
-    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
-    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
-    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
-    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
-    ///             },
-    ///         },
-    ///         WorkerNode = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeArgs
-    ///         {
-    ///             Shape = @var.Bds_instance_nodes_shape,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
-    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
-    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
-    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
-    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
-    ///             },
-    ///         },
-    ///         ComputeOnlyWorkerNode = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeArgs
-    ///         {
-    ///             Shape = @var.Bds_instance_nodes_shape,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
-    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
-    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
-    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
-    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
-    ///             },
-    ///         },
-    ///         EdgeNode = new Oci.BigDataService.Inputs.BdsInstanceEdgeNodeArgs
-    ///         {
-    ///             Shape = @var.Bds_instance_nodes_shape,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
-    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
-    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceEdgeNodeShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
-    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
-    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
-    ///             },
-    ///         },
-    ///         BootstrapScriptUrl = @var.Bds_instance_bootstrap_script_url,
-    ///         ClusterProfile = @var.Bds_instance_cluster_profile,
-    ///         DefinedTags = @var.Bds_instance_defined_tags,
-    ///         FreeformTags = @var.Bds_instance_freeform_tags,
-    ///         KerberosRealmName = @var.Bds_instance_kerberos_realm_name,
-    ///         KmsKeyId = @var.Bds_instance_kms_key_id,
-    ///         NetworkConfig = new Oci.BigDataService.Inputs.BdsInstanceNetworkConfigArgs
-    ///         {
-    ///             CidrBlock = @var.Bds_instance_network_config_cidr_block,
-    ///             IsNatGatewayRequired = @var.Bds_instance_network_config_is_nat_gateway_required,
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// BdsInstances can be imported using the `id`, e.g.
@@ -222,10 +122,22 @@ namespace Pulumi.Oci.BigDataService
         public Output<bool> IsHighAvailability { get; private set; } = null!;
 
         /// <summary>
+        /// Boolean flag specifying whether or not Kafka should be configured.
+        /// </summary>
+        [Output("isKafkaConfigured")]
+        public Output<bool?> IsKafkaConfigured { get; private set; } = null!;
+
+        /// <summary>
         /// Boolean flag specifying whether or not the cluster should be setup as secure.
         /// </summary>
         [Output("isSecure")]
         public Output<bool> IsSecure { get; private set; } = null!;
+
+        /// <summary>
+        /// The kafka broker node in the BDS instance
+        /// </summary>
+        [Output("kafkaBrokerNode")]
+        public Output<Outputs.BdsInstanceKafkaBrokerNode?> KafkaBrokerNode { get; private set; } = null!;
 
         /// <summary>
         /// The user-defined kerberos realm name.
@@ -246,13 +158,13 @@ namespace Pulumi.Oci.BigDataService
         public Output<Outputs.BdsInstanceMasterNode> MasterNode { get; private set; } = null!;
 
         /// <summary>
-        /// Additional configuration of customer's network.
+        /// Additional configuration of the user's network.
         /// </summary>
         [Output("networkConfig")]
         public Output<Outputs.BdsInstanceNetworkConfig> NetworkConfig { get; private set; } = null!;
 
         /// <summary>
-        /// The list of nodes in the BDS instance
+        /// The list of nodes in the Big Data Service cluster.
         /// </summary>
         [Output("nodes")]
         public Output<ImmutableArray<Outputs.BdsInstanceNode>> Nodes { get; private set; } = null!;
@@ -262,6 +174,18 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Output("numberOfNodes")]
         public Output<int> NumberOfNodes { get; private set; } = null!;
+
+        /// <summary>
+        /// Number of nodes that require a maintenance reboot
+        /// </summary>
+        [Output("numberOfNodesRequiringMaintenanceReboot")]
+        public Output<int> NumberOfNodesRequiringMaintenanceReboot { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The version of the patch to be upated.
+        /// </summary>
+        [Output("osPatchVersion")]
+        public Output<string?> OsPatchVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -453,10 +377,22 @@ namespace Pulumi.Oci.BigDataService
         public Input<bool> IsHighAvailability { get; set; } = null!;
 
         /// <summary>
+        /// Boolean flag specifying whether or not Kafka should be configured.
+        /// </summary>
+        [Input("isKafkaConfigured")]
+        public Input<bool>? IsKafkaConfigured { get; set; }
+
+        /// <summary>
         /// Boolean flag specifying whether or not the cluster should be setup as secure.
         /// </summary>
         [Input("isSecure", required: true)]
         public Input<bool> IsSecure { get; set; } = null!;
+
+        /// <summary>
+        /// The kafka broker node in the BDS instance
+        /// </summary>
+        [Input("kafkaBrokerNode")]
+        public Input<Inputs.BdsInstanceKafkaBrokerNodeArgs>? KafkaBrokerNode { get; set; }
 
         /// <summary>
         /// The user-defined kerberos realm name.
@@ -477,10 +413,16 @@ namespace Pulumi.Oci.BigDataService
         public Input<Inputs.BdsInstanceMasterNodeArgs> MasterNode { get; set; } = null!;
 
         /// <summary>
-        /// Additional configuration of customer's network.
+        /// Additional configuration of the user's network.
         /// </summary>
         [Input("networkConfig")]
         public Input<Inputs.BdsInstanceNetworkConfigArgs>? NetworkConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) The version of the patch to be upated.
+        /// </summary>
+        [Input("osPatchVersion")]
+        public Input<string>? OsPatchVersion { get; set; }
 
         /// <summary>
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -636,10 +578,22 @@ namespace Pulumi.Oci.BigDataService
         public Input<bool>? IsHighAvailability { get; set; }
 
         /// <summary>
+        /// Boolean flag specifying whether or not Kafka should be configured.
+        /// </summary>
+        [Input("isKafkaConfigured")]
+        public Input<bool>? IsKafkaConfigured { get; set; }
+
+        /// <summary>
         /// Boolean flag specifying whether or not the cluster should be setup as secure.
         /// </summary>
         [Input("isSecure")]
         public Input<bool>? IsSecure { get; set; }
+
+        /// <summary>
+        /// The kafka broker node in the BDS instance
+        /// </summary>
+        [Input("kafkaBrokerNode")]
+        public Input<Inputs.BdsInstanceKafkaBrokerNodeGetArgs>? KafkaBrokerNode { get; set; }
 
         /// <summary>
         /// The user-defined kerberos realm name.
@@ -660,7 +614,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<Inputs.BdsInstanceMasterNodeGetArgs>? MasterNode { get; set; }
 
         /// <summary>
-        /// Additional configuration of customer's network.
+        /// Additional configuration of the user's network.
         /// </summary>
         [Input("networkConfig")]
         public Input<Inputs.BdsInstanceNetworkConfigGetArgs>? NetworkConfig { get; set; }
@@ -669,7 +623,7 @@ namespace Pulumi.Oci.BigDataService
         private InputList<Inputs.BdsInstanceNodeGetArgs>? _nodes;
 
         /// <summary>
-        /// The list of nodes in the BDS instance
+        /// The list of nodes in the Big Data Service cluster.
         /// </summary>
         public InputList<Inputs.BdsInstanceNodeGetArgs> Nodes
         {
@@ -682,6 +636,18 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("numberOfNodes")]
         public Input<int>? NumberOfNodes { get; set; }
+
+        /// <summary>
+        /// Number of nodes that require a maintenance reboot
+        /// </summary>
+        [Input("numberOfNodesRequiringMaintenanceReboot")]
+        public Input<int>? NumberOfNodesRequiringMaintenanceReboot { get; set; }
+
+        /// <summary>
+        /// (Updatable) The version of the patch to be upated.
+        /// </summary>
+        [Input("osPatchVersion")]
+        public Input<string>? OsPatchVersion { get; set; }
 
         /// <summary>
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

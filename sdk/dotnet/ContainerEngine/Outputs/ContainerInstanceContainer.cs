@@ -88,6 +88,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly Outputs.ContainerInstanceContainerResourceConfig? ResourceConfig;
         /// <summary>
+        /// Security context for container.
+        /// </summary>
+        public readonly Outputs.ContainerInstanceContainerSecurityContext? SecurityContext;
+        /// <summary>
         /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
         /// 
         /// 
@@ -153,6 +157,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             Outputs.ContainerInstanceContainerResourceConfig? resourceConfig,
 
+            Outputs.ContainerInstanceContainerSecurityContext? securityContext,
+
             string? state,
 
             ImmutableDictionary<string, object>? systemTags,
@@ -184,6 +190,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             IsResourcePrincipalDisabled = isResourcePrincipalDisabled;
             LifecycleDetails = lifecycleDetails;
             ResourceConfig = resourceConfig;
+            SecurityContext = securityContext;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

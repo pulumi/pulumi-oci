@@ -106,19 +106,19 @@ namespace Pulumi.Oci.Core
     public partial class Vcn : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+        /// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
         /// </summary>
         [Output("byoipv6cidrBlocks")]
         public Output<ImmutableArray<string>> Byoipv6cidrBlocks { get; private set; } = null!;
 
         /// <summary>
-        /// The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+        /// The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
         /// </summary>
         [Output("byoipv6cidrDetails")]
         public Output<ImmutableArray<Outputs.VcnByoipv6cidrDetail>> Byoipv6cidrDetails { get; private set; } = null!;
 
         /// <summary>
-        /// **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        /// **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         /// </summary>
         [Output("cidrBlock")]
         public Output<string> CidrBlock { get; private set; } = null!;
@@ -127,8 +127,8 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
         /// * The CIDR blocks must be valid.
         /// * They must not overlap with each other or with the on-premises network CIDR block.
-        /// * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-        /// **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+        /// * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+        /// **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         /// </summary>
         [Output("cidrBlocks")]
         public Output<ImmutableArray<string>> CidrBlocks { get; private set; } = null!;
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+        /// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
         /// </summary>
         [Output("ipv6cidrBlocks")]
         public Output<ImmutableArray<string>> Ipv6cidrBlocks { get; private set; } = null!;
@@ -195,10 +195,10 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
         /// * The CIDR blocks must be valid.
-        /// * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        /// * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+        /// * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+        /// * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
         /// 
-        /// **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+        /// **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         /// </summary>
         [Output("ipv6privateCidrBlocks")]
         public Output<ImmutableArray<string>> Ipv6privateCidrBlocks { get; private set; } = null!;
@@ -287,7 +287,7 @@ namespace Pulumi.Oci.Core
         private InputList<Inputs.VcnByoipv6cidrDetailArgs>? _byoipv6cidrDetails;
 
         /// <summary>
-        /// The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+        /// The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
         /// </summary>
         public InputList<Inputs.VcnByoipv6cidrDetailArgs> Byoipv6cidrDetails
         {
@@ -296,7 +296,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        /// **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         /// </summary>
         [Input("cidrBlock")]
         public Input<string>? CidrBlock { get; set; }
@@ -308,8 +308,8 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
         /// * The CIDR blocks must be valid.
         /// * They must not overlap with each other or with the on-premises network CIDR block.
-        /// * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-        /// **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+        /// * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+        /// **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         /// </summary>
         public InputList<string> CidrBlocks
         {
@@ -370,10 +370,10 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
         /// * The CIDR blocks must be valid.
-        /// * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        /// * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+        /// * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+        /// * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
         /// 
-        /// **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+        /// **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         /// </summary>
         public InputList<string> Ipv6privateCidrBlocks
         {
@@ -409,7 +409,7 @@ namespace Pulumi.Oci.Core
         private InputList<string>? _byoipv6cidrBlocks;
 
         /// <summary>
-        /// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+        /// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
         /// </summary>
         public InputList<string> Byoipv6cidrBlocks
         {
@@ -421,7 +421,7 @@ namespace Pulumi.Oci.Core
         private InputList<Inputs.VcnByoipv6cidrDetailGetArgs>? _byoipv6cidrDetails;
 
         /// <summary>
-        /// The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+        /// The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
         /// </summary>
         public InputList<Inputs.VcnByoipv6cidrDetailGetArgs> Byoipv6cidrDetails
         {
@@ -430,7 +430,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        /// **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         /// </summary>
         [Input("cidrBlock")]
         public Input<string>? CidrBlock { get; set; }
@@ -442,8 +442,8 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
         /// * The CIDR blocks must be valid.
         /// * They must not overlap with each other or with the on-premises network CIDR block.
-        /// * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-        /// **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+        /// * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+        /// **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         /// </summary>
         public InputList<string> CidrBlocks
         {
@@ -520,7 +520,7 @@ namespace Pulumi.Oci.Core
         private InputList<string>? _ipv6cidrBlocks;
 
         /// <summary>
-        /// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+        /// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
         /// </summary>
         public InputList<string> Ipv6cidrBlocks
         {
@@ -534,10 +534,10 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
         /// * The CIDR blocks must be valid.
-        /// * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        /// * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+        /// * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+        /// * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
         /// 
-        /// **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+        /// **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         /// </summary>
         public InputList<string> Ipv6privateCidrBlocks
         {

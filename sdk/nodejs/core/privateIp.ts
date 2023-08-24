@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     hostnameLabel: _var.private_ip_hostname_label,
  *     ipAddress: _var.private_ip_ip_address,
  *     vlanId: oci_core_vlan.test_vlan.id,
- *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
+ *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.vnic_id,
  * });
  * ```
  *

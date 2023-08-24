@@ -121,6 +121,10 @@ type AutonomousDatabase struct {
 	FailedDataRecoveryInSeconds pulumi.IntOutput `pulumi:"failedDataRecoveryInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// The area assigned to In-Memory tables in Autonomous Database.
+	InMemoryAreaInGbs pulumi.IntOutput `pulumi:"inMemoryAreaInGbs"`
+	// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+	InMemoryPercentage pulumi.IntOutput `pulumi:"inMemoryPercentage"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType pulumi.StringOutput `pulumi:"infrastructureType"`
 	// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
@@ -462,6 +466,10 @@ type autonomousDatabaseState struct {
 	FailedDataRecoveryInSeconds *int `pulumi:"failedDataRecoveryInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The area assigned to In-Memory tables in Autonomous Database.
+	InMemoryAreaInGbs *int `pulumi:"inMemoryAreaInGbs"`
+	// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+	InMemoryPercentage *int `pulumi:"inMemoryPercentage"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType *string `pulumi:"infrastructureType"`
 	// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
@@ -761,6 +769,10 @@ type AutonomousDatabaseState struct {
 	FailedDataRecoveryInSeconds pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// The area assigned to In-Memory tables in Autonomous Database.
+	InMemoryAreaInGbs pulumi.IntPtrInput
+	// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+	InMemoryPercentage pulumi.IntPtrInput
 	// The infrastructure type this resource belongs to.
 	InfrastructureType pulumi.StringPtrInput
 	// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
@@ -1044,6 +1056,8 @@ type autonomousDatabaseArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+	InMemoryPercentage *int `pulumi:"inMemoryPercentage"`
 	// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 	//
 	// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -1240,6 +1254,8 @@ type AutonomousDatabaseArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+	InMemoryPercentage pulumi.IntPtrInput
 	// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 	//
 	// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -1644,6 +1660,16 @@ func (o AutonomousDatabaseOutput) FailedDataRecoveryInSeconds() pulumi.IntOutput
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o AutonomousDatabaseOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The area assigned to In-Memory tables in Autonomous Database.
+func (o AutonomousDatabaseOutput) InMemoryAreaInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.InMemoryAreaInGbs }).(pulumi.IntOutput)
+}
+
+// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+func (o AutonomousDatabaseOutput) InMemoryPercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.InMemoryPercentage }).(pulumi.IntOutput)
 }
 
 // The infrastructure type this resource belongs to.

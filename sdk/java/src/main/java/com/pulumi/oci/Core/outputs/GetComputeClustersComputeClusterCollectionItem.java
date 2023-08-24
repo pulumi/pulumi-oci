@@ -37,7 +37,7 @@ public final class GetComputeClustersComputeClusterCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
      * 
      */
     private String id;
@@ -47,7 +47,7 @@ public final class GetComputeClustersComputeClusterCollectionItem {
      */
     private String state;
     /**
-     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
@@ -89,7 +89,7 @@ public final class GetComputeClustersComputeClusterCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
      * 
      */
     public String id() {
@@ -103,7 +103,7 @@ public final class GetComputeClustersComputeClusterCollectionItem {
         return this.state;
     }
     /**
-     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {

@@ -112,14 +112,14 @@ public final class AutoScalingConfigurationPolicyDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Details of a horizontal scaling schedule.
      * 
      */
     @Import(name="scheduleDetails")
     private @Nullable Output<List<AutoScalingConfigurationPolicyDetailsScheduleDetailArgs>> scheduleDetails;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Details of a horizontal scaling schedule.
      * 
      */
     public Optional<Output<List<AutoScalingConfigurationPolicyDetailsScheduleDetailArgs>>> scheduleDetails() {
@@ -321,7 +321,7 @@ public final class AutoScalingConfigurationPolicyDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param scheduleDetails (Updatable)
+         * @param scheduleDetails (Updatable) Details of a horizontal scaling schedule.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class AutoScalingConfigurationPolicyDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param scheduleDetails (Updatable)
+         * @param scheduleDetails (Updatable) Details of a horizontal scaling schedule.
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class AutoScalingConfigurationPolicyDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param scheduleDetails (Updatable)
+         * @param scheduleDetails (Updatable) Details of a horizontal scaling schedule.
          * 
          * @return builder
          * 

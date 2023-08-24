@@ -15,6 +15,8 @@ from .get_auto_scaling_configurations import *
 from .get_bds_instance import *
 from .get_bds_instance_api_key import *
 from .get_bds_instance_api_keys import *
+from .get_bds_instance_get_os_patch import *
+from .get_bds_instance_list_os_patches import *
 from .get_bds_instance_metastore_config import *
 from .get_bds_instance_metastore_configs import *
 from .get_bds_instance_patch_histories import *

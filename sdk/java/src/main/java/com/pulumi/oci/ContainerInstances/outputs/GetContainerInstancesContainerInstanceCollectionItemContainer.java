@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerInstances.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -66,6 +67,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      */
     private String lifecycleDetails;
     private List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs;
+    private List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts;
     /**
      * @return A filter to only return resources that match the given lifecycle state.
      * 
@@ -174,6 +176,9 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     public List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs() {
         return this.resourceConfigs;
     }
+    public List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts() {
+        return this.securityContexts;
+    }
     /**
      * @return A filter to only return resources that match the given lifecycle state.
      * 
@@ -238,6 +243,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         private Boolean isResourcePrincipalDisabled;
         private String lifecycleDetails;
         private List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs;
+        private List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
@@ -265,6 +271,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     	      this.isResourcePrincipalDisabled = defaults.isResourcePrincipalDisabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.resourceConfigs = defaults.resourceConfigs;
+    	      this.securityContexts = defaults.securityContexts;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -372,6 +379,14 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
             return resourceConfigs(List.of(resourceConfigs));
         }
         @CustomType.Setter
+        public Builder securityContexts(List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts) {
+            this.securityContexts = Objects.requireNonNull(securityContexts);
+            return this;
+        }
+        public Builder securityContexts(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext... securityContexts) {
+            return securityContexts(List.of(securityContexts));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -428,6 +443,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
             o.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
             o.lifecycleDetails = lifecycleDetails;
             o.resourceConfigs = resourceConfigs;
+            o.securityContexts = securityContexts;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;

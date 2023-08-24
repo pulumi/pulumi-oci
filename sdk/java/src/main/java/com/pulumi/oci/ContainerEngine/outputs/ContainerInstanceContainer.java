@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerHealthCheck;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerResourceConfig;
+import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerSecurityContext;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerVolumeMount;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -108,6 +109,11 @@ public final class ContainerInstanceContainer {
      * 
      */
     private @Nullable ContainerInstanceContainerResourceConfig resourceConfig;
+    /**
+     * @return Security context for container.
+     * 
+     */
+    private @Nullable ContainerInstanceContainerSecurityContext securityContext;
     /**
      * @return (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
      * 
@@ -268,6 +274,13 @@ public final class ContainerInstanceContainer {
         return Optional.ofNullable(this.resourceConfig);
     }
     /**
+     * @return Security context for container.
+     * 
+     */
+    public Optional<ContainerInstanceContainerSecurityContext> securityContext() {
+        return Optional.ofNullable(this.securityContext);
+    }
+    /**
      * @return (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      * ** IMPORTANT **
@@ -342,6 +355,7 @@ public final class ContainerInstanceContainer {
         private @Nullable Boolean isResourcePrincipalDisabled;
         private @Nullable String lifecycleDetails;
         private @Nullable ContainerInstanceContainerResourceConfig resourceConfig;
+        private @Nullable ContainerInstanceContainerSecurityContext securityContext;
         private @Nullable String state;
         private @Nullable Map<String,Object> systemTags;
         private @Nullable String timeCreated;
@@ -369,6 +383,7 @@ public final class ContainerInstanceContainer {
     	      this.isResourcePrincipalDisabled = defaults.isResourcePrincipalDisabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.resourceConfig = defaults.resourceConfig;
+    	      this.securityContext = defaults.securityContext;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -473,6 +488,11 @@ public final class ContainerInstanceContainer {
             return this;
         }
         @CustomType.Setter
+        public Builder securityContext(@Nullable ContainerInstanceContainerSecurityContext securityContext) {
+            this.securityContext = securityContext;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
@@ -529,6 +549,7 @@ public final class ContainerInstanceContainer {
             o.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
             o.lifecycleDetails = lifecycleDetails;
             o.resourceConfig = resourceConfig;
+            o.securityContext = securityContext;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;

@@ -22,7 +22,7 @@ class GetBdsInstanceResult:
     """
     A collection of values returned by getBdsInstance.
     """
-    def __init__(__self__, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, is_cloud_sql_configured=None, is_force_stop_jobs=None, is_high_availability=None, is_secure=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
+    def __init__(__self__, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, is_cloud_sql_configured=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
         if bds_instance_id and not isinstance(bds_instance_id, str):
             raise TypeError("Expected argument 'bds_instance_id' to be a str")
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -80,9 +80,15 @@ class GetBdsInstanceResult:
         if is_high_availability and not isinstance(is_high_availability, bool):
             raise TypeError("Expected argument 'is_high_availability' to be a bool")
         pulumi.set(__self__, "is_high_availability", is_high_availability)
+        if is_kafka_configured and not isinstance(is_kafka_configured, bool):
+            raise TypeError("Expected argument 'is_kafka_configured' to be a bool")
+        pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
         if is_secure and not isinstance(is_secure, bool):
             raise TypeError("Expected argument 'is_secure' to be a bool")
         pulumi.set(__self__, "is_secure", is_secure)
+        if kafka_broker_nodes and not isinstance(kafka_broker_nodes, list):
+            raise TypeError("Expected argument 'kafka_broker_nodes' to be a list")
+        pulumi.set(__self__, "kafka_broker_nodes", kafka_broker_nodes)
         if kerberos_realm_name and not isinstance(kerberos_realm_name, str):
             raise TypeError("Expected argument 'kerberos_realm_name' to be a str")
         pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
@@ -101,6 +107,12 @@ class GetBdsInstanceResult:
         if number_of_nodes and not isinstance(number_of_nodes, int):
             raise TypeError("Expected argument 'number_of_nodes' to be a int")
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
+        if number_of_nodes_requiring_maintenance_reboot and not isinstance(number_of_nodes_requiring_maintenance_reboot, int):
+            raise TypeError("Expected argument 'number_of_nodes_requiring_maintenance_reboot' to be a int")
+        pulumi.set(__self__, "number_of_nodes_requiring_maintenance_reboot", number_of_nodes_requiring_maintenance_reboot)
+        if os_patch_version and not isinstance(os_patch_version, str):
+            raise TypeError("Expected argument 'os_patch_version' to be a str")
+        pulumi.set(__self__, "os_patch_version", os_patch_version)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -252,12 +264,25 @@ class GetBdsInstanceResult:
         return pulumi.get(self, "is_high_availability")
 
     @property
+    @pulumi.getter(name="isKafkaConfigured")
+    def is_kafka_configured(self) -> bool:
+        """
+        Boolean flag specifying whether or not Kafka should be configured.
+        """
+        return pulumi.get(self, "is_kafka_configured")
+
+    @property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> bool:
         """
         Boolean flag specifying whether or not the cluster should be set up as secure.
         """
         return pulumi.get(self, "is_secure")
+
+    @property
+    @pulumi.getter(name="kafkaBrokerNodes")
+    def kafka_broker_nodes(self) -> Sequence['outputs.GetBdsInstanceKafkaBrokerNodeResult']:
+        return pulumi.get(self, "kafka_broker_nodes")
 
     @property
     @pulumi.getter(name="kerberosRealmName")
@@ -300,6 +325,19 @@ class GetBdsInstanceResult:
         The number of nodes that form the cluster.
         """
         return pulumi.get(self, "number_of_nodes")
+
+    @property
+    @pulumi.getter(name="numberOfNodesRequiringMaintenanceReboot")
+    def number_of_nodes_requiring_maintenance_reboot(self) -> int:
+        """
+        Number of nodes that require a maintenance reboot
+        """
+        return pulumi.get(self, "number_of_nodes_requiring_maintenance_reboot")
+
+    @property
+    @pulumi.getter(name="osPatchVersion")
+    def os_patch_version(self) -> str:
+        return pulumi.get(self, "os_patch_version")
 
     @property
     @pulumi.getter
@@ -361,13 +399,17 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             is_cloud_sql_configured=self.is_cloud_sql_configured,
             is_force_stop_jobs=self.is_force_stop_jobs,
             is_high_availability=self.is_high_availability,
+            is_kafka_configured=self.is_kafka_configured,
             is_secure=self.is_secure,
+            kafka_broker_nodes=self.kafka_broker_nodes,
             kerberos_realm_name=self.kerberos_realm_name,
             kms_key_id=self.kms_key_id,
             master_nodes=self.master_nodes,
             network_configs=self.network_configs,
             nodes=self.nodes,
             number_of_nodes=self.number_of_nodes,
+            number_of_nodes_requiring_maintenance_reboot=self.number_of_nodes_requiring_maintenance_reboot,
+            os_patch_version=self.os_patch_version,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated,
@@ -419,13 +461,17 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         is_cloud_sql_configured=pulumi.get(__ret__, 'is_cloud_sql_configured'),
         is_force_stop_jobs=pulumi.get(__ret__, 'is_force_stop_jobs'),
         is_high_availability=pulumi.get(__ret__, 'is_high_availability'),
+        is_kafka_configured=pulumi.get(__ret__, 'is_kafka_configured'),
         is_secure=pulumi.get(__ret__, 'is_secure'),
+        kafka_broker_nodes=pulumi.get(__ret__, 'kafka_broker_nodes'),
         kerberos_realm_name=pulumi.get(__ret__, 'kerberos_realm_name'),
         kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
         master_nodes=pulumi.get(__ret__, 'master_nodes'),
         network_configs=pulumi.get(__ret__, 'network_configs'),
         nodes=pulumi.get(__ret__, 'nodes'),
         number_of_nodes=pulumi.get(__ret__, 'number_of_nodes'),
+        number_of_nodes_requiring_maintenance_reboot=pulumi.get(__ret__, 'number_of_nodes_requiring_maintenance_reboot'),
+        os_patch_version=pulumi.get(__ret__, 'os_patch_version'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),

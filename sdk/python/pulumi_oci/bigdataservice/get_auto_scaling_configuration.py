@@ -100,7 +100,7 @@ class GetAutoScalingConfigurationResult:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> str:
         """
-        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
         """
         return pulumi.get(self, "node_type")
 

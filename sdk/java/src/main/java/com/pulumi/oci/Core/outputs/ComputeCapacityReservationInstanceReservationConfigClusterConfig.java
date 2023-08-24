@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ComputeCapacityReservationInstanceReservationConfigClusterConfig {
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     private String hpcIslandId;
     /**
-     * @return (Updatable) The list of OCID of the network blocks.
+     * @return (Updatable) The list of OCIDs of the network blocks.
      * 
      */
     private @Nullable List<String> networkBlockIds;
 
     private ComputeCapacityReservationInstanceReservationConfigClusterConfig() {}
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     public String hpcIslandId() {
         return this.hpcIslandId;
     }
     /**
-     * @return (Updatable) The list of OCID of the network blocks.
+     * @return (Updatable) The list of OCIDs of the network blocks.
      * 
      */
     public List<String> networkBlockIds() {

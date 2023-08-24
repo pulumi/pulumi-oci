@@ -162,14 +162,14 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
         return this.isEnabled;
     }
     /**
-     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      * 
      */
     @Export(name="nodeType", type=String.class, parameters={})
     private Output<String> nodeType;
 
     /**
-     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      * 
      */
     public Output<String> nodeType() {

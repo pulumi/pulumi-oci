@@ -17,7 +17,13 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// The type of schedule.
         /// </summary>
         public readonly string ScheduleType;
+        /// <summary>
+        /// Time of day and horizontal scaling configuration.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigResult> TimeAndHorizontalScalingConfigs;
+        /// <summary>
+        /// Time of day and vertical scaling configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigResult> TimeAndVerticalScalingConfigs;
 
         [OutputConstructor]

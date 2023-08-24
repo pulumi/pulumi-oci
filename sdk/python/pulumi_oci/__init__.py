@@ -1641,6 +1641,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataIntegration/workspaceApplication",
+  "fqn": "pulumi_oci.dataintegration",
+  "classes": {
+   "oci:DataIntegration/workspaceApplication:WorkspaceApplication": "WorkspaceApplication"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataIntegration/workspaceFolder",
   "fqn": "pulumi_oci.dataintegration",
   "classes": {

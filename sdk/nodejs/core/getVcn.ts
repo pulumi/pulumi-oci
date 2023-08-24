@@ -45,7 +45,7 @@ export interface GetVcnArgs {
  */
 export interface GetVcnResult {
     /**
-     * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      */
     readonly byoipv6cidrBlocks: string[];
     readonly byoipv6cidrDetails: outputs.Core.GetVcnByoipv6cidrDetail[];
@@ -94,11 +94,11 @@ export interface GetVcnResult {
      */
     readonly id: string;
     /**
-     * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+     * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      */
     readonly ipv6cidrBlocks: string[];
     /**
-     * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+     * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
      */
     readonly ipv6privateCidrBlocks: string[];
     readonly isIpv6enabled: boolean;

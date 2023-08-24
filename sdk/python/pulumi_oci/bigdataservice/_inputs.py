@@ -37,6 +37,8 @@ __all__ = [
     'BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs',
     'BdsInstanceEdgeNodeArgs',
     'BdsInstanceEdgeNodeShapeConfigArgs',
+    'BdsInstanceKafkaBrokerNodeArgs',
+    'BdsInstanceKafkaBrokerNodeShapeConfigArgs',
     'BdsInstanceMasterNodeArgs',
     'BdsInstanceMasterNodeShapeConfigArgs',
     'BdsInstanceNetworkConfigArgs',
@@ -48,6 +50,8 @@ __all__ = [
     'BdsInstanceWorkerNodeShapeConfigArgs',
     'GetAutoScalingConfigurationsFilterArgs',
     'GetBdsInstanceApiKeysFilterArgs',
+    'GetBdsInstanceGetOsPatchFilterArgs',
+    'GetBdsInstanceListOsPatchesFilterArgs',
     'GetBdsInstanceMetastoreConfigsFilterArgs',
     'GetBdsInstancePatchHistoriesFilterArgs',
     'GetBdsInstancePatchesFilterArgs',
@@ -110,7 +114,7 @@ class AutoScalingConfigurationPolicyDetailsArgs:
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigArgs'] scale_in_config: (Updatable) Configration for a metric based horizontal scale-in policy.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs'] scale_out_config: (Updatable) Configration for a metric based horizontal scale-out policy.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs'] scale_up_config: (Updatable) Configration for a metric based vertical scale-up policy.
-        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]] schedule_details: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]] schedule_details: (Updatable) Details of a horizontal scaling schedule.
         :param pulumi.Input[str] timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
                
                
@@ -212,7 +216,7 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @pulumi.getter(name="scheduleDetails")
     def schedule_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]]]:
         """
-        (Updatable)
+        (Updatable) Details of a horizontal scaling schedule.
         """
         return pulumi.get(self, "schedule_details")
 
@@ -917,8 +921,8 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
                  time_and_vertical_scaling_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs']]]] = None):
         """
         :param pulumi.Input[str] schedule_type: (Updatable) The type of schedule.
-        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs']]] time_and_horizontal_scaling_configs: (Updatable)
-        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs']]] time_and_vertical_scaling_configs: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs']]] time_and_horizontal_scaling_configs: (Updatable) Time of day and horizontal scaling configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs']]] time_and_vertical_scaling_configs: (Updatable) Time of day and vertical scaling configuration
         """
         if schedule_type is not None:
             pulumi.set(__self__, "schedule_type", schedule_type)
@@ -943,7 +947,7 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
     @pulumi.getter(name="timeAndHorizontalScalingConfigs")
     def time_and_horizontal_scaling_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs']]]]:
         """
-        (Updatable)
+        (Updatable) Time of day and horizontal scaling configuration.
         """
         return pulumi.get(self, "time_and_horizontal_scaling_configs")
 
@@ -955,7 +959,7 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
     @pulumi.getter(name="timeAndVerticalScalingConfigs")
     def time_and_vertical_scaling_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs']]]]:
         """
-        (Updatable)
+        (Updatable) Time of day and vertical scaling configuration
         """
         return pulumi.get(self, "time_and_vertical_scaling_configs")
 
@@ -1220,8 +1224,6 @@ class BdsInstanceCloudSqlDetailArgs:
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1330,8 +1332,6 @@ class BdsInstanceCloudSqlDetailArgs:
     def ocpus(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1722,8 +1722,6 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1763,8 +1761,6 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
     def ocpus(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1869,8 +1865,6 @@ class BdsInstanceEdgeNodeShapeConfigArgs:
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1910,8 +1904,145 @@ class BdsInstanceEdgeNodeShapeConfigArgs:
     def ocpus(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of OCPUs available to the node.
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "ocpus", value)
 
 
+@pulumi.input_type
+class BdsInstanceKafkaBrokerNodeArgs:
+    def __init__(__self__, *,
+                 number_of_kafka_nodes: pulumi.Input[int],
+                 shape: pulumi.Input[str],
+                 subnet_id: pulumi.Input[str],
+                 block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
+                 shape_config: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgs']] = None):
+        """
+        :param pulumi.Input[str] shape: Shape of the node
+        :param pulumi.Input[str] subnet_id: The OCID of the subnet in which the node should be created
+        :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgs'] shape_config: The shape configuration requested for the node.
+        """
+        pulumi.set(__self__, "number_of_kafka_nodes", number_of_kafka_nodes)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if block_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
+
+    @property
+    @pulumi.getter(name="numberOfKafkaNodes")
+    def number_of_kafka_nodes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "number_of_kafka_nodes")
+
+    @number_of_kafka_nodes.setter
+    def number_of_kafka_nodes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "number_of_kafka_nodes", value)
+
+    @property
+    @pulumi.getter
+    def shape(self) -> pulumi.Input[str]:
+        """
+        Shape of the node
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: pulumi.Input[str]):
+        pulumi.set(self, "shape", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[str]:
+        """
+        The OCID of the subnet in which the node should be created
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="blockVolumeSizeInGbs")
+    def block_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
+        """
+        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        """
+        return pulumi.get(self, "block_volume_size_in_gbs")
+
+    @block_volume_size_in_gbs.setter
+    def block_volume_size_in_gbs(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "block_volume_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgs']]:
+        """
+        The shape configuration requested for the node.
+        """
+        return pulumi.get(self, "shape_config")
+
+    @shape_config.setter
+    def shape_config(self, value: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgs']]):
+        pulumi.set(self, "shape_config", value)
+
+
+@pulumi.input_type
+class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[int]] = None,
+                 nvmes: Optional[pulumi.Input[int]] = None,
+                 ocpus: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total amount of memory available to the node, in gigabytes
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @nvmes.setter
+    def nvmes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "nvmes", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total number of OCPUs available to the node.
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2016,8 +2147,6 @@ class BdsInstanceMasterNodeShapeConfigArgs:
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2057,8 +2186,6 @@ class BdsInstanceMasterNodeShapeConfigArgs:
     def ocpus(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2126,7 +2253,8 @@ class BdsInstanceNodeArgs:
                  ssh_fingerprint: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
-                 time_created: Optional[pulumi.Input[str]] = None):
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeAttachedBlockVolumeArgs']]] attached_block_volumes: The list of block volumes attached to a given node.
         :param pulumi.Input[str] availability_domain: The name of the availability domain the node is running in
@@ -2137,10 +2265,8 @@ class BdsInstanceNodeArgs:
         :param pulumi.Input[str] instance_id: The OCID of the underlying compute instance
         :param pulumi.Input[str] ip_address: IP address of the node
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param pulumi.Input[str] node_type: BDS instance node type
+        :param pulumi.Input[str] node_type: The Big Data Service cluster node type.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] shape: Shape of the node
@@ -2148,6 +2274,7 @@ class BdsInstanceNodeArgs:
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet in which the node should be created
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
         """
         if attached_block_volumes is not None:
             pulumi.set(__self__, "attached_block_volumes", attached_block_volumes)
@@ -2181,6 +2308,8 @@ class BdsInstanceNodeArgs:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_maintenance_reboot_due is not None:
+            pulumi.set(__self__, "time_maintenance_reboot_due", time_maintenance_reboot_due)
 
     @property
     @pulumi.getter(name="attachedBlockVolumes")
@@ -2294,7 +2423,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[str]]:
         """
-        BDS instance node type
+        The Big Data Service cluster node type.
         """
         return pulumi.get(self, "node_type")
 
@@ -2307,8 +2436,6 @@ class BdsInstanceNodeArgs:
     def ocpus(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2377,6 +2504,18 @@ class BdsInstanceNodeArgs:
     @time_created.setter
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeMaintenanceRebootDue")
+    def time_maintenance_reboot_due(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_maintenance_reboot_due")
+
+    @time_maintenance_reboot_due.setter
+    def time_maintenance_reboot_due(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_maintenance_reboot_due", value)
 
 
 @pulumi.input_type
@@ -2512,8 +2651,6 @@ class BdsInstanceUtilNodeShapeConfigArgs:
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2553,8 +2690,6 @@ class BdsInstanceUtilNodeShapeConfigArgs:
     def ocpus(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2659,8 +2794,6 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2700,8 +2833,6 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
     def ocpus(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of OCPUs available to the node.
-
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2753,6 +2884,84 @@ class GetAutoScalingConfigurationsFilterArgs:
 
 @pulumi.input_type
 class GetBdsInstanceApiKeysFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetBdsInstanceGetOsPatchFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetBdsInstanceListOsPatchesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

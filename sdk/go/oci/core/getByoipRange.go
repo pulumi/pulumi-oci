@@ -74,7 +74,7 @@ type GetByoipRangeResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+	// The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
 	Ipv6cidrBlock string `pulumi:"ipv6cidrBlock"`
 	// The `ByoipRange` resource's current status.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -172,7 +172,7 @@ func (o GetByoipRangeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetByoipRangeResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+// The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
 func (o GetByoipRangeResultOutput) Ipv6cidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetByoipRangeResult) string { return v.Ipv6cidrBlock }).(pulumi.StringOutput)
 }

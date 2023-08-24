@@ -721,6 +721,13 @@ class ContainerInstance(pulumi.CustomResource):
                     memory_limit_in_gbs=var["container_instance_containers_resource_config_memory_limit_in_gbs"],
                     vcpus_limit=var["container_instance_containers_resource_config_vcpus_limit"],
                 ),
+                security_context=oci.container_engine.ContainerInstanceContainerSecurityContextArgs(
+                    is_non_root_user_check_enabled=var["container_instance_containers_security_context_is_non_root_user_check_enabled"],
+                    is_root_file_system_readonly=var["container_instance_containers_security_context_is_root_file_system_readonly"],
+                    run_as_group=var["container_instance_containers_security_context_run_as_group"],
+                    run_as_user=var["container_instance_containers_security_context_run_as_user"],
+                    security_context_type=var["container_instance_containers_security_context_security_context_type"],
+                ),
                 volume_mounts=[oci.container_engine.ContainerInstanceContainerVolumeMountArgs(
                     mount_path=var["container_instance_containers_volume_mounts_mount_path"],
                     volume_name=var["container_instance_containers_volume_mounts_volume_name"],
@@ -862,6 +869,13 @@ class ContainerInstance(pulumi.CustomResource):
                 resource_config=oci.container_engine.ContainerInstanceContainerResourceConfigArgs(
                     memory_limit_in_gbs=var["container_instance_containers_resource_config_memory_limit_in_gbs"],
                     vcpus_limit=var["container_instance_containers_resource_config_vcpus_limit"],
+                ),
+                security_context=oci.container_engine.ContainerInstanceContainerSecurityContextArgs(
+                    is_non_root_user_check_enabled=var["container_instance_containers_security_context_is_non_root_user_check_enabled"],
+                    is_root_file_system_readonly=var["container_instance_containers_security_context_is_root_file_system_readonly"],
+                    run_as_group=var["container_instance_containers_security_context_run_as_group"],
+                    run_as_user=var["container_instance_containers_security_context_run_as_user"],
+                    security_context_type=var["container_instance_containers_security_context_security_context_type"],
                 ),
                 volume_mounts=[oci.container_engine.ContainerInstanceContainerVolumeMountArgs(
                     mount_path=var["container_instance_containers_volume_mounts_mount_path"],

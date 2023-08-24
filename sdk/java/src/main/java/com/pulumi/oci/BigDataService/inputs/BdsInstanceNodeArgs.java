@@ -154,14 +154,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * BDS instance node type
+     * The Big Data Service cluster node type.
      * 
      */
     @Import(name="nodeType")
     private @Nullable Output<String> nodeType;
 
     /**
-     * @return BDS instance node type
+     * @return The Big Data Service cluster node type.
      * 
      */
     public Optional<Output<String>> nodeType() {
@@ -170,7 +170,6 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * The total number of OCPUs available to the node.
-     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
@@ -180,7 +179,6 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * @return The total number of OCPUs available to the node.
-     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
@@ -264,6 +262,21 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.timeCreated);
     }
 
+    /**
+     * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+     * 
+     */
+    @Import(name="timeMaintenanceRebootDue")
+    private @Nullable Output<String> timeMaintenanceRebootDue;
+
+    /**
+     * @return The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+     * 
+     */
+    public Optional<Output<String>> timeMaintenanceRebootDue() {
+        return Optional.ofNullable(this.timeMaintenanceRebootDue);
+    }
+
     private BdsInstanceNodeArgs() {}
 
     private BdsInstanceNodeArgs(BdsInstanceNodeArgs $) {
@@ -283,6 +296,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.timeCreated = $.timeCreated;
+        this.timeMaintenanceRebootDue = $.timeMaintenanceRebootDue;
     }
 
     public static Builder builder() {
@@ -503,7 +517,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nodeType BDS instance node type
+         * @param nodeType The Big Data Service cluster node type.
          * 
          * @return builder
          * 
@@ -514,7 +528,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nodeType BDS instance node type
+         * @param nodeType The Big Data Service cluster node type.
          * 
          * @return builder
          * 
@@ -525,7 +539,6 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ocpus The total number of OCPUs available to the node.
-         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
@@ -539,7 +552,6 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ocpus The total number of OCPUs available to the node.
-         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
@@ -653,6 +665,27 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeMaintenanceRebootDue The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMaintenanceRebootDue(@Nullable Output<String> timeMaintenanceRebootDue) {
+            $.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+            return this;
+        }
+
+        /**
+         * @param timeMaintenanceRebootDue The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMaintenanceRebootDue(String timeMaintenanceRebootDue) {
+            return timeMaintenanceRebootDue(Output.of(timeMaintenanceRebootDue));
         }
 
         public BdsInstanceNodeArgs build() {

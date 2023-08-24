@@ -8,6 +8,7 @@ import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceClusterDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceComputeOnlyWorkerNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceEdgeNode;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceKafkaBrokerNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMasterNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNetworkConfig;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNode;
@@ -95,10 +96,16 @@ public final class GetBdsInstanceResult {
      */
     private Boolean isHighAvailability;
     /**
+     * @return Boolean flag specifying whether or not Kafka should be configured.
+     * 
+     */
+    private Boolean isKafkaConfigured;
+    /**
      * @return Boolean flag specifying whether or not the cluster should be set up as secure.
      * 
      */
     private Boolean isSecure;
+    private List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes;
     private String kerberosRealmName;
     /**
      * @return The OCID of the Key Management master encryption key.
@@ -121,6 +128,12 @@ public final class GetBdsInstanceResult {
      * 
      */
     private Integer numberOfNodes;
+    /**
+     * @return Number of nodes that require a maintenance reboot
+     * 
+     */
+    private Integer numberOfNodesRequiringMaintenanceReboot;
+    private String osPatchVersion;
     /**
      * @return The state of the cluster.
      * 
@@ -250,11 +263,21 @@ public final class GetBdsInstanceResult {
         return this.isHighAvailability;
     }
     /**
+     * @return Boolean flag specifying whether or not Kafka should be configured.
+     * 
+     */
+    public Boolean isKafkaConfigured() {
+        return this.isKafkaConfigured;
+    }
+    /**
      * @return Boolean flag specifying whether or not the cluster should be set up as secure.
      * 
      */
     public Boolean isSecure() {
         return this.isSecure;
+    }
+    public List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes() {
+        return this.kafkaBrokerNodes;
     }
     public String kerberosRealmName() {
         return this.kerberosRealmName;
@@ -289,6 +312,16 @@ public final class GetBdsInstanceResult {
      */
     public Integer numberOfNodes() {
         return this.numberOfNodes;
+    }
+    /**
+     * @return Number of nodes that require a maintenance reboot
+     * 
+     */
+    public Integer numberOfNodesRequiringMaintenanceReboot() {
+        return this.numberOfNodesRequiringMaintenanceReboot;
+    }
+    public String osPatchVersion() {
+        return this.osPatchVersion;
     }
     /**
      * @return The state of the cluster.
@@ -346,13 +379,17 @@ public final class GetBdsInstanceResult {
         private Boolean isCloudSqlConfigured;
         private Boolean isForceStopJobs;
         private Boolean isHighAvailability;
+        private Boolean isKafkaConfigured;
         private Boolean isSecure;
+        private List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes;
         private String kerberosRealmName;
         private String kmsKeyId;
         private List<GetBdsInstanceMasterNode> masterNodes;
         private List<GetBdsInstanceNetworkConfig> networkConfigs;
         private List<GetBdsInstanceNode> nodes;
         private Integer numberOfNodes;
+        private Integer numberOfNodesRequiringMaintenanceReboot;
+        private String osPatchVersion;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -380,13 +417,17 @@ public final class GetBdsInstanceResult {
     	      this.isCloudSqlConfigured = defaults.isCloudSqlConfigured;
     	      this.isForceStopJobs = defaults.isForceStopJobs;
     	      this.isHighAvailability = defaults.isHighAvailability;
+    	      this.isKafkaConfigured = defaults.isKafkaConfigured;
     	      this.isSecure = defaults.isSecure;
+    	      this.kafkaBrokerNodes = defaults.kafkaBrokerNodes;
     	      this.kerberosRealmName = defaults.kerberosRealmName;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.masterNodes = defaults.masterNodes;
     	      this.networkConfigs = defaults.networkConfigs;
     	      this.nodes = defaults.nodes;
     	      this.numberOfNodes = defaults.numberOfNodes;
+    	      this.numberOfNodesRequiringMaintenanceReboot = defaults.numberOfNodesRequiringMaintenanceReboot;
+    	      this.osPatchVersion = defaults.osPatchVersion;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -502,9 +543,22 @@ public final class GetBdsInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isKafkaConfigured(Boolean isKafkaConfigured) {
+            this.isKafkaConfigured = Objects.requireNonNull(isKafkaConfigured);
+            return this;
+        }
+        @CustomType.Setter
         public Builder isSecure(Boolean isSecure) {
             this.isSecure = Objects.requireNonNull(isSecure);
             return this;
+        }
+        @CustomType.Setter
+        public Builder kafkaBrokerNodes(List<GetBdsInstanceKafkaBrokerNode> kafkaBrokerNodes) {
+            this.kafkaBrokerNodes = Objects.requireNonNull(kafkaBrokerNodes);
+            return this;
+        }
+        public Builder kafkaBrokerNodes(GetBdsInstanceKafkaBrokerNode... kafkaBrokerNodes) {
+            return kafkaBrokerNodes(List.of(kafkaBrokerNodes));
         }
         @CustomType.Setter
         public Builder kerberosRealmName(String kerberosRealmName) {
@@ -543,6 +597,16 @@ public final class GetBdsInstanceResult {
         @CustomType.Setter
         public Builder numberOfNodes(Integer numberOfNodes) {
             this.numberOfNodes = Objects.requireNonNull(numberOfNodes);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder numberOfNodesRequiringMaintenanceReboot(Integer numberOfNodesRequiringMaintenanceReboot) {
+            this.numberOfNodesRequiringMaintenanceReboot = Objects.requireNonNull(numberOfNodesRequiringMaintenanceReboot);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder osPatchVersion(String osPatchVersion) {
+            this.osPatchVersion = Objects.requireNonNull(osPatchVersion);
             return this;
         }
         @CustomType.Setter
@@ -597,13 +661,17 @@ public final class GetBdsInstanceResult {
             o.isCloudSqlConfigured = isCloudSqlConfigured;
             o.isForceStopJobs = isForceStopJobs;
             o.isHighAvailability = isHighAvailability;
+            o.isKafkaConfigured = isKafkaConfigured;
             o.isSecure = isSecure;
+            o.kafkaBrokerNodes = kafkaBrokerNodes;
             o.kerberosRealmName = kerberosRealmName;
             o.kmsKeyId = kmsKeyId;
             o.masterNodes = masterNodes;
             o.networkConfigs = networkConfigs;
             o.nodes = nodes;
             o.numberOfNodes = numberOfNodes;
+            o.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
+            o.osPatchVersion = osPatchVersion;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;

@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GoldenGate.DeploymentArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentState;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentDeploymentDiagnosticData;
+import com.pulumi.oci.GoldenGate.outputs.DeploymentMaintenanceConfiguration;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentOggData;
 import com.pulumi.oci.Utilities;
@@ -304,6 +305,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.lifecycleSubState;
     }
     /**
+     * (Updatable) Defines the maintenance configuration for create operation.
+     * 
+     */
+    @Export(name="maintenanceConfiguration", type=DeploymentMaintenanceConfiguration.class, parameters={})
+    private Output<DeploymentMaintenanceConfiguration> maintenanceConfiguration;
+
+    /**
+     * @return (Updatable) Defines the maintenance configuration for create operation.
+     * 
+     */
+    public Output<DeploymentMaintenanceConfiguration> maintenanceConfiguration() {
+        return this.maintenanceConfiguration;
+    }
+    /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      * 
      */
@@ -484,6 +499,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeOfNextMaintenance() {
         return this.timeOfNextMaintenance;
+    }
+    /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    @Export(name="timeOggVersionSupportedUntil", type=String.class, parameters={})
+    private Output<String> timeOggVersionSupportedUntil;
+
+    /**
+     * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public Output<String> timeOggVersionSupportedUntil() {
+        return this.timeOggVersionSupportedUntil;
     }
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

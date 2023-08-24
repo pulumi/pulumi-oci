@@ -39,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ContainerEngine.ContainerInstanceArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerResourceConfigArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerSecurityContextArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceShapeConfigArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVnicArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceDnsConfigArgs;
@@ -89,6 +90,13 @@ import javax.annotation.Nullable;
  *                 .resourceConfig(ContainerInstanceContainerResourceConfigArgs.builder()
  *                     .memoryLimitInGbs(var_.container_instance_containers_resource_config_memory_limit_in_gbs())
  *                     .vcpusLimit(var_.container_instance_containers_resource_config_vcpus_limit())
+ *                     .build())
+ *                 .securityContext(ContainerInstanceContainerSecurityContextArgs.builder()
+ *                     .isNonRootUserCheckEnabled(var_.container_instance_containers_security_context_is_non_root_user_check_enabled())
+ *                     .isRootFileSystemReadonly(var_.container_instance_containers_security_context_is_root_file_system_readonly())
+ *                     .runAsGroup(var_.container_instance_containers_security_context_run_as_group())
+ *                     .runAsUser(var_.container_instance_containers_security_context_run_as_user())
+ *                     .securityContextType(var_.container_instance_containers_security_context_security_context_type())
  *                     .build())
  *                 .volumeMounts(ContainerInstanceContainerVolumeMountArgs.builder()
  *                     .mountPath(var_.container_instance_containers_volume_mounts_mount_path())

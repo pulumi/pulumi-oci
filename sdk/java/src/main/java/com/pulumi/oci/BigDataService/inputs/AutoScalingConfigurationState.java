@@ -79,14 +79,14 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
     }
 
     /**
-     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      * 
      */
     @Import(name="nodeType")
     private @Nullable Output<String> nodeType;
 
     /**
-     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      * 
      */
     public Optional<Output<String>> nodeType() {
@@ -306,7 +306,7 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeType A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+         * @param nodeType A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeType A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+         * @param nodeType A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
          * 
          * @return builder
          * 

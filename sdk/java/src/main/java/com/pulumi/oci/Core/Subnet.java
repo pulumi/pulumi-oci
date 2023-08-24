@@ -274,20 +274,20 @@ public class Subnet extends com.pulumi.resources.CustomResource {
         return this.ipv6cidrBlock;
     }
     /**
-     * (Updatable) The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-     * * The CIDR blocks must be valid.
-     * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+     * (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+     * * The prefixes must be valid.
+     * * Multiple prefixes must not overlap each other or the on-premises network prefix.
+     * * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
      * 
      */
     @Export(name="ipv6cidrBlocks", type=List.class, parameters={String.class})
     private Output<List<String>> ipv6cidrBlocks;
 
     /**
-     * @return (Updatable) The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-     * * The CIDR blocks must be valid.
-     * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+     * @return (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+     * * The prefixes must be valid.
+     * * Multiple prefixes must not overlap each other or the on-premises network prefix.
+     * * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
      * 
      */
     public Output<List<String>> ipv6cidrBlocks() {
@@ -336,7 +336,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
     /**
      * Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it&#39;s a private subnet).
      * 
-     * If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+     * If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
      * 
      * Example: `true`
      * 
@@ -347,7 +347,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
     /**
      * @return Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it&#39;s a private subnet).
      * 
-     * If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+     * If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
      * 
      * Example: `true`
      * 

@@ -90,9 +90,12 @@ type LookupBdsInstanceResult struct {
 	IsForceStopJobs      bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
+	// Boolean flag specifying whether or not Kafka should be configured.
+	IsKafkaConfigured bool `pulumi:"isKafkaConfigured"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure          bool   `pulumi:"isSecure"`
-	KerberosRealmName string `pulumi:"kerberosRealmName"`
+	IsSecure          bool                            `pulumi:"isSecure"`
+	KafkaBrokerNodes  []GetBdsInstanceKafkaBrokerNode `pulumi:"kafkaBrokerNodes"`
+	KerberosRealmName string                          `pulumi:"kerberosRealmName"`
 	// The OCID of the Key Management master encryption key.
 	KmsKeyId    string                     `pulumi:"kmsKeyId"`
 	MasterNodes []GetBdsInstanceMasterNode `pulumi:"masterNodes"`
@@ -102,6 +105,9 @@ type LookupBdsInstanceResult struct {
 	Nodes []GetBdsInstanceNode `pulumi:"nodes"`
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
+	// Number of nodes that require a maintenance reboot
+	NumberOfNodesRequiringMaintenanceReboot int    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          string `pulumi:"osPatchVersion"`
 	// The state of the cluster.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -239,9 +245,18 @@ func (o LookupBdsInstanceResultOutput) IsHighAvailability() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsHighAvailability }).(pulumi.BoolOutput)
 }
 
+// Boolean flag specifying whether or not Kafka should be configured.
+func (o LookupBdsInstanceResultOutput) IsKafkaConfigured() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsKafkaConfigured }).(pulumi.BoolOutput)
+}
+
 // Boolean flag specifying whether or not the cluster should be set up as secure.
 func (o LookupBdsInstanceResultOutput) IsSecure() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsSecure }).(pulumi.BoolOutput)
+}
+
+func (o LookupBdsInstanceResultOutput) KafkaBrokerNodes() GetBdsInstanceKafkaBrokerNodeArrayOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceKafkaBrokerNode { return v.KafkaBrokerNodes }).(GetBdsInstanceKafkaBrokerNodeArrayOutput)
 }
 
 func (o LookupBdsInstanceResultOutput) KerberosRealmName() pulumi.StringOutput {
@@ -270,6 +285,15 @@ func (o LookupBdsInstanceResultOutput) Nodes() GetBdsInstanceNodeArrayOutput {
 // The number of nodes that form the cluster.
 func (o LookupBdsInstanceResultOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) int { return v.NumberOfNodes }).(pulumi.IntOutput)
+}
+
+// Number of nodes that require a maintenance reboot
+func (o LookupBdsInstanceResultOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) int { return v.NumberOfNodesRequiringMaintenanceReboot }).(pulumi.IntOutput)
+}
+
+func (o LookupBdsInstanceResultOutput) OsPatchVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.OsPatchVersion }).(pulumi.StringOutput)
 }
 
 // The state of the cluster.

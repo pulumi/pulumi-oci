@@ -26,6 +26,9 @@ class DrgRouteTableRouteRuleArgs:
                * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+               
+               Potential values:
+               * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
                
                ** IMPORTANT **
@@ -68,6 +71,9 @@ class DrgRouteTableRouteRuleArgs:
     def drg_route_table_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+
+        Potential values:
+        * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         """
         return pulumi.get(self, "drg_route_table_id")
 
@@ -112,6 +118,9 @@ class _DrgRouteTableRouteRuleState:
                * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+               
+               Potential values:
+               * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[bool] is_blackhole: Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
         :param pulumi.Input[bool] is_conflict: Indicates that the route was not imported due to a conflict between route rules.
         :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
@@ -184,6 +193,9 @@ class _DrgRouteTableRouteRuleState:
     def drg_route_table_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+
+        Potential values:
+        * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         """
         return pulumi.get(self, "drg_route_table_id")
 
@@ -299,6 +311,9 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
                * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+               
+               Potential values:
+               * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
                
                ** IMPORTANT **
@@ -414,6 +429,9 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
                * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+               
+               Potential values:
+               * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[bool] is_blackhole: Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
         :param pulumi.Input[bool] is_conflict: Indicates that the route was not imported due to a conflict between route rules.
         :param pulumi.Input[str] next_hop_drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
@@ -470,6 +488,9 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
     def drg_route_table_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+
+        Potential values:
+        * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         """
         return pulumi.get(self, "drg_route_table_id")
 

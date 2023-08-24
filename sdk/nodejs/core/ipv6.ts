@@ -86,7 +86,7 @@ export class Ipv6 extends pulumi.CustomResource {
      */
     public readonly ipAddress!: pulumi.Output<string>;
     /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      */
     public readonly ipv6subnetCidr!: pulumi.Output<string>;
     /**
@@ -179,7 +179,7 @@ export interface Ipv6State {
      */
     ipAddress?: pulumi.Input<string>;
     /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      */
     ipv6subnetCidr?: pulumi.Input<string>;
     /**
@@ -225,7 +225,7 @@ export interface Ipv6Args {
      */
     ipAddress?: pulumi.Input<string>;
     /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      */
     ipv6subnetCidr?: pulumi.Input<string>;
     /**

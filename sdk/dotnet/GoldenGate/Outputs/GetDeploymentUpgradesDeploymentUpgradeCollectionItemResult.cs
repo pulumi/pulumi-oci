@@ -46,6 +46,14 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+        /// </summary>
+        public readonly bool IsCancelAllowed;
+        /// <summary>
+        /// Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+        /// </summary>
+        public readonly bool IsRescheduleAllowed;
+        /// <summary>
         /// Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
         /// * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
         /// * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
@@ -96,6 +104,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string TimeFinished;
         /// <summary>
+        /// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeOggVersionSupportedUntil;
+        /// <summary>
         /// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeReleased;
@@ -103,6 +115,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeSchedule;
+        /// <summary>
+        /// Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeScheduleMax;
         /// <summary>
         /// The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
@@ -134,6 +150,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string id,
 
+            bool isCancelAllowed,
+
+            bool isRescheduleAllowed,
+
             bool isRollbackAllowed,
 
             bool isSecurityFix,
@@ -158,9 +178,13 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string timeFinished,
 
+            string timeOggVersionSupportedUntil,
+
             string timeReleased,
 
             string timeSchedule,
+
+            string timeScheduleMax,
 
             string timeSnoozedUntil,
 
@@ -176,6 +200,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsCancelAllowed = isCancelAllowed;
+            IsRescheduleAllowed = isRescheduleAllowed;
             IsRollbackAllowed = isRollbackAllowed;
             IsSecurityFix = isSecurityFix;
             IsSnoozed = isSnoozed;
@@ -188,8 +214,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeFinished = timeFinished;
+            TimeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             TimeReleased = timeReleased;
             TimeSchedule = timeSchedule;
+            TimeScheduleMax = timeScheduleMax;
             TimeSnoozedUntil = timeSnoozedUntil;
             TimeStarted = timeStarted;
             TimeUpdated = timeUpdated;

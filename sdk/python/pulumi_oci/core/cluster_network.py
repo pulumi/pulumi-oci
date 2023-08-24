@@ -19,6 +19,7 @@ class ClusterNetworkArgs:
                  compartment_id: pulumi.Input[str],
                  instance_pools: pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]],
                  placement_configuration: pulumi.Input['ClusterNetworkPlacementConfigurationArgs'],
+                 cluster_configuration: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
@@ -29,6 +30,9 @@ class ClusterNetworkArgs:
                
                Each cluster network can have one instance pool.
         :param pulumi.Input['ClusterNetworkPlacementConfigurationArgs'] placement_configuration: The location for where the instance pools in a cluster network will place instances.
+        :param pulumi.Input['ClusterNetworkClusterConfigurationArgs'] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
+               
+               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -36,6 +40,8 @@ class ClusterNetworkArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "instance_pools", instance_pools)
         pulumi.set(__self__, "placement_configuration", placement_configuration)
+        if cluster_configuration is not None:
+            pulumi.set(__self__, "cluster_configuration", cluster_configuration)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -82,6 +88,20 @@ class ClusterNetworkArgs:
         pulumi.set(self, "placement_configuration", value)
 
     @property
+    @pulumi.getter(name="clusterConfiguration")
+    def cluster_configuration(self) -> Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']]:
+        """
+        The HPC cluster configuration requested when launching instances of a cluster network.
+
+        If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+        """
+        return pulumi.get(self, "cluster_configuration")
+
+    @cluster_configuration.setter
+    def cluster_configuration(self, value: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']]):
+        pulumi.set(self, "cluster_configuration", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -121,6 +141,7 @@ class ClusterNetworkArgs:
 @pulumi.input_type
 class _ClusterNetworkState:
     def __init__(__self__, *,
+                 cluster_configuration: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -134,20 +155,25 @@ class _ClusterNetworkState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ClusterNetwork resources.
+        :param pulumi.Input['ClusterNetworkClusterConfigurationArgs'] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
+               
+               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
                
                Each cluster network can have one instance pool.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs of the HPC island.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs.
         :param pulumi.Input['ClusterNetworkPlacementConfigurationArgs'] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         :param pulumi.Input[str] state: The current state of the cluster network.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
+        if cluster_configuration is not None:
+            pulumi.set(__self__, "cluster_configuration", cluster_configuration)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -170,6 +196,20 @@ class _ClusterNetworkState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="clusterConfiguration")
+    def cluster_configuration(self) -> Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']]:
+        """
+        The HPC cluster configuration requested when launching instances of a cluster network.
+
+        If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+        """
+        return pulumi.get(self, "cluster_configuration")
+
+    @cluster_configuration.setter
+    def cluster_configuration(self, value: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']]):
+        pulumi.set(self, "cluster_configuration", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -223,7 +263,7 @@ class _ClusterNetworkState:
     @pulumi.getter(name="hpcIslandId")
     def hpc_island_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         """
         return pulumi.get(self, "hpc_island_id")
 
@@ -249,7 +289,7 @@ class _ClusterNetworkState:
     @pulumi.getter(name="networkBlockIds")
     def network_block_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of network block OCIDs of the HPC island.
+        The list of network block OCIDs.
         """
         return pulumi.get(self, "network_block_ids")
 
@@ -311,6 +351,7 @@ class ClusterNetwork(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cluster_configuration: Optional[pulumi.Input[pulumi.InputType['ClusterNetworkClusterConfigurationArgs']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -321,8 +362,17 @@ class ClusterNetwork(pulumi.CustomResource):
         """
         This resource provides the Cluster Network resource in Oracle Cloud Infrastructure Core service.
 
-        Creates a cluster network. For more information about cluster networks, see
-        [Managing Cluster Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+        Creates a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+        A cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+        instances that are connected with an ultra low-latency remote direct memory access (RDMA) network.
+        Cluster networks with instance pools use instance pools to manage groups of identical instances.
+
+        Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
+        instances that are managed as a group.
+
+        If you want to manage instances in the RDMA network independently of each other or use different types of instances
+        in the network group, create a compute cluster by using the [CreateComputeCluster](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCluster/CreateComputeCluster)
+        operation.
 
         To determine whether capacity is available for a specific shape before you create a cluster network,
         use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
@@ -355,6 +405,10 @@ class ClusterNetwork(pulumi.CustomResource):
                     display_name=var["cluster_network_placement_configuration_secondary_vnic_subnets_display_name"],
                 )],
             ),
+            cluster_configuration=oci.core.ClusterNetworkClusterConfigurationArgs(
+                hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
+                network_block_ids=var["cluster_network_cluster_configuration_network_block_ids"],
+            ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -374,6 +428,9 @@ class ClusterNetwork(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[pulumi.InputType['ClusterNetworkClusterConfigurationArgs']] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
+               
+               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
@@ -392,8 +449,17 @@ class ClusterNetwork(pulumi.CustomResource):
         """
         This resource provides the Cluster Network resource in Oracle Cloud Infrastructure Core service.
 
-        Creates a cluster network. For more information about cluster networks, see
-        [Managing Cluster Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+        Creates a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+        A cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+        instances that are connected with an ultra low-latency remote direct memory access (RDMA) network.
+        Cluster networks with instance pools use instance pools to manage groups of identical instances.
+
+        Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
+        instances that are managed as a group.
+
+        If you want to manage instances in the RDMA network independently of each other or use different types of instances
+        in the network group, create a compute cluster by using the [CreateComputeCluster](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCluster/CreateComputeCluster)
+        operation.
 
         To determine whether capacity is available for a specific shape before you create a cluster network,
         use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
@@ -425,6 +491,10 @@ class ClusterNetwork(pulumi.CustomResource):
                     subnet_id=oci_core_subnet["test_subnet"]["id"],
                     display_name=var["cluster_network_placement_configuration_secondary_vnic_subnets_display_name"],
                 )],
+            ),
+            cluster_configuration=oci.core.ClusterNetworkClusterConfigurationArgs(
+                hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
+                network_block_ids=var["cluster_network_cluster_configuration_network_block_ids"],
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -458,6 +528,7 @@ class ClusterNetwork(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cluster_configuration: Optional[pulumi.Input[pulumi.InputType['ClusterNetworkClusterConfigurationArgs']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -473,6 +544,7 @@ class ClusterNetwork(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ClusterNetworkArgs.__new__(ClusterNetworkArgs)
 
+            __props__.__dict__["cluster_configuration"] = cluster_configuration
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -500,6 +572,7 @@ class ClusterNetwork(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_configuration: Optional[pulumi.Input[pulumi.InputType['ClusterNetworkClusterConfigurationArgs']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -518,15 +591,18 @@ class ClusterNetwork(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[pulumi.InputType['ClusterNetworkClusterConfigurationArgs']] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
+               
+               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterNetworkInstancePoolArgs']]]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
                
                Each cluster network can have one instance pool.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs of the HPC island.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs.
         :param pulumi.Input[pulumi.InputType['ClusterNetworkPlacementConfigurationArgs']] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         :param pulumi.Input[str] state: The current state of the cluster network.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -536,6 +612,7 @@ class ClusterNetwork(pulumi.CustomResource):
 
         __props__ = _ClusterNetworkState.__new__(_ClusterNetworkState)
 
+        __props__.__dict__["cluster_configuration"] = cluster_configuration
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -548,6 +625,16 @@ class ClusterNetwork(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return ClusterNetwork(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="clusterConfiguration")
+    def cluster_configuration(self) -> pulumi.Output['outputs.ClusterNetworkClusterConfiguration']:
+        """
+        The HPC cluster configuration requested when launching instances of a cluster network.
+
+        If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+        """
+        return pulumi.get(self, "cluster_configuration")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -585,7 +672,7 @@ class ClusterNetwork(pulumi.CustomResource):
     @pulumi.getter(name="hpcIslandId")
     def hpc_island_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         """
         return pulumi.get(self, "hpc_island_id")
 
@@ -603,7 +690,7 @@ class ClusterNetwork(pulumi.CustomResource):
     @pulumi.getter(name="networkBlockIds")
     def network_block_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        The list of network block OCIDs of the HPC island.
+        The list of network block OCIDs.
         """
         return pulumi.get(self, "network_block_ids")
 

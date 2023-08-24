@@ -124,6 +124,10 @@ export class Deployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
     /**
+     * (Updatable) Defines the maintenance configuration for create operation.
+     */
+    public readonly maintenanceConfiguration!: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceConfiguration>;
+    /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      */
     public readonly maintenanceWindow!: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceWindow>;
@@ -176,6 +180,10 @@ export class Deployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeOfNextMaintenance!: pulumi.Output<string>;
     /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    public /*out*/ readonly timeOggVersionSupportedUntil!: pulumi.Output<string>;
+    /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
@@ -216,6 +224,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
+            resourceInputs["maintenanceConfiguration"] = state ? state.maintenanceConfiguration : undefined;
             resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
             resourceInputs["nextMaintenanceActionType"] = state ? state.nextMaintenanceActionType : undefined;
             resourceInputs["nextMaintenanceDescription"] = state ? state.nextMaintenanceDescription : undefined;
@@ -229,6 +238,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeOfNextMaintenance"] = state ? state.timeOfNextMaintenance : undefined;
+            resourceInputs["timeOggVersionSupportedUntil"] = state ? state.timeOggVersionSupportedUntil : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["timeUpgradeRequired"] = state ? state.timeUpgradeRequired : undefined;
         } else {
@@ -266,6 +276,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
             resourceInputs["isPublic"] = args ? args.isPublic : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["maintenanceConfiguration"] = args ? args.maintenanceConfiguration : undefined;
             resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["oggData"] = args ? args.oggData : undefined;
@@ -286,6 +297,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeOfNextMaintenance"] = undefined /*out*/;
+            resourceInputs["timeOggVersionSupportedUntil"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["timeUpgradeRequired"] = undefined /*out*/;
         }
@@ -375,6 +387,10 @@ export interface DeploymentState {
      */
     lifecycleSubState?: pulumi.Input<string>;
     /**
+     * (Updatable) Defines the maintenance configuration for create operation.
+     */
+    maintenanceConfiguration?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceConfiguration>;
+    /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      */
     maintenanceWindow?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceWindow>;
@@ -426,6 +442,10 @@ export interface DeploymentState {
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     timeOfNextMaintenance?: pulumi.Input<string>;
+    /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    timeOggVersionSupportedUntil?: pulumi.Input<string>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
@@ -488,6 +508,10 @@ export interface DeploymentArgs {
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
     licenseModel: pulumi.Input<string>;
+    /**
+     * (Updatable) Defines the maintenance configuration for create operation.
+     */
+    maintenanceConfiguration?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceConfiguration>;
     /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      */

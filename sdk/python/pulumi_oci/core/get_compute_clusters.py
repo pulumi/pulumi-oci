@@ -47,7 +47,7 @@ class GetComputeClustersResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+        The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -55,7 +55,7 @@ class GetComputeClustersResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
         """
         return pulumi.get(self, "compartment_id")
 

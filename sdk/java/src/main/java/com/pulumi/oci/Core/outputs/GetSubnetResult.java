@@ -59,12 +59,12 @@ public final class GetSubnetResult {
      */
     private String id;
     /**
-     * @return For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet&#39;s IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
+     * @return For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet&#39;s IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
      * 
      */
     private String ipv6cidrBlock;
     /**
-     * @return The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+     * @return The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
      * 
      */
     private List<String> ipv6cidrBlocks;
@@ -190,14 +190,14 @@ public final class GetSubnetResult {
         return this.id;
     }
     /**
-     * @return For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet&#39;s IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
+     * @return For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet&#39;s IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
      * 
      */
     public String ipv6cidrBlock() {
         return this.ipv6cidrBlock;
     }
     /**
-     * @return The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+     * @return The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
      * 
      */
     public List<String> ipv6cidrBlocks() {

@@ -115,11 +115,11 @@ export class Vcn extends pulumi.CustomResource {
     }
 
     /**
-     * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      */
     public /*out*/ readonly byoipv6cidrBlocks!: pulumi.Output<string[]>;
     /**
-     * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      */
     public readonly byoipv6cidrDetails!: pulumi.Output<outputs.Core.VcnByoipv6cidrDetail[]>;
     /**
@@ -130,7 +130,7 @@ export class Vcn extends pulumi.CustomResource {
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
+     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
      * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
     public readonly cidrBlocks!: pulumi.Output<string[]>;
@@ -172,16 +172,16 @@ export class Vcn extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+     * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      */
     public /*out*/ readonly ipv6cidrBlocks!: pulumi.Output<string[]>;
     /**
      * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
      * * The CIDR blocks must be valid.
-     * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+     * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+     * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      *
-     * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+     * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
      */
     public readonly ipv6privateCidrBlocks!: pulumi.Output<string[]>;
     /**
@@ -276,11 +276,11 @@ export class Vcn extends pulumi.CustomResource {
  */
 export interface VcnState {
     /**
-     * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      */
     byoipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      */
     byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VcnByoipv6cidrDetail>[]>;
     /**
@@ -291,7 +291,7 @@ export interface VcnState {
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
+     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
      * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
     cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
@@ -333,16 +333,16 @@ export interface VcnState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+     * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      */
     ipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
      * * The CIDR blocks must be valid.
-     * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+     * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+     * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      *
-     * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+     * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
      */
     ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -376,7 +376,7 @@ export interface VcnState {
  */
 export interface VcnArgs {
     /**
-     * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      */
     byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VcnByoipv6cidrDetail>[]>;
     /**
@@ -387,7 +387,7 @@ export interface VcnArgs {
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
+     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
      * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
     cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
@@ -419,10 +419,10 @@ export interface VcnArgs {
     /**
      * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
      * * The CIDR blocks must be valid.
-     * * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+     * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+     * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      *
-     * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+     * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
      */
     ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     /**

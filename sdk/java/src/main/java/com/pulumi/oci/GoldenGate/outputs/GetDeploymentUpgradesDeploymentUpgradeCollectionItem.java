@@ -53,6 +53,16 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      */
     private String id;
     /**
+     * @return Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+     * 
+     */
+    private Boolean isCancelAllowed;
+    /**
+     * @return Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+     * 
+     */
+    private Boolean isRescheduleAllowed;
+    /**
      * @return Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
      * * Manual upgrade is allowed to rollback only until the old version isn&#39;t deprecated yet.
      * * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
@@ -115,6 +125,11 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      */
     private String timeFinished;
     /**
+     * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeOggVersionSupportedUntil;
+    /**
      * @return The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -124,6 +139,11 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      * 
      */
     private String timeSchedule;
+    /**
+     * @return Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeScheduleMax;
     /**
      * @return The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
@@ -196,6 +216,20 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+     * 
+     */
+    public Boolean isCancelAllowed() {
+        return this.isCancelAllowed;
+    }
+    /**
+     * @return Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+     * 
+     */
+    public Boolean isRescheduleAllowed() {
+        return this.isRescheduleAllowed;
     }
     /**
      * @return Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
@@ -284,6 +318,13 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
         return this.timeFinished;
     }
     /**
+     * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeOggVersionSupportedUntil() {
+        return this.timeOggVersionSupportedUntil;
+    }
+    /**
      * @return The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -296,6 +337,13 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      */
     public String timeSchedule() {
         return this.timeSchedule;
+    }
+    /**
+     * @return Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeScheduleMax() {
+        return this.timeScheduleMax;
     }
     /**
      * @return The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -336,6 +384,8 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isCancelAllowed;
+        private Boolean isRescheduleAllowed;
         private Boolean isRollbackAllowed;
         private Boolean isSecurityFix;
         private Boolean isSnoozed;
@@ -348,8 +398,10 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeFinished;
+        private String timeOggVersionSupportedUntil;
         private String timeReleased;
         private String timeSchedule;
+        private String timeScheduleMax;
         private String timeSnoozedUntil;
         private String timeStarted;
         private String timeUpdated;
@@ -364,6 +416,8 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isCancelAllowed = defaults.isCancelAllowed;
+    	      this.isRescheduleAllowed = defaults.isRescheduleAllowed;
     	      this.isRollbackAllowed = defaults.isRollbackAllowed;
     	      this.isSecurityFix = defaults.isSecurityFix;
     	      this.isSnoozed = defaults.isSnoozed;
@@ -376,8 +430,10 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeFinished = defaults.timeFinished;
+    	      this.timeOggVersionSupportedUntil = defaults.timeOggVersionSupportedUntil;
     	      this.timeReleased = defaults.timeReleased;
     	      this.timeSchedule = defaults.timeSchedule;
+    	      this.timeScheduleMax = defaults.timeScheduleMax;
     	      this.timeSnoozedUntil = defaults.timeSnoozedUntil;
     	      this.timeStarted = defaults.timeStarted;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -421,6 +477,16 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCancelAllowed(Boolean isCancelAllowed) {
+            this.isCancelAllowed = Objects.requireNonNull(isCancelAllowed);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRescheduleAllowed(Boolean isRescheduleAllowed) {
+            this.isRescheduleAllowed = Objects.requireNonNull(isRescheduleAllowed);
             return this;
         }
         @CustomType.Setter
@@ -484,6 +550,11 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeOggVersionSupportedUntil(String timeOggVersionSupportedUntil) {
+            this.timeOggVersionSupportedUntil = Objects.requireNonNull(timeOggVersionSupportedUntil);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
             this.timeReleased = Objects.requireNonNull(timeReleased);
             return this;
@@ -491,6 +562,11 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
         @CustomType.Setter
         public Builder timeSchedule(String timeSchedule) {
             this.timeSchedule = Objects.requireNonNull(timeSchedule);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeScheduleMax(String timeScheduleMax) {
+            this.timeScheduleMax = Objects.requireNonNull(timeScheduleMax);
             return this;
         }
         @CustomType.Setter
@@ -518,6 +594,8 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.isCancelAllowed = isCancelAllowed;
+            o.isRescheduleAllowed = isRescheduleAllowed;
             o.isRollbackAllowed = isRollbackAllowed;
             o.isSecurityFix = isSecurityFix;
             o.isSnoozed = isSnoozed;
@@ -530,8 +608,10 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeFinished = timeFinished;
+            o.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             o.timeReleased = timeReleased;
             o.timeSchedule = timeSchedule;
+            o.timeScheduleMax = timeScheduleMax;
             o.timeSnoozedUntil = timeSnoozedUntil;
             o.timeStarted = timeStarted;
             o.timeUpdated = timeUpdated;

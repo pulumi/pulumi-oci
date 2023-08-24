@@ -13,7 +13,8 @@ import (
 
 // This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
 //
-// Gets information about the specified compute cluster.
+// Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+// is a remote direct memory access (RDMA) network group.
 //
 // ## Example Usage
 //
@@ -52,15 +53,15 @@ func LookupComputeCluster(ctx *pulumi.Context, args *LookupComputeClusterArgs, o
 
 // A collection of arguments for invoking getComputeCluster.
 type LookupComputeClusterArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.  A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
 	ComputeClusterId string `pulumi:"computeClusterId"`
 }
 
 // A collection of values returned by getComputeCluster.
 type LookupComputeClusterResult struct {
-	// The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+	// The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
 	CompartmentId    string `pulumi:"compartmentId"`
 	ComputeClusterId string `pulumi:"computeClusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -69,11 +70,11 @@ type LookupComputeClusterResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
 	Id string `pulumi:"id"`
 	// The current state of the compute cluster.
 	State string `pulumi:"state"`
-	// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
 
@@ -92,7 +93,7 @@ func LookupComputeClusterOutput(ctx *pulumi.Context, args LookupComputeClusterOu
 
 // A collection of arguments for invoking getComputeCluster.
 type LookupComputeClusterOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.  A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
 	ComputeClusterId pulumi.StringInput `pulumi:"computeClusterId"`
 }
 
@@ -115,12 +116,12 @@ func (o LookupComputeClusterResultOutput) ToLookupComputeClusterResultOutputWith
 	return o
 }
 
-// The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+// The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
 func (o LookupComputeClusterResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeClusterResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
 func (o LookupComputeClusterResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -144,7 +145,7 @@ func (o LookupComputeClusterResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupComputeClusterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
 func (o LookupComputeClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -154,7 +155,7 @@ func (o LookupComputeClusterResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeClusterResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupComputeClusterResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

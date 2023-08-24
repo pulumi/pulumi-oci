@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.GetClusterNetworkClusterConfiguration;
 import com.pulumi.oci.Core.outputs.GetClusterNetworkInstancePool;
 import com.pulumi.oci.Core.outputs.GetClusterNetworkPlacementConfiguration;
 import java.lang.Object;
@@ -14,6 +15,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetClusterNetworkResult {
+    private List<GetClusterNetworkClusterConfiguration> clusterConfigurations;
     private String clusterNetworkId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -36,7 +38,7 @@ public final class GetClusterNetworkResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
     private String hpcIslandId;
@@ -77,6 +79,9 @@ public final class GetClusterNetworkResult {
     private String timeUpdated;
 
     private GetClusterNetworkResult() {}
+    public List<GetClusterNetworkClusterConfiguration> clusterConfigurations() {
+        return this.clusterConfigurations;
+    }
     public String clusterNetworkId() {
         return this.clusterNetworkId;
     }
@@ -109,7 +114,7 @@ public final class GetClusterNetworkResult {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
     public String hpcIslandId() {
@@ -174,6 +179,7 @@ public final class GetClusterNetworkResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetClusterNetworkClusterConfiguration> clusterConfigurations;
         private String clusterNetworkId;
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -190,6 +196,7 @@ public final class GetClusterNetworkResult {
         public Builder() {}
         public Builder(GetClusterNetworkResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterConfigurations = defaults.clusterConfigurations;
     	      this.clusterNetworkId = defaults.clusterNetworkId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
@@ -205,6 +212,14 @@ public final class GetClusterNetworkResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder clusterConfigurations(List<GetClusterNetworkClusterConfiguration> clusterConfigurations) {
+            this.clusterConfigurations = Objects.requireNonNull(clusterConfigurations);
+            return this;
+        }
+        public Builder clusterConfigurations(GetClusterNetworkClusterConfiguration... clusterConfigurations) {
+            return clusterConfigurations(List.of(clusterConfigurations));
+        }
         @CustomType.Setter
         public Builder clusterNetworkId(String clusterNetworkId) {
             this.clusterNetworkId = Objects.requireNonNull(clusterNetworkId);
@@ -281,6 +296,7 @@ public final class GetClusterNetworkResult {
         }
         public GetClusterNetworkResult build() {
             final var o = new GetClusterNetworkResult();
+            o.clusterConfigurations = clusterConfigurations;
             o.clusterNetworkId = clusterNetworkId;
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;

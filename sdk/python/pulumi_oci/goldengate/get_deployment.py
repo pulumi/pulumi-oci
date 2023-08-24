@@ -22,7 +22,7 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -86,6 +86,9 @@ class GetDeploymentResult:
         if lifecycle_sub_state and not isinstance(lifecycle_sub_state, str):
             raise TypeError("Expected argument 'lifecycle_sub_state' to be a str")
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        if maintenance_configurations and not isinstance(maintenance_configurations, list):
+            raise TypeError("Expected argument 'maintenance_configurations' to be a list")
+        pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
         if maintenance_windows and not isinstance(maintenance_windows, list):
             raise TypeError("Expected argument 'maintenance_windows' to be a list")
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
@@ -125,6 +128,9 @@ class GetDeploymentResult:
         if time_of_next_maintenance and not isinstance(time_of_next_maintenance, str):
             raise TypeError("Expected argument 'time_of_next_maintenance' to be a str")
         pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
+        if time_ogg_version_supported_until and not isinstance(time_ogg_version_supported_until, str):
+            raise TypeError("Expected argument 'time_ogg_version_supported_until' to be a str")
+        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -298,6 +304,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
+    @pulumi.getter(name="maintenanceConfigurations")
+    def maintenance_configurations(self) -> Sequence['outputs.GetDeploymentMaintenanceConfigurationResult']:
+        """
+        Attributes for configuring automatic deployment maintenance.
+        """
+        return pulumi.get(self, "maintenance_configurations")
+
+    @property
     @pulumi.getter(name="maintenanceWindows")
     def maintenance_windows(self) -> Sequence['outputs.GetDeploymentMaintenanceWindowResult']:
         """
@@ -402,6 +416,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "time_of_next_maintenance")
 
     @property
+    @pulumi.getter(name="timeOggVersionSupportedUntil")
+    def time_ogg_version_supported_until(self) -> str:
+        """
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_ogg_version_supported_until")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -445,6 +467,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
             lifecycle_sub_state=self.lifecycle_sub_state,
+            maintenance_configurations=self.maintenance_configurations,
             maintenance_windows=self.maintenance_windows,
             next_maintenance_action_type=self.next_maintenance_action_type,
             next_maintenance_description=self.next_maintenance_description,
@@ -458,6 +481,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_of_next_maintenance=self.time_of_next_maintenance,
+            time_ogg_version_supported_until=self.time_ogg_version_supported_until,
             time_updated=self.time_updated,
             time_upgrade_required=self.time_upgrade_required)
 
@@ -508,6 +532,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
+        maintenance_configurations=pulumi.get(__ret__, 'maintenance_configurations'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
         next_maintenance_action_type=pulumi.get(__ret__, 'next_maintenance_action_type'),
         next_maintenance_description=pulumi.get(__ret__, 'next_maintenance_description'),
@@ -521,6 +546,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_next_maintenance=pulumi.get(__ret__, 'time_of_next_maintenance'),
+        time_ogg_version_supported_until=pulumi.get(__ret__, 'time_ogg_version_supported_until'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         time_upgrade_required=pulumi.get(__ret__, 'time_upgrade_required'))
 

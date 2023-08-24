@@ -14,7 +14,9 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
         /// 
-        /// Gets information about the specified compute cluster.
+        /// Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+        /// is a remote direct memory access (RDMA) network group.
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +46,9 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
         /// 
-        /// Gets information about the specified compute cluster.
+        /// Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+        /// is a remote direct memory access (RDMA) network group.
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -76,7 +80,7 @@ namespace Pulumi.Oci.Core
     public sealed class GetComputeClusterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.  A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
         /// </summary>
         [Input("computeClusterId", required: true)]
         public string ComputeClusterId { get; set; } = null!;
@@ -90,7 +94,7 @@ namespace Pulumi.Oci.Core
     public sealed class GetComputeClusterInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.  A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
         /// </summary>
         [Input("computeClusterId", required: true)]
         public Input<string> ComputeClusterId { get; set; } = null!;
@@ -106,11 +110,11 @@ namespace Pulumi.Oci.Core
     public sealed class GetComputeClusterResult
     {
         /// <summary>
-        /// The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+        /// The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
         /// </summary>
         public readonly string CompartmentId;
         public readonly string ComputeClusterId;
@@ -127,7 +131,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -135,7 +139,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
 

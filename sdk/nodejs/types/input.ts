@@ -4446,7 +4446,7 @@ export namespace BigDataService {
          */
         scaleUpConfig?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleUpConfig>;
         /**
-         * (Updatable)
+         * (Updatable) Details of a horizontal scaling schedule.
          */
         scheduleDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetailsScheduleDetail>[]>;
         /**
@@ -4649,11 +4649,11 @@ export namespace BigDataService {
          */
         scheduleType?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) Time of day and horizontal scaling configuration.
          */
         timeAndHorizontalScalingConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig>[]>;
         /**
-         * (Updatable)
+         * (Updatable) Time of day and vertical scaling configuration
          */
         timeAndVerticalScalingConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig>[]>;
     }
@@ -4752,8 +4752,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -4872,8 +4870,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -4914,8 +4910,43 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         *
-         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
+    export interface BdsInstanceKafkaBrokerNode {
+        /**
+         * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+         */
+        blockVolumeSizeInGbs?: pulumi.Input<string>;
+        numberOfKafkaNodes: pulumi.Input<number>;
+        /**
+         * Shape of the node
+         */
+        shape: pulumi.Input<string>;
+        /**
+         * The shape configuration requested for the node.
+         */
+        shapeConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceKafkaBrokerNodeShapeConfig>;
+        /**
+         * The OCID of the subnet in which the node should be created
+         */
+        subnetId: pulumi.Input<string>;
+    }
+
+    export interface BdsInstanceKafkaBrokerNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs available to the node.
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -4956,8 +4987,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -5013,13 +5042,11 @@ export namespace BigDataService {
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * BDS instance node type
+         * The Big Data Service cluster node type.
          */
         nodeType?: pulumi.Input<string>;
         /**
          * The total number of OCPUs available to the node.
-         *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -5044,6 +5071,10 @@ export namespace BigDataService {
          * The time the BDS instance was created. An RFC3339 formatted datetime string
          */
         timeCreated?: pulumi.Input<string>;
+        /**
+         * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+         */
+        timeMaintenanceRebootDue?: pulumi.Input<string>;
     }
 
     export interface BdsInstanceNodeAttachedBlockVolume {
@@ -5091,8 +5122,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -5133,8 +5162,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         *
-         *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
@@ -5160,6 +5187,30 @@ export namespace BigDataService {
     }
 
     export interface GetBdsInstanceApiKeysFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsInstanceGetOsPatchFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstanceGetOsPatchFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsInstanceListOsPatchesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstanceListOsPatchesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -9844,6 +9895,10 @@ export namespace ContainerEngine {
          */
         resourceConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerResourceConfig>;
         /**
+         * Security context for container.
+         */
+        securityContext?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerSecurityContext>;
+        /**
          * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
          *
          *
@@ -9955,6 +10010,29 @@ export namespace ContainerEngine {
          * A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
          */
         vcpusLimit?: pulumi.Input<number>;
+    }
+
+    export interface ContainerInstanceContainerSecurityContext {
+        /**
+         * Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+         */
+        isNonRootUserCheckEnabled?: pulumi.Input<boolean>;
+        /**
+         * Determines if the container will have a read-only root file system. Default value is false.
+         */
+        isRootFileSystemReadonly?: pulumi.Input<boolean>;
+        /**
+         * The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+         */
+        runAsGroup?: pulumi.Input<number>;
+        /**
+         * The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+         */
+        runAsUser?: pulumi.Input<number>;
+        /**
+         * The type of security context
+         */
+        securityContextType?: pulumi.Input<string>;
     }
 
     export interface ContainerInstanceContainerVolumeMount {
@@ -10808,6 +10886,17 @@ export namespace Core {
         min: pulumi.Input<number>;
     }
 
+    export interface ClusterNetworkClusterConfiguration {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+         */
+        hpcIslandId: pulumi.Input<string>;
+        /**
+         * The list of network block OCIDs.
+         */
+        networkBlockIds?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface ClusterNetworkInstancePool {
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -10927,6 +11016,7 @@ export namespace Core {
          * The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain: pulumi.Input<string>;
+        placementConstraint?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
          */
@@ -11037,11 +11127,11 @@ export namespace Core {
 
     export interface ComputeCapacityReservationInstanceReservationConfigClusterConfig {
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
          */
         hpcIslandId: pulumi.Input<string>;
         /**
-         * (Updatable) The list of OCID of the network blocks.
+         * (Updatable) The list of OCIDs of the network blocks.
          */
         networkBlockIds?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -14126,7 +14216,7 @@ export namespace Core {
          */
         faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
          */
         primarySubnetId: pulumi.Input<string>;
         /**
@@ -14445,7 +14535,7 @@ export namespace Core {
          *
          * A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
          *
-         * Cannot be an IPv6 CIDR.
+         * Cannot be an IPv6 prefix.
          *
          * Example: `0.0.0.0/0`
          *
@@ -14460,7 +14550,7 @@ export namespace Core {
          * (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
          *
          * Allowed values:
-         * * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
          */
         destination?: pulumi.Input<string>;
@@ -14709,7 +14799,7 @@ export namespace Core {
          */
         byoipv6rangeId: pulumi.Input<string>;
         /**
-         * An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole CIDR block identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+         * An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
          */
         ipv6cidrBlock: pulumi.Input<string>;
     }
@@ -15512,6 +15602,24 @@ export namespace DataFlow {
 }
 
 export namespace DataIntegration {
+    export interface GetWorkspaceApplicationsFilter {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetWorkspaceApplicationsFilterArgs {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetWorkspaceFoldersFilter {
         /**
          * Used to filter by the name of the object.
@@ -15564,6 +15672,229 @@ export namespace DataIntegration {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface WorkspaceApplicationDependentObjectMetadata {
+        /**
+         * The patch action indicating if object was created, updated, or deleted.
+         */
+        action?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The fully qualified path of the published object, which would include its project and folder.
+         */
+        namePath?: pulumi.Input<string>;
+        /**
+         * The object version.
+         */
+        objectVersion?: pulumi.Input<number>;
+        /**
+         * The type of the object in patch.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationMetadata {
+        /**
+         * The owning object's key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         */
+        aggregators?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationMetadataAggregator>[]>;
+        /**
+         * A count statistics.
+         */
+        countStatistics?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationMetadataCountStatistic>[]>;
+        /**
+         * The user that created the object.
+         */
+        createdBy?: pulumi.Input<string>;
+        /**
+         * The user that created the object.
+         */
+        createdByName?: pulumi.Input<string>;
+        /**
+         * The full path to identify this object.
+         */
+        identifierPath?: pulumi.Input<string>;
+        /**
+         * Information property fields.
+         */
+        infoFields?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The registry version.
+         */
+        registryVersion?: pulumi.Input<number>;
+        /**
+         * The date and time the application was created, in the timestamp format defined by RFC3339.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The user that updated the object.
+         */
+        updatedBy?: pulumi.Input<string>;
+        /**
+         * The user that updated the object.
+         */
+        updatedByName?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationMetadataAggregator {
+        /**
+         * (Updatable) Detailed description for the object.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The type of the object in patch.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationMetadataCountStatistic {
+        /**
+         * The array of statistics.
+         */
+        objectTypeCountLists?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationMetadataCountStatisticObjectTypeCountList>[]>;
+    }
+
+    export interface WorkspaceApplicationMetadataCountStatisticObjectTypeCountList {
+        /**
+         * The value for the count statistic object.
+         */
+        objectCount?: pulumi.Input<string>;
+        /**
+         * The type of object for the count statistic object.
+         */
+        objectType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationParentRef {
+        /**
+         * Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationPublishedObjectMetadata {
+        /**
+         * The patch action indicating if object was created, updated, or deleted.
+         */
+        action?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The fully qualified path of the published object, which would include its project and folder.
+         */
+        namePath?: pulumi.Input<string>;
+        /**
+         * The object version.
+         */
+        objectVersion?: pulumi.Input<number>;
+        /**
+         * The type of the object in patch.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationRegistryMetadata {
+        /**
+         * The owning object's key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The registry version.
+         */
+        registryVersion?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceApplicationSourceApplicationInfo {
+        /**
+         * The source application key to use when creating the application.
+         */
+        applicationKey?: pulumi.Input<string>;
+        /**
+         * The source application version of the application.
+         */
+        applicationVersion?: pulumi.Input<string>;
+        /**
+         * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+         */
+        copyType?: pulumi.Input<string>;
+        /**
+         * The last patch key for the application.
+         */
+        lastPatchKey?: pulumi.Input<string>;
+        /**
+         * The workspace ID.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        workspaceId?: pulumi.Input<string>;
     }
 
     export interface WorkspaceFolderMetadata {
@@ -27610,6 +27941,29 @@ export namespace GoldenGate {
          * The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
          */
         timeDiagnosticStart?: pulumi.Input<string>;
+    }
+
+    export interface DeploymentMaintenanceConfiguration {
+        /**
+         * (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+         */
+        bundleReleaseUpgradePeriodInDays?: pulumi.Input<number>;
+        /**
+         * (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+         */
+        interimReleaseUpgradePeriodInDays?: pulumi.Input<number>;
+        /**
+         * (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+         */
+        isInterimReleaseAutoUpgradeEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+         */
+        majorReleaseUpgradePeriodInDays?: pulumi.Input<number>;
+        /**
+         * (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+         */
+        securityPatchUpgradePeriodInDays?: pulumi.Input<number>;
     }
 
     export interface DeploymentMaintenanceWindow {

@@ -26,6 +26,11 @@ public final class GetBdsInstancePatchHistoriesResult {
      * 
      */
     private List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories;
+    /**
+     * @return The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+     * 
+     */
+    private @Nullable String patchType;
     private @Nullable String patchVersion;
     /**
      * @return The status of this patch.
@@ -54,6 +59,13 @@ public final class GetBdsInstancePatchHistoriesResult {
     public List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories() {
         return this.patchHistories;
     }
+    /**
+     * @return The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+     * 
+     */
+    public Optional<String> patchType() {
+        return Optional.ofNullable(this.patchType);
+    }
     public Optional<String> patchVersion() {
         return Optional.ofNullable(this.patchVersion);
     }
@@ -78,6 +90,7 @@ public final class GetBdsInstancePatchHistoriesResult {
         private @Nullable List<GetBdsInstancePatchHistoriesFilter> filters;
         private String id;
         private List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories;
+        private @Nullable String patchType;
         private @Nullable String patchVersion;
         private @Nullable String state;
         public Builder() {}
@@ -87,6 +100,7 @@ public final class GetBdsInstancePatchHistoriesResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.patchHistories = defaults.patchHistories;
+    	      this.patchType = defaults.patchType;
     	      this.patchVersion = defaults.patchVersion;
     	      this.state = defaults.state;
         }
@@ -118,6 +132,11 @@ public final class GetBdsInstancePatchHistoriesResult {
             return patchHistories(List.of(patchHistories));
         }
         @CustomType.Setter
+        public Builder patchType(@Nullable String patchType) {
+            this.patchType = patchType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder patchVersion(@Nullable String patchVersion) {
             this.patchVersion = patchVersion;
             return this;
@@ -133,6 +152,7 @@ public final class GetBdsInstancePatchHistoriesResult {
             o.filters = filters;
             o.id = id;
             o.patchHistories = patchHistories;
+            o.patchType = patchType;
             o.patchVersion = patchVersion;
             o.state = state;
             return o;

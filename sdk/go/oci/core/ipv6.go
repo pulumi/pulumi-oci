@@ -73,7 +73,7 @@ type Ipv6 struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
-	// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr pulumi.StringOutput `pulumi:"ipv6subnetCidr"`
 	// The IPv6's current state.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -131,7 +131,7 @@ type ipv6State struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
 	IpAddress *string `pulumi:"ipAddress"`
-	// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
 	// The IPv6's current state.
 	State *string `pulumi:"state"`
@@ -157,7 +157,7 @@ type Ipv6State struct {
 	FreeformTags pulumi.MapInput
 	// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
 	IpAddress pulumi.StringPtrInput
-	// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr pulumi.StringPtrInput
 	// The IPv6's current state.
 	State pulumi.StringPtrInput
@@ -185,7 +185,7 @@ type ipv6Args struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
 	IpAddress *string `pulumi:"ipAddress"`
-	// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
 	//
@@ -204,7 +204,7 @@ type Ipv6Args struct {
 	FreeformTags pulumi.MapInput
 	// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
 	IpAddress pulumi.StringPtrInput
-	// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
 	//
@@ -325,7 +325,7 @@ func (o Ipv6Output) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 func (o Ipv6Output) Ipv6subnetCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
 }

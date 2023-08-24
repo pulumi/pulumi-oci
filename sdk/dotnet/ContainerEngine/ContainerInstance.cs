@@ -70,6 +70,14 @@ namespace Pulumi.Oci.ContainerEngine
     ///                     MemoryLimitInGbs = @var.Container_instance_containers_resource_config_memory_limit_in_gbs,
     ///                     VcpusLimit = @var.Container_instance_containers_resource_config_vcpus_limit,
     ///                 },
+    ///                 SecurityContext = new Oci.ContainerEngine.Inputs.ContainerInstanceContainerSecurityContextArgs
+    ///                 {
+    ///                     IsNonRootUserCheckEnabled = @var.Container_instance_containers_security_context_is_non_root_user_check_enabled,
+    ///                     IsRootFileSystemReadonly = @var.Container_instance_containers_security_context_is_root_file_system_readonly,
+    ///                     RunAsGroup = @var.Container_instance_containers_security_context_run_as_group,
+    ///                     RunAsUser = @var.Container_instance_containers_security_context_run_as_user,
+    ///                     SecurityContextType = @var.Container_instance_containers_security_context_security_context_type,
+    ///                 },
     ///                 VolumeMounts = new[]
     ///                 {
     ///                     new Oci.ContainerEngine.Inputs.ContainerInstanceContainerVolumeMountArgs

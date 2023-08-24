@@ -445,6 +445,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    @Import(name="inMemoryPercentage")
+    private @Nullable Output<Integer> inMemoryPercentage;
+
+    /**
+     * @return (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    public Optional<Output<Integer>> inMemoryPercentage() {
+        return Optional.ofNullable(this.inMemoryPercentage);
+    }
+
+    /**
      * (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * 
      * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -1150,6 +1165,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.inMemoryPercentage = $.inMemoryPercentage;
         this.isAccessControlEnabled = $.isAccessControlEnabled;
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
         this.isAutoScalingForStorageEnabled = $.isAutoScalingForStorageEnabled;
@@ -1789,6 +1805,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param inMemoryPercentage (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inMemoryPercentage(@Nullable Output<Integer> inMemoryPercentage) {
+            $.inMemoryPercentage = inMemoryPercentage;
+            return this;
+        }
+
+        /**
+         * @param inMemoryPercentage (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inMemoryPercentage(Integer inMemoryPercentage) {
+            return inMemoryPercentage(Output.of(inMemoryPercentage));
         }
 
         /**

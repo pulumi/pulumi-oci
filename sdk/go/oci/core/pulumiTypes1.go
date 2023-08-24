@@ -13,6 +13,472 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetSecurityListsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityListsFilterInput is an input type that accepts GetSecurityListsFilterArgs and GetSecurityListsFilterOutput values.
+// You can construct a concrete instance of `GetSecurityListsFilterInput` via:
+//
+//	GetSecurityListsFilterArgs{...}
+type GetSecurityListsFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsFilterOutput() GetSecurityListsFilterOutput
+	ToGetSecurityListsFilterOutputWithContext(context.Context) GetSecurityListsFilterOutput
+}
+
+type GetSecurityListsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityListsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityListsFilterArgs) ToGetSecurityListsFilterOutput() GetSecurityListsFilterOutput {
+	return i.ToGetSecurityListsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsFilterArgs) ToGetSecurityListsFilterOutputWithContext(ctx context.Context) GetSecurityListsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsFilterOutput)
+}
+
+// GetSecurityListsFilterArrayInput is an input type that accepts GetSecurityListsFilterArray and GetSecurityListsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsFilterArrayInput` via:
+//
+//	GetSecurityListsFilterArray{ GetSecurityListsFilterArgs{...} }
+type GetSecurityListsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsFilterArrayOutput() GetSecurityListsFilterArrayOutput
+	ToGetSecurityListsFilterArrayOutputWithContext(context.Context) GetSecurityListsFilterArrayOutput
+}
+
+type GetSecurityListsFilterArray []GetSecurityListsFilterInput
+
+func (GetSecurityListsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityListsFilterArray) ToGetSecurityListsFilterArrayOutput() GetSecurityListsFilterArrayOutput {
+	return i.ToGetSecurityListsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsFilterArray) ToGetSecurityListsFilterArrayOutputWithContext(ctx context.Context) GetSecurityListsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsFilterArrayOutput)
+}
+
+type GetSecurityListsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityListsFilterOutput) ToGetSecurityListsFilterOutput() GetSecurityListsFilterOutput {
+	return o
+}
+
+func (o GetSecurityListsFilterOutput) ToGetSecurityListsFilterOutputWithContext(ctx context.Context) GetSecurityListsFilterOutput {
+	return o
+}
+
+func (o GetSecurityListsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityListsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityListsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityListsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityListsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityListsFilterArrayOutput) ToGetSecurityListsFilterArrayOutput() GetSecurityListsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsFilterArrayOutput) ToGetSecurityListsFilterArrayOutputWithContext(ctx context.Context) GetSecurityListsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityListsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsFilter {
+		return vs[0].([]GetSecurityListsFilter)[vs[1].(int)]
+	}).(GetSecurityListsFilterOutput)
+}
+
+type GetSecurityListsSecurityList struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Rules for allowing egress IP packets.
+	EgressSecurityRules []GetSecurityListsSecurityListEgressSecurityRule `pulumi:"egressSecurityRules"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The security list's Oracle Cloud ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// Rules for allowing ingress IP packets.
+	IngressSecurityRules []GetSecurityListsSecurityListIngressSecurityRule `pulumi:"ingressSecurityRules"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetSecurityListsSecurityListInput is an input type that accepts GetSecurityListsSecurityListArgs and GetSecurityListsSecurityListOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListInput` via:
+//
+//	GetSecurityListsSecurityListArgs{...}
+type GetSecurityListsSecurityListInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListOutput() GetSecurityListsSecurityListOutput
+	ToGetSecurityListsSecurityListOutputWithContext(context.Context) GetSecurityListsSecurityListOutput
+}
+
+type GetSecurityListsSecurityListArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Rules for allowing egress IP packets.
+	EgressSecurityRules GetSecurityListsSecurityListEgressSecurityRuleArrayInput `pulumi:"egressSecurityRules"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The security list's Oracle Cloud ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// Rules for allowing ingress IP packets.
+	IngressSecurityRules GetSecurityListsSecurityListIngressSecurityRuleArrayInput `pulumi:"ingressSecurityRules"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetSecurityListsSecurityListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityList)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListArgs) ToGetSecurityListsSecurityListOutput() GetSecurityListsSecurityListOutput {
+	return i.ToGetSecurityListsSecurityListOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListArgs) ToGetSecurityListsSecurityListOutputWithContext(ctx context.Context) GetSecurityListsSecurityListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListOutput)
+}
+
+// GetSecurityListsSecurityListArrayInput is an input type that accepts GetSecurityListsSecurityListArray and GetSecurityListsSecurityListArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListArrayInput` via:
+//
+//	GetSecurityListsSecurityListArray{ GetSecurityListsSecurityListArgs{...} }
+type GetSecurityListsSecurityListArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListArrayOutput() GetSecurityListsSecurityListArrayOutput
+	ToGetSecurityListsSecurityListArrayOutputWithContext(context.Context) GetSecurityListsSecurityListArrayOutput
+}
+
+type GetSecurityListsSecurityListArray []GetSecurityListsSecurityListInput
+
+func (GetSecurityListsSecurityListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityList)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListArray) ToGetSecurityListsSecurityListArrayOutput() GetSecurityListsSecurityListArrayOutput {
+	return i.ToGetSecurityListsSecurityListArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListArray) ToGetSecurityListsSecurityListArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListArrayOutput)
+}
+
+type GetSecurityListsSecurityListOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityList)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListOutput) ToGetSecurityListsSecurityListOutput() GetSecurityListsSecurityListOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListOutput) ToGetSecurityListsSecurityListOutputWithContext(ctx context.Context) GetSecurityListsSecurityListOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetSecurityListsSecurityListOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSecurityListsSecurityListOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetSecurityListsSecurityListOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Rules for allowing egress IP packets.
+func (o GetSecurityListsSecurityListOutput) EgressSecurityRules() GetSecurityListsSecurityListEgressSecurityRuleArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) []GetSecurityListsSecurityListEgressSecurityRule {
+		return v.EgressSecurityRules
+	}).(GetSecurityListsSecurityListEgressSecurityRuleArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSecurityListsSecurityListOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The security list's Oracle Cloud ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetSecurityListsSecurityListOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Rules for allowing ingress IP packets.
+func (o GetSecurityListsSecurityListOutput) IngressSecurityRules() GetSecurityListsSecurityListIngressSecurityRuleArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) []GetSecurityListsSecurityListIngressSecurityRule {
+		return v.IngressSecurityRules
+	}).(GetSecurityListsSecurityListIngressSecurityRuleArrayOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+func (o GetSecurityListsSecurityListOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetSecurityListsSecurityListOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+func (o GetSecurityListsSecurityListOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityList) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetSecurityListsSecurityListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityList)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListArrayOutput) ToGetSecurityListsSecurityListArrayOutput() GetSecurityListsSecurityListArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListArrayOutput) ToGetSecurityListsSecurityListArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityList {
+		return vs[0].([]GetSecurityListsSecurityList)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRule struct {
+	// An optional description of your choice for the rule.
+	Description string `pulumi:"description"`
+	// Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+	Destination string `pulumi:"destination"`
+	// Type of destination for the rule. The default is `CIDR_BLOCK`.
+	DestinationType string `pulumi:"destinationType"`
+	// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+	// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+	// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+	IcmpOptions []GetSecurityListsSecurityListEgressSecurityRuleIcmpOption `pulumi:"icmpOptions"`
+	// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+	Protocol string `pulumi:"protocol"`
+	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+	Stateless bool `pulumi:"stateless"`
+	// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+	// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+	TcpOptions []GetSecurityListsSecurityListEgressSecurityRuleTcpOption `pulumi:"tcpOptions"`
+	// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+	// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+	UdpOptions []GetSecurityListsSecurityListEgressSecurityRuleUdpOption `pulumi:"udpOptions"`
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleArgs and GetSecurityListsSecurityListEgressSecurityRuleOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleArgs{...}
+type GetSecurityListsSecurityListEgressSecurityRuleInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleOutput() GetSecurityListsSecurityListEgressSecurityRuleOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleArgs struct {
+	// An optional description of your choice for the rule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// Type of destination for the rule. The default is `CIDR_BLOCK`.
+	DestinationType pulumi.StringInput `pulumi:"destinationType"`
+	// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+	// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+	// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+	IcmpOptions GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayInput `pulumi:"icmpOptions"`
+	// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+	Stateless pulumi.BoolInput `pulumi:"stateless"`
+	// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+	// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+	TcpOptions GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayInput `pulumi:"tcpOptions"`
+	// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+	// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+	UdpOptions GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayInput `pulumi:"udpOptions"`
+}
+
+func (GetSecurityListsSecurityListEgressSecurityRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRule)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleArgs) ToGetSecurityListsSecurityListEgressSecurityRuleOutput() GetSecurityListsSecurityListEgressSecurityRuleOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleArgs) ToGetSecurityListsSecurityListEgressSecurityRuleOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleOutput)
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleArray and GetSecurityListsSecurityListEgressSecurityRuleArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleArrayInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleArray{ GetSecurityListsSecurityListEgressSecurityRuleArgs{...} }
+type GetSecurityListsSecurityListEgressSecurityRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleArrayOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleArrayOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleArrayOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleArray []GetSecurityListsSecurityListEgressSecurityRuleInput
+
+func (GetSecurityListsSecurityListEgressSecurityRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRule)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleArray) ToGetSecurityListsSecurityListEgressSecurityRuleArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleArrayOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleArray) ToGetSecurityListsSecurityListEgressSecurityRuleArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleArrayOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRule)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) ToGetSecurityListsSecurityListEgressSecurityRuleOutput() GetSecurityListsSecurityListEgressSecurityRuleOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) ToGetSecurityListsSecurityListEgressSecurityRuleOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleOutput {
+	return o
+}
+
+// An optional description of your choice for the rule.
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRule) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// Type of destination for the rule. The default is `CIDR_BLOCK`.
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) DestinationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRule) string { return v.DestinationType }).(pulumi.StringOutput)
+}
+
+// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) IcmpOptions() GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRule) []GetSecurityListsSecurityListEgressSecurityRuleIcmpOption {
+		return v.IcmpOptions
+	}).(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput)
+}
+
+// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRule) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) Stateless() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRule) bool { return v.Stateless }).(pulumi.BoolOutput)
+}
+
+// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) TcpOptions() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRule) []GetSecurityListsSecurityListEgressSecurityRuleTcpOption {
+		return v.TcpOptions
+	}).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput)
+}
+
+// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) UdpOptions() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRule) []GetSecurityListsSecurityListEgressSecurityRuleUdpOption {
+		return v.UdpOptions
+	}).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRule)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListEgressSecurityRule {
+		return vs[0].([]GetSecurityListsSecurityListEgressSecurityRule)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListEgressSecurityRuleOutput)
+}
+
 type GetSecurityListsSecurityListEgressSecurityRuleIcmpOption struct {
 	// The ICMP code (optional).
 	Code int `pulumi:"code"`
@@ -6460,9 +6926,9 @@ type GetSubnetsSubnet struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id string `pulumi:"id"`
-	// For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
+	// For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
 	Ipv6cidrBlock string `pulumi:"ipv6cidrBlock"`
-	// The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+	// The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
 	Ipv6cidrBlocks []string `pulumi:"ipv6cidrBlocks"`
 	// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
 	Ipv6virtualRouterIp string `pulumi:"ipv6virtualRouterIp"`
@@ -6518,9 +6984,9 @@ type GetSubnetsSubnetArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id pulumi.StringInput `pulumi:"id"`
-	// For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
+	// For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
 	Ipv6cidrBlock pulumi.StringInput `pulumi:"ipv6cidrBlock"`
-	// The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+	// The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
 	Ipv6cidrBlocks pulumi.StringArrayInput `pulumi:"ipv6cidrBlocks"`
 	// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
 	Ipv6virtualRouterIp pulumi.StringInput `pulumi:"ipv6virtualRouterIp"`
@@ -6642,12 +7108,12 @@ func (o GetSubnetsSubnetOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
+// For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
 func (o GetSubnetsSubnetOutput) Ipv6cidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.Ipv6cidrBlock }).(pulumi.StringOutput)
 }
 
-// The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+// The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
 func (o GetSubnetsSubnetOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSubnetsSubnet) []string { return v.Ipv6cidrBlocks }).(pulumi.StringArrayOutput)
 }
@@ -7173,10 +7639,10 @@ func (o GetVcnsFilterArrayOutput) Index(i pulumi.IntInput) GetVcnsFilterOutput {
 }
 
 type GetVcnsVirtualNetwork struct {
-	// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+	// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 	Byoipv6cidrBlocks  []string                                 `pulumi:"byoipv6cidrBlocks"`
 	Byoipv6cidrDetails []GetVcnsVirtualNetworkByoipv6cidrDetail `pulumi:"byoipv6cidrDetails"`
-	// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+	// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
 	CidrBlock string `pulumi:"cidrBlock"`
 	// The list of IPv4 CIDR blocks the VCN will use.
 	CidrBlocks []string `pulumi:"cidrBlocks"`
@@ -7198,9 +7664,9 @@ type GetVcnsVirtualNetwork struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id string `pulumi:"id"`
-	// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+	// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
 	Ipv6cidrBlocks []string `pulumi:"ipv6cidrBlocks"`
-	// For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+	// For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
 	Ipv6privateCidrBlocks        []string `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                bool     `pulumi:"isIpv6enabled"`
 	IsOracleGuaAllocationEnabled bool     `pulumi:"isOracleGuaAllocationEnabled"`
@@ -7224,10 +7690,10 @@ type GetVcnsVirtualNetworkInput interface {
 }
 
 type GetVcnsVirtualNetworkArgs struct {
-	// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+	// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 	Byoipv6cidrBlocks  pulumi.StringArrayInput                          `pulumi:"byoipv6cidrBlocks"`
 	Byoipv6cidrDetails GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput `pulumi:"byoipv6cidrDetails"`
-	// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+	// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
 	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
 	// The list of IPv4 CIDR blocks the VCN will use.
 	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
@@ -7249,9 +7715,9 @@ type GetVcnsVirtualNetworkArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id pulumi.StringInput `pulumi:"id"`
-	// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+	// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
 	Ipv6cidrBlocks pulumi.StringArrayInput `pulumi:"ipv6cidrBlocks"`
-	// For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+	// For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
 	Ipv6privateCidrBlocks        pulumi.StringArrayInput `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                pulumi.BoolInput        `pulumi:"isIpv6enabled"`
 	IsOracleGuaAllocationEnabled pulumi.BoolInput        `pulumi:"isOracleGuaAllocationEnabled"`
@@ -7314,7 +7780,7 @@ func (o GetVcnsVirtualNetworkOutput) ToGetVcnsVirtualNetworkOutputWithContext(ct
 	return o
 }
 
-// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 func (o GetVcnsVirtualNetworkOutput) Byoipv6cidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) []string { return v.Byoipv6cidrBlocks }).(pulumi.StringArrayOutput)
 }
@@ -7323,7 +7789,7 @@ func (o GetVcnsVirtualNetworkOutput) Byoipv6cidrDetails() GetVcnsVirtualNetworkB
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) []GetVcnsVirtualNetworkByoipv6cidrDetail { return v.Byoipv6cidrDetails }).(GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput)
 }
 
-// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
 func (o GetVcnsVirtualNetworkOutput) CidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.CidrBlock }).(pulumi.StringOutput)
 }
@@ -7378,12 +7844,12 @@ func (o GetVcnsVirtualNetworkOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
 func (o GetVcnsVirtualNetworkOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) []string { return v.Ipv6cidrBlocks }).(pulumi.StringArrayOutput)
 }
 
-// For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+// For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
 func (o GetVcnsVirtualNetworkOutput) Ipv6privateCidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) []string { return v.Ipv6privateCidrBlocks }).(pulumi.StringArrayOutput)
 }
@@ -14846,6 +15312,12 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsFilterInput)(nil)).Elem(), GetSecurityListsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsFilterArrayInput)(nil)).Elem(), GetSecurityListsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListInput)(nil)).Elem(), GetSecurityListsSecurityListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListArrayInput)(nil)).Elem(), GetSecurityListsSecurityListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleArrayInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleTcpOptionInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs{})
@@ -15066,6 +15538,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetSecurityListsFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput{})
 	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput{})

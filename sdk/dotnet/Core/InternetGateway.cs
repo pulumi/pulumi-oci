@@ -33,6 +33,36 @@ namespace Pulumi.Oci.Core
     /// use [UpdateInternetGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/InternetGateway/UpdateInternetGateway) to easily disable/enable
     /// the gateway without changing the route rule.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testInternetGateway = new Oci.Core.InternetGateway("testInternetGateway", new()
+    ///     {
+    ///         CompartmentId = @var.Compartment_id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         Enabled = @var.Internet_gateway_enabled,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Internet_gateway_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// InternetGateways can be imported using the `id`, e.g.

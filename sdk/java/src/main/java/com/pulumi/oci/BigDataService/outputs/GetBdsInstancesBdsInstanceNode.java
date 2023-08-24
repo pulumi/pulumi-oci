@@ -92,6 +92,11 @@ public final class GetBdsInstancesBdsInstanceNode {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+     * 
+     */
+    private String timeMaintenanceRebootDue;
 
     private GetBdsInstancesBdsInstanceNode() {}
     /**
@@ -206,6 +211,13 @@ public final class GetBdsInstancesBdsInstanceNode {
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+     * 
+     */
+    public String timeMaintenanceRebootDue() {
+        return this.timeMaintenanceRebootDue;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -232,6 +244,7 @@ public final class GetBdsInstancesBdsInstanceNode {
         private String state;
         private String subnetId;
         private String timeCreated;
+        private String timeMaintenanceRebootDue;
         public Builder() {}
         public Builder(GetBdsInstancesBdsInstanceNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -251,6 +264,7 @@ public final class GetBdsInstancesBdsInstanceNode {
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeMaintenanceRebootDue = defaults.timeMaintenanceRebootDue;
         }
 
         @CustomType.Setter
@@ -336,6 +350,11 @@ public final class GetBdsInstancesBdsInstanceNode {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
+        public Builder timeMaintenanceRebootDue(String timeMaintenanceRebootDue) {
+            this.timeMaintenanceRebootDue = Objects.requireNonNull(timeMaintenanceRebootDue);
+            return this;
+        }
         public GetBdsInstancesBdsInstanceNode build() {
             final var o = new GetBdsInstancesBdsInstanceNode();
             o.attachedBlockVolumes = attachedBlockVolumes;
@@ -354,6 +373,7 @@ public final class GetBdsInstancesBdsInstanceNode {
             o.state = state;
             o.subnetId = subnetId;
             o.timeCreated = timeCreated;
+            o.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
             return o;
         }
     }

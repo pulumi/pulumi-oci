@@ -473,6 +473,219 @@ func (o DeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInput) 
 	}).(DeploymentDeploymentDiagnosticDataOutput)
 }
 
+type DeploymentMaintenanceConfiguration struct {
+	// (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+	BundleReleaseUpgradePeriodInDays *int `pulumi:"bundleReleaseUpgradePeriodInDays"`
+	// (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+	InterimReleaseUpgradePeriodInDays *int `pulumi:"interimReleaseUpgradePeriodInDays"`
+	// (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+	IsInterimReleaseAutoUpgradeEnabled *bool `pulumi:"isInterimReleaseAutoUpgradeEnabled"`
+	// (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+	MajorReleaseUpgradePeriodInDays *int `pulumi:"majorReleaseUpgradePeriodInDays"`
+	// (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+	SecurityPatchUpgradePeriodInDays *int `pulumi:"securityPatchUpgradePeriodInDays"`
+}
+
+// DeploymentMaintenanceConfigurationInput is an input type that accepts DeploymentMaintenanceConfigurationArgs and DeploymentMaintenanceConfigurationOutput values.
+// You can construct a concrete instance of `DeploymentMaintenanceConfigurationInput` via:
+//
+//	DeploymentMaintenanceConfigurationArgs{...}
+type DeploymentMaintenanceConfigurationInput interface {
+	pulumi.Input
+
+	ToDeploymentMaintenanceConfigurationOutput() DeploymentMaintenanceConfigurationOutput
+	ToDeploymentMaintenanceConfigurationOutputWithContext(context.Context) DeploymentMaintenanceConfigurationOutput
+}
+
+type DeploymentMaintenanceConfigurationArgs struct {
+	// (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+	BundleReleaseUpgradePeriodInDays pulumi.IntPtrInput `pulumi:"bundleReleaseUpgradePeriodInDays"`
+	// (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+	InterimReleaseUpgradePeriodInDays pulumi.IntPtrInput `pulumi:"interimReleaseUpgradePeriodInDays"`
+	// (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+	IsInterimReleaseAutoUpgradeEnabled pulumi.BoolPtrInput `pulumi:"isInterimReleaseAutoUpgradeEnabled"`
+	// (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+	MajorReleaseUpgradePeriodInDays pulumi.IntPtrInput `pulumi:"majorReleaseUpgradePeriodInDays"`
+	// (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+	SecurityPatchUpgradePeriodInDays pulumi.IntPtrInput `pulumi:"securityPatchUpgradePeriodInDays"`
+}
+
+func (DeploymentMaintenanceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (i DeploymentMaintenanceConfigurationArgs) ToDeploymentMaintenanceConfigurationOutput() DeploymentMaintenanceConfigurationOutput {
+	return i.ToDeploymentMaintenanceConfigurationOutputWithContext(context.Background())
+}
+
+func (i DeploymentMaintenanceConfigurationArgs) ToDeploymentMaintenanceConfigurationOutputWithContext(ctx context.Context) DeploymentMaintenanceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentMaintenanceConfigurationOutput)
+}
+
+func (i DeploymentMaintenanceConfigurationArgs) ToDeploymentMaintenanceConfigurationPtrOutput() DeploymentMaintenanceConfigurationPtrOutput {
+	return i.ToDeploymentMaintenanceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i DeploymentMaintenanceConfigurationArgs) ToDeploymentMaintenanceConfigurationPtrOutputWithContext(ctx context.Context) DeploymentMaintenanceConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentMaintenanceConfigurationOutput).ToDeploymentMaintenanceConfigurationPtrOutputWithContext(ctx)
+}
+
+// DeploymentMaintenanceConfigurationPtrInput is an input type that accepts DeploymentMaintenanceConfigurationArgs, DeploymentMaintenanceConfigurationPtr and DeploymentMaintenanceConfigurationPtrOutput values.
+// You can construct a concrete instance of `DeploymentMaintenanceConfigurationPtrInput` via:
+//
+//	        DeploymentMaintenanceConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeploymentMaintenanceConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToDeploymentMaintenanceConfigurationPtrOutput() DeploymentMaintenanceConfigurationPtrOutput
+	ToDeploymentMaintenanceConfigurationPtrOutputWithContext(context.Context) DeploymentMaintenanceConfigurationPtrOutput
+}
+
+type deploymentMaintenanceConfigurationPtrType DeploymentMaintenanceConfigurationArgs
+
+func DeploymentMaintenanceConfigurationPtr(v *DeploymentMaintenanceConfigurationArgs) DeploymentMaintenanceConfigurationPtrInput {
+	return (*deploymentMaintenanceConfigurationPtrType)(v)
+}
+
+func (*deploymentMaintenanceConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (i *deploymentMaintenanceConfigurationPtrType) ToDeploymentMaintenanceConfigurationPtrOutput() DeploymentMaintenanceConfigurationPtrOutput {
+	return i.ToDeploymentMaintenanceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *deploymentMaintenanceConfigurationPtrType) ToDeploymentMaintenanceConfigurationPtrOutputWithContext(ctx context.Context) DeploymentMaintenanceConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentMaintenanceConfigurationPtrOutput)
+}
+
+type DeploymentMaintenanceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (DeploymentMaintenanceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (o DeploymentMaintenanceConfigurationOutput) ToDeploymentMaintenanceConfigurationOutput() DeploymentMaintenanceConfigurationOutput {
+	return o
+}
+
+func (o DeploymentMaintenanceConfigurationOutput) ToDeploymentMaintenanceConfigurationOutputWithContext(ctx context.Context) DeploymentMaintenanceConfigurationOutput {
+	return o
+}
+
+func (o DeploymentMaintenanceConfigurationOutput) ToDeploymentMaintenanceConfigurationPtrOutput() DeploymentMaintenanceConfigurationPtrOutput {
+	return o.ToDeploymentMaintenanceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o DeploymentMaintenanceConfigurationOutput) ToDeploymentMaintenanceConfigurationPtrOutputWithContext(ctx context.Context) DeploymentMaintenanceConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeploymentMaintenanceConfiguration) *DeploymentMaintenanceConfiguration {
+		return &v
+	}).(DeploymentMaintenanceConfigurationPtrOutput)
+}
+
+// (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+func (o DeploymentMaintenanceConfigurationOutput) BundleReleaseUpgradePeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DeploymentMaintenanceConfiguration) *int { return v.BundleReleaseUpgradePeriodInDays }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+func (o DeploymentMaintenanceConfigurationOutput) InterimReleaseUpgradePeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DeploymentMaintenanceConfiguration) *int { return v.InterimReleaseUpgradePeriodInDays }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+func (o DeploymentMaintenanceConfigurationOutput) IsInterimReleaseAutoUpgradeEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DeploymentMaintenanceConfiguration) *bool { return v.IsInterimReleaseAutoUpgradeEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+func (o DeploymentMaintenanceConfigurationOutput) MajorReleaseUpgradePeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DeploymentMaintenanceConfiguration) *int { return v.MajorReleaseUpgradePeriodInDays }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+func (o DeploymentMaintenanceConfigurationOutput) SecurityPatchUpgradePeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DeploymentMaintenanceConfiguration) *int { return v.SecurityPatchUpgradePeriodInDays }).(pulumi.IntPtrOutput)
+}
+
+type DeploymentMaintenanceConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (DeploymentMaintenanceConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (o DeploymentMaintenanceConfigurationPtrOutput) ToDeploymentMaintenanceConfigurationPtrOutput() DeploymentMaintenanceConfigurationPtrOutput {
+	return o
+}
+
+func (o DeploymentMaintenanceConfigurationPtrOutput) ToDeploymentMaintenanceConfigurationPtrOutputWithContext(ctx context.Context) DeploymentMaintenanceConfigurationPtrOutput {
+	return o
+}
+
+func (o DeploymentMaintenanceConfigurationPtrOutput) Elem() DeploymentMaintenanceConfigurationOutput {
+	return o.ApplyT(func(v *DeploymentMaintenanceConfiguration) DeploymentMaintenanceConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret DeploymentMaintenanceConfiguration
+		return ret
+	}).(DeploymentMaintenanceConfigurationOutput)
+}
+
+// (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+func (o DeploymentMaintenanceConfigurationPtrOutput) BundleReleaseUpgradePeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DeploymentMaintenanceConfiguration) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BundleReleaseUpgradePeriodInDays
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+func (o DeploymentMaintenanceConfigurationPtrOutput) InterimReleaseUpgradePeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DeploymentMaintenanceConfiguration) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InterimReleaseUpgradePeriodInDays
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+func (o DeploymentMaintenanceConfigurationPtrOutput) IsInterimReleaseAutoUpgradeEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeploymentMaintenanceConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsInterimReleaseAutoUpgradeEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+func (o DeploymentMaintenanceConfigurationPtrOutput) MajorReleaseUpgradePeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DeploymentMaintenanceConfiguration) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MajorReleaseUpgradePeriodInDays
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+func (o DeploymentMaintenanceConfigurationPtrOutput) SecurityPatchUpgradePeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DeploymentMaintenanceConfiguration) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityPatchUpgradePeriodInDays
+	}).(pulumi.IntPtrOutput)
+}
+
 type DeploymentMaintenanceWindow struct {
 	// (Updatable) Days of the week.
 	Day string `pulumi:"day"`
@@ -3895,6 +4108,139 @@ func (o GetDeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInpu
 	}).(GetDeploymentDeploymentDiagnosticDataOutput)
 }
 
+type GetDeploymentMaintenanceConfiguration struct {
+	// Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+	BundleReleaseUpgradePeriodInDays int `pulumi:"bundleReleaseUpgradePeriodInDays"`
+	// Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+	InterimReleaseUpgradePeriodInDays int `pulumi:"interimReleaseUpgradePeriodInDays"`
+	// By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+	IsInterimReleaseAutoUpgradeEnabled bool `pulumi:"isInterimReleaseAutoUpgradeEnabled"`
+	// Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+	MajorReleaseUpgradePeriodInDays int `pulumi:"majorReleaseUpgradePeriodInDays"`
+	// Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+	SecurityPatchUpgradePeriodInDays int `pulumi:"securityPatchUpgradePeriodInDays"`
+}
+
+// GetDeploymentMaintenanceConfigurationInput is an input type that accepts GetDeploymentMaintenanceConfigurationArgs and GetDeploymentMaintenanceConfigurationOutput values.
+// You can construct a concrete instance of `GetDeploymentMaintenanceConfigurationInput` via:
+//
+//	GetDeploymentMaintenanceConfigurationArgs{...}
+type GetDeploymentMaintenanceConfigurationInput interface {
+	pulumi.Input
+
+	ToGetDeploymentMaintenanceConfigurationOutput() GetDeploymentMaintenanceConfigurationOutput
+	ToGetDeploymentMaintenanceConfigurationOutputWithContext(context.Context) GetDeploymentMaintenanceConfigurationOutput
+}
+
+type GetDeploymentMaintenanceConfigurationArgs struct {
+	// Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+	BundleReleaseUpgradePeriodInDays pulumi.IntInput `pulumi:"bundleReleaseUpgradePeriodInDays"`
+	// Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+	InterimReleaseUpgradePeriodInDays pulumi.IntInput `pulumi:"interimReleaseUpgradePeriodInDays"`
+	// By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+	IsInterimReleaseAutoUpgradeEnabled pulumi.BoolInput `pulumi:"isInterimReleaseAutoUpgradeEnabled"`
+	// Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+	MajorReleaseUpgradePeriodInDays pulumi.IntInput `pulumi:"majorReleaseUpgradePeriodInDays"`
+	// Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+	SecurityPatchUpgradePeriodInDays pulumi.IntInput `pulumi:"securityPatchUpgradePeriodInDays"`
+}
+
+func (GetDeploymentMaintenanceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (i GetDeploymentMaintenanceConfigurationArgs) ToGetDeploymentMaintenanceConfigurationOutput() GetDeploymentMaintenanceConfigurationOutput {
+	return i.ToGetDeploymentMaintenanceConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentMaintenanceConfigurationArgs) ToGetDeploymentMaintenanceConfigurationOutputWithContext(ctx context.Context) GetDeploymentMaintenanceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentMaintenanceConfigurationOutput)
+}
+
+// GetDeploymentMaintenanceConfigurationArrayInput is an input type that accepts GetDeploymentMaintenanceConfigurationArray and GetDeploymentMaintenanceConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentMaintenanceConfigurationArrayInput` via:
+//
+//	GetDeploymentMaintenanceConfigurationArray{ GetDeploymentMaintenanceConfigurationArgs{...} }
+type GetDeploymentMaintenanceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentMaintenanceConfigurationArrayOutput() GetDeploymentMaintenanceConfigurationArrayOutput
+	ToGetDeploymentMaintenanceConfigurationArrayOutputWithContext(context.Context) GetDeploymentMaintenanceConfigurationArrayOutput
+}
+
+type GetDeploymentMaintenanceConfigurationArray []GetDeploymentMaintenanceConfigurationInput
+
+func (GetDeploymentMaintenanceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (i GetDeploymentMaintenanceConfigurationArray) ToGetDeploymentMaintenanceConfigurationArrayOutput() GetDeploymentMaintenanceConfigurationArrayOutput {
+	return i.ToGetDeploymentMaintenanceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentMaintenanceConfigurationArray) ToGetDeploymentMaintenanceConfigurationArrayOutputWithContext(ctx context.Context) GetDeploymentMaintenanceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentMaintenanceConfigurationArrayOutput)
+}
+
+type GetDeploymentMaintenanceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentMaintenanceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (o GetDeploymentMaintenanceConfigurationOutput) ToGetDeploymentMaintenanceConfigurationOutput() GetDeploymentMaintenanceConfigurationOutput {
+	return o
+}
+
+func (o GetDeploymentMaintenanceConfigurationOutput) ToGetDeploymentMaintenanceConfigurationOutputWithContext(ctx context.Context) GetDeploymentMaintenanceConfigurationOutput {
+	return o
+}
+
+// Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+func (o GetDeploymentMaintenanceConfigurationOutput) BundleReleaseUpgradePeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentMaintenanceConfiguration) int { return v.BundleReleaseUpgradePeriodInDays }).(pulumi.IntOutput)
+}
+
+// Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+func (o GetDeploymentMaintenanceConfigurationOutput) InterimReleaseUpgradePeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentMaintenanceConfiguration) int { return v.InterimReleaseUpgradePeriodInDays }).(pulumi.IntOutput)
+}
+
+// By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+func (o GetDeploymentMaintenanceConfigurationOutput) IsInterimReleaseAutoUpgradeEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentMaintenanceConfiguration) bool { return v.IsInterimReleaseAutoUpgradeEnabled }).(pulumi.BoolOutput)
+}
+
+// Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+func (o GetDeploymentMaintenanceConfigurationOutput) MajorReleaseUpgradePeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentMaintenanceConfiguration) int { return v.MajorReleaseUpgradePeriodInDays }).(pulumi.IntOutput)
+}
+
+// Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+func (o GetDeploymentMaintenanceConfigurationOutput) SecurityPatchUpgradePeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentMaintenanceConfiguration) int { return v.SecurityPatchUpgradePeriodInDays }).(pulumi.IntOutput)
+}
+
+type GetDeploymentMaintenanceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentMaintenanceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (o GetDeploymentMaintenanceConfigurationArrayOutput) ToGetDeploymentMaintenanceConfigurationArrayOutput() GetDeploymentMaintenanceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDeploymentMaintenanceConfigurationArrayOutput) ToGetDeploymentMaintenanceConfigurationArrayOutputWithContext(ctx context.Context) GetDeploymentMaintenanceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDeploymentMaintenanceConfigurationArrayOutput) Index(i pulumi.IntInput) GetDeploymentMaintenanceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentMaintenanceConfiguration {
+		return vs[0].([]GetDeploymentMaintenanceConfiguration)[vs[1].(int)]
+	}).(GetDeploymentMaintenanceConfigurationOutput)
+}
+
 type GetDeploymentMaintenanceWindow struct {
 	// Days of the week.
 	Day string `pulumi:"day"`
@@ -4748,6 +5094,10 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
 	Id string `pulumi:"id"`
+	// Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+	IsCancelAllowed bool `pulumi:"isCancelAllowed"`
+	// Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+	IsRescheduleAllowed bool `pulumi:"isRescheduleAllowed"`
 	// Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
 	// * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
 	// * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
@@ -4774,10 +5124,14 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeFinished string `pulumi:"timeFinished"`
+	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOggVersionSupportedUntil string `pulumi:"timeOggVersionSupportedUntil"`
 	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeReleased string `pulumi:"timeReleased"`
 	// The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeSchedule string `pulumi:"timeSchedule"`
+	// Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeScheduleMax string `pulumi:"timeScheduleMax"`
 	// The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeSnoozedUntil string `pulumi:"timeSnoozedUntil"`
 	// The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -4814,6 +5168,10 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+	IsCancelAllowed pulumi.BoolInput `pulumi:"isCancelAllowed"`
+	// Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+	IsRescheduleAllowed pulumi.BoolInput `pulumi:"isRescheduleAllowed"`
 	// Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
 	// * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
 	// * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
@@ -4840,10 +5198,14 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOggVersionSupportedUntil pulumi.StringInput `pulumi:"timeOggVersionSupportedUntil"`
 	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
 	// The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeSchedule pulumi.StringInput `pulumi:"timeSchedule"`
+	// Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeScheduleMax pulumi.StringInput `pulumi:"timeScheduleMax"`
 	// The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeSnoozedUntil pulumi.StringInput `pulumi:"timeSnoozedUntil"`
 	// The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -4947,6 +5309,16 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) Id() pulumi.
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) IsCancelAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) bool { return v.IsCancelAllowed }).(pulumi.BoolOutput)
+}
+
+// Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) IsRescheduleAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) bool { return v.IsRescheduleAllowed }).(pulumi.BoolOutput)
+}
+
 // Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
 // * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
 // * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
@@ -5011,6 +5383,13 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeFinished
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
 }
 
+// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeOggVersionSupportedUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string {
+		return v.TimeOggVersionSupportedUntil
+	}).(pulumi.StringOutput)
+}
+
 // The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeReleased() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.TimeReleased }).(pulumi.StringOutput)
@@ -5019,6 +5398,11 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeReleased
 // The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeSchedule() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.TimeSchedule }).(pulumi.StringOutput)
+}
+
+// Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) TimeScheduleMax() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.TimeScheduleMax }).(pulumi.StringOutput)
 }
 
 // The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -5272,6 +5656,8 @@ type GetDeploymentVersionsDeploymentVersionCollectionItem struct {
 	ReleaseType string `pulumi:"releaseType"`
 	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeReleased string `pulumi:"timeReleased"`
+	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeSupportedUntil string `pulumi:"timeSupportedUntil"`
 }
 
 // GetDeploymentVersionsDeploymentVersionCollectionItemInput is an input type that accepts GetDeploymentVersionsDeploymentVersionCollectionItemArgs and GetDeploymentVersionsDeploymentVersionCollectionItemOutput values.
@@ -5296,6 +5682,8 @@ type GetDeploymentVersionsDeploymentVersionCollectionItemArgs struct {
 	ReleaseType pulumi.StringInput `pulumi:"releaseType"`
 	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeSupportedUntil pulumi.StringInput `pulumi:"timeSupportedUntil"`
 }
 
 func (GetDeploymentVersionsDeploymentVersionCollectionItemArgs) ElementType() reflect.Type {
@@ -5372,6 +5760,11 @@ func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) ReleaseType(
 // The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) TimeReleased() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentVersionsDeploymentVersionCollectionItem) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentVersionsDeploymentVersionCollectionItemOutput) TimeSupportedUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsDeploymentVersionCollectionItem) string { return v.TimeSupportedUntil }).(pulumi.StringOutput)
 }
 
 type GetDeploymentVersionsDeploymentVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5635,6 +6028,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	// Attributes for configuring automatic deployment maintenance.
+	MaintenanceConfigurations []GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
 	MaintenanceWindows []GetDeploymentsDeploymentCollectionItemMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// Type of the next maintenance.
@@ -5661,6 +6056,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOfNextMaintenance string `pulumi:"timeOfNextMaintenance"`
+	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOggVersionSupportedUntil string `pulumi:"timeOggVersionSupportedUntil"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -5719,6 +6116,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
+	// Attributes for configuring automatic deployment maintenance.
+	MaintenanceConfigurations GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayInput `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
 	MaintenanceWindows GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
 	// Type of the next maintenance.
@@ -5745,6 +6144,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOfNextMaintenance pulumi.StringInput `pulumi:"timeOfNextMaintenance"`
+	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOggVersionSupportedUntil pulumi.StringInput `pulumi:"timeOggVersionSupportedUntil"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -5904,6 +6305,13 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) LifecycleSubState() pulumi
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.LifecycleSubState }).(pulumi.StringOutput)
 }
 
+// Attributes for configuring automatic deployment maintenance.
+func (o GetDeploymentsDeploymentCollectionItemOutput) MaintenanceConfigurations() GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration {
+		return v.MaintenanceConfigurations
+	}).(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput)
+}
+
 // Defines the maintenance window, when automatic actions can be performed.
 func (o GetDeploymentsDeploymentCollectionItemOutput) MaintenanceWindows() GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemMaintenanceWindow {
@@ -5971,6 +6379,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) TimeCreated() pulumi.Strin
 // The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentsDeploymentCollectionItemOutput) TimeOfNextMaintenance() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeOfNextMaintenance }).(pulumi.StringOutput)
+}
+
+// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentsDeploymentCollectionItemOutput) TimeOggVersionSupportedUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeOggVersionSupportedUntil }).(pulumi.StringOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -6149,6 +6562,149 @@ func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData {
 		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration struct {
+	// Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+	BundleReleaseUpgradePeriodInDays int `pulumi:"bundleReleaseUpgradePeriodInDays"`
+	// Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+	InterimReleaseUpgradePeriodInDays int `pulumi:"interimReleaseUpgradePeriodInDays"`
+	// By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+	IsInterimReleaseAutoUpgradeEnabled bool `pulumi:"isInterimReleaseAutoUpgradeEnabled"`
+	// Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+	MajorReleaseUpgradePeriodInDays int `pulumi:"majorReleaseUpgradePeriodInDays"`
+	// Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+	SecurityPatchUpgradePeriodInDays int `pulumi:"securityPatchUpgradePeriodInDays"`
+}
+
+// GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationInput is an input type that accepts GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs and GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs{...}
+type GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput() GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput
+	ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs struct {
+	// Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+	BundleReleaseUpgradePeriodInDays pulumi.IntInput `pulumi:"bundleReleaseUpgradePeriodInDays"`
+	// Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+	InterimReleaseUpgradePeriodInDays pulumi.IntInput `pulumi:"interimReleaseUpgradePeriodInDays"`
+	// By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+	IsInterimReleaseAutoUpgradeEnabled pulumi.BoolInput `pulumi:"isInterimReleaseAutoUpgradeEnabled"`
+	// Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+	MajorReleaseUpgradePeriodInDays pulumi.IntInput `pulumi:"majorReleaseUpgradePeriodInDays"`
+	// Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+	SecurityPatchUpgradePeriodInDays pulumi.IntInput `pulumi:"securityPatchUpgradePeriodInDays"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs) ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput() GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs) ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArray and GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArray{ GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs{...} }
+type GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput() GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArray []GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationInput
+
+func (GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArray) ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput() GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArray) ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput) ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput() GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput) ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput {
+	return o
+}
+
+// Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput) BundleReleaseUpgradePeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration) int {
+		return v.BundleReleaseUpgradePeriodInDays
+	}).(pulumi.IntOutput)
+}
+
+// Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput) InterimReleaseUpgradePeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration) int {
+		return v.InterimReleaseUpgradePeriodInDays
+	}).(pulumi.IntOutput)
+}
+
+// By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput) IsInterimReleaseAutoUpgradeEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration) bool {
+		return v.IsInterimReleaseAutoUpgradeEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput) MajorReleaseUpgradePeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration) int {
+		return v.MajorReleaseUpgradePeriodInDays
+	}).(pulumi.IntOutput)
+}
+
+// Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput) SecurityPatchUpgradePeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration) int {
+		return v.SecurityPatchUpgradePeriodInDays
+	}).(pulumi.IntOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput) ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput() GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput) ToGetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput)
 }
 
 type GetDeploymentsDeploymentCollectionItemMaintenanceWindow struct {
@@ -7955,6 +8511,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpArrayInput)(nil)).Elem(), ConnectionIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceConfigurationInput)(nil)).Elem(), DeploymentMaintenanceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceConfigurationPtrInput)(nil)).Elem(), DeploymentMaintenanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceWindowInput)(nil)).Elem(), DeploymentMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceWindowPtrInput)(nil)).Elem(), DeploymentMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataInput)(nil)).Elem(), DeploymentOggDataArgs{})
@@ -7997,6 +8555,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsFilterArrayInput)(nil)).Elem(), GetDeploymentBackupsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceConfigurationInput)(nil)).Elem(), GetDeploymentMaintenanceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceConfigurationArrayInput)(nil)).Elem(), GetDeploymentMaintenanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceWindowInput)(nil)).Elem(), GetDeploymentMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceWindowArrayInput)(nil)).Elem(), GetDeploymentMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataInput)(nil)).Elem(), GetDeploymentOggDataArgs{})
@@ -8027,6 +8587,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceWindowInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataArgs{})
@@ -8065,6 +8627,8 @@ func init() {
 	pulumi.RegisterOutputType(ConnectionIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentMaintenanceConfigurationOutput{})
+	pulumi.RegisterOutputType(DeploymentMaintenanceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(DeploymentMaintenanceWindowPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataOutput{})
@@ -8107,6 +8671,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentBackupsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentMaintenanceConfigurationOutput{})
+	pulumi.RegisterOutputType(GetDeploymentMaintenanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentOggDataOutput{})
@@ -8137,6 +8703,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataOutput{})

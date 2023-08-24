@@ -14,8 +14,17 @@ import (
 
 // This resource provides the Cluster Network resource in Oracle Cloud Infrastructure Core service.
 //
-// Creates a cluster network. For more information about cluster networks, see
-// [Managing Cluster Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+// Creates a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+// A cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+// instances that are connected with an ultra low-latency remote direct memory access (RDMA) network.
+// Cluster networks with instance pools use instance pools to manage groups of identical instances.
+//
+// Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
+// instances that are managed as a group.
+//
+// If you want to manage instances in the RDMA network independently of each other or use different types of instances
+// in the network group, create a compute cluster by using the [CreateComputeCluster](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCluster/CreateComputeCluster)
+// operation.
 //
 // To determine whether capacity is available for a specific shape before you create a cluster network,
 // use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
@@ -60,6 +69,10 @@ import (
 //						},
 //					},
 //				},
+//				ClusterConfiguration: &core.ClusterNetworkClusterConfigurationArgs{
+//					HpcIslandId:     pulumi.Any(oci_core_hpc_island.Test_hpc_island.Id),
+//					NetworkBlockIds: pulumi.Any(_var.Cluster_network_cluster_configuration_network_block_ids),
+//				},
 //				DefinedTags: pulumi.AnyMap{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -89,6 +102,10 @@ import (
 type ClusterNetwork struct {
 	pulumi.CustomResourceState
 
+	// The HPC cluster configuration requested when launching instances of a cluster network.
+	//
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	ClusterConfiguration ClusterNetworkClusterConfigurationOutput `pulumi:"clusterConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -97,13 +114,13 @@ type ClusterNetwork struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
 	HpcIslandId pulumi.StringOutput `pulumi:"hpcIslandId"`
 	// (Updatable) The data to create the instance pools in the cluster network.
 	//
 	// Each cluster network can have one instance pool.
 	InstancePools ClusterNetworkInstancePoolArrayOutput `pulumi:"instancePools"`
-	// The list of network block OCIDs of the HPC island.
+	// The list of network block OCIDs.
 	NetworkBlockIds pulumi.StringArrayOutput `pulumi:"networkBlockIds"`
 	// The location for where the instance pools in a cluster network will place instances.
 	PlacementConfiguration ClusterNetworkPlacementConfigurationOutput `pulumi:"placementConfiguration"`
@@ -154,6 +171,10 @@ func GetClusterNetwork(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ClusterNetwork resources.
 type clusterNetworkState struct {
+	// The HPC cluster configuration requested when launching instances of a cluster network.
+	//
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	ClusterConfiguration *ClusterNetworkClusterConfiguration `pulumi:"clusterConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -162,13 +183,13 @@ type clusterNetworkState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
 	HpcIslandId *string `pulumi:"hpcIslandId"`
 	// (Updatable) The data to create the instance pools in the cluster network.
 	//
 	// Each cluster network can have one instance pool.
 	InstancePools []ClusterNetworkInstancePool `pulumi:"instancePools"`
-	// The list of network block OCIDs of the HPC island.
+	// The list of network block OCIDs.
 	NetworkBlockIds []string `pulumi:"networkBlockIds"`
 	// The location for where the instance pools in a cluster network will place instances.
 	PlacementConfiguration *ClusterNetworkPlacementConfiguration `pulumi:"placementConfiguration"`
@@ -181,6 +202,10 @@ type clusterNetworkState struct {
 }
 
 type ClusterNetworkState struct {
+	// The HPC cluster configuration requested when launching instances of a cluster network.
+	//
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	ClusterConfiguration ClusterNetworkClusterConfigurationPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -189,13 +214,13 @@ type ClusterNetworkState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
 	HpcIslandId pulumi.StringPtrInput
 	// (Updatable) The data to create the instance pools in the cluster network.
 	//
 	// Each cluster network can have one instance pool.
 	InstancePools ClusterNetworkInstancePoolArrayInput
-	// The list of network block OCIDs of the HPC island.
+	// The list of network block OCIDs.
 	NetworkBlockIds pulumi.StringArrayInput
 	// The location for where the instance pools in a cluster network will place instances.
 	PlacementConfiguration ClusterNetworkPlacementConfigurationPtrInput
@@ -212,6 +237,10 @@ func (ClusterNetworkState) ElementType() reflect.Type {
 }
 
 type clusterNetworkArgs struct {
+	// The HPC cluster configuration requested when launching instances of a cluster network.
+	//
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	ClusterConfiguration *ClusterNetworkClusterConfiguration `pulumi:"clusterConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -230,6 +259,10 @@ type clusterNetworkArgs struct {
 
 // The set of arguments for constructing a ClusterNetwork resource.
 type ClusterNetworkArgs struct {
+	// The HPC cluster configuration requested when launching instances of a cluster network.
+	//
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	ClusterConfiguration ClusterNetworkClusterConfigurationPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -333,6 +366,13 @@ func (o ClusterNetworkOutput) ToClusterNetworkOutputWithContext(ctx context.Cont
 	return o
 }
 
+// The HPC cluster configuration requested when launching instances of a cluster network.
+//
+// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+func (o ClusterNetworkOutput) ClusterConfiguration() ClusterNetworkClusterConfigurationOutput {
+	return o.ApplyT(func(v *ClusterNetwork) ClusterNetworkClusterConfigurationOutput { return v.ClusterConfiguration }).(ClusterNetworkClusterConfigurationOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 func (o ClusterNetworkOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -353,7 +393,7 @@ func (o ClusterNetworkOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ClusterNetwork) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
 func (o ClusterNetworkOutput) HpcIslandId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringOutput { return v.HpcIslandId }).(pulumi.StringOutput)
 }
@@ -365,7 +405,7 @@ func (o ClusterNetworkOutput) InstancePools() ClusterNetworkInstancePoolArrayOut
 	return o.ApplyT(func(v *ClusterNetwork) ClusterNetworkInstancePoolArrayOutput { return v.InstancePools }).(ClusterNetworkInstancePoolArrayOutput)
 }
 
-// The list of network block OCIDs of the HPC island.
+// The list of network block OCIDs.
 func (o ClusterNetworkOutput) NetworkBlockIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringArrayOutput { return v.NetworkBlockIds }).(pulumi.StringArrayOutput)
 }

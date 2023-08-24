@@ -16,6 +16,10 @@ import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeysArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeysPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
@@ -31,6 +35,8 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationResult;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeyResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeysResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceGetOsPatchResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceListOsPatchesResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchHistoriesResult;
@@ -690,6 +696,322 @@ public final class BigDataServiceFunctions {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", TypeShape.of(GetBdsInstanceApiKeysResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of an os patch
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceGetOsPatch = BigDataServiceFunctions.getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .osPatchVersion(var_.bds_instance_get_os_patch_os_patch_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs args) {
+        return getBdsInstanceGetOsPatch(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of an os patch
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceGetOsPatch = BigDataServiceFunctions.getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .osPatchVersion(var_.bds_instance_get_os_patch_os_patch_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatchPlain(GetBdsInstanceGetOsPatchPlainArgs args) {
+        return getBdsInstanceGetOsPatchPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of an os patch
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceGetOsPatch = BigDataServiceFunctions.getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .osPatchVersion(var_.bds_instance_get_os_patch_os_patch_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceGetOsPatch:getBdsInstanceGetOsPatch", TypeShape.of(GetBdsInstanceGetOsPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of an os patch
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceGetOsPatch = BigDataServiceFunctions.getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .osPatchVersion(var_.bds_instance_get_os_patch_os_patch_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatchPlain(GetBdsInstanceGetOsPatchPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceGetOsPatch:getBdsInstanceGetOsPatch", TypeShape.of(GetBdsInstanceGetOsPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all available os patches for a given cluster
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceListOsPatches = BigDataServiceFunctions.getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs args) {
+        return getBdsInstanceListOsPatches(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all available os patches for a given cluster
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceListOsPatches = BigDataServiceFunctions.getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatchesPlain(GetBdsInstanceListOsPatchesPlainArgs args) {
+        return getBdsInstanceListOsPatchesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all available os patches for a given cluster
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceListOsPatches = BigDataServiceFunctions.getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches", TypeShape.of(GetBdsInstanceListOsPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all available os patches for a given cluster
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceListOsPatches = BigDataServiceFunctions.getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatchesPlain(GetBdsInstanceListOsPatchesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches", TypeShape.of(GetBdsInstanceListOsPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
      * 
      * Returns the BDS Metastore configuration information for the given ID.
@@ -1054,6 +1376,7 @@ public final class BigDataServiceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
      *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .patchType(var_.bds_instance_patch_history_patch_type())
      *             .patchVersion(var_.bds_instance_patch_history_patch_version())
      *             .state(var_.bds_instance_patch_history_state())
      *             .build());
@@ -1095,6 +1418,7 @@ public final class BigDataServiceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
      *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .patchType(var_.bds_instance_patch_history_patch_type())
      *             .patchVersion(var_.bds_instance_patch_history_patch_version())
      *             .state(var_.bds_instance_patch_history_state())
      *             .build());
@@ -1136,6 +1460,7 @@ public final class BigDataServiceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
      *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .patchType(var_.bds_instance_patch_history_patch_type())
      *             .patchVersion(var_.bds_instance_patch_history_patch_version())
      *             .state(var_.bds_instance_patch_history_state())
      *             .build());
@@ -1177,6 +1502,7 @@ public final class BigDataServiceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
      *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .patchType(var_.bds_instance_patch_history_patch_type())
      *             .patchVersion(var_.bds_instance_patch_history_patch_version())
      *             .state(var_.bds_instance_patch_history_state())
      *             .build());

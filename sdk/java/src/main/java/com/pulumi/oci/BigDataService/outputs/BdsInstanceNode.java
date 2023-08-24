@@ -60,13 +60,12 @@ public final class BdsInstanceNode {
      */
     private @Nullable Integer memoryInGbs;
     /**
-     * @return BDS instance node type
+     * @return The Big Data Service cluster node type.
      * 
      */
     private @Nullable String nodeType;
     /**
      * @return The total number of OCPUs available to the node.
-     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
@@ -97,6 +96,11 @@ public final class BdsInstanceNode {
      * 
      */
     private @Nullable String timeCreated;
+    /**
+     * @return The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+     * 
+     */
+    private @Nullable String timeMaintenanceRebootDue;
 
     private BdsInstanceNode() {}
     /**
@@ -163,7 +167,7 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return BDS instance node type
+     * @return The Big Data Service cluster node type.
      * 
      */
     public Optional<String> nodeType() {
@@ -171,7 +175,6 @@ public final class BdsInstanceNode {
     }
     /**
      * @return The total number of OCPUs available to the node.
-     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
@@ -214,6 +217,13 @@ public final class BdsInstanceNode {
     public Optional<String> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
     }
+    /**
+     * @return The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+     * 
+     */
+    public Optional<String> timeMaintenanceRebootDue() {
+        return Optional.ofNullable(this.timeMaintenanceRebootDue);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -240,6 +250,7 @@ public final class BdsInstanceNode {
         private @Nullable String state;
         private @Nullable String subnetId;
         private @Nullable String timeCreated;
+        private @Nullable String timeMaintenanceRebootDue;
         public Builder() {}
         public Builder(BdsInstanceNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -259,6 +270,7 @@ public final class BdsInstanceNode {
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeMaintenanceRebootDue = defaults.timeMaintenanceRebootDue;
         }
 
         @CustomType.Setter
@@ -344,6 +356,11 @@ public final class BdsInstanceNode {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeMaintenanceRebootDue(@Nullable String timeMaintenanceRebootDue) {
+            this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+            return this;
+        }
         public BdsInstanceNode build() {
             final var o = new BdsInstanceNode();
             o.attachedBlockVolumes = attachedBlockVolumes;
@@ -362,6 +379,7 @@ public final class BdsInstanceNode {
             o.state = state;
             o.subnetId = subnetId;
             o.timeCreated = timeCreated;
+            o.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
             return o;
         }
     }

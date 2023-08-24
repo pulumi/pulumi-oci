@@ -584,6 +584,34 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * The area assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    @Export(name="inMemoryAreaInGbs", type=Integer.class, parameters={})
+    private Output<Integer> inMemoryAreaInGbs;
+
+    /**
+     * @return The area assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    public Output<Integer> inMemoryAreaInGbs() {
+        return this.inMemoryAreaInGbs;
+    }
+    /**
+     * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    @Export(name="inMemoryPercentage", type=Integer.class, parameters={})
+    private Output<Integer> inMemoryPercentage;
+
+    /**
+     * @return (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    public Output<Integer> inMemoryPercentage() {
+        return this.inMemoryPercentage;
+    }
+    /**
      * The infrastructure type this resource belongs to.
      * 
      */

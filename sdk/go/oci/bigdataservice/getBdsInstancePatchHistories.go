@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := BigDataService.GetBdsInstancePatchHistories(ctx, &bigdataservice.GetBdsInstancePatchHistoriesArgs{
 //				BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
+//				PatchType:     pulumi.StringRef(_var.Bds_instance_patch_history_patch_type),
 //				PatchVersion:  pulumi.StringRef(_var.Bds_instance_patch_history_patch_version),
 //				State:         pulumi.StringRef(_var.Bds_instance_patch_history_state),
 //			}, nil)
@@ -57,6 +58,8 @@ type GetBdsInstancePatchHistoriesArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string                               `pulumi:"bdsInstanceId"`
 	Filters       []GetBdsInstancePatchHistoriesFilter `pulumi:"filters"`
+	// The type of a BDS patch history entity.
+	PatchType *string `pulumi:"patchType"`
 	// The version of the patch
 	PatchVersion *string `pulumi:"patchVersion"`
 	// The status of the patch.
@@ -71,7 +74,9 @@ type GetBdsInstancePatchHistoriesResult struct {
 	Id string `pulumi:"id"`
 	// The list of patch_histories.
 	PatchHistories []GetBdsInstancePatchHistoriesPatchHistory `pulumi:"patchHistories"`
-	PatchVersion   *string                                    `pulumi:"patchVersion"`
+	// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+	PatchType    *string `pulumi:"patchType"`
+	PatchVersion *string `pulumi:"patchVersion"`
 	// The status of this patch.
 	State *string `pulumi:"state"`
 }
@@ -94,6 +99,8 @@ type GetBdsInstancePatchHistoriesOutputArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId pulumi.StringInput                           `pulumi:"bdsInstanceId"`
 	Filters       GetBdsInstancePatchHistoriesFilterArrayInput `pulumi:"filters"`
+	// The type of a BDS patch history entity.
+	PatchType pulumi.StringPtrInput `pulumi:"patchType"`
 	// The version of the patch
 	PatchVersion pulumi.StringPtrInput `pulumi:"patchVersion"`
 	// The status of the patch.
@@ -137,6 +144,11 @@ func (o GetBdsInstancePatchHistoriesResultOutput) PatchHistories() GetBdsInstanc
 	return o.ApplyT(func(v GetBdsInstancePatchHistoriesResult) []GetBdsInstancePatchHistoriesPatchHistory {
 		return v.PatchHistories
 	}).(GetBdsInstancePatchHistoriesPatchHistoryArrayOutput)
+}
+
+// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+func (o GetBdsInstancePatchHistoriesResultOutput) PatchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstancePatchHistoriesResult) *string { return v.PatchType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBdsInstancePatchHistoriesResultOutput) PatchVersion() pulumi.StringPtrOutput {

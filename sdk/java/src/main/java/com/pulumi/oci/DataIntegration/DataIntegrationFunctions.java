@@ -7,6 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPlainArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsPlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFolderArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFolderPlainArgs;
@@ -19,6 +23,8 @@ import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsPlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesPlainArgs;
+import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationResult;
+import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFolderResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFoldersResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectResult;
@@ -184,6 +190,338 @@ public final class DataIntegrationFunctions {
      */
     public static CompletableFuture<GetWorkspaceResult> getWorkspacePlain(GetWorkspacePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspace:getWorkspace", TypeShape.of(GetWorkspaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
+     *             .applicationKey(var_.workspace_application_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetWorkspaceApplicationResult> getWorkspaceApplication(GetWorkspaceApplicationArgs args) {
+        return getWorkspaceApplication(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
+     *             .applicationKey(var_.workspace_application_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationResult> getWorkspaceApplicationPlain(GetWorkspaceApplicationPlainArgs args) {
+        return getWorkspaceApplicationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
+     *             .applicationKey(var_.workspace_application_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetWorkspaceApplicationResult> getWorkspaceApplication(GetWorkspaceApplicationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication", TypeShape.of(GetWorkspaceApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
+     *             .applicationKey(var_.workspace_application_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationResult> getWorkspaceApplicationPlain(GetWorkspaceApplicationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication", TypeShape.of(GetWorkspaceApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of applications and provides options to filter the list.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_application_fields())
+     *             .identifiers(var_.workspace_application_identifier())
+     *             .name(var_.workspace_application_name())
+     *             .nameContains(var_.workspace_application_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetWorkspaceApplicationsResult> getWorkspaceApplications(GetWorkspaceApplicationsArgs args) {
+        return getWorkspaceApplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of applications and provides options to filter the list.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_application_fields())
+     *             .identifiers(var_.workspace_application_identifier())
+     *             .name(var_.workspace_application_name())
+     *             .nameContains(var_.workspace_application_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationsResult> getWorkspaceApplicationsPlain(GetWorkspaceApplicationsPlainArgs args) {
+        return getWorkspaceApplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of applications and provides options to filter the list.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_application_fields())
+     *             .identifiers(var_.workspace_application_identifier())
+     *             .name(var_.workspace_application_name())
+     *             .nameContains(var_.workspace_application_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetWorkspaceApplicationsResult> getWorkspaceApplications(GetWorkspaceApplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", TypeShape.of(GetWorkspaceApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of applications and provides options to filter the list.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_application_fields())
+     *             .identifiers(var_.workspace_application_identifier())
+     *             .name(var_.workspace_application_name())
+     *             .nameContains(var_.workspace_application_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationsResult> getWorkspaceApplicationsPlain(GetWorkspaceApplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", TypeShape.of(GetWorkspaceApplicationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.

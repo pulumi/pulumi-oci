@@ -103,9 +103,14 @@ export interface GetBdsInstanceResult {
      */
     readonly isHighAvailability: boolean;
     /**
+     * Boolean flag specifying whether or not Kafka should be configured.
+     */
+    readonly isKafkaConfigured: boolean;
+    /**
      * Boolean flag specifying whether or not the cluster should be set up as secure.
      */
     readonly isSecure: boolean;
+    readonly kafkaBrokerNodes: outputs.BigDataService.GetBdsInstanceKafkaBrokerNode[];
     readonly kerberosRealmName: string;
     /**
      * The OCID of the Key Management master encryption key.
@@ -124,6 +129,11 @@ export interface GetBdsInstanceResult {
      * The number of nodes that form the cluster.
      */
     readonly numberOfNodes: number;
+    /**
+     * Number of nodes that require a maintenance reboot
+     */
+    readonly numberOfNodesRequiringMaintenanceReboot: number;
+    readonly osPatchVersion: string;
     /**
      * The state of the cluster.
      */

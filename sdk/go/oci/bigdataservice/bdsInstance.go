@@ -16,103 +16,6 @@ import (
 //
 // Creates a new BDS instance.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := BigDataService.NewBdsInstance(ctx, "testBdsInstance", &BigDataService.BdsInstanceArgs{
-//				ClusterAdminPassword: pulumi.Any(_var.Bds_instance_cluster_admin_password),
-//				ClusterPublicKey:     pulumi.Any(_var.Bds_instance_cluster_public_key),
-//				ClusterVersion:       pulumi.Any(_var.Bds_instance_cluster_version),
-//				CompartmentId:        pulumi.Any(_var.Compartment_id),
-//				DisplayName:          pulumi.Any(_var.Bds_instance_display_name),
-//				IsHighAvailability:   pulumi.Any(_var.Bds_instance_is_high_availability),
-//				IsSecure:             pulumi.Any(_var.Bds_instance_is_secure),
-//				MasterNode: &bigdataservice.BdsInstanceMasterNodeArgs{
-//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
-//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
-//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
-//					ShapeConfig: &bigdataservice.BdsInstanceMasterNodeShapeConfigArgs{
-//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
-//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
-//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
-//					},
-//				},
-//				UtilNode: &bigdataservice.BdsInstanceUtilNodeArgs{
-//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
-//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
-//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
-//					ShapeConfig: &bigdataservice.BdsInstanceUtilNodeShapeConfigArgs{
-//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
-//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
-//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
-//					},
-//				},
-//				WorkerNode: &bigdataservice.BdsInstanceWorkerNodeArgs{
-//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
-//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
-//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
-//					ShapeConfig: &bigdataservice.BdsInstanceWorkerNodeShapeConfigArgs{
-//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
-//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
-//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
-//					},
-//				},
-//				ComputeOnlyWorkerNode: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeArgs{
-//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
-//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
-//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
-//					ShapeConfig: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{
-//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
-//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
-//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
-//					},
-//				},
-//				EdgeNode: &bigdataservice.BdsInstanceEdgeNodeArgs{
-//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
-//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
-//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
-//					ShapeConfig: &bigdataservice.BdsInstanceEdgeNodeShapeConfigArgs{
-//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
-//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
-//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
-//					},
-//				},
-//				BootstrapScriptUrl: pulumi.Any(_var.Bds_instance_bootstrap_script_url),
-//				ClusterProfile:     pulumi.Any(_var.Bds_instance_cluster_profile),
-//				DefinedTags:        pulumi.Any(_var.Bds_instance_defined_tags),
-//				FreeformTags:       pulumi.Any(_var.Bds_instance_freeform_tags),
-//				KerberosRealmName:  pulumi.Any(_var.Bds_instance_kerberos_realm_name),
-//				KmsKeyId:           pulumi.Any(_var.Bds_instance_kms_key_id),
-//				NetworkConfig: &bigdataservice.BdsInstanceNetworkConfigArgs{
-//					CidrBlock:            pulumi.Any(_var.Bds_instance_network_config_cidr_block),
-//					IsNatGatewayRequired: pulumi.Any(_var.Bds_instance_network_config_is_nat_gateway_required),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // BdsInstances can be imported using the `id`, e.g.
@@ -157,20 +60,28 @@ type BdsInstance struct {
 	IsForceStopJobs pulumi.BoolPtrOutput `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability pulumi.BoolOutput `pulumi:"isHighAvailability"`
+	// Boolean flag specifying whether or not Kafka should be configured.
+	IsKafkaConfigured pulumi.BoolPtrOutput `pulumi:"isKafkaConfigured"`
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure pulumi.BoolOutput `pulumi:"isSecure"`
+	// The kafka broker node in the BDS instance
+	KafkaBrokerNode BdsInstanceKafkaBrokerNodePtrOutput `pulumi:"kafkaBrokerNode"`
 	// The user-defined kerberos realm name.
 	KerberosRealmName pulumi.StringOutput `pulumi:"kerberosRealmName"`
 	// (Updatable) The OCID of the Key Management master encryption key.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodeOutput `pulumi:"masterNode"`
-	// Additional configuration of customer's network.
+	// Additional configuration of the user's network.
 	NetworkConfig BdsInstanceNetworkConfigOutput `pulumi:"networkConfig"`
-	// The list of nodes in the BDS instance
+	// The list of nodes in the Big Data Service cluster.
 	Nodes BdsInstanceNodeArrayOutput `pulumi:"nodes"`
 	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntOutput `pulumi:"numberOfNodes"`
+	// Number of nodes that require a maintenance reboot
+	NumberOfNodesRequiringMaintenanceReboot pulumi.IntOutput `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	// (Updatable) The version of the patch to be upated.
+	OsPatchVersion pulumi.StringPtrOutput `pulumi:"osPatchVersion"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
@@ -281,20 +192,28 @@ type bdsInstanceState struct {
 	IsForceStopJobs *bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability *bool `pulumi:"isHighAvailability"`
+	// Boolean flag specifying whether or not Kafka should be configured.
+	IsKafkaConfigured *bool `pulumi:"isKafkaConfigured"`
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure *bool `pulumi:"isSecure"`
+	// The kafka broker node in the BDS instance
+	KafkaBrokerNode *BdsInstanceKafkaBrokerNode `pulumi:"kafkaBrokerNode"`
 	// The user-defined kerberos realm name.
 	KerberosRealmName *string `pulumi:"kerberosRealmName"`
 	// (Updatable) The OCID of the Key Management master encryption key.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode *BdsInstanceMasterNode `pulumi:"masterNode"`
-	// Additional configuration of customer's network.
+	// Additional configuration of the user's network.
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
-	// The list of nodes in the BDS instance
+	// The list of nodes in the Big Data Service cluster.
 	Nodes []BdsInstanceNode `pulumi:"nodes"`
 	// The amount of worker nodes should be created
 	NumberOfNodes *int `pulumi:"numberOfNodes"`
+	// Number of nodes that require a maintenance reboot
+	NumberOfNodesRequiringMaintenanceReboot *int `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	// (Updatable) The version of the patch to be upated.
+	OsPatchVersion *string `pulumi:"osPatchVersion"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
@@ -339,20 +258,28 @@ type BdsInstanceState struct {
 	IsForceStopJobs pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability pulumi.BoolPtrInput
+	// Boolean flag specifying whether or not Kafka should be configured.
+	IsKafkaConfigured pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure pulumi.BoolPtrInput
+	// The kafka broker node in the BDS instance
+	KafkaBrokerNode BdsInstanceKafkaBrokerNodePtrInput
 	// The user-defined kerberos realm name.
 	KerberosRealmName pulumi.StringPtrInput
 	// (Updatable) The OCID of the Key Management master encryption key.
 	KmsKeyId pulumi.StringPtrInput
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodePtrInput
-	// Additional configuration of customer's network.
+	// Additional configuration of the user's network.
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
-	// The list of nodes in the BDS instance
+	// The list of nodes in the Big Data Service cluster.
 	Nodes BdsInstanceNodeArrayInput
 	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntPtrInput
+	// Number of nodes that require a maintenance reboot
+	NumberOfNodesRequiringMaintenanceReboot pulumi.IntPtrInput
+	// (Updatable) The version of the patch to be upated.
+	OsPatchVersion pulumi.StringPtrInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
@@ -397,16 +324,22 @@ type bdsInstanceArgs struct {
 	IsForceStopJobs *bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
+	// Boolean flag specifying whether or not Kafka should be configured.
+	IsKafkaConfigured *bool `pulumi:"isKafkaConfigured"`
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure bool `pulumi:"isSecure"`
+	// The kafka broker node in the BDS instance
+	KafkaBrokerNode *BdsInstanceKafkaBrokerNode `pulumi:"kafkaBrokerNode"`
 	// The user-defined kerberos realm name.
 	KerberosRealmName *string `pulumi:"kerberosRealmName"`
 	// (Updatable) The OCID of the Key Management master encryption key.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNode `pulumi:"masterNode"`
-	// Additional configuration of customer's network.
+	// Additional configuration of the user's network.
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
+	// (Updatable) The version of the patch to be upated.
+	OsPatchVersion *string `pulumi:"osPatchVersion"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The utility node in the BDS instance
@@ -444,16 +377,22 @@ type BdsInstanceArgs struct {
 	IsForceStopJobs pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability pulumi.BoolInput
+	// Boolean flag specifying whether or not Kafka should be configured.
+	IsKafkaConfigured pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure pulumi.BoolInput
+	// The kafka broker node in the BDS instance
+	KafkaBrokerNode BdsInstanceKafkaBrokerNodePtrInput
 	// The user-defined kerberos realm name.
 	KerberosRealmName pulumi.StringPtrInput
 	// (Updatable) The OCID of the Key Management master encryption key.
 	KmsKeyId pulumi.StringPtrInput
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodeInput
-	// Additional configuration of customer's network.
+	// Additional configuration of the user's network.
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
+	// (Updatable) The version of the patch to be upated.
+	OsPatchVersion pulumi.StringPtrInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
 	// The utility node in the BDS instance
@@ -631,9 +570,19 @@ func (o BdsInstanceOutput) IsHighAvailability() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.BoolOutput { return v.IsHighAvailability }).(pulumi.BoolOutput)
 }
 
+// Boolean flag specifying whether or not Kafka should be configured.
+func (o BdsInstanceOutput) IsKafkaConfigured() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.BoolPtrOutput { return v.IsKafkaConfigured }).(pulumi.BoolPtrOutput)
+}
+
 // Boolean flag specifying whether or not the cluster should be setup as secure.
 func (o BdsInstanceOutput) IsSecure() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.BoolOutput { return v.IsSecure }).(pulumi.BoolOutput)
+}
+
+// The kafka broker node in the BDS instance
+func (o BdsInstanceOutput) KafkaBrokerNode() BdsInstanceKafkaBrokerNodePtrOutput {
+	return o.ApplyT(func(v *BdsInstance) BdsInstanceKafkaBrokerNodePtrOutput { return v.KafkaBrokerNode }).(BdsInstanceKafkaBrokerNodePtrOutput)
 }
 
 // The user-defined kerberos realm name.
@@ -651,12 +600,12 @@ func (o BdsInstanceOutput) MasterNode() BdsInstanceMasterNodeOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceMasterNodeOutput { return v.MasterNode }).(BdsInstanceMasterNodeOutput)
 }
 
-// Additional configuration of customer's network.
+// Additional configuration of the user's network.
 func (o BdsInstanceOutput) NetworkConfig() BdsInstanceNetworkConfigOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceNetworkConfigOutput { return v.NetworkConfig }).(BdsInstanceNetworkConfigOutput)
 }
 
-// The list of nodes in the BDS instance
+// The list of nodes in the Big Data Service cluster.
 func (o BdsInstanceOutput) Nodes() BdsInstanceNodeArrayOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceNodeArrayOutput { return v.Nodes }).(BdsInstanceNodeArrayOutput)
 }
@@ -664,6 +613,16 @@ func (o BdsInstanceOutput) Nodes() BdsInstanceNodeArrayOutput {
 // The amount of worker nodes should be created
 func (o BdsInstanceOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.IntOutput { return v.NumberOfNodes }).(pulumi.IntOutput)
+}
+
+// Number of nodes that require a maintenance reboot
+func (o BdsInstanceOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.IntOutput { return v.NumberOfNodesRequiringMaintenanceReboot }).(pulumi.IntOutput)
+}
+
+// (Updatable) The version of the patch to be upated.
+func (o BdsInstanceOutput) OsPatchVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.OsPatchVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

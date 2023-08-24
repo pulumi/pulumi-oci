@@ -35,6 +35,11 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
      * 
      */
     private String timeReleased;
+    /**
+     * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeSupportedUntil;
 
     private GetDeploymentVersionsDeploymentVersionCollectionItem() {}
     /**
@@ -72,6 +77,13 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
     public String timeReleased() {
         return this.timeReleased;
     }
+    /**
+     * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeSupportedUntil() {
+        return this.timeSupportedUntil;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -87,6 +99,7 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
         private String oggVersion;
         private String releaseType;
         private String timeReleased;
+        private String timeSupportedUntil;
         public Builder() {}
         public Builder(GetDeploymentVersionsDeploymentVersionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -95,6 +108,7 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
     	      this.oggVersion = defaults.oggVersion;
     	      this.releaseType = defaults.releaseType;
     	      this.timeReleased = defaults.timeReleased;
+    	      this.timeSupportedUntil = defaults.timeSupportedUntil;
         }
 
         @CustomType.Setter
@@ -122,6 +136,11 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
             this.timeReleased = Objects.requireNonNull(timeReleased);
             return this;
         }
+        @CustomType.Setter
+        public Builder timeSupportedUntil(String timeSupportedUntil) {
+            this.timeSupportedUntil = Objects.requireNonNull(timeSupportedUntil);
+            return this;
+        }
         public GetDeploymentVersionsDeploymentVersionCollectionItem build() {
             final var o = new GetDeploymentVersionsDeploymentVersionCollectionItem();
             o.deploymentType = deploymentType;
@@ -129,6 +148,7 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
             o.oggVersion = oggVersion;
             o.releaseType = releaseType;
             o.timeReleased = timeReleased;
+            o.timeSupportedUntil = timeSupportedUntil;
             return o;
         }
     }

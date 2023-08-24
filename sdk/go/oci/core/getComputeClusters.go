@@ -66,9 +66,9 @@ type GetComputeClustersArgs struct {
 
 // A collection of values returned by getComputeClusters.
 type GetComputeClustersResult struct {
-	// The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+	// The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of compute_cluster_collection.
 	ComputeClusterCollections []GetComputeClustersComputeClusterCollection `pulumi:"computeClusterCollections"`
@@ -122,12 +122,12 @@ func (o GetComputeClustersResultOutput) ToGetComputeClustersResultOutputWithCont
 	return o
 }
 
-// The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+// The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
 func (o GetComputeClustersResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeClustersResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
 func (o GetComputeClustersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetComputeClustersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

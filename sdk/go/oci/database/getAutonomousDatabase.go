@@ -130,6 +130,10 @@ type LookupAutonomousDatabaseResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
 	Id string `pulumi:"id"`
+	// The area assigned to In-Memory tables in Autonomous Database.
+	InMemoryAreaInGbs int `pulumi:"inMemoryAreaInGbs"`
+	// The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+	InMemoryPercentage int `pulumi:"inMemoryPercentage"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType string `pulumi:"infrastructureType"`
 	// Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
@@ -506,6 +510,16 @@ func (o LookupAutonomousDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
 // The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
 func (o LookupAutonomousDatabaseResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The area assigned to In-Memory tables in Autonomous Database.
+func (o LookupAutonomousDatabaseResultOutput) InMemoryAreaInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.InMemoryAreaInGbs }).(pulumi.IntOutput)
+}
+
+// The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+func (o LookupAutonomousDatabaseResultOutput) InMemoryPercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.InMemoryPercentage }).(pulumi.IntOutput)
 }
 
 // The infrastructure type this resource belongs to.

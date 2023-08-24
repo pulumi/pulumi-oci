@@ -45,6 +45,10 @@ public final class GetAutoScalingConfigurationPolicyDetail {
      * 
      */
     private List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs;
+    /**
+     * @return Details of a horizontal scaling schedule.
+     * 
+     */
     private List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails;
     /**
      * @return The time zone of the execution schedule, in IANA time zone database name format
@@ -100,6 +104,10 @@ public final class GetAutoScalingConfigurationPolicyDetail {
     public List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs() {
         return this.scaleUpConfigs;
     }
+    /**
+     * @return Details of a horizontal scaling schedule.
+     * 
+     */
     public List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails() {
         return this.scheduleDetails;
     }

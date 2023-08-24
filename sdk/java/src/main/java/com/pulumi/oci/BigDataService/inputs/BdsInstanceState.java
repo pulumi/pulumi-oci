@@ -9,6 +9,7 @@ import com.pulumi.oci.BigDataService.inputs.BdsInstanceCloudSqlDetailArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceClusterDetailArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeArgs;
+import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceMasterNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceNodeArgs;
@@ -269,6 +270,21 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Boolean flag specifying whether or not Kafka should be configured.
+     * 
+     */
+    @Import(name="isKafkaConfigured")
+    private @Nullable Output<Boolean> isKafkaConfigured;
+
+    /**
+     * @return Boolean flag specifying whether or not Kafka should be configured.
+     * 
+     */
+    public Optional<Output<Boolean>> isKafkaConfigured() {
+        return Optional.ofNullable(this.isKafkaConfigured);
+    }
+
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
@@ -281,6 +297,21 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> isSecure() {
         return Optional.ofNullable(this.isSecure);
+    }
+
+    /**
+     * The kafka broker node in the BDS instance
+     * 
+     */
+    @Import(name="kafkaBrokerNode")
+    private @Nullable Output<BdsInstanceKafkaBrokerNodeArgs> kafkaBrokerNode;
+
+    /**
+     * @return The kafka broker node in the BDS instance
+     * 
+     */
+    public Optional<Output<BdsInstanceKafkaBrokerNodeArgs>> kafkaBrokerNode() {
+        return Optional.ofNullable(this.kafkaBrokerNode);
     }
 
     /**
@@ -329,14 +360,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Additional configuration of customer&#39;s network.
+     * Additional configuration of the user&#39;s network.
      * 
      */
     @Import(name="networkConfig")
     private @Nullable Output<BdsInstanceNetworkConfigArgs> networkConfig;
 
     /**
-     * @return Additional configuration of customer&#39;s network.
+     * @return Additional configuration of the user&#39;s network.
      * 
      */
     public Optional<Output<BdsInstanceNetworkConfigArgs>> networkConfig() {
@@ -344,14 +375,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of nodes in the BDS instance
+     * The list of nodes in the Big Data Service cluster.
      * 
      */
     @Import(name="nodes")
     private @Nullable Output<List<BdsInstanceNodeArgs>> nodes;
 
     /**
-     * @return The list of nodes in the BDS instance
+     * @return The list of nodes in the Big Data Service cluster.
      * 
      */
     public Optional<Output<List<BdsInstanceNodeArgs>>> nodes() {
@@ -371,6 +402,36 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> numberOfNodes() {
         return Optional.ofNullable(this.numberOfNodes);
+    }
+
+    /**
+     * Number of nodes that require a maintenance reboot
+     * 
+     */
+    @Import(name="numberOfNodesRequiringMaintenanceReboot")
+    private @Nullable Output<Integer> numberOfNodesRequiringMaintenanceReboot;
+
+    /**
+     * @return Number of nodes that require a maintenance reboot
+     * 
+     */
+    public Optional<Output<Integer>> numberOfNodesRequiringMaintenanceReboot() {
+        return Optional.ofNullable(this.numberOfNodesRequiringMaintenanceReboot);
+    }
+
+    /**
+     * (Updatable) The version of the patch to be upated.
+     * 
+     */
+    @Import(name="osPatchVersion")
+    private @Nullable Output<String> osPatchVersion;
+
+    /**
+     * @return (Updatable) The version of the patch to be upated.
+     * 
+     */
+    public Optional<Output<String>> osPatchVersion() {
+        return Optional.ofNullable(this.osPatchVersion);
     }
 
     /**
@@ -460,13 +521,17 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         this.isCloudSqlConfigured = $.isCloudSqlConfigured;
         this.isForceStopJobs = $.isForceStopJobs;
         this.isHighAvailability = $.isHighAvailability;
+        this.isKafkaConfigured = $.isKafkaConfigured;
         this.isSecure = $.isSecure;
+        this.kafkaBrokerNode = $.kafkaBrokerNode;
         this.kerberosRealmName = $.kerberosRealmName;
         this.kmsKeyId = $.kmsKeyId;
         this.masterNode = $.masterNode;
         this.networkConfig = $.networkConfig;
         this.nodes = $.nodes;
         this.numberOfNodes = $.numberOfNodes;
+        this.numberOfNodesRequiringMaintenanceReboot = $.numberOfNodesRequiringMaintenanceReboot;
+        this.osPatchVersion = $.osPatchVersion;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -846,6 +911,27 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isKafkaConfigured Boolean flag specifying whether or not Kafka should be configured.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isKafkaConfigured(@Nullable Output<Boolean> isKafkaConfigured) {
+            $.isKafkaConfigured = isKafkaConfigured;
+            return this;
+        }
+
+        /**
+         * @param isKafkaConfigured Boolean flag specifying whether or not Kafka should be configured.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isKafkaConfigured(Boolean isKafkaConfigured) {
+            return isKafkaConfigured(Output.of(isKafkaConfigured));
+        }
+
+        /**
          * @param isSecure Boolean flag specifying whether or not the cluster should be setup as secure.
          * 
          * @return builder
@@ -864,6 +950,27 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isSecure(Boolean isSecure) {
             return isSecure(Output.of(isSecure));
+        }
+
+        /**
+         * @param kafkaBrokerNode The kafka broker node in the BDS instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kafkaBrokerNode(@Nullable Output<BdsInstanceKafkaBrokerNodeArgs> kafkaBrokerNode) {
+            $.kafkaBrokerNode = kafkaBrokerNode;
+            return this;
+        }
+
+        /**
+         * @param kafkaBrokerNode The kafka broker node in the BDS instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kafkaBrokerNode(BdsInstanceKafkaBrokerNodeArgs kafkaBrokerNode) {
+            return kafkaBrokerNode(Output.of(kafkaBrokerNode));
         }
 
         /**
@@ -930,7 +1037,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkConfig Additional configuration of customer&#39;s network.
+         * @param networkConfig Additional configuration of the user&#39;s network.
          * 
          * @return builder
          * 
@@ -941,7 +1048,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkConfig Additional configuration of customer&#39;s network.
+         * @param networkConfig Additional configuration of the user&#39;s network.
          * 
          * @return builder
          * 
@@ -951,7 +1058,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes The list of nodes in the BDS instance
+         * @param nodes The list of nodes in the Big Data Service cluster.
          * 
          * @return builder
          * 
@@ -962,7 +1069,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes The list of nodes in the BDS instance
+         * @param nodes The list of nodes in the Big Data Service cluster.
          * 
          * @return builder
          * 
@@ -972,7 +1079,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes The list of nodes in the BDS instance
+         * @param nodes The list of nodes in the Big Data Service cluster.
          * 
          * @return builder
          * 
@@ -1000,6 +1107,48 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder numberOfNodes(Integer numberOfNodes) {
             return numberOfNodes(Output.of(numberOfNodes));
+        }
+
+        /**
+         * @param numberOfNodesRequiringMaintenanceReboot Number of nodes that require a maintenance reboot
+         * 
+         * @return builder
+         * 
+         */
+        public Builder numberOfNodesRequiringMaintenanceReboot(@Nullable Output<Integer> numberOfNodesRequiringMaintenanceReboot) {
+            $.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
+            return this;
+        }
+
+        /**
+         * @param numberOfNodesRequiringMaintenanceReboot Number of nodes that require a maintenance reboot
+         * 
+         * @return builder
+         * 
+         */
+        public Builder numberOfNodesRequiringMaintenanceReboot(Integer numberOfNodesRequiringMaintenanceReboot) {
+            return numberOfNodesRequiringMaintenanceReboot(Output.of(numberOfNodesRequiringMaintenanceReboot));
+        }
+
+        /**
+         * @param osPatchVersion (Updatable) The version of the patch to be upated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osPatchVersion(@Nullable Output<String> osPatchVersion) {
+            $.osPatchVersion = osPatchVersion;
+            return this;
+        }
+
+        /**
+         * @param osPatchVersion (Updatable) The version of the patch to be upated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osPatchVersion(String osPatchVersion) {
+            return osPatchVersion(Output.of(osPatchVersion));
         }
 
         /**

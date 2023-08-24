@@ -14137,6 +14137,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  failed_data_recovery_in_seconds: int,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 in_memory_area_in_gbs: int,
+                 in_memory_percentage: int,
                  infrastructure_type: str,
                  is_access_control_enabled: bool,
                  is_auto_scaling_enabled: bool,
@@ -14252,6 +14254,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
+        :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
         :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
         :param bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
@@ -14361,6 +14365,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "in_memory_area_in_gbs", in_memory_area_in_gbs)
+        pulumi.set(__self__, "in_memory_percentage", in_memory_percentage)
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         pulumi.set(__self__, "is_access_control_enabled", is_access_control_enabled)
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
@@ -14719,6 +14725,22 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="inMemoryAreaInGbs")
+    def in_memory_area_in_gbs(self) -> int:
+        """
+        The area assigned to In-Memory tables in Autonomous Database.
+        """
+        return pulumi.get(self, "in_memory_area_in_gbs")
+
+    @property
+    @pulumi.getter(name="inMemoryPercentage")
+    def in_memory_percentage(self) -> int:
+        """
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        """
+        return pulumi.get(self, "in_memory_percentage")
 
     @property
     @pulumi.getter(name="infrastructureType")
@@ -15977,6 +15999,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  failed_data_recovery_in_seconds: int,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 in_memory_area_in_gbs: int,
+                 in_memory_percentage: int,
                  infrastructure_type: str,
                  is_access_control_enabled: bool,
                  is_auto_scaling_enabled: bool,
@@ -16083,6 +16107,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
+        :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
         :param str infrastructure_type: The infrastructure type this resource belongs to.
         :param bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
@@ -16186,6 +16212,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "in_memory_area_in_gbs", in_memory_area_in_gbs)
+        pulumi.set(__self__, "in_memory_percentage", in_memory_percentage)
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         pulumi.set(__self__, "is_access_control_enabled", is_access_control_enabled)
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
@@ -16515,6 +16543,22 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="inMemoryAreaInGbs")
+    def in_memory_area_in_gbs(self) -> int:
+        """
+        The area assigned to In-Memory tables in Autonomous Database.
+        """
+        return pulumi.get(self, "in_memory_area_in_gbs")
+
+    @property
+    @pulumi.getter(name="inMemoryPercentage")
+    def in_memory_percentage(self) -> int:
+        """
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        """
+        return pulumi.get(self, "in_memory_percentage")
 
     @property
     @pulumi.getter(name="infrastructureType")

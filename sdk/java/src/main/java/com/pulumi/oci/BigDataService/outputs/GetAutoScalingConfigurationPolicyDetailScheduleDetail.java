@@ -17,7 +17,15 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetail {
      * 
      */
     private String scheduleType;
+    /**
+     * @return Time of day and horizontal scaling configuration.
+     * 
+     */
     private List<GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs;
+    /**
+     * @return Time of day and vertical scaling configuration
+     * 
+     */
     private List<GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs;
 
     private GetAutoScalingConfigurationPolicyDetailScheduleDetail() {}
@@ -28,9 +36,17 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetail {
     public String scheduleType() {
         return this.scheduleType;
     }
+    /**
+     * @return Time of day and horizontal scaling configuration.
+     * 
+     */
     public List<GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs() {
         return this.timeAndHorizontalScalingConfigs;
     }
+    /**
+     * @return Time of day and vertical scaling configuration
+     * 
+     */
     public List<GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs() {
         return this.timeAndVerticalScalingConfigs;
     }

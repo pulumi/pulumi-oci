@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetComputeClustersResult {
     /**
-     * @return The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * @return The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     private @Nullable String availabilityDomain;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
      * 
      */
     private String compartmentId;
@@ -43,14 +43,14 @@ public final class GetComputeClustersResult {
 
     private GetComputeClustersResult() {}
     /**
-     * @return The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * @return The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
      * 
      */
     public String compartmentId() {

@@ -157,6 +157,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<Inputs.ContainerInstanceContainerResourceConfigGetArgs>? ResourceConfig { get; set; }
 
         /// <summary>
+        /// Security context for container.
+        /// </summary>
+        [Input("securityContext")]
+        public Input<Inputs.ContainerInstanceContainerSecurityContextGetArgs>? SecurityContext { get; set; }
+
+        /// <summary>
         /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
         /// 
         /// 

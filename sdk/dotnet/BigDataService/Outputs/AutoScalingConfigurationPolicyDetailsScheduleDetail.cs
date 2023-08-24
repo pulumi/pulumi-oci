@@ -18,11 +18,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? ScheduleType;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Time of day and horizontal scaling configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig> TimeAndHorizontalScalingConfigs;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Time of day and vertical scaling configuration
         /// </summary>
         public readonly ImmutableArray<Outputs.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig> TimeAndVerticalScalingConfigs;
 

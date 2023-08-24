@@ -22,7 +22,10 @@ class GetClusterNetworkResult:
     """
     A collection of values returned by getClusterNetwork.
     """
-    def __init__(__self__, cluster_network_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hpc_island_id=None, id=None, instance_pools=None, network_block_ids=None, placement_configurations=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, cluster_configurations=None, cluster_network_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hpc_island_id=None, id=None, instance_pools=None, network_block_ids=None, placement_configurations=None, state=None, time_created=None, time_updated=None):
+        if cluster_configurations and not isinstance(cluster_configurations, list):
+            raise TypeError("Expected argument 'cluster_configurations' to be a list")
+        pulumi.set(__self__, "cluster_configurations", cluster_configurations)
         if cluster_network_id and not isinstance(cluster_network_id, str):
             raise TypeError("Expected argument 'cluster_network_id' to be a str")
         pulumi.set(__self__, "cluster_network_id", cluster_network_id)
@@ -62,6 +65,11 @@ class GetClusterNetworkResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="clusterConfigurations")
+    def cluster_configurations(self) -> Sequence['outputs.GetClusterNetworkClusterConfigurationResult']:
+        return pulumi.get(self, "cluster_configurations")
 
     @property
     @pulumi.getter(name="clusterNetworkId")
@@ -104,7 +112,7 @@ class GetClusterNetworkResult:
     @pulumi.getter(name="hpcIslandId")
     def hpc_island_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
         """
         return pulumi.get(self, "hpc_island_id")
 
@@ -171,6 +179,7 @@ class AwaitableGetClusterNetworkResult(GetClusterNetworkResult):
         if False:
             yield self
         return GetClusterNetworkResult(
+            cluster_configurations=self.cluster_configurations,
             cluster_network_id=self.cluster_network_id,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
@@ -191,7 +200,7 @@ def get_cluster_network(cluster_network_id: Optional[str] = None,
     """
     This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
 
-    Gets information about the specified cluster network.
+    Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
 
     ## Example Usage
 
@@ -211,6 +220,7 @@ def get_cluster_network(cluster_network_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getClusterNetwork:getClusterNetwork', __args__, opts=opts, typ=GetClusterNetworkResult).value
 
     return AwaitableGetClusterNetworkResult(
+        cluster_configurations=pulumi.get(__ret__, 'cluster_configurations'),
         cluster_network_id=pulumi.get(__ret__, 'cluster_network_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -232,7 +242,7 @@ def get_cluster_network_output(cluster_network_id: Optional[pulumi.Input[str]] =
     """
     This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
 
-    Gets information about the specified cluster network.
+    Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
 
     ## Example Usage
 

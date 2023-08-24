@@ -22,7 +22,7 @@ public final class GetInstancePoolsInstancePoolPlacementConfiguration {
      */
     private List<String> faultDomains;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
      * 
      */
     private String primarySubnetId;
@@ -48,7 +48,7 @@ public final class GetInstancePoolsInstancePoolPlacementConfiguration {
         return this.faultDomains;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
      * 
      */
     public String primarySubnetId() {

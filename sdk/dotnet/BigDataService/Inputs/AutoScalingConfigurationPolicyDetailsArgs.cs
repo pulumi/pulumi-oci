@@ -52,7 +52,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         private InputList<Inputs.AutoScalingConfigurationPolicyDetailsScheduleDetailArgs>? _scheduleDetails;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Details of a horizontal scaling schedule.
         /// </summary>
         public InputList<Inputs.AutoScalingConfigurationPolicyDetailsScheduleDetailArgs> ScheduleDetails
         {

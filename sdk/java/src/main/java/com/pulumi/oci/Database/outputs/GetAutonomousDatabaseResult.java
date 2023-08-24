@@ -195,6 +195,16 @@ public final class GetAutonomousDatabaseResult {
      */
     private String id;
     /**
+     * @return The area assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    private Integer inMemoryAreaInGbs;
+    /**
+     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    private Integer inMemoryPercentage;
+    /**
      * @return The infrastructure type this resource belongs to.
      * 
      */
@@ -804,6 +814,20 @@ public final class GetAutonomousDatabaseResult {
         return this.id;
     }
     /**
+     * @return The area assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    public Integer inMemoryAreaInGbs() {
+        return this.inMemoryAreaInGbs;
+    }
+    /**
+     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * 
+     */
+    public Integer inMemoryPercentage() {
+        return this.inMemoryPercentage;
+    }
+    /**
      * @return The infrastructure type this resource belongs to.
      * 
      */
@@ -1380,6 +1404,8 @@ public final class GetAutonomousDatabaseResult {
         private Integer failedDataRecoveryInSeconds;
         private Map<String,Object> freeformTags;
         private String id;
+        private Integer inMemoryAreaInGbs;
+        private Integer inMemoryPercentage;
         private String infrastructureType;
         private Boolean isAccessControlEnabled;
         private Boolean isAutoScalingEnabled;
@@ -1501,6 +1527,8 @@ public final class GetAutonomousDatabaseResult {
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.inMemoryAreaInGbs = defaults.inMemoryAreaInGbs;
+    	      this.inMemoryPercentage = defaults.inMemoryPercentage;
     	      this.infrastructureType = defaults.infrastructureType;
     	      this.isAccessControlEnabled = defaults.isAccessControlEnabled;
     	      this.isAutoScalingEnabled = defaults.isAutoScalingEnabled;
@@ -1781,6 +1809,16 @@ public final class GetAutonomousDatabaseResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder inMemoryAreaInGbs(Integer inMemoryAreaInGbs) {
+            this.inMemoryAreaInGbs = Objects.requireNonNull(inMemoryAreaInGbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder inMemoryPercentage(Integer inMemoryPercentage) {
+            this.inMemoryPercentage = Objects.requireNonNull(inMemoryPercentage);
             return this;
         }
         @CustomType.Setter
@@ -2267,6 +2305,8 @@ public final class GetAutonomousDatabaseResult {
             o.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.inMemoryAreaInGbs = inMemoryAreaInGbs;
+            o.inMemoryPercentage = inMemoryPercentage;
             o.infrastructureType = infrastructureType;
             o.isAccessControlEnabled = isAccessControlEnabled;
             o.isAutoScalingEnabled = isAutoScalingEnabled;

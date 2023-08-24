@@ -20,7 +20,7 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
      * 
      * A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
      * 
-     * Cannot be an IPv6 CIDR.
+     * Cannot be an IPv6 prefix.
      * 
      * Example: `0.0.0.0/0`
      * 
@@ -37,7 +37,7 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
      * 
      * A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
      * 
-     * Cannot be an IPv6 CIDR.
+     * Cannot be an IPv6 prefix.
      * 
      * Example: `0.0.0.0/0`
      * 
@@ -69,7 +69,7 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
      * (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
      * 
      * Allowed values:
-     * * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule&#39;s target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule&#39;s target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
      * 
      */
@@ -80,7 +80,7 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
      * @return (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
      * 
      * Allowed values:
-     * * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule&#39;s target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule&#39;s target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
      * 
      */
@@ -167,7 +167,7 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
          * 
          * A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
          * 
-         * Cannot be an IPv6 CIDR.
+         * Cannot be an IPv6 prefix.
          * 
          * Example: `0.0.0.0/0`
          * 
@@ -188,7 +188,7 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
          * 
          * A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
          * 
-         * Cannot be an IPv6 CIDR.
+         * Cannot be an IPv6 prefix.
          * 
          * Example: `0.0.0.0/0`
          * 
@@ -228,7 +228,7 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
          * @param destination (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
          * 
          * Allowed values:
-         * * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule&#39;s target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule&#39;s target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
          * 
          * @return builder
@@ -243,7 +243,7 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
          * @param destination (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
          * 
          * Allowed values:
-         * * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule&#39;s target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule&#39;s target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
          * 
          * @return builder

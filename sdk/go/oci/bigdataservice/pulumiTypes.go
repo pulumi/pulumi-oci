@@ -182,7 +182,7 @@ type AutoScalingConfigurationPolicyDetails struct {
 	ScaleOutConfig *AutoScalingConfigurationPolicyDetailsScaleOutConfig `pulumi:"scaleOutConfig"`
 	// (Updatable) Configration for a metric based vertical scale-up policy.
 	ScaleUpConfig *AutoScalingConfigurationPolicyDetailsScaleUpConfig `pulumi:"scaleUpConfig"`
-	// (Updatable)
+	// (Updatable) Details of a horizontal scaling schedule.
 	ScheduleDetails []AutoScalingConfigurationPolicyDetailsScheduleDetail `pulumi:"scheduleDetails"`
 	// (Updatable) The time zone of the execution schedule, in IANA time zone database name format
 	//
@@ -217,7 +217,7 @@ type AutoScalingConfigurationPolicyDetailsArgs struct {
 	ScaleOutConfig AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrInput `pulumi:"scaleOutConfig"`
 	// (Updatable) Configration for a metric based vertical scale-up policy.
 	ScaleUpConfig AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrInput `pulumi:"scaleUpConfig"`
-	// (Updatable)
+	// (Updatable) Details of a horizontal scaling schedule.
 	ScheduleDetails AutoScalingConfigurationPolicyDetailsScheduleDetailArrayInput `pulumi:"scheduleDetails"`
 	// (Updatable) The time zone of the execution schedule, in IANA time zone database name format
 	//
@@ -343,7 +343,7 @@ func (o AutoScalingConfigurationPolicyDetailsOutput) ScaleUpConfig() AutoScaling
 	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Details of a horizontal scaling schedule.
 func (o AutoScalingConfigurationPolicyDetailsOutput) ScheduleDetails() AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) []AutoScalingConfigurationPolicyDetailsScheduleDetail {
 		return v.ScheduleDetails
@@ -447,7 +447,7 @@ func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ScaleUpConfig() AutoScal
 	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Details of a horizontal scaling schedule.
 func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ScheduleDetails() AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) []AutoScalingConfigurationPolicyDetailsScheduleDetail {
 		if v == nil {
@@ -2607,9 +2607,9 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutp
 type AutoScalingConfigurationPolicyDetailsScheduleDetail struct {
 	// (Updatable) The type of schedule.
 	ScheduleType *string `pulumi:"scheduleType"`
-	// (Updatable)
+	// (Updatable) Time of day and horizontal scaling configuration.
 	TimeAndHorizontalScalingConfigs []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig `pulumi:"timeAndHorizontalScalingConfigs"`
-	// (Updatable)
+	// (Updatable) Time of day and vertical scaling configuration
 	TimeAndVerticalScalingConfigs []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig `pulumi:"timeAndVerticalScalingConfigs"`
 }
 
@@ -2627,9 +2627,9 @@ type AutoScalingConfigurationPolicyDetailsScheduleDetailInput interface {
 type AutoScalingConfigurationPolicyDetailsScheduleDetailArgs struct {
 	// (Updatable) The type of schedule.
 	ScheduleType pulumi.StringPtrInput `pulumi:"scheduleType"`
-	// (Updatable)
+	// (Updatable) Time of day and horizontal scaling configuration.
 	TimeAndHorizontalScalingConfigs AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayInput `pulumi:"timeAndHorizontalScalingConfigs"`
-	// (Updatable)
+	// (Updatable) Time of day and vertical scaling configuration
 	TimeAndVerticalScalingConfigs AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayInput `pulumi:"timeAndVerticalScalingConfigs"`
 }
 
@@ -2689,14 +2689,14 @@ func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) ScheduleType(
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetail) *string { return v.ScheduleType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Time of day and horizontal scaling configuration.
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) TimeAndHorizontalScalingConfigs() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetail) []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig {
 		return v.TimeAndHorizontalScalingConfigs
 	}).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
 }
 
-// (Updatable)
+// (Updatable) Time of day and vertical scaling configuration
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) TimeAndVerticalScalingConfigs() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetail) []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig {
 		return v.TimeAndVerticalScalingConfigs
@@ -3218,7 +3218,6 @@ type BdsInstanceCloudSqlDetail struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
@@ -3251,7 +3250,6 @@ type BdsInstanceCloudSqlDetailArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
@@ -3341,7 +3339,6 @@ func (o BdsInstanceCloudSqlDetailOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntPtrOutput {
@@ -3923,7 +3920,6 @@ type BdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
@@ -3946,7 +3942,6 @@ type BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
@@ -4040,7 +4035,6 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntPtr
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
@@ -4092,7 +4086,6 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Nvmes() pulumi.Int
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
@@ -4323,7 +4316,6 @@ type BdsInstanceEdgeNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
@@ -4346,7 +4338,6 @@ type BdsInstanceEdgeNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
@@ -4440,7 +4431,6 @@ func (o BdsInstanceEdgeNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceEdgeNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
@@ -4492,11 +4482,402 @@ func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceEdgeNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceKafkaBrokerNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
+	NumberOfKafkaNodes   int     `pulumi:"numberOfKafkaNodes"`
+	// Shape of the node
+	Shape string `pulumi:"shape"`
+	// The shape configuration requested for the node.
+	ShapeConfig *BdsInstanceKafkaBrokerNodeShapeConfig `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// BdsInstanceKafkaBrokerNodeInput is an input type that accepts BdsInstanceKafkaBrokerNodeArgs and BdsInstanceKafkaBrokerNodeOutput values.
+// You can construct a concrete instance of `BdsInstanceKafkaBrokerNodeInput` via:
+//
+//	BdsInstanceKafkaBrokerNodeArgs{...}
+type BdsInstanceKafkaBrokerNodeInput interface {
+	pulumi.Input
+
+	ToBdsInstanceKafkaBrokerNodeOutput() BdsInstanceKafkaBrokerNodeOutput
+	ToBdsInstanceKafkaBrokerNodeOutputWithContext(context.Context) BdsInstanceKafkaBrokerNodeOutput
+}
+
+type BdsInstanceKafkaBrokerNodeArgs struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
+	NumberOfKafkaNodes   pulumi.IntInput       `pulumi:"numberOfKafkaNodes"`
+	// Shape of the node
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration requested for the node.
+	ShapeConfig BdsInstanceKafkaBrokerNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (BdsInstanceKafkaBrokerNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (i BdsInstanceKafkaBrokerNodeArgs) ToBdsInstanceKafkaBrokerNodeOutput() BdsInstanceKafkaBrokerNodeOutput {
+	return i.ToBdsInstanceKafkaBrokerNodeOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceKafkaBrokerNodeArgs) ToBdsInstanceKafkaBrokerNodeOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodeOutput)
+}
+
+func (i BdsInstanceKafkaBrokerNodeArgs) ToBdsInstanceKafkaBrokerNodePtrOutput() BdsInstanceKafkaBrokerNodePtrOutput {
+	return i.ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceKafkaBrokerNodeArgs) ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodeOutput).ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(ctx)
+}
+
+// BdsInstanceKafkaBrokerNodePtrInput is an input type that accepts BdsInstanceKafkaBrokerNodeArgs, BdsInstanceKafkaBrokerNodePtr and BdsInstanceKafkaBrokerNodePtrOutput values.
+// You can construct a concrete instance of `BdsInstanceKafkaBrokerNodePtrInput` via:
+//
+//	        BdsInstanceKafkaBrokerNodeArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceKafkaBrokerNodePtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceKafkaBrokerNodePtrOutput() BdsInstanceKafkaBrokerNodePtrOutput
+	ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(context.Context) BdsInstanceKafkaBrokerNodePtrOutput
+}
+
+type bdsInstanceKafkaBrokerNodePtrType BdsInstanceKafkaBrokerNodeArgs
+
+func BdsInstanceKafkaBrokerNodePtr(v *BdsInstanceKafkaBrokerNodeArgs) BdsInstanceKafkaBrokerNodePtrInput {
+	return (*bdsInstanceKafkaBrokerNodePtrType)(v)
+}
+
+func (*bdsInstanceKafkaBrokerNodePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (i *bdsInstanceKafkaBrokerNodePtrType) ToBdsInstanceKafkaBrokerNodePtrOutput() BdsInstanceKafkaBrokerNodePtrOutput {
+	return i.ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceKafkaBrokerNodePtrType) ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodePtrOutput)
+}
+
+type BdsInstanceKafkaBrokerNodeOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceKafkaBrokerNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (o BdsInstanceKafkaBrokerNodeOutput) ToBdsInstanceKafkaBrokerNodeOutput() BdsInstanceKafkaBrokerNodeOutput {
+	return o
+}
+
+func (o BdsInstanceKafkaBrokerNodeOutput) ToBdsInstanceKafkaBrokerNodeOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodeOutput {
+	return o
+}
+
+func (o BdsInstanceKafkaBrokerNodeOutput) ToBdsInstanceKafkaBrokerNodePtrOutput() BdsInstanceKafkaBrokerNodePtrOutput {
+	return o.ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceKafkaBrokerNodeOutput) ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceKafkaBrokerNode) *BdsInstanceKafkaBrokerNode {
+		return &v
+	}).(BdsInstanceKafkaBrokerNodePtrOutput)
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o BdsInstanceKafkaBrokerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceKafkaBrokerNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
+}
+
+func (o BdsInstanceKafkaBrokerNodeOutput) NumberOfKafkaNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v BdsInstanceKafkaBrokerNode) int { return v.NumberOfKafkaNodes }).(pulumi.IntOutput)
+}
+
+// Shape of the node
+func (o BdsInstanceKafkaBrokerNodeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceKafkaBrokerNode) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The shape configuration requested for the node.
+func (o BdsInstanceKafkaBrokerNodeOutput) ShapeConfig() BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v BdsInstanceKafkaBrokerNode) *BdsInstanceKafkaBrokerNodeShapeConfig { return v.ShapeConfig }).(BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
+func (o BdsInstanceKafkaBrokerNodeOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceKafkaBrokerNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type BdsInstanceKafkaBrokerNodePtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceKafkaBrokerNodePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (o BdsInstanceKafkaBrokerNodePtrOutput) ToBdsInstanceKafkaBrokerNodePtrOutput() BdsInstanceKafkaBrokerNodePtrOutput {
+	return o
+}
+
+func (o BdsInstanceKafkaBrokerNodePtrOutput) ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodePtrOutput {
+	return o
+}
+
+func (o BdsInstanceKafkaBrokerNodePtrOutput) Elem() BdsInstanceKafkaBrokerNodeOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNode) BdsInstanceKafkaBrokerNode {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceKafkaBrokerNode
+		return ret
+	}).(BdsInstanceKafkaBrokerNodeOutput)
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o BdsInstanceKafkaBrokerNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNode) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockVolumeSizeInGbs
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o BdsInstanceKafkaBrokerNodePtrOutput) NumberOfKafkaNodes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNode) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.NumberOfKafkaNodes
+	}).(pulumi.IntPtrOutput)
+}
+
+// Shape of the node
+func (o BdsInstanceKafkaBrokerNodePtrOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNode) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Shape
+	}).(pulumi.StringPtrOutput)
+}
+
+// The shape configuration requested for the node.
+func (o BdsInstanceKafkaBrokerNodePtrOutput) ShapeConfig() BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNode) *BdsInstanceKafkaBrokerNodeShapeConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ShapeConfig
+	}).(BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
+func (o BdsInstanceKafkaBrokerNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNode) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceKafkaBrokerNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Ocpus *int `pulumi:"ocpus"`
+}
+
+// BdsInstanceKafkaBrokerNodeShapeConfigInput is an input type that accepts BdsInstanceKafkaBrokerNodeShapeConfigArgs and BdsInstanceKafkaBrokerNodeShapeConfigOutput values.
+// You can construct a concrete instance of `BdsInstanceKafkaBrokerNodeShapeConfigInput` via:
+//
+//	BdsInstanceKafkaBrokerNodeShapeConfigArgs{...}
+type BdsInstanceKafkaBrokerNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstanceKafkaBrokerNodeShapeConfigOutput() BdsInstanceKafkaBrokerNodeShapeConfigOutput
+	ToBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(context.Context) BdsInstanceKafkaBrokerNodeShapeConfigOutput
+}
+
+type BdsInstanceKafkaBrokerNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+}
+
+func (BdsInstanceKafkaBrokerNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceKafkaBrokerNodeShapeConfigArgs) ToBdsInstanceKafkaBrokerNodeShapeConfigOutput() BdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return i.ToBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceKafkaBrokerNodeShapeConfigArgs) ToBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodeShapeConfigOutput)
+}
+
+func (i BdsInstanceKafkaBrokerNodeShapeConfigArgs) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutput() BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceKafkaBrokerNodeShapeConfigArgs) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodeShapeConfigOutput).ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceKafkaBrokerNodeShapeConfigPtrInput is an input type that accepts BdsInstanceKafkaBrokerNodeShapeConfigArgs, BdsInstanceKafkaBrokerNodeShapeConfigPtr and BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceKafkaBrokerNodeShapeConfigPtrInput` via:
+//
+//	        BdsInstanceKafkaBrokerNodeShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceKafkaBrokerNodeShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutput() BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput
+	ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(context.Context) BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput
+}
+
+type bdsInstanceKafkaBrokerNodeShapeConfigPtrType BdsInstanceKafkaBrokerNodeShapeConfigArgs
+
+func BdsInstanceKafkaBrokerNodeShapeConfigPtr(v *BdsInstanceKafkaBrokerNodeShapeConfigArgs) BdsInstanceKafkaBrokerNodeShapeConfigPtrInput {
+	return (*bdsInstanceKafkaBrokerNodeShapeConfigPtrType)(v)
+}
+
+func (*bdsInstanceKafkaBrokerNodeShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i *bdsInstanceKafkaBrokerNodeShapeConfigPtrType) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutput() BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceKafkaBrokerNodeShapeConfigPtrType) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput)
+}
+
+type BdsInstanceKafkaBrokerNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceKafkaBrokerNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) ToBdsInstanceKafkaBrokerNodeShapeConfigOutput() BdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) ToBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutput() BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return o.ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceKafkaBrokerNodeShapeConfig) *BdsInstanceKafkaBrokerNodeShapeConfig {
+		return &v
+	}).(BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceKafkaBrokerNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceKafkaBrokerNodeShapeConfig) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceKafkaBrokerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutput() BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Elem() BdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNodeShapeConfig) BdsInstanceKafkaBrokerNodeShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceKafkaBrokerNodeShapeConfig
+		return ret
+	}).(BdsInstanceKafkaBrokerNodeShapeConfigOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Nvmes
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNodeShapeConfig) *int {
 		if v == nil {
 			return nil
 		}
@@ -4723,7 +5104,6 @@ type BdsInstanceMasterNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
@@ -4746,7 +5126,6 @@ type BdsInstanceMasterNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
@@ -4840,7 +5219,6 @@ func (o BdsInstanceMasterNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceMasterNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
@@ -4892,7 +5270,6 @@ func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
@@ -5079,10 +5456,9 @@ type BdsInstanceNode struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
-	// BDS instance node type
+	// The Big Data Service cluster node type.
 	NodeType *string `pulumi:"nodeType"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
@@ -5096,6 +5472,8 @@ type BdsInstanceNode struct {
 	SubnetId *string `pulumi:"subnetId"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+	TimeMaintenanceRebootDue *string `pulumi:"timeMaintenanceRebootDue"`
 }
 
 // BdsInstanceNodeInput is an input type that accepts BdsInstanceNodeArgs and BdsInstanceNodeOutput values.
@@ -5128,10 +5506,9 @@ type BdsInstanceNodeArgs struct {
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
-	// BDS instance node type
+	// The Big Data Service cluster node type.
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
@@ -5145,6 +5522,8 @@ type BdsInstanceNodeArgs struct {
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+	TimeMaintenanceRebootDue pulumi.StringPtrInput `pulumi:"timeMaintenanceRebootDue"`
 }
 
 func (BdsInstanceNodeArgs) ElementType() reflect.Type {
@@ -5243,13 +5622,12 @@ func (o BdsInstanceNodeOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
 
-// BDS instance node type
+// The Big Data Service cluster node type.
 func (o BdsInstanceNodeOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.NodeType }).(pulumi.StringPtrOutput)
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceNodeOutput) Ocpus() pulumi.IntPtrOutput {
@@ -5279,6 +5657,11 @@ func (o BdsInstanceNodeOutput) SubnetId() pulumi.StringPtrOutput {
 // The time the BDS instance was created. An RFC3339 formatted datetime string
 func (o BdsInstanceNodeOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+func (o BdsInstanceNodeOutput) TimeMaintenanceRebootDue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNode) *string { return v.TimeMaintenanceRebootDue }).(pulumi.StringPtrOutput)
 }
 
 type BdsInstanceNodeArrayOutput struct{ *pulumi.OutputState }
@@ -5626,7 +6009,6 @@ type BdsInstanceUtilNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
@@ -5649,7 +6031,6 @@ type BdsInstanceUtilNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
@@ -5743,7 +6124,6 @@ func (o BdsInstanceUtilNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceUtilNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
@@ -5795,7 +6175,6 @@ func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
@@ -6026,7 +6405,6 @@ type BdsInstanceWorkerNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
@@ -6049,7 +6427,6 @@ type BdsInstanceWorkerNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
@@ -6143,7 +6520,6 @@ func (o BdsInstanceWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
@@ -6195,7 +6571,6 @@ func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-//
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
@@ -6325,7 +6700,8 @@ type GetAutoScalingConfigurationPolicyDetail struct {
 	// Configration for a metric based horizontal scale-out policy.
 	ScaleOutConfigs []GetAutoScalingConfigurationPolicyDetailScaleOutConfig `pulumi:"scaleOutConfigs"`
 	// Configration for a metric based vertical scale-up policy.
-	ScaleUpConfigs  []GetAutoScalingConfigurationPolicyDetailScaleUpConfig  `pulumi:"scaleUpConfigs"`
+	ScaleUpConfigs []GetAutoScalingConfigurationPolicyDetailScaleUpConfig `pulumi:"scaleUpConfigs"`
+	// Details of a horizontal scaling schedule.
 	ScheduleDetails []GetAutoScalingConfigurationPolicyDetailScheduleDetail `pulumi:"scheduleDetails"`
 	// The time zone of the execution schedule, in IANA time zone database name format
 	Timezone string `pulumi:"timezone"`
@@ -6356,7 +6732,8 @@ type GetAutoScalingConfigurationPolicyDetailArgs struct {
 	// Configration for a metric based horizontal scale-out policy.
 	ScaleOutConfigs GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput `pulumi:"scaleOutConfigs"`
 	// Configration for a metric based vertical scale-up policy.
-	ScaleUpConfigs  GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput  `pulumi:"scaleUpConfigs"`
+	ScaleUpConfigs GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput `pulumi:"scaleUpConfigs"`
+	// Details of a horizontal scaling schedule.
 	ScheduleDetails GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput `pulumi:"scheduleDetails"`
 	// The time zone of the execution schedule, in IANA time zone database name format
 	Timezone pulumi.StringInput `pulumi:"timezone"`
@@ -6453,6 +6830,7 @@ func (o GetAutoScalingConfigurationPolicyDetailOutput) ScaleUpConfigs() GetAutoS
 	}).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput)
 }
 
+// Details of a horizontal scaling schedule.
 func (o GetAutoScalingConfigurationPolicyDetailOutput) ScheduleDetails() GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationPolicyDetailScheduleDetail {
 		return v.ScheduleDetails
@@ -7897,9 +8275,11 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray
 
 type GetAutoScalingConfigurationPolicyDetailScheduleDetail struct {
 	// The type of schedule.
-	ScheduleType                    string                                                                                `pulumi:"scheduleType"`
+	ScheduleType string `pulumi:"scheduleType"`
+	// Time of day and horizontal scaling configuration.
 	TimeAndHorizontalScalingConfigs []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig `pulumi:"timeAndHorizontalScalingConfigs"`
-	TimeAndVerticalScalingConfigs   []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig   `pulumi:"timeAndVerticalScalingConfigs"`
+	// Time of day and vertical scaling configuration
+	TimeAndVerticalScalingConfigs []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig `pulumi:"timeAndVerticalScalingConfigs"`
 }
 
 // GetAutoScalingConfigurationPolicyDetailScheduleDetailInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs and GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput values.
@@ -7915,9 +8295,11 @@ type GetAutoScalingConfigurationPolicyDetailScheduleDetailInput interface {
 
 type GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs struct {
 	// The type of schedule.
-	ScheduleType                    pulumi.StringInput                                                                            `pulumi:"scheduleType"`
+	ScheduleType pulumi.StringInput `pulumi:"scheduleType"`
+	// Time of day and horizontal scaling configuration.
 	TimeAndHorizontalScalingConfigs GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput `pulumi:"timeAndHorizontalScalingConfigs"`
-	TimeAndVerticalScalingConfigs   GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput   `pulumi:"timeAndVerticalScalingConfigs"`
+	// Time of day and vertical scaling configuration
+	TimeAndVerticalScalingConfigs GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput `pulumi:"timeAndVerticalScalingConfigs"`
 }
 
 func (GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ElementType() reflect.Type {
@@ -7976,12 +8358,14 @@ func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ScheduleTyp
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetail) string { return v.ScheduleType }).(pulumi.StringOutput)
 }
 
+// Time of day and horizontal scaling configuration.
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) TimeAndHorizontalScalingConfigs() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetail) []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
 		return v.TimeAndHorizontalScalingConfigs
 	}).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
 }
 
+// Time of day and vertical scaling configuration
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) TimeAndVerticalScalingConfigs() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetail) []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
 		return v.TimeAndVerticalScalingConfigs
@@ -12370,6 +12754,701 @@ func (o GetBdsInstanceEdgeNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetBdsInstanceEdgeNodeShapeConfigOutput)
 }
 
+type GetBdsInstanceGetOsPatchFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceGetOsPatchFilterInput is an input type that accepts GetBdsInstanceGetOsPatchFilterArgs and GetBdsInstanceGetOsPatchFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceGetOsPatchFilterInput` via:
+//
+//	GetBdsInstanceGetOsPatchFilterArgs{...}
+type GetBdsInstanceGetOsPatchFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceGetOsPatchFilterOutput() GetBdsInstanceGetOsPatchFilterOutput
+	ToGetBdsInstanceGetOsPatchFilterOutputWithContext(context.Context) GetBdsInstanceGetOsPatchFilterOutput
+}
+
+type GetBdsInstanceGetOsPatchFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceGetOsPatchFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceGetOsPatchFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceGetOsPatchFilterArgs) ToGetBdsInstanceGetOsPatchFilterOutput() GetBdsInstanceGetOsPatchFilterOutput {
+	return i.ToGetBdsInstanceGetOsPatchFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceGetOsPatchFilterArgs) ToGetBdsInstanceGetOsPatchFilterOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceGetOsPatchFilterOutput)
+}
+
+// GetBdsInstanceGetOsPatchFilterArrayInput is an input type that accepts GetBdsInstanceGetOsPatchFilterArray and GetBdsInstanceGetOsPatchFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceGetOsPatchFilterArrayInput` via:
+//
+//	GetBdsInstanceGetOsPatchFilterArray{ GetBdsInstanceGetOsPatchFilterArgs{...} }
+type GetBdsInstanceGetOsPatchFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceGetOsPatchFilterArrayOutput() GetBdsInstanceGetOsPatchFilterArrayOutput
+	ToGetBdsInstanceGetOsPatchFilterArrayOutputWithContext(context.Context) GetBdsInstanceGetOsPatchFilterArrayOutput
+}
+
+type GetBdsInstanceGetOsPatchFilterArray []GetBdsInstanceGetOsPatchFilterInput
+
+func (GetBdsInstanceGetOsPatchFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceGetOsPatchFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceGetOsPatchFilterArray) ToGetBdsInstanceGetOsPatchFilterArrayOutput() GetBdsInstanceGetOsPatchFilterArrayOutput {
+	return i.ToGetBdsInstanceGetOsPatchFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceGetOsPatchFilterArray) ToGetBdsInstanceGetOsPatchFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceGetOsPatchFilterArrayOutput)
+}
+
+type GetBdsInstanceGetOsPatchFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceGetOsPatchFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceGetOsPatchFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceGetOsPatchFilterOutput) ToGetBdsInstanceGetOsPatchFilterOutput() GetBdsInstanceGetOsPatchFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceGetOsPatchFilterOutput) ToGetBdsInstanceGetOsPatchFilterOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceGetOsPatchFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceGetOsPatchFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceGetOsPatchFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceGetOsPatchFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceGetOsPatchFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceGetOsPatchFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceGetOsPatchFilterArrayOutput) ToGetBdsInstanceGetOsPatchFilterArrayOutput() GetBdsInstanceGetOsPatchFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceGetOsPatchFilterArrayOutput) ToGetBdsInstanceGetOsPatchFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceGetOsPatchFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceGetOsPatchFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceGetOsPatchFilter {
+		return vs[0].([]GetBdsInstanceGetOsPatchFilter)[vs[1].(int)]
+	}).(GetBdsInstanceGetOsPatchFilterOutput)
+}
+
+type GetBdsInstanceGetOsPatchTargetPackage struct {
+	// The package's name.
+	PackageName string `pulumi:"packageName"`
+	// Related CVEs of the package update.
+	RelatedCvEs []string `pulumi:"relatedCvEs"`
+	// The target version of the package.
+	TargetVersion string `pulumi:"targetVersion"`
+	// The action that current package will be executed on the cluster.
+	UpdateType string `pulumi:"updateType"`
+}
+
+// GetBdsInstanceGetOsPatchTargetPackageInput is an input type that accepts GetBdsInstanceGetOsPatchTargetPackageArgs and GetBdsInstanceGetOsPatchTargetPackageOutput values.
+// You can construct a concrete instance of `GetBdsInstanceGetOsPatchTargetPackageInput` via:
+//
+//	GetBdsInstanceGetOsPatchTargetPackageArgs{...}
+type GetBdsInstanceGetOsPatchTargetPackageInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceGetOsPatchTargetPackageOutput() GetBdsInstanceGetOsPatchTargetPackageOutput
+	ToGetBdsInstanceGetOsPatchTargetPackageOutputWithContext(context.Context) GetBdsInstanceGetOsPatchTargetPackageOutput
+}
+
+type GetBdsInstanceGetOsPatchTargetPackageArgs struct {
+	// The package's name.
+	PackageName pulumi.StringInput `pulumi:"packageName"`
+	// Related CVEs of the package update.
+	RelatedCvEs pulumi.StringArrayInput `pulumi:"relatedCvEs"`
+	// The target version of the package.
+	TargetVersion pulumi.StringInput `pulumi:"targetVersion"`
+	// The action that current package will be executed on the cluster.
+	UpdateType pulumi.StringInput `pulumi:"updateType"`
+}
+
+func (GetBdsInstanceGetOsPatchTargetPackageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceGetOsPatchTargetPackage)(nil)).Elem()
+}
+
+func (i GetBdsInstanceGetOsPatchTargetPackageArgs) ToGetBdsInstanceGetOsPatchTargetPackageOutput() GetBdsInstanceGetOsPatchTargetPackageOutput {
+	return i.ToGetBdsInstanceGetOsPatchTargetPackageOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceGetOsPatchTargetPackageArgs) ToGetBdsInstanceGetOsPatchTargetPackageOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchTargetPackageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceGetOsPatchTargetPackageOutput)
+}
+
+// GetBdsInstanceGetOsPatchTargetPackageArrayInput is an input type that accepts GetBdsInstanceGetOsPatchTargetPackageArray and GetBdsInstanceGetOsPatchTargetPackageArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceGetOsPatchTargetPackageArrayInput` via:
+//
+//	GetBdsInstanceGetOsPatchTargetPackageArray{ GetBdsInstanceGetOsPatchTargetPackageArgs{...} }
+type GetBdsInstanceGetOsPatchTargetPackageArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceGetOsPatchTargetPackageArrayOutput() GetBdsInstanceGetOsPatchTargetPackageArrayOutput
+	ToGetBdsInstanceGetOsPatchTargetPackageArrayOutputWithContext(context.Context) GetBdsInstanceGetOsPatchTargetPackageArrayOutput
+}
+
+type GetBdsInstanceGetOsPatchTargetPackageArray []GetBdsInstanceGetOsPatchTargetPackageInput
+
+func (GetBdsInstanceGetOsPatchTargetPackageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceGetOsPatchTargetPackage)(nil)).Elem()
+}
+
+func (i GetBdsInstanceGetOsPatchTargetPackageArray) ToGetBdsInstanceGetOsPatchTargetPackageArrayOutput() GetBdsInstanceGetOsPatchTargetPackageArrayOutput {
+	return i.ToGetBdsInstanceGetOsPatchTargetPackageArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceGetOsPatchTargetPackageArray) ToGetBdsInstanceGetOsPatchTargetPackageArrayOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchTargetPackageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceGetOsPatchTargetPackageArrayOutput)
+}
+
+type GetBdsInstanceGetOsPatchTargetPackageOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceGetOsPatchTargetPackageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceGetOsPatchTargetPackage)(nil)).Elem()
+}
+
+func (o GetBdsInstanceGetOsPatchTargetPackageOutput) ToGetBdsInstanceGetOsPatchTargetPackageOutput() GetBdsInstanceGetOsPatchTargetPackageOutput {
+	return o
+}
+
+func (o GetBdsInstanceGetOsPatchTargetPackageOutput) ToGetBdsInstanceGetOsPatchTargetPackageOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchTargetPackageOutput {
+	return o
+}
+
+// The package's name.
+func (o GetBdsInstanceGetOsPatchTargetPackageOutput) PackageName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchTargetPackage) string { return v.PackageName }).(pulumi.StringOutput)
+}
+
+// Related CVEs of the package update.
+func (o GetBdsInstanceGetOsPatchTargetPackageOutput) RelatedCvEs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchTargetPackage) []string { return v.RelatedCvEs }).(pulumi.StringArrayOutput)
+}
+
+// The target version of the package.
+func (o GetBdsInstanceGetOsPatchTargetPackageOutput) TargetVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchTargetPackage) string { return v.TargetVersion }).(pulumi.StringOutput)
+}
+
+// The action that current package will be executed on the cluster.
+func (o GetBdsInstanceGetOsPatchTargetPackageOutput) UpdateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchTargetPackage) string { return v.UpdateType }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceGetOsPatchTargetPackageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceGetOsPatchTargetPackageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceGetOsPatchTargetPackage)(nil)).Elem()
+}
+
+func (o GetBdsInstanceGetOsPatchTargetPackageArrayOutput) ToGetBdsInstanceGetOsPatchTargetPackageArrayOutput() GetBdsInstanceGetOsPatchTargetPackageArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceGetOsPatchTargetPackageArrayOutput) ToGetBdsInstanceGetOsPatchTargetPackageArrayOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchTargetPackageArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceGetOsPatchTargetPackageArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceGetOsPatchTargetPackageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceGetOsPatchTargetPackage {
+		return vs[0].([]GetBdsInstanceGetOsPatchTargetPackage)[vs[1].(int)]
+	}).(GetBdsInstanceGetOsPatchTargetPackageOutput)
+}
+
+type GetBdsInstanceKafkaBrokerNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	NumberOfKafkaNodes   int    `pulumi:"numberOfKafkaNodes"`
+	// Shape of the node.
+	Shape        string                                     `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstanceKafkaBrokerNodeShapeConfig `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetBdsInstanceKafkaBrokerNodeInput is an input type that accepts GetBdsInstanceKafkaBrokerNodeArgs and GetBdsInstanceKafkaBrokerNodeOutput values.
+// You can construct a concrete instance of `GetBdsInstanceKafkaBrokerNodeInput` via:
+//
+//	GetBdsInstanceKafkaBrokerNodeArgs{...}
+type GetBdsInstanceKafkaBrokerNodeInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceKafkaBrokerNodeOutput() GetBdsInstanceKafkaBrokerNodeOutput
+	ToGetBdsInstanceKafkaBrokerNodeOutputWithContext(context.Context) GetBdsInstanceKafkaBrokerNodeOutput
+}
+
+type GetBdsInstanceKafkaBrokerNodeArgs struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	NumberOfKafkaNodes   pulumi.IntInput    `pulumi:"numberOfKafkaNodes"`
+	// Shape of the node.
+	Shape        pulumi.StringInput                                 `pulumi:"shape"`
+	ShapeConfigs GetBdsInstanceKafkaBrokerNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetBdsInstanceKafkaBrokerNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (i GetBdsInstanceKafkaBrokerNodeArgs) ToGetBdsInstanceKafkaBrokerNodeOutput() GetBdsInstanceKafkaBrokerNodeOutput {
+	return i.ToGetBdsInstanceKafkaBrokerNodeOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceKafkaBrokerNodeArgs) ToGetBdsInstanceKafkaBrokerNodeOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceKafkaBrokerNodeOutput)
+}
+
+// GetBdsInstanceKafkaBrokerNodeArrayInput is an input type that accepts GetBdsInstanceKafkaBrokerNodeArray and GetBdsInstanceKafkaBrokerNodeArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceKafkaBrokerNodeArrayInput` via:
+//
+//	GetBdsInstanceKafkaBrokerNodeArray{ GetBdsInstanceKafkaBrokerNodeArgs{...} }
+type GetBdsInstanceKafkaBrokerNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceKafkaBrokerNodeArrayOutput() GetBdsInstanceKafkaBrokerNodeArrayOutput
+	ToGetBdsInstanceKafkaBrokerNodeArrayOutputWithContext(context.Context) GetBdsInstanceKafkaBrokerNodeArrayOutput
+}
+
+type GetBdsInstanceKafkaBrokerNodeArray []GetBdsInstanceKafkaBrokerNodeInput
+
+func (GetBdsInstanceKafkaBrokerNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (i GetBdsInstanceKafkaBrokerNodeArray) ToGetBdsInstanceKafkaBrokerNodeArrayOutput() GetBdsInstanceKafkaBrokerNodeArrayOutput {
+	return i.ToGetBdsInstanceKafkaBrokerNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceKafkaBrokerNodeArray) ToGetBdsInstanceKafkaBrokerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceKafkaBrokerNodeArrayOutput)
+}
+
+type GetBdsInstanceKafkaBrokerNodeOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceKafkaBrokerNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeOutput) ToGetBdsInstanceKafkaBrokerNodeOutput() GetBdsInstanceKafkaBrokerNodeOutput {
+	return o
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeOutput) ToGetBdsInstanceKafkaBrokerNodeOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeOutput {
+	return o
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o GetBdsInstanceKafkaBrokerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceKafkaBrokerNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeOutput) NumberOfKafkaNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceKafkaBrokerNode) int { return v.NumberOfKafkaNodes }).(pulumi.IntOutput)
+}
+
+// Shape of the node.
+func (o GetBdsInstanceKafkaBrokerNodeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceKafkaBrokerNode) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeOutput) ShapeConfigs() GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceKafkaBrokerNode) []GetBdsInstanceKafkaBrokerNodeShapeConfig {
+		return v.ShapeConfigs
+	}).(GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput)
+}
+
+// The OCID of the subnet in which the node is to be created.
+func (o GetBdsInstanceKafkaBrokerNodeOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceKafkaBrokerNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceKafkaBrokerNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceKafkaBrokerNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeArrayOutput) ToGetBdsInstanceKafkaBrokerNodeArrayOutput() GetBdsInstanceKafkaBrokerNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeArrayOutput) ToGetBdsInstanceKafkaBrokerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceKafkaBrokerNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceKafkaBrokerNode {
+		return vs[0].([]GetBdsInstanceKafkaBrokerNode)[vs[1].(int)]
+	}).(GetBdsInstanceKafkaBrokerNodeOutput)
+}
+
+type GetBdsInstanceKafkaBrokerNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstanceKafkaBrokerNodeShapeConfigInput is an input type that accepts GetBdsInstanceKafkaBrokerNodeShapeConfigArgs and GetBdsInstanceKafkaBrokerNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstanceKafkaBrokerNodeShapeConfigInput` via:
+//
+//	GetBdsInstanceKafkaBrokerNodeShapeConfigArgs{...}
+type GetBdsInstanceKafkaBrokerNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceKafkaBrokerNodeShapeConfigOutput() GetBdsInstanceKafkaBrokerNodeShapeConfigOutput
+	ToGetBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(context.Context) GetBdsInstanceKafkaBrokerNodeShapeConfigOutput
+}
+
+type GetBdsInstanceKafkaBrokerNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstanceKafkaBrokerNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceKafkaBrokerNodeShapeConfigArgs) ToGetBdsInstanceKafkaBrokerNodeShapeConfigOutput() GetBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return i.ToGetBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceKafkaBrokerNodeShapeConfigArgs) ToGetBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceKafkaBrokerNodeShapeConfigOutput)
+}
+
+// GetBdsInstanceKafkaBrokerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceKafkaBrokerNodeShapeConfigArray and GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceKafkaBrokerNodeShapeConfigArrayInput` via:
+//
+//	GetBdsInstanceKafkaBrokerNodeShapeConfigArray{ GetBdsInstanceKafkaBrokerNodeShapeConfigArgs{...} }
+type GetBdsInstanceKafkaBrokerNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput() GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput
+	ToGetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstanceKafkaBrokerNodeShapeConfigArray []GetBdsInstanceKafkaBrokerNodeShapeConfigInput
+
+func (GetBdsInstanceKafkaBrokerNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceKafkaBrokerNodeShapeConfigArray) ToGetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput() GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceKafkaBrokerNodeShapeConfigArray) ToGetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstanceKafkaBrokerNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToGetBdsInstanceKafkaBrokerNodeShapeConfigOutput() GetBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToGetBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceKafkaBrokerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceKafkaBrokerNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceKafkaBrokerNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToGetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput() GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToGetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceKafkaBrokerNodeShapeConfig {
+		return vs[0].([]GetBdsInstanceKafkaBrokerNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstanceKafkaBrokerNodeShapeConfigOutput)
+}
+
+type GetBdsInstanceListOsPatchesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceListOsPatchesFilterInput is an input type that accepts GetBdsInstanceListOsPatchesFilterArgs and GetBdsInstanceListOsPatchesFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceListOsPatchesFilterInput` via:
+//
+//	GetBdsInstanceListOsPatchesFilterArgs{...}
+type GetBdsInstanceListOsPatchesFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceListOsPatchesFilterOutput() GetBdsInstanceListOsPatchesFilterOutput
+	ToGetBdsInstanceListOsPatchesFilterOutputWithContext(context.Context) GetBdsInstanceListOsPatchesFilterOutput
+}
+
+type GetBdsInstanceListOsPatchesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceListOsPatchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceListOsPatchesFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceListOsPatchesFilterArgs) ToGetBdsInstanceListOsPatchesFilterOutput() GetBdsInstanceListOsPatchesFilterOutput {
+	return i.ToGetBdsInstanceListOsPatchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceListOsPatchesFilterArgs) ToGetBdsInstanceListOsPatchesFilterOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceListOsPatchesFilterOutput)
+}
+
+// GetBdsInstanceListOsPatchesFilterArrayInput is an input type that accepts GetBdsInstanceListOsPatchesFilterArray and GetBdsInstanceListOsPatchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceListOsPatchesFilterArrayInput` via:
+//
+//	GetBdsInstanceListOsPatchesFilterArray{ GetBdsInstanceListOsPatchesFilterArgs{...} }
+type GetBdsInstanceListOsPatchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceListOsPatchesFilterArrayOutput() GetBdsInstanceListOsPatchesFilterArrayOutput
+	ToGetBdsInstanceListOsPatchesFilterArrayOutputWithContext(context.Context) GetBdsInstanceListOsPatchesFilterArrayOutput
+}
+
+type GetBdsInstanceListOsPatchesFilterArray []GetBdsInstanceListOsPatchesFilterInput
+
+func (GetBdsInstanceListOsPatchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceListOsPatchesFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceListOsPatchesFilterArray) ToGetBdsInstanceListOsPatchesFilterArrayOutput() GetBdsInstanceListOsPatchesFilterArrayOutput {
+	return i.ToGetBdsInstanceListOsPatchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceListOsPatchesFilterArray) ToGetBdsInstanceListOsPatchesFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceListOsPatchesFilterArrayOutput)
+}
+
+type GetBdsInstanceListOsPatchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceListOsPatchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceListOsPatchesFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceListOsPatchesFilterOutput) ToGetBdsInstanceListOsPatchesFilterOutput() GetBdsInstanceListOsPatchesFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceListOsPatchesFilterOutput) ToGetBdsInstanceListOsPatchesFilterOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceListOsPatchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceListOsPatchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceListOsPatchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceListOsPatchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceListOsPatchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceListOsPatchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceListOsPatchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceListOsPatchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceListOsPatchesFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceListOsPatchesFilterArrayOutput) ToGetBdsInstanceListOsPatchesFilterArrayOutput() GetBdsInstanceListOsPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceListOsPatchesFilterArrayOutput) ToGetBdsInstanceListOsPatchesFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceListOsPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceListOsPatchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceListOsPatchesFilter {
+		return vs[0].([]GetBdsInstanceListOsPatchesFilter)[vs[1].(int)]
+	}).(GetBdsInstanceListOsPatchesFilterOutput)
+}
+
+type GetBdsInstanceListOsPatchesOsPatch struct {
+	// The OCID of the cluster.
+	BdsInstanceId string `pulumi:"bdsInstanceId"`
+	// Patch version of the os patch.
+	OsPatchVersion string `pulumi:"osPatchVersion"`
+	// The time when the OS patch was released.
+	ReleaseDate string `pulumi:"releaseDate"`
+}
+
+// GetBdsInstanceListOsPatchesOsPatchInput is an input type that accepts GetBdsInstanceListOsPatchesOsPatchArgs and GetBdsInstanceListOsPatchesOsPatchOutput values.
+// You can construct a concrete instance of `GetBdsInstanceListOsPatchesOsPatchInput` via:
+//
+//	GetBdsInstanceListOsPatchesOsPatchArgs{...}
+type GetBdsInstanceListOsPatchesOsPatchInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceListOsPatchesOsPatchOutput() GetBdsInstanceListOsPatchesOsPatchOutput
+	ToGetBdsInstanceListOsPatchesOsPatchOutputWithContext(context.Context) GetBdsInstanceListOsPatchesOsPatchOutput
+}
+
+type GetBdsInstanceListOsPatchesOsPatchArgs struct {
+	// The OCID of the cluster.
+	BdsInstanceId pulumi.StringInput `pulumi:"bdsInstanceId"`
+	// Patch version of the os patch.
+	OsPatchVersion pulumi.StringInput `pulumi:"osPatchVersion"`
+	// The time when the OS patch was released.
+	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
+}
+
+func (GetBdsInstanceListOsPatchesOsPatchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceListOsPatchesOsPatch)(nil)).Elem()
+}
+
+func (i GetBdsInstanceListOsPatchesOsPatchArgs) ToGetBdsInstanceListOsPatchesOsPatchOutput() GetBdsInstanceListOsPatchesOsPatchOutput {
+	return i.ToGetBdsInstanceListOsPatchesOsPatchOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceListOsPatchesOsPatchArgs) ToGetBdsInstanceListOsPatchesOsPatchOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesOsPatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceListOsPatchesOsPatchOutput)
+}
+
+// GetBdsInstanceListOsPatchesOsPatchArrayInput is an input type that accepts GetBdsInstanceListOsPatchesOsPatchArray and GetBdsInstanceListOsPatchesOsPatchArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceListOsPatchesOsPatchArrayInput` via:
+//
+//	GetBdsInstanceListOsPatchesOsPatchArray{ GetBdsInstanceListOsPatchesOsPatchArgs{...} }
+type GetBdsInstanceListOsPatchesOsPatchArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceListOsPatchesOsPatchArrayOutput() GetBdsInstanceListOsPatchesOsPatchArrayOutput
+	ToGetBdsInstanceListOsPatchesOsPatchArrayOutputWithContext(context.Context) GetBdsInstanceListOsPatchesOsPatchArrayOutput
+}
+
+type GetBdsInstanceListOsPatchesOsPatchArray []GetBdsInstanceListOsPatchesOsPatchInput
+
+func (GetBdsInstanceListOsPatchesOsPatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceListOsPatchesOsPatch)(nil)).Elem()
+}
+
+func (i GetBdsInstanceListOsPatchesOsPatchArray) ToGetBdsInstanceListOsPatchesOsPatchArrayOutput() GetBdsInstanceListOsPatchesOsPatchArrayOutput {
+	return i.ToGetBdsInstanceListOsPatchesOsPatchArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceListOsPatchesOsPatchArray) ToGetBdsInstanceListOsPatchesOsPatchArrayOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesOsPatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceListOsPatchesOsPatchArrayOutput)
+}
+
+type GetBdsInstanceListOsPatchesOsPatchOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceListOsPatchesOsPatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceListOsPatchesOsPatch)(nil)).Elem()
+}
+
+func (o GetBdsInstanceListOsPatchesOsPatchOutput) ToGetBdsInstanceListOsPatchesOsPatchOutput() GetBdsInstanceListOsPatchesOsPatchOutput {
+	return o
+}
+
+func (o GetBdsInstanceListOsPatchesOsPatchOutput) ToGetBdsInstanceListOsPatchesOsPatchOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesOsPatchOutput {
+	return o
+}
+
+// The OCID of the cluster.
+func (o GetBdsInstanceListOsPatchesOsPatchOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceListOsPatchesOsPatch) string { return v.BdsInstanceId }).(pulumi.StringOutput)
+}
+
+// Patch version of the os patch.
+func (o GetBdsInstanceListOsPatchesOsPatchOutput) OsPatchVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceListOsPatchesOsPatch) string { return v.OsPatchVersion }).(pulumi.StringOutput)
+}
+
+// The time when the OS patch was released.
+func (o GetBdsInstanceListOsPatchesOsPatchOutput) ReleaseDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceListOsPatchesOsPatch) string { return v.ReleaseDate }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceListOsPatchesOsPatchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceListOsPatchesOsPatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceListOsPatchesOsPatch)(nil)).Elem()
+}
+
+func (o GetBdsInstanceListOsPatchesOsPatchArrayOutput) ToGetBdsInstanceListOsPatchesOsPatchArrayOutput() GetBdsInstanceListOsPatchesOsPatchArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceListOsPatchesOsPatchArrayOutput) ToGetBdsInstanceListOsPatchesOsPatchArrayOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesOsPatchArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceListOsPatchesOsPatchArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceListOsPatchesOsPatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceListOsPatchesOsPatch {
+		return vs[0].([]GetBdsInstanceListOsPatchesOsPatch)[vs[1].(int)]
+	}).(GetBdsInstanceListOsPatchesOsPatchOutput)
+}
+
 type GetBdsInstanceMasterNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
@@ -13047,6 +14126,8 @@ type GetBdsInstanceNode struct {
 	SubnetId string `pulumi:"subnetId"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+	TimeMaintenanceRebootDue string `pulumi:"timeMaintenanceRebootDue"`
 }
 
 // GetBdsInstanceNodeInput is an input type that accepts GetBdsInstanceNodeArgs and GetBdsInstanceNodeOutput values.
@@ -13093,6 +14174,8 @@ type GetBdsInstanceNodeArgs struct {
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+	TimeMaintenanceRebootDue pulumi.StringInput `pulumi:"timeMaintenanceRebootDue"`
 }
 
 func (GetBdsInstanceNodeArgs) ElementType() reflect.Type {
@@ -13224,6 +14307,11 @@ func (o GetBdsInstanceNodeOutput) SubnetId() pulumi.StringOutput {
 // The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 func (o GetBdsInstanceNodeOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceNode) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+func (o GetBdsInstanceNodeOutput) TimeMaintenanceRebootDue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNode) string { return v.TimeMaintenanceRebootDue }).(pulumi.StringOutput)
 }
 
 type GetBdsInstanceNodeArrayOutput struct{ *pulumi.OutputState }
@@ -13459,6 +14547,8 @@ func (o GetBdsInstancePatchHistoriesFilterArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetBdsInstancePatchHistoriesPatchHistory struct {
+	// The type of a BDS patch history entity.
+	PatchType string `pulumi:"patchType"`
 	// The status of the patch.
 	State string `pulumi:"state"`
 	// The time when the patch history was last updated.
@@ -13479,6 +14569,8 @@ type GetBdsInstancePatchHistoriesPatchHistoryInput interface {
 }
 
 type GetBdsInstancePatchHistoriesPatchHistoryArgs struct {
+	// The type of a BDS patch history entity.
+	PatchType pulumi.StringInput `pulumi:"patchType"`
 	// The status of the patch.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time when the patch history was last updated.
@@ -13536,6 +14628,11 @@ func (o GetBdsInstancePatchHistoriesPatchHistoryOutput) ToGetBdsInstancePatchHis
 
 func (o GetBdsInstancePatchHistoriesPatchHistoryOutput) ToGetBdsInstancePatchHistoriesPatchHistoryOutputWithContext(ctx context.Context) GetBdsInstancePatchHistoriesPatchHistoryOutput {
 	return o
+}
+
+// The type of a BDS patch history entity.
+func (o GetBdsInstancePatchHistoriesPatchHistoryOutput) PatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancePatchHistoriesPatchHistory) string { return v.PatchType }).(pulumi.StringOutput)
 }
 
 // The status of the patch.
@@ -14307,9 +15404,12 @@ type GetBdsInstancesBdsInstance struct {
 	IsForceStopJobs      bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
+	// Boolean flag specifying whether or not Kafka should be configured.
+	IsKafkaConfigured bool `pulumi:"isKafkaConfigured"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure          bool   `pulumi:"isSecure"`
-	KerberosRealmName string `pulumi:"kerberosRealmName"`
+	IsSecure          bool                                        `pulumi:"isSecure"`
+	KafkaBrokerNodes  []GetBdsInstancesBdsInstanceKafkaBrokerNode `pulumi:"kafkaBrokerNodes"`
+	KerberosRealmName string                                      `pulumi:"kerberosRealmName"`
 	// The OCID of the Key Management master encryption key.
 	KmsKeyId    string                                 `pulumi:"kmsKeyId"`
 	MasterNodes []GetBdsInstancesBdsInstanceMasterNode `pulumi:"masterNodes"`
@@ -14319,6 +15419,9 @@ type GetBdsInstancesBdsInstance struct {
 	Nodes []GetBdsInstancesBdsInstanceNode `pulumi:"nodes"`
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
+	// Number of nodes that require a maintenance reboot
+	NumberOfNodesRequiringMaintenanceReboot int    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          string `pulumi:"osPatchVersion"`
 	// The state of the cluster.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -14372,9 +15475,12 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	IsForceStopJobs      pulumi.BoolInput `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability pulumi.BoolInput `pulumi:"isHighAvailability"`
+	// Boolean flag specifying whether or not Kafka should be configured.
+	IsKafkaConfigured pulumi.BoolInput `pulumi:"isKafkaConfigured"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure          pulumi.BoolInput   `pulumi:"isSecure"`
-	KerberosRealmName pulumi.StringInput `pulumi:"kerberosRealmName"`
+	IsSecure          pulumi.BoolInput                                    `pulumi:"isSecure"`
+	KafkaBrokerNodes  GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayInput `pulumi:"kafkaBrokerNodes"`
+	KerberosRealmName pulumi.StringInput                                  `pulumi:"kerberosRealmName"`
 	// The OCID of the Key Management master encryption key.
 	KmsKeyId    pulumi.StringInput                             `pulumi:"kmsKeyId"`
 	MasterNodes GetBdsInstancesBdsInstanceMasterNodeArrayInput `pulumi:"masterNodes"`
@@ -14384,6 +15490,9 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	Nodes GetBdsInstancesBdsInstanceNodeArrayInput `pulumi:"nodes"`
 	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
+	// Number of nodes that require a maintenance reboot
+	NumberOfNodesRequiringMaintenanceReboot pulumi.IntInput    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          pulumi.StringInput `pulumi:"osPatchVersion"`
 	// The state of the cluster.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -14534,9 +15643,20 @@ func (o GetBdsInstancesBdsInstanceOutput) IsHighAvailability() pulumi.BoolOutput
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsHighAvailability }).(pulumi.BoolOutput)
 }
 
+// Boolean flag specifying whether or not Kafka should be configured.
+func (o GetBdsInstancesBdsInstanceOutput) IsKafkaConfigured() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsKafkaConfigured }).(pulumi.BoolOutput)
+}
+
 // Boolean flag specifying whether or not the cluster should be set up as secure.
 func (o GetBdsInstancesBdsInstanceOutput) IsSecure() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsSecure }).(pulumi.BoolOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceOutput) KafkaBrokerNodes() GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceKafkaBrokerNode {
+		return v.KafkaBrokerNodes
+	}).(GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput)
 }
 
 func (o GetBdsInstancesBdsInstanceOutput) KerberosRealmName() pulumi.StringOutput {
@@ -14565,6 +15685,15 @@ func (o GetBdsInstancesBdsInstanceOutput) Nodes() GetBdsInstancesBdsInstanceNode
 // The number of nodes that form the cluster.
 func (o GetBdsInstancesBdsInstanceOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) int { return v.NumberOfNodes }).(pulumi.IntOutput)
+}
+
+// Number of nodes that require a maintenance reboot
+func (o GetBdsInstancesBdsInstanceOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) int { return v.NumberOfNodesRequiringMaintenanceReboot }).(pulumi.IntOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceOutput) OsPatchVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.OsPatchVersion }).(pulumi.StringOutput)
 }
 
 // The state of the cluster.
@@ -15595,6 +16724,250 @@ func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput) Index(i pulumi
 	}).(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput)
 }
 
+type GetBdsInstancesBdsInstanceKafkaBrokerNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	NumberOfKafkaNodes   int    `pulumi:"numberOfKafkaNodes"`
+	// Shape of the node.
+	Shape        string                                                 `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetBdsInstancesBdsInstanceKafkaBrokerNodeInput is an input type that accepts GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs and GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceKafkaBrokerNodeInput` via:
+//
+//	GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs{...}
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceKafkaBrokerNodeOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput
+	ToGetBdsInstancesBdsInstanceKafkaBrokerNodeOutputWithContext(context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput
+}
+
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	NumberOfKafkaNodes   pulumi.IntInput    `pulumi:"numberOfKafkaNodes"`
+	// Shape of the node.
+	Shape        pulumi.StringInput                                             `pulumi:"shape"`
+	ShapeConfigs GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput {
+	return i.ToGetBdsInstancesBdsInstanceKafkaBrokerNodeOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput)
+}
+
+// GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceKafkaBrokerNodeArray and GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayInput` via:
+//
+//	GetBdsInstancesBdsInstanceKafkaBrokerNodeArray{ GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs{...} }
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput
+	ToGetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeArray []GetBdsInstancesBdsInstanceKafkaBrokerNodeInput
+
+func (GetBdsInstancesBdsInstanceKafkaBrokerNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeArray) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeArray) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput {
+	return o
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceKafkaBrokerNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) NumberOfKafkaNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceKafkaBrokerNode) int { return v.NumberOfKafkaNodes }).(pulumi.IntOutput)
+}
+
+// Shape of the node.
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceKafkaBrokerNode) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) ShapeConfigs() GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceKafkaBrokerNode) []GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig {
+		return v.ShapeConfigs
+	}).(GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput)
+}
+
+// The OCID of the subnet in which the node is to be created.
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceKafkaBrokerNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceKafkaBrokerNode)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceKafkaBrokerNode {
+		return vs[0].([]GetBdsInstancesBdsInstanceKafkaBrokerNode)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput)
+}
+
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigInput is an input type that accepts GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs and GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigInput` via:
+//
+//	GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs{...}
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput
+	ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput
+}
+
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return i.ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput)
+}
+
+// GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray and GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayInput` via:
+//
+//	GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray{ GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs{...} }
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput
+	ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray []GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigInput
+
+func (GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig {
+		return vs[0].([]GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput)
+}
+
 type GetBdsInstancesBdsInstanceMasterNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
@@ -15981,6 +17354,8 @@ type GetBdsInstancesBdsInstanceNode struct {
 	SubnetId string `pulumi:"subnetId"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+	TimeMaintenanceRebootDue string `pulumi:"timeMaintenanceRebootDue"`
 }
 
 // GetBdsInstancesBdsInstanceNodeInput is an input type that accepts GetBdsInstancesBdsInstanceNodeArgs and GetBdsInstancesBdsInstanceNodeOutput values.
@@ -16027,6 +17402,8 @@ type GetBdsInstancesBdsInstanceNodeArgs struct {
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+	TimeMaintenanceRebootDue pulumi.StringInput `pulumi:"timeMaintenanceRebootDue"`
 }
 
 func (GetBdsInstancesBdsInstanceNodeArgs) ElementType() reflect.Type {
@@ -16160,6 +17537,11 @@ func (o GetBdsInstancesBdsInstanceNodeOutput) SubnetId() pulumi.StringOutput {
 // The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 func (o GetBdsInstancesBdsInstanceNodeOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+func (o GetBdsInstancesBdsInstanceNodeOutput) TimeMaintenanceRebootDue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) string { return v.TimeMaintenanceRebootDue }).(pulumi.StringOutput)
 }
 
 type GetBdsInstancesBdsInstanceNodeArrayOutput struct{ *pulumi.OutputState }
@@ -16941,6 +18323,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodePtrInput)(nil)).Elem(), BdsInstanceEdgeNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodeShapeConfigInput)(nil)).Elem(), BdsInstanceEdgeNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodeShapeConfigPtrInput)(nil)).Elem(), BdsInstanceEdgeNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceKafkaBrokerNodeInput)(nil)).Elem(), BdsInstanceKafkaBrokerNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceKafkaBrokerNodePtrInput)(nil)).Elem(), BdsInstanceKafkaBrokerNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceKafkaBrokerNodeShapeConfigInput)(nil)).Elem(), BdsInstanceKafkaBrokerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceKafkaBrokerNodeShapeConfigPtrInput)(nil)).Elem(), BdsInstanceKafkaBrokerNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodeInput)(nil)).Elem(), BdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodePtrInput)(nil)).Elem(), BdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodeShapeConfigInput)(nil)).Elem(), BdsInstanceMasterNodeShapeConfigArgs{})
@@ -17061,6 +18447,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceEdgeNodeArrayInput)(nil)).Elem(), GetBdsInstanceEdgeNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceEdgeNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceEdgeNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceEdgeNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceEdgeNodeShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceGetOsPatchFilterInput)(nil)).Elem(), GetBdsInstanceGetOsPatchFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceGetOsPatchFilterArrayInput)(nil)).Elem(), GetBdsInstanceGetOsPatchFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceGetOsPatchTargetPackageInput)(nil)).Elem(), GetBdsInstanceGetOsPatchTargetPackageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceGetOsPatchTargetPackageArrayInput)(nil)).Elem(), GetBdsInstanceGetOsPatchTargetPackageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceKafkaBrokerNodeInput)(nil)).Elem(), GetBdsInstanceKafkaBrokerNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceKafkaBrokerNodeArrayInput)(nil)).Elem(), GetBdsInstanceKafkaBrokerNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceKafkaBrokerNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceKafkaBrokerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceKafkaBrokerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceKafkaBrokerNodeShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceListOsPatchesFilterInput)(nil)).Elem(), GetBdsInstanceListOsPatchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceListOsPatchesFilterArrayInput)(nil)).Elem(), GetBdsInstanceListOsPatchesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceListOsPatchesOsPatchInput)(nil)).Elem(), GetBdsInstanceListOsPatchesOsPatchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceListOsPatchesOsPatchArrayInput)(nil)).Elem(), GetBdsInstanceListOsPatchesOsPatchArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeInput)(nil)).Elem(), GetBdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeArrayInput)(nil)).Elem(), GetBdsInstanceMasterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceMasterNodeShapeConfigArgs{})
@@ -17107,6 +18505,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceEdgeNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceKafkaBrokerNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceKafkaBrokerNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs{})
@@ -17179,6 +18581,10 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceEdgeNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceEdgeNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(BdsInstanceEdgeNodeShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceKafkaBrokerNodeOutput{})
+	pulumi.RegisterOutputType(BdsInstanceKafkaBrokerNodePtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceKafkaBrokerNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceMasterNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceMasterNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceMasterNodeShapeConfigOutput{})
@@ -17299,6 +18705,18 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceEdgeNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceEdgeNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceEdgeNodeShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceGetOsPatchFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceGetOsPatchFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceGetOsPatchTargetPackageOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceGetOsPatchTargetPackageArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceKafkaBrokerNodeOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceKafkaBrokerNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceKafkaBrokerNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceListOsPatchesFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceListOsPatchesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceListOsPatchesOsPatchOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceListOsPatchesOsPatchArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeShapeConfigOutput{})
@@ -17345,6 +18763,10 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceEdgeNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput{})

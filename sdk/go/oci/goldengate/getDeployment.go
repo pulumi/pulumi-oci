@@ -99,6 +99,8 @@ type LookupDeploymentResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	// Attributes for configuring automatic deployment maintenance.
+	MaintenanceConfigurations []GetDeploymentMaintenanceConfiguration `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
 	MaintenanceWindows []GetDeploymentMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// Type of the next maintenance.
@@ -125,6 +127,8 @@ type LookupDeploymentResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOfNextMaintenance string `pulumi:"timeOfNextMaintenance"`
+	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeOggVersionSupportedUntil string `pulumi:"timeOggVersionSupportedUntil"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -275,6 +279,13 @@ func (o LookupDeploymentResultOutput) LifecycleSubState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LifecycleSubState }).(pulumi.StringOutput)
 }
 
+// Attributes for configuring automatic deployment maintenance.
+func (o LookupDeploymentResultOutput) MaintenanceConfigurations() GetDeploymentMaintenanceConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentMaintenanceConfiguration {
+		return v.MaintenanceConfigurations
+	}).(GetDeploymentMaintenanceConfigurationArrayOutput)
+}
+
 // Defines the maintenance window, when automatic actions can be performed.
 func (o LookupDeploymentResultOutput) MaintenanceWindows() GetDeploymentMaintenanceWindowArrayOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentMaintenanceWindow { return v.MaintenanceWindows }).(GetDeploymentMaintenanceWindowArrayOutput)
@@ -338,6 +349,11 @@ func (o LookupDeploymentResultOutput) TimeCreated() pulumi.StringOutput {
 // The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o LookupDeploymentResultOutput) TimeOfNextMaintenance() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeOfNextMaintenance }).(pulumi.StringOutput)
+}
+
+// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o LookupDeploymentResultOutput) TimeOggVersionSupportedUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeOggVersionSupportedUntil }).(pulumi.StringOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

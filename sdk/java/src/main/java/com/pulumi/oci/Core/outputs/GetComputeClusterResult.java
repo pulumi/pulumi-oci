@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetComputeClusterResult {
     /**
-     * @return The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * @return The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     private String availabilityDomain;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
      * 
      */
     private String compartmentId;
@@ -38,7 +38,7 @@ public final class GetComputeClusterResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
      * 
      */
     private String id;
@@ -48,21 +48,21 @@ public final class GetComputeClusterResult {
      */
     private String state;
     /**
-     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
 
     private GetComputeClusterResult() {}
     /**
-     * @return The availability domain the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * @return The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
      * 
      */
     public String compartmentId() {
@@ -93,7 +93,7 @@ public final class GetComputeClusterResult {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
      * 
      */
     public String id() {
@@ -107,7 +107,7 @@ public final class GetComputeClusterResult {
         return this.state;
     }
     /**
-     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {

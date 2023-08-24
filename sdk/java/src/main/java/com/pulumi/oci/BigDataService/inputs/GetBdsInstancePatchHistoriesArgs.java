@@ -40,6 +40,21 @@ public final class GetBdsInstancePatchHistoriesArgs extends com.pulumi.resources
     }
 
     /**
+     * The type of a BDS patch history entity.
+     * 
+     */
+    @Import(name="patchType")
+    private @Nullable Output<String> patchType;
+
+    /**
+     * @return The type of a BDS patch history entity.
+     * 
+     */
+    public Optional<Output<String>> patchType() {
+        return Optional.ofNullable(this.patchType);
+    }
+
+    /**
      * The version of the patch
      * 
      */
@@ -74,6 +89,7 @@ public final class GetBdsInstancePatchHistoriesArgs extends com.pulumi.resources
     private GetBdsInstancePatchHistoriesArgs(GetBdsInstancePatchHistoriesArgs $) {
         this.bdsInstanceId = $.bdsInstanceId;
         this.filters = $.filters;
+        this.patchType = $.patchType;
         this.patchVersion = $.patchVersion;
         this.state = $.state;
     }
@@ -128,6 +144,27 @@ public final class GetBdsInstancePatchHistoriesArgs extends com.pulumi.resources
 
         public Builder filters(GetBdsInstancePatchHistoriesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param patchType The type of a BDS patch history entity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchType(@Nullable Output<String> patchType) {
+            $.patchType = patchType;
+            return this;
+        }
+
+        /**
+         * @param patchType The type of a BDS patch history entity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchType(String patchType) {
+            return patchType(Output.of(patchType));
         }
 
         /**

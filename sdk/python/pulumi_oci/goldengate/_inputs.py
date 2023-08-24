@@ -14,6 +14,7 @@ __all__ = [
     'ConnectionBootstrapServerArgs',
     'ConnectionIngressIpArgs',
     'DeploymentDeploymentDiagnosticDataArgs',
+    'DeploymentMaintenanceConfigurationArgs',
     'DeploymentMaintenanceWindowArgs',
     'DeploymentOggDataArgs',
     'GetConnectionAssignmentsFilterArgs',
@@ -247,6 +248,93 @@ class DeploymentDeploymentDiagnosticDataArgs:
     @time_diagnostic_start.setter
     def time_diagnostic_start(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_diagnostic_start", value)
+
+
+@pulumi.input_type
+class DeploymentMaintenanceConfigurationArgs:
+    def __init__(__self__, *,
+                 bundle_release_upgrade_period_in_days: Optional[pulumi.Input[int]] = None,
+                 interim_release_upgrade_period_in_days: Optional[pulumi.Input[int]] = None,
+                 is_interim_release_auto_upgrade_enabled: Optional[pulumi.Input[bool]] = None,
+                 major_release_upgrade_period_in_days: Optional[pulumi.Input[int]] = None,
+                 security_patch_upgrade_period_in_days: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] bundle_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+        :param pulumi.Input[int] interim_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+        :param pulumi.Input[bool] is_interim_release_auto_upgrade_enabled: (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+        :param pulumi.Input[int] major_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+        :param pulumi.Input[int] security_patch_upgrade_period_in_days: (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+        """
+        if bundle_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        if interim_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        if is_interim_release_auto_upgrade_enabled is not None:
+            pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        if major_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        if security_patch_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+
+    @property
+    @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
+    def bundle_release_upgrade_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "bundle_release_upgrade_period_in_days")
+
+    @bundle_release_upgrade_period_in_days.setter
+    def bundle_release_upgrade_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "bundle_release_upgrade_period_in_days", value)
+
+    @property
+    @pulumi.getter(name="interimReleaseUpgradePeriodInDays")
+    def interim_release_upgrade_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+        """
+        return pulumi.get(self, "interim_release_upgrade_period_in_days")
+
+    @interim_release_upgrade_period_in_days.setter
+    def interim_release_upgrade_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "interim_release_upgrade_period_in_days", value)
+
+    @property
+    @pulumi.getter(name="isInterimReleaseAutoUpgradeEnabled")
+    def is_interim_release_auto_upgrade_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+        """
+        return pulumi.get(self, "is_interim_release_auto_upgrade_enabled")
+
+    @is_interim_release_auto_upgrade_enabled.setter
+    def is_interim_release_auto_upgrade_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_interim_release_auto_upgrade_enabled", value)
+
+    @property
+    @pulumi.getter(name="majorReleaseUpgradePeriodInDays")
+    def major_release_upgrade_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "major_release_upgrade_period_in_days")
+
+    @major_release_upgrade_period_in_days.setter
+    def major_release_upgrade_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "major_release_upgrade_period_in_days", value)
+
+    @property
+    @pulumi.getter(name="securityPatchUpgradePeriodInDays")
+    def security_patch_upgrade_period_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+        """
+        return pulumi.get(self, "security_patch_upgrade_period_in_days")
+
+    @security_patch_upgrade_period_in_days.setter
+    def security_patch_upgrade_period_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "security_patch_upgrade_period_in_days", value)
 
 
 @pulumi.input_type

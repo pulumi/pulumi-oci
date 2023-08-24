@@ -14,6 +14,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class GetBdsInstancePatchHistoriesPatchHistoryResult
     {
         /// <summary>
+        /// The type of a BDS patch history entity.
+        /// </summary>
+        public readonly string PatchType;
+        /// <summary>
         /// The status of the patch.
         /// </summary>
         public readonly string State;
@@ -28,12 +32,15 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
         [OutputConstructor]
         private GetBdsInstancePatchHistoriesPatchHistoryResult(
+            string patchType,
+
             string state,
 
             string timeUpdated,
 
             string version)
         {
+            PatchType = patchType;
             State = state;
             TimeUpdated = timeUpdated;
             Version = version;

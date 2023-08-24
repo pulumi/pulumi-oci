@@ -57,6 +57,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetContainerInstanceContainerResourceConfigResult> ResourceConfigs;
+        public readonly ImmutableArray<Outputs.GetContainerInstanceContainerSecurityContextResult> SecurityContexts;
         /// <summary>
         /// The current state of the container instance.
         /// </summary>
@@ -113,6 +114,8 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
             ImmutableArray<Outputs.GetContainerInstanceContainerResourceConfigResult> resourceConfigs,
 
+            ImmutableArray<Outputs.GetContainerInstanceContainerSecurityContextResult> securityContexts,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -144,6 +147,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
             IsResourcePrincipalDisabled = isResourcePrincipalDisabled;
             LifecycleDetails = lifecycleDetails;
             ResourceConfigs = resourceConfigs;
+            SecurityContexts = securityContexts;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

@@ -22,6 +22,7 @@ __all__ = [
     'CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs',
     'CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs',
     'CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs',
+    'ClusterNetworkClusterConfigurationArgs',
     'ClusterNetworkInstancePoolArgs',
     'ClusterNetworkInstancePoolLoadBalancerArgs',
     'ClusterNetworkInstancePoolPlacementConfigurationArgs',
@@ -874,6 +875,44 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
 
 
 @pulumi.input_type
+class ClusterNetworkClusterConfigurationArgs:
+    def __init__(__self__, *,
+                 hpc_island_id: pulumi.Input[str],
+                 network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs.
+        """
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
+        if network_block_ids is not None:
+            pulumi.set(__self__, "network_block_ids", network_block_ids)
+
+    @property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> pulumi.Input[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @hpc_island_id.setter
+    def hpc_island_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "hpc_island_id", value)
+
+    @property
+    @pulumi.getter(name="networkBlockIds")
+    def network_block_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of network block OCIDs.
+        """
+        return pulumi.get(self, "network_block_ids")
+
+    @network_block_ids.setter
+    def network_block_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "network_block_ids", value)
+
+
+@pulumi.input_type
 class ClusterNetworkInstancePoolArgs:
     def __init__(__self__, *,
                  instance_configuration_id: pulumi.Input[str],
@@ -1320,6 +1359,7 @@ class ClusterNetworkPlacementConfigurationArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
                  primary_subnet_id: pulumi.Input[str],
+                 placement_constraint: Optional[pulumi.Input[str]] = None,
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
         """
         :param pulumi.Input[str] availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
@@ -1328,6 +1368,8 @@ class ClusterNetworkPlacementConfigurationArgs:
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
+        if placement_constraint is not None:
+            pulumi.set(__self__, "placement_constraint", placement_constraint)
         if secondary_vnic_subnets is not None:
             pulumi.set(__self__, "secondary_vnic_subnets", secondary_vnic_subnets)
 
@@ -1354,6 +1396,15 @@ class ClusterNetworkPlacementConfigurationArgs:
     @primary_subnet_id.setter
     def primary_subnet_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "primary_subnet_id", value)
+
+    @property
+    @pulumi.getter(name="placementConstraint")
+    def placement_constraint(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "placement_constraint")
+
+    @placement_constraint.setter
+    def placement_constraint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "placement_constraint", value)
 
     @property
     @pulumi.getter(name="secondaryVnicSubnets")
@@ -1698,8 +1749,8 @@ class ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs:
                  hpc_island_id: pulumi.Input[str],
                  network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[str] hpc_island_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: (Updatable) The list of OCID of the network blocks.
+        :param pulumi.Input[str] hpc_island_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: (Updatable) The list of OCIDs of the network blocks.
         """
         pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         if network_block_ids is not None:
@@ -1709,7 +1760,7 @@ class ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs:
     @pulumi.getter(name="hpcIslandId")
     def hpc_island_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         """
         return pulumi.get(self, "hpc_island_id")
 
@@ -1721,7 +1772,7 @@ class ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs:
     @pulumi.getter(name="networkBlockIds")
     def network_block_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) The list of OCID of the network blocks.
+        (Updatable) The list of OCIDs of the network blocks.
         """
         return pulumi.get(self, "network_block_ids")
 
@@ -8910,7 +8961,7 @@ class InstancePoolPlacementConfigurationArgs:
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
         """
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] primary_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+        :param pulumi.Input[str] primary_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: (Updatable) The fault domains to place instances.
                
                If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
@@ -8945,7 +8996,7 @@ class InstancePoolPlacementConfigurationArgs:
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
         """
         return pulumi.get(self, "primary_subnet_id")
 
@@ -10263,14 +10314,14 @@ class RouteTableRouteRuleArgs:
                
                A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
                
-               Cannot be an IPv6 CIDR.
+               Cannot be an IPv6 prefix.
                
                Example: `0.0.0.0/0`
         :param pulumi.Input[str] description: (Updatable) An optional description of your choice for the rule.
         :param pulumi.Input[str] destination: (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
                
                Allowed values:
-               * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+               * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
                * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         :param pulumi.Input[str] destination_type: (Updatable) Type of destination for the rule. Required if you provide a `destination`.
         :param pulumi.Input[str] route_type: (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
@@ -10310,7 +10361,7 @@ class RouteTableRouteRuleArgs:
 
         A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
 
-        Cannot be an IPv6 CIDR.
+        Cannot be an IPv6 prefix.
 
         Example: `0.0.0.0/0`
         """
@@ -10342,7 +10393,7 @@ class RouteTableRouteRuleArgs:
         (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
 
         Allowed values:
-        * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+        * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
         * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         """
         return pulumi.get(self, "destination")
@@ -11167,7 +11218,7 @@ class VcnByoipv6cidrDetailArgs:
                  ipv6cidr_block: pulumi.Input[str]):
         """
         :param pulumi.Input[str] byoipv6range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        :param pulumi.Input[str] ipv6cidr_block: An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole CIDR block identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+        :param pulumi.Input[str] ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
         """
         pulumi.set(__self__, "byoipv6range_id", byoipv6range_id)
         pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
@@ -11188,7 +11239,7 @@ class VcnByoipv6cidrDetailArgs:
     @pulumi.getter(name="ipv6cidrBlock")
     def ipv6cidr_block(self) -> pulumi.Input[str]:
         """
-        An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole CIDR block identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
         """
         return pulumi.get(self, "ipv6cidr_block")
 

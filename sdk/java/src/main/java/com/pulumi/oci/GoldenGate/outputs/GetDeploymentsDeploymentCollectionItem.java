@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemOggData;
 import java.lang.Boolean;
@@ -118,6 +119,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String lifecycleSubState;
     /**
+     * @return Attributes for configuring automatic deployment maintenance.
+     * 
+     */
+    private List<GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration> maintenanceConfigurations;
+    /**
      * @return Defines the maintenance window, when automatic actions can be performed.
      * 
      */
@@ -182,6 +188,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private String timeOfNextMaintenance;
+    /**
+     * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeOggVersionSupportedUntil;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
@@ -335,6 +346,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.lifecycleSubState;
     }
     /**
+     * @return Attributes for configuring automatic deployment maintenance.
+     * 
+     */
+    public List<GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration> maintenanceConfigurations() {
+        return this.maintenanceConfigurations;
+    }
+    /**
      * @return Defines the maintenance window, when automatic actions can be performed.
      * 
      */
@@ -426,6 +444,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.timeOfNextMaintenance;
     }
     /**
+     * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeOggVersionSupportedUntil() {
+        return this.timeOggVersionSupportedUntil;
+    }
+    /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -469,6 +494,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private String licenseModel;
         private String lifecycleDetails;
         private String lifecycleSubState;
+        private List<GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration> maintenanceConfigurations;
         private List<GetDeploymentsDeploymentCollectionItemMaintenanceWindow> maintenanceWindows;
         private String nextMaintenanceActionType;
         private String nextMaintenanceDescription;
@@ -482,6 +508,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeOfNextMaintenance;
+        private String timeOggVersionSupportedUntil;
         private String timeUpdated;
         private String timeUpgradeRequired;
         public Builder() {}
@@ -507,6 +534,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lifecycleSubState = defaults.lifecycleSubState;
+    	      this.maintenanceConfigurations = defaults.maintenanceConfigurations;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.nextMaintenanceActionType = defaults.nextMaintenanceActionType;
     	      this.nextMaintenanceDescription = defaults.nextMaintenanceDescription;
@@ -520,6 +548,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeOfNextMaintenance = defaults.timeOfNextMaintenance;
+    	      this.timeOggVersionSupportedUntil = defaults.timeOggVersionSupportedUntil;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.timeUpgradeRequired = defaults.timeUpgradeRequired;
         }
@@ -628,6 +657,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder maintenanceConfigurations(List<GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration> maintenanceConfigurations) {
+            this.maintenanceConfigurations = Objects.requireNonNull(maintenanceConfigurations);
+            return this;
+        }
+        public Builder maintenanceConfigurations(GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration... maintenanceConfigurations) {
+            return maintenanceConfigurations(List.of(maintenanceConfigurations));
+        }
+        @CustomType.Setter
         public Builder maintenanceWindows(List<GetDeploymentsDeploymentCollectionItemMaintenanceWindow> maintenanceWindows) {
             this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
             return this;
@@ -702,6 +739,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeOggVersionSupportedUntil(String timeOggVersionSupportedUntil) {
+            this.timeOggVersionSupportedUntil = Objects.requireNonNull(timeOggVersionSupportedUntil);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
@@ -733,6 +775,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             o.licenseModel = licenseModel;
             o.lifecycleDetails = lifecycleDetails;
             o.lifecycleSubState = lifecycleSubState;
+            o.maintenanceConfigurations = maintenanceConfigurations;
             o.maintenanceWindows = maintenanceWindows;
             o.nextMaintenanceActionType = nextMaintenanceActionType;
             o.nextMaintenanceDescription = nextMaintenanceDescription;
@@ -746,6 +789,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeOfNextMaintenance = timeOfNextMaintenance;
+            o.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             o.timeUpdated = timeUpdated;
             o.timeUpgradeRequired = timeUpgradeRequired;
             return o;

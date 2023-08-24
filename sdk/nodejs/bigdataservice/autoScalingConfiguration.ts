@@ -110,7 +110,7 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
-     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      */
     public readonly nodeType!: pulumi.Output<string>;
     /**
@@ -220,7 +220,7 @@ export interface AutoScalingConfigurationState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      */
     nodeType?: pulumi.Input<string>;
     /**
@@ -276,7 +276,7 @@ export interface AutoScalingConfigurationArgs {
      */
     isEnabled: pulumi.Input<boolean>;
     /**
-     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      */
     nodeType: pulumi.Input<string>;
     /**

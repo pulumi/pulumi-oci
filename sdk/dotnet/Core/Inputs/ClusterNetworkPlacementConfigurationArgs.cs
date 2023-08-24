@@ -18,6 +18,9 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("availabilityDomain", required: true)]
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
+        [Input("placementConstraint")]
+        public Input<string>? PlacementConstraint { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
         /// </summary>

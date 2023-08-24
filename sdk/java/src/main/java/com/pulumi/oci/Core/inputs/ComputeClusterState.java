@@ -18,14 +18,14 @@ public final class ComputeClusterState extends com.pulumi.resources.ResourceArgs
     public static final ComputeClusterState Empty = new ComputeClusterState();
 
     /**
-     * The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+     * @return The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -33,14 +33,14 @@ public final class ComputeClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -114,14 +114,14 @@ public final class ComputeClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -159,7 +159,7 @@ public final class ComputeClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param availabilityDomain The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class ComputeClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param availabilityDomain The availability domain that the compute cluster is running in. Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class ComputeClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class ComputeClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class ComputeClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeCreated The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         * @param timeCreated The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class ComputeClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeCreated The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         * @param timeCreated The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 

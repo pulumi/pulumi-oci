@@ -55,6 +55,16 @@ export const getBdsInstanceApiKeys: typeof import("./getBdsInstanceApiKeys").get
 export const getBdsInstanceApiKeysOutput: typeof import("./getBdsInstanceApiKeys").getBdsInstanceApiKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getBdsInstanceApiKeys","getBdsInstanceApiKeysOutput"], () => require("./getBdsInstanceApiKeys"));
 
+export { GetBdsInstanceGetOsPatchArgs, GetBdsInstanceGetOsPatchResult, GetBdsInstanceGetOsPatchOutputArgs } from "./getBdsInstanceGetOsPatch";
+export const getBdsInstanceGetOsPatch: typeof import("./getBdsInstanceGetOsPatch").getBdsInstanceGetOsPatch = null as any;
+export const getBdsInstanceGetOsPatchOutput: typeof import("./getBdsInstanceGetOsPatch").getBdsInstanceGetOsPatchOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceGetOsPatch","getBdsInstanceGetOsPatchOutput"], () => require("./getBdsInstanceGetOsPatch"));
+
+export { GetBdsInstanceListOsPatchesArgs, GetBdsInstanceListOsPatchesResult, GetBdsInstanceListOsPatchesOutputArgs } from "./getBdsInstanceListOsPatches";
+export const getBdsInstanceListOsPatches: typeof import("./getBdsInstanceListOsPatches").getBdsInstanceListOsPatches = null as any;
+export const getBdsInstanceListOsPatchesOutput: typeof import("./getBdsInstanceListOsPatches").getBdsInstanceListOsPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceListOsPatches","getBdsInstanceListOsPatchesOutput"], () => require("./getBdsInstanceListOsPatches"));
+
 export { GetBdsInstanceMetastoreConfigArgs, GetBdsInstanceMetastoreConfigResult, GetBdsInstanceMetastoreConfigOutputArgs } from "./getBdsInstanceMetastoreConfig";
 export const getBdsInstanceMetastoreConfig: typeof import("./getBdsInstanceMetastoreConfig").getBdsInstanceMetastoreConfig = null as any;
 export const getBdsInstanceMetastoreConfigOutput: typeof import("./getBdsInstanceMetastoreConfig").getBdsInstanceMetastoreConfigOutput = null as any;

@@ -22,7 +22,7 @@ class GetVirtualCircuitResult:
     """
     A collection of values returned by getVirtualCircuit.
     """
-    def __init__(__self__, bandwidth_shape_name=None, bgp_admin_state=None, bgp_ipv6session_state=None, bgp_management=None, bgp_session_state=None, compartment_id=None, cross_connect_mappings=None, customer_asn=None, customer_bgp_asn=None, defined_tags=None, display_name=None, freeform_tags=None, gateway_id=None, id=None, ip_mtu=None, is_bfd_enabled=None, oracle_bgp_asn=None, provider_service_id=None, provider_service_key_name=None, provider_state=None, public_prefixes=None, reference_comment=None, region=None, routing_policies=None, service_type=None, state=None, time_created=None, type=None, virtual_circuit_id=None):
+    def __init__(__self__, bandwidth_shape_name=None, bgp_admin_state=None, bgp_ipv6session_state=None, bgp_management=None, bgp_session_state=None, compartment_id=None, cross_connect_mappings=None, customer_asn=None, customer_bgp_asn=None, defined_tags=None, display_name=None, freeform_tags=None, gateway_id=None, id=None, ip_mtu=None, is_bfd_enabled=None, is_transport_mode=None, oracle_bgp_asn=None, provider_service_id=None, provider_service_key_name=None, provider_state=None, public_prefixes=None, reference_comment=None, region=None, routing_policies=None, service_type=None, state=None, time_created=None, type=None, virtual_circuit_id=None):
         if bandwidth_shape_name and not isinstance(bandwidth_shape_name, str):
             raise TypeError("Expected argument 'bandwidth_shape_name' to be a str")
         pulumi.set(__self__, "bandwidth_shape_name", bandwidth_shape_name)
@@ -71,6 +71,9 @@ class GetVirtualCircuitResult:
         if is_bfd_enabled and not isinstance(is_bfd_enabled, bool):
             raise TypeError("Expected argument 'is_bfd_enabled' to be a bool")
         pulumi.set(__self__, "is_bfd_enabled", is_bfd_enabled)
+        if is_transport_mode and not isinstance(is_transport_mode, bool):
+            raise TypeError("Expected argument 'is_transport_mode' to be a bool")
+        pulumi.set(__self__, "is_transport_mode", is_transport_mode)
         if oracle_bgp_asn and not isinstance(oracle_bgp_asn, int):
             raise TypeError("Expected argument 'oracle_bgp_asn' to be a int")
         pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
@@ -246,6 +249,14 @@ class GetVirtualCircuitResult:
         return pulumi.get(self, "is_bfd_enabled")
 
     @property
+    @pulumi.getter(name="isTransportMode")
+    def is_transport_mode(self) -> bool:
+        """
+        Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        """
+        return pulumi.get(self, "is_transport_mode")
+
+    @property
     @pulumi.getter(name="oracleBgpAsn")
     def oracle_bgp_asn(self) -> int:
         """
@@ -369,6 +380,7 @@ class AwaitableGetVirtualCircuitResult(GetVirtualCircuitResult):
             id=self.id,
             ip_mtu=self.ip_mtu,
             is_bfd_enabled=self.is_bfd_enabled,
+            is_transport_mode=self.is_transport_mode,
             oracle_bgp_asn=self.oracle_bgp_asn,
             provider_service_id=self.provider_service_id,
             provider_service_key_name=self.provider_service_key_name,
@@ -425,6 +437,7 @@ def get_virtual_circuit(virtual_circuit_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         ip_mtu=pulumi.get(__ret__, 'ip_mtu'),
         is_bfd_enabled=pulumi.get(__ret__, 'is_bfd_enabled'),
+        is_transport_mode=pulumi.get(__ret__, 'is_transport_mode'),
         oracle_bgp_asn=pulumi.get(__ret__, 'oracle_bgp_asn'),
         provider_service_id=pulumi.get(__ret__, 'provider_service_id'),
         provider_service_key_name=pulumi.get(__ret__, 'provider_service_key_name'),

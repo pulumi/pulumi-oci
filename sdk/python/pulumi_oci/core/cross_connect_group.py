@@ -28,12 +28,8 @@ class CrossConnectGroupArgs:
         :param pulumi.Input[str] customer_reference_name: (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['CrossConnectGroupMacsecPropertiesArgs'] macsec_properties: Properties used for MACsec (if capable).
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['CrossConnectGroupMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if customer_reference_name is not None:
@@ -99,11 +95,7 @@ class CrossConnectGroupArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -115,7 +107,7 @@ class CrossConnectGroupArgs:
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']]:
         """
-        Properties used for MACsec (if capable).
+        (Updatable) Properties used to configure MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
 
@@ -143,15 +135,15 @@ class _CrossConnectGroupState:
         :param pulumi.Input[str] customer_reference_name: (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['CrossConnectGroupMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
+        :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
+        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['CrossConnectGroupMacsecPropertiesArgs'] macsec_properties: Properties used for MACsec (if capable).
-        :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
-        :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
-        :param pulumi.Input[str] state: The cross-connect group's current state.
         :param pulumi.Input[str] time_created: The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
@@ -227,11 +219,7 @@ class _CrossConnectGroupState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -243,7 +231,7 @@ class _CrossConnectGroupState:
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']]:
         """
-        Properties used for MACsec (if capable).
+        (Updatable) Properties used to configure MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
 
@@ -279,7 +267,11 @@ class _CrossConnectGroupState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The cross-connect group's current state.
+        (Updatable) Indicates whether or not MACsec is enabled.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -346,7 +338,16 @@ class CrossConnectGroup(pulumi.CustomResource):
             display_name=var["cross_connect_group_display_name"],
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            macsec_properties=oci.core.CrossConnectGroupMacsecPropertiesArgs(
+                state=var["cross_connect_group_macsec_properties_state"],
+                encryption_cipher=var["cross_connect_group_macsec_properties_encryption_cipher"],
+                is_unprotected_traffic_allowed=var["cross_connect_group_macsec_properties_is_unprotected_traffic_allowed"],
+                primary_key=oci.core.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs(
+                    connectivity_association_key_secret_id=oci_vault_secret["test_secret"]["id"],
+                    connectivity_association_name_secret_id=oci_vault_secret["test_secret"]["id"],
+                ),
+            ))
         ```
 
         ## Import
@@ -363,12 +364,8 @@ class CrossConnectGroup(pulumi.CustomResource):
         :param pulumi.Input[str] customer_reference_name: (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']] macsec_properties: Properties used for MACsec (if capable).
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         """
         ...
     @overload
@@ -410,7 +407,16 @@ class CrossConnectGroup(pulumi.CustomResource):
             display_name=var["cross_connect_group_display_name"],
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            macsec_properties=oci.core.CrossConnectGroupMacsecPropertiesArgs(
+                state=var["cross_connect_group_macsec_properties_state"],
+                encryption_cipher=var["cross_connect_group_macsec_properties_encryption_cipher"],
+                is_unprotected_traffic_allowed=var["cross_connect_group_macsec_properties_is_unprotected_traffic_allowed"],
+                primary_key=oci.core.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs(
+                    connectivity_association_key_secret_id=oci_vault_secret["test_secret"]["id"],
+                    connectivity_association_name_secret_id=oci_vault_secret["test_secret"]["id"],
+                ),
+            ))
         ```
 
         ## Import
@@ -494,15 +500,15 @@ class CrossConnectGroup(pulumi.CustomResource):
         :param pulumi.Input[str] customer_reference_name: (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
+        :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
+        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']] macsec_properties: Properties used for MACsec (if capable).
-        :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
-        :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
-        :param pulumi.Input[str] state: The cross-connect group's current state.
         :param pulumi.Input[str] time_created: The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -557,11 +563,7 @@ class CrossConnectGroup(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -569,7 +571,7 @@ class CrossConnectGroup(pulumi.CustomResource):
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> pulumi.Output['outputs.CrossConnectGroupMacsecProperties']:
         """
-        Properties used for MACsec (if capable).
+        (Updatable) Properties used to configure MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
 
@@ -593,7 +595,11 @@ class CrossConnectGroup(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The cross-connect group's current state.
+        (Updatable) Indicates whether or not MACsec is enabled.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 

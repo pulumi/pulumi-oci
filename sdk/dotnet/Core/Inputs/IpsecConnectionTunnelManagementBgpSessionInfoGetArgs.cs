@@ -12,11 +12,14 @@ namespace Pulumi.Oci.Core.Inputs
 
     public sealed class IpsecConnectionTunnelManagementBgpSessionInfoGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The state of the BGP IPv6 session.
+        /// </summary>
         [Input("bgpIpv6state")]
         public Input<string>? BgpIpv6state { get; set; }
 
         /// <summary>
-        /// the state of the BGP.
+        /// The state of the BGP session.
         /// </summary>
         [Input("bgpState")]
         public Input<string>? BgpState { get; set; }
@@ -46,7 +49,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? CustomerInterfaceIp { get; set; }
 
         /// <summary>
-        /// This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+        /// The Oracle BGP ASN.
         /// </summary>
         [Input("oracleBgpAsn")]
         public Input<string>? OracleBgpAsn { get; set; }

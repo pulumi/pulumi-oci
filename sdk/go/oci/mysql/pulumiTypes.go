@@ -13,139 +13,6 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
-type AnalyticsClusterClusterNode struct {
-	// The ID of the node within MySQL Analytics Cluster.
-	NodeId *string `pulumi:"nodeId"`
-	// (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State *string `pulumi:"state"`
-	// The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated *string `pulumi:"timeUpdated"`
-}
-
-// AnalyticsClusterClusterNodeInput is an input type that accepts AnalyticsClusterClusterNodeArgs and AnalyticsClusterClusterNodeOutput values.
-// You can construct a concrete instance of `AnalyticsClusterClusterNodeInput` via:
-//
-//	AnalyticsClusterClusterNodeArgs{...}
-type AnalyticsClusterClusterNodeInput interface {
-	pulumi.Input
-
-	ToAnalyticsClusterClusterNodeOutput() AnalyticsClusterClusterNodeOutput
-	ToAnalyticsClusterClusterNodeOutputWithContext(context.Context) AnalyticsClusterClusterNodeOutput
-}
-
-type AnalyticsClusterClusterNodeArgs struct {
-	// The ID of the node within MySQL Analytics Cluster.
-	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
-	// (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringPtrInput `pulumi:"state"`
-	// The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-}
-
-func (AnalyticsClusterClusterNodeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*AnalyticsClusterClusterNode)(nil)).Elem()
-}
-
-func (i AnalyticsClusterClusterNodeArgs) ToAnalyticsClusterClusterNodeOutput() AnalyticsClusterClusterNodeOutput {
-	return i.ToAnalyticsClusterClusterNodeOutputWithContext(context.Background())
-}
-
-func (i AnalyticsClusterClusterNodeArgs) ToAnalyticsClusterClusterNodeOutputWithContext(ctx context.Context) AnalyticsClusterClusterNodeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsClusterClusterNodeOutput)
-}
-
-// AnalyticsClusterClusterNodeArrayInput is an input type that accepts AnalyticsClusterClusterNodeArray and AnalyticsClusterClusterNodeArrayOutput values.
-// You can construct a concrete instance of `AnalyticsClusterClusterNodeArrayInput` via:
-//
-//	AnalyticsClusterClusterNodeArray{ AnalyticsClusterClusterNodeArgs{...} }
-type AnalyticsClusterClusterNodeArrayInput interface {
-	pulumi.Input
-
-	ToAnalyticsClusterClusterNodeArrayOutput() AnalyticsClusterClusterNodeArrayOutput
-	ToAnalyticsClusterClusterNodeArrayOutputWithContext(context.Context) AnalyticsClusterClusterNodeArrayOutput
-}
-
-type AnalyticsClusterClusterNodeArray []AnalyticsClusterClusterNodeInput
-
-func (AnalyticsClusterClusterNodeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AnalyticsClusterClusterNode)(nil)).Elem()
-}
-
-func (i AnalyticsClusterClusterNodeArray) ToAnalyticsClusterClusterNodeArrayOutput() AnalyticsClusterClusterNodeArrayOutput {
-	return i.ToAnalyticsClusterClusterNodeArrayOutputWithContext(context.Background())
-}
-
-func (i AnalyticsClusterClusterNodeArray) ToAnalyticsClusterClusterNodeArrayOutputWithContext(ctx context.Context) AnalyticsClusterClusterNodeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsClusterClusterNodeArrayOutput)
-}
-
-type AnalyticsClusterClusterNodeOutput struct{ *pulumi.OutputState }
-
-func (AnalyticsClusterClusterNodeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AnalyticsClusterClusterNode)(nil)).Elem()
-}
-
-func (o AnalyticsClusterClusterNodeOutput) ToAnalyticsClusterClusterNodeOutput() AnalyticsClusterClusterNodeOutput {
-	return o
-}
-
-func (o AnalyticsClusterClusterNodeOutput) ToAnalyticsClusterClusterNodeOutputWithContext(ctx context.Context) AnalyticsClusterClusterNodeOutput {
-	return o
-}
-
-// The ID of the node within MySQL Analytics Cluster.
-func (o AnalyticsClusterClusterNodeOutput) NodeId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AnalyticsClusterClusterNode) *string { return v.NodeId }).(pulumi.StringPtrOutput)
-}
-
-// (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AnalyticsClusterClusterNodeOutput) State() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AnalyticsClusterClusterNode) *string { return v.State }).(pulumi.StringPtrOutput)
-}
-
-// The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o AnalyticsClusterClusterNodeOutput) TimeCreated() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AnalyticsClusterClusterNode) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
-}
-
-// The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o AnalyticsClusterClusterNodeOutput) TimeUpdated() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AnalyticsClusterClusterNode) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
-}
-
-type AnalyticsClusterClusterNodeArrayOutput struct{ *pulumi.OutputState }
-
-func (AnalyticsClusterClusterNodeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AnalyticsClusterClusterNode)(nil)).Elem()
-}
-
-func (o AnalyticsClusterClusterNodeArrayOutput) ToAnalyticsClusterClusterNodeArrayOutput() AnalyticsClusterClusterNodeArrayOutput {
-	return o
-}
-
-func (o AnalyticsClusterClusterNodeArrayOutput) ToAnalyticsClusterClusterNodeArrayOutputWithContext(ctx context.Context) AnalyticsClusterClusterNodeArrayOutput {
-	return o
-}
-
-func (o AnalyticsClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) AnalyticsClusterClusterNodeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AnalyticsClusterClusterNode {
-		return vs[0].([]AnalyticsClusterClusterNode)[vs[1].(int)]
-	}).(AnalyticsClusterClusterNodeOutput)
-}
-
 type ChannelSource struct {
 	// (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandling *ChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandling"`
@@ -4413,142 +4280,6 @@ func (o MysqlConfigurationVariablesPtrOutput) WaitTimeout() pulumi.IntPtrOutput 
 	}).(pulumi.IntPtrOutput)
 }
 
-type MysqlDbSystemAnalyticsCluster struct {
-	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize *int `pulumi:"clusterSize"`
-	// (Updatable) The name of the shape. The shape determines the resources allocated
-	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	ShapeName *string `pulumi:"shapeName"`
-	// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-	State *string `pulumi:"state"`
-	// The date and time the DB System was created.
-	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the DB System was last updated.
-	TimeUpdated *string `pulumi:"timeUpdated"`
-}
-
-// MysqlDbSystemAnalyticsClusterInput is an input type that accepts MysqlDbSystemAnalyticsClusterArgs and MysqlDbSystemAnalyticsClusterOutput values.
-// You can construct a concrete instance of `MysqlDbSystemAnalyticsClusterInput` via:
-//
-//	MysqlDbSystemAnalyticsClusterArgs{...}
-type MysqlDbSystemAnalyticsClusterInput interface {
-	pulumi.Input
-
-	ToMysqlDbSystemAnalyticsClusterOutput() MysqlDbSystemAnalyticsClusterOutput
-	ToMysqlDbSystemAnalyticsClusterOutputWithContext(context.Context) MysqlDbSystemAnalyticsClusterOutput
-}
-
-type MysqlDbSystemAnalyticsClusterArgs struct {
-	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize pulumi.IntPtrInput `pulumi:"clusterSize"`
-	// (Updatable) The name of the shape. The shape determines the resources allocated
-	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
-	// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-	State pulumi.StringPtrInput `pulumi:"state"`
-	// The date and time the DB System was created.
-	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// The time the DB System was last updated.
-	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-}
-
-func (MysqlDbSystemAnalyticsClusterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*MysqlDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (i MysqlDbSystemAnalyticsClusterArgs) ToMysqlDbSystemAnalyticsClusterOutput() MysqlDbSystemAnalyticsClusterOutput {
-	return i.ToMysqlDbSystemAnalyticsClusterOutputWithContext(context.Background())
-}
-
-func (i MysqlDbSystemAnalyticsClusterArgs) ToMysqlDbSystemAnalyticsClusterOutputWithContext(ctx context.Context) MysqlDbSystemAnalyticsClusterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemAnalyticsClusterOutput)
-}
-
-// MysqlDbSystemAnalyticsClusterArrayInput is an input type that accepts MysqlDbSystemAnalyticsClusterArray and MysqlDbSystemAnalyticsClusterArrayOutput values.
-// You can construct a concrete instance of `MysqlDbSystemAnalyticsClusterArrayInput` via:
-//
-//	MysqlDbSystemAnalyticsClusterArray{ MysqlDbSystemAnalyticsClusterArgs{...} }
-type MysqlDbSystemAnalyticsClusterArrayInput interface {
-	pulumi.Input
-
-	ToMysqlDbSystemAnalyticsClusterArrayOutput() MysqlDbSystemAnalyticsClusterArrayOutput
-	ToMysqlDbSystemAnalyticsClusterArrayOutputWithContext(context.Context) MysqlDbSystemAnalyticsClusterArrayOutput
-}
-
-type MysqlDbSystemAnalyticsClusterArray []MysqlDbSystemAnalyticsClusterInput
-
-func (MysqlDbSystemAnalyticsClusterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]MysqlDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (i MysqlDbSystemAnalyticsClusterArray) ToMysqlDbSystemAnalyticsClusterArrayOutput() MysqlDbSystemAnalyticsClusterArrayOutput {
-	return i.ToMysqlDbSystemAnalyticsClusterArrayOutputWithContext(context.Background())
-}
-
-func (i MysqlDbSystemAnalyticsClusterArray) ToMysqlDbSystemAnalyticsClusterArrayOutputWithContext(ctx context.Context) MysqlDbSystemAnalyticsClusterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemAnalyticsClusterArrayOutput)
-}
-
-type MysqlDbSystemAnalyticsClusterOutput struct{ *pulumi.OutputState }
-
-func (MysqlDbSystemAnalyticsClusterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*MysqlDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (o MysqlDbSystemAnalyticsClusterOutput) ToMysqlDbSystemAnalyticsClusterOutput() MysqlDbSystemAnalyticsClusterOutput {
-	return o
-}
-
-func (o MysqlDbSystemAnalyticsClusterOutput) ToMysqlDbSystemAnalyticsClusterOutputWithContext(ctx context.Context) MysqlDbSystemAnalyticsClusterOutput {
-	return o
-}
-
-// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-func (o MysqlDbSystemAnalyticsClusterOutput) ClusterSize() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v MysqlDbSystemAnalyticsCluster) *int { return v.ClusterSize }).(pulumi.IntPtrOutput)
-}
-
-// (Updatable) The name of the shape. The shape determines the resources allocated
-// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-func (o MysqlDbSystemAnalyticsClusterOutput) ShapeName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v MysqlDbSystemAnalyticsCluster) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
-}
-
-// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-func (o MysqlDbSystemAnalyticsClusterOutput) State() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v MysqlDbSystemAnalyticsCluster) *string { return v.State }).(pulumi.StringPtrOutput)
-}
-
-// The date and time the DB System was created.
-func (o MysqlDbSystemAnalyticsClusterOutput) TimeCreated() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v MysqlDbSystemAnalyticsCluster) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
-}
-
-// The time the DB System was last updated.
-func (o MysqlDbSystemAnalyticsClusterOutput) TimeUpdated() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v MysqlDbSystemAnalyticsCluster) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
-}
-
-type MysqlDbSystemAnalyticsClusterArrayOutput struct{ *pulumi.OutputState }
-
-func (MysqlDbSystemAnalyticsClusterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]MysqlDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (o MysqlDbSystemAnalyticsClusterArrayOutput) ToMysqlDbSystemAnalyticsClusterArrayOutput() MysqlDbSystemAnalyticsClusterArrayOutput {
-	return o
-}
-
-func (o MysqlDbSystemAnalyticsClusterArrayOutput) ToMysqlDbSystemAnalyticsClusterArrayOutputWithContext(ctx context.Context) MysqlDbSystemAnalyticsClusterArrayOutput {
-	return o
-}
-
-func (o MysqlDbSystemAnalyticsClusterArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemAnalyticsClusterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemAnalyticsCluster {
-		return vs[0].([]MysqlDbSystemAnalyticsCluster)[vs[1].(int)]
-	}).(MysqlDbSystemAnalyticsClusterOutput)
-}
-
 type MysqlDbSystemBackupPolicy struct {
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -6837,130 +6568,6 @@ func (o MysqlDbSystemSourcePtrOutput) SourceUrl() pulumi.StringPtrOutput {
 		}
 		return v.SourceUrl
 	}).(pulumi.StringPtrOutput)
-}
-
-type GetAnalyticsClusterClusterNode struct {
-	// The ID of the node within MySQL Analytics Cluster.
-	NodeId string `pulumi:"nodeId"`
-	// The current state of the Analytics Cluster.
-	State string `pulumi:"state"`
-	// The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
-	// The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
-}
-
-// GetAnalyticsClusterClusterNodeInput is an input type that accepts GetAnalyticsClusterClusterNodeArgs and GetAnalyticsClusterClusterNodeOutput values.
-// You can construct a concrete instance of `GetAnalyticsClusterClusterNodeInput` via:
-//
-//	GetAnalyticsClusterClusterNodeArgs{...}
-type GetAnalyticsClusterClusterNodeInput interface {
-	pulumi.Input
-
-	ToGetAnalyticsClusterClusterNodeOutput() GetAnalyticsClusterClusterNodeOutput
-	ToGetAnalyticsClusterClusterNodeOutputWithContext(context.Context) GetAnalyticsClusterClusterNodeOutput
-}
-
-type GetAnalyticsClusterClusterNodeArgs struct {
-	// The ID of the node within MySQL Analytics Cluster.
-	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// The current state of the Analytics Cluster.
-	State pulumi.StringInput `pulumi:"state"`
-	// The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-}
-
-func (GetAnalyticsClusterClusterNodeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetAnalyticsClusterClusterNode)(nil)).Elem()
-}
-
-func (i GetAnalyticsClusterClusterNodeArgs) ToGetAnalyticsClusterClusterNodeOutput() GetAnalyticsClusterClusterNodeOutput {
-	return i.ToGetAnalyticsClusterClusterNodeOutputWithContext(context.Background())
-}
-
-func (i GetAnalyticsClusterClusterNodeArgs) ToGetAnalyticsClusterClusterNodeOutputWithContext(ctx context.Context) GetAnalyticsClusterClusterNodeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsClusterClusterNodeOutput)
-}
-
-// GetAnalyticsClusterClusterNodeArrayInput is an input type that accepts GetAnalyticsClusterClusterNodeArray and GetAnalyticsClusterClusterNodeArrayOutput values.
-// You can construct a concrete instance of `GetAnalyticsClusterClusterNodeArrayInput` via:
-//
-//	GetAnalyticsClusterClusterNodeArray{ GetAnalyticsClusterClusterNodeArgs{...} }
-type GetAnalyticsClusterClusterNodeArrayInput interface {
-	pulumi.Input
-
-	ToGetAnalyticsClusterClusterNodeArrayOutput() GetAnalyticsClusterClusterNodeArrayOutput
-	ToGetAnalyticsClusterClusterNodeArrayOutputWithContext(context.Context) GetAnalyticsClusterClusterNodeArrayOutput
-}
-
-type GetAnalyticsClusterClusterNodeArray []GetAnalyticsClusterClusterNodeInput
-
-func (GetAnalyticsClusterClusterNodeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetAnalyticsClusterClusterNode)(nil)).Elem()
-}
-
-func (i GetAnalyticsClusterClusterNodeArray) ToGetAnalyticsClusterClusterNodeArrayOutput() GetAnalyticsClusterClusterNodeArrayOutput {
-	return i.ToGetAnalyticsClusterClusterNodeArrayOutputWithContext(context.Background())
-}
-
-func (i GetAnalyticsClusterClusterNodeArray) ToGetAnalyticsClusterClusterNodeArrayOutputWithContext(ctx context.Context) GetAnalyticsClusterClusterNodeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsClusterClusterNodeArrayOutput)
-}
-
-type GetAnalyticsClusterClusterNodeOutput struct{ *pulumi.OutputState }
-
-func (GetAnalyticsClusterClusterNodeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetAnalyticsClusterClusterNode)(nil)).Elem()
-}
-
-func (o GetAnalyticsClusterClusterNodeOutput) ToGetAnalyticsClusterClusterNodeOutput() GetAnalyticsClusterClusterNodeOutput {
-	return o
-}
-
-func (o GetAnalyticsClusterClusterNodeOutput) ToGetAnalyticsClusterClusterNodeOutputWithContext(ctx context.Context) GetAnalyticsClusterClusterNodeOutput {
-	return o
-}
-
-// The ID of the node within MySQL Analytics Cluster.
-func (o GetAnalyticsClusterClusterNodeOutput) NodeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsClusterClusterNode) string { return v.NodeId }).(pulumi.StringOutput)
-}
-
-// The current state of the Analytics Cluster.
-func (o GetAnalyticsClusterClusterNodeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsClusterClusterNode) string { return v.State }).(pulumi.StringOutput)
-}
-
-// The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetAnalyticsClusterClusterNodeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsClusterClusterNode) string { return v.TimeCreated }).(pulumi.StringOutput)
-}
-
-// The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetAnalyticsClusterClusterNodeOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsClusterClusterNode) string { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-type GetAnalyticsClusterClusterNodeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetAnalyticsClusterClusterNodeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetAnalyticsClusterClusterNode)(nil)).Elem()
-}
-
-func (o GetAnalyticsClusterClusterNodeArrayOutput) ToGetAnalyticsClusterClusterNodeArrayOutput() GetAnalyticsClusterClusterNodeArrayOutput {
-	return o
-}
-
-func (o GetAnalyticsClusterClusterNodeArrayOutput) ToGetAnalyticsClusterClusterNodeArrayOutputWithContext(ctx context.Context) GetAnalyticsClusterClusterNodeArrayOutput {
-	return o
-}
-
-func (o GetAnalyticsClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) GetAnalyticsClusterClusterNodeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsClusterClusterNode {
-		return vs[0].([]GetAnalyticsClusterClusterNode)[vs[1].(int)]
-	}).(GetAnalyticsClusterClusterNodeOutput)
 }
 
 type GetChannelSource struct {
@@ -13153,139 +12760,6 @@ func (o GetMysqlConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetMys
 	}).(GetMysqlConfigurationsFilterOutput)
 }
 
-type GetMysqlDbSystemAnalyticsCluster struct {
-	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize int `pulumi:"clusterSize"`
-	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName string `pulumi:"shapeName"`
-	// The current state of the DB System.
-	State string `pulumi:"state"`
-	// The date and time the DB System was created.
-	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DB System was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
-}
-
-// GetMysqlDbSystemAnalyticsClusterInput is an input type that accepts GetMysqlDbSystemAnalyticsClusterArgs and GetMysqlDbSystemAnalyticsClusterOutput values.
-// You can construct a concrete instance of `GetMysqlDbSystemAnalyticsClusterInput` via:
-//
-//	GetMysqlDbSystemAnalyticsClusterArgs{...}
-type GetMysqlDbSystemAnalyticsClusterInput interface {
-	pulumi.Input
-
-	ToGetMysqlDbSystemAnalyticsClusterOutput() GetMysqlDbSystemAnalyticsClusterOutput
-	ToGetMysqlDbSystemAnalyticsClusterOutputWithContext(context.Context) GetMysqlDbSystemAnalyticsClusterOutput
-}
-
-type GetMysqlDbSystemAnalyticsClusterArgs struct {
-	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize pulumi.IntInput `pulumi:"clusterSize"`
-	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
-	// The current state of the DB System.
-	State pulumi.StringInput `pulumi:"state"`
-	// The date and time the DB System was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the DB System was last updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-}
-
-func (GetMysqlDbSystemAnalyticsClusterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (i GetMysqlDbSystemAnalyticsClusterArgs) ToGetMysqlDbSystemAnalyticsClusterOutput() GetMysqlDbSystemAnalyticsClusterOutput {
-	return i.ToGetMysqlDbSystemAnalyticsClusterOutputWithContext(context.Background())
-}
-
-func (i GetMysqlDbSystemAnalyticsClusterArgs) ToGetMysqlDbSystemAnalyticsClusterOutputWithContext(ctx context.Context) GetMysqlDbSystemAnalyticsClusterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemAnalyticsClusterOutput)
-}
-
-// GetMysqlDbSystemAnalyticsClusterArrayInput is an input type that accepts GetMysqlDbSystemAnalyticsClusterArray and GetMysqlDbSystemAnalyticsClusterArrayOutput values.
-// You can construct a concrete instance of `GetMysqlDbSystemAnalyticsClusterArrayInput` via:
-//
-//	GetMysqlDbSystemAnalyticsClusterArray{ GetMysqlDbSystemAnalyticsClusterArgs{...} }
-type GetMysqlDbSystemAnalyticsClusterArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlDbSystemAnalyticsClusterArrayOutput() GetMysqlDbSystemAnalyticsClusterArrayOutput
-	ToGetMysqlDbSystemAnalyticsClusterArrayOutputWithContext(context.Context) GetMysqlDbSystemAnalyticsClusterArrayOutput
-}
-
-type GetMysqlDbSystemAnalyticsClusterArray []GetMysqlDbSystemAnalyticsClusterInput
-
-func (GetMysqlDbSystemAnalyticsClusterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (i GetMysqlDbSystemAnalyticsClusterArray) ToGetMysqlDbSystemAnalyticsClusterArrayOutput() GetMysqlDbSystemAnalyticsClusterArrayOutput {
-	return i.ToGetMysqlDbSystemAnalyticsClusterArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlDbSystemAnalyticsClusterArray) ToGetMysqlDbSystemAnalyticsClusterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemAnalyticsClusterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemAnalyticsClusterArrayOutput)
-}
-
-type GetMysqlDbSystemAnalyticsClusterOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlDbSystemAnalyticsClusterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (o GetMysqlDbSystemAnalyticsClusterOutput) ToGetMysqlDbSystemAnalyticsClusterOutput() GetMysqlDbSystemAnalyticsClusterOutput {
-	return o
-}
-
-func (o GetMysqlDbSystemAnalyticsClusterOutput) ToGetMysqlDbSystemAnalyticsClusterOutputWithContext(ctx context.Context) GetMysqlDbSystemAnalyticsClusterOutput {
-	return o
-}
-
-// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-func (o GetMysqlDbSystemAnalyticsClusterOutput) ClusterSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemAnalyticsCluster) int { return v.ClusterSize }).(pulumi.IntOutput)
-}
-
-// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-func (o GetMysqlDbSystemAnalyticsClusterOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemAnalyticsCluster) string { return v.ShapeName }).(pulumi.StringOutput)
-}
-
-// The current state of the DB System.
-func (o GetMysqlDbSystemAnalyticsClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemAnalyticsCluster) string { return v.State }).(pulumi.StringOutput)
-}
-
-// The date and time the DB System was created.
-func (o GetMysqlDbSystemAnalyticsClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemAnalyticsCluster) string { return v.TimeCreated }).(pulumi.StringOutput)
-}
-
-// The time the DB System was last updated.
-func (o GetMysqlDbSystemAnalyticsClusterOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemAnalyticsCluster) string { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-type GetMysqlDbSystemAnalyticsClusterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlDbSystemAnalyticsClusterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (o GetMysqlDbSystemAnalyticsClusterArrayOutput) ToGetMysqlDbSystemAnalyticsClusterArrayOutput() GetMysqlDbSystemAnalyticsClusterArrayOutput {
-	return o
-}
-
-func (o GetMysqlDbSystemAnalyticsClusterArrayOutput) ToGetMysqlDbSystemAnalyticsClusterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemAnalyticsClusterArrayOutput {
-	return o
-}
-
-func (o GetMysqlDbSystemAnalyticsClusterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemAnalyticsClusterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemAnalyticsCluster {
-		return vs[0].([]GetMysqlDbSystemAnalyticsCluster)[vs[1].(int)]
-	}).(GetMysqlDbSystemAnalyticsClusterOutput)
-}
-
 type GetMysqlDbSystemBackupPolicy struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -15235,8 +14709,6 @@ func (o GetMysqlDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSy
 type GetMysqlDbSystemsDbSystem struct {
 	AdminPassword string `pulumi:"adminPassword"`
 	AdminUsername string `pulumi:"adminUsername"`
-	// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-	AnalyticsClusters []GetMysqlDbSystemsDbSystemAnalyticsCluster `pulumi:"analyticsClusters"`
 	// The availability domain in which the DB System is placed.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
@@ -15275,8 +14747,6 @@ type GetMysqlDbSystemsDbSystem struct {
 	Id string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
-	// DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-	IsAnalyticsClusterAttached bool `pulumi:"isAnalyticsClusterAttached"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if the DB System is highly available.
@@ -15322,8 +14792,6 @@ type GetMysqlDbSystemsDbSystemInput interface {
 type GetMysqlDbSystemsDbSystemArgs struct {
 	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
-	// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-	AnalyticsClusters GetMysqlDbSystemsDbSystemAnalyticsClusterArrayInput `pulumi:"analyticsClusters"`
 	// The availability domain in which the DB System is placed.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
@@ -15362,8 +14830,6 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-	IsAnalyticsClusterAttached pulumi.BoolInput `pulumi:"isAnalyticsClusterAttached"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 	IsHeatWaveClusterAttached pulumi.BoolInput `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if the DB System is highly available.
@@ -15452,13 +14918,6 @@ func (o GetMysqlDbSystemsDbSystemOutput) AdminPassword() pulumi.StringOutput {
 
 func (o GetMysqlDbSystemsDbSystemOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.AdminUsername }).(pulumi.StringOutput)
-}
-
-// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-func (o GetMysqlDbSystemsDbSystemOutput) AnalyticsClusters() GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemAnalyticsCluster {
-		return v.AnalyticsClusters
-	}).(GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput)
 }
 
 // The availability domain in which the DB System is placed.
@@ -15560,11 +15019,6 @@ func (o GetMysqlDbSystemsDbSystemOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-func (o GetMysqlDbSystemsDbSystemOutput) IsAnalyticsClusterAttached() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) bool { return v.IsAnalyticsClusterAttached }).(pulumi.BoolOutput)
-}
-
 // If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 func (o GetMysqlDbSystemsDbSystemOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
@@ -15659,139 +15113,6 @@ func (o GetMysqlDbSystemsDbSystemArrayOutput) Index(i pulumi.IntInput) GetMysqlD
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystem {
 		return vs[0].([]GetMysqlDbSystemsDbSystem)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemOutput)
-}
-
-type GetMysqlDbSystemsDbSystemAnalyticsCluster struct {
-	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize int `pulumi:"clusterSize"`
-	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName string `pulumi:"shapeName"`
-	// DbSystem Lifecycle State
-	State string `pulumi:"state"`
-	// The date and time the DB System was created.
-	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DB System was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
-}
-
-// GetMysqlDbSystemsDbSystemAnalyticsClusterInput is an input type that accepts GetMysqlDbSystemsDbSystemAnalyticsClusterArgs and GetMysqlDbSystemsDbSystemAnalyticsClusterOutput values.
-// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemAnalyticsClusterInput` via:
-//
-//	GetMysqlDbSystemsDbSystemAnalyticsClusterArgs{...}
-type GetMysqlDbSystemsDbSystemAnalyticsClusterInput interface {
-	pulumi.Input
-
-	ToGetMysqlDbSystemsDbSystemAnalyticsClusterOutput() GetMysqlDbSystemsDbSystemAnalyticsClusterOutput
-	ToGetMysqlDbSystemsDbSystemAnalyticsClusterOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemAnalyticsClusterOutput
-}
-
-type GetMysqlDbSystemsDbSystemAnalyticsClusterArgs struct {
-	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize pulumi.IntInput `pulumi:"clusterSize"`
-	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
-	// DbSystem Lifecycle State
-	State pulumi.StringInput `pulumi:"state"`
-	// The date and time the DB System was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the DB System was last updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-}
-
-func (GetMysqlDbSystemsDbSystemAnalyticsClusterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (i GetMysqlDbSystemsDbSystemAnalyticsClusterArgs) ToGetMysqlDbSystemsDbSystemAnalyticsClusterOutput() GetMysqlDbSystemsDbSystemAnalyticsClusterOutput {
-	return i.ToGetMysqlDbSystemsDbSystemAnalyticsClusterOutputWithContext(context.Background())
-}
-
-func (i GetMysqlDbSystemsDbSystemAnalyticsClusterArgs) ToGetMysqlDbSystemsDbSystemAnalyticsClusterOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemAnalyticsClusterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemAnalyticsClusterOutput)
-}
-
-// GetMysqlDbSystemsDbSystemAnalyticsClusterArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemAnalyticsClusterArray and GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput values.
-// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemAnalyticsClusterArrayInput` via:
-//
-//	GetMysqlDbSystemsDbSystemAnalyticsClusterArray{ GetMysqlDbSystemsDbSystemAnalyticsClusterArgs{...} }
-type GetMysqlDbSystemsDbSystemAnalyticsClusterArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput() GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput
-	ToGetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput
-}
-
-type GetMysqlDbSystemsDbSystemAnalyticsClusterArray []GetMysqlDbSystemsDbSystemAnalyticsClusterInput
-
-func (GetMysqlDbSystemsDbSystemAnalyticsClusterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (i GetMysqlDbSystemsDbSystemAnalyticsClusterArray) ToGetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput() GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput {
-	return i.ToGetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlDbSystemsDbSystemAnalyticsClusterArray) ToGetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput)
-}
-
-type GetMysqlDbSystemsDbSystemAnalyticsClusterOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlDbSystemsDbSystemAnalyticsClusterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterOutput) ToGetMysqlDbSystemsDbSystemAnalyticsClusterOutput() GetMysqlDbSystemsDbSystemAnalyticsClusterOutput {
-	return o
-}
-
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterOutput) ToGetMysqlDbSystemsDbSystemAnalyticsClusterOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemAnalyticsClusterOutput {
-	return o
-}
-
-// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterOutput) ClusterSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemAnalyticsCluster) int { return v.ClusterSize }).(pulumi.IntOutput)
-}
-
-// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemAnalyticsCluster) string { return v.ShapeName }).(pulumi.StringOutput)
-}
-
-// DbSystem Lifecycle State
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemAnalyticsCluster) string { return v.State }).(pulumi.StringOutput)
-}
-
-// The date and time the DB System was created.
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemAnalyticsCluster) string { return v.TimeCreated }).(pulumi.StringOutput)
-}
-
-// The time the DB System was last updated.
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemAnalyticsCluster) string { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-type GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemAnalyticsCluster)(nil)).Elem()
-}
-
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput) ToGetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput() GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput {
-	return o
-}
-
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput) ToGetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput {
-	return o
-}
-
-func (o GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemAnalyticsClusterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemAnalyticsCluster {
-		return vs[0].([]GetMysqlDbSystemsDbSystemAnalyticsCluster)[vs[1].(int)]
-	}).(GetMysqlDbSystemsDbSystemAnalyticsClusterOutput)
 }
 
 type GetMysqlDbSystemsDbSystemBackupPolicy struct {
@@ -18758,8 +18079,6 @@ func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput
 }
 
 func init() {
-	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsClusterClusterNodeInput)(nil)).Elem(), AnalyticsClusterClusterNodeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsClusterClusterNodeArrayInput)(nil)).Elem(), AnalyticsClusterClusterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourceInput)(nil)).Elem(), ChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourcePtrInput)(nil)).Elem(), ChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), ChannelSourceAnonymousTransactionsHandlingArgs{})
@@ -18788,8 +18107,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesPtrInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationVariablesInput)(nil)).Elem(), MysqlConfigurationVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationVariablesPtrInput)(nil)).Elem(), MysqlConfigurationVariablesArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemAnalyticsClusterInput)(nil)).Elem(), MysqlDbSystemAnalyticsClusterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemAnalyticsClusterArrayInput)(nil)).Elem(), MysqlDbSystemAnalyticsClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyInput)(nil)).Elem(), MysqlDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyPtrInput)(nil)).Elem(), MysqlDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyPitrPolicyInput)(nil)).Elem(), MysqlDbSystemBackupPolicyPitrPolicyArgs{})
@@ -18820,8 +18137,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourcePtrInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsClusterClusterNodeInput)(nil)).Elem(), GetAnalyticsClusterClusterNodeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsClusterClusterNodeArrayInput)(nil)).Elem(), GetAnalyticsClusterClusterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceInput)(nil)).Elem(), GetChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceArrayInput)(nil)).Elem(), GetChannelSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), GetChannelSourceAnonymousTransactionsHandlingArgs{})
@@ -18888,8 +18203,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariableArrayInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsFilterInput)(nil)).Elem(), GetMysqlConfigurationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsFilterArrayInput)(nil)).Elem(), GetMysqlConfigurationsFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemAnalyticsClusterInput)(nil)).Elem(), GetMysqlDbSystemAnalyticsClusterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemAnalyticsClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemAnalyticsClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyPitrPolicyArgs{})
@@ -18922,8 +18235,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemAnalyticsClusterInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemAnalyticsClusterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemAnalyticsClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemAnalyticsClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs{})
@@ -18970,8 +18281,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeInput)(nil)).Elem(), GetShapesShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeArrayInput)(nil)).Elem(), GetShapesShapeArray{})
-	pulumi.RegisterOutputType(AnalyticsClusterClusterNodeOutput{})
-	pulumi.RegisterOutputType(AnalyticsClusterClusterNodeArrayOutput{})
 	pulumi.RegisterOutputType(ChannelSourceOutput{})
 	pulumi.RegisterOutputType(ChannelSourcePtrOutput{})
 	pulumi.RegisterOutputType(ChannelSourceAnonymousTransactionsHandlingOutput{})
@@ -19000,8 +18309,6 @@ func init() {
 	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesPtrOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationVariablesOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationVariablesPtrOutput{})
-	pulumi.RegisterOutputType(MysqlDbSystemAnalyticsClusterOutput{})
-	pulumi.RegisterOutputType(MysqlDbSystemAnalyticsClusterArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyPitrPolicyOutput{})
@@ -19032,8 +18339,6 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourcePtrOutput{})
-	pulumi.RegisterOutputType(GetAnalyticsClusterClusterNodeOutput{})
-	pulumi.RegisterOutputType(GetAnalyticsClusterClusterNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceAnonymousTransactionsHandlingOutput{})
@@ -19100,8 +18405,6 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationVariableArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsFilterOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlDbSystemAnalyticsClusterOutput{})
-	pulumi.RegisterOutputType(GetMysqlDbSystemAnalyticsClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyPitrPolicyOutput{})
@@ -19134,8 +18437,6 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemAnalyticsClusterOutput{})
-	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput{})

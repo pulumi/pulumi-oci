@@ -47,11 +47,6 @@ public final class GetMysqlDbSystemsResult {
      */
     private String id;
     /**
-     * @return DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     * 
-     */
-    private @Nullable Boolean isAnalyticsClusterAttached;
-    /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
      */
@@ -110,13 +105,6 @@ public final class GetMysqlDbSystemsResult {
         return this.id;
     }
     /**
-     * @return DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     * 
-     */
-    public Optional<Boolean> isAnalyticsClusterAttached() {
-        return Optional.ofNullable(this.isAnalyticsClusterAttached);
-    }
-    /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
      */
@@ -150,7 +138,6 @@ public final class GetMysqlDbSystemsResult {
         private @Nullable String displayName;
         private @Nullable List<GetMysqlDbSystemsFilter> filters;
         private String id;
-        private @Nullable Boolean isAnalyticsClusterAttached;
         private @Nullable Boolean isHeatWaveClusterAttached;
         private @Nullable Boolean isUpToDate;
         private @Nullable String state;
@@ -164,7 +151,6 @@ public final class GetMysqlDbSystemsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
-    	      this.isAnalyticsClusterAttached = defaults.isAnalyticsClusterAttached;
     	      this.isHeatWaveClusterAttached = defaults.isHeatWaveClusterAttached;
     	      this.isUpToDate = defaults.isUpToDate;
     	      this.state = defaults.state;
@@ -212,11 +198,6 @@ public final class GetMysqlDbSystemsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder isAnalyticsClusterAttached(@Nullable Boolean isAnalyticsClusterAttached) {
-            this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-            return this;
-        }
-        @CustomType.Setter
         public Builder isHeatWaveClusterAttached(@Nullable Boolean isHeatWaveClusterAttached) {
             this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             return this;
@@ -240,7 +221,6 @@ public final class GetMysqlDbSystemsResult {
             o.displayName = displayName;
             o.filters = filters;
             o.id = id;
-            o.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
             o.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             o.isUpToDate = isUpToDate;
             o.state = state;

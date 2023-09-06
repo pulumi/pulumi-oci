@@ -21,31 +21,6 @@ import * as utilities from "../utilities";
  * For more information about compartments and access control, see
  * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDrgAttachment = new oci.core.DrgAttachment("testDrgAttachment", {
- *     drgId: oci_core_drg.test_drg.id,
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     displayName: _var.drg_attachment_display_name,
- *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     networkDetails: {
- *         id: oci_core_vcn.test_vcn.id,
- *         type: _var.drg_attachment_network_details_type,
- *         routeTableId: oci_core_route_table.test_route_table.id,
- *         vcnRouteType: _var.drg_attachment_network_details_vcn_route_type,
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * DrgAttachments can be imported using the `id`, e.g.

@@ -13,6 +13,5925 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo struct {
+	// The state of the BGP IPv6 session.
+	BgpIpv6state string `pulumi:"bgpIpv6state"`
+	// The state of the BGP session.
+	BgpState string `pulumi:"bgpState"`
+	// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+	CustomerBgpAsn string `pulumi:"customerBgpAsn"`
+	// The IP address for the CPE end of the inside tunnel interface.
+	CustomerInterfaceIp string `pulumi:"customerInterfaceIp"`
+	// The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+	CustomerInterfaceIpv6 string `pulumi:"customerInterfaceIpv6"`
+	// The Oracle BGP ASN.
+	OracleBgpAsn string `pulumi:"oracleBgpAsn"`
+	// The IP address for the Oracle end of the inside tunnel interface.
+	OracleInterfaceIp string `pulumi:"oracleInterfaceIp"`
+	// The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+	OracleInterfaceIpv6 string `pulumi:"oracleInterfaceIpv6"`
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs and GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs{...}
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs struct {
+	// The state of the BGP IPv6 session.
+	BgpIpv6state pulumi.StringInput `pulumi:"bgpIpv6state"`
+	// The state of the BGP session.
+	BgpState pulumi.StringInput `pulumi:"bgpState"`
+	// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+	CustomerBgpAsn pulumi.StringInput `pulumi:"customerBgpAsn"`
+	// The IP address for the CPE end of the inside tunnel interface.
+	CustomerInterfaceIp pulumi.StringInput `pulumi:"customerInterfaceIp"`
+	// The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+	CustomerInterfaceIpv6 pulumi.StringInput `pulumi:"customerInterfaceIpv6"`
+	// The Oracle BGP ASN.
+	OracleBgpAsn pulumi.StringInput `pulumi:"oracleBgpAsn"`
+	// The IP address for the Oracle end of the inside tunnel interface.
+	OracleInterfaceIp pulumi.StringInput `pulumi:"oracleInterfaceIp"`
+	// The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+	OracleInterfaceIpv6 pulumi.StringInput `pulumi:"oracleInterfaceIpv6"`
+}
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput)
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray and GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray{ GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs{...} }
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray []GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoInput
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput {
+	return o
+}
+
+// The state of the BGP IPv6 session.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) BgpIpv6state() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string { return v.BgpIpv6state }).(pulumi.StringOutput)
+}
+
+// The state of the BGP session.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) BgpState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string { return v.BgpState }).(pulumi.StringOutput)
+}
+
+// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) CustomerBgpAsn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string { return v.CustomerBgpAsn }).(pulumi.StringOutput)
+}
+
+// The IP address for the CPE end of the inside tunnel interface.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) CustomerInterfaceIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string {
+		return v.CustomerInterfaceIp
+	}).(pulumi.StringOutput)
+}
+
+// The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) CustomerInterfaceIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string {
+		return v.CustomerInterfaceIpv6
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle BGP ASN.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) OracleBgpAsn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string { return v.OracleBgpAsn }).(pulumi.StringOutput)
+}
+
+// The IP address for the Oracle end of the inside tunnel interface.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) OracleInterfaceIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string {
+		return v.OracleInterfaceIp
+	}).(pulumi.StringOutput)
+}
+
+// The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) OracleInterfaceIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string {
+		return v.OracleInterfaceIpv6
+	}).(pulumi.StringOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo {
+		return vs[0].([]GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo)[vs[1].(int)]
+	}).(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig struct {
+	// Lists IPv4 or IPv6-enabled subnets in your on-premises network.
+	CpeTrafficSelectors []string `pulumi:"cpeTrafficSelectors"`
+	// Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
+	OracleTrafficSelectors []string `pulumi:"oracleTrafficSelectors"`
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs and GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs{...}
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs struct {
+	// Lists IPv4 or IPv6-enabled subnets in your on-premises network.
+	CpeTrafficSelectors pulumi.StringArrayInput `pulumi:"cpeTrafficSelectors"`
+	// Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
+	OracleTrafficSelectors pulumi.StringArrayInput `pulumi:"oracleTrafficSelectors"`
+}
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput)
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray and GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray{ GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs{...} }
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray []GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigInput
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput {
+	return o
+}
+
+// Lists IPv4 or IPv6-enabled subnets in your on-premises network.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput) CpeTrafficSelectors() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig) []string {
+		return v.CpeTrafficSelectors
+	}).(pulumi.StringArrayOutput)
+}
+
+// Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput) OracleTrafficSelectors() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig) []string {
+		return v.OracleTrafficSelectors
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig {
+		return vs[0].([]GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig)[vs[1].(int)]
+	}).(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail struct {
+	// Phase two authentication algorithm proposed during tunnel negotiation.
+	CustomAuthenticationAlgorithm string `pulumi:"customAuthenticationAlgorithm"`
+	// The proposed custom Diffie-Hellman group.
+	CustomDhGroup string `pulumi:"customDhGroup"`
+	// The proposed custom phase two encryption algorithm.
+	CustomEncryptionAlgorithm string `pulumi:"customEncryptionAlgorithm"`
+	// Indicates whether custom phase one configuration is enabled. If this option is not enabled, default settings are proposed.
+	IsCustomPhaseOneConfig bool `pulumi:"isCustomPhaseOneConfig"`
+	// Indicates whether IKE phase one is established.
+	IsIkeEstablished bool `pulumi:"isIkeEstablished"`
+	// The total configured lifetime of the IKE security association.
+	Lifetime int `pulumi:"lifetime"`
+	// The negotiated phase two authentication algorithm.
+	NegotiatedAuthenticationAlgorithm string `pulumi:"negotiatedAuthenticationAlgorithm"`
+	// The negotiated Diffie-Hellman group.
+	NegotiatedDhGroup string `pulumi:"negotiatedDhGroup"`
+	// The negotiated encryption algorithm.
+	NegotiatedEncryptionAlgorithm string `pulumi:"negotiatedEncryptionAlgorithm"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetime string `pulumi:"remainingLifetime"`
+	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	RemainingLifetimeLastRetrieved string `pulumi:"remainingLifetimeLastRetrieved"`
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs and GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs{...}
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs struct {
+	// Phase two authentication algorithm proposed during tunnel negotiation.
+	CustomAuthenticationAlgorithm pulumi.StringInput `pulumi:"customAuthenticationAlgorithm"`
+	// The proposed custom Diffie-Hellman group.
+	CustomDhGroup pulumi.StringInput `pulumi:"customDhGroup"`
+	// The proposed custom phase two encryption algorithm.
+	CustomEncryptionAlgorithm pulumi.StringInput `pulumi:"customEncryptionAlgorithm"`
+	// Indicates whether custom phase one configuration is enabled. If this option is not enabled, default settings are proposed.
+	IsCustomPhaseOneConfig pulumi.BoolInput `pulumi:"isCustomPhaseOneConfig"`
+	// Indicates whether IKE phase one is established.
+	IsIkeEstablished pulumi.BoolInput `pulumi:"isIkeEstablished"`
+	// The total configured lifetime of the IKE security association.
+	Lifetime pulumi.IntInput `pulumi:"lifetime"`
+	// The negotiated phase two authentication algorithm.
+	NegotiatedAuthenticationAlgorithm pulumi.StringInput `pulumi:"negotiatedAuthenticationAlgorithm"`
+	// The negotiated Diffie-Hellman group.
+	NegotiatedDhGroup pulumi.StringInput `pulumi:"negotiatedDhGroup"`
+	// The negotiated encryption algorithm.
+	NegotiatedEncryptionAlgorithm pulumi.StringInput `pulumi:"negotiatedEncryptionAlgorithm"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetime pulumi.StringInput `pulumi:"remainingLifetime"`
+	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	RemainingLifetimeLastRetrieved pulumi.StringInput `pulumi:"remainingLifetimeLastRetrieved"`
+}
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput)
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray and GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray{ GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs{...} }
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray []GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailInput
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput {
+	return o
+}
+
+// Phase two authentication algorithm proposed during tunnel negotiation.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) CustomAuthenticationAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) string {
+		return v.CustomAuthenticationAlgorithm
+	}).(pulumi.StringOutput)
+}
+
+// The proposed custom Diffie-Hellman group.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) CustomDhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) string { return v.CustomDhGroup }).(pulumi.StringOutput)
+}
+
+// The proposed custom phase two encryption algorithm.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) CustomEncryptionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) string {
+		return v.CustomEncryptionAlgorithm
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether custom phase one configuration is enabled. If this option is not enabled, default settings are proposed.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) IsCustomPhaseOneConfig() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) bool {
+		return v.IsCustomPhaseOneConfig
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether IKE phase one is established.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) IsIkeEstablished() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) bool { return v.IsIkeEstablished }).(pulumi.BoolOutput)
+}
+
+// The total configured lifetime of the IKE security association.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) Lifetime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) int { return v.Lifetime }).(pulumi.IntOutput)
+}
+
+// The negotiated phase two authentication algorithm.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) NegotiatedAuthenticationAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) string {
+		return v.NegotiatedAuthenticationAlgorithm
+	}).(pulumi.StringOutput)
+}
+
+// The negotiated Diffie-Hellman group.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) NegotiatedDhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) string {
+		return v.NegotiatedDhGroup
+	}).(pulumi.StringOutput)
+}
+
+// The negotiated encryption algorithm.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) NegotiatedEncryptionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) string {
+		return v.NegotiatedEncryptionAlgorithm
+	}).(pulumi.StringOutput)
+}
+
+// The remaining lifetime before the key is refreshed.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) RemainingLifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) string {
+		return v.RemainingLifetime
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) RemainingLifetimeLastRetrieved() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) string {
+		return v.RemainingLifetimeLastRetrieved
+	}).(pulumi.StringOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail {
+		return vs[0].([]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail)[vs[1].(int)]
+	}).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail struct {
+	// Phase two authentication algorithm proposed during tunnel negotiation.
+	CustomAuthenticationAlgorithm string `pulumi:"customAuthenticationAlgorithm"`
+	// The proposed custom phase two encryption algorithm.
+	CustomEncryptionAlgorithm string `pulumi:"customEncryptionAlgorithm"`
+	// The proposed Diffie-Hellman group.
+	DhGroup string `pulumi:"dhGroup"`
+	// Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
+	IsCustomPhaseTwoConfig bool `pulumi:"isCustomPhaseTwoConfig"`
+	// Indicates that ESP phase two is established.
+	IsEspEstablished bool `pulumi:"isEspEstablished"`
+	// Indicates that PFS (perfect forward secrecy) is enabled.
+	IsPfsEnabled bool `pulumi:"isPfsEnabled"`
+	// The total configured lifetime of the IKE security association.
+	Lifetime int `pulumi:"lifetime"`
+	// The negotiated phase two authentication algorithm.
+	NegotiatedAuthenticationAlgorithm string `pulumi:"negotiatedAuthenticationAlgorithm"`
+	// The negotiated Diffie-Hellman group.
+	NegotiatedDhGroup string `pulumi:"negotiatedDhGroup"`
+	// The negotiated encryption algorithm.
+	NegotiatedEncryptionAlgorithm string `pulumi:"negotiatedEncryptionAlgorithm"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetime string `pulumi:"remainingLifetime"`
+	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	RemainingLifetimeLastRetrieved string `pulumi:"remainingLifetimeLastRetrieved"`
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs and GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs{...}
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs struct {
+	// Phase two authentication algorithm proposed during tunnel negotiation.
+	CustomAuthenticationAlgorithm pulumi.StringInput `pulumi:"customAuthenticationAlgorithm"`
+	// The proposed custom phase two encryption algorithm.
+	CustomEncryptionAlgorithm pulumi.StringInput `pulumi:"customEncryptionAlgorithm"`
+	// The proposed Diffie-Hellman group.
+	DhGroup pulumi.StringInput `pulumi:"dhGroup"`
+	// Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
+	IsCustomPhaseTwoConfig pulumi.BoolInput `pulumi:"isCustomPhaseTwoConfig"`
+	// Indicates that ESP phase two is established.
+	IsEspEstablished pulumi.BoolInput `pulumi:"isEspEstablished"`
+	// Indicates that PFS (perfect forward secrecy) is enabled.
+	IsPfsEnabled pulumi.BoolInput `pulumi:"isPfsEnabled"`
+	// The total configured lifetime of the IKE security association.
+	Lifetime pulumi.IntInput `pulumi:"lifetime"`
+	// The negotiated phase two authentication algorithm.
+	NegotiatedAuthenticationAlgorithm pulumi.StringInput `pulumi:"negotiatedAuthenticationAlgorithm"`
+	// The negotiated Diffie-Hellman group.
+	NegotiatedDhGroup pulumi.StringInput `pulumi:"negotiatedDhGroup"`
+	// The negotiated encryption algorithm.
+	NegotiatedEncryptionAlgorithm pulumi.StringInput `pulumi:"negotiatedEncryptionAlgorithm"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetime pulumi.StringInput `pulumi:"remainingLifetime"`
+	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	RemainingLifetimeLastRetrieved pulumi.StringInput `pulumi:"remainingLifetimeLastRetrieved"`
+}
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput)
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray and GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray{ GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs{...} }
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray []GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailInput
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput {
+	return o
+}
+
+// Phase two authentication algorithm proposed during tunnel negotiation.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) CustomAuthenticationAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) string {
+		return v.CustomAuthenticationAlgorithm
+	}).(pulumi.StringOutput)
+}
+
+// The proposed custom phase two encryption algorithm.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) CustomEncryptionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) string {
+		return v.CustomEncryptionAlgorithm
+	}).(pulumi.StringOutput)
+}
+
+// The proposed Diffie-Hellman group.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) DhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) string { return v.DhGroup }).(pulumi.StringOutput)
+}
+
+// Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) IsCustomPhaseTwoConfig() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) bool {
+		return v.IsCustomPhaseTwoConfig
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates that ESP phase two is established.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) IsEspEstablished() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) bool { return v.IsEspEstablished }).(pulumi.BoolOutput)
+}
+
+// Indicates that PFS (perfect forward secrecy) is enabled.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) IsPfsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) bool { return v.IsPfsEnabled }).(pulumi.BoolOutput)
+}
+
+// The total configured lifetime of the IKE security association.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) Lifetime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) int { return v.Lifetime }).(pulumi.IntOutput)
+}
+
+// The negotiated phase two authentication algorithm.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) NegotiatedAuthenticationAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) string {
+		return v.NegotiatedAuthenticationAlgorithm
+	}).(pulumi.StringOutput)
+}
+
+// The negotiated Diffie-Hellman group.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) NegotiatedDhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) string {
+		return v.NegotiatedDhGroup
+	}).(pulumi.StringOutput)
+}
+
+// The negotiated encryption algorithm.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) NegotiatedEncryptionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) string {
+		return v.NegotiatedEncryptionAlgorithm
+	}).(pulumi.StringOutput)
+}
+
+// The remaining lifetime before the key is refreshed.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) RemainingLifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) string {
+		return v.RemainingLifetime
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) RemainingLifetimeLastRetrieved() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) string {
+		return v.RemainingLifetimeLastRetrieved
+	}).(pulumi.StringOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail {
+		return vs[0].([]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail)[vs[1].(int)]
+	}).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput)
+}
+
+type GetIpsecConnectionsConnection struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+	CpeId string `pulumi:"cpeId"`
+	// Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier here must correspond to the value for `cpeLocalIdentifierType`.
+	CpeLocalIdentifier string `pulumi:"cpeLocalIdentifier"`
+	// The type of identifier for your CPE device. The value here must correspond to the value for `cpeLocalIdentifier`.
+	CpeLocalIdentifierType string `pulumi:"cpeLocalIdentifierType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+	DrgId string `pulumi:"drgId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// The IPSec connection's current state.
+	State string `pulumi:"state"`
+	// Static routes to the CPE. The CIDR must not be a multicast address or class E address.
+	StaticRoutes []string `pulumi:"staticRoutes"`
+	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The transport type used for the IPSec connection.
+	TransportType string `pulumi:"transportType"`
+}
+
+// GetIpsecConnectionsConnectionInput is an input type that accepts GetIpsecConnectionsConnectionArgs and GetIpsecConnectionsConnectionOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionsConnectionInput` via:
+//
+//	GetIpsecConnectionsConnectionArgs{...}
+type GetIpsecConnectionsConnectionInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionsConnectionOutput() GetIpsecConnectionsConnectionOutput
+	ToGetIpsecConnectionsConnectionOutputWithContext(context.Context) GetIpsecConnectionsConnectionOutput
+}
+
+type GetIpsecConnectionsConnectionArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+	CpeId pulumi.StringInput `pulumi:"cpeId"`
+	// Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier here must correspond to the value for `cpeLocalIdentifierType`.
+	CpeLocalIdentifier pulumi.StringInput `pulumi:"cpeLocalIdentifier"`
+	// The type of identifier for your CPE device. The value here must correspond to the value for `cpeLocalIdentifier`.
+	CpeLocalIdentifierType pulumi.StringInput `pulumi:"cpeLocalIdentifierType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+	DrgId pulumi.StringInput `pulumi:"drgId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// The IPSec connection's current state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Static routes to the CPE. The CIDR must not be a multicast address or class E address.
+	StaticRoutes pulumi.StringArrayInput `pulumi:"staticRoutes"`
+	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The transport type used for the IPSec connection.
+	TransportType pulumi.StringInput `pulumi:"transportType"`
+}
+
+func (GetIpsecConnectionsConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionsConnection)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionsConnectionArgs) ToGetIpsecConnectionsConnectionOutput() GetIpsecConnectionsConnectionOutput {
+	return i.ToGetIpsecConnectionsConnectionOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionsConnectionArgs) ToGetIpsecConnectionsConnectionOutputWithContext(ctx context.Context) GetIpsecConnectionsConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionsConnectionOutput)
+}
+
+// GetIpsecConnectionsConnectionArrayInput is an input type that accepts GetIpsecConnectionsConnectionArray and GetIpsecConnectionsConnectionArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionsConnectionArrayInput` via:
+//
+//	GetIpsecConnectionsConnectionArray{ GetIpsecConnectionsConnectionArgs{...} }
+type GetIpsecConnectionsConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionsConnectionArrayOutput() GetIpsecConnectionsConnectionArrayOutput
+	ToGetIpsecConnectionsConnectionArrayOutputWithContext(context.Context) GetIpsecConnectionsConnectionArrayOutput
+}
+
+type GetIpsecConnectionsConnectionArray []GetIpsecConnectionsConnectionInput
+
+func (GetIpsecConnectionsConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionsConnection)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionsConnectionArray) ToGetIpsecConnectionsConnectionArrayOutput() GetIpsecConnectionsConnectionArrayOutput {
+	return i.ToGetIpsecConnectionsConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionsConnectionArray) ToGetIpsecConnectionsConnectionArrayOutputWithContext(ctx context.Context) GetIpsecConnectionsConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionsConnectionArrayOutput)
+}
+
+type GetIpsecConnectionsConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionsConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionsConnection)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionsConnectionOutput) ToGetIpsecConnectionsConnectionOutput() GetIpsecConnectionsConnectionOutput {
+	return o
+}
+
+func (o GetIpsecConnectionsConnectionOutput) ToGetIpsecConnectionsConnectionOutputWithContext(ctx context.Context) GetIpsecConnectionsConnectionOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetIpsecConnectionsConnectionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+func (o GetIpsecConnectionsConnectionOutput) CpeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.CpeId }).(pulumi.StringOutput)
+}
+
+// Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier here must correspond to the value for `cpeLocalIdentifierType`.
+func (o GetIpsecConnectionsConnectionOutput) CpeLocalIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.CpeLocalIdentifier }).(pulumi.StringOutput)
+}
+
+// The type of identifier for your CPE device. The value here must correspond to the value for `cpeLocalIdentifier`.
+func (o GetIpsecConnectionsConnectionOutput) CpeLocalIdentifierType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.CpeLocalIdentifierType }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIpsecConnectionsConnectionOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetIpsecConnectionsConnectionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+func (o GetIpsecConnectionsConnectionOutput) DrgId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.DrgId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIpsecConnectionsConnectionOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetIpsecConnectionsConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The IPSec connection's current state.
+func (o GetIpsecConnectionsConnectionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Static routes to the CPE. The CIDR must not be a multicast address or class E address.
+func (o GetIpsecConnectionsConnectionOutput) StaticRoutes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) []string { return v.StaticRoutes }).(pulumi.StringArrayOutput)
+}
+
+// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIpsecConnectionsConnectionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The transport type used for the IPSec connection.
+func (o GetIpsecConnectionsConnectionOutput) TransportType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsConnection) string { return v.TransportType }).(pulumi.StringOutput)
+}
+
+type GetIpsecConnectionsConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionsConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionsConnection)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionsConnectionArrayOutput) ToGetIpsecConnectionsConnectionArrayOutput() GetIpsecConnectionsConnectionArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionsConnectionArrayOutput) ToGetIpsecConnectionsConnectionArrayOutputWithContext(ctx context.Context) GetIpsecConnectionsConnectionArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionsConnectionArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionsConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionsConnection {
+		return vs[0].([]GetIpsecConnectionsConnection)[vs[1].(int)]
+	}).(GetIpsecConnectionsConnectionOutput)
+}
+
+type GetIpsecConnectionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIpsecConnectionsFilterInput is an input type that accepts GetIpsecConnectionsFilterArgs and GetIpsecConnectionsFilterOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionsFilterInput` via:
+//
+//	GetIpsecConnectionsFilterArgs{...}
+type GetIpsecConnectionsFilterInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionsFilterOutput() GetIpsecConnectionsFilterOutput
+	ToGetIpsecConnectionsFilterOutputWithContext(context.Context) GetIpsecConnectionsFilterOutput
+}
+
+type GetIpsecConnectionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIpsecConnectionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionsFilterArgs) ToGetIpsecConnectionsFilterOutput() GetIpsecConnectionsFilterOutput {
+	return i.ToGetIpsecConnectionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionsFilterArgs) ToGetIpsecConnectionsFilterOutputWithContext(ctx context.Context) GetIpsecConnectionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionsFilterOutput)
+}
+
+// GetIpsecConnectionsFilterArrayInput is an input type that accepts GetIpsecConnectionsFilterArray and GetIpsecConnectionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionsFilterArrayInput` via:
+//
+//	GetIpsecConnectionsFilterArray{ GetIpsecConnectionsFilterArgs{...} }
+type GetIpsecConnectionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionsFilterArrayOutput() GetIpsecConnectionsFilterArrayOutput
+	ToGetIpsecConnectionsFilterArrayOutputWithContext(context.Context) GetIpsecConnectionsFilterArrayOutput
+}
+
+type GetIpsecConnectionsFilterArray []GetIpsecConnectionsFilterInput
+
+func (GetIpsecConnectionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionsFilterArray) ToGetIpsecConnectionsFilterArrayOutput() GetIpsecConnectionsFilterArrayOutput {
+	return i.ToGetIpsecConnectionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionsFilterArray) ToGetIpsecConnectionsFilterArrayOutputWithContext(ctx context.Context) GetIpsecConnectionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionsFilterArrayOutput)
+}
+
+type GetIpsecConnectionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionsFilterOutput) ToGetIpsecConnectionsFilterOutput() GetIpsecConnectionsFilterOutput {
+	return o
+}
+
+func (o GetIpsecConnectionsFilterOutput) ToGetIpsecConnectionsFilterOutputWithContext(ctx context.Context) GetIpsecConnectionsFilterOutput {
+	return o
+}
+
+func (o GetIpsecConnectionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIpsecConnectionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIpsecConnectionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIpsecConnectionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIpsecConnectionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionsFilterArrayOutput) ToGetIpsecConnectionsFilterArrayOutput() GetIpsecConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionsFilterArrayOutput) ToGetIpsecConnectionsFilterArrayOutputWithContext(ctx context.Context) GetIpsecConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionsFilter {
+		return vs[0].([]GetIpsecConnectionsFilter)[vs[1].(int)]
+	}).(GetIpsecConnectionsFilterOutput)
+}
+
+type GetIpsecStatusFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIpsecStatusFilterInput is an input type that accepts GetIpsecStatusFilterArgs and GetIpsecStatusFilterOutput values.
+// You can construct a concrete instance of `GetIpsecStatusFilterInput` via:
+//
+//	GetIpsecStatusFilterArgs{...}
+type GetIpsecStatusFilterInput interface {
+	pulumi.Input
+
+	ToGetIpsecStatusFilterOutput() GetIpsecStatusFilterOutput
+	ToGetIpsecStatusFilterOutputWithContext(context.Context) GetIpsecStatusFilterOutput
+}
+
+type GetIpsecStatusFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIpsecStatusFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecStatusFilter)(nil)).Elem()
+}
+
+func (i GetIpsecStatusFilterArgs) ToGetIpsecStatusFilterOutput() GetIpsecStatusFilterOutput {
+	return i.ToGetIpsecStatusFilterOutputWithContext(context.Background())
+}
+
+func (i GetIpsecStatusFilterArgs) ToGetIpsecStatusFilterOutputWithContext(ctx context.Context) GetIpsecStatusFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecStatusFilterOutput)
+}
+
+// GetIpsecStatusFilterArrayInput is an input type that accepts GetIpsecStatusFilterArray and GetIpsecStatusFilterArrayOutput values.
+// You can construct a concrete instance of `GetIpsecStatusFilterArrayInput` via:
+//
+//	GetIpsecStatusFilterArray{ GetIpsecStatusFilterArgs{...} }
+type GetIpsecStatusFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecStatusFilterArrayOutput() GetIpsecStatusFilterArrayOutput
+	ToGetIpsecStatusFilterArrayOutputWithContext(context.Context) GetIpsecStatusFilterArrayOutput
+}
+
+type GetIpsecStatusFilterArray []GetIpsecStatusFilterInput
+
+func (GetIpsecStatusFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecStatusFilter)(nil)).Elem()
+}
+
+func (i GetIpsecStatusFilterArray) ToGetIpsecStatusFilterArrayOutput() GetIpsecStatusFilterArrayOutput {
+	return i.ToGetIpsecStatusFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecStatusFilterArray) ToGetIpsecStatusFilterArrayOutputWithContext(ctx context.Context) GetIpsecStatusFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecStatusFilterArrayOutput)
+}
+
+type GetIpsecStatusFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecStatusFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecStatusFilter)(nil)).Elem()
+}
+
+func (o GetIpsecStatusFilterOutput) ToGetIpsecStatusFilterOutput() GetIpsecStatusFilterOutput {
+	return o
+}
+
+func (o GetIpsecStatusFilterOutput) ToGetIpsecStatusFilterOutputWithContext(ctx context.Context) GetIpsecStatusFilterOutput {
+	return o
+}
+
+func (o GetIpsecStatusFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecStatusFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIpsecStatusFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIpsecStatusFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIpsecStatusFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIpsecStatusFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIpsecStatusFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecStatusFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecStatusFilter)(nil)).Elem()
+}
+
+func (o GetIpsecStatusFilterArrayOutput) ToGetIpsecStatusFilterArrayOutput() GetIpsecStatusFilterArrayOutput {
+	return o
+}
+
+func (o GetIpsecStatusFilterArrayOutput) ToGetIpsecStatusFilterArrayOutputWithContext(ctx context.Context) GetIpsecStatusFilterArrayOutput {
+	return o
+}
+
+func (o GetIpsecStatusFilterArrayOutput) Index(i pulumi.IntInput) GetIpsecStatusFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecStatusFilter {
+		return vs[0].([]GetIpsecStatusFilter)[vs[1].(int)]
+	}).(GetIpsecStatusFilterOutput)
+}
+
+type GetIpsecStatusTunnel struct {
+	// The IP address of Oracle's VPN headend.  Example: `203.0.113.50`
+	IpAddress string `pulumi:"ipAddress"`
+	// The tunnel's current state.
+	State string `pulumi:"state"`
+	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// When the state of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStateModified string `pulumi:"timeStateModified"`
+}
+
+// GetIpsecStatusTunnelInput is an input type that accepts GetIpsecStatusTunnelArgs and GetIpsecStatusTunnelOutput values.
+// You can construct a concrete instance of `GetIpsecStatusTunnelInput` via:
+//
+//	GetIpsecStatusTunnelArgs{...}
+type GetIpsecStatusTunnelInput interface {
+	pulumi.Input
+
+	ToGetIpsecStatusTunnelOutput() GetIpsecStatusTunnelOutput
+	ToGetIpsecStatusTunnelOutputWithContext(context.Context) GetIpsecStatusTunnelOutput
+}
+
+type GetIpsecStatusTunnelArgs struct {
+	// The IP address of Oracle's VPN headend.  Example: `203.0.113.50`
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The tunnel's current state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// When the state of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStateModified pulumi.StringInput `pulumi:"timeStateModified"`
+}
+
+func (GetIpsecStatusTunnelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecStatusTunnel)(nil)).Elem()
+}
+
+func (i GetIpsecStatusTunnelArgs) ToGetIpsecStatusTunnelOutput() GetIpsecStatusTunnelOutput {
+	return i.ToGetIpsecStatusTunnelOutputWithContext(context.Background())
+}
+
+func (i GetIpsecStatusTunnelArgs) ToGetIpsecStatusTunnelOutputWithContext(ctx context.Context) GetIpsecStatusTunnelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecStatusTunnelOutput)
+}
+
+// GetIpsecStatusTunnelArrayInput is an input type that accepts GetIpsecStatusTunnelArray and GetIpsecStatusTunnelArrayOutput values.
+// You can construct a concrete instance of `GetIpsecStatusTunnelArrayInput` via:
+//
+//	GetIpsecStatusTunnelArray{ GetIpsecStatusTunnelArgs{...} }
+type GetIpsecStatusTunnelArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecStatusTunnelArrayOutput() GetIpsecStatusTunnelArrayOutput
+	ToGetIpsecStatusTunnelArrayOutputWithContext(context.Context) GetIpsecStatusTunnelArrayOutput
+}
+
+type GetIpsecStatusTunnelArray []GetIpsecStatusTunnelInput
+
+func (GetIpsecStatusTunnelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecStatusTunnel)(nil)).Elem()
+}
+
+func (i GetIpsecStatusTunnelArray) ToGetIpsecStatusTunnelArrayOutput() GetIpsecStatusTunnelArrayOutput {
+	return i.ToGetIpsecStatusTunnelArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecStatusTunnelArray) ToGetIpsecStatusTunnelArrayOutputWithContext(ctx context.Context) GetIpsecStatusTunnelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecStatusTunnelArrayOutput)
+}
+
+type GetIpsecStatusTunnelOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecStatusTunnelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecStatusTunnel)(nil)).Elem()
+}
+
+func (o GetIpsecStatusTunnelOutput) ToGetIpsecStatusTunnelOutput() GetIpsecStatusTunnelOutput {
+	return o
+}
+
+func (o GetIpsecStatusTunnelOutput) ToGetIpsecStatusTunnelOutputWithContext(ctx context.Context) GetIpsecStatusTunnelOutput {
+	return o
+}
+
+// The IP address of Oracle's VPN headend.  Example: `203.0.113.50`
+func (o GetIpsecStatusTunnelOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecStatusTunnel) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The tunnel's current state.
+func (o GetIpsecStatusTunnelOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecStatusTunnel) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIpsecStatusTunnelOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecStatusTunnel) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// When the state of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIpsecStatusTunnelOutput) TimeStateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecStatusTunnel) string { return v.TimeStateModified }).(pulumi.StringOutput)
+}
+
+type GetIpsecStatusTunnelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecStatusTunnelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecStatusTunnel)(nil)).Elem()
+}
+
+func (o GetIpsecStatusTunnelArrayOutput) ToGetIpsecStatusTunnelArrayOutput() GetIpsecStatusTunnelArrayOutput {
+	return o
+}
+
+func (o GetIpsecStatusTunnelArrayOutput) ToGetIpsecStatusTunnelArrayOutputWithContext(ctx context.Context) GetIpsecStatusTunnelArrayOutput {
+	return o
+}
+
+func (o GetIpsecStatusTunnelArrayOutput) Index(i pulumi.IntInput) GetIpsecStatusTunnelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecStatusTunnel {
+		return vs[0].([]GetIpsecStatusTunnel)[vs[1].(int)]
+	}).(GetIpsecStatusTunnelOutput)
+}
+
+type GetIpv6sFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIpv6sFilterInput is an input type that accepts GetIpv6sFilterArgs and GetIpv6sFilterOutput values.
+// You can construct a concrete instance of `GetIpv6sFilterInput` via:
+//
+//	GetIpv6sFilterArgs{...}
+type GetIpv6sFilterInput interface {
+	pulumi.Input
+
+	ToGetIpv6sFilterOutput() GetIpv6sFilterOutput
+	ToGetIpv6sFilterOutputWithContext(context.Context) GetIpv6sFilterOutput
+}
+
+type GetIpv6sFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIpv6sFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpv6sFilter)(nil)).Elem()
+}
+
+func (i GetIpv6sFilterArgs) ToGetIpv6sFilterOutput() GetIpv6sFilterOutput {
+	return i.ToGetIpv6sFilterOutputWithContext(context.Background())
+}
+
+func (i GetIpv6sFilterArgs) ToGetIpv6sFilterOutputWithContext(ctx context.Context) GetIpv6sFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6sFilterOutput)
+}
+
+// GetIpv6sFilterArrayInput is an input type that accepts GetIpv6sFilterArray and GetIpv6sFilterArrayOutput values.
+// You can construct a concrete instance of `GetIpv6sFilterArrayInput` via:
+//
+//	GetIpv6sFilterArray{ GetIpv6sFilterArgs{...} }
+type GetIpv6sFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIpv6sFilterArrayOutput() GetIpv6sFilterArrayOutput
+	ToGetIpv6sFilterArrayOutputWithContext(context.Context) GetIpv6sFilterArrayOutput
+}
+
+type GetIpv6sFilterArray []GetIpv6sFilterInput
+
+func (GetIpv6sFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpv6sFilter)(nil)).Elem()
+}
+
+func (i GetIpv6sFilterArray) ToGetIpv6sFilterArrayOutput() GetIpv6sFilterArrayOutput {
+	return i.ToGetIpv6sFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpv6sFilterArray) ToGetIpv6sFilterArrayOutputWithContext(ctx context.Context) GetIpv6sFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6sFilterArrayOutput)
+}
+
+type GetIpv6sFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIpv6sFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpv6sFilter)(nil)).Elem()
+}
+
+func (o GetIpv6sFilterOutput) ToGetIpv6sFilterOutput() GetIpv6sFilterOutput {
+	return o
+}
+
+func (o GetIpv6sFilterOutput) ToGetIpv6sFilterOutputWithContext(ctx context.Context) GetIpv6sFilterOutput {
+	return o
+}
+
+func (o GetIpv6sFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIpv6sFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIpv6sFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIpv6sFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIpv6sFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIpv6sFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpv6sFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpv6sFilter)(nil)).Elem()
+}
+
+func (o GetIpv6sFilterArrayOutput) ToGetIpv6sFilterArrayOutput() GetIpv6sFilterArrayOutput {
+	return o
+}
+
+func (o GetIpv6sFilterArrayOutput) ToGetIpv6sFilterArrayOutputWithContext(ctx context.Context) GetIpv6sFilterArrayOutput {
+	return o
+}
+
+func (o GetIpv6sFilterArrayOutput) Index(i pulumi.IntInput) GetIpv6sFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpv6sFilter {
+		return vs[0].([]GetIpv6sFilter)[vs[1].(int)]
+	}).(GetIpv6sFilterOutput)
+}
+
+type GetIpv6sIpv6 struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+	Id string `pulumi:"id"`
+	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
+	IpAddress      string `pulumi:"ipAddress"`
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+	// The IPv6's current state.
+	State string `pulumi:"state"`
+	// The OCID of the subnet.
+	SubnetId string `pulumi:"subnetId"`
+	// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The OCID of the VNIC.
+	VnicId string `pulumi:"vnicId"`
+}
+
+// GetIpv6sIpv6Input is an input type that accepts GetIpv6sIpv6Args and GetIpv6sIpv6Output values.
+// You can construct a concrete instance of `GetIpv6sIpv6Input` via:
+//
+//	GetIpv6sIpv6Args{...}
+type GetIpv6sIpv6Input interface {
+	pulumi.Input
+
+	ToGetIpv6sIpv6Output() GetIpv6sIpv6Output
+	ToGetIpv6sIpv6OutputWithContext(context.Context) GetIpv6sIpv6Output
+}
+
+type GetIpv6sIpv6Args struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+	Id pulumi.StringInput `pulumi:"id"`
+	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
+	IpAddress      pulumi.StringInput `pulumi:"ipAddress"`
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+	// The IPv6's current state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of the subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The OCID of the VNIC.
+	VnicId pulumi.StringInput `pulumi:"vnicId"`
+}
+
+func (GetIpv6sIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpv6sIpv6)(nil)).Elem()
+}
+
+func (i GetIpv6sIpv6Args) ToGetIpv6sIpv6Output() GetIpv6sIpv6Output {
+	return i.ToGetIpv6sIpv6OutputWithContext(context.Background())
+}
+
+func (i GetIpv6sIpv6Args) ToGetIpv6sIpv6OutputWithContext(ctx context.Context) GetIpv6sIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6sIpv6Output)
+}
+
+// GetIpv6sIpv6ArrayInput is an input type that accepts GetIpv6sIpv6Array and GetIpv6sIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetIpv6sIpv6ArrayInput` via:
+//
+//	GetIpv6sIpv6Array{ GetIpv6sIpv6Args{...} }
+type GetIpv6sIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetIpv6sIpv6ArrayOutput() GetIpv6sIpv6ArrayOutput
+	ToGetIpv6sIpv6ArrayOutputWithContext(context.Context) GetIpv6sIpv6ArrayOutput
+}
+
+type GetIpv6sIpv6Array []GetIpv6sIpv6Input
+
+func (GetIpv6sIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpv6sIpv6)(nil)).Elem()
+}
+
+func (i GetIpv6sIpv6Array) ToGetIpv6sIpv6ArrayOutput() GetIpv6sIpv6ArrayOutput {
+	return i.ToGetIpv6sIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpv6sIpv6Array) ToGetIpv6sIpv6ArrayOutputWithContext(ctx context.Context) GetIpv6sIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6sIpv6ArrayOutput)
+}
+
+type GetIpv6sIpv6Output struct{ *pulumi.OutputState }
+
+func (GetIpv6sIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpv6sIpv6)(nil)).Elem()
+}
+
+func (o GetIpv6sIpv6Output) ToGetIpv6sIpv6Output() GetIpv6sIpv6Output {
+	return o
+}
+
+func (o GetIpv6sIpv6Output) ToGetIpv6sIpv6OutputWithContext(ctx context.Context) GetIpv6sIpv6Output {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
+func (o GetIpv6sIpv6Output) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIpv6sIpv6Output) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetIpv6sIpv6Output) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIpv6sIpv6Output) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+func (o GetIpv6sIpv6Output) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
+func (o GetIpv6sIpv6Output) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+func (o GetIpv6sIpv6Output) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
+}
+
+// The IPv6's current state.
+func (o GetIpv6sIpv6Output) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the subnet.
+func (o GetIpv6sIpv6Output) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIpv6sIpv6Output) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The OCID of the VNIC.
+func (o GetIpv6sIpv6Output) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.VnicId }).(pulumi.StringOutput)
+}
+
+type GetIpv6sIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpv6sIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpv6sIpv6)(nil)).Elem()
+}
+
+func (o GetIpv6sIpv6ArrayOutput) ToGetIpv6sIpv6ArrayOutput() GetIpv6sIpv6ArrayOutput {
+	return o
+}
+
+func (o GetIpv6sIpv6ArrayOutput) ToGetIpv6sIpv6ArrayOutputWithContext(ctx context.Context) GetIpv6sIpv6ArrayOutput {
+	return o
+}
+
+func (o GetIpv6sIpv6ArrayOutput) Index(i pulumi.IntInput) GetIpv6sIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpv6sIpv6 {
+		return vs[0].([]GetIpv6sIpv6)[vs[1].(int)]
+	}).(GetIpv6sIpv6Output)
+}
+
+type GetListingResourceVersionsAppCatalogListingResourceVersion struct {
+	AccessiblePorts        []int    `pulumi:"accessiblePorts"`
+	AllowedActions         []string `pulumi:"allowedActions"`
+	AvailableRegions       []string `pulumi:"availableRegions"`
+	CompatibleShapes       []string `pulumi:"compatibleShapes"`
+	ListingId              string   `pulumi:"listingId"`
+	ListingResourceId      string   `pulumi:"listingResourceId"`
+	ListingResourceVersion string   `pulumi:"listingResourceVersion"`
+	TimePublished          string   `pulumi:"timePublished"`
+}
+
+// GetListingResourceVersionsAppCatalogListingResourceVersionInput is an input type that accepts GetListingResourceVersionsAppCatalogListingResourceVersionArgs and GetListingResourceVersionsAppCatalogListingResourceVersionOutput values.
+// You can construct a concrete instance of `GetListingResourceVersionsAppCatalogListingResourceVersionInput` via:
+//
+//	GetListingResourceVersionsAppCatalogListingResourceVersionArgs{...}
+type GetListingResourceVersionsAppCatalogListingResourceVersionInput interface {
+	pulumi.Input
+
+	ToGetListingResourceVersionsAppCatalogListingResourceVersionOutput() GetListingResourceVersionsAppCatalogListingResourceVersionOutput
+	ToGetListingResourceVersionsAppCatalogListingResourceVersionOutputWithContext(context.Context) GetListingResourceVersionsAppCatalogListingResourceVersionOutput
+}
+
+type GetListingResourceVersionsAppCatalogListingResourceVersionArgs struct {
+	AccessiblePorts        pulumi.IntArrayInput    `pulumi:"accessiblePorts"`
+	AllowedActions         pulumi.StringArrayInput `pulumi:"allowedActions"`
+	AvailableRegions       pulumi.StringArrayInput `pulumi:"availableRegions"`
+	CompatibleShapes       pulumi.StringArrayInput `pulumi:"compatibleShapes"`
+	ListingId              pulumi.StringInput      `pulumi:"listingId"`
+	ListingResourceId      pulumi.StringInput      `pulumi:"listingResourceId"`
+	ListingResourceVersion pulumi.StringInput      `pulumi:"listingResourceVersion"`
+	TimePublished          pulumi.StringInput      `pulumi:"timePublished"`
+}
+
+func (GetListingResourceVersionsAppCatalogListingResourceVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetListingResourceVersionsAppCatalogListingResourceVersion)(nil)).Elem()
+}
+
+func (i GetListingResourceVersionsAppCatalogListingResourceVersionArgs) ToGetListingResourceVersionsAppCatalogListingResourceVersionOutput() GetListingResourceVersionsAppCatalogListingResourceVersionOutput {
+	return i.ToGetListingResourceVersionsAppCatalogListingResourceVersionOutputWithContext(context.Background())
+}
+
+func (i GetListingResourceVersionsAppCatalogListingResourceVersionArgs) ToGetListingResourceVersionsAppCatalogListingResourceVersionOutputWithContext(ctx context.Context) GetListingResourceVersionsAppCatalogListingResourceVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetListingResourceVersionsAppCatalogListingResourceVersionOutput)
+}
+
+// GetListingResourceVersionsAppCatalogListingResourceVersionArrayInput is an input type that accepts GetListingResourceVersionsAppCatalogListingResourceVersionArray and GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput values.
+// You can construct a concrete instance of `GetListingResourceVersionsAppCatalogListingResourceVersionArrayInput` via:
+//
+//	GetListingResourceVersionsAppCatalogListingResourceVersionArray{ GetListingResourceVersionsAppCatalogListingResourceVersionArgs{...} }
+type GetListingResourceVersionsAppCatalogListingResourceVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput() GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput
+	ToGetListingResourceVersionsAppCatalogListingResourceVersionArrayOutputWithContext(context.Context) GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput
+}
+
+type GetListingResourceVersionsAppCatalogListingResourceVersionArray []GetListingResourceVersionsAppCatalogListingResourceVersionInput
+
+func (GetListingResourceVersionsAppCatalogListingResourceVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetListingResourceVersionsAppCatalogListingResourceVersion)(nil)).Elem()
+}
+
+func (i GetListingResourceVersionsAppCatalogListingResourceVersionArray) ToGetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput() GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput {
+	return i.ToGetListingResourceVersionsAppCatalogListingResourceVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetListingResourceVersionsAppCatalogListingResourceVersionArray) ToGetListingResourceVersionsAppCatalogListingResourceVersionArrayOutputWithContext(ctx context.Context) GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput)
+}
+
+type GetListingResourceVersionsAppCatalogListingResourceVersionOutput struct{ *pulumi.OutputState }
+
+func (GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetListingResourceVersionsAppCatalogListingResourceVersion)(nil)).Elem()
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ToGetListingResourceVersionsAppCatalogListingResourceVersionOutput() GetListingResourceVersionsAppCatalogListingResourceVersionOutput {
+	return o
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ToGetListingResourceVersionsAppCatalogListingResourceVersionOutputWithContext(ctx context.Context) GetListingResourceVersionsAppCatalogListingResourceVersionOutput {
+	return o
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) AccessiblePorts() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsAppCatalogListingResourceVersion) []int { return v.AccessiblePorts }).(pulumi.IntArrayOutput)
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) AllowedActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsAppCatalogListingResourceVersion) []string { return v.AllowedActions }).(pulumi.StringArrayOutput)
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) AvailableRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsAppCatalogListingResourceVersion) []string { return v.AvailableRegions }).(pulumi.StringArrayOutput)
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) CompatibleShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsAppCatalogListingResourceVersion) []string { return v.CompatibleShapes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ListingId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsAppCatalogListingResourceVersion) string { return v.ListingId }).(pulumi.StringOutput)
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ListingResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsAppCatalogListingResourceVersion) string { return v.ListingResourceId }).(pulumi.StringOutput)
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ListingResourceVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsAppCatalogListingResourceVersion) string {
+		return v.ListingResourceVersion
+	}).(pulumi.StringOutput)
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) TimePublished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsAppCatalogListingResourceVersion) string { return v.TimePublished }).(pulumi.StringOutput)
+}
+
+type GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetListingResourceVersionsAppCatalogListingResourceVersion)(nil)).Elem()
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput) ToGetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput() GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput {
+	return o
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput) ToGetListingResourceVersionsAppCatalogListingResourceVersionArrayOutputWithContext(ctx context.Context) GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput {
+	return o
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput) Index(i pulumi.IntInput) GetListingResourceVersionsAppCatalogListingResourceVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListingResourceVersionsAppCatalogListingResourceVersion {
+		return vs[0].([]GetListingResourceVersionsAppCatalogListingResourceVersion)[vs[1].(int)]
+	}).(GetListingResourceVersionsAppCatalogListingResourceVersionOutput)
+}
+
+type GetListingResourceVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetListingResourceVersionsFilterInput is an input type that accepts GetListingResourceVersionsFilterArgs and GetListingResourceVersionsFilterOutput values.
+// You can construct a concrete instance of `GetListingResourceVersionsFilterInput` via:
+//
+//	GetListingResourceVersionsFilterArgs{...}
+type GetListingResourceVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetListingResourceVersionsFilterOutput() GetListingResourceVersionsFilterOutput
+	ToGetListingResourceVersionsFilterOutputWithContext(context.Context) GetListingResourceVersionsFilterOutput
+}
+
+type GetListingResourceVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetListingResourceVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetListingResourceVersionsFilter)(nil)).Elem()
+}
+
+func (i GetListingResourceVersionsFilterArgs) ToGetListingResourceVersionsFilterOutput() GetListingResourceVersionsFilterOutput {
+	return i.ToGetListingResourceVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetListingResourceVersionsFilterArgs) ToGetListingResourceVersionsFilterOutputWithContext(ctx context.Context) GetListingResourceVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetListingResourceVersionsFilterOutput)
+}
+
+// GetListingResourceVersionsFilterArrayInput is an input type that accepts GetListingResourceVersionsFilterArray and GetListingResourceVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetListingResourceVersionsFilterArrayInput` via:
+//
+//	GetListingResourceVersionsFilterArray{ GetListingResourceVersionsFilterArgs{...} }
+type GetListingResourceVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetListingResourceVersionsFilterArrayOutput() GetListingResourceVersionsFilterArrayOutput
+	ToGetListingResourceVersionsFilterArrayOutputWithContext(context.Context) GetListingResourceVersionsFilterArrayOutput
+}
+
+type GetListingResourceVersionsFilterArray []GetListingResourceVersionsFilterInput
+
+func (GetListingResourceVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetListingResourceVersionsFilter)(nil)).Elem()
+}
+
+func (i GetListingResourceVersionsFilterArray) ToGetListingResourceVersionsFilterArrayOutput() GetListingResourceVersionsFilterArrayOutput {
+	return i.ToGetListingResourceVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetListingResourceVersionsFilterArray) ToGetListingResourceVersionsFilterArrayOutputWithContext(ctx context.Context) GetListingResourceVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetListingResourceVersionsFilterArrayOutput)
+}
+
+type GetListingResourceVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetListingResourceVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetListingResourceVersionsFilter)(nil)).Elem()
+}
+
+func (o GetListingResourceVersionsFilterOutput) ToGetListingResourceVersionsFilterOutput() GetListingResourceVersionsFilterOutput {
+	return o
+}
+
+func (o GetListingResourceVersionsFilterOutput) ToGetListingResourceVersionsFilterOutputWithContext(ctx context.Context) GetListingResourceVersionsFilterOutput {
+	return o
+}
+
+func (o GetListingResourceVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetListingResourceVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetListingResourceVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetListingResourceVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetListingResourceVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetListingResourceVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetListingResourceVersionsFilter)(nil)).Elem()
+}
+
+func (o GetListingResourceVersionsFilterArrayOutput) ToGetListingResourceVersionsFilterArrayOutput() GetListingResourceVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetListingResourceVersionsFilterArrayOutput) ToGetListingResourceVersionsFilterArrayOutputWithContext(ctx context.Context) GetListingResourceVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetListingResourceVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetListingResourceVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListingResourceVersionsFilter {
+		return vs[0].([]GetListingResourceVersionsFilter)[vs[1].(int)]
+	}).(GetListingResourceVersionsFilterOutput)
+}
+
+type GetLocalPeeringGatewaysFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetLocalPeeringGatewaysFilterInput is an input type that accepts GetLocalPeeringGatewaysFilterArgs and GetLocalPeeringGatewaysFilterOutput values.
+// You can construct a concrete instance of `GetLocalPeeringGatewaysFilterInput` via:
+//
+//	GetLocalPeeringGatewaysFilterArgs{...}
+type GetLocalPeeringGatewaysFilterInput interface {
+	pulumi.Input
+
+	ToGetLocalPeeringGatewaysFilterOutput() GetLocalPeeringGatewaysFilterOutput
+	ToGetLocalPeeringGatewaysFilterOutputWithContext(context.Context) GetLocalPeeringGatewaysFilterOutput
+}
+
+type GetLocalPeeringGatewaysFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetLocalPeeringGatewaysFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalPeeringGatewaysFilter)(nil)).Elem()
+}
+
+func (i GetLocalPeeringGatewaysFilterArgs) ToGetLocalPeeringGatewaysFilterOutput() GetLocalPeeringGatewaysFilterOutput {
+	return i.ToGetLocalPeeringGatewaysFilterOutputWithContext(context.Background())
+}
+
+func (i GetLocalPeeringGatewaysFilterArgs) ToGetLocalPeeringGatewaysFilterOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalPeeringGatewaysFilterOutput)
+}
+
+// GetLocalPeeringGatewaysFilterArrayInput is an input type that accepts GetLocalPeeringGatewaysFilterArray and GetLocalPeeringGatewaysFilterArrayOutput values.
+// You can construct a concrete instance of `GetLocalPeeringGatewaysFilterArrayInput` via:
+//
+//	GetLocalPeeringGatewaysFilterArray{ GetLocalPeeringGatewaysFilterArgs{...} }
+type GetLocalPeeringGatewaysFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetLocalPeeringGatewaysFilterArrayOutput() GetLocalPeeringGatewaysFilterArrayOutput
+	ToGetLocalPeeringGatewaysFilterArrayOutputWithContext(context.Context) GetLocalPeeringGatewaysFilterArrayOutput
+}
+
+type GetLocalPeeringGatewaysFilterArray []GetLocalPeeringGatewaysFilterInput
+
+func (GetLocalPeeringGatewaysFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalPeeringGatewaysFilter)(nil)).Elem()
+}
+
+func (i GetLocalPeeringGatewaysFilterArray) ToGetLocalPeeringGatewaysFilterArrayOutput() GetLocalPeeringGatewaysFilterArrayOutput {
+	return i.ToGetLocalPeeringGatewaysFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocalPeeringGatewaysFilterArray) ToGetLocalPeeringGatewaysFilterArrayOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalPeeringGatewaysFilterArrayOutput)
+}
+
+type GetLocalPeeringGatewaysFilterOutput struct{ *pulumi.OutputState }
+
+func (GetLocalPeeringGatewaysFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalPeeringGatewaysFilter)(nil)).Elem()
+}
+
+func (o GetLocalPeeringGatewaysFilterOutput) ToGetLocalPeeringGatewaysFilterOutput() GetLocalPeeringGatewaysFilterOutput {
+	return o
+}
+
+func (o GetLocalPeeringGatewaysFilterOutput) ToGetLocalPeeringGatewaysFilterOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysFilterOutput {
+	return o
+}
+
+func (o GetLocalPeeringGatewaysFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetLocalPeeringGatewaysFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetLocalPeeringGatewaysFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetLocalPeeringGatewaysFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocalPeeringGatewaysFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalPeeringGatewaysFilter)(nil)).Elem()
+}
+
+func (o GetLocalPeeringGatewaysFilterArrayOutput) ToGetLocalPeeringGatewaysFilterArrayOutput() GetLocalPeeringGatewaysFilterArrayOutput {
+	return o
+}
+
+func (o GetLocalPeeringGatewaysFilterArrayOutput) ToGetLocalPeeringGatewaysFilterArrayOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysFilterArrayOutput {
+	return o
+}
+
+func (o GetLocalPeeringGatewaysFilterArrayOutput) Index(i pulumi.IntInput) GetLocalPeeringGatewaysFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocalPeeringGatewaysFilter {
+		return vs[0].([]GetLocalPeeringGatewaysFilter)[vs[1].(int)]
+	}).(GetLocalPeeringGatewaysFilterOutput)
+}
+
+type GetLocalPeeringGatewaysLocalPeeringGateway struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+	IsCrossTenancyPeering bool `pulumi:"isCrossTenancyPeering"`
+	// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
+	PeerAdvertisedCidr string `pulumi:"peerAdvertisedCidr"`
+	// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
+	PeerAdvertisedCidrDetails []string `pulumi:"peerAdvertisedCidrDetails"`
+	// The OCID of the peered LPG
+	PeerId string `pulumi:"peerId"`
+	// Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
+	PeeringStatus string `pulumi:"peeringStatus"`
+	// Additional information regarding the peering status, if applicable.
+	PeeringStatusDetails string `pulumi:"peeringStatusDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
+	RouteTableId string `pulumi:"routeTableId"`
+	// The LPG's current lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetLocalPeeringGatewaysLocalPeeringGatewayInput is an input type that accepts GetLocalPeeringGatewaysLocalPeeringGatewayArgs and GetLocalPeeringGatewaysLocalPeeringGatewayOutput values.
+// You can construct a concrete instance of `GetLocalPeeringGatewaysLocalPeeringGatewayInput` via:
+//
+//	GetLocalPeeringGatewaysLocalPeeringGatewayArgs{...}
+type GetLocalPeeringGatewaysLocalPeeringGatewayInput interface {
+	pulumi.Input
+
+	ToGetLocalPeeringGatewaysLocalPeeringGatewayOutput() GetLocalPeeringGatewaysLocalPeeringGatewayOutput
+	ToGetLocalPeeringGatewaysLocalPeeringGatewayOutputWithContext(context.Context) GetLocalPeeringGatewaysLocalPeeringGatewayOutput
+}
+
+type GetLocalPeeringGatewaysLocalPeeringGatewayArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+	IsCrossTenancyPeering pulumi.BoolInput `pulumi:"isCrossTenancyPeering"`
+	// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
+	PeerAdvertisedCidr pulumi.StringInput `pulumi:"peerAdvertisedCidr"`
+	// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
+	PeerAdvertisedCidrDetails pulumi.StringArrayInput `pulumi:"peerAdvertisedCidrDetails"`
+	// The OCID of the peered LPG
+	PeerId pulumi.StringInput `pulumi:"peerId"`
+	// Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
+	PeeringStatus pulumi.StringInput `pulumi:"peeringStatus"`
+	// Additional information regarding the peering status, if applicable.
+	PeeringStatusDetails pulumi.StringInput `pulumi:"peeringStatusDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
+	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
+	// The LPG's current lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetLocalPeeringGatewaysLocalPeeringGatewayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalPeeringGatewaysLocalPeeringGateway)(nil)).Elem()
+}
+
+func (i GetLocalPeeringGatewaysLocalPeeringGatewayArgs) ToGetLocalPeeringGatewaysLocalPeeringGatewayOutput() GetLocalPeeringGatewaysLocalPeeringGatewayOutput {
+	return i.ToGetLocalPeeringGatewaysLocalPeeringGatewayOutputWithContext(context.Background())
+}
+
+func (i GetLocalPeeringGatewaysLocalPeeringGatewayArgs) ToGetLocalPeeringGatewaysLocalPeeringGatewayOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysLocalPeeringGatewayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalPeeringGatewaysLocalPeeringGatewayOutput)
+}
+
+// GetLocalPeeringGatewaysLocalPeeringGatewayArrayInput is an input type that accepts GetLocalPeeringGatewaysLocalPeeringGatewayArray and GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput values.
+// You can construct a concrete instance of `GetLocalPeeringGatewaysLocalPeeringGatewayArrayInput` via:
+//
+//	GetLocalPeeringGatewaysLocalPeeringGatewayArray{ GetLocalPeeringGatewaysLocalPeeringGatewayArgs{...} }
+type GetLocalPeeringGatewaysLocalPeeringGatewayArrayInput interface {
+	pulumi.Input
+
+	ToGetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput() GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput
+	ToGetLocalPeeringGatewaysLocalPeeringGatewayArrayOutputWithContext(context.Context) GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput
+}
+
+type GetLocalPeeringGatewaysLocalPeeringGatewayArray []GetLocalPeeringGatewaysLocalPeeringGatewayInput
+
+func (GetLocalPeeringGatewaysLocalPeeringGatewayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalPeeringGatewaysLocalPeeringGateway)(nil)).Elem()
+}
+
+func (i GetLocalPeeringGatewaysLocalPeeringGatewayArray) ToGetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput() GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput {
+	return i.ToGetLocalPeeringGatewaysLocalPeeringGatewayArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocalPeeringGatewaysLocalPeeringGatewayArray) ToGetLocalPeeringGatewaysLocalPeeringGatewayArrayOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput)
+}
+
+type GetLocalPeeringGatewaysLocalPeeringGatewayOutput struct{ *pulumi.OutputState }
+
+func (GetLocalPeeringGatewaysLocalPeeringGatewayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalPeeringGatewaysLocalPeeringGateway)(nil)).Elem()
+}
+
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) ToGetLocalPeeringGatewaysLocalPeeringGatewayOutput() GetLocalPeeringGatewaysLocalPeeringGatewayOutput {
+	return o
+}
+
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) ToGetLocalPeeringGatewaysLocalPeeringGatewayOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysLocalPeeringGatewayOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) IsCrossTenancyPeering() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) bool { return v.IsCrossTenancyPeering }).(pulumi.BoolOutput)
+}
+
+// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) PeerAdvertisedCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.PeerAdvertisedCidr }).(pulumi.StringOutput)
+}
+
+// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) PeerAdvertisedCidrDetails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) []string { return v.PeerAdvertisedCidrDetails }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the peered LPG
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) PeerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.PeerId }).(pulumi.StringOutput)
+}
+
+// Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) PeeringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.PeeringStatus }).(pulumi.StringOutput)
+}
+
+// Additional information regarding the peering status, if applicable.
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) PeeringStatusDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.PeeringStatusDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.RouteTableId }).(pulumi.StringOutput)
+}
+
+// The LPG's current lifecycle state.
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalPeeringGatewaysLocalPeeringGateway) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalPeeringGatewaysLocalPeeringGateway)(nil)).Elem()
+}
+
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput) ToGetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput() GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput {
+	return o
+}
+
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput) ToGetLocalPeeringGatewaysLocalPeeringGatewayArrayOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput {
+	return o
+}
+
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput) Index(i pulumi.IntInput) GetLocalPeeringGatewaysLocalPeeringGatewayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocalPeeringGatewaysLocalPeeringGateway {
+		return vs[0].([]GetLocalPeeringGatewaysLocalPeeringGateway)[vs[1].(int)]
+	}).(GetLocalPeeringGatewaysLocalPeeringGatewayOutput)
+}
+
+type GetNatGatewaysFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNatGatewaysFilterInput is an input type that accepts GetNatGatewaysFilterArgs and GetNatGatewaysFilterOutput values.
+// You can construct a concrete instance of `GetNatGatewaysFilterInput` via:
+//
+//	GetNatGatewaysFilterArgs{...}
+type GetNatGatewaysFilterInput interface {
+	pulumi.Input
+
+	ToGetNatGatewaysFilterOutput() GetNatGatewaysFilterOutput
+	ToGetNatGatewaysFilterOutputWithContext(context.Context) GetNatGatewaysFilterOutput
+}
+
+type GetNatGatewaysFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNatGatewaysFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatGatewaysFilter)(nil)).Elem()
+}
+
+func (i GetNatGatewaysFilterArgs) ToGetNatGatewaysFilterOutput() GetNatGatewaysFilterOutput {
+	return i.ToGetNatGatewaysFilterOutputWithContext(context.Background())
+}
+
+func (i GetNatGatewaysFilterArgs) ToGetNatGatewaysFilterOutputWithContext(ctx context.Context) GetNatGatewaysFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatGatewaysFilterOutput)
+}
+
+// GetNatGatewaysFilterArrayInput is an input type that accepts GetNatGatewaysFilterArray and GetNatGatewaysFilterArrayOutput values.
+// You can construct a concrete instance of `GetNatGatewaysFilterArrayInput` via:
+//
+//	GetNatGatewaysFilterArray{ GetNatGatewaysFilterArgs{...} }
+type GetNatGatewaysFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNatGatewaysFilterArrayOutput() GetNatGatewaysFilterArrayOutput
+	ToGetNatGatewaysFilterArrayOutputWithContext(context.Context) GetNatGatewaysFilterArrayOutput
+}
+
+type GetNatGatewaysFilterArray []GetNatGatewaysFilterInput
+
+func (GetNatGatewaysFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatGatewaysFilter)(nil)).Elem()
+}
+
+func (i GetNatGatewaysFilterArray) ToGetNatGatewaysFilterArrayOutput() GetNatGatewaysFilterArrayOutput {
+	return i.ToGetNatGatewaysFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNatGatewaysFilterArray) ToGetNatGatewaysFilterArrayOutputWithContext(ctx context.Context) GetNatGatewaysFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatGatewaysFilterArrayOutput)
+}
+
+type GetNatGatewaysFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNatGatewaysFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatGatewaysFilter)(nil)).Elem()
+}
+
+func (o GetNatGatewaysFilterOutput) ToGetNatGatewaysFilterOutput() GetNatGatewaysFilterOutput {
+	return o
+}
+
+func (o GetNatGatewaysFilterOutput) ToGetNatGatewaysFilterOutputWithContext(ctx context.Context) GetNatGatewaysFilterOutput {
+	return o
+}
+
+func (o GetNatGatewaysFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNatGatewaysFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNatGatewaysFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNatGatewaysFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNatGatewaysFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNatGatewaysFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNatGatewaysFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatGatewaysFilter)(nil)).Elem()
+}
+
+func (o GetNatGatewaysFilterArrayOutput) ToGetNatGatewaysFilterArrayOutput() GetNatGatewaysFilterArrayOutput {
+	return o
+}
+
+func (o GetNatGatewaysFilterArrayOutput) ToGetNatGatewaysFilterArrayOutputWithContext(ctx context.Context) GetNatGatewaysFilterArrayOutput {
+	return o
+}
+
+func (o GetNatGatewaysFilterArrayOutput) Index(i pulumi.IntInput) GetNatGatewaysFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNatGatewaysFilter {
+		return vs[0].([]GetNatGatewaysFilter)[vs[1].(int)]
+	}).(GetNatGatewaysFilterOutput)
+}
+
+type GetNatGatewaysNatGateway struct {
+	// Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
+	BlockTraffic bool `pulumi:"blockTraffic"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NAT gateway.
+	Id string `pulumi:"id"`
+	// The IP address associated with the NAT gateway.
+	NatIp string `pulumi:"natIp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+	PublicIpId string `pulumi:"publicIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+	RouteTableId string `pulumi:"routeTableId"`
+	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+	State string `pulumi:"state"`
+	// The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetNatGatewaysNatGatewayInput is an input type that accepts GetNatGatewaysNatGatewayArgs and GetNatGatewaysNatGatewayOutput values.
+// You can construct a concrete instance of `GetNatGatewaysNatGatewayInput` via:
+//
+//	GetNatGatewaysNatGatewayArgs{...}
+type GetNatGatewaysNatGatewayInput interface {
+	pulumi.Input
+
+	ToGetNatGatewaysNatGatewayOutput() GetNatGatewaysNatGatewayOutput
+	ToGetNatGatewaysNatGatewayOutputWithContext(context.Context) GetNatGatewaysNatGatewayOutput
+}
+
+type GetNatGatewaysNatGatewayArgs struct {
+	// Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
+	BlockTraffic pulumi.BoolInput `pulumi:"blockTraffic"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NAT gateway.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The IP address associated with the NAT gateway.
+	NatIp pulumi.StringInput `pulumi:"natIp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+	PublicIpId pulumi.StringInput `pulumi:"publicIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
+	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetNatGatewaysNatGatewayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatGatewaysNatGateway)(nil)).Elem()
+}
+
+func (i GetNatGatewaysNatGatewayArgs) ToGetNatGatewaysNatGatewayOutput() GetNatGatewaysNatGatewayOutput {
+	return i.ToGetNatGatewaysNatGatewayOutputWithContext(context.Background())
+}
+
+func (i GetNatGatewaysNatGatewayArgs) ToGetNatGatewaysNatGatewayOutputWithContext(ctx context.Context) GetNatGatewaysNatGatewayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatGatewaysNatGatewayOutput)
+}
+
+// GetNatGatewaysNatGatewayArrayInput is an input type that accepts GetNatGatewaysNatGatewayArray and GetNatGatewaysNatGatewayArrayOutput values.
+// You can construct a concrete instance of `GetNatGatewaysNatGatewayArrayInput` via:
+//
+//	GetNatGatewaysNatGatewayArray{ GetNatGatewaysNatGatewayArgs{...} }
+type GetNatGatewaysNatGatewayArrayInput interface {
+	pulumi.Input
+
+	ToGetNatGatewaysNatGatewayArrayOutput() GetNatGatewaysNatGatewayArrayOutput
+	ToGetNatGatewaysNatGatewayArrayOutputWithContext(context.Context) GetNatGatewaysNatGatewayArrayOutput
+}
+
+type GetNatGatewaysNatGatewayArray []GetNatGatewaysNatGatewayInput
+
+func (GetNatGatewaysNatGatewayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatGatewaysNatGateway)(nil)).Elem()
+}
+
+func (i GetNatGatewaysNatGatewayArray) ToGetNatGatewaysNatGatewayArrayOutput() GetNatGatewaysNatGatewayArrayOutput {
+	return i.ToGetNatGatewaysNatGatewayArrayOutputWithContext(context.Background())
+}
+
+func (i GetNatGatewaysNatGatewayArray) ToGetNatGatewaysNatGatewayArrayOutputWithContext(ctx context.Context) GetNatGatewaysNatGatewayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatGatewaysNatGatewayArrayOutput)
+}
+
+type GetNatGatewaysNatGatewayOutput struct{ *pulumi.OutputState }
+
+func (GetNatGatewaysNatGatewayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatGatewaysNatGateway)(nil)).Elem()
+}
+
+func (o GetNatGatewaysNatGatewayOutput) ToGetNatGatewaysNatGatewayOutput() GetNatGatewaysNatGatewayOutput {
+	return o
+}
+
+func (o GetNatGatewaysNatGatewayOutput) ToGetNatGatewaysNatGatewayOutputWithContext(ctx context.Context) GetNatGatewaysNatGatewayOutput {
+	return o
+}
+
+// Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
+func (o GetNatGatewaysNatGatewayOutput) BlockTraffic() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) bool { return v.BlockTraffic }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetNatGatewaysNatGatewayOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetNatGatewaysNatGatewayOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetNatGatewaysNatGatewayOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetNatGatewaysNatGatewayOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NAT gateway.
+func (o GetNatGatewaysNatGatewayOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The IP address associated with the NAT gateway.
+func (o GetNatGatewaysNatGatewayOutput) NatIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) string { return v.NatIp }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+func (o GetNatGatewaysNatGatewayOutput) PublicIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) string { return v.PublicIpId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+func (o GetNatGatewaysNatGatewayOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) string { return v.RouteTableId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+func (o GetNatGatewaysNatGatewayOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetNatGatewaysNatGatewayOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+func (o GetNatGatewaysNatGatewayOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatGatewaysNatGateway) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetNatGatewaysNatGatewayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNatGatewaysNatGatewayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatGatewaysNatGateway)(nil)).Elem()
+}
+
+func (o GetNatGatewaysNatGatewayArrayOutput) ToGetNatGatewaysNatGatewayArrayOutput() GetNatGatewaysNatGatewayArrayOutput {
+	return o
+}
+
+func (o GetNatGatewaysNatGatewayArrayOutput) ToGetNatGatewaysNatGatewayArrayOutputWithContext(ctx context.Context) GetNatGatewaysNatGatewayArrayOutput {
+	return o
+}
+
+func (o GetNatGatewaysNatGatewayArrayOutput) Index(i pulumi.IntInput) GetNatGatewaysNatGatewayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNatGatewaysNatGateway {
+		return vs[0].([]GetNatGatewaysNatGateway)[vs[1].(int)]
+	}).(GetNatGatewaysNatGatewayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNetworkSecurityGroupSecurityRulesFilterInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesFilterArgs and GetNetworkSecurityGroupSecurityRulesFilterOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesFilterInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesFilterArgs{...}
+type GetNetworkSecurityGroupSecurityRulesFilterInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesFilterOutput() GetNetworkSecurityGroupSecurityRulesFilterOutput
+	ToGetNetworkSecurityGroupSecurityRulesFilterOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesFilterOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNetworkSecurityGroupSecurityRulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesFilter)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesFilterArgs) ToGetNetworkSecurityGroupSecurityRulesFilterOutput() GetNetworkSecurityGroupSecurityRulesFilterOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesFilterArgs) ToGetNetworkSecurityGroupSecurityRulesFilterOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesFilterOutput)
+}
+
+// GetNetworkSecurityGroupSecurityRulesFilterArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesFilterArray and GetNetworkSecurityGroupSecurityRulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesFilterArrayInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesFilterArray{ GetNetworkSecurityGroupSecurityRulesFilterArgs{...} }
+type GetNetworkSecurityGroupSecurityRulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesFilterArrayOutput() GetNetworkSecurityGroupSecurityRulesFilterArrayOutput
+	ToGetNetworkSecurityGroupSecurityRulesFilterArrayOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesFilterArrayOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesFilterArray []GetNetworkSecurityGroupSecurityRulesFilterInput
+
+func (GetNetworkSecurityGroupSecurityRulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesFilter)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesFilterArray) ToGetNetworkSecurityGroupSecurityRulesFilterArrayOutput() GetNetworkSecurityGroupSecurityRulesFilterArrayOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesFilterArray) ToGetNetworkSecurityGroupSecurityRulesFilterArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesFilterArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesFilter)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterOutput) ToGetNetworkSecurityGroupSecurityRulesFilterOutput() GetNetworkSecurityGroupSecurityRulesFilterOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterOutput) ToGetNetworkSecurityGroupSecurityRulesFilterOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesFilterOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesFilter)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterArrayOutput) ToGetNetworkSecurityGroupSecurityRulesFilterArrayOutput() GetNetworkSecurityGroupSecurityRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterArrayOutput) ToGetNetworkSecurityGroupSecurityRulesFilterArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesFilter {
+		return vs[0].([]GetNetworkSecurityGroupSecurityRulesFilter)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupSecurityRulesFilterOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRule struct {
+	// An optional description of your choice for the rule.
+	Description string `pulumi:"description"`
+	// Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+	Destination string `pulumi:"destination"`
+	// Type of destination for the rule. Required if `direction` = `EGRESS`.
+	DestinationType string `pulumi:"destinationType"`
+	// Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
+	Direction string `pulumi:"direction"`
+	// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+	// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+	// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+	IcmpOptions []GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption `pulumi:"icmpOptions"`
+	// An Oracle-assigned identifier for the security rule. You specify this ID when you want to update or delete the rule.  Example: `04ABEC`
+	Id string `pulumi:"id"`
+	// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
+	IsValid bool `pulumi:"isValid"`
+	// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+	Protocol string `pulumi:"protocol"`
+	// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+	Source string `pulumi:"source"`
+	// Type of source for the rule. Required if `direction` = `INGRESS`.
+	SourceType string `pulumi:"sourceType"`
+	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+	Stateless bool `pulumi:"stateless"`
+	// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+	TcpOptions []GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption `pulumi:"tcpOptions"`
+	// The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+	UdpOptions []GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption `pulumi:"udpOptions"`
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs and GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs{...}
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs struct {
+	// An optional description of your choice for the rule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// Type of destination for the rule. Required if `direction` = `EGRESS`.
+	DestinationType pulumi.StringInput `pulumi:"destinationType"`
+	// Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
+	Direction pulumi.StringInput `pulumi:"direction"`
+	// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+	// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+	// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+	IcmpOptions GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayInput `pulumi:"icmpOptions"`
+	// An Oracle-assigned identifier for the security rule. You specify this ID when you want to update or delete the rule.  Example: `04ABEC`
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
+	IsValid pulumi.BoolInput `pulumi:"isValid"`
+	// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+	Source pulumi.StringInput `pulumi:"source"`
+	// Type of source for the rule. Required if `direction` = `INGRESS`.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+	Stateless pulumi.BoolInput `pulumi:"stateless"`
+	// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+	TcpOptions GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayInput `pulumi:"tcpOptions"`
+	// The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+	UdpOptions GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayInput `pulumi:"udpOptions"`
+}
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRule)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput)
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleArray{ GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs{...} }
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleArray []GetNetworkSecurityGroupSecurityRulesSecurityRuleInput
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRule)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRule)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput {
+	return o
+}
+
+// An optional description of your choice for the rule.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// Type of destination for the rule. Required if `direction` = `EGRESS`.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) DestinationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.DestinationType }).(pulumi.StringOutput)
+}
+
+// Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) Direction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.Direction }).(pulumi.StringOutput)
+}
+
+// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) IcmpOptions() GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) []GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption {
+		return v.IcmpOptions
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput)
+}
+
+// An Oracle-assigned identifier for the security rule. You specify this ID when you want to update or delete the rule.  Example: `04ABEC`
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) IsValid() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) bool { return v.IsValid }).(pulumi.BoolOutput)
+}
+
+// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// Type of source for the rule. Required if `direction` = `INGRESS`.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) Stateless() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) bool { return v.Stateless }).(pulumi.BoolOutput)
+}
+
+// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) TcpOptions() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) []GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption {
+		return v.TcpOptions
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput)
+}
+
+// The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) UdpOptions() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) []GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption {
+		return v.UdpOptions
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRule)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesSecurityRule {
+		return vs[0].([]GetNetworkSecurityGroupSecurityRulesSecurityRule)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption struct {
+	// The ICMP code (optional).
+	Code int `pulumi:"code"`
+	// The ICMP type.
+	Type int `pulumi:"type"`
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs and GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs{...}
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs struct {
+	// The ICMP code (optional).
+	Code pulumi.IntInput `pulumi:"code"`
+	// The ICMP type.
+	Type pulumi.IntInput `pulumi:"type"`
+}
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput)
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray{ GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs{...} }
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray []GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionInput
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput {
+	return o
+}
+
+// The ICMP code (optional).
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput) Code() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption) int { return v.Code }).(pulumi.IntOutput)
+}
+
+// The ICMP type.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput) Type() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption) int { return v.Type }).(pulumi.IntOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption {
+		return vs[0].([]GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption struct {
+	DestinationPortRanges []GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange `pulumi:"destinationPortRanges"`
+	SourcePortRanges      []GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange      `pulumi:"sourcePortRanges"`
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs and GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs{...}
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs struct {
+	DestinationPortRanges GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayInput `pulumi:"destinationPortRanges"`
+	SourcePortRanges      GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayInput      `pulumi:"sourcePortRanges"`
+}
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput)
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray{ GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs{...} }
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray []GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionInput
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) DestinationPortRanges() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption) []GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange {
+		return v.DestinationPortRanges
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput)
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) SourcePortRanges() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption) []GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange {
+		return v.SourcePortRanges
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption {
+		return vs[0].([]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min int `pulumi:"min"`
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArgs and GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArgs{...}
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput)
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArray{ GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArgs{...} }
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArray []GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeInput
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange) int {
+		return v.Max
+	}).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange) int {
+		return v.Min
+	}).(pulumi.IntOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange {
+		return vs[0].([]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min int `pulumi:"min"`
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArgs and GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArgs{...}
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput)
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArray{ GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArgs{...} }
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArray []GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeInput
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange {
+		return vs[0].([]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption struct {
+	DestinationPortRanges []GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange `pulumi:"destinationPortRanges"`
+	SourcePortRanges      []GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange      `pulumi:"sourcePortRanges"`
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs and GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs{...}
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs struct {
+	DestinationPortRanges GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayInput `pulumi:"destinationPortRanges"`
+	SourcePortRanges      GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayInput      `pulumi:"sourcePortRanges"`
+}
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput)
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray{ GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs{...} }
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray []GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionInput
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) DestinationPortRanges() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption) []GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange {
+		return v.DestinationPortRanges
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput)
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) SourcePortRanges() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption) []GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange {
+		return v.SourcePortRanges
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption {
+		return vs[0].([]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min int `pulumi:"min"`
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArgs and GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArgs{...}
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput)
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArray{ GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArgs{...} }
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArray []GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeInput
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange) int {
+		return v.Max
+	}).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange) int {
+		return v.Min
+	}).(pulumi.IntOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange {
+		return vs[0].([]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min int `pulumi:"min"`
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArgs and GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArgs{...}
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArgs) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput)
+}
+
+// GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayInput` via:
+//
+//	GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArray{ GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArgs{...} }
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput
+	ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArray []GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeInput
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArray) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange {
+		return vs[0].([]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput)
+}
+
+type GetNetworkSecurityGroupVnicsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNetworkSecurityGroupVnicsFilterInput is an input type that accepts GetNetworkSecurityGroupVnicsFilterArgs and GetNetworkSecurityGroupVnicsFilterOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupVnicsFilterInput` via:
+//
+//	GetNetworkSecurityGroupVnicsFilterArgs{...}
+type GetNetworkSecurityGroupVnicsFilterInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupVnicsFilterOutput() GetNetworkSecurityGroupVnicsFilterOutput
+	ToGetNetworkSecurityGroupVnicsFilterOutputWithContext(context.Context) GetNetworkSecurityGroupVnicsFilterOutput
+}
+
+type GetNetworkSecurityGroupVnicsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNetworkSecurityGroupVnicsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupVnicsFilter)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupVnicsFilterArgs) ToGetNetworkSecurityGroupVnicsFilterOutput() GetNetworkSecurityGroupVnicsFilterOutput {
+	return i.ToGetNetworkSecurityGroupVnicsFilterOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupVnicsFilterArgs) ToGetNetworkSecurityGroupVnicsFilterOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupVnicsFilterOutput)
+}
+
+// GetNetworkSecurityGroupVnicsFilterArrayInput is an input type that accepts GetNetworkSecurityGroupVnicsFilterArray and GetNetworkSecurityGroupVnicsFilterArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupVnicsFilterArrayInput` via:
+//
+//	GetNetworkSecurityGroupVnicsFilterArray{ GetNetworkSecurityGroupVnicsFilterArgs{...} }
+type GetNetworkSecurityGroupVnicsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupVnicsFilterArrayOutput() GetNetworkSecurityGroupVnicsFilterArrayOutput
+	ToGetNetworkSecurityGroupVnicsFilterArrayOutputWithContext(context.Context) GetNetworkSecurityGroupVnicsFilterArrayOutput
+}
+
+type GetNetworkSecurityGroupVnicsFilterArray []GetNetworkSecurityGroupVnicsFilterInput
+
+func (GetNetworkSecurityGroupVnicsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupVnicsFilter)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupVnicsFilterArray) ToGetNetworkSecurityGroupVnicsFilterArrayOutput() GetNetworkSecurityGroupVnicsFilterArrayOutput {
+	return i.ToGetNetworkSecurityGroupVnicsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupVnicsFilterArray) ToGetNetworkSecurityGroupVnicsFilterArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupVnicsFilterArrayOutput)
+}
+
+type GetNetworkSecurityGroupVnicsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupVnicsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupVnicsFilter)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterOutput) ToGetNetworkSecurityGroupVnicsFilterOutput() GetNetworkSecurityGroupVnicsFilterOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterOutput) ToGetNetworkSecurityGroupVnicsFilterOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsFilterOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupVnicsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupVnicsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupVnicsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkSecurityGroupVnicsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupVnicsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupVnicsFilter)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterArrayOutput) ToGetNetworkSecurityGroupVnicsFilterArrayOutput() GetNetworkSecurityGroupVnicsFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterArrayOutput) ToGetNetworkSecurityGroupVnicsFilterArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupVnicsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupVnicsFilter {
+		return vs[0].([]GetNetworkSecurityGroupVnicsFilter)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupVnicsFilterOutput)
+}
+
+type GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC is attached to (for example, a Compute instance).
+	ResourceId string `pulumi:"resourceId"`
+	// The date and time the VNIC was added to the network security group, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeAssociated string `pulumi:"timeAssociated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+	VnicId string `pulumi:"vnicId"`
+}
+
+// GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicInput is an input type that accepts GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs and GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicInput` via:
+//
+//	GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs{...}
+type GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput() GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput
+	ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutputWithContext(context.Context) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput
+}
+
+type GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC is attached to (for example, a Compute instance).
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The date and time the VNIC was added to the network security group, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeAssociated pulumi.StringInput `pulumi:"timeAssociated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+	VnicId pulumi.StringInput `pulumi:"vnicId"`
+}
+
+func (GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput() GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput {
+	return i.ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput)
+}
+
+// GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayInput is an input type that accepts GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray and GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayInput` via:
+//
+//	GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray{ GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs{...} }
+type GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput() GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput
+	ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutputWithContext(context.Context) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput
+}
+
+type GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray []GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicInput
+
+func (GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput() GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput {
+	return i.ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput)
+}
+
+type GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput() GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC is attached to (for example, a Compute instance).
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the VNIC was added to the network security group, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) TimeAssociated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic) string { return v.TimeAssociated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic) string { return v.VnicId }).(pulumi.StringOutput)
+}
+
+type GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput() GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
+		return vs[0].([]GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput)
+}
+
+type GetNetworkSecurityGroupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNetworkSecurityGroupsFilterInput is an input type that accepts GetNetworkSecurityGroupsFilterArgs and GetNetworkSecurityGroupsFilterOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupsFilterInput` via:
+//
+//	GetNetworkSecurityGroupsFilterArgs{...}
+type GetNetworkSecurityGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupsFilterOutput() GetNetworkSecurityGroupsFilterOutput
+	ToGetNetworkSecurityGroupsFilterOutputWithContext(context.Context) GetNetworkSecurityGroupsFilterOutput
+}
+
+type GetNetworkSecurityGroupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNetworkSecurityGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupsFilter)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupsFilterArgs) ToGetNetworkSecurityGroupsFilterOutput() GetNetworkSecurityGroupsFilterOutput {
+	return i.ToGetNetworkSecurityGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupsFilterArgs) ToGetNetworkSecurityGroupsFilterOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupsFilterOutput)
+}
+
+// GetNetworkSecurityGroupsFilterArrayInput is an input type that accepts GetNetworkSecurityGroupsFilterArray and GetNetworkSecurityGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupsFilterArrayInput` via:
+//
+//	GetNetworkSecurityGroupsFilterArray{ GetNetworkSecurityGroupsFilterArgs{...} }
+type GetNetworkSecurityGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupsFilterArrayOutput() GetNetworkSecurityGroupsFilterArrayOutput
+	ToGetNetworkSecurityGroupsFilterArrayOutputWithContext(context.Context) GetNetworkSecurityGroupsFilterArrayOutput
+}
+
+type GetNetworkSecurityGroupsFilterArray []GetNetworkSecurityGroupsFilterInput
+
+func (GetNetworkSecurityGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupsFilter)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupsFilterArray) ToGetNetworkSecurityGroupsFilterArrayOutput() GetNetworkSecurityGroupsFilterArrayOutput {
+	return i.ToGetNetworkSecurityGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupsFilterArray) ToGetNetworkSecurityGroupsFilterArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupsFilterArrayOutput)
+}
+
+type GetNetworkSecurityGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupsFilter)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupsFilterOutput) ToGetNetworkSecurityGroupsFilterOutput() GetNetworkSecurityGroupsFilterOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupsFilterOutput) ToGetNetworkSecurityGroupsFilterOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsFilterOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNetworkSecurityGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNetworkSecurityGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkSecurityGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupsFilter)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupsFilterArrayOutput) ToGetNetworkSecurityGroupsFilterArrayOutput() GetNetworkSecurityGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupsFilterArrayOutput) ToGetNetworkSecurityGroupsFilterArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupsFilter {
+		return vs[0].([]GetNetworkSecurityGroupsFilter)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupsFilterOutput)
+}
+
+type GetNetworkSecurityGroupsNetworkSecurityGroup struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+	Id string `pulumi:"id"`
+	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+	State string `pulumi:"state"`
+	// The date and time the network security group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetNetworkSecurityGroupsNetworkSecurityGroupInput is an input type that accepts GetNetworkSecurityGroupsNetworkSecurityGroupArgs and GetNetworkSecurityGroupsNetworkSecurityGroupOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupsNetworkSecurityGroupInput` via:
+//
+//	GetNetworkSecurityGroupsNetworkSecurityGroupArgs{...}
+type GetNetworkSecurityGroupsNetworkSecurityGroupInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupsNetworkSecurityGroupOutput() GetNetworkSecurityGroupsNetworkSecurityGroupOutput
+	ToGetNetworkSecurityGroupsNetworkSecurityGroupOutputWithContext(context.Context) GetNetworkSecurityGroupsNetworkSecurityGroupOutput
+}
+
+type GetNetworkSecurityGroupsNetworkSecurityGroupArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the network security group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetNetworkSecurityGroupsNetworkSecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupsNetworkSecurityGroup)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupsNetworkSecurityGroupArgs) ToGetNetworkSecurityGroupsNetworkSecurityGroupOutput() GetNetworkSecurityGroupsNetworkSecurityGroupOutput {
+	return i.ToGetNetworkSecurityGroupsNetworkSecurityGroupOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupsNetworkSecurityGroupArgs) ToGetNetworkSecurityGroupsNetworkSecurityGroupOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsNetworkSecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupsNetworkSecurityGroupOutput)
+}
+
+// GetNetworkSecurityGroupsNetworkSecurityGroupArrayInput is an input type that accepts GetNetworkSecurityGroupsNetworkSecurityGroupArray and GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSecurityGroupsNetworkSecurityGroupArrayInput` via:
+//
+//	GetNetworkSecurityGroupsNetworkSecurityGroupArray{ GetNetworkSecurityGroupsNetworkSecurityGroupArgs{...} }
+type GetNetworkSecurityGroupsNetworkSecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput() GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput
+	ToGetNetworkSecurityGroupsNetworkSecurityGroupArrayOutputWithContext(context.Context) GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput
+}
+
+type GetNetworkSecurityGroupsNetworkSecurityGroupArray []GetNetworkSecurityGroupsNetworkSecurityGroupInput
+
+func (GetNetworkSecurityGroupsNetworkSecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupsNetworkSecurityGroup)(nil)).Elem()
+}
+
+func (i GetNetworkSecurityGroupsNetworkSecurityGroupArray) ToGetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput() GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput {
+	return i.ToGetNetworkSecurityGroupsNetworkSecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSecurityGroupsNetworkSecurityGroupArray) ToGetNetworkSecurityGroupsNetworkSecurityGroupArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput)
+}
+
+type GetNetworkSecurityGroupsNetworkSecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupsNetworkSecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSecurityGroupsNetworkSecurityGroup)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) ToGetNetworkSecurityGroupsNetworkSecurityGroupOutput() GetNetworkSecurityGroupsNetworkSecurityGroupOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) ToGetNetworkSecurityGroupsNetworkSecurityGroupOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsNetworkSecurityGroupOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsNetworkSecurityGroup) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsNetworkSecurityGroup) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsNetworkSecurityGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsNetworkSecurityGroup) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsNetworkSecurityGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsNetworkSecurityGroup) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the network security group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsNetworkSecurityGroup) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupsNetworkSecurityGroup) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSecurityGroupsNetworkSecurityGroup)(nil)).Elem()
+}
+
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput) ToGetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput() GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput) ToGetNetworkSecurityGroupsNetworkSecurityGroupArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupsNetworkSecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupsNetworkSecurityGroup {
+		return vs[0].([]GetNetworkSecurityGroupsNetworkSecurityGroup)[vs[1].(int)]
+	}).(GetNetworkSecurityGroupsNetworkSecurityGroupOutput)
+}
+
+type GetPeerRegionForRemotePeeringsFilter struct {
+	// The region's name.  Example: `us-phoenix-1`
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPeerRegionForRemotePeeringsFilterInput is an input type that accepts GetPeerRegionForRemotePeeringsFilterArgs and GetPeerRegionForRemotePeeringsFilterOutput values.
+// You can construct a concrete instance of `GetPeerRegionForRemotePeeringsFilterInput` via:
+//
+//	GetPeerRegionForRemotePeeringsFilterArgs{...}
+type GetPeerRegionForRemotePeeringsFilterInput interface {
+	pulumi.Input
+
+	ToGetPeerRegionForRemotePeeringsFilterOutput() GetPeerRegionForRemotePeeringsFilterOutput
+	ToGetPeerRegionForRemotePeeringsFilterOutputWithContext(context.Context) GetPeerRegionForRemotePeeringsFilterOutput
+}
+
+type GetPeerRegionForRemotePeeringsFilterArgs struct {
+	// The region's name.  Example: `us-phoenix-1`
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPeerRegionForRemotePeeringsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPeerRegionForRemotePeeringsFilter)(nil)).Elem()
+}
+
+func (i GetPeerRegionForRemotePeeringsFilterArgs) ToGetPeerRegionForRemotePeeringsFilterOutput() GetPeerRegionForRemotePeeringsFilterOutput {
+	return i.ToGetPeerRegionForRemotePeeringsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPeerRegionForRemotePeeringsFilterArgs) ToGetPeerRegionForRemotePeeringsFilterOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPeerRegionForRemotePeeringsFilterOutput)
+}
+
+// GetPeerRegionForRemotePeeringsFilterArrayInput is an input type that accepts GetPeerRegionForRemotePeeringsFilterArray and GetPeerRegionForRemotePeeringsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPeerRegionForRemotePeeringsFilterArrayInput` via:
+//
+//	GetPeerRegionForRemotePeeringsFilterArray{ GetPeerRegionForRemotePeeringsFilterArgs{...} }
+type GetPeerRegionForRemotePeeringsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPeerRegionForRemotePeeringsFilterArrayOutput() GetPeerRegionForRemotePeeringsFilterArrayOutput
+	ToGetPeerRegionForRemotePeeringsFilterArrayOutputWithContext(context.Context) GetPeerRegionForRemotePeeringsFilterArrayOutput
+}
+
+type GetPeerRegionForRemotePeeringsFilterArray []GetPeerRegionForRemotePeeringsFilterInput
+
+func (GetPeerRegionForRemotePeeringsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPeerRegionForRemotePeeringsFilter)(nil)).Elem()
+}
+
+func (i GetPeerRegionForRemotePeeringsFilterArray) ToGetPeerRegionForRemotePeeringsFilterArrayOutput() GetPeerRegionForRemotePeeringsFilterArrayOutput {
+	return i.ToGetPeerRegionForRemotePeeringsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPeerRegionForRemotePeeringsFilterArray) ToGetPeerRegionForRemotePeeringsFilterArrayOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPeerRegionForRemotePeeringsFilterArrayOutput)
+}
+
+type GetPeerRegionForRemotePeeringsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPeerRegionForRemotePeeringsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPeerRegionForRemotePeeringsFilter)(nil)).Elem()
+}
+
+func (o GetPeerRegionForRemotePeeringsFilterOutput) ToGetPeerRegionForRemotePeeringsFilterOutput() GetPeerRegionForRemotePeeringsFilterOutput {
+	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsFilterOutput) ToGetPeerRegionForRemotePeeringsFilterOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsFilterOutput {
+	return o
+}
+
+// The region's name.  Example: `us-phoenix-1`
+func (o GetPeerRegionForRemotePeeringsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPeerRegionForRemotePeeringsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPeerRegionForRemotePeeringsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPeerRegionForRemotePeeringsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPeerRegionForRemotePeeringsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPeerRegionForRemotePeeringsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPeerRegionForRemotePeeringsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPeerRegionForRemotePeeringsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPeerRegionForRemotePeeringsFilter)(nil)).Elem()
+}
+
+func (o GetPeerRegionForRemotePeeringsFilterArrayOutput) ToGetPeerRegionForRemotePeeringsFilterArrayOutput() GetPeerRegionForRemotePeeringsFilterArrayOutput {
+	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsFilterArrayOutput) ToGetPeerRegionForRemotePeeringsFilterArrayOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsFilterArrayOutput {
+	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsFilterArrayOutput) Index(i pulumi.IntInput) GetPeerRegionForRemotePeeringsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPeerRegionForRemotePeeringsFilter {
+		return vs[0].([]GetPeerRegionForRemotePeeringsFilter)[vs[1].(int)]
+	}).(GetPeerRegionForRemotePeeringsFilterOutput)
+}
+
+type GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering struct {
+	// The region's name.  Example: `us-phoenix-1`
+	Name string `pulumi:"name"`
+}
+
+// GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringInput is an input type that accepts GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs and GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput values.
+// You can construct a concrete instance of `GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringInput` via:
+//
+//	GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs{...}
+type GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringInput interface {
+	pulumi.Input
+
+	ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput() GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput
+	ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutputWithContext(context.Context) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput
+}
+
+type GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs struct {
+	// The region's name.  Example: `us-phoenix-1`
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering)(nil)).Elem()
+}
+
+func (i GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput() GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput {
+	return i.ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutputWithContext(context.Background())
+}
+
+func (i GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput)
+}
+
+// GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayInput is an input type that accepts GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray and GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput values.
+// You can construct a concrete instance of `GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayInput` via:
+//
+//	GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray{ GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs{...} }
+type GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayInput interface {
+	pulumi.Input
+
+	ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput() GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput
+	ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutputWithContext(context.Context) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput
+}
+
+type GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray []GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringInput
+
+func (GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering)(nil)).Elem()
+}
+
+func (i GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput() GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput {
+	return i.ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutputWithContext(context.Background())
+}
+
+func (i GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput)
+}
+
+type GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput struct{ *pulumi.OutputState }
+
+func (GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering)(nil)).Elem()
+}
+
+func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput() GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput {
+	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput {
+	return o
+}
+
+// The region's name.  Example: `us-phoenix-1`
+func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering)(nil)).Elem()
+}
+
+func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput() GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput {
+	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput {
+	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput) Index(i pulumi.IntInput) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering {
+		return vs[0].([]GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering)[vs[1].(int)]
+	}).(GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput)
+}
+
+type GetPrivateIpsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPrivateIpsFilterInput is an input type that accepts GetPrivateIpsFilterArgs and GetPrivateIpsFilterOutput values.
+// You can construct a concrete instance of `GetPrivateIpsFilterInput` via:
+//
+//	GetPrivateIpsFilterArgs{...}
+type GetPrivateIpsFilterInput interface {
+	pulumi.Input
+
+	ToGetPrivateIpsFilterOutput() GetPrivateIpsFilterOutput
+	ToGetPrivateIpsFilterOutputWithContext(context.Context) GetPrivateIpsFilterOutput
+}
+
+type GetPrivateIpsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPrivateIpsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateIpsFilter)(nil)).Elem()
+}
+
+func (i GetPrivateIpsFilterArgs) ToGetPrivateIpsFilterOutput() GetPrivateIpsFilterOutput {
+	return i.ToGetPrivateIpsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPrivateIpsFilterArgs) ToGetPrivateIpsFilterOutputWithContext(ctx context.Context) GetPrivateIpsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateIpsFilterOutput)
+}
+
+// GetPrivateIpsFilterArrayInput is an input type that accepts GetPrivateIpsFilterArray and GetPrivateIpsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPrivateIpsFilterArrayInput` via:
+//
+//	GetPrivateIpsFilterArray{ GetPrivateIpsFilterArgs{...} }
+type GetPrivateIpsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateIpsFilterArrayOutput() GetPrivateIpsFilterArrayOutput
+	ToGetPrivateIpsFilterArrayOutputWithContext(context.Context) GetPrivateIpsFilterArrayOutput
+}
+
+type GetPrivateIpsFilterArray []GetPrivateIpsFilterInput
+
+func (GetPrivateIpsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateIpsFilter)(nil)).Elem()
+}
+
+func (i GetPrivateIpsFilterArray) ToGetPrivateIpsFilterArrayOutput() GetPrivateIpsFilterArrayOutput {
+	return i.ToGetPrivateIpsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateIpsFilterArray) ToGetPrivateIpsFilterArrayOutputWithContext(ctx context.Context) GetPrivateIpsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateIpsFilterArrayOutput)
+}
+
+type GetPrivateIpsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateIpsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateIpsFilter)(nil)).Elem()
+}
+
+func (o GetPrivateIpsFilterOutput) ToGetPrivateIpsFilterOutput() GetPrivateIpsFilterOutput {
+	return o
+}
+
+func (o GetPrivateIpsFilterOutput) ToGetPrivateIpsFilterOutputWithContext(ctx context.Context) GetPrivateIpsFilterOutput {
+	return o
+}
+
+func (o GetPrivateIpsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateIpsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPrivateIpsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPrivateIpsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateIpsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPrivateIpsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateIpsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateIpsFilter)(nil)).Elem()
+}
+
+func (o GetPrivateIpsFilterArrayOutput) ToGetPrivateIpsFilterArrayOutput() GetPrivateIpsFilterArrayOutput {
+	return o
+}
+
+func (o GetPrivateIpsFilterArrayOutput) ToGetPrivateIpsFilterArrayOutputWithContext(ctx context.Context) GetPrivateIpsFilterArrayOutput {
+	return o
+}
+
+func (o GetPrivateIpsFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateIpsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateIpsFilter {
+		return vs[0].([]GetPrivateIpsFilter)[vs[1].(int)]
+	}).(GetPrivateIpsFilterOutput)
+}
+
+type GetPrivateIpsPrivateIp struct {
+	// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
+	HostnameLabel string `pulumi:"hostnameLabel"`
+	// The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
+	IpAddress string `pulumi:"ipAddress"`
+	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
+	IsPrimary bool `pulumi:"isPrimary"`
+	// true if the IP is reserved and can exist detached from vnic
+	IsReserved bool `pulumi:"isReserved"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+	SubnetId string `pulumi:"subnetId"`
+	// The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+	VlanId string `pulumi:"vlanId"`
+	// The OCID of the VNIC.
+	VnicId string `pulumi:"vnicId"`
+}
+
+// GetPrivateIpsPrivateIpInput is an input type that accepts GetPrivateIpsPrivateIpArgs and GetPrivateIpsPrivateIpOutput values.
+// You can construct a concrete instance of `GetPrivateIpsPrivateIpInput` via:
+//
+//	GetPrivateIpsPrivateIpArgs{...}
+type GetPrivateIpsPrivateIpInput interface {
+	pulumi.Input
+
+	ToGetPrivateIpsPrivateIpOutput() GetPrivateIpsPrivateIpOutput
+	ToGetPrivateIpsPrivateIpOutputWithContext(context.Context) GetPrivateIpsPrivateIpOutput
+}
+
+type GetPrivateIpsPrivateIpArgs struct {
+	// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
+	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
+	// The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
+	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
+	// true if the IP is reserved and can exist detached from vnic
+	IsReserved pulumi.BoolInput `pulumi:"isReserved"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+	VlanId pulumi.StringInput `pulumi:"vlanId"`
+	// The OCID of the VNIC.
+	VnicId pulumi.StringInput `pulumi:"vnicId"`
+}
+
+func (GetPrivateIpsPrivateIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateIpsPrivateIp)(nil)).Elem()
+}
+
+func (i GetPrivateIpsPrivateIpArgs) ToGetPrivateIpsPrivateIpOutput() GetPrivateIpsPrivateIpOutput {
+	return i.ToGetPrivateIpsPrivateIpOutputWithContext(context.Background())
+}
+
+func (i GetPrivateIpsPrivateIpArgs) ToGetPrivateIpsPrivateIpOutputWithContext(ctx context.Context) GetPrivateIpsPrivateIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateIpsPrivateIpOutput)
+}
+
+// GetPrivateIpsPrivateIpArrayInput is an input type that accepts GetPrivateIpsPrivateIpArray and GetPrivateIpsPrivateIpArrayOutput values.
+// You can construct a concrete instance of `GetPrivateIpsPrivateIpArrayInput` via:
+//
+//	GetPrivateIpsPrivateIpArray{ GetPrivateIpsPrivateIpArgs{...} }
+type GetPrivateIpsPrivateIpArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateIpsPrivateIpArrayOutput() GetPrivateIpsPrivateIpArrayOutput
+	ToGetPrivateIpsPrivateIpArrayOutputWithContext(context.Context) GetPrivateIpsPrivateIpArrayOutput
+}
+
+type GetPrivateIpsPrivateIpArray []GetPrivateIpsPrivateIpInput
+
+func (GetPrivateIpsPrivateIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateIpsPrivateIp)(nil)).Elem()
+}
+
+func (i GetPrivateIpsPrivateIpArray) ToGetPrivateIpsPrivateIpArrayOutput() GetPrivateIpsPrivateIpArrayOutput {
+	return i.ToGetPrivateIpsPrivateIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateIpsPrivateIpArray) ToGetPrivateIpsPrivateIpArrayOutputWithContext(ctx context.Context) GetPrivateIpsPrivateIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateIpsPrivateIpArrayOutput)
+}
+
+type GetPrivateIpsPrivateIpOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateIpsPrivateIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateIpsPrivateIp)(nil)).Elem()
+}
+
+func (o GetPrivateIpsPrivateIpOutput) ToGetPrivateIpsPrivateIpOutput() GetPrivateIpsPrivateIpOutput {
+	return o
+}
+
+func (o GetPrivateIpsPrivateIpOutput) ToGetPrivateIpsPrivateIpOutputWithContext(ctx context.Context) GetPrivateIpsPrivateIpOutput {
+	return o
+}
+
+// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
+func (o GetPrivateIpsPrivateIpOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
+func (o GetPrivateIpsPrivateIpOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetPrivateIpsPrivateIpOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetPrivateIpsPrivateIpOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetPrivateIpsPrivateIpOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
+func (o GetPrivateIpsPrivateIpOutput) HostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.HostnameLabel }).(pulumi.StringOutput)
+}
+
+// The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetPrivateIpsPrivateIpOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
+func (o GetPrivateIpsPrivateIpOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
+func (o GetPrivateIpsPrivateIpOutput) IsPrimary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+}
+
+// true if the IP is reserved and can exist detached from vnic
+func (o GetPrivateIpsPrivateIpOutput) IsReserved() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) bool { return v.IsReserved }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+func (o GetPrivateIpsPrivateIpOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetPrivateIpsPrivateIpOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+func (o GetPrivateIpsPrivateIpOutput) VlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.VlanId }).(pulumi.StringOutput)
+}
+
+// The OCID of the VNIC.
+func (o GetPrivateIpsPrivateIpOutput) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.VnicId }).(pulumi.StringOutput)
+}
+
+type GetPrivateIpsPrivateIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateIpsPrivateIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateIpsPrivateIp)(nil)).Elem()
+}
+
+func (o GetPrivateIpsPrivateIpArrayOutput) ToGetPrivateIpsPrivateIpArrayOutput() GetPrivateIpsPrivateIpArrayOutput {
+	return o
+}
+
+func (o GetPrivateIpsPrivateIpArrayOutput) ToGetPrivateIpsPrivateIpArrayOutputWithContext(ctx context.Context) GetPrivateIpsPrivateIpArrayOutput {
+	return o
+}
+
+func (o GetPrivateIpsPrivateIpArrayOutput) Index(i pulumi.IntInput) GetPrivateIpsPrivateIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateIpsPrivateIp {
+		return vs[0].([]GetPrivateIpsPrivateIp)[vs[1].(int)]
+	}).(GetPrivateIpsPrivateIpOutput)
+}
+
+type GetPublicIpPoolsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPublicIpPoolsFilterInput is an input type that accepts GetPublicIpPoolsFilterArgs and GetPublicIpPoolsFilterOutput values.
+// You can construct a concrete instance of `GetPublicIpPoolsFilterInput` via:
+//
+//	GetPublicIpPoolsFilterArgs{...}
+type GetPublicIpPoolsFilterInput interface {
+	pulumi.Input
+
+	ToGetPublicIpPoolsFilterOutput() GetPublicIpPoolsFilterOutput
+	ToGetPublicIpPoolsFilterOutputWithContext(context.Context) GetPublicIpPoolsFilterOutput
+}
+
+type GetPublicIpPoolsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPublicIpPoolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpPoolsFilter)(nil)).Elem()
+}
+
+func (i GetPublicIpPoolsFilterArgs) ToGetPublicIpPoolsFilterOutput() GetPublicIpPoolsFilterOutput {
+	return i.ToGetPublicIpPoolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpPoolsFilterArgs) ToGetPublicIpPoolsFilterOutputWithContext(ctx context.Context) GetPublicIpPoolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsFilterOutput)
+}
+
+// GetPublicIpPoolsFilterArrayInput is an input type that accepts GetPublicIpPoolsFilterArray and GetPublicIpPoolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPublicIpPoolsFilterArrayInput` via:
+//
+//	GetPublicIpPoolsFilterArray{ GetPublicIpPoolsFilterArgs{...} }
+type GetPublicIpPoolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPublicIpPoolsFilterArrayOutput() GetPublicIpPoolsFilterArrayOutput
+	ToGetPublicIpPoolsFilterArrayOutputWithContext(context.Context) GetPublicIpPoolsFilterArrayOutput
+}
+
+type GetPublicIpPoolsFilterArray []GetPublicIpPoolsFilterInput
+
+func (GetPublicIpPoolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpPoolsFilter)(nil)).Elem()
+}
+
+func (i GetPublicIpPoolsFilterArray) ToGetPublicIpPoolsFilterArrayOutput() GetPublicIpPoolsFilterArrayOutput {
+	return i.ToGetPublicIpPoolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpPoolsFilterArray) ToGetPublicIpPoolsFilterArrayOutputWithContext(ctx context.Context) GetPublicIpPoolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsFilterArrayOutput)
+}
+
+type GetPublicIpPoolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpPoolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpPoolsFilter)(nil)).Elem()
+}
+
+func (o GetPublicIpPoolsFilterOutput) ToGetPublicIpPoolsFilterOutput() GetPublicIpPoolsFilterOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsFilterOutput) ToGetPublicIpPoolsFilterOutputWithContext(ctx context.Context) GetPublicIpPoolsFilterOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPublicIpPoolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPublicIpPoolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPublicIpPoolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpPoolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpPoolsFilter)(nil)).Elem()
+}
+
+func (o GetPublicIpPoolsFilterArrayOutput) ToGetPublicIpPoolsFilterArrayOutput() GetPublicIpPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsFilterArrayOutput) ToGetPublicIpPoolsFilterArrayOutputWithContext(ctx context.Context) GetPublicIpPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetPublicIpPoolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicIpPoolsFilter {
+		return vs[0].([]GetPublicIpPoolsFilter)[vs[1].(int)]
+	}).(GetPublicIpPoolsFilterOutput)
+}
+
+type GetPublicIpPoolsPublicIpPoolCollection struct {
+	Items []GetPublicIpPoolsPublicIpPoolCollectionItem `pulumi:"items"`
+}
+
+// GetPublicIpPoolsPublicIpPoolCollectionInput is an input type that accepts GetPublicIpPoolsPublicIpPoolCollectionArgs and GetPublicIpPoolsPublicIpPoolCollectionOutput values.
+// You can construct a concrete instance of `GetPublicIpPoolsPublicIpPoolCollectionInput` via:
+//
+//	GetPublicIpPoolsPublicIpPoolCollectionArgs{...}
+type GetPublicIpPoolsPublicIpPoolCollectionInput interface {
+	pulumi.Input
+
+	ToGetPublicIpPoolsPublicIpPoolCollectionOutput() GetPublicIpPoolsPublicIpPoolCollectionOutput
+	ToGetPublicIpPoolsPublicIpPoolCollectionOutputWithContext(context.Context) GetPublicIpPoolsPublicIpPoolCollectionOutput
+}
+
+type GetPublicIpPoolsPublicIpPoolCollectionArgs struct {
+	Items GetPublicIpPoolsPublicIpPoolCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPublicIpPoolsPublicIpPoolCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpPoolsPublicIpPoolCollection)(nil)).Elem()
+}
+
+func (i GetPublicIpPoolsPublicIpPoolCollectionArgs) ToGetPublicIpPoolsPublicIpPoolCollectionOutput() GetPublicIpPoolsPublicIpPoolCollectionOutput {
+	return i.ToGetPublicIpPoolsPublicIpPoolCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpPoolsPublicIpPoolCollectionArgs) ToGetPublicIpPoolsPublicIpPoolCollectionOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsPublicIpPoolCollectionOutput)
+}
+
+// GetPublicIpPoolsPublicIpPoolCollectionArrayInput is an input type that accepts GetPublicIpPoolsPublicIpPoolCollectionArray and GetPublicIpPoolsPublicIpPoolCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPublicIpPoolsPublicIpPoolCollectionArrayInput` via:
+//
+//	GetPublicIpPoolsPublicIpPoolCollectionArray{ GetPublicIpPoolsPublicIpPoolCollectionArgs{...} }
+type GetPublicIpPoolsPublicIpPoolCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPublicIpPoolsPublicIpPoolCollectionArrayOutput() GetPublicIpPoolsPublicIpPoolCollectionArrayOutput
+	ToGetPublicIpPoolsPublicIpPoolCollectionArrayOutputWithContext(context.Context) GetPublicIpPoolsPublicIpPoolCollectionArrayOutput
+}
+
+type GetPublicIpPoolsPublicIpPoolCollectionArray []GetPublicIpPoolsPublicIpPoolCollectionInput
+
+func (GetPublicIpPoolsPublicIpPoolCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpPoolsPublicIpPoolCollection)(nil)).Elem()
+}
+
+func (i GetPublicIpPoolsPublicIpPoolCollectionArray) ToGetPublicIpPoolsPublicIpPoolCollectionArrayOutput() GetPublicIpPoolsPublicIpPoolCollectionArrayOutput {
+	return i.ToGetPublicIpPoolsPublicIpPoolCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpPoolsPublicIpPoolCollectionArray) ToGetPublicIpPoolsPublicIpPoolCollectionArrayOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsPublicIpPoolCollectionArrayOutput)
+}
+
+type GetPublicIpPoolsPublicIpPoolCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpPoolsPublicIpPoolCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpPoolsPublicIpPoolCollection)(nil)).Elem()
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionOutput) ToGetPublicIpPoolsPublicIpPoolCollectionOutput() GetPublicIpPoolsPublicIpPoolCollectionOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionOutput) ToGetPublicIpPoolsPublicIpPoolCollectionOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionOutput) Items() GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsPublicIpPoolCollection) []GetPublicIpPoolsPublicIpPoolCollectionItem {
+		return v.Items
+	}).(GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput)
+}
+
+type GetPublicIpPoolsPublicIpPoolCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpPoolsPublicIpPoolCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpPoolsPublicIpPoolCollection)(nil)).Elem()
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionArrayOutput) ToGetPublicIpPoolsPublicIpPoolCollectionArrayOutput() GetPublicIpPoolsPublicIpPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionArrayOutput) ToGetPublicIpPoolsPublicIpPoolCollectionArrayOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionArrayOutput) Index(i pulumi.IntInput) GetPublicIpPoolsPublicIpPoolCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicIpPoolsPublicIpPoolCollection {
+		return vs[0].([]GetPublicIpPoolsPublicIpPoolCollection)[vs[1].(int)]
+	}).(GetPublicIpPoolsPublicIpPoolCollectionOutput)
+}
+
+type GetPublicIpPoolsPublicIpPoolCollectionItem struct {
+	// The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
+	CidrBlocks []string `pulumi:"cidrBlocks"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+	Id string `pulumi:"id"`
+	// The public IP pool's current state.
+	State string `pulumi:"state"`
+	// The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetPublicIpPoolsPublicIpPoolCollectionItemInput is an input type that accepts GetPublicIpPoolsPublicIpPoolCollectionItemArgs and GetPublicIpPoolsPublicIpPoolCollectionItemOutput values.
+// You can construct a concrete instance of `GetPublicIpPoolsPublicIpPoolCollectionItemInput` via:
+//
+//	GetPublicIpPoolsPublicIpPoolCollectionItemArgs{...}
+type GetPublicIpPoolsPublicIpPoolCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPublicIpPoolsPublicIpPoolCollectionItemOutput() GetPublicIpPoolsPublicIpPoolCollectionItemOutput
+	ToGetPublicIpPoolsPublicIpPoolCollectionItemOutputWithContext(context.Context) GetPublicIpPoolsPublicIpPoolCollectionItemOutput
+}
+
+type GetPublicIpPoolsPublicIpPoolCollectionItemArgs struct {
+	// The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
+	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The public IP pool's current state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetPublicIpPoolsPublicIpPoolCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpPoolsPublicIpPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetPublicIpPoolsPublicIpPoolCollectionItemArgs) ToGetPublicIpPoolsPublicIpPoolCollectionItemOutput() GetPublicIpPoolsPublicIpPoolCollectionItemOutput {
+	return i.ToGetPublicIpPoolsPublicIpPoolCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpPoolsPublicIpPoolCollectionItemArgs) ToGetPublicIpPoolsPublicIpPoolCollectionItemOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsPublicIpPoolCollectionItemOutput)
+}
+
+// GetPublicIpPoolsPublicIpPoolCollectionItemArrayInput is an input type that accepts GetPublicIpPoolsPublicIpPoolCollectionItemArray and GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPublicIpPoolsPublicIpPoolCollectionItemArrayInput` via:
+//
+//	GetPublicIpPoolsPublicIpPoolCollectionItemArray{ GetPublicIpPoolsPublicIpPoolCollectionItemArgs{...} }
+type GetPublicIpPoolsPublicIpPoolCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput() GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput
+	ToGetPublicIpPoolsPublicIpPoolCollectionItemArrayOutputWithContext(context.Context) GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput
+}
+
+type GetPublicIpPoolsPublicIpPoolCollectionItemArray []GetPublicIpPoolsPublicIpPoolCollectionItemInput
+
+func (GetPublicIpPoolsPublicIpPoolCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpPoolsPublicIpPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetPublicIpPoolsPublicIpPoolCollectionItemArray) ToGetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput() GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput {
+	return i.ToGetPublicIpPoolsPublicIpPoolCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpPoolsPublicIpPoolCollectionItemArray) ToGetPublicIpPoolsPublicIpPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput)
+}
+
+type GetPublicIpPoolsPublicIpPoolCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpPoolsPublicIpPoolCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpPoolsPublicIpPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) ToGetPublicIpPoolsPublicIpPoolCollectionItemOutput() GetPublicIpPoolsPublicIpPoolCollectionItemOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) ToGetPublicIpPoolsPublicIpPoolCollectionItemOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionItemOutput {
+	return o
+}
+
+// The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) CidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsPublicIpPoolCollectionItem) []string { return v.CidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsPublicIpPoolCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsPublicIpPoolCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsPublicIpPoolCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsPublicIpPoolCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsPublicIpPoolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The public IP pool's current state.
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsPublicIpPoolCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsPublicIpPoolCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpPoolsPublicIpPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput) ToGetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput() GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput) ToGetPublicIpPoolsPublicIpPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPublicIpPoolsPublicIpPoolCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicIpPoolsPublicIpPoolCollectionItem {
+		return vs[0].([]GetPublicIpPoolsPublicIpPoolCollectionItem)[vs[1].(int)]
+	}).(GetPublicIpPoolsPublicIpPoolCollectionItemOutput)
+}
+
+type GetPublicIpsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPublicIpsFilterInput is an input type that accepts GetPublicIpsFilterArgs and GetPublicIpsFilterOutput values.
+// You can construct a concrete instance of `GetPublicIpsFilterInput` via:
+//
+//	GetPublicIpsFilterArgs{...}
+type GetPublicIpsFilterInput interface {
+	pulumi.Input
+
+	ToGetPublicIpsFilterOutput() GetPublicIpsFilterOutput
+	ToGetPublicIpsFilterOutputWithContext(context.Context) GetPublicIpsFilterOutput
+}
+
+type GetPublicIpsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPublicIpsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpsFilter)(nil)).Elem()
+}
+
+func (i GetPublicIpsFilterArgs) ToGetPublicIpsFilterOutput() GetPublicIpsFilterOutput {
+	return i.ToGetPublicIpsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpsFilterArgs) ToGetPublicIpsFilterOutputWithContext(ctx context.Context) GetPublicIpsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpsFilterOutput)
+}
+
+// GetPublicIpsFilterArrayInput is an input type that accepts GetPublicIpsFilterArray and GetPublicIpsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPublicIpsFilterArrayInput` via:
+//
+//	GetPublicIpsFilterArray{ GetPublicIpsFilterArgs{...} }
+type GetPublicIpsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPublicIpsFilterArrayOutput() GetPublicIpsFilterArrayOutput
+	ToGetPublicIpsFilterArrayOutputWithContext(context.Context) GetPublicIpsFilterArrayOutput
+}
+
+type GetPublicIpsFilterArray []GetPublicIpsFilterInput
+
+func (GetPublicIpsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpsFilter)(nil)).Elem()
+}
+
+func (i GetPublicIpsFilterArray) ToGetPublicIpsFilterArrayOutput() GetPublicIpsFilterArrayOutput {
+	return i.ToGetPublicIpsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpsFilterArray) ToGetPublicIpsFilterArrayOutputWithContext(ctx context.Context) GetPublicIpsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpsFilterArrayOutput)
+}
+
+type GetPublicIpsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpsFilter)(nil)).Elem()
+}
+
+func (o GetPublicIpsFilterOutput) ToGetPublicIpsFilterOutput() GetPublicIpsFilterOutput {
+	return o
+}
+
+func (o GetPublicIpsFilterOutput) ToGetPublicIpsFilterOutputWithContext(ctx context.Context) GetPublicIpsFilterOutput {
+	return o
+}
+
+func (o GetPublicIpsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPublicIpsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPublicIpsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPublicIpsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPublicIpsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPublicIpsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpsFilter)(nil)).Elem()
+}
+
+func (o GetPublicIpsFilterArrayOutput) ToGetPublicIpsFilterArrayOutput() GetPublicIpsFilterArrayOutput {
+	return o
+}
+
+func (o GetPublicIpsFilterArrayOutput) ToGetPublicIpsFilterArrayOutputWithContext(ctx context.Context) GetPublicIpsFilterArrayOutput {
+	return o
+}
+
+func (o GetPublicIpsFilterArrayOutput) Index(i pulumi.IntInput) GetPublicIpsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicIpsFilter {
+		return vs[0].([]GetPublicIpsFilter)[vs[1].(int)]
+	}).(GetPublicIpsFilterOutput)
+}
+
+type GetPublicIpsPublicIp struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
+	AssignedEntityId string `pulumi:"assignedEntityId"`
+	// The type of entity the public IP is assigned to, or in the process of being assigned to.
+	AssignedEntityType string `pulumi:"assignedEntityType"`
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// The public IP address of the `publicIp` object.  Example: `203.0.113.2`
+	IpAddress string `pulumi:"ipAddress"`
+	// A filter to return only public IPs that match given lifetime.
+	Lifetime string `pulumi:"lifetime"`
+	// Deprecated. Use `assignedEntityId` instead.
+	PrivateIpId string `pulumi:"privateIpId"`
+	// A filter to return only resources that belong to the given public IP pool.
+	PublicIpPoolId string `pulumi:"publicIpPoolId"`
+	// Whether the public IP is regional or specific to a particular availability domain.
+	Scope string `pulumi:"scope"`
+	// The public IP's current state.
+	State string `pulumi:"state"`
+	// The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetPublicIpsPublicIpInput is an input type that accepts GetPublicIpsPublicIpArgs and GetPublicIpsPublicIpOutput values.
+// You can construct a concrete instance of `GetPublicIpsPublicIpInput` via:
+//
+//	GetPublicIpsPublicIpArgs{...}
+type GetPublicIpsPublicIpInput interface {
+	pulumi.Input
+
+	ToGetPublicIpsPublicIpOutput() GetPublicIpsPublicIpOutput
+	ToGetPublicIpsPublicIpOutputWithContext(context.Context) GetPublicIpsPublicIpOutput
+}
+
+type GetPublicIpsPublicIpArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
+	AssignedEntityId pulumi.StringInput `pulumi:"assignedEntityId"`
+	// The type of entity the public IP is assigned to, or in the process of being assigned to.
+	AssignedEntityType pulumi.StringInput `pulumi:"assignedEntityType"`
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// The public IP address of the `publicIp` object.  Example: `203.0.113.2`
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// A filter to return only public IPs that match given lifetime.
+	Lifetime pulumi.StringInput `pulumi:"lifetime"`
+	// Deprecated. Use `assignedEntityId` instead.
+	PrivateIpId pulumi.StringInput `pulumi:"privateIpId"`
+	// A filter to return only resources that belong to the given public IP pool.
+	PublicIpPoolId pulumi.StringInput `pulumi:"publicIpPoolId"`
+	// Whether the public IP is regional or specific to a particular availability domain.
+	Scope pulumi.StringInput `pulumi:"scope"`
+	// The public IP's current state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetPublicIpsPublicIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpsPublicIp)(nil)).Elem()
+}
+
+func (i GetPublicIpsPublicIpArgs) ToGetPublicIpsPublicIpOutput() GetPublicIpsPublicIpOutput {
+	return i.ToGetPublicIpsPublicIpOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpsPublicIpArgs) ToGetPublicIpsPublicIpOutputWithContext(ctx context.Context) GetPublicIpsPublicIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpsPublicIpOutput)
+}
+
+// GetPublicIpsPublicIpArrayInput is an input type that accepts GetPublicIpsPublicIpArray and GetPublicIpsPublicIpArrayOutput values.
+// You can construct a concrete instance of `GetPublicIpsPublicIpArrayInput` via:
+//
+//	GetPublicIpsPublicIpArray{ GetPublicIpsPublicIpArgs{...} }
+type GetPublicIpsPublicIpArrayInput interface {
+	pulumi.Input
+
+	ToGetPublicIpsPublicIpArrayOutput() GetPublicIpsPublicIpArrayOutput
+	ToGetPublicIpsPublicIpArrayOutputWithContext(context.Context) GetPublicIpsPublicIpArrayOutput
+}
+
+type GetPublicIpsPublicIpArray []GetPublicIpsPublicIpInput
+
+func (GetPublicIpsPublicIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpsPublicIp)(nil)).Elem()
+}
+
+func (i GetPublicIpsPublicIpArray) ToGetPublicIpsPublicIpArrayOutput() GetPublicIpsPublicIpArrayOutput {
+	return i.ToGetPublicIpsPublicIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetPublicIpsPublicIpArray) ToGetPublicIpsPublicIpArrayOutputWithContext(ctx context.Context) GetPublicIpsPublicIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpsPublicIpArrayOutput)
+}
+
+type GetPublicIpsPublicIpOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpsPublicIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPublicIpsPublicIp)(nil)).Elem()
+}
+
+func (o GetPublicIpsPublicIpOutput) ToGetPublicIpsPublicIpOutput() GetPublicIpsPublicIpOutput {
+	return o
+}
+
+func (o GetPublicIpsPublicIpOutput) ToGetPublicIpsPublicIpOutputWithContext(ctx context.Context) GetPublicIpsPublicIpOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
+func (o GetPublicIpsPublicIpOutput) AssignedEntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.AssignedEntityId }).(pulumi.StringOutput)
+}
+
+// The type of entity the public IP is assigned to, or in the process of being assigned to.
+func (o GetPublicIpsPublicIpOutput) AssignedEntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.AssignedEntityType }).(pulumi.StringOutput)
+}
+
+// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+func (o GetPublicIpsPublicIpOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetPublicIpsPublicIpOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetPublicIpsPublicIpOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetPublicIpsPublicIpOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetPublicIpsPublicIpOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetPublicIpsPublicIpOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The public IP address of the `publicIp` object.  Example: `203.0.113.2`
+func (o GetPublicIpsPublicIpOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// A filter to return only public IPs that match given lifetime.
+func (o GetPublicIpsPublicIpOutput) Lifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.Lifetime }).(pulumi.StringOutput)
+}
+
+// Deprecated. Use `assignedEntityId` instead.
+func (o GetPublicIpsPublicIpOutput) PrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.PrivateIpId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that belong to the given public IP pool.
+func (o GetPublicIpsPublicIpOutput) PublicIpPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.PublicIpPoolId }).(pulumi.StringOutput)
+}
+
+// Whether the public IP is regional or specific to a particular availability domain.
+func (o GetPublicIpsPublicIpOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.Scope }).(pulumi.StringOutput)
+}
+
+// The public IP's current state.
+func (o GetPublicIpsPublicIpOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetPublicIpsPublicIpOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetPublicIpsPublicIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPublicIpsPublicIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPublicIpsPublicIp)(nil)).Elem()
+}
+
+func (o GetPublicIpsPublicIpArrayOutput) ToGetPublicIpsPublicIpArrayOutput() GetPublicIpsPublicIpArrayOutput {
+	return o
+}
+
+func (o GetPublicIpsPublicIpArrayOutput) ToGetPublicIpsPublicIpArrayOutputWithContext(ctx context.Context) GetPublicIpsPublicIpArrayOutput {
+	return o
+}
+
+func (o GetPublicIpsPublicIpArrayOutput) Index(i pulumi.IntInput) GetPublicIpsPublicIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicIpsPublicIp {
+		return vs[0].([]GetPublicIpsPublicIp)[vs[1].(int)]
+	}).(GetPublicIpsPublicIpOutput)
+}
+
+type GetRemotePeeringConnectionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRemotePeeringConnectionsFilterInput is an input type that accepts GetRemotePeeringConnectionsFilterArgs and GetRemotePeeringConnectionsFilterOutput values.
+// You can construct a concrete instance of `GetRemotePeeringConnectionsFilterInput` via:
+//
+//	GetRemotePeeringConnectionsFilterArgs{...}
+type GetRemotePeeringConnectionsFilterInput interface {
+	pulumi.Input
+
+	ToGetRemotePeeringConnectionsFilterOutput() GetRemotePeeringConnectionsFilterOutput
+	ToGetRemotePeeringConnectionsFilterOutputWithContext(context.Context) GetRemotePeeringConnectionsFilterOutput
+}
+
+type GetRemotePeeringConnectionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRemotePeeringConnectionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemotePeeringConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetRemotePeeringConnectionsFilterArgs) ToGetRemotePeeringConnectionsFilterOutput() GetRemotePeeringConnectionsFilterOutput {
+	return i.ToGetRemotePeeringConnectionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRemotePeeringConnectionsFilterArgs) ToGetRemotePeeringConnectionsFilterOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemotePeeringConnectionsFilterOutput)
+}
+
+// GetRemotePeeringConnectionsFilterArrayInput is an input type that accepts GetRemotePeeringConnectionsFilterArray and GetRemotePeeringConnectionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRemotePeeringConnectionsFilterArrayInput` via:
+//
+//	GetRemotePeeringConnectionsFilterArray{ GetRemotePeeringConnectionsFilterArgs{...} }
+type GetRemotePeeringConnectionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRemotePeeringConnectionsFilterArrayOutput() GetRemotePeeringConnectionsFilterArrayOutput
+	ToGetRemotePeeringConnectionsFilterArrayOutputWithContext(context.Context) GetRemotePeeringConnectionsFilterArrayOutput
+}
+
+type GetRemotePeeringConnectionsFilterArray []GetRemotePeeringConnectionsFilterInput
+
+func (GetRemotePeeringConnectionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemotePeeringConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetRemotePeeringConnectionsFilterArray) ToGetRemotePeeringConnectionsFilterArrayOutput() GetRemotePeeringConnectionsFilterArrayOutput {
+	return i.ToGetRemotePeeringConnectionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemotePeeringConnectionsFilterArray) ToGetRemotePeeringConnectionsFilterArrayOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemotePeeringConnectionsFilterArrayOutput)
+}
+
+type GetRemotePeeringConnectionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRemotePeeringConnectionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemotePeeringConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetRemotePeeringConnectionsFilterOutput) ToGetRemotePeeringConnectionsFilterOutput() GetRemotePeeringConnectionsFilterOutput {
+	return o
+}
+
+func (o GetRemotePeeringConnectionsFilterOutput) ToGetRemotePeeringConnectionsFilterOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsFilterOutput {
+	return o
+}
+
+func (o GetRemotePeeringConnectionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRemotePeeringConnectionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRemotePeeringConnectionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRemotePeeringConnectionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemotePeeringConnectionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemotePeeringConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetRemotePeeringConnectionsFilterArrayOutput) ToGetRemotePeeringConnectionsFilterArrayOutput() GetRemotePeeringConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetRemotePeeringConnectionsFilterArrayOutput) ToGetRemotePeeringConnectionsFilterArrayOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetRemotePeeringConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetRemotePeeringConnectionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemotePeeringConnectionsFilter {
+		return vs[0].([]GetRemotePeeringConnectionsFilter)[vs[1].(int)]
+	}).(GetRemotePeeringConnectionsFilterOutput)
+}
+
+type GetRemotePeeringConnectionsRemotePeeringConnection struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+	DrgId string `pulumi:"drgId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC.
+	Id string `pulumi:"id"`
+	// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+	IsCrossTenancyPeering bool `pulumi:"isCrossTenancyPeering"`
+	// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC.
+	PeerId string `pulumi:"peerId"`
+	// If this RPC is peered, this value is the region that contains the other RPC.  Example: `us-ashburn-1`
+	PeerRegionName string `pulumi:"peerRegionName"`
+	// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
+	PeerTenancyId string `pulumi:"peerTenancyId"`
+	// Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
+	PeeringStatus string `pulumi:"peeringStatus"`
+	// The RPC's current lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetRemotePeeringConnectionsRemotePeeringConnectionInput is an input type that accepts GetRemotePeeringConnectionsRemotePeeringConnectionArgs and GetRemotePeeringConnectionsRemotePeeringConnectionOutput values.
+// You can construct a concrete instance of `GetRemotePeeringConnectionsRemotePeeringConnectionInput` via:
+//
+//	GetRemotePeeringConnectionsRemotePeeringConnectionArgs{...}
+type GetRemotePeeringConnectionsRemotePeeringConnectionInput interface {
+	pulumi.Input
+
+	ToGetRemotePeeringConnectionsRemotePeeringConnectionOutput() GetRemotePeeringConnectionsRemotePeeringConnectionOutput
+	ToGetRemotePeeringConnectionsRemotePeeringConnectionOutputWithContext(context.Context) GetRemotePeeringConnectionsRemotePeeringConnectionOutput
+}
+
+type GetRemotePeeringConnectionsRemotePeeringConnectionArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+	DrgId pulumi.StringInput `pulumi:"drgId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+	IsCrossTenancyPeering pulumi.BoolInput `pulumi:"isCrossTenancyPeering"`
+	// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC.
+	PeerId pulumi.StringInput `pulumi:"peerId"`
+	// If this RPC is peered, this value is the region that contains the other RPC.  Example: `us-ashburn-1`
+	PeerRegionName pulumi.StringInput `pulumi:"peerRegionName"`
+	// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
+	PeerTenancyId pulumi.StringInput `pulumi:"peerTenancyId"`
+	// Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
+	PeeringStatus pulumi.StringInput `pulumi:"peeringStatus"`
+	// The RPC's current lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetRemotePeeringConnectionsRemotePeeringConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemotePeeringConnectionsRemotePeeringConnection)(nil)).Elem()
+}
+
+func (i GetRemotePeeringConnectionsRemotePeeringConnectionArgs) ToGetRemotePeeringConnectionsRemotePeeringConnectionOutput() GetRemotePeeringConnectionsRemotePeeringConnectionOutput {
+	return i.ToGetRemotePeeringConnectionsRemotePeeringConnectionOutputWithContext(context.Background())
+}
+
+func (i GetRemotePeeringConnectionsRemotePeeringConnectionArgs) ToGetRemotePeeringConnectionsRemotePeeringConnectionOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsRemotePeeringConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemotePeeringConnectionsRemotePeeringConnectionOutput)
+}
+
+// GetRemotePeeringConnectionsRemotePeeringConnectionArrayInput is an input type that accepts GetRemotePeeringConnectionsRemotePeeringConnectionArray and GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput values.
+// You can construct a concrete instance of `GetRemotePeeringConnectionsRemotePeeringConnectionArrayInput` via:
+//
+//	GetRemotePeeringConnectionsRemotePeeringConnectionArray{ GetRemotePeeringConnectionsRemotePeeringConnectionArgs{...} }
+type GetRemotePeeringConnectionsRemotePeeringConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput() GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput
+	ToGetRemotePeeringConnectionsRemotePeeringConnectionArrayOutputWithContext(context.Context) GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput
+}
+
+type GetRemotePeeringConnectionsRemotePeeringConnectionArray []GetRemotePeeringConnectionsRemotePeeringConnectionInput
+
+func (GetRemotePeeringConnectionsRemotePeeringConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemotePeeringConnectionsRemotePeeringConnection)(nil)).Elem()
+}
+
+func (i GetRemotePeeringConnectionsRemotePeeringConnectionArray) ToGetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput() GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput {
+	return i.ToGetRemotePeeringConnectionsRemotePeeringConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemotePeeringConnectionsRemotePeeringConnectionArray) ToGetRemotePeeringConnectionsRemotePeeringConnectionArrayOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput)
+}
+
+type GetRemotePeeringConnectionsRemotePeeringConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetRemotePeeringConnectionsRemotePeeringConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemotePeeringConnectionsRemotePeeringConnection)(nil)).Elem()
+}
+
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) ToGetRemotePeeringConnectionsRemotePeeringConnectionOutput() GetRemotePeeringConnectionsRemotePeeringConnectionOutput {
+	return o
+}
+
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) ToGetRemotePeeringConnectionsRemotePeeringConnectionOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsRemotePeeringConnectionOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) DrgId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.DrgId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC.
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) IsCrossTenancyPeering() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) bool { return v.IsCrossTenancyPeering }).(pulumi.BoolOutput)
+}
+
+// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC.
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) PeerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.PeerId }).(pulumi.StringOutput)
+}
+
+// If this RPC is peered, this value is the region that contains the other RPC.  Example: `us-ashburn-1`
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) PeerRegionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.PeerRegionName }).(pulumi.StringOutput)
+}
+
+// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) PeerTenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.PeerTenancyId }).(pulumi.StringOutput)
+}
+
+// Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) PeeringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.PeeringStatus }).(pulumi.StringOutput)
+}
+
+// The RPC's current lifecycle state.
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsRemotePeeringConnection) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemotePeeringConnectionsRemotePeeringConnection)(nil)).Elem()
+}
+
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput) ToGetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput() GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput {
+	return o
+}
+
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput) ToGetRemotePeeringConnectionsRemotePeeringConnectionArrayOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput {
+	return o
+}
+
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput) Index(i pulumi.IntInput) GetRemotePeeringConnectionsRemotePeeringConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemotePeeringConnectionsRemotePeeringConnection {
+		return vs[0].([]GetRemotePeeringConnectionsRemotePeeringConnection)[vs[1].(int)]
+	}).(GetRemotePeeringConnectionsRemotePeeringConnectionOutput)
+}
+
+type GetRouteTablesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRouteTablesFilterInput is an input type that accepts GetRouteTablesFilterArgs and GetRouteTablesFilterOutput values.
+// You can construct a concrete instance of `GetRouteTablesFilterInput` via:
+//
+//	GetRouteTablesFilterArgs{...}
+type GetRouteTablesFilterInput interface {
+	pulumi.Input
+
+	ToGetRouteTablesFilterOutput() GetRouteTablesFilterOutput
+	ToGetRouteTablesFilterOutputWithContext(context.Context) GetRouteTablesFilterOutput
+}
+
+type GetRouteTablesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRouteTablesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTablesFilter)(nil)).Elem()
+}
+
+func (i GetRouteTablesFilterArgs) ToGetRouteTablesFilterOutput() GetRouteTablesFilterOutput {
+	return i.ToGetRouteTablesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRouteTablesFilterArgs) ToGetRouteTablesFilterOutputWithContext(ctx context.Context) GetRouteTablesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesFilterOutput)
+}
+
+// GetRouteTablesFilterArrayInput is an input type that accepts GetRouteTablesFilterArray and GetRouteTablesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRouteTablesFilterArrayInput` via:
+//
+//	GetRouteTablesFilterArray{ GetRouteTablesFilterArgs{...} }
+type GetRouteTablesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRouteTablesFilterArrayOutput() GetRouteTablesFilterArrayOutput
+	ToGetRouteTablesFilterArrayOutputWithContext(context.Context) GetRouteTablesFilterArrayOutput
+}
+
+type GetRouteTablesFilterArray []GetRouteTablesFilterInput
+
+func (GetRouteTablesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTablesFilter)(nil)).Elem()
+}
+
+func (i GetRouteTablesFilterArray) ToGetRouteTablesFilterArrayOutput() GetRouteTablesFilterArrayOutput {
+	return i.ToGetRouteTablesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRouteTablesFilterArray) ToGetRouteTablesFilterArrayOutputWithContext(ctx context.Context) GetRouteTablesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesFilterArrayOutput)
+}
+
+type GetRouteTablesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTablesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTablesFilter)(nil)).Elem()
+}
+
+func (o GetRouteTablesFilterOutput) ToGetRouteTablesFilterOutput() GetRouteTablesFilterOutput {
+	return o
+}
+
+func (o GetRouteTablesFilterOutput) ToGetRouteTablesFilterOutputWithContext(ctx context.Context) GetRouteTablesFilterOutput {
+	return o
+}
+
+func (o GetRouteTablesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRouteTablesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRouteTablesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRouteTablesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRouteTablesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRouteTablesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTablesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTablesFilter)(nil)).Elem()
+}
+
+func (o GetRouteTablesFilterArrayOutput) ToGetRouteTablesFilterArrayOutput() GetRouteTablesFilterArrayOutput {
+	return o
+}
+
+func (o GetRouteTablesFilterArrayOutput) ToGetRouteTablesFilterArrayOutputWithContext(ctx context.Context) GetRouteTablesFilterArrayOutput {
+	return o
+}
+
+func (o GetRouteTablesFilterArrayOutput) Index(i pulumi.IntInput) GetRouteTablesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRouteTablesFilter {
+		return vs[0].([]GetRouteTablesFilter)[vs[1].(int)]
+	}).(GetRouteTablesFilterOutput)
+}
+
+type GetRouteTablesRouteTable struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The route table's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// The collection of rules for routing destination IPs to network devices.
+	RouteRules []GetRouteTablesRouteTableRouteRule `pulumi:"routeRules"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The date and time the route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetRouteTablesRouteTableInput is an input type that accepts GetRouteTablesRouteTableArgs and GetRouteTablesRouteTableOutput values.
+// You can construct a concrete instance of `GetRouteTablesRouteTableInput` via:
+//
+//	GetRouteTablesRouteTableArgs{...}
+type GetRouteTablesRouteTableInput interface {
+	pulumi.Input
+
+	ToGetRouteTablesRouteTableOutput() GetRouteTablesRouteTableOutput
+	ToGetRouteTablesRouteTableOutputWithContext(context.Context) GetRouteTablesRouteTableOutput
+}
+
+type GetRouteTablesRouteTableArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The route table's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// The collection of rules for routing destination IPs to network devices.
+	RouteRules GetRouteTablesRouteTableRouteRuleArrayInput `pulumi:"routeRules"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetRouteTablesRouteTableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTablesRouteTable)(nil)).Elem()
+}
+
+func (i GetRouteTablesRouteTableArgs) ToGetRouteTablesRouteTableOutput() GetRouteTablesRouteTableOutput {
+	return i.ToGetRouteTablesRouteTableOutputWithContext(context.Background())
+}
+
+func (i GetRouteTablesRouteTableArgs) ToGetRouteTablesRouteTableOutputWithContext(ctx context.Context) GetRouteTablesRouteTableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesRouteTableOutput)
+}
+
+// GetRouteTablesRouteTableArrayInput is an input type that accepts GetRouteTablesRouteTableArray and GetRouteTablesRouteTableArrayOutput values.
+// You can construct a concrete instance of `GetRouteTablesRouteTableArrayInput` via:
+//
+//	GetRouteTablesRouteTableArray{ GetRouteTablesRouteTableArgs{...} }
+type GetRouteTablesRouteTableArrayInput interface {
+	pulumi.Input
+
+	ToGetRouteTablesRouteTableArrayOutput() GetRouteTablesRouteTableArrayOutput
+	ToGetRouteTablesRouteTableArrayOutputWithContext(context.Context) GetRouteTablesRouteTableArrayOutput
+}
+
+type GetRouteTablesRouteTableArray []GetRouteTablesRouteTableInput
+
+func (GetRouteTablesRouteTableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTablesRouteTable)(nil)).Elem()
+}
+
+func (i GetRouteTablesRouteTableArray) ToGetRouteTablesRouteTableArrayOutput() GetRouteTablesRouteTableArrayOutput {
+	return i.ToGetRouteTablesRouteTableArrayOutputWithContext(context.Background())
+}
+
+func (i GetRouteTablesRouteTableArray) ToGetRouteTablesRouteTableArrayOutputWithContext(ctx context.Context) GetRouteTablesRouteTableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesRouteTableArrayOutput)
+}
+
+type GetRouteTablesRouteTableOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTablesRouteTableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTablesRouteTable)(nil)).Elem()
+}
+
+func (o GetRouteTablesRouteTableOutput) ToGetRouteTablesRouteTableOutput() GetRouteTablesRouteTableOutput {
+	return o
+}
+
+func (o GetRouteTablesRouteTableOutput) ToGetRouteTablesRouteTableOutputWithContext(ctx context.Context) GetRouteTablesRouteTableOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetRouteTablesRouteTableOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTable) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetRouteTablesRouteTableOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTable) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetRouteTablesRouteTableOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTable) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetRouteTablesRouteTableOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTable) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The route table's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetRouteTablesRouteTableOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTable) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The collection of rules for routing destination IPs to network devices.
+func (o GetRouteTablesRouteTableOutput) RouteRules() GetRouteTablesRouteTableRouteRuleArrayOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTable) []GetRouteTablesRouteTableRouteRule { return v.RouteRules }).(GetRouteTablesRouteTableRouteRuleArrayOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetRouteTablesRouteTableOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTable) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetRouteTablesRouteTableOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTable) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+func (o GetRouteTablesRouteTableOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTable) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetRouteTablesRouteTableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTablesRouteTableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTablesRouteTable)(nil)).Elem()
+}
+
+func (o GetRouteTablesRouteTableArrayOutput) ToGetRouteTablesRouteTableArrayOutput() GetRouteTablesRouteTableArrayOutput {
+	return o
+}
+
+func (o GetRouteTablesRouteTableArrayOutput) ToGetRouteTablesRouteTableArrayOutputWithContext(ctx context.Context) GetRouteTablesRouteTableArrayOutput {
+	return o
+}
+
+func (o GetRouteTablesRouteTableArrayOutput) Index(i pulumi.IntInput) GetRouteTablesRouteTableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRouteTablesRouteTable {
+		return vs[0].([]GetRouteTablesRouteTable)[vs[1].(int)]
+	}).(GetRouteTablesRouteTableOutput)
+}
+
+type GetRouteTablesRouteTableRouteRule struct {
+	// Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
+	//
+	// Deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.
+	CidrBlock string `pulumi:"cidrBlock"`
+	// An optional description of your choice for the rule.
+	Description string `pulumi:"description"`
+	// Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
+	Destination string `pulumi:"destination"`
+	// Type of destination for the rule. Required if you provide a `destination`.
+	DestinationType string `pulumi:"destinationType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+	NetworkEntityId string `pulumi:"networkEntityId"`
+	// A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+	RouteType string `pulumi:"routeType"`
+}
+
+// GetRouteTablesRouteTableRouteRuleInput is an input type that accepts GetRouteTablesRouteTableRouteRuleArgs and GetRouteTablesRouteTableRouteRuleOutput values.
+// You can construct a concrete instance of `GetRouteTablesRouteTableRouteRuleInput` via:
+//
+//	GetRouteTablesRouteTableRouteRuleArgs{...}
+type GetRouteTablesRouteTableRouteRuleInput interface {
+	pulumi.Input
+
+	ToGetRouteTablesRouteTableRouteRuleOutput() GetRouteTablesRouteTableRouteRuleOutput
+	ToGetRouteTablesRouteTableRouteRuleOutputWithContext(context.Context) GetRouteTablesRouteTableRouteRuleOutput
+}
+
+type GetRouteTablesRouteTableRouteRuleArgs struct {
+	// Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
+	//
+	// Deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.
+	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
+	// An optional description of your choice for the rule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// Type of destination for the rule. Required if you provide a `destination`.
+	DestinationType pulumi.StringInput `pulumi:"destinationType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+	NetworkEntityId pulumi.StringInput `pulumi:"networkEntityId"`
+	// A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+	RouteType pulumi.StringInput `pulumi:"routeType"`
+}
+
+func (GetRouteTablesRouteTableRouteRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTablesRouteTableRouteRule)(nil)).Elem()
+}
+
+func (i GetRouteTablesRouteTableRouteRuleArgs) ToGetRouteTablesRouteTableRouteRuleOutput() GetRouteTablesRouteTableRouteRuleOutput {
+	return i.ToGetRouteTablesRouteTableRouteRuleOutputWithContext(context.Background())
+}
+
+func (i GetRouteTablesRouteTableRouteRuleArgs) ToGetRouteTablesRouteTableRouteRuleOutputWithContext(ctx context.Context) GetRouteTablesRouteTableRouteRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesRouteTableRouteRuleOutput)
+}
+
+// GetRouteTablesRouteTableRouteRuleArrayInput is an input type that accepts GetRouteTablesRouteTableRouteRuleArray and GetRouteTablesRouteTableRouteRuleArrayOutput values.
+// You can construct a concrete instance of `GetRouteTablesRouteTableRouteRuleArrayInput` via:
+//
+//	GetRouteTablesRouteTableRouteRuleArray{ GetRouteTablesRouteTableRouteRuleArgs{...} }
+type GetRouteTablesRouteTableRouteRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetRouteTablesRouteTableRouteRuleArrayOutput() GetRouteTablesRouteTableRouteRuleArrayOutput
+	ToGetRouteTablesRouteTableRouteRuleArrayOutputWithContext(context.Context) GetRouteTablesRouteTableRouteRuleArrayOutput
+}
+
+type GetRouteTablesRouteTableRouteRuleArray []GetRouteTablesRouteTableRouteRuleInput
+
+func (GetRouteTablesRouteTableRouteRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTablesRouteTableRouteRule)(nil)).Elem()
+}
+
+func (i GetRouteTablesRouteTableRouteRuleArray) ToGetRouteTablesRouteTableRouteRuleArrayOutput() GetRouteTablesRouteTableRouteRuleArrayOutput {
+	return i.ToGetRouteTablesRouteTableRouteRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetRouteTablesRouteTableRouteRuleArray) ToGetRouteTablesRouteTableRouteRuleArrayOutputWithContext(ctx context.Context) GetRouteTablesRouteTableRouteRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesRouteTableRouteRuleArrayOutput)
+}
+
+type GetRouteTablesRouteTableRouteRuleOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTablesRouteTableRouteRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTablesRouteTableRouteRule)(nil)).Elem()
+}
+
+func (o GetRouteTablesRouteTableRouteRuleOutput) ToGetRouteTablesRouteTableRouteRuleOutput() GetRouteTablesRouteTableRouteRuleOutput {
+	return o
+}
+
+func (o GetRouteTablesRouteTableRouteRuleOutput) ToGetRouteTablesRouteTableRouteRuleOutputWithContext(ctx context.Context) GetRouteTablesRouteTableRouteRuleOutput {
+	return o
+}
+
+// Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
+//
+// Deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.
+func (o GetRouteTablesRouteTableRouteRuleOutput) CidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTableRouteRule) string { return v.CidrBlock }).(pulumi.StringOutput)
+}
+
+// An optional description of your choice for the rule.
+func (o GetRouteTablesRouteTableRouteRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTableRouteRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
+func (o GetRouteTablesRouteTableRouteRuleOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTableRouteRule) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// Type of destination for the rule. Required if you provide a `destination`.
+func (o GetRouteTablesRouteTableRouteRuleOutput) DestinationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTableRouteRule) string { return v.DestinationType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+func (o GetRouteTablesRouteTableRouteRuleOutput) NetworkEntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTableRouteRule) string { return v.NetworkEntityId }).(pulumi.StringOutput)
+}
+
+// A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
+func (o GetRouteTablesRouteTableRouteRuleOutput) RouteType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTablesRouteTableRouteRule) string { return v.RouteType }).(pulumi.StringOutput)
+}
+
+type GetRouteTablesRouteTableRouteRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTablesRouteTableRouteRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTablesRouteTableRouteRule)(nil)).Elem()
+}
+
+func (o GetRouteTablesRouteTableRouteRuleArrayOutput) ToGetRouteTablesRouteTableRouteRuleArrayOutput() GetRouteTablesRouteTableRouteRuleArrayOutput {
+	return o
+}
+
+func (o GetRouteTablesRouteTableRouteRuleArrayOutput) ToGetRouteTablesRouteTableRouteRuleArrayOutputWithContext(ctx context.Context) GetRouteTablesRouteTableRouteRuleArrayOutput {
+	return o
+}
+
+func (o GetRouteTablesRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput) GetRouteTablesRouteTableRouteRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRouteTablesRouteTableRouteRule {
+		return vs[0].([]GetRouteTablesRouteTableRouteRule)[vs[1].(int)]
+	}).(GetRouteTablesRouteTableRouteRuleOutput)
+}
+
 type GetSecurityListsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -7642,7 +13561,7 @@ type GetVcnsVirtualNetwork struct {
 	// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 	Byoipv6cidrBlocks  []string                                 `pulumi:"byoipv6cidrBlocks"`
 	Byoipv6cidrDetails []GetVcnsVirtualNetworkByoipv6cidrDetail `pulumi:"byoipv6cidrDetails"`
-	// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
+	// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
 	CidrBlock string `pulumi:"cidrBlock"`
 	// The list of IPv4 CIDR blocks the VCN will use.
 	CidrBlocks []string `pulumi:"cidrBlocks"`
@@ -7693,7 +13612,7 @@ type GetVcnsVirtualNetworkArgs struct {
 	// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 	Byoipv6cidrBlocks  pulumi.StringArrayInput                          `pulumi:"byoipv6cidrBlocks"`
 	Byoipv6cidrDetails GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput `pulumi:"byoipv6cidrDetails"`
-	// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
+	// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
 	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
 	// The list of IPv4 CIDR blocks the VCN will use.
 	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
@@ -7789,7 +13708,7 @@ func (o GetVcnsVirtualNetworkOutput) Byoipv6cidrDetails() GetVcnsVirtualNetworkB
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) []GetVcnsVirtualNetworkByoipv6cidrDetail { return v.Byoipv6cidrDetails }).(GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput)
 }
 
-// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
+// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
 func (o GetVcnsVirtualNetworkOutput) CidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.CidrBlock }).(pulumi.StringOutput)
 }
@@ -7995,6 +13914,233 @@ func (o GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVcnsVirtualNetworkByoipv6cidrDetail {
 		return vs[0].([]GetVcnsVirtualNetworkByoipv6cidrDetail)[vs[1].(int)]
 	}).(GetVcnsVirtualNetworkByoipv6cidrDetailOutput)
+}
+
+type GetVirtualCircuitAssociatedTunnelsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVirtualCircuitAssociatedTunnelsFilterInput is an input type that accepts GetVirtualCircuitAssociatedTunnelsFilterArgs and GetVirtualCircuitAssociatedTunnelsFilterOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitAssociatedTunnelsFilterInput` via:
+//
+//	GetVirtualCircuitAssociatedTunnelsFilterArgs{...}
+type GetVirtualCircuitAssociatedTunnelsFilterInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitAssociatedTunnelsFilterOutput() GetVirtualCircuitAssociatedTunnelsFilterOutput
+	ToGetVirtualCircuitAssociatedTunnelsFilterOutputWithContext(context.Context) GetVirtualCircuitAssociatedTunnelsFilterOutput
+}
+
+type GetVirtualCircuitAssociatedTunnelsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVirtualCircuitAssociatedTunnelsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitAssociatedTunnelsFilter)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitAssociatedTunnelsFilterArgs) ToGetVirtualCircuitAssociatedTunnelsFilterOutput() GetVirtualCircuitAssociatedTunnelsFilterOutput {
+	return i.ToGetVirtualCircuitAssociatedTunnelsFilterOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitAssociatedTunnelsFilterArgs) ToGetVirtualCircuitAssociatedTunnelsFilterOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitAssociatedTunnelsFilterOutput)
+}
+
+// GetVirtualCircuitAssociatedTunnelsFilterArrayInput is an input type that accepts GetVirtualCircuitAssociatedTunnelsFilterArray and GetVirtualCircuitAssociatedTunnelsFilterArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitAssociatedTunnelsFilterArrayInput` via:
+//
+//	GetVirtualCircuitAssociatedTunnelsFilterArray{ GetVirtualCircuitAssociatedTunnelsFilterArgs{...} }
+type GetVirtualCircuitAssociatedTunnelsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitAssociatedTunnelsFilterArrayOutput() GetVirtualCircuitAssociatedTunnelsFilterArrayOutput
+	ToGetVirtualCircuitAssociatedTunnelsFilterArrayOutputWithContext(context.Context) GetVirtualCircuitAssociatedTunnelsFilterArrayOutput
+}
+
+type GetVirtualCircuitAssociatedTunnelsFilterArray []GetVirtualCircuitAssociatedTunnelsFilterInput
+
+func (GetVirtualCircuitAssociatedTunnelsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitAssociatedTunnelsFilter)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitAssociatedTunnelsFilterArray) ToGetVirtualCircuitAssociatedTunnelsFilterArrayOutput() GetVirtualCircuitAssociatedTunnelsFilterArrayOutput {
+	return i.ToGetVirtualCircuitAssociatedTunnelsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitAssociatedTunnelsFilterArray) ToGetVirtualCircuitAssociatedTunnelsFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitAssociatedTunnelsFilterArrayOutput)
+}
+
+type GetVirtualCircuitAssociatedTunnelsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitAssociatedTunnelsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitAssociatedTunnelsFilter)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterOutput) ToGetVirtualCircuitAssociatedTunnelsFilterOutput() GetVirtualCircuitAssociatedTunnelsFilterOutput {
+	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterOutput) ToGetVirtualCircuitAssociatedTunnelsFilterOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsFilterOutput {
+	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitAssociatedTunnelsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualCircuitAssociatedTunnelsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualCircuitAssociatedTunnelsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVirtualCircuitAssociatedTunnelsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitAssociatedTunnelsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitAssociatedTunnelsFilter)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterArrayOutput) ToGetVirtualCircuitAssociatedTunnelsFilterArrayOutput() GetVirtualCircuitAssociatedTunnelsFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterArrayOutput) ToGetVirtualCircuitAssociatedTunnelsFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitAssociatedTunnelsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitAssociatedTunnelsFilter {
+		return vs[0].([]GetVirtualCircuitAssociatedTunnelsFilter)[vs[1].(int)]
+	}).(GetVirtualCircuitAssociatedTunnelsFilterOutput)
+}
+
+type GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
+	IpsecConnectionId string `pulumi:"ipsecConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
+	TunnelId string `pulumi:"tunnelId"`
+	// The type of the tunnel associated with the virtual circuit.
+	TunnelType string `pulumi:"tunnelType"`
+}
+
+// GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailInput is an input type that accepts GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArgs and GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailInput` via:
+//
+//	GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArgs{...}
+type GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput() GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput
+	ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutputWithContext(context.Context) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput
+}
+
+type GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
+	IpsecConnectionId pulumi.StringInput `pulumi:"ipsecConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
+	TunnelId pulumi.StringInput `pulumi:"tunnelId"`
+	// The type of the tunnel associated with the virtual circuit.
+	TunnelType pulumi.StringInput `pulumi:"tunnelType"`
+}
+
+func (GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArgs) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput() GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput {
+	return i.ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArgs) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput)
+}
+
+// GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayInput is an input type that accepts GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArray and GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayInput` via:
+//
+//	GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArray{ GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArgs{...} }
+type GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput() GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput
+	ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutputWithContext(context.Context) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput
+}
+
+type GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArray []GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailInput
+
+func (GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArray) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput() GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput {
+	return i.ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArray) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput)
+}
+
+type GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput() GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput {
+	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput) IpsecConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail) string {
+		return v.IpsecConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput) TunnelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail) string {
+		return v.TunnelId
+	}).(pulumi.StringOutput)
+}
+
+// The type of the tunnel associated with the virtual circuit.
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput) TunnelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail) string {
+		return v.TunnelType
+	}).(pulumi.StringOutput)
+}
+
+type GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput() GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail {
+		return vs[0].([]GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail)[vs[1].(int)]
+	}).(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput)
 }
 
 type GetVirtualCircuitBandwidthShapesFilter struct {
@@ -8221,7 +14367,7 @@ type GetVirtualCircuitCrossConnectMapping struct {
 	CustomerBgpPeeringIp string `pulumi:"customerBgpPeeringIp"`
 	// The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
 	CustomerBgpPeeringIpv6 string `pulumi:"customerBgpPeeringIpv6"`
-	// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	// The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31 subnet mask. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
 	OracleBgpPeeringIp string `pulumi:"oracleBgpPeeringIp"`
 	// The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
 	OracleBgpPeeringIpv6 string `pulumi:"oracleBgpPeeringIpv6"`
@@ -8249,7 +14395,7 @@ type GetVirtualCircuitCrossConnectMappingArgs struct {
 	CustomerBgpPeeringIp pulumi.StringInput `pulumi:"customerBgpPeeringIp"`
 	// The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
 	CustomerBgpPeeringIpv6 pulumi.StringInput `pulumi:"customerBgpPeeringIpv6"`
-	// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	// The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31 subnet mask. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
 	OracleBgpPeeringIp pulumi.StringInput `pulumi:"oracleBgpPeeringIp"`
 	// The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
 	OracleBgpPeeringIpv6 pulumi.StringInput `pulumi:"oracleBgpPeeringIpv6"`
@@ -8328,7 +14474,7 @@ func (o GetVirtualCircuitCrossConnectMappingOutput) CustomerBgpPeeringIpv6() pul
 	return o.ApplyT(func(v GetVirtualCircuitCrossConnectMapping) string { return v.CustomerBgpPeeringIpv6 }).(pulumi.StringOutput)
 }
 
-// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+// The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31 subnet mask. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
 func (o GetVirtualCircuitCrossConnectMappingOutput) OracleBgpPeeringIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualCircuitCrossConnectMapping) string { return v.OracleBgpPeeringIp }).(pulumi.StringOutput)
 }
@@ -8818,6 +14964,8 @@ type GetVirtualCircuitsVirtualCircuit struct {
 	IpMtu string `pulumi:"ipMtu"`
 	// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 	IsBfdEnabled bool `pulumi:"isBfdEnabled"`
+	// Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+	IsTransportMode bool `pulumi:"isTransportMode"`
 	// The Oracle BGP ASN.
 	OracleBgpAsn int `pulumi:"oracleBgpAsn"`
 	// The OCID of the service offered by the provider (if the customer is connecting via a provider).
@@ -8893,6 +15041,8 @@ type GetVirtualCircuitsVirtualCircuitArgs struct {
 	IpMtu pulumi.StringInput `pulumi:"ipMtu"`
 	// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 	IsBfdEnabled pulumi.BoolInput `pulumi:"isBfdEnabled"`
+	// Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+	IsTransportMode pulumi.BoolInput `pulumi:"isTransportMode"`
 	// The Oracle BGP ASN.
 	OracleBgpAsn pulumi.IntInput `pulumi:"oracleBgpAsn"`
 	// The OCID of the service offered by the provider (if the customer is connecting via a provider).
@@ -9055,6 +15205,11 @@ func (o GetVirtualCircuitsVirtualCircuitOutput) IpMtu() pulumi.StringOutput {
 // Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 func (o GetVirtualCircuitsVirtualCircuitOutput) IsBfdEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) bool { return v.IsBfdEnabled }).(pulumi.BoolOutput)
+}
+
+// Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+func (o GetVirtualCircuitsVirtualCircuitOutput) IsTransportMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) bool { return v.IsTransportMode }).(pulumi.BoolOutput)
 }
 
 // The Oracle BGP ASN.
@@ -10428,16 +16583,18 @@ func (o GetVnicAttachmentsVnicAttachmentArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetVnicAttachmentsVnicAttachmentCreateVnicDetail struct {
+	AssignIpv6ip           bool                   `pulumi:"assignIpv6ip"`
 	AssignPrivateDnsRecord bool                   `pulumi:"assignPrivateDnsRecord"`
 	AssignPublicIp         string                 `pulumi:"assignPublicIp"`
 	DefinedTags            map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName         string                 `pulumi:"displayName"`
-	FreeformTags        map[string]interface{} `pulumi:"freeformTags"`
-	HostnameLabel       string                 `pulumi:"hostnameLabel"`
-	NsgIds              []string               `pulumi:"nsgIds"`
-	PrivateIp           string                 `pulumi:"privateIp"`
-	SkipSourceDestCheck bool                   `pulumi:"skipSourceDestCheck"`
+	DisplayName                          string                                                                                `pulumi:"displayName"`
+	FreeformTags                         map[string]interface{}                                                                `pulumi:"freeformTags"`
+	HostnameLabel                        string                                                                                `pulumi:"hostnameLabel"`
+	Ipv6addressIpv6subnetCidrPairDetails []GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	NsgIds                               []string                                                                              `pulumi:"nsgIds"`
+	PrivateIp                            string                                                                                `pulumi:"privateIp"`
+	SkipSourceDestCheck                  bool                                                                                  `pulumi:"skipSourceDestCheck"`
 	// The OCID of the subnet to create the VNIC in.
 	SubnetId string `pulumi:"subnetId"`
 	// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -10456,16 +16613,18 @@ type GetVnicAttachmentsVnicAttachmentCreateVnicDetailInput interface {
 }
 
 type GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs struct {
+	AssignIpv6ip           pulumi.BoolInput   `pulumi:"assignIpv6ip"`
 	AssignPrivateDnsRecord pulumi.BoolInput   `pulumi:"assignPrivateDnsRecord"`
 	AssignPublicIp         pulumi.StringInput `pulumi:"assignPublicIp"`
 	DefinedTags            pulumi.MapInput    `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName         pulumi.StringInput      `pulumi:"displayName"`
-	FreeformTags        pulumi.MapInput         `pulumi:"freeformTags"`
-	HostnameLabel       pulumi.StringInput      `pulumi:"hostnameLabel"`
-	NsgIds              pulumi.StringArrayInput `pulumi:"nsgIds"`
-	PrivateIp           pulumi.StringInput      `pulumi:"privateIp"`
-	SkipSourceDestCheck pulumi.BoolInput        `pulumi:"skipSourceDestCheck"`
+	DisplayName                          pulumi.StringInput                                                                            `pulumi:"displayName"`
+	FreeformTags                         pulumi.MapInput                                                                               `pulumi:"freeformTags"`
+	HostnameLabel                        pulumi.StringInput                                                                            `pulumi:"hostnameLabel"`
+	Ipv6addressIpv6subnetCidrPairDetails GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	NsgIds                               pulumi.StringArrayInput                                                                       `pulumi:"nsgIds"`
+	PrivateIp                            pulumi.StringInput                                                                            `pulumi:"privateIp"`
+	SkipSourceDestCheck                  pulumi.BoolInput                                                                              `pulumi:"skipSourceDestCheck"`
 	// The OCID of the subnet to create the VNIC in.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -10523,6 +16682,10 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) ToGetVnicAttachm
 	return o
 }
 
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) AssignIpv6ip() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) bool { return v.AssignIpv6ip }).(pulumi.BoolOutput)
+}
+
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) AssignPrivateDnsRecord() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) bool { return v.AssignPrivateDnsRecord }).(pulumi.BoolOutput)
 }
@@ -10546,6 +16709,12 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) FreeformTags() p
 
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) HostnameLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.HostnameLabel }).(pulumi.StringOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) Ipv6addressIpv6subnetCidrPairDetails() GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) []GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
 }
 
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
@@ -10588,6 +16757,110 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
 		return vs[0].([]GetVnicAttachmentsVnicAttachmentCreateVnicDetail)[vs[1].(int)]
 	}).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput)
+}
+
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
+	Ipv6Address    string `pulumi:"ipv6Address"`
+	Ipv6SubnetCidr string `pulumi:"ipv6SubnetCidr"`
+}
+
+// GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs and GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	Ipv6Address    pulumi.StringInput `pulumi:"ipv6Address"`
+	Ipv6SubnetCidr pulumi.StringInput `pulumi:"ipv6SubnetCidr"`
+}
+
+func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray and GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{ GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray []GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6Address
+	}).(pulumi.StringOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6SubnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6SubnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
 type GetVolumeAttachmentsFilter struct {
@@ -15312,6 +21585,92 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionsConnectionInput)(nil)).Elem(), GetIpsecConnectionsConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionsConnectionArrayInput)(nil)).Elem(), GetIpsecConnectionsConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionsFilterInput)(nil)).Elem(), GetIpsecConnectionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionsFilterArrayInput)(nil)).Elem(), GetIpsecConnectionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecStatusFilterInput)(nil)).Elem(), GetIpsecStatusFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecStatusFilterArrayInput)(nil)).Elem(), GetIpsecStatusFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecStatusTunnelInput)(nil)).Elem(), GetIpsecStatusTunnelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecStatusTunnelArrayInput)(nil)).Elem(), GetIpsecStatusTunnelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6sFilterInput)(nil)).Elem(), GetIpv6sFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6sFilterArrayInput)(nil)).Elem(), GetIpv6sFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6sIpv6Input)(nil)).Elem(), GetIpv6sIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6sIpv6ArrayInput)(nil)).Elem(), GetIpv6sIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetListingResourceVersionsAppCatalogListingResourceVersionInput)(nil)).Elem(), GetListingResourceVersionsAppCatalogListingResourceVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetListingResourceVersionsAppCatalogListingResourceVersionArrayInput)(nil)).Elem(), GetListingResourceVersionsAppCatalogListingResourceVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetListingResourceVersionsFilterInput)(nil)).Elem(), GetListingResourceVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetListingResourceVersionsFilterArrayInput)(nil)).Elem(), GetListingResourceVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalPeeringGatewaysFilterInput)(nil)).Elem(), GetLocalPeeringGatewaysFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalPeeringGatewaysFilterArrayInput)(nil)).Elem(), GetLocalPeeringGatewaysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalPeeringGatewaysLocalPeeringGatewayInput)(nil)).Elem(), GetLocalPeeringGatewaysLocalPeeringGatewayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalPeeringGatewaysLocalPeeringGatewayArrayInput)(nil)).Elem(), GetLocalPeeringGatewaysLocalPeeringGatewayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatGatewaysFilterInput)(nil)).Elem(), GetNatGatewaysFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatGatewaysFilterArrayInput)(nil)).Elem(), GetNatGatewaysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatGatewaysNatGatewayInput)(nil)).Elem(), GetNatGatewaysNatGatewayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatGatewaysNatGatewayArrayInput)(nil)).Elem(), GetNatGatewaysNatGatewayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesFilterInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesFilterArrayInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayInput)(nil)).Elem(), GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupVnicsFilterInput)(nil)).Elem(), GetNetworkSecurityGroupVnicsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupVnicsFilterArrayInput)(nil)).Elem(), GetNetworkSecurityGroupVnicsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicInput)(nil)).Elem(), GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayInput)(nil)).Elem(), GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupsFilterInput)(nil)).Elem(), GetNetworkSecurityGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupsFilterArrayInput)(nil)).Elem(), GetNetworkSecurityGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupsNetworkSecurityGroupInput)(nil)).Elem(), GetNetworkSecurityGroupsNetworkSecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSecurityGroupsNetworkSecurityGroupArrayInput)(nil)).Elem(), GetNetworkSecurityGroupsNetworkSecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPeerRegionForRemotePeeringsFilterInput)(nil)).Elem(), GetPeerRegionForRemotePeeringsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPeerRegionForRemotePeeringsFilterArrayInput)(nil)).Elem(), GetPeerRegionForRemotePeeringsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringInput)(nil)).Elem(), GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayInput)(nil)).Elem(), GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateIpsFilterInput)(nil)).Elem(), GetPrivateIpsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateIpsFilterArrayInput)(nil)).Elem(), GetPrivateIpsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateIpsPrivateIpInput)(nil)).Elem(), GetPrivateIpsPrivateIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateIpsPrivateIpArrayInput)(nil)).Elem(), GetPrivateIpsPrivateIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpPoolsFilterInput)(nil)).Elem(), GetPublicIpPoolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpPoolsFilterArrayInput)(nil)).Elem(), GetPublicIpPoolsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpPoolsPublicIpPoolCollectionInput)(nil)).Elem(), GetPublicIpPoolsPublicIpPoolCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpPoolsPublicIpPoolCollectionArrayInput)(nil)).Elem(), GetPublicIpPoolsPublicIpPoolCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpPoolsPublicIpPoolCollectionItemInput)(nil)).Elem(), GetPublicIpPoolsPublicIpPoolCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpPoolsPublicIpPoolCollectionItemArrayInput)(nil)).Elem(), GetPublicIpPoolsPublicIpPoolCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpsFilterInput)(nil)).Elem(), GetPublicIpsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpsFilterArrayInput)(nil)).Elem(), GetPublicIpsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpsPublicIpInput)(nil)).Elem(), GetPublicIpsPublicIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicIpsPublicIpArrayInput)(nil)).Elem(), GetPublicIpsPublicIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemotePeeringConnectionsFilterInput)(nil)).Elem(), GetRemotePeeringConnectionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemotePeeringConnectionsFilterArrayInput)(nil)).Elem(), GetRemotePeeringConnectionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemotePeeringConnectionsRemotePeeringConnectionInput)(nil)).Elem(), GetRemotePeeringConnectionsRemotePeeringConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemotePeeringConnectionsRemotePeeringConnectionArrayInput)(nil)).Elem(), GetRemotePeeringConnectionsRemotePeeringConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTablesFilterInput)(nil)).Elem(), GetRouteTablesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTablesFilterArrayInput)(nil)).Elem(), GetRouteTablesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTablesRouteTableInput)(nil)).Elem(), GetRouteTablesRouteTableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTablesRouteTableArrayInput)(nil)).Elem(), GetRouteTablesRouteTableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTablesRouteTableRouteRuleInput)(nil)).Elem(), GetRouteTablesRouteTableRouteRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTablesRouteTableRouteRuleArrayInput)(nil)).Elem(), GetRouteTablesRouteTableRouteRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsFilterInput)(nil)).Elem(), GetSecurityListsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsFilterArrayInput)(nil)).Elem(), GetSecurityListsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListInput)(nil)).Elem(), GetSecurityListsSecurityListArgs{})
@@ -15438,6 +21797,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnsVirtualNetworkArrayInput)(nil)).Elem(), GetVcnsVirtualNetworkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnsVirtualNetworkByoipv6cidrDetailInput)(nil)).Elem(), GetVcnsVirtualNetworkByoipv6cidrDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput)(nil)).Elem(), GetVcnsVirtualNetworkByoipv6cidrDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitAssociatedTunnelsFilterInput)(nil)).Elem(), GetVirtualCircuitAssociatedTunnelsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitAssociatedTunnelsFilterArrayInput)(nil)).Elem(), GetVirtualCircuitAssociatedTunnelsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailInput)(nil)).Elem(), GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayInput)(nil)).Elem(), GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitBandwidthShapesFilterInput)(nil)).Elem(), GetVirtualCircuitBandwidthShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitBandwidthShapesFilterArrayInput)(nil)).Elem(), GetVirtualCircuitBandwidthShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeInput)(nil)).Elem(), GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs{})
@@ -15474,6 +21837,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentArrayInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsFilterInput)(nil)).Elem(), GetVolumeAttachmentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsFilterArrayInput)(nil)).Elem(), GetVolumeAttachmentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsVolumeAttachmentInput)(nil)).Elem(), GetVolumeAttachmentsVolumeAttachmentArgs{})
@@ -15538,6 +21903,92 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionsConnectionOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionsConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionsFilterOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecStatusFilterOutput{})
+	pulumi.RegisterOutputType(GetIpsecStatusFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecStatusTunnelOutput{})
+	pulumi.RegisterOutputType(GetIpsecStatusTunnelArrayOutput{})
+	pulumi.RegisterOutputType(GetIpv6sFilterOutput{})
+	pulumi.RegisterOutputType(GetIpv6sFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIpv6sIpv6Output{})
+	pulumi.RegisterOutputType(GetIpv6sIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetListingResourceVersionsAppCatalogListingResourceVersionOutput{})
+	pulumi.RegisterOutputType(GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetListingResourceVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetListingResourceVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetLocalPeeringGatewaysFilterOutput{})
+	pulumi.RegisterOutputType(GetLocalPeeringGatewaysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetLocalPeeringGatewaysLocalPeeringGatewayOutput{})
+	pulumi.RegisterOutputType(GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput{})
+	pulumi.RegisterOutputType(GetNatGatewaysFilterOutput{})
+	pulumi.RegisterOutputType(GetNatGatewaysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNatGatewaysNatGatewayOutput{})
+	pulumi.RegisterOutputType(GetNatGatewaysNatGatewayArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesFilterOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupVnicsFilterOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupVnicsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupsNetworkSecurityGroupOutput{})
+	pulumi.RegisterOutputType(GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetPeerRegionForRemotePeeringsFilterOutput{})
+	pulumi.RegisterOutputType(GetPeerRegionForRemotePeeringsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput{})
+	pulumi.RegisterOutputType(GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateIpsFilterOutput{})
+	pulumi.RegisterOutputType(GetPrivateIpsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateIpsPrivateIpOutput{})
+	pulumi.RegisterOutputType(GetPrivateIpsPrivateIpArrayOutput{})
+	pulumi.RegisterOutputType(GetPublicIpPoolsFilterOutput{})
+	pulumi.RegisterOutputType(GetPublicIpPoolsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPublicIpPoolsPublicIpPoolCollectionOutput{})
+	pulumi.RegisterOutputType(GetPublicIpPoolsPublicIpPoolCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPublicIpPoolsPublicIpPoolCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPublicIpsFilterOutput{})
+	pulumi.RegisterOutputType(GetPublicIpsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPublicIpsPublicIpOutput{})
+	pulumi.RegisterOutputType(GetPublicIpsPublicIpArrayOutput{})
+	pulumi.RegisterOutputType(GetRemotePeeringConnectionsFilterOutput{})
+	pulumi.RegisterOutputType(GetRemotePeeringConnectionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRemotePeeringConnectionsRemotePeeringConnectionOutput{})
+	pulumi.RegisterOutputType(GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRouteTablesFilterOutput{})
+	pulumi.RegisterOutputType(GetRouteTablesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRouteTablesRouteTableOutput{})
+	pulumi.RegisterOutputType(GetRouteTablesRouteTableArrayOutput{})
+	pulumi.RegisterOutputType(GetRouteTablesRouteTableRouteRuleOutput{})
+	pulumi.RegisterOutputType(GetRouteTablesRouteTableRouteRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityListsFilterOutput{})
 	pulumi.RegisterOutputType(GetSecurityListsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityListsSecurityListOutput{})
@@ -15664,6 +22115,10 @@ func init() {
 	pulumi.RegisterOutputType(GetVcnsVirtualNetworkArrayOutput{})
 	pulumi.RegisterOutputType(GetVcnsVirtualNetworkByoipv6cidrDetailOutput{})
 	pulumi.RegisterOutputType(GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitAssociatedTunnelsFilterOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitAssociatedTunnelsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitBandwidthShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitBandwidthShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput{})
@@ -15700,6 +22155,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput{})
 	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeAttachmentsFilterOutput{})
 	pulumi.RegisterOutputType(GetVolumeAttachmentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeAttachmentsVolumeAttachmentOutput{})

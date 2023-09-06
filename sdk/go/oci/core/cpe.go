@@ -55,6 +55,7 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
+//				IsPrivate: pulumi.Any(_var.Cpe_is_private),
 //			})
 //			if err != nil {
 //				return err
@@ -94,10 +95,12 @@ type Cpe struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The public IP address of the on-premises router.  Example: `203.0.113.2`
+	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	// Indicates whether this CPE is of type `private` or not.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
 	// The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
@@ -155,10 +158,12 @@ type cpeState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The public IP address of the on-premises router.  Example: `203.0.113.2`
+	IpAddress *string `pulumi:"ipAddress"`
+	// Indicates whether this CPE is of type `private` or not.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IpAddress *string `pulumi:"ipAddress"`
+	IsPrivate *bool `pulumi:"isPrivate"`
 	// The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -181,10 +186,12 @@ type CpeState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The public IP address of the on-premises router.  Example: `203.0.113.2`
+	IpAddress pulumi.StringPtrInput
+	// Indicates whether this CPE is of type `private` or not.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IpAddress pulumi.StringPtrInput
+	IsPrivate pulumi.BoolPtrInput
 	// The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 }
@@ -211,10 +218,12 @@ type cpeArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The public IP address of the on-premises router.  Example: `203.0.113.2`
+	IpAddress string `pulumi:"ipAddress"`
+	// Indicates whether this CPE is of type `private` or not.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IpAddress string `pulumi:"ipAddress"`
+	IsPrivate *bool `pulumi:"isPrivate"`
 }
 
 // The set of arguments for constructing a Cpe resource.
@@ -236,10 +245,12 @@ type CpeArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The public IP address of the on-premises router.  Example: `203.0.113.2`
+	IpAddress pulumi.StringInput
+	// Indicates whether this CPE is of type `private` or not.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IpAddress pulumi.StringInput
+	IsPrivate pulumi.BoolPtrInput
 }
 
 func (CpeArgs) ElementType() reflect.Type {
@@ -361,11 +372,16 @@ func (o CpeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The public IP address of the on-premises router.  Example: `203.0.113.2`
+func (o CpeOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cpe) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Indicates whether this CPE is of type `private` or not.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o CpeOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cpe) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
+func (o CpeOutput) IsPrivate() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Cpe) pulumi.BoolOutput { return v.IsPrivate }).(pulumi.BoolOutput)
 }
 
 // The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

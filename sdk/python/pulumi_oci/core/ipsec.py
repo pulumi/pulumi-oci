@@ -204,7 +204,8 @@ class _IpsecState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 time_created: Optional[pulumi.Input[str]] = None):
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 transport_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Ipsec resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
@@ -234,6 +235,7 @@ class _IpsecState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] transport_type: The transport type used for the IPSec connection.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -257,6 +259,8 @@ class _IpsecState:
             pulumi.set(__self__, "static_routes", static_routes)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -405,6 +409,18 @@ class _IpsecState:
     @time_created.setter
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The transport type used for the IPSec connection.
+        """
+        return pulumi.get(self, "transport_type")
+
+    @transport_type.setter
+    def transport_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transport_type", value)
 
 
 class Ipsec(pulumi.CustomResource):
@@ -632,6 +648,7 @@ class Ipsec(pulumi.CustomResource):
             __props__.__dict__["static_routes"] = static_routes
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["transport_type"] = None
         super(Ipsec, __self__).__init__(
             'oci:Core/ipsec:Ipsec',
             resource_name,
@@ -652,7 +669,8 @@ class Ipsec(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            time_created: Optional[pulumi.Input[str]] = None) -> 'Ipsec':
+            time_created: Optional[pulumi.Input[str]] = None,
+            transport_type: Optional[pulumi.Input[str]] = None) -> 'Ipsec':
         """
         Get an existing Ipsec resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -687,6 +705,7 @@ class Ipsec(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] transport_type: The transport type used for the IPSec connection.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -703,6 +722,7 @@ class Ipsec(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["static_routes"] = static_routes
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["transport_type"] = transport_type
         return Ipsec(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -808,4 +828,12 @@ class Ipsec(pulumi.CustomResource):
         The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> pulumi.Output[str]:
+        """
+        The transport type used for the IPSec connection.
+        """
+        return pulumi.get(self, "transport_type")
 

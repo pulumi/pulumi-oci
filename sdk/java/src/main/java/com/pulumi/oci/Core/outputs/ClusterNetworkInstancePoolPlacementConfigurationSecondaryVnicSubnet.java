@@ -4,7 +4,10 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,6 +19,16 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
      * 
      */
     private @Nullable String displayName;
+    /**
+     * @return A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
+    private @Nullable List<ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
+    /**
+     * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    private @Nullable Boolean isAssignIpv6ip;
     /**
      * @return The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
      * 
@@ -32,6 +45,20 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+    /**
+     * @return A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
+    public List<ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails() {
+        return this.ipv6addressIpv6subnetCidrPairDetails == null ? List.of() : this.ipv6addressIpv6subnetCidrPairDetails;
+    }
+    /**
+     * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    public Optional<Boolean> isAssignIpv6ip() {
+        return Optional.ofNullable(this.isAssignIpv6ip);
     }
     /**
      * @return The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
@@ -54,17 +81,34 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
+        private @Nullable List<ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
+        private @Nullable Boolean isAssignIpv6ip;
         private @Nullable String subnetId;
         public Builder() {}
         public Builder(ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
+    	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
+    	      this.isAssignIpv6ip = defaults.isAssignIpv6ip;
     	      this.subnetId = defaults.subnetId;
         }
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable List<ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+            this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            return this;
+        }
+        public Builder ipv6addressIpv6subnetCidrPairDetails(ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
+            return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
+        }
+        @CustomType.Setter
+        public Builder isAssignIpv6ip(@Nullable Boolean isAssignIpv6ip) {
+            this.isAssignIpv6ip = isAssignIpv6ip;
             return this;
         }
         @CustomType.Setter
@@ -75,6 +119,8 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
         public ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet build() {
             final var o = new ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet();
             o.displayName = displayName;
+            o.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            o.isAssignIpv6ip = isAssignIpv6ip;
             o.subnetId = subnetId;
             return o;
         }

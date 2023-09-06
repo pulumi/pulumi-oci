@@ -72,6 +72,11 @@ public final class GetIpsecConnectionsConnection {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The transport type used for the IPSec connection.
+     * 
+     */
+    private String transportType;
 
     private GetIpsecConnectionsConnection() {}
     /**
@@ -158,6 +163,13 @@ public final class GetIpsecConnectionsConnection {
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The transport type used for the IPSec connection.
+     * 
+     */
+    public String transportType() {
+        return this.transportType;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -180,6 +192,7 @@ public final class GetIpsecConnectionsConnection {
         private String state;
         private List<String> staticRoutes;
         private String timeCreated;
+        private String transportType;
         public Builder() {}
         public Builder(GetIpsecConnectionsConnection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -195,6 +208,7 @@ public final class GetIpsecConnectionsConnection {
     	      this.state = defaults.state;
     	      this.staticRoutes = defaults.staticRoutes;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.transportType = defaults.transportType;
         }
 
         @CustomType.Setter
@@ -260,6 +274,11 @@ public final class GetIpsecConnectionsConnection {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
+        public Builder transportType(String transportType) {
+            this.transportType = Objects.requireNonNull(transportType);
+            return this;
+        }
         public GetIpsecConnectionsConnection build() {
             final var o = new GetIpsecConnectionsConnection();
             o.compartmentId = compartmentId;
@@ -274,6 +293,7 @@ public final class GetIpsecConnectionsConnection {
             o.state = state;
             o.staticRoutes = staticRoutes;
             o.timeCreated = timeCreated;
+            o.transportType = transportType;
             return o;
         }
     }

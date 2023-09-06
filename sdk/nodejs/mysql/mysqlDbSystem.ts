@@ -115,10 +115,6 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public readonly adminUsername!: pulumi.Output<string>;
     /**
-     * DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-     */
-    public /*out*/ readonly analyticsClusters!: pulumi.Output<outputs.Mysql.MysqlDbSystemAnalyticsCluster[]>;
-    /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
      * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -203,10 +199,6 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public readonly ipAddress!: pulumi.Output<string>;
     /**
-     * DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     */
-    public /*out*/ readonly isAnalyticsClusterAttached!: pulumi.Output<boolean>;
-    /**
      * If the DB System has a HeatWave Cluster attached.
      */
     public /*out*/ readonly isHeatWaveClusterAttached!: pulumi.Output<boolean>;
@@ -288,7 +280,6 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             const state = argsOrState as MysqlDbSystemState | undefined;
             resourceInputs["adminPassword"] = state ? state.adminPassword : undefined;
             resourceInputs["adminUsername"] = state ? state.adminUsername : undefined;
-            resourceInputs["analyticsClusters"] = state ? state.analyticsClusters : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["backupPolicy"] = state ? state.backupPolicy : undefined;
             resourceInputs["channels"] = state ? state.channels : undefined;
@@ -307,7 +298,6 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["heatWaveClusters"] = state ? state.heatWaveClusters : undefined;
             resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["isAnalyticsClusterAttached"] = state ? state.isAnalyticsClusterAttached : undefined;
             resourceInputs["isHeatWaveClusterAttached"] = state ? state.isHeatWaveClusterAttached : undefined;
             resourceInputs["isHighlyAvailable"] = state ? state.isHighlyAvailable : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -363,12 +353,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["source"] = args ? args.source : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["analyticsClusters"] = undefined /*out*/;
             resourceInputs["channels"] = undefined /*out*/;
             resourceInputs["currentPlacements"] = undefined /*out*/;
             resourceInputs["endpoints"] = undefined /*out*/;
             resourceInputs["heatWaveClusters"] = undefined /*out*/;
-            resourceInputs["isAnalyticsClusterAttached"] = undefined /*out*/;
             resourceInputs["isHeatWaveClusterAttached"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["pointInTimeRecoveryDetails"] = undefined /*out*/;
@@ -394,10 +382,6 @@ export interface MysqlDbSystemState {
      * The username for the administrative user.
      */
     adminUsername?: pulumi.Input<string>;
-    /**
-     * DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-     */
-    analyticsClusters?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemAnalyticsCluster>[]>;
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
@@ -482,10 +466,6 @@ export interface MysqlDbSystemState {
      * The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
      */
     ipAddress?: pulumi.Input<string>;
-    /**
-     * DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     */
-    isAnalyticsClusterAttached?: pulumi.Input<boolean>;
     /**
      * If the DB System has a HeatWave Cluster attached.
      */

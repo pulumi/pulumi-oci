@@ -9,7 +9,6 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Mysql.MysqlDbSystemArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemState;
-import com.pulumi.oci.Mysql.outputs.MysqlDbSystemAnalyticsCluster;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemCurrentPlacement;
@@ -147,20 +146,6 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> adminUsername() {
         return this.adminUsername;
-    }
-    /**
-     * DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-     * 
-     */
-    @Export(name="analyticsClusters", type=List.class, parameters={MysqlDbSystemAnalyticsCluster.class})
-    private Output<List<MysqlDbSystemAnalyticsCluster>> analyticsClusters;
-
-    /**
-     * @return DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-     * 
-     */
-    public Output<List<MysqlDbSystemAnalyticsCluster>> analyticsClusters() {
-        return this.analyticsClusters;
     }
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -437,20 +422,6 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
-    }
-    /**
-     * DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     * 
-     */
-    @Export(name="isAnalyticsClusterAttached", type=Boolean.class, parameters={})
-    private Output<Boolean> isAnalyticsClusterAttached;
-
-    /**
-     * @return DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     * 
-     */
-    public Output<Boolean> isAnalyticsClusterAttached() {
-        return this.isAnalyticsClusterAttached;
     }
     /**
      * If the DB System has a HeatWave Cluster attached.

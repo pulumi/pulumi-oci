@@ -7,8 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
-import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterArgs;
-import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
 import com.pulumi.oci.Mysql.inputs.GetChannelPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
@@ -35,7 +33,6 @@ import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
 import com.pulumi.oci.Mysql.inputs.GetReplicasPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
 import com.pulumi.oci.Mysql.inputs.GetShapesPlainArgs;
-import com.pulumi.oci.Mysql.outputs.GetAnalyticsClusterResult;
 import com.pulumi.oci.Mysql.outputs.GetChannelResult;
 import com.pulumi.oci.Mysql.outputs.GetChannelsResult;
 import com.pulumi.oci.Mysql.outputs.GetHeatWaveClusterResult;
@@ -53,166 +50,6 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class MysqlFunctions {
-    /**
-     * This data source provides details about a specific Analytics Cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-     * 
-     * DEPRECATED -- please use HeatWave API instead.
-     * Gets information about the Analytics Cluster.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Mysql.MysqlFunctions;
-     * import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testAnalyticsCluster = MysqlFunctions.getAnalyticsCluster(GetAnalyticsClusterArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static Output<GetAnalyticsClusterResult> getAnalyticsCluster(GetAnalyticsClusterArgs args) {
-        return getAnalyticsCluster(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Analytics Cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-     * 
-     * DEPRECATED -- please use HeatWave API instead.
-     * Gets information about the Analytics Cluster.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Mysql.MysqlFunctions;
-     * import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testAnalyticsCluster = MysqlFunctions.getAnalyticsCluster(GetAnalyticsClusterArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static CompletableFuture<GetAnalyticsClusterResult> getAnalyticsClusterPlain(GetAnalyticsClusterPlainArgs args) {
-        return getAnalyticsClusterPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Analytics Cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-     * 
-     * DEPRECATED -- please use HeatWave API instead.
-     * Gets information about the Analytics Cluster.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Mysql.MysqlFunctions;
-     * import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testAnalyticsCluster = MysqlFunctions.getAnalyticsCluster(GetAnalyticsClusterArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static Output<GetAnalyticsClusterResult> getAnalyticsCluster(GetAnalyticsClusterArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:Mysql/getAnalyticsCluster:getAnalyticsCluster", TypeShape.of(GetAnalyticsClusterResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Analytics Cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-     * 
-     * DEPRECATED -- please use HeatWave API instead.
-     * Gets information about the Analytics Cluster.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Mysql.MysqlFunctions;
-     * import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testAnalyticsCluster = MysqlFunctions.getAnalyticsCluster(GetAnalyticsClusterArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static CompletableFuture<GetAnalyticsClusterResult> getAnalyticsClusterPlain(GetAnalyticsClusterPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:Mysql/getAnalyticsCluster:getAnalyticsCluster", TypeShape.of(GetAnalyticsClusterResult.class), args, Utilities.withVersion(options));
-    }
     /**
      * This data source provides details about a specific Channel resource in Oracle Cloud Infrastructure MySQL Database service.
      * 
@@ -1590,7 +1427,6 @@ public final class MysqlFunctions {
      *             .configurationId(var_.mysql_configuration_id())
      *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
      *             .displayName(var_.mysql_db_system_display_name())
-     *             .isAnalyticsClusterAttached(var_.mysql_db_system_is_analytics_cluster_attached())
      *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
      *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
      *             .state(var_.mysql_db_system_state())
@@ -1637,7 +1473,6 @@ public final class MysqlFunctions {
      *             .configurationId(var_.mysql_configuration_id())
      *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
      *             .displayName(var_.mysql_db_system_display_name())
-     *             .isAnalyticsClusterAttached(var_.mysql_db_system_is_analytics_cluster_attached())
      *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
      *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
      *             .state(var_.mysql_db_system_state())
@@ -1684,7 +1519,6 @@ public final class MysqlFunctions {
      *             .configurationId(var_.mysql_configuration_id())
      *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
      *             .displayName(var_.mysql_db_system_display_name())
-     *             .isAnalyticsClusterAttached(var_.mysql_db_system_is_analytics_cluster_attached())
      *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
      *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
      *             .state(var_.mysql_db_system_state())
@@ -1731,7 +1565,6 @@ public final class MysqlFunctions {
      *             .configurationId(var_.mysql_configuration_id())
      *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
      *             .displayName(var_.mysql_db_system_display_name())
-     *             .isAnalyticsClusterAttached(var_.mysql_db_system_is_analytics_cluster_attached())
      *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
      *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
      *             .state(var_.mysql_db_system_state())

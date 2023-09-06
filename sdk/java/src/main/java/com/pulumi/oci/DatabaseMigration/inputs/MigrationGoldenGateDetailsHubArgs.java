@@ -68,60 +68,60 @@ public final class MigrationGoldenGateDetailsHubArgs extends com.pulumi.resource
      * (Updatable) Database Administrator Credentials details.
      * 
      */
-    @Import(name="sourceDbAdminCredentials", required=true)
-    private Output<MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs> sourceDbAdminCredentials;
+    @Import(name="sourceDbAdminCredentials")
+    private @Nullable Output<MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs> sourceDbAdminCredentials;
 
     /**
      * @return (Updatable) Database Administrator Credentials details.
      * 
      */
-    public Output<MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs> sourceDbAdminCredentials() {
-        return this.sourceDbAdminCredentials;
+    public Optional<Output<MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs>> sourceDbAdminCredentials() {
+        return Optional.ofNullable(this.sourceDbAdminCredentials);
     }
 
     /**
      * (Updatable) Name of GoldenGate Microservices deployment to operate on source database
      * 
      */
-    @Import(name="sourceMicroservicesDeploymentName", required=true)
-    private Output<String> sourceMicroservicesDeploymentName;
+    @Import(name="sourceMicroservicesDeploymentName")
+    private @Nullable Output<String> sourceMicroservicesDeploymentName;
 
     /**
      * @return (Updatable) Name of GoldenGate Microservices deployment to operate on source database
      * 
      */
-    public Output<String> sourceMicroservicesDeploymentName() {
-        return this.sourceMicroservicesDeploymentName;
+    public Optional<Output<String>> sourceMicroservicesDeploymentName() {
+        return Optional.ofNullable(this.sourceMicroservicesDeploymentName);
     }
 
     /**
      * (Updatable) Database Administrator Credentials details.
      * 
      */
-    @Import(name="targetDbAdminCredentials", required=true)
-    private Output<MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs> targetDbAdminCredentials;
+    @Import(name="targetDbAdminCredentials")
+    private @Nullable Output<MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs> targetDbAdminCredentials;
 
     /**
      * @return (Updatable) Database Administrator Credentials details.
      * 
      */
-    public Output<MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs> targetDbAdminCredentials() {
-        return this.targetDbAdminCredentials;
+    public Optional<Output<MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs>> targetDbAdminCredentials() {
+        return Optional.ofNullable(this.targetDbAdminCredentials);
     }
 
     /**
      * (Updatable) Name of GoldenGate Microservices deployment to operate on target database
      * 
      */
-    @Import(name="targetMicroservicesDeploymentName", required=true)
-    private Output<String> targetMicroservicesDeploymentName;
+    @Import(name="targetMicroservicesDeploymentName")
+    private @Nullable Output<String> targetMicroservicesDeploymentName;
 
     /**
      * @return (Updatable) Name of GoldenGate Microservices deployment to operate on target database
      * 
      */
-    public Output<String> targetMicroservicesDeploymentName() {
-        return this.targetMicroservicesDeploymentName;
+    public Optional<Output<String>> targetMicroservicesDeploymentName() {
+        return Optional.ofNullable(this.targetMicroservicesDeploymentName);
     }
 
     /**
@@ -239,7 +239,7 @@ public final class MigrationGoldenGateDetailsHubArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder sourceDbAdminCredentials(Output<MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs> sourceDbAdminCredentials) {
+        public Builder sourceDbAdminCredentials(@Nullable Output<MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs> sourceDbAdminCredentials) {
             $.sourceDbAdminCredentials = sourceDbAdminCredentials;
             return this;
         }
@@ -260,7 +260,7 @@ public final class MigrationGoldenGateDetailsHubArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder sourceMicroservicesDeploymentName(Output<String> sourceMicroservicesDeploymentName) {
+        public Builder sourceMicroservicesDeploymentName(@Nullable Output<String> sourceMicroservicesDeploymentName) {
             $.sourceMicroservicesDeploymentName = sourceMicroservicesDeploymentName;
             return this;
         }
@@ -281,7 +281,7 @@ public final class MigrationGoldenGateDetailsHubArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder targetDbAdminCredentials(Output<MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs> targetDbAdminCredentials) {
+        public Builder targetDbAdminCredentials(@Nullable Output<MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs> targetDbAdminCredentials) {
             $.targetDbAdminCredentials = targetDbAdminCredentials;
             return this;
         }
@@ -302,7 +302,7 @@ public final class MigrationGoldenGateDetailsHubArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder targetMicroservicesDeploymentName(Output<String> targetMicroservicesDeploymentName) {
+        public Builder targetMicroservicesDeploymentName(@Nullable Output<String> targetMicroservicesDeploymentName) {
             $.targetMicroservicesDeploymentName = targetMicroservicesDeploymentName;
             return this;
         }
@@ -340,10 +340,6 @@ public final class MigrationGoldenGateDetailsHubArgs extends com.pulumi.resource
 
         public MigrationGoldenGateDetailsHubArgs build() {
             $.restAdminCredentials = Objects.requireNonNull($.restAdminCredentials, "expected parameter 'restAdminCredentials' to be non-null");
-            $.sourceDbAdminCredentials = Objects.requireNonNull($.sourceDbAdminCredentials, "expected parameter 'sourceDbAdminCredentials' to be non-null");
-            $.sourceMicroservicesDeploymentName = Objects.requireNonNull($.sourceMicroservicesDeploymentName, "expected parameter 'sourceMicroservicesDeploymentName' to be non-null");
-            $.targetDbAdminCredentials = Objects.requireNonNull($.targetDbAdminCredentials, "expected parameter 'targetDbAdminCredentials' to be non-null");
-            $.targetMicroservicesDeploymentName = Objects.requireNonNull($.targetMicroservicesDeploymentName, "expected parameter 'targetMicroservicesDeploymentName' to be non-null");
             $.url = Objects.requireNonNull($.url, "expected parameter 'url' to be non-null");
             return $;
         }

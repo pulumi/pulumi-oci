@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class ConfigConfigurationClientCertificateDetails
     {
         /// <summary>
-        /// (Updatable) Client certificate in pem format.
+        /// (Updatable) Client certificate in PEM format.
         /// </summary>
         public readonly Outputs.ConfigConfigurationClientCertificateDetailsClientCertificate? ClientCertificate;
         /// <summary>
-        /// (Updatable) The private key associated with the client certificate in pem format.
+        /// (Updatable) The private key associated with the client certificate in PEM format.
         /// </summary>
         public readonly Outputs.ConfigConfigurationClientCertificateDetailsPrivateKey? PrivateKey;
 

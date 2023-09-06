@@ -281,6 +281,20 @@ public class Ipsec extends com.pulumi.resources.CustomResource {
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * The transport type used for the IPSec connection.
+     * 
+     */
+    @Export(name="transportType", type=String.class, parameters={})
+    private Output<String> transportType;
+
+    /**
+     * @return The transport type used for the IPSec connection.
+     * 
+     */
+    public Output<String> transportType() {
+        return this.transportType;
+    }
 
     /**
      *

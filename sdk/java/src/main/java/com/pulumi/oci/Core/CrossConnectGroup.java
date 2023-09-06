@@ -44,6 +44,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Core.CrossConnectGroup;
  * import com.pulumi.oci.Core.CrossConnectGroupArgs;
+ * import com.pulumi.oci.Core.inputs.CrossConnectGroupMacsecPropertiesArgs;
+ * import com.pulumi.oci.Core.inputs.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -63,6 +65,15 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.cross_connect_group_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .macsecProperties(CrossConnectGroupMacsecPropertiesArgs.builder()
+ *                 .state(var_.cross_connect_group_macsec_properties_state())
+ *                 .encryptionCipher(var_.cross_connect_group_macsec_properties_encryption_cipher())
+ *                 .isUnprotectedTrafficAllowed(var_.cross_connect_group_macsec_properties_is_unprotected_traffic_allowed())
+ *                 .primaryKey(CrossConnectGroupMacsecPropertiesPrimaryKeyArgs.builder()
+ *                     .connectivityAssociationKeySecretId(oci_vault_secret.test_secret().id())
+ *                     .connectivityAssociationNameSecretId(oci_vault_secret.test_secret().id())
+ *                     .build())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -139,9 +150,6 @@ public class CrossConnectGroup extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
@@ -149,22 +157,19 @@ public class CrossConnectGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * Properties used for MACsec (if capable).
+     * (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
     @Export(name="macsecProperties", type=CrossConnectGroupMacsecProperties.class, parameters={})
     private Output<CrossConnectGroupMacsecProperties> macsecProperties;
 
     /**
-     * @return Properties used for MACsec (if capable).
+     * @return (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
     public Output<CrossConnectGroupMacsecProperties> macsecProperties() {
@@ -199,14 +204,20 @@ public class CrossConnectGroup extends com.pulumi.resources.CustomResource {
         return this.ociPhysicalDeviceName;
     }
     /**
-     * The cross-connect group&#39;s current state.
+     * (Updatable) Indicates whether or not MACsec is enabled.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The cross-connect group&#39;s current state.
+     * @return (Updatable) Indicates whether or not MACsec is enabled.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> state() {

@@ -10,6 +10,7 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollection
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDumpTransferDetail;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemExcludeObject;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemGoldenGateDetail;
+import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetail;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemIncludeObject;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemVaultDetail;
 import java.lang.Object;
@@ -86,6 +87,11 @@ public final class GetMigrationsMigrationCollectionItem {
      * 
      */
     private List<GetMigrationsMigrationCollectionItemGoldenGateDetail> goldenGateDetails;
+    /**
+     * @return Details about Oracle GoldenGate GGS Deployment.
+     * 
+     */
+    private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetail> goldenGateServiceDetails;
     /**
      * @return The OCID of the resource
      * 
@@ -253,6 +259,13 @@ public final class GetMigrationsMigrationCollectionItem {
         return this.goldenGateDetails;
     }
     /**
+     * @return Details about Oracle GoldenGate GGS Deployment.
+     * 
+     */
+    public List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetail> goldenGateServiceDetails() {
+        return this.goldenGateServiceDetails;
+    }
+    /**
      * @return The OCID of the resource
      * 
      */
@@ -374,6 +387,7 @@ public final class GetMigrationsMigrationCollectionItem {
         private String executingJobId;
         private Map<String,Object> freeformTags;
         private List<GetMigrationsMigrationCollectionItemGoldenGateDetail> goldenGateDetails;
+        private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetail> goldenGateServiceDetails;
         private String id;
         private List<GetMigrationsMigrationCollectionItemIncludeObject> includeObjects;
         private String lifecycleDetails;
@@ -405,6 +419,7 @@ public final class GetMigrationsMigrationCollectionItem {
     	      this.executingJobId = defaults.executingJobId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.goldenGateDetails = defaults.goldenGateDetails;
+    	      this.goldenGateServiceDetails = defaults.goldenGateServiceDetails;
     	      this.id = defaults.id;
     	      this.includeObjects = defaults.includeObjects;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -510,6 +525,14 @@ public final class GetMigrationsMigrationCollectionItem {
             return goldenGateDetails(List.of(goldenGateDetails));
         }
         @CustomType.Setter
+        public Builder goldenGateServiceDetails(List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetail> goldenGateServiceDetails) {
+            this.goldenGateServiceDetails = Objects.requireNonNull(goldenGateServiceDetails);
+            return this;
+        }
+        public Builder goldenGateServiceDetails(GetMigrationsMigrationCollectionItemGoldenGateServiceDetail... goldenGateServiceDetails) {
+            return goldenGateServiceDetails(List.of(goldenGateServiceDetails));
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
@@ -601,6 +624,7 @@ public final class GetMigrationsMigrationCollectionItem {
             o.executingJobId = executingJobId;
             o.freeformTags = freeformTags;
             o.goldenGateDetails = goldenGateDetails;
+            o.goldenGateServiceDetails = goldenGateServiceDetails;
             o.id = id;
             o.includeObjects = includeObjects;
             o.lifecycleDetails = lifecycleDetails;

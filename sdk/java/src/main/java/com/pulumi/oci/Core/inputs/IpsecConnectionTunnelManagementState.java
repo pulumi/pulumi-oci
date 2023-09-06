@@ -23,6 +23,21 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
     public static final IpsecConnectionTunnelManagementState Empty = new IpsecConnectionTunnelManagementState();
 
     /**
+     * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     * 
+     */
+    @Import(name="associatedVirtualCircuits")
+    private @Nullable Output<List<String>> associatedVirtualCircuits;
+
+    /**
+     * @return The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     * 
+     */
+    public Optional<Output<List<String>>> associatedVirtualCircuits() {
+        return Optional.ofNullable(this.associatedVirtualCircuits);
+    }
+
+    /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
      * 
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
@@ -42,14 +57,14 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
     }
 
     /**
-     * The OCID of the compartment containing the tunnel.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the tunnel.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -57,14 +72,14 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
     }
 
     /**
-     * The IP address of Cpe headend.  Example: `129.146.17.50`
+     * The IP address of the CPE device&#39;s VPN headend.  Example: `203.0.113.22`
      * 
      */
     @Import(name="cpeIp")
     private @Nullable Output<String> cpeIp;
 
     /**
-     * @return The IP address of Cpe headend.  Example: `129.146.17.50`
+     * @return The IP address of the CPE device&#39;s VPN headend.  Example: `203.0.113.22`
      * 
      */
     public Optional<Output<String>> cpeIp() {
@@ -303,6 +318,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
     private IpsecConnectionTunnelManagementState() {}
 
     private IpsecConnectionTunnelManagementState(IpsecConnectionTunnelManagementState $) {
+        this.associatedVirtualCircuits = $.associatedVirtualCircuits;
         this.bgpSessionInfos = $.bgpSessionInfos;
         this.compartmentId = $.compartmentId;
         this.cpeIp = $.cpeIp;
@@ -346,6 +362,37 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         }
 
         /**
+         * @param associatedVirtualCircuits The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedVirtualCircuits(@Nullable Output<List<String>> associatedVirtualCircuits) {
+            $.associatedVirtualCircuits = associatedVirtualCircuits;
+            return this;
+        }
+
+        /**
+         * @param associatedVirtualCircuits The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedVirtualCircuits(List<String> associatedVirtualCircuits) {
+            return associatedVirtualCircuits(Output.of(associatedVirtualCircuits));
+        }
+
+        /**
+         * @param associatedVirtualCircuits The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedVirtualCircuits(String... associatedVirtualCircuits) {
+            return associatedVirtualCircuits(List.of(associatedVirtualCircuits));
+        }
+
+        /**
          * @param bgpSessionInfos Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
          * 
          * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
@@ -383,7 +430,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the tunnel.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
          * 
          * @return builder
          * 
@@ -394,7 +441,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the tunnel.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
          * 
          * @return builder
          * 
@@ -404,7 +451,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         }
 
         /**
-         * @param cpeIp The IP address of Cpe headend.  Example: `129.146.17.50`
+         * @param cpeIp The IP address of the CPE device&#39;s VPN headend.  Example: `203.0.113.22`
          * 
          * @return builder
          * 
@@ -415,7 +462,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         }
 
         /**
-         * @param cpeIp The IP address of Cpe headend.  Example: `129.146.17.50`
+         * @param cpeIp The IP address of the CPE device&#39;s VPN headend.  Example: `203.0.113.22`
          * 
          * @return builder
          * 

@@ -265,6 +265,11 @@ export const getAutonomousContainerDatabaseDataguardAssociations: typeof import(
 export const getAutonomousContainerDatabaseDataguardAssociationsOutput: typeof import("./getAutonomousContainerDatabaseDataguardAssociations").getAutonomousContainerDatabaseDataguardAssociationsOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousContainerDatabaseDataguardAssociations","getAutonomousContainerDatabaseDataguardAssociationsOutput"], () => require("./getAutonomousContainerDatabaseDataguardAssociations"));
 
+export { GetAutonomousContainerDatabaseResourceUsageArgs, GetAutonomousContainerDatabaseResourceUsageResult, GetAutonomousContainerDatabaseResourceUsageOutputArgs } from "./getAutonomousContainerDatabaseResourceUsage";
+export const getAutonomousContainerDatabaseResourceUsage: typeof import("./getAutonomousContainerDatabaseResourceUsage").getAutonomousContainerDatabaseResourceUsage = null as any;
+export const getAutonomousContainerDatabaseResourceUsageOutput: typeof import("./getAutonomousContainerDatabaseResourceUsage").getAutonomousContainerDatabaseResourceUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerDatabaseResourceUsage","getAutonomousContainerDatabaseResourceUsageOutput"], () => require("./getAutonomousContainerDatabaseResourceUsage"));
+
 export { GetAutonomousContainerDatabaseVersionsArgs, GetAutonomousContainerDatabaseVersionsResult, GetAutonomousContainerDatabaseVersionsOutputArgs } from "./getAutonomousContainerDatabaseVersions";
 export const getAutonomousContainerDatabaseVersions: typeof import("./getAutonomousContainerDatabaseVersions").getAutonomousContainerDatabaseVersions = null as any;
 export const getAutonomousContainerDatabaseVersionsOutput: typeof import("./getAutonomousContainerDatabaseVersions").getAutonomousContainerDatabaseVersionsOutput = null as any;
@@ -408,6 +413,16 @@ export { GetCloudAutonomousVmClusterArgs, GetCloudAutonomousVmClusterResult, Get
 export const getCloudAutonomousVmCluster: typeof import("./getCloudAutonomousVmCluster").getCloudAutonomousVmCluster = null as any;
 export const getCloudAutonomousVmClusterOutput: typeof import("./getCloudAutonomousVmCluster").getCloudAutonomousVmClusterOutput = null as any;
 utilities.lazyLoad(exports, ["getCloudAutonomousVmCluster","getCloudAutonomousVmClusterOutput"], () => require("./getCloudAutonomousVmCluster"));
+
+export { GetCloudAutonomousVmClusterAcdResourceUsagesArgs, GetCloudAutonomousVmClusterAcdResourceUsagesResult, GetCloudAutonomousVmClusterAcdResourceUsagesOutputArgs } from "./getCloudAutonomousVmClusterAcdResourceUsages";
+export const getCloudAutonomousVmClusterAcdResourceUsages: typeof import("./getCloudAutonomousVmClusterAcdResourceUsages").getCloudAutonomousVmClusterAcdResourceUsages = null as any;
+export const getCloudAutonomousVmClusterAcdResourceUsagesOutput: typeof import("./getCloudAutonomousVmClusterAcdResourceUsages").getCloudAutonomousVmClusterAcdResourceUsagesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAutonomousVmClusterAcdResourceUsages","getCloudAutonomousVmClusterAcdResourceUsagesOutput"], () => require("./getCloudAutonomousVmClusterAcdResourceUsages"));
+
+export { GetCloudAutonomousVmClusterResourceUsageArgs, GetCloudAutonomousVmClusterResourceUsageResult, GetCloudAutonomousVmClusterResourceUsageOutputArgs } from "./getCloudAutonomousVmClusterResourceUsage";
+export const getCloudAutonomousVmClusterResourceUsage: typeof import("./getCloudAutonomousVmClusterResourceUsage").getCloudAutonomousVmClusterResourceUsage = null as any;
+export const getCloudAutonomousVmClusterResourceUsageOutput: typeof import("./getCloudAutonomousVmClusterResourceUsage").getCloudAutonomousVmClusterResourceUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAutonomousVmClusterResourceUsage","getCloudAutonomousVmClusterResourceUsageOutput"], () => require("./getCloudAutonomousVmClusterResourceUsage"));
 
 export { GetCloudAutonomousVmClustersArgs, GetCloudAutonomousVmClustersResult, GetCloudAutonomousVmClustersOutputArgs } from "./getCloudAutonomousVmClusters";
 export const getCloudAutonomousVmClusters: typeof import("./getCloudAutonomousVmClusters").getCloudAutonomousVmClusters = null as any;

@@ -16,33 +16,33 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     public static final DeploymentOggDataArgs Empty = new DeploymentOggDataArgs();
 
     /**
-     * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
+     * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
      * 
      */
-    @Import(name="adminPassword", required=true)
-    private Output<String> adminPassword;
+    @Import(name="adminPassword")
+    private @Nullable Output<String> adminPassword;
 
     /**
-     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
+     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
      * 
      */
-    public Output<String> adminPassword() {
-        return this.adminPassword;
+    public Optional<Output<String>> adminPassword() {
+        return Optional.ofNullable(this.adminPassword);
     }
 
     /**
      * (Updatable) The GoldenGate deployment console username.
      * 
      */
-    @Import(name="adminUsername", required=true)
-    private Output<String> adminUsername;
+    @Import(name="adminUsername")
+    private @Nullable Output<String> adminUsername;
 
     /**
      * @return (Updatable) The GoldenGate deployment console username.
      * 
      */
-    public Output<String> adminUsername() {
-        return this.adminUsername;
+    public Optional<Output<String>> adminUsername() {
+        return Optional.ofNullable(this.adminUsername);
     }
 
     /**
@@ -61,6 +61,21 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) The type of credential store for OGG.
+     * 
+     */
+    @Import(name="credentialStore")
+    private @Nullable Output<String> credentialStore;
+
+    /**
+     * @return (Updatable) The type of credential store for OGG.
+     * 
+     */
+    public Optional<Output<String>> credentialStore() {
+        return Optional.ofNullable(this.credentialStore);
+    }
+
+    /**
      * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
@@ -73,6 +88,21 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
      */
     public Output<String> deploymentName() {
         return this.deploymentName;
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     * 
+     */
+    @Import(name="identityDomainId")
+    private @Nullable Output<String> identityDomainId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     * 
+     */
+    public Optional<Output<String>> identityDomainId() {
+        return Optional.ofNullable(this.identityDomainId);
     }
 
     /**
@@ -105,15 +135,33 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.oggVersion);
     }
 
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     * 
+     */
+    @Import(name="passwordSecretId")
+    private @Nullable Output<String> passwordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     * 
+     */
+    public Optional<Output<String>> passwordSecretId() {
+        return Optional.ofNullable(this.passwordSecretId);
+    }
+
     private DeploymentOggDataArgs() {}
 
     private DeploymentOggDataArgs(DeploymentOggDataArgs $) {
         this.adminPassword = $.adminPassword;
         this.adminUsername = $.adminUsername;
         this.certificate = $.certificate;
+        this.credentialStore = $.credentialStore;
         this.deploymentName = $.deploymentName;
+        this.identityDomainId = $.identityDomainId;
         this.key = $.key;
         this.oggVersion = $.oggVersion;
+        this.passwordSecretId = $.passwordSecretId;
     }
 
     public static Builder builder() {
@@ -135,18 +183,18 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param adminPassword (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
+         * @param adminPassword (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
          * 
          * @return builder
          * 
          */
-        public Builder adminPassword(Output<String> adminPassword) {
+        public Builder adminPassword(@Nullable Output<String> adminPassword) {
             $.adminPassword = adminPassword;
             return this;
         }
 
         /**
-         * @param adminPassword (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
+         * @param adminPassword (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
          * 
          * @return builder
          * 
@@ -161,7 +209,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder adminUsername(Output<String> adminUsername) {
+        public Builder adminUsername(@Nullable Output<String> adminUsername) {
             $.adminUsername = adminUsername;
             return this;
         }
@@ -198,6 +246,27 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param credentialStore (Updatable) The type of credential store for OGG.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder credentialStore(@Nullable Output<String> credentialStore) {
+            $.credentialStore = credentialStore;
+            return this;
+        }
+
+        /**
+         * @param credentialStore (Updatable) The type of credential store for OGG.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder credentialStore(String credentialStore) {
+            return credentialStore(Output.of(credentialStore));
+        }
+
+        /**
          * @param deploymentName The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
          * 
          * @return builder
@@ -216,6 +285,27 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder deploymentName(String deploymentName) {
             return deploymentName(Output.of(deploymentName));
+        }
+
+        /**
+         * @param identityDomainId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityDomainId(@Nullable Output<String> identityDomainId) {
+            $.identityDomainId = identityDomainId;
+            return this;
+        }
+
+        /**
+         * @param identityDomainId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityDomainId(String identityDomainId) {
+            return identityDomainId(Output.of(identityDomainId));
         }
 
         /**
@@ -260,9 +350,28 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
             return oggVersion(Output.of(oggVersion));
         }
 
+        /**
+         * @param passwordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder passwordSecretId(@Nullable Output<String> passwordSecretId) {
+            $.passwordSecretId = passwordSecretId;
+            return this;
+        }
+
+        /**
+         * @param passwordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            return passwordSecretId(Output.of(passwordSecretId));
+        }
+
         public DeploymentOggDataArgs build() {
-            $.adminPassword = Objects.requireNonNull($.adminPassword, "expected parameter 'adminPassword' to be non-null");
-            $.adminUsername = Objects.requireNonNull($.adminUsername, "expected parameter 'adminUsername' to be non-null");
             $.deploymentName = Objects.requireNonNull($.deploymentName, "expected parameter 'deploymentName' to be non-null");
             return $;
         }

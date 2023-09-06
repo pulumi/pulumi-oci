@@ -843,18 +843,24 @@ func (o DeploymentMaintenanceWindowPtrOutput) StartHour() pulumi.IntPtrOutput {
 }
 
 type DeploymentOggData struct {
-	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
-	AdminPassword string `pulumi:"adminPassword"`
+	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+	AdminPassword *string `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
-	AdminUsername string `pulumi:"adminUsername"`
+	AdminUsername *string `pulumi:"adminUsername"`
 	// (Updatable) A PEM-encoded SSL certificate.
 	Certificate *string `pulumi:"certificate"`
+	// (Updatable) The type of credential store for OGG.
+	CredentialStore *string `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName string `pulumi:"deploymentName"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+	IdentityDomainId *string `pulumi:"identityDomainId"`
 	// (Updatable) A PEM-encoded private key.
 	Key *string `pulumi:"key"`
 	// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
 	OggVersion *string `pulumi:"oggVersion"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 }
 
 // DeploymentOggDataInput is an input type that accepts DeploymentOggDataArgs and DeploymentOggDataOutput values.
@@ -869,18 +875,24 @@ type DeploymentOggDataInput interface {
 }
 
 type DeploymentOggDataArgs struct {
-	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
-	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
+	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+	AdminPassword pulumi.StringPtrInput `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
-	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
+	AdminUsername pulumi.StringPtrInput `pulumi:"adminUsername"`
 	// (Updatable) A PEM-encoded SSL certificate.
 	Certificate pulumi.StringPtrInput `pulumi:"certificate"`
+	// (Updatable) The type of credential store for OGG.
+	CredentialStore pulumi.StringPtrInput `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName pulumi.StringInput `pulumi:"deploymentName"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+	IdentityDomainId pulumi.StringPtrInput `pulumi:"identityDomainId"`
 	// (Updatable) A PEM-encoded private key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
 	OggVersion pulumi.StringPtrInput `pulumi:"oggVersion"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
 }
 
 func (DeploymentOggDataArgs) ElementType() reflect.Type {
@@ -960,14 +972,14 @@ func (o DeploymentOggDataOutput) ToDeploymentOggDataPtrOutputWithContext(ctx con
 	}).(DeploymentOggDataPtrOutput)
 }
 
-// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
-func (o DeploymentOggDataOutput) AdminPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v DeploymentOggData) string { return v.AdminPassword }).(pulumi.StringOutput)
+// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+func (o DeploymentOggDataOutput) AdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggData) *string { return v.AdminPassword }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The GoldenGate deployment console username.
-func (o DeploymentOggDataOutput) AdminUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v DeploymentOggData) string { return v.AdminUsername }).(pulumi.StringOutput)
+func (o DeploymentOggDataOutput) AdminUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggData) *string { return v.AdminUsername }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A PEM-encoded SSL certificate.
@@ -975,9 +987,19 @@ func (o DeploymentOggDataOutput) Certificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.Certificate }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The type of credential store for OGG.
+func (o DeploymentOggDataOutput) CredentialStore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggData) *string { return v.CredentialStore }).(pulumi.StringPtrOutput)
+}
+
 // The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 func (o DeploymentOggDataOutput) DeploymentName() pulumi.StringOutput {
 	return o.ApplyT(func(v DeploymentOggData) string { return v.DeploymentName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+func (o DeploymentOggDataOutput) IdentityDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggData) *string { return v.IdentityDomainId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A PEM-encoded private key.
@@ -988,6 +1010,11 @@ func (o DeploymentOggDataOutput) Key() pulumi.StringPtrOutput {
 // (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
 func (o DeploymentOggDataOutput) OggVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.OggVersion }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+func (o DeploymentOggDataOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggData) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 type DeploymentOggDataPtrOutput struct{ *pulumi.OutputState }
@@ -1014,13 +1041,13 @@ func (o DeploymentOggDataPtrOutput) Elem() DeploymentOggDataOutput {
 	}).(DeploymentOggDataOutput)
 }
 
-// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 func (o DeploymentOggDataPtrOutput) AdminPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
 		if v == nil {
 			return nil
 		}
-		return &v.AdminPassword
+		return v.AdminPassword
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1030,7 +1057,7 @@ func (o DeploymentOggDataPtrOutput) AdminUsername() pulumi.StringPtrOutput {
 		if v == nil {
 			return nil
 		}
-		return &v.AdminUsername
+		return v.AdminUsername
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1044,6 +1071,16 @@ func (o DeploymentOggDataPtrOutput) Certificate() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The type of credential store for OGG.
+func (o DeploymentOggDataPtrOutput) CredentialStore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentOggData) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CredentialStore
+	}).(pulumi.StringPtrOutput)
+}
+
 // The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 func (o DeploymentOggDataPtrOutput) DeploymentName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
@@ -1051,6 +1088,16 @@ func (o DeploymentOggDataPtrOutput) DeploymentName() pulumi.StringPtrOutput {
 			return nil
 		}
 		return &v.DeploymentName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+func (o DeploymentOggDataPtrOutput) IdentityDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentOggData) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IdentityDomainId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1071,6 +1118,16 @@ func (o DeploymentOggDataPtrOutput) OggVersion() pulumi.StringPtrOutput {
 			return nil
 		}
 		return v.OggVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+func (o DeploymentOggDataPtrOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentOggData) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PasswordSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4353,11 +4410,17 @@ type GetDeploymentOggData struct {
 	AdminUsername string `pulumi:"adminUsername"`
 	// A PEM-encoded SSL certificate.
 	Certificate string `pulumi:"certificate"`
+	// The type of credential store for OGG.
+	CredentialStore string `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName string `pulumi:"deploymentName"`
-	Key            string `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+	IdentityDomainId string `pulumi:"identityDomainId"`
+	Key              string `pulumi:"key"`
 	// Version of OGG
 	OggVersion string `pulumi:"oggVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
 }
 
 // GetDeploymentOggDataInput is an input type that accepts GetDeploymentOggDataArgs and GetDeploymentOggDataOutput values.
@@ -4377,11 +4440,17 @@ type GetDeploymentOggDataArgs struct {
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
 	// A PEM-encoded SSL certificate.
 	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// The type of credential store for OGG.
+	CredentialStore pulumi.StringInput `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName pulumi.StringInput `pulumi:"deploymentName"`
-	Key            pulumi.StringInput `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+	IdentityDomainId pulumi.StringInput `pulumi:"identityDomainId"`
+	Key              pulumi.StringInput `pulumi:"key"`
 	// Version of OGG
 	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
 }
 
 func (GetDeploymentOggDataArgs) ElementType() reflect.Type {
@@ -4449,9 +4518,19 @@ func (o GetDeploymentOggDataOutput) Certificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentOggData) string { return v.Certificate }).(pulumi.StringOutput)
 }
 
+// The type of credential store for OGG.
+func (o GetDeploymentOggDataOutput) CredentialStore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentOggData) string { return v.CredentialStore }).(pulumi.StringOutput)
+}
+
 // The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 func (o GetDeploymentOggDataOutput) DeploymentName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentOggData) string { return v.DeploymentName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+func (o GetDeploymentOggDataOutput) IdentityDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentOggData) string { return v.IdentityDomainId }).(pulumi.StringOutput)
 }
 
 func (o GetDeploymentOggDataOutput) Key() pulumi.StringOutput {
@@ -4461,6 +4540,11 @@ func (o GetDeploymentOggDataOutput) Key() pulumi.StringOutput {
 // Version of OGG
 func (o GetDeploymentOggDataOutput) OggVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentOggData) string { return v.OggVersion }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+func (o GetDeploymentOggDataOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentOggData) string { return v.PasswordSecretId }).(pulumi.StringOutput)
 }
 
 type GetDeploymentOggDataArrayOutput struct{ *pulumi.OutputState }
@@ -6819,11 +6903,17 @@ type GetDeploymentsDeploymentCollectionItemOggData struct {
 	AdminUsername string `pulumi:"adminUsername"`
 	// A PEM-encoded SSL certificate.
 	Certificate string `pulumi:"certificate"`
+	// The type of credential store for OGG.
+	CredentialStore string `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName string `pulumi:"deploymentName"`
-	Key            string `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+	IdentityDomainId string `pulumi:"identityDomainId"`
+	Key              string `pulumi:"key"`
 	// Version of OGG
 	OggVersion string `pulumi:"oggVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
 }
 
 // GetDeploymentsDeploymentCollectionItemOggDataInput is an input type that accepts GetDeploymentsDeploymentCollectionItemOggDataArgs and GetDeploymentsDeploymentCollectionItemOggDataOutput values.
@@ -6843,11 +6933,17 @@ type GetDeploymentsDeploymentCollectionItemOggDataArgs struct {
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
 	// A PEM-encoded SSL certificate.
 	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// The type of credential store for OGG.
+	CredentialStore pulumi.StringInput `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName pulumi.StringInput `pulumi:"deploymentName"`
-	Key            pulumi.StringInput `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+	IdentityDomainId pulumi.StringInput `pulumi:"identityDomainId"`
+	Key              pulumi.StringInput `pulumi:"key"`
 	// Version of OGG
 	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
 }
 
 func (GetDeploymentsDeploymentCollectionItemOggDataArgs) ElementType() reflect.Type {
@@ -6915,9 +7011,19 @@ func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) Certificate() pulum
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.Certificate }).(pulumi.StringOutput)
 }
 
+// The type of credential store for OGG.
+func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) CredentialStore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.CredentialStore }).(pulumi.StringOutput)
+}
+
 // The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) DeploymentName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.DeploymentName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) IdentityDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.IdentityDomainId }).(pulumi.StringOutput)
 }
 
 func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) Key() pulumi.StringOutput {
@@ -6927,6 +7033,11 @@ func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) Key() pulumi.String
 // Version of OGG
 func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) OggVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.OggVersion }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.PasswordSecretId }).(pulumi.StringOutput)
 }
 
 type GetDeploymentsDeploymentCollectionItemOggDataArrayOutput struct{ *pulumi.OutputState }

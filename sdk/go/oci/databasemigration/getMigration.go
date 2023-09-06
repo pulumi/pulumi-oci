@@ -85,6 +85,8 @@ type LookupMigrationResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Details about Oracle GoldenGate Microservices.
 	GoldenGateDetails []GetMigrationGoldenGateDetail `pulumi:"goldenGateDetails"`
+	// Details about Oracle GoldenGate GGS Deployment.
+	GoldenGateServiceDetails []GetMigrationGoldenGateServiceDetail `pulumi:"goldenGateServiceDetails"`
 	// The OCID of the resource
 	Id string `pulumi:"id"`
 	// Database objects to include from migration.
@@ -223,6 +225,11 @@ func (o LookupMigrationResultOutput) FreeformTags() pulumi.MapOutput {
 // Details about Oracle GoldenGate Microservices.
 func (o LookupMigrationResultOutput) GoldenGateDetails() GetMigrationGoldenGateDetailArrayOutput {
 	return o.ApplyT(func(v LookupMigrationResult) []GetMigrationGoldenGateDetail { return v.GoldenGateDetails }).(GetMigrationGoldenGateDetailArrayOutput)
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o LookupMigrationResultOutput) GoldenGateServiceDetails() GetMigrationGoldenGateServiceDetailArrayOutput {
+	return o.ApplyT(func(v LookupMigrationResult) []GetMigrationGoldenGateServiceDetail { return v.GoldenGateServiceDetails }).(GetMigrationGoldenGateServiceDetailArrayOutput)
 }
 
 // The OCID of the resource

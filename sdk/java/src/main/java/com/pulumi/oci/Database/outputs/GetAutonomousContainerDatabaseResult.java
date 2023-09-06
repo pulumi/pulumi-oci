@@ -37,7 +37,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String availabilityDomain;
     /**
-     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     private Double availableCpus;
@@ -57,7 +57,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String compartmentId;
     /**
-     * @return The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Autonomous VM Cluster.
      * 
      */
     private String computeModel;
@@ -120,6 +120,11 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String kmsKeyId;
     /**
+     * @return The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     * 
+     */
+    private Double largestProvisionableAutonomousDatabaseInCpus;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -136,7 +141,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private List<GetAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -164,17 +169,27 @@ public final class GetAutonomousContainerDatabaseResult {
     private String peerDbUniqueName;
     private String protectionMode;
     /**
-     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     private List<Double> provisionableCpuses;
     /**
+     * @return The number of CPUs provisioned in an Autonomous Container Database.
+     * 
+     */
+    private Double provisionedCpus;
+    /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     private Double reclaimableCpus;
+    /**
+     * @return The number of CPUs reserved in an Autonomous Container Database.
+     * 
+     */
+    private Double reservedCpus;
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
@@ -207,7 +222,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String timeSnapshotStandbyRevert;
     /**
-     * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     private Integer totalCpus;
@@ -248,7 +263,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.availabilityDomain;
     }
     /**
-     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     public Double availableCpus() {
@@ -276,7 +291,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.compartmentId;
     }
     /**
-     * @return The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Autonomous VM Cluster.
      * 
      */
     public String computeModel() {
@@ -369,6 +384,13 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.kmsKeyId;
     }
     /**
+     * @return The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     * 
+     */
+    public Double largestProvisionableAutonomousDatabaseInCpus() {
+        return this.largestProvisionableAutonomousDatabaseInCpus;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -393,7 +415,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.maintenanceWindows;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -445,20 +467,34 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.protectionMode;
     }
     /**
-     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     public List<Double> provisionableCpuses() {
         return this.provisionableCpuses;
     }
     /**
+     * @return The number of CPUs provisioned in an Autonomous Container Database.
+     * 
+     */
+    public Double provisionedCpus() {
+        return this.provisionedCpus;
+    }
+    /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     public Double reclaimableCpus() {
         return this.reclaimableCpus;
+    }
+    /**
+     * @return The number of CPUs reserved in an Autonomous Container Database.
+     * 
+     */
+    public Double reservedCpus() {
+        return this.reservedCpus;
     }
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
@@ -506,7 +542,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.timeSnapshotStandbyRevert;
     }
     /**
-     * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     public Integer totalCpus() {
@@ -559,6 +595,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private String keyStoreId;
         private String keyStoreWalletName;
         private String kmsKeyId;
+        private Double largestProvisionableAutonomousDatabaseInCpus;
         private String lastMaintenanceRunId;
         private String lifecycleDetails;
         private List<GetAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
@@ -576,7 +613,9 @@ public final class GetAutonomousContainerDatabaseResult {
         private String peerDbUniqueName;
         private String protectionMode;
         private List<Double> provisionableCpuses;
+        private Double provisionedCpus;
         private Double reclaimableCpus;
+        private Double reservedCpus;
         private String role;
         private Boolean rotateKeyTrigger;
         private String serviceLevelAgreementType;
@@ -613,6 +652,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
     	      this.kmsKeyId = defaults.kmsKeyId;
+    	      this.largestProvisionableAutonomousDatabaseInCpus = defaults.largestProvisionableAutonomousDatabaseInCpus;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceWindowDetails = defaults.maintenanceWindowDetails;
@@ -630,7 +670,9 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.peerDbUniqueName = defaults.peerDbUniqueName;
     	      this.protectionMode = defaults.protectionMode;
     	      this.provisionableCpuses = defaults.provisionableCpuses;
+    	      this.provisionedCpus = defaults.provisionedCpus;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
+    	      this.reservedCpus = defaults.reservedCpus;
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
     	      this.serviceLevelAgreementType = defaults.serviceLevelAgreementType;
@@ -765,6 +807,11 @@ public final class GetAutonomousContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder largestProvisionableAutonomousDatabaseInCpus(Double largestProvisionableAutonomousDatabaseInCpus) {
+            this.largestProvisionableAutonomousDatabaseInCpus = Objects.requireNonNull(largestProvisionableAutonomousDatabaseInCpus);
+            return this;
+        }
+        @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
             this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
             return this;
@@ -862,8 +909,18 @@ public final class GetAutonomousContainerDatabaseResult {
             return provisionableCpuses(List.of(provisionableCpuses));
         }
         @CustomType.Setter
+        public Builder provisionedCpus(Double provisionedCpus) {
+            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+            return this;
+        }
+        @CustomType.Setter
         public Builder reclaimableCpus(Double reclaimableCpus) {
             this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder reservedCpus(Double reservedCpus) {
+            this.reservedCpus = Objects.requireNonNull(reservedCpus);
             return this;
         }
         @CustomType.Setter
@@ -941,6 +998,7 @@ public final class GetAutonomousContainerDatabaseResult {
             o.keyStoreId = keyStoreId;
             o.keyStoreWalletName = keyStoreWalletName;
             o.kmsKeyId = kmsKeyId;
+            o.largestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             o.lastMaintenanceRunId = lastMaintenanceRunId;
             o.lifecycleDetails = lifecycleDetails;
             o.maintenanceWindowDetails = maintenanceWindowDetails;
@@ -958,7 +1016,9 @@ public final class GetAutonomousContainerDatabaseResult {
             o.peerDbUniqueName = peerDbUniqueName;
             o.protectionMode = protectionMode;
             o.provisionableCpuses = provisionableCpuses;
+            o.provisionedCpus = provisionedCpus;
             o.reclaimableCpus = reclaimableCpus;
+            o.reservedCpus = reservedCpus;
             o.role = role;
             o.rotateKeyTrigger = rotateKeyTrigger;
             o.serviceLevelAgreementType = serviceLevelAgreementType;

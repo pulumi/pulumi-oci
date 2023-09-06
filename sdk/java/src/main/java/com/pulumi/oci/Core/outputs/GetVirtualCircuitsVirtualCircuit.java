@@ -105,6 +105,11 @@ public final class GetVirtualCircuitsVirtualCircuit {
      */
     private Boolean isBfdEnabled;
     /**
+     * @return Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     * 
+     */
+    private Boolean isTransportMode;
+    /**
      * @return The Oracle BGP ASN.
      * 
      */
@@ -288,6 +293,13 @@ public final class GetVirtualCircuitsVirtualCircuit {
         return this.isBfdEnabled;
     }
     /**
+     * @return Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     * 
+     */
+    public Boolean isTransportMode() {
+        return this.isTransportMode;
+    }
+    /**
      * @return The Oracle BGP ASN.
      * 
      */
@@ -400,6 +412,7 @@ public final class GetVirtualCircuitsVirtualCircuit {
         private String id;
         private String ipMtu;
         private Boolean isBfdEnabled;
+        private Boolean isTransportMode;
         private Integer oracleBgpAsn;
         private String providerServiceId;
         private String providerServiceKeyName;
@@ -432,6 +445,7 @@ public final class GetVirtualCircuitsVirtualCircuit {
     	      this.id = defaults.id;
     	      this.ipMtu = defaults.ipMtu;
     	      this.isBfdEnabled = defaults.isBfdEnabled;
+    	      this.isTransportMode = defaults.isTransportMode;
     	      this.oracleBgpAsn = defaults.oracleBgpAsn;
     	      this.providerServiceId = defaults.providerServiceId;
     	      this.providerServiceKeyName = defaults.providerServiceKeyName;
@@ -531,6 +545,11 @@ public final class GetVirtualCircuitsVirtualCircuit {
             return this;
         }
         @CustomType.Setter
+        public Builder isTransportMode(Boolean isTransportMode) {
+            this.isTransportMode = Objects.requireNonNull(isTransportMode);
+            return this;
+        }
+        @CustomType.Setter
         public Builder oracleBgpAsn(Integer oracleBgpAsn) {
             this.oracleBgpAsn = Objects.requireNonNull(oracleBgpAsn);
             return this;
@@ -619,6 +638,7 @@ public final class GetVirtualCircuitsVirtualCircuit {
             o.id = id;
             o.ipMtu = ipMtu;
             o.isBfdEnabled = isBfdEnabled;
+            o.isTransportMode = isTransportMode;
             o.oracleBgpAsn = oracleBgpAsn;
             o.providerServiceId = providerServiceId;
             o.providerServiceKeyName = providerServiceKeyName;

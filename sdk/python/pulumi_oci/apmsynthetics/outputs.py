@@ -216,7 +216,7 @@ class ConfigConfiguration(dict):
         :param str config_type: (Updatable) Type of configuration.
         :param 'ConfigConfigurationDnsConfigurationArgs' dns_configuration: (Updatable) Information about the DNS settings.
         :param bool is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
-        :param bool is_default_snapshot_enabled: (Updatable) If disabled then auto snapshots are not collected.
+        :param bool is_default_snapshot_enabled: (Updatable) If disabled, auto snapshots are not collected.
         :param bool is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
         :param bool is_redirection_enabled: (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         :param 'ConfigConfigurationNetworkConfigurationArgs' network_configuration: (Updatable) Details of the network configuration.
@@ -301,7 +301,7 @@ class ConfigConfiguration(dict):
     @pulumi.getter(name="isDefaultSnapshotEnabled")
     def is_default_snapshot_enabled(self) -> Optional[bool]:
         """
-        (Updatable) If disabled then auto snapshots are not collected.
+        (Updatable) If disabled, auto snapshots are not collected.
         """
         return pulumi.get(self, "is_default_snapshot_enabled")
 
@@ -427,8 +427,8 @@ class ConfigConfigurationClientCertificateDetails(dict):
                  client_certificate: Optional['outputs.ConfigConfigurationClientCertificateDetailsClientCertificate'] = None,
                  private_key: Optional['outputs.ConfigConfigurationClientCertificateDetailsPrivateKey'] = None):
         """
-        :param 'ConfigConfigurationClientCertificateDetailsClientCertificateArgs' client_certificate: (Updatable) Client certificate in pem format.
-        :param 'ConfigConfigurationClientCertificateDetailsPrivateKeyArgs' private_key: (Updatable) The private key associated with the client certificate in pem format.
+        :param 'ConfigConfigurationClientCertificateDetailsClientCertificateArgs' client_certificate: (Updatable) Client certificate in PEM format.
+        :param 'ConfigConfigurationClientCertificateDetailsPrivateKeyArgs' private_key: (Updatable) The private key associated with the client certificate in PEM format.
         """
         if client_certificate is not None:
             pulumi.set(__self__, "client_certificate", client_certificate)
@@ -439,7 +439,7 @@ class ConfigConfigurationClientCertificateDetails(dict):
     @pulumi.getter(name="clientCertificate")
     def client_certificate(self) -> Optional['outputs.ConfigConfigurationClientCertificateDetailsClientCertificate']:
         """
-        (Updatable) Client certificate in pem format.
+        (Updatable) Client certificate in PEM format.
         """
         return pulumi.get(self, "client_certificate")
 
@@ -447,7 +447,7 @@ class ConfigConfigurationClientCertificateDetails(dict):
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional['outputs.ConfigConfigurationClientCertificateDetailsPrivateKey']:
         """
-        (Updatable) The private key associated with the client certificate in pem format.
+        (Updatable) The private key associated with the client certificate in PEM format.
         """
         return pulumi.get(self, "private_key")
 
@@ -2025,7 +2025,7 @@ class GetMonitorConfigurationResult(dict):
         :param str config_type: Type of configuration.
         :param Sequence['GetMonitorConfigurationDnsConfigurationArgs'] dns_configurations: Information about the DNS settings.
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
-        :param bool is_default_snapshot_enabled: If disabled then auto snapshots are not collected.
+        :param bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
         :param bool is_redirection_enabled: If redirection is enabled, then redirects will be allowed while accessing target URL.
         :param Sequence['GetMonitorConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration.
@@ -2093,7 +2093,7 @@ class GetMonitorConfigurationResult(dict):
     @pulumi.getter(name="isDefaultSnapshotEnabled")
     def is_default_snapshot_enabled(self) -> bool:
         """
-        If disabled then auto snapshots are not collected.
+        If disabled, auto snapshots are not collected.
         """
         return pulumi.get(self, "is_default_snapshot_enabled")
 
@@ -2200,8 +2200,8 @@ class GetMonitorConfigurationClientCertificateDetailResult(dict):
                  client_certificates: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult'],
                  private_keys: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult']):
         """
-        :param Sequence['GetMonitorConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in pem format.
-        :param Sequence['GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in pem format.
+        :param Sequence['GetMonitorConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in PEM format.
+        :param Sequence['GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in PEM format.
         """
         pulumi.set(__self__, "client_certificates", client_certificates)
         pulumi.set(__self__, "private_keys", private_keys)
@@ -2210,7 +2210,7 @@ class GetMonitorConfigurationClientCertificateDetailResult(dict):
     @pulumi.getter(name="clientCertificates")
     def client_certificates(self) -> Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult']:
         """
-        Client certificate in pem format.
+        Client certificate in PEM format.
         """
         return pulumi.get(self, "client_certificates")
 
@@ -2218,7 +2218,7 @@ class GetMonitorConfigurationClientCertificateDetailResult(dict):
     @pulumi.getter(name="privateKeys")
     def private_keys(self) -> Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult']:
         """
-        The private key associated with the client certificate in pem format.
+        The private key associated with the client certificate in PEM format.
         """
         return pulumi.get(self, "private_keys")
 
@@ -2812,7 +2812,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param str script_name: Name of the script.
         :param Sequence['GetMonitorsMonitorCollectionItemScriptParameterArgs'] script_parameters: List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
         :param str status: A filter to return only monitors that match the status given.
-        :param str target: Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+        :param str target: Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param int timeout_in_seconds: Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
@@ -2992,7 +2992,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter
     def target(self) -> str:
         """
-        Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+        Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         """
         return pulumi.get(self, "target")
 
@@ -3091,7 +3091,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         :param str config_type: Type of configuration.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs'] dns_configurations: Information about the DNS settings.
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
-        :param bool is_default_snapshot_enabled: If disabled then auto snapshots are not collected.
+        :param bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
         :param bool is_redirection_enabled: If redirection is enabled, then redirects will be allowed while accessing target URL.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration.
@@ -3159,7 +3159,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     @pulumi.getter(name="isDefaultSnapshotEnabled")
     def is_default_snapshot_enabled(self) -> bool:
         """
-        If disabled then auto snapshots are not collected.
+        If disabled, auto snapshots are not collected.
         """
         return pulumi.get(self, "is_default_snapshot_enabled")
 
@@ -3266,8 +3266,8 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult
                  client_certificates: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult'],
                  private_keys: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult']):
         """
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in pem format.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in pem format.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in PEM format.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in PEM format.
         """
         pulumi.set(__self__, "client_certificates", client_certificates)
         pulumi.set(__self__, "private_keys", private_keys)
@@ -3276,7 +3276,7 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult
     @pulumi.getter(name="clientCertificates")
     def client_certificates(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult']:
         """
-        Client certificate in pem format.
+        Client certificate in PEM format.
         """
         return pulumi.get(self, "client_certificates")
 
@@ -3284,7 +3284,7 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult
     @pulumi.getter(name="privateKeys")
     def private_keys(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult']:
         """
-        The private key associated with the client certificate in pem format.
+        The private key associated with the client certificate in PEM format.
         """
         return pulumi.get(self, "private_keys")
 

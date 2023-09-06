@@ -36,7 +36,6 @@ namespace Pulumi.Oci.Mysql
         ///         ConfigurationId = @var.Mysql_configuration_id,
         ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
         ///         DisplayName = @var.Mysql_db_system_display_name,
-        ///         IsAnalyticsClusterAttached = @var.Mysql_db_system_is_analytics_cluster_attached,
         ///         IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
         ///         IsUpToDate = @var.Mysql_db_system_is_up_to_date,
         ///         State = @var.Mysql_db_system_state,
@@ -75,7 +74,6 @@ namespace Pulumi.Oci.Mysql
         ///         ConfigurationId = @var.Mysql_configuration_id,
         ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
         ///         DisplayName = @var.Mysql_db_system_display_name,
-        ///         IsAnalyticsClusterAttached = @var.Mysql_db_system_is_analytics_cluster_attached,
         ///         IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
         ///         IsUpToDate = @var.Mysql_db_system_is_up_to_date,
         ///         State = @var.Mysql_db_system_state,
@@ -124,12 +122,6 @@ namespace Pulumi.Oci.Mysql
             get => _filters ?? (_filters = new List<Inputs.GetMysqlDbSystemsFilterArgs>());
             set => _filters = value;
         }
-
-        /// <summary>
-        /// DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-        /// </summary>
-        [Input("isAnalyticsClusterAttached")]
-        public bool? IsAnalyticsClusterAttached { get; set; }
 
         /// <summary>
         /// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
@@ -190,12 +182,6 @@ namespace Pulumi.Oci.Mysql
         }
 
         /// <summary>
-        /// DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-        /// </summary>
-        [Input("isAnalyticsClusterAttached")]
-        public Input<bool>? IsAnalyticsClusterAttached { get; set; }
-
-        /// <summary>
         /// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
         /// </summary>
         [Input("isHeatWaveClusterAttached")]
@@ -249,10 +235,6 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-        /// </summary>
-        public readonly bool? IsAnalyticsClusterAttached;
-        /// <summary>
         /// If the DB System has a HeatWave Cluster attached.
         /// </summary>
         public readonly bool? IsHeatWaveClusterAttached;
@@ -278,8 +260,6 @@ namespace Pulumi.Oci.Mysql
 
             string id,
 
-            bool? isAnalyticsClusterAttached,
-
             bool? isHeatWaveClusterAttached,
 
             bool? isUpToDate,
@@ -293,7 +273,6 @@ namespace Pulumi.Oci.Mysql
             DisplayName = displayName;
             Filters = filters;
             Id = id;
-            IsAnalyticsClusterAttached = isAnalyticsClusterAttached;
             IsHeatWaveClusterAttached = isHeatWaveClusterAttached;
             IsUpToDate = isUpToDate;
             State = state;

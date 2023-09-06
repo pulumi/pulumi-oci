@@ -61,11 +61,25 @@ import (
 //				},
 //				PlacementConfiguration: &core.ClusterNetworkPlacementConfigurationArgs{
 //					AvailabilityDomain: pulumi.Any(_var.Cluster_network_placement_configuration_availability_domain),
-//					PrimarySubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					PrimaryVnicSubnets: &core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs{
+//						SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//						Ipv6addressIpv6subnetCidrPairDetails: core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArray{
+//							&core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs{
+//								Ipv6subnetCidr: pulumi.Any(_var.Cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//							},
+//						},
+//						IsAssignIpv6ip: pulumi.Any(_var.Cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip),
+//					},
 //					SecondaryVnicSubnets: core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArray{
 //						&core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs{
 //							SubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //							DisplayName: pulumi.Any(_var.Cluster_network_placement_configuration_secondary_vnic_subnets_display_name),
+//							Ipv6addressIpv6subnetCidrPairDetails: core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{
+//								&core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{
+//									Ipv6subnetCidr: pulumi.Any(_var.Cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//								},
+//							},
+//							IsAssignIpv6ip: pulumi.Any(_var.Cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip),
 //						},
 //					},
 //				},

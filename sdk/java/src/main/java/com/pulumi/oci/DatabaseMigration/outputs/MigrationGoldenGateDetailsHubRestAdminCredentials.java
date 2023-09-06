@@ -10,26 +10,26 @@ import java.util.Objects;
 @CustomType
 public final class MigrationGoldenGateDetailsHubRestAdminCredentials {
     /**
-     * @return (Updatable) Administrator password
+     * @return (Updatable) Database  password
      * 
      */
     private String password;
     /**
-     * @return (Updatable) Administrator username
+     * @return (Updatable) Database username
      * 
      */
     private String username;
 
     private MigrationGoldenGateDetailsHubRestAdminCredentials() {}
     /**
-     * @return (Updatable) Administrator password
+     * @return (Updatable) Database  password
      * 
      */
     public String password() {
         return this.password;
     }
     /**
-     * @return (Updatable) Administrator username
+     * @return (Updatable) Database username
      * 
      */
     public String username() {

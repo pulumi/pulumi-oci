@@ -474,7 +474,6 @@ class _MysqlDbSystemState:
     def __init__(__self__, *,
                  admin_password: Optional[pulumi.Input[str]] = None,
                  admin_username: Optional[pulumi.Input[str]] = None,
-                 analytics_clusters: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemAnalyticsClusterArgs']]]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']] = None,
                  channels: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]]] = None,
@@ -493,7 +492,6 @@ class _MysqlDbSystemState:
                  heat_wave_clusters: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
-                 is_analytics_cluster_attached: Optional[pulumi.Input[bool]] = None,
                  is_heat_wave_cluster_attached: Optional[pulumi.Input[bool]] = None,
                  is_highly_available: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -513,7 +511,6 @@ class _MysqlDbSystemState:
         Input properties used for looking up and filtering MysqlDbSystem resources.
         :param pulumi.Input[str] admin_password: The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         :param pulumi.Input[str] admin_username: The username for the administrative user.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemAnalyticsClusterArgs']]] analytics_clusters: DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
                
                In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -544,7 +541,6 @@ class _MysqlDbSystemState:
                
                Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-        :param pulumi.Input[bool] is_analytics_cluster_attached: DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
         :param pulumi.Input[bool] is_heat_wave_cluster_attached: If the DB System has a HeatWave Cluster attached.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
                
@@ -571,8 +567,6 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "admin_password", admin_password)
         if admin_username is not None:
             pulumi.set(__self__, "admin_username", admin_username)
-        if analytics_clusters is not None:
-            pulumi.set(__self__, "analytics_clusters", analytics_clusters)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_policy is not None:
@@ -609,8 +603,6 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "hostname_label", hostname_label)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
-        if is_analytics_cluster_attached is not None:
-            pulumi.set(__self__, "is_analytics_cluster_attached", is_analytics_cluster_attached)
         if is_heat_wave_cluster_attached is not None:
             pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
         if is_highly_available is not None:
@@ -665,18 +657,6 @@ class _MysqlDbSystemState:
     @admin_username.setter
     def admin_username(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "admin_username", value)
-
-    @property
-    @pulumi.getter(name="analyticsClusters")
-    def analytics_clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemAnalyticsClusterArgs']]]]:
-        """
-        DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-        """
-        return pulumi.get(self, "analytics_clusters")
-
-    @analytics_clusters.setter
-    def analytics_clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemAnalyticsClusterArgs']]]]):
-        pulumi.set(self, "analytics_clusters", value)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -905,18 +885,6 @@ class _MysqlDbSystemState:
     @ip_address.setter
     def ip_address(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_address", value)
-
-    @property
-    @pulumi.getter(name="isAnalyticsClusterAttached")
-    def is_analytics_cluster_attached(self) -> Optional[pulumi.Input[bool]]:
-        """
-        DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-        """
-        return pulumi.get(self, "is_analytics_cluster_attached")
-
-    @is_analytics_cluster_attached.setter
-    def is_analytics_cluster_attached(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_analytics_cluster_attached", value)
 
     @property
     @pulumi.getter(name="isHeatWaveClusterAttached")
@@ -1416,12 +1384,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
-            __props__.__dict__["analytics_clusters"] = None
             __props__.__dict__["channels"] = None
             __props__.__dict__["current_placements"] = None
             __props__.__dict__["endpoints"] = None
             __props__.__dict__["heat_wave_clusters"] = None
-            __props__.__dict__["is_analytics_cluster_attached"] = None
             __props__.__dict__["is_heat_wave_cluster_attached"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["point_in_time_recovery_details"] = None
@@ -1441,7 +1407,6 @@ class MysqlDbSystem(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             admin_password: Optional[pulumi.Input[str]] = None,
             admin_username: Optional[pulumi.Input[str]] = None,
-            analytics_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemAnalyticsClusterArgs']]]]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             backup_policy: Optional[pulumi.Input[pulumi.InputType['MysqlDbSystemBackupPolicyArgs']]] = None,
             channels: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemChannelArgs']]]]] = None,
@@ -1460,7 +1425,6 @@ class MysqlDbSystem(pulumi.CustomResource):
             heat_wave_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemHeatWaveClusterArgs']]]]] = None,
             hostname_label: Optional[pulumi.Input[str]] = None,
             ip_address: Optional[pulumi.Input[str]] = None,
-            is_analytics_cluster_attached: Optional[pulumi.Input[bool]] = None,
             is_heat_wave_cluster_attached: Optional[pulumi.Input[bool]] = None,
             is_highly_available: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -1485,7 +1449,6 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] admin_password: The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         :param pulumi.Input[str] admin_username: The username for the administrative user.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemAnalyticsClusterArgs']]]] analytics_clusters: DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
                
                In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -1516,7 +1479,6 @@ class MysqlDbSystem(pulumi.CustomResource):
                
                Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-        :param pulumi.Input[bool] is_analytics_cluster_attached: DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
         :param pulumi.Input[bool] is_heat_wave_cluster_attached: If the DB System has a HeatWave Cluster attached.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
                
@@ -1545,7 +1507,6 @@ class MysqlDbSystem(pulumi.CustomResource):
 
         __props__.__dict__["admin_password"] = admin_password
         __props__.__dict__["admin_username"] = admin_username
-        __props__.__dict__["analytics_clusters"] = analytics_clusters
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["backup_policy"] = backup_policy
         __props__.__dict__["channels"] = channels
@@ -1564,7 +1525,6 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["heat_wave_clusters"] = heat_wave_clusters
         __props__.__dict__["hostname_label"] = hostname_label
         __props__.__dict__["ip_address"] = ip_address
-        __props__.__dict__["is_analytics_cluster_attached"] = is_analytics_cluster_attached
         __props__.__dict__["is_heat_wave_cluster_attached"] = is_heat_wave_cluster_attached
         __props__.__dict__["is_highly_available"] = is_highly_available
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -1597,14 +1557,6 @@ class MysqlDbSystem(pulumi.CustomResource):
         The username for the administrative user.
         """
         return pulumi.get(self, "admin_username")
-
-    @property
-    @pulumi.getter(name="analyticsClusters")
-    def analytics_clusters(self) -> pulumi.Output[Sequence['outputs.MysqlDbSystemAnalyticsCluster']]:
-        """
-        DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-        """
-        return pulumi.get(self, "analytics_clusters")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1761,14 +1713,6 @@ class MysqlDbSystem(pulumi.CustomResource):
         The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
-
-    @property
-    @pulumi.getter(name="isAnalyticsClusterAttached")
-    def is_analytics_cluster_attached(self) -> pulumi.Output[bool]:
-        """
-        DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-        """
-        return pulumi.get(self, "is_analytics_cluster_attached")
 
     @property
     @pulumi.getter(name="isHeatWaveClusterAttached")

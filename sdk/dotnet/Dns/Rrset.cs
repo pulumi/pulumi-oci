@@ -55,13 +55,11 @@ namespace Pulumi.Oci.Dns
     /// ```sh
     ///  $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
     /// ```
-    /// 
     ///  For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
     /// ```
-    /// 
     ///  skip adding `{view_id}` at the end if Rrset was created without `view_id`.
     /// </summary>
     [OciResourceType("oci:Dns/rrset:Rrset")]

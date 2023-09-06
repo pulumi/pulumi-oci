@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -19,15 +21,30 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
-    @Import(name="id", required=true)
-    private Output<String> id;
+    @Import(name="id")
+    private @Nullable Output<String> id;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
-    public Output<String> id() {
-        return this.id;
+    public Optional<Output<String>> id() {
+        return Optional.ofNullable(this.id);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+     * 
+     */
+    @Import(name="ids")
+    private @Nullable Output<List<String>> ids;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+     * 
+     */
+    public Optional<Output<List<String>>> ids() {
+        return Optional.ofNullable(this.ids);
     }
 
     /**
@@ -71,14 +88,44 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit&#39;s DRG attachment.
+     * 
+     */
+    @Import(name="transportAttachmentId")
+    private @Nullable Output<String> transportAttachmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit&#39;s DRG attachment.
+     * 
+     */
+    public Optional<Output<String>> transportAttachmentId() {
+        return Optional.ofNullable(this.transportAttachmentId);
+    }
+
+    /**
+     * Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+     * 
+     */
+    @Import(name="transportOnlyMode")
+    private @Nullable Output<Boolean> transportOnlyMode;
+
+    /**
+     * @return Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+     * 
+     */
+    public Optional<Output<Boolean>> transportOnlyMode() {
+        return Optional.ofNullable(this.transportOnlyMode);
+    }
+
+    /**
+     * (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+     * @return (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
      * 
      */
     public Output<String> type() {
@@ -104,8 +151,11 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
 
     private DrgAttachmentNetworkDetailsArgs(DrgAttachmentNetworkDetailsArgs $) {
         this.id = $.id;
+        this.ids = $.ids;
         this.ipsecConnectionId = $.ipsecConnectionId;
         this.routeTableId = $.routeTableId;
+        this.transportAttachmentId = $.transportAttachmentId;
+        this.transportOnlyMode = $.transportOnlyMode;
         this.type = $.type;
         this.vcnRouteType = $.vcnRouteType;
     }
@@ -134,7 +184,7 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
          * @return builder
          * 
          */
-        public Builder id(Output<String> id) {
+        public Builder id(@Nullable Output<String> id) {
             $.id = id;
             return this;
         }
@@ -147,6 +197,37 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
          */
         public Builder id(String id) {
             return id(Output.of(id));
+        }
+
+        /**
+         * @param ids The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ids(@Nullable Output<List<String>> ids) {
+            $.ids = ids;
+            return this;
+        }
+
+        /**
+         * @param ids The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ids(List<String> ids) {
+            return ids(Output.of(ids));
+        }
+
+        /**
+         * @param ids The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ids(String... ids) {
+            return ids(List.of(ids));
         }
 
         /**
@@ -202,7 +283,49 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param type (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+         * @param transportAttachmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit&#39;s DRG attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportAttachmentId(@Nullable Output<String> transportAttachmentId) {
+            $.transportAttachmentId = transportAttachmentId;
+            return this;
+        }
+
+        /**
+         * @param transportAttachmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit&#39;s DRG attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportAttachmentId(String transportAttachmentId) {
+            return transportAttachmentId(Output.of(transportAttachmentId));
+        }
+
+        /**
+         * @param transportOnlyMode Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportOnlyMode(@Nullable Output<Boolean> transportOnlyMode) {
+            $.transportOnlyMode = transportOnlyMode;
+            return this;
+        }
+
+        /**
+         * @param transportOnlyMode Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportOnlyMode(Boolean transportOnlyMode) {
+            return transportOnlyMode(Output.of(transportOnlyMode));
+        }
+
+        /**
+         * @param type (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
          * 
          * @return builder
          * 
@@ -213,7 +336,7 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param type (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+         * @param type (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
          * 
          * @return builder
          * 
@@ -244,7 +367,6 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
         }
 
         public DrgAttachmentNetworkDetailsArgs build() {
-            $.id = Objects.requireNonNull($.id, "expected parameter 'id' to be non-null");
             $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
             return $;
         }

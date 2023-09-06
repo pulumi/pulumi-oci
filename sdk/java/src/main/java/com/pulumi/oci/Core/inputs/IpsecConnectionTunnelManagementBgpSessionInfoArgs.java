@@ -15,22 +15,30 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
 
     public static final IpsecConnectionTunnelManagementBgpSessionInfoArgs Empty = new IpsecConnectionTunnelManagementBgpSessionInfoArgs();
 
+    /**
+     * The state of the BGP IPv6 session.
+     * 
+     */
     @Import(name="bgpIpv6state")
     private @Nullable Output<String> bgpIpv6state;
 
+    /**
+     * @return The state of the BGP IPv6 session.
+     * 
+     */
     public Optional<Output<String>> bgpIpv6state() {
         return Optional.ofNullable(this.bgpIpv6state);
     }
 
     /**
-     * the state of the BGP.
+     * The state of the BGP session.
      * 
      */
     @Import(name="bgpState")
     private @Nullable Output<String> bgpState;
 
     /**
-     * @return the state of the BGP.
+     * @return The state of the BGP session.
      * 
      */
     public Optional<Output<String>> bgpState() {
@@ -92,14 +100,14 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
     }
 
     /**
-     * This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+     * The Oracle BGP ASN.
      * 
      */
     @Import(name="oracleBgpAsn")
     private @Nullable Output<String> oracleBgpAsn;
 
     /**
-     * @return This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+     * @return The Oracle BGP ASN.
      * 
      */
     public Optional<Output<String>> oracleBgpAsn() {
@@ -166,17 +174,29 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
             $ = new IpsecConnectionTunnelManagementBgpSessionInfoArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param bgpIpv6state The state of the BGP IPv6 session.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bgpIpv6state(@Nullable Output<String> bgpIpv6state) {
             $.bgpIpv6state = bgpIpv6state;
             return this;
         }
 
+        /**
+         * @param bgpIpv6state The state of the BGP IPv6 session.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bgpIpv6state(String bgpIpv6state) {
             return bgpIpv6state(Output.of(bgpIpv6state));
         }
 
         /**
-         * @param bgpState the state of the BGP.
+         * @param bgpState The state of the BGP session.
          * 
          * @return builder
          * 
@@ -187,7 +207,7 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
         }
 
         /**
-         * @param bgpState the state of the BGP.
+         * @param bgpState The state of the BGP session.
          * 
          * @return builder
          * 
@@ -263,7 +283,7 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
         }
 
         /**
-         * @param oracleBgpAsn This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+         * @param oracleBgpAsn The Oracle BGP ASN.
          * 
          * @return builder
          * 
@@ -274,7 +294,7 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
         }
 
         /**
-         * @param oracleBgpAsn This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+         * @param oracleBgpAsn The Oracle BGP ASN.
          * 
          * @return builder
          * 

@@ -11,9 +11,13 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class IpsecConnectionTunnelManagementBgpSessionInfo {
+    /**
+     * @return The state of the BGP IPv6 session.
+     * 
+     */
     private @Nullable String bgpIpv6state;
     /**
-     * @return the state of the BGP.
+     * @return The state of the BGP session.
      * 
      */
     private @Nullable String bgpState;
@@ -40,7 +44,7 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
      */
     private @Nullable String customerInterfaceIp;
     /**
-     * @return This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+     * @return The Oracle BGP ASN.
      * 
      */
     private @Nullable String oracleBgpAsn;
@@ -59,11 +63,15 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
     private @Nullable String oracleInterfaceIp;
 
     private IpsecConnectionTunnelManagementBgpSessionInfo() {}
+    /**
+     * @return The state of the BGP IPv6 session.
+     * 
+     */
     public Optional<String> bgpIpv6state() {
         return Optional.ofNullable(this.bgpIpv6state);
     }
     /**
-     * @return the state of the BGP.
+     * @return The state of the BGP session.
      * 
      */
     public Optional<String> bgpState() {
@@ -96,7 +104,7 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
         return Optional.ofNullable(this.customerInterfaceIp);
     }
     /**
-     * @return This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+     * @return The Oracle BGP ASN.
      * 
      */
     public Optional<String> oracleBgpAsn() {

@@ -22,7 +22,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_name=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, reclaimable_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None):
+    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_name=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None):
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -92,6 +92,9 @@ class GetAutonomousContainerDatabaseResult:
         if kms_key_id and not isinstance(kms_key_id, str):
             raise TypeError("Expected argument 'kms_key_id' to be a str")
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if largest_provisionable_autonomous_database_in_cpus and not isinstance(largest_provisionable_autonomous_database_in_cpus, float):
+            raise TypeError("Expected argument 'largest_provisionable_autonomous_database_in_cpus' to be a float")
+        pulumi.set(__self__, "largest_provisionable_autonomous_database_in_cpus", largest_provisionable_autonomous_database_in_cpus)
         if last_maintenance_run_id and not isinstance(last_maintenance_run_id, str):
             raise TypeError("Expected argument 'last_maintenance_run_id' to be a str")
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
@@ -143,9 +146,15 @@ class GetAutonomousContainerDatabaseResult:
         if provisionable_cpuses and not isinstance(provisionable_cpuses, list):
             raise TypeError("Expected argument 'provisionable_cpuses' to be a list")
         pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
+        if provisioned_cpus and not isinstance(provisioned_cpus, float):
+            raise TypeError("Expected argument 'provisioned_cpus' to be a float")
+        pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
         if reclaimable_cpus and not isinstance(reclaimable_cpus, float):
             raise TypeError("Expected argument 'reclaimable_cpus' to be a float")
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        if reserved_cpus and not isinstance(reserved_cpus, float):
+            raise TypeError("Expected argument 'reserved_cpus' to be a float")
+        pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         if role and not isinstance(role, str):
             raise TypeError("Expected argument 'role' to be a str")
         pulumi.set(__self__, "role", role)
@@ -210,7 +219,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
         """
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -242,7 +251,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Autonomous VM Cluster.
         """
         return pulumi.get(self, "compute_model")
 
@@ -350,6 +359,14 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "kms_key_id")
 
     @property
+    @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
+    def largest_provisionable_autonomous_database_in_cpus(self) -> float:
+        """
+        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        """
+        return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
+
+    @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> str:
         """
@@ -382,7 +399,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -454,9 +471,17 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[float]:
         """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "provisionable_cpuses")
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> float:
+        """
+        The number of CPUs provisioned in an Autonomous Container Database.
+        """
+        return pulumi.get(self, "provisioned_cpus")
 
     @property
     @pulumi.getter(name="reclaimableCpus")
@@ -464,9 +489,17 @@ class GetAutonomousContainerDatabaseResult:
         """
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> float:
+        """
+        The number of CPUs reserved in an Autonomous Container Database.
+        """
+        return pulumi.get(self, "reserved_cpus")
 
     @property
     @pulumi.getter
@@ -525,7 +558,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> int:
         """
-        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "total_cpus")
 
@@ -575,6 +608,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             key_store_id=self.key_store_id,
             key_store_wallet_name=self.key_store_wallet_name,
             kms_key_id=self.kms_key_id,
+            largest_provisionable_autonomous_database_in_cpus=self.largest_provisionable_autonomous_database_in_cpus,
             last_maintenance_run_id=self.last_maintenance_run_id,
             lifecycle_details=self.lifecycle_details,
             maintenance_window_details=self.maintenance_window_details,
@@ -592,7 +626,9 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             peer_db_unique_name=self.peer_db_unique_name,
             protection_mode=self.protection_mode,
             provisionable_cpuses=self.provisionable_cpuses,
+            provisioned_cpus=self.provisioned_cpus,
             reclaimable_cpus=self.reclaimable_cpus,
+            reserved_cpus=self.reserved_cpus,
             role=self.role,
             rotate_key_trigger=self.rotate_key_trigger,
             service_level_agreement_type=self.service_level_agreement_type,
@@ -653,6 +689,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         key_store_id=pulumi.get(__ret__, 'key_store_id'),
         key_store_wallet_name=pulumi.get(__ret__, 'key_store_wallet_name'),
         kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
+        largest_provisionable_autonomous_database_in_cpus=pulumi.get(__ret__, 'largest_provisionable_autonomous_database_in_cpus'),
         last_maintenance_run_id=pulumi.get(__ret__, 'last_maintenance_run_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenance_window_details=pulumi.get(__ret__, 'maintenance_window_details'),
@@ -670,7 +707,9 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         peer_db_unique_name=pulumi.get(__ret__, 'peer_db_unique_name'),
         protection_mode=pulumi.get(__ret__, 'protection_mode'),
         provisionable_cpuses=pulumi.get(__ret__, 'provisionable_cpuses'),
+        provisioned_cpus=pulumi.get(__ret__, 'provisioned_cpus'),
         reclaimable_cpus=pulumi.get(__ret__, 'reclaimable_cpus'),
+        reserved_cpus=pulumi.get(__ret__, 'reserved_cpus'),
         role=pulumi.get(__ret__, 'role'),
         rotate_key_trigger=pulumi.get(__ret__, 'rotate_key_trigger'),
         service_level_agreement_type=pulumi.get(__ret__, 'service_level_agreement_type'),

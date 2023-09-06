@@ -64,6 +64,10 @@ import (
 //					SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //					VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
 //				},
+//				ReplicationCredentials: &databasemigration.ConnectionReplicationCredentialsArgs{
+//					Password: pulumi.Any(_var.Connection_replication_credentials_password),
+//					Username: pulumi.Any(_var.Connection_replication_credentials_username),
+//				},
 //				SshDetails: &databasemigration.ConnectionSshDetailsArgs{
 //					Host:         pulumi.Any(_var.Connection_ssh_details_host),
 //					Sshkey:       pulumi.Any(_var.Connection_ssh_details_sshkey),
@@ -120,6 +124,8 @@ type Connection struct {
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint ConnectionPrivateEndpointOutput `pulumi:"privateEndpoint"`
+	// (Updatable) Database Administrator Credentials details.
+	ReplicationCredentials ConnectionReplicationCredentialsOutput `pulumi:"replicationCredentials"`
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
 	SshDetails ConnectionSshDetailsOutput `pulumi:"sshDetails"`
 	// The current state of the Connection resource.
@@ -206,6 +212,8 @@ type connectionState struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint *ConnectionPrivateEndpoint `pulumi:"privateEndpoint"`
+	// (Updatable) Database Administrator Credentials details.
+	ReplicationCredentials *ConnectionReplicationCredentials `pulumi:"replicationCredentials"`
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
 	SshDetails *ConnectionSshDetails `pulumi:"sshDetails"`
 	// The current state of the Connection resource.
@@ -251,6 +259,8 @@ type ConnectionState struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint ConnectionPrivateEndpointPtrInput
+	// (Updatable) Database Administrator Credentials details.
+	ReplicationCredentials ConnectionReplicationCredentialsPtrInput
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
 	SshDetails ConnectionSshDetailsPtrInput
 	// The current state of the Connection resource.
@@ -296,6 +306,8 @@ type connectionArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint *ConnectionPrivateEndpoint `pulumi:"privateEndpoint"`
+	// (Updatable) Database Administrator Credentials details.
+	ReplicationCredentials *ConnectionReplicationCredentials `pulumi:"replicationCredentials"`
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
 	SshDetails *ConnectionSshDetails `pulumi:"sshDetails"`
 	// (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
@@ -330,6 +342,8 @@ type ConnectionArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 	PrivateEndpoint ConnectionPrivateEndpointPtrInput
+	// (Updatable) Database Administrator Credentials details.
+	ReplicationCredentials ConnectionReplicationCredentialsPtrInput
 	// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
 	SshDetails ConnectionSshDetailsPtrInput
 	// (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
@@ -490,6 +504,11 @@ func (o ConnectionOutput) NsgIds() pulumi.StringArrayOutput {
 // (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
 func (o ConnectionOutput) PrivateEndpoint() ConnectionPrivateEndpointOutput {
 	return o.ApplyT(func(v *Connection) ConnectionPrivateEndpointOutput { return v.PrivateEndpoint }).(ConnectionPrivateEndpointOutput)
+}
+
+// (Updatable) Database Administrator Credentials details.
+func (o ConnectionOutput) ReplicationCredentials() ConnectionReplicationCredentialsOutput {
+	return o.ApplyT(func(v *Connection) ConnectionReplicationCredentialsOutput { return v.ReplicationCredentials }).(ConnectionReplicationCredentialsOutput)
 }
 
 // (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.

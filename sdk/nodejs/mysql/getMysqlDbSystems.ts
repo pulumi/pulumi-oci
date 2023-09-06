@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  *     configurationId: _var.mysql_configuration_id,
  *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
  *     displayName: _var.mysql_db_system_display_name,
- *     isAnalyticsClusterAttached: _var.mysql_db_system_is_analytics_cluster_attached,
  *     isHeatWaveClusterAttached: _var.mysql_db_system_is_heat_wave_cluster_attached,
  *     isUpToDate: _var.mysql_db_system_is_up_to_date,
  *     state: _var.mysql_db_system_state,
@@ -39,7 +38,6 @@ export function getMysqlDbSystems(args: GetMysqlDbSystemsArgs, opts?: pulumi.Inv
         "dbSystemId": args.dbSystemId,
         "displayName": args.displayName,
         "filters": args.filters,
-        "isAnalyticsClusterAttached": args.isAnalyticsClusterAttached,
         "isHeatWaveClusterAttached": args.isHeatWaveClusterAttached,
         "isUpToDate": args.isUpToDate,
         "state": args.state,
@@ -67,10 +65,6 @@ export interface GetMysqlDbSystemsArgs {
      */
     displayName?: string;
     filters?: inputs.Mysql.GetMysqlDbSystemsFilter[];
-    /**
-     * DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-     */
-    isAnalyticsClusterAttached?: boolean;
     /**
      * If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
      */
@@ -115,10 +109,6 @@ export interface GetMysqlDbSystemsResult {
      */
     readonly id: string;
     /**
-     * DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     */
-    readonly isAnalyticsClusterAttached?: boolean;
-    /**
      * If the DB System has a HeatWave Cluster attached.
      */
     readonly isHeatWaveClusterAttached?: boolean;
@@ -145,7 +135,6 @@ export interface GetMysqlDbSystemsResult {
  *     configurationId: _var.mysql_configuration_id,
  *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
  *     displayName: _var.mysql_db_system_display_name,
- *     isAnalyticsClusterAttached: _var.mysql_db_system_is_analytics_cluster_attached,
  *     isHeatWaveClusterAttached: _var.mysql_db_system_is_heat_wave_cluster_attached,
  *     isUpToDate: _var.mysql_db_system_is_up_to_date,
  *     state: _var.mysql_db_system_state,
@@ -177,10 +166,6 @@ export interface GetMysqlDbSystemsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetMysqlDbSystemsFilterArgs>[]>;
-    /**
-     * DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-     */
-    isAnalyticsClusterAttached?: pulumi.Input<boolean>;
     /**
      * If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
      */

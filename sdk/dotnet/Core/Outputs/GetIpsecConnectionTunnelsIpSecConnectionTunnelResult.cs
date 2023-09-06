@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetIpsecConnectionTunnelsIpSecConnectionTunnelResult
     {
         /// <summary>
+        /// The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+        /// </summary>
+        public readonly ImmutableArray<string> AssociatedVirtualCircuits;
+        /// <summary>
         /// Information for establishing a BGP session for the IPSec tunnel.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoResult> BgpSessionInfos;
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelsIpSecConnectionTunnelResult(
+            ImmutableArray<string> associatedVirtualCircuits,
+
             ImmutableArray<Outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoResult> bgpSessionInfos,
 
             string compartmentId,
@@ -130,6 +136,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             string vpnIp)
         {
+            AssociatedVirtualCircuits = associatedVirtualCircuits;
             BgpSessionInfos = bgpSessionInfos;
             CompartmentId = compartmentId;
             CpeIp = cpeIp;

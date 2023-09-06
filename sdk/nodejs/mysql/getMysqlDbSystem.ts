@@ -47,10 +47,6 @@ export interface GetMysqlDbSystemResult {
     readonly adminPassword: string;
     readonly adminUsername: string;
     /**
-     * DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-     */
-    readonly analyticsClusters: outputs.Mysql.GetMysqlDbSystemAnalyticsCluster[];
-    /**
      * The availability domain in which the DB System is placed.
      */
     readonly availabilityDomain: string;
@@ -130,10 +126,6 @@ export interface GetMysqlDbSystemResult {
      * The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
      */
     readonly ipAddress: string;
-    /**
-     * DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     */
-    readonly isAnalyticsClusterAttached: boolean;
     /**
      * If the DB System has a HeatWave Cluster attached.
      */

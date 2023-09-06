@@ -131,6 +131,13 @@ namespace Pulumi.Oci.DatabaseMigration
     ///                     Password = @var.Migration_golden_gate_details_hub_rest_admin_credentials_password,
     ///                     Username = @var.Migration_golden_gate_details_hub_rest_admin_credentials_username,
     ///                 },
+    ///                 Url = @var.Migration_golden_gate_details_hub_url,
+    ///                 ComputeId = oci_database_migration_compute.Test_compute.Id,
+    ///                 SourceContainerDbAdminCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs
+    ///                 {
+    ///                     Password = @var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_password,
+    ///                     Username = @var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_username,
+    ///                 },
     ///                 SourceDbAdminCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs
     ///                 {
     ///                     Password = @var.Migration_golden_gate_details_hub_source_db_admin_credentials_password,
@@ -143,13 +150,6 @@ namespace Pulumi.Oci.DatabaseMigration
     ///                     Username = @var.Migration_golden_gate_details_hub_target_db_admin_credentials_username,
     ///                 },
     ///                 TargetMicroservicesDeploymentName = oci_apigateway_deployment.Test_deployment.Name,
-    ///                 Url = @var.Migration_golden_gate_details_hub_url,
-    ///                 ComputeId = oci_database_migration_compute.Test_compute.Id,
-    ///                 SourceContainerDbAdminCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs
-    ///                 {
-    ///                     Password = @var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_password,
-    ///                     Username = @var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_username,
-    ///                 },
     ///             },
     ///             Settings = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsSettingsArgs
     ///             {
@@ -165,6 +165,39 @@ namespace Pulumi.Oci.DatabaseMigration
     ///                     MaxApplyParallelism = @var.Migration_golden_gate_details_settings_replicat_max_apply_parallelism,
     ///                     MinApplyParallelism = @var.Migration_golden_gate_details_settings_replicat_min_apply_parallelism,
     ///                 },
+    ///             },
+    ///         },
+    ///         GoldenGateServiceDetails = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsArgs
+    ///         {
+    ///             Settings = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSettingsArgs
+    ///             {
+    ///                 AcceptableLag = @var.Migration_golden_gate_service_details_settings_acceptable_lag,
+    ///                 Extract = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSettingsExtractArgs
+    ///                 {
+    ///                     LongTransDuration = @var.Migration_golden_gate_service_details_settings_extract_long_trans_duration,
+    ///                     PerformanceProfile = @var.Migration_golden_gate_service_details_settings_extract_performance_profile,
+    ///                 },
+    ///                 Replicat = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSettingsReplicatArgs
+    ///                 {
+    ///                     MapParallelism = @var.Migration_golden_gate_service_details_settings_replicat_map_parallelism,
+    ///                     MaxApplyParallelism = @var.Migration_golden_gate_service_details_settings_replicat_max_apply_parallelism,
+    ///                     MinApplyParallelism = @var.Migration_golden_gate_service_details_settings_replicat_min_apply_parallelism,
+    ///                 },
+    ///             },
+    ///             SourceContainerDbCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs
+    ///             {
+    ///                 Password = @var.Migration_golden_gate_service_details_source_container_db_credentials_password,
+    ///                 Username = @var.Migration_golden_gate_service_details_source_container_db_credentials_username,
+    ///             },
+    ///             SourceDbCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs
+    ///             {
+    ///                 Password = @var.Migration_golden_gate_service_details_source_db_credentials_password,
+    ///                 Username = @var.Migration_golden_gate_service_details_source_db_credentials_username,
+    ///             },
+    ///             TargetDbCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs
+    ///             {
+    ///                 Password = @var.Migration_golden_gate_service_details_target_db_credentials_password,
+    ///                 Username = @var.Migration_golden_gate_service_details_target_db_credentials_username,
     ///             },
     ///         },
     ///         IncludeObjects = new[]
@@ -283,6 +316,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Output("goldenGateDetails")]
         public Output<Outputs.MigrationGoldenGateDetails> GoldenGateDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details about Oracle GoldenGate GGS Deployment.
+        /// </summary>
+        [Output("goldenGateServiceDetails")]
+        public Output<Outputs.MigrationGoldenGateServiceDetails> GoldenGateServiceDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
@@ -498,6 +537,12 @@ namespace Pulumi.Oci.DatabaseMigration
         [Input("goldenGateDetails")]
         public Input<Inputs.MigrationGoldenGateDetailsArgs>? GoldenGateDetails { get; set; }
 
+        /// <summary>
+        /// (Updatable) Details about Oracle GoldenGate GGS Deployment.
+        /// </summary>
+        [Input("goldenGateServiceDetails")]
+        public Input<Inputs.MigrationGoldenGateServiceDetailsArgs>? GoldenGateServiceDetails { get; set; }
+
         [Input("includeObjects")]
         private InputList<Inputs.MigrationIncludeObjectArgs>? _includeObjects;
 
@@ -649,6 +694,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("goldenGateDetails")]
         public Input<Inputs.MigrationGoldenGateDetailsGetArgs>? GoldenGateDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details about Oracle GoldenGate GGS Deployment.
+        /// </summary>
+        [Input("goldenGateServiceDetails")]
+        public Input<Inputs.MigrationGoldenGateServiceDetailsGetArgs>? GoldenGateServiceDetails { get; set; }
 
         [Input("includeObjects")]
         private InputList<Inputs.MigrationIncludeObjectGetArgs>? _includeObjects;

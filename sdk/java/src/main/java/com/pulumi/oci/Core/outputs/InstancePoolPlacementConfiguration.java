@@ -4,10 +4,12 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.InstancePoolPlacementConfigurationPrimaryVnicSubnets;
 import com.pulumi.oci.Core.outputs.InstancePoolPlacementConfigurationSecondaryVnicSubnet;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -31,10 +33,15 @@ public final class InstancePoolPlacementConfiguration {
      */
     private @Nullable List<String> faultDomains;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
-    private String primarySubnetId;
+    private @Nullable String primarySubnetId;
+    /**
+     * @return (Updatable) Details about the IPv6 primary subnet.
+     * 
+     */
+    private @Nullable InstancePoolPlacementConfigurationPrimaryVnicSubnets primaryVnicSubnets;
     /**
      * @return (Updatable) The set of secondary VNIC data for instances in the pool.
      * 
@@ -65,11 +72,18 @@ public final class InstancePoolPlacementConfiguration {
         return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
-    public String primarySubnetId() {
-        return this.primarySubnetId;
+    public Optional<String> primarySubnetId() {
+        return Optional.ofNullable(this.primarySubnetId);
+    }
+    /**
+     * @return (Updatable) Details about the IPv6 primary subnet.
+     * 
+     */
+    public Optional<InstancePoolPlacementConfigurationPrimaryVnicSubnets> primaryVnicSubnets() {
+        return Optional.ofNullable(this.primaryVnicSubnets);
     }
     /**
      * @return (Updatable) The set of secondary VNIC data for instances in the pool.
@@ -90,7 +104,8 @@ public final class InstancePoolPlacementConfiguration {
     public static final class Builder {
         private String availabilityDomain;
         private @Nullable List<String> faultDomains;
-        private String primarySubnetId;
+        private @Nullable String primarySubnetId;
+        private @Nullable InstancePoolPlacementConfigurationPrimaryVnicSubnets primaryVnicSubnets;
         private @Nullable List<InstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
         public Builder() {}
         public Builder(InstancePoolPlacementConfiguration defaults) {
@@ -98,6 +113,7 @@ public final class InstancePoolPlacementConfiguration {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.faultDomains = defaults.faultDomains;
     	      this.primarySubnetId = defaults.primarySubnetId;
+    	      this.primaryVnicSubnets = defaults.primaryVnicSubnets;
     	      this.secondaryVnicSubnets = defaults.secondaryVnicSubnets;
         }
 
@@ -115,8 +131,13 @@ public final class InstancePoolPlacementConfiguration {
             return faultDomains(List.of(faultDomains));
         }
         @CustomType.Setter
-        public Builder primarySubnetId(String primarySubnetId) {
-            this.primarySubnetId = Objects.requireNonNull(primarySubnetId);
+        public Builder primarySubnetId(@Nullable String primarySubnetId) {
+            this.primarySubnetId = primarySubnetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder primaryVnicSubnets(@Nullable InstancePoolPlacementConfigurationPrimaryVnicSubnets primaryVnicSubnets) {
+            this.primaryVnicSubnets = primaryVnicSubnets;
             return this;
         }
         @CustomType.Setter
@@ -132,6 +153,7 @@ public final class InstancePoolPlacementConfiguration {
             o.availabilityDomain = availabilityDomain;
             o.faultDomains = faultDomains;
             o.primarySubnetId = primarySubnetId;
+            o.primaryVnicSubnets = primaryVnicSubnets;
             o.secondaryVnicSubnets = secondaryVnicSubnets;
             return o;
         }

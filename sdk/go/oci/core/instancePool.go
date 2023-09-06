@@ -40,12 +40,27 @@ import (
 //				PlacementConfigurations: core.InstancePoolPlacementConfigurationArray{
 //					&core.InstancePoolPlacementConfigurationArgs{
 //						AvailabilityDomain: pulumi.Any(_var.Instance_pool_placement_configurations_availability_domain),
-//						PrimarySubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //						FaultDomains:       pulumi.Any(_var.Instance_pool_placement_configurations_fault_domains),
+//						PrimarySubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//						PrimaryVnicSubnets: &core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs{
+//							SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//							Ipv6addressIpv6subnetCidrPairDetails: core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArray{
+//								&core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs{
+//									Ipv6subnetCidr: pulumi.Any(_var.Instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//								},
+//							},
+//							IsAssignIpv6ip: pulumi.Any(_var.Instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip),
+//						},
 //						SecondaryVnicSubnets: core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArray{
 //							&core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{
 //								SubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //								DisplayName: pulumi.Any(_var.Instance_pool_placement_configurations_secondary_vnic_subnets_display_name),
+//								Ipv6addressIpv6subnetCidrPairDetails: core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{
+//									&core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{
+//										Ipv6subnetCidr: pulumi.Any(_var.Instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//									},
+//								},
+//								IsAssignIpv6ip: pulumi.Any(_var.Instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip),
 //							},
 //						},
 //					},

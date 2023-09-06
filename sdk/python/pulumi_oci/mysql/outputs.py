@@ -11,7 +11,6 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
-    'AnalyticsClusterClusterNode',
     'ChannelSource',
     'ChannelSourceAnonymousTransactionsHandling',
     'ChannelSourceSslCaCertificate',
@@ -26,7 +25,6 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotMaintenance',
     'MysqlConfigurationInitVariables',
     'MysqlConfigurationVariables',
-    'MysqlDbSystemAnalyticsCluster',
     'MysqlDbSystemBackupPolicy',
     'MysqlDbSystemBackupPolicyPitrPolicy',
     'MysqlDbSystemChannel',
@@ -42,7 +40,6 @@ __all__ = [
     'MysqlDbSystemMaintenance',
     'MysqlDbSystemPointInTimeRecoveryDetail',
     'MysqlDbSystemSource',
-    'GetAnalyticsClusterClusterNodeResult',
     'GetChannelSourceResult',
     'GetChannelSourceAnonymousTransactionsHandlingResult',
     'GetChannelSourceSslCaCertificateResult',
@@ -76,7 +73,6 @@ __all__ = [
     'GetMysqlConfigurationsConfigurationInitVariableResult',
     'GetMysqlConfigurationsConfigurationVariableResult',
     'GetMysqlConfigurationsFilterResult',
-    'GetMysqlDbSystemAnalyticsClusterResult',
     'GetMysqlDbSystemBackupPolicyResult',
     'GetMysqlDbSystemBackupPolicyPitrPolicyResult',
     'GetMysqlDbSystemChannelResult',
@@ -93,7 +89,6 @@ __all__ = [
     'GetMysqlDbSystemPointInTimeRecoveryDetailResult',
     'GetMysqlDbSystemSourceResult',
     'GetMysqlDbSystemsDbSystemResult',
-    'GetMysqlDbSystemsDbSystemAnalyticsClusterResult',
     'GetMysqlDbSystemsDbSystemBackupPolicyResult',
     'GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult',
     'GetMysqlDbSystemsDbSystemChannelResult',
@@ -118,88 +113,6 @@ __all__ = [
     'GetShapesFilterResult',
     'GetShapesShapeResult',
 ]
-
-@pulumi.output_type
-class AnalyticsClusterClusterNode(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "nodeId":
-            suggest = "node_id"
-        elif key == "timeCreated":
-            suggest = "time_created"
-        elif key == "timeUpdated":
-            suggest = "time_updated"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in AnalyticsClusterClusterNode. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        AnalyticsClusterClusterNode.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        AnalyticsClusterClusterNode.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 node_id: Optional[str] = None,
-                 state: Optional[str] = None,
-                 time_created: Optional[str] = None,
-                 time_updated: Optional[str] = None):
-        """
-        :param str node_id: The ID of the node within MySQL Analytics Cluster.
-        :param str state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str time_created: The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param str time_updated: The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        if node_id is not None:
-            pulumi.set(__self__, "node_id", node_id)
-        if state is not None:
-            pulumi.set(__self__, "state", state)
-        if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
-        if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
-
-    @property
-    @pulumi.getter(name="nodeId")
-    def node_id(self) -> Optional[str]:
-        """
-        The ID of the node within MySQL Analytics Cluster.
-        """
-        return pulumi.get(self, "node_id")
-
-    @property
-    @pulumi.getter
-    def state(self) -> Optional[str]:
-        """
-        (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "state")
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[str]:
-        """
-        The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        return pulumi.get(self, "time_created")
-
-    @property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[str]:
-        """
-        The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        return pulumi.get(self, "time_updated")
-
 
 @pulumi.output_type
 class ChannelSource(dict):
@@ -2798,98 +2711,6 @@ class MysqlConfigurationVariables(dict):
 
 
 @pulumi.output_type
-class MysqlDbSystemAnalyticsCluster(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "clusterSize":
-            suggest = "cluster_size"
-        elif key == "shapeName":
-            suggest = "shape_name"
-        elif key == "timeCreated":
-            suggest = "time_created"
-        elif key == "timeUpdated":
-            suggest = "time_updated"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in MysqlDbSystemAnalyticsCluster. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        MysqlDbSystemAnalyticsCluster.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        MysqlDbSystemAnalyticsCluster.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 cluster_size: Optional[int] = None,
-                 shape_name: Optional[str] = None,
-                 state: Optional[str] = None,
-                 time_created: Optional[str] = None,
-                 time_updated: Optional[str] = None):
-        """
-        :param int cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        :param str shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
-               * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-        :param str state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-        :param str time_created: The date and time the DB System was created.
-        :param str time_updated: The time the DB System was last updated.
-        """
-        if cluster_size is not None:
-            pulumi.set(__self__, "cluster_size", cluster_size)
-        if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
-        if state is not None:
-            pulumi.set(__self__, "state", state)
-        if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
-        if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
-
-    @property
-    @pulumi.getter(name="clusterSize")
-    def cluster_size(self) -> Optional[int]:
-        """
-        The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        """
-        return pulumi.get(self, "cluster_size")
-
-    @property
-    @pulumi.getter(name="shapeName")
-    def shape_name(self) -> Optional[str]:
-        """
-        (Updatable) The name of the shape. The shape determines the resources allocated
-        * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-        """
-        return pulumi.get(self, "shape_name")
-
-    @property
-    @pulumi.getter
-    def state(self) -> Optional[str]:
-        """
-        (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-        """
-        return pulumi.get(self, "state")
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[str]:
-        """
-        The date and time the DB System was created.
-        """
-        return pulumi.get(self, "time_created")
-
-    @property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[str]:
-        """
-        The time the DB System was last updated.
-        """
-        return pulumi.get(self, "time_updated")
-
-
-@pulumi.output_type
 class MysqlDbSystemBackupPolicy(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -4180,57 +4001,6 @@ class MysqlDbSystemSource(dict):
         The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
         """
         return pulumi.get(self, "source_url")
-
-
-@pulumi.output_type
-class GetAnalyticsClusterClusterNodeResult(dict):
-    def __init__(__self__, *,
-                 node_id: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str node_id: The ID of the node within MySQL Analytics Cluster.
-        :param str state: The current state of the Analytics Cluster.
-        :param str time_created: The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param str time_updated: The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        pulumi.set(__self__, "node_id", node_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-
-    @property
-    @pulumi.getter(name="nodeId")
-    def node_id(self) -> str:
-        """
-        The ID of the node within MySQL Analytics Cluster.
-        """
-        return pulumi.get(self, "node_id")
-
-    @property
-    @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Analytics Cluster.
-        """
-        return pulumi.get(self, "state")
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        return pulumi.get(self, "time_created")
-
-    @property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
@@ -8359,68 +8129,6 @@ class GetMysqlConfigurationsFilterResult(dict):
 
 
 @pulumi.output_type
-class GetMysqlDbSystemAnalyticsClusterResult(dict):
-    def __init__(__self__, *,
-                 cluster_size: int,
-                 shape_name: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param int cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        :param str shape_name: The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-        :param str state: The current state of the DB System.
-        :param str time_created: The date and time the DB System was created.
-        :param str time_updated: The time the DB System was last updated.
-        """
-        pulumi.set(__self__, "cluster_size", cluster_size)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-
-    @property
-    @pulumi.getter(name="clusterSize")
-    def cluster_size(self) -> int:
-        """
-        The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        """
-        return pulumi.get(self, "cluster_size")
-
-    @property
-    @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-        """
-        return pulumi.get(self, "shape_name")
-
-    @property
-    @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the DB System.
-        """
-        return pulumi.get(self, "state")
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the DB System was created.
-        """
-        return pulumi.get(self, "time_created")
-
-    @property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the DB System was last updated.
-        """
-        return pulumi.get(self, "time_updated")
-
-
-@pulumi.output_type
 class GetMysqlDbSystemBackupPolicyResult(dict):
     def __init__(__self__, *,
                  defined_tags: Mapping[str, Any],
@@ -9285,7 +8993,6 @@ class GetMysqlDbSystemsDbSystemResult(dict):
     def __init__(__self__, *,
                  admin_password: str,
                  admin_username: str,
-                 analytics_clusters: Sequence['outputs.GetMysqlDbSystemsDbSystemAnalyticsClusterResult'],
                  availability_domain: str,
                  backup_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyResult'],
                  channels: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelResult'],
@@ -9305,7 +9012,6 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  hostname_label: str,
                  id: str,
                  ip_address: str,
-                 is_analytics_cluster_attached: bool,
                  is_heat_wave_cluster_attached: bool,
                  is_highly_available: bool,
                  lifecycle_details: str,
@@ -9322,7 +9028,6 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param Sequence['GetMysqlDbSystemsDbSystemAnalyticsClusterArgs'] analytics_clusters: DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
         :param str availability_domain: The availability domain in which the DB System is placed.
         :param Sequence['GetMysqlDbSystemsDbSystemBackupPolicyArgs'] backup_policies: The Backup policy for the DB System.
         :param Sequence['GetMysqlDbSystemsDbSystemChannelArgs'] channels: A list with a summary of all the Channels attached to the DB System.
@@ -9342,7 +9047,6 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param str hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param str id: The OCID of the DB System.
         :param str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        :param bool is_analytics_cluster_attached: DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
         :param bool is_heat_wave_cluster_attached: If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
         :param bool is_highly_available: Specifies if the DB System is highly available.
         :param str lifecycle_details: Additional information about the current lifecycleState.
@@ -9360,7 +9064,6 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "analytics_clusters", analytics_clusters)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_policies", backup_policies)
         pulumi.set(__self__, "channels", channels)
@@ -9380,7 +9083,6 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "hostname_label", hostname_label)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_analytics_cluster_attached", is_analytics_cluster_attached)
         pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
         pulumi.set(__self__, "is_highly_available", is_highly_available)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -9406,14 +9108,6 @@ class GetMysqlDbSystemsDbSystemResult(dict):
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> str:
         return pulumi.get(self, "admin_username")
-
-    @property
-    @pulumi.getter(name="analyticsClusters")
-    def analytics_clusters(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemAnalyticsClusterResult']:
-        """
-        DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-        """
-        return pulumi.get(self, "analytics_clusters")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -9568,14 +9262,6 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         return pulumi.get(self, "ip_address")
 
     @property
-    @pulumi.getter(name="isAnalyticsClusterAttached")
-    def is_analytics_cluster_attached(self) -> bool:
-        """
-        DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-        """
-        return pulumi.get(self, "is_analytics_cluster_attached")
-
-    @property
     @pulumi.getter(name="isHeatWaveClusterAttached")
     def is_heat_wave_cluster_attached(self) -> bool:
         """
@@ -9675,68 +9361,6 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         The OCID of the subnet the DB System is associated with.
         """
         return pulumi.get(self, "subnet_id")
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the DB System was created.
-        """
-        return pulumi.get(self, "time_created")
-
-    @property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the DB System was last updated.
-        """
-        return pulumi.get(self, "time_updated")
-
-
-@pulumi.output_type
-class GetMysqlDbSystemsDbSystemAnalyticsClusterResult(dict):
-    def __init__(__self__, *,
-                 cluster_size: int,
-                 shape_name: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param int cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        :param str shape_name: The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-        :param str state: DbSystem Lifecycle State
-        :param str time_created: The date and time the DB System was created.
-        :param str time_updated: The time the DB System was last updated.
-        """
-        pulumi.set(__self__, "cluster_size", cluster_size)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-
-    @property
-    @pulumi.getter(name="clusterSize")
-    def cluster_size(self) -> int:
-        """
-        The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        """
-        return pulumi.get(self, "cluster_size")
-
-    @property
-    @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-        """
-        return pulumi.get(self, "shape_name")
-
-    @property
-    @pulumi.getter
-    def state(self) -> str:
-        """
-        DbSystem Lifecycle State
-        """
-        return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")

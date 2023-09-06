@@ -3627,7 +3627,7 @@ export namespace ApmSynthetics {
          */
         isCertificateValidationEnabled?: pulumi.Input<boolean>;
         /**
-         * (Updatable) If disabled then auto snapshots are not collected.
+         * (Updatable) If disabled, auto snapshots are not collected.
          */
         isDefaultSnapshotEnabled?: pulumi.Input<boolean>;
         /**
@@ -3682,11 +3682,11 @@ export namespace ApmSynthetics {
 
     export interface ConfigConfigurationClientCertificateDetails {
         /**
-         * (Updatable) Client certificate in pem format.
+         * (Updatable) Client certificate in PEM format.
          */
         clientCertificate?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationClientCertificateDetailsClientCertificate>;
         /**
-         * (Updatable) The private key associated with the client certificate in pem format.
+         * (Updatable) The private key associated with the client certificate in PEM format.
          */
         privateKey?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationClientCertificateDetailsPrivateKey>;
     }
@@ -10987,20 +10987,28 @@ export namespace Core {
          */
         faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
          */
         primarySubnetId?: pulumi.Input<string>;
+        /**
+         * Details about the IPv6 primary subnet.
+         */
+        primaryVnicSubnets?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet>[]>;
         /**
          * The set of secondary VNIC data for instances in the pool.
          */
         secondaryVnicSubnets?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet>[]>;
     }
 
-    export interface ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet {
+    export interface ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet {
         /**
-         * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
          */
-        displayName?: pulumi.Input<string>;
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        isAssignIpv6ip?: pulumi.Input<boolean>;
         /**
          * The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
          *
@@ -11011,6 +11019,43 @@ export namespace Core {
         subnetId?: pulumi.Input<string>;
     }
 
+    export interface ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
+    }
+
+    export interface ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet {
+        /**
+         * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        isAssignIpv6ip?: pulumi.Input<boolean>;
+        /**
+         * The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
+    }
+
     export interface ClusterNetworkPlacementConfiguration {
         /**
          * The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
@@ -11018,20 +11063,28 @@ export namespace Core {
         availabilityDomain: pulumi.Input<string>;
         placementConstraint?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
          */
-        primarySubnetId: pulumi.Input<string>;
+        primarySubnetId?: pulumi.Input<string>;
+        /**
+         * Details about the IPv6 primary subnet.
+         */
+        primaryVnicSubnets?: pulumi.Input<inputs.Core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnets>;
         /**
          * The set of secondary VNIC data for instances in the pool.
          */
         secondaryVnicSubnets?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnet>[]>;
     }
 
-    export interface ClusterNetworkPlacementConfigurationSecondaryVnicSubnet {
+    export interface ClusterNetworkPlacementConfigurationPrimaryVnicSubnets {
         /**
-         * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
          */
-        displayName?: pulumi.Input<string>;
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        isAssignIpv6ip?: pulumi.Input<boolean>;
         /**
          * The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
          *
@@ -11040,6 +11093,43 @@ export namespace Core {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         subnetId: pulumi.Input<string>;
+    }
+
+    export interface ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
+    }
+
+    export interface ClusterNetworkPlacementConfigurationSecondaryVnicSubnet {
+        /**
+         * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        isAssignIpv6ip?: pulumi.Input<boolean>;
+        /**
+         * The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        subnetId: pulumi.Input<string>;
+    }
+
+    export interface ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
     }
 
     export interface ComputeCapacityReportShapeAvailability {
@@ -11149,22 +11239,32 @@ export namespace Core {
 
     export interface CrossConnectGroupMacsecProperties {
         /**
-         * Type of encryption cipher suite to use for the MACsec connection.
+         * (Updatable) Type of encryption cipher suite to use for the MACsec connection.
          */
         encryptionCipher?: pulumi.Input<string>;
         /**
-         * An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+         * (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+         */
+        isUnprotectedTrafficAllowed?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
          */
         primaryKey?: pulumi.Input<inputs.Core.CrossConnectGroupMacsecPropertiesPrimaryKey>;
         /**
-         * The cross-connect group's current state.
+         * (Updatable) Indicates whether or not MACsec is enabled.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         state: pulumi.Input<string>;
     }
 
     export interface CrossConnectGroupMacsecPropertiesPrimaryKey {
         /**
-         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+         * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+         *
+         * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationKeySecretId: pulumi.Input<string>;
         /**
@@ -11172,7 +11272,9 @@ export namespace Core {
          */
         connectivityAssociationKeySecretVersion?: pulumi.Input<string>;
         /**
-         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+         * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+         *
+         * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationNameSecretId: pulumi.Input<string>;
         /**
@@ -11183,22 +11285,28 @@ export namespace Core {
 
     export interface CrossConnectMacsecProperties {
         /**
-         * Type of encryption cipher suite to use for the MACsec connection.
+         * (Updatable) Type of encryption cipher suite to use for the MACsec connection.
          */
         encryptionCipher?: pulumi.Input<string>;
         /**
-         * An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+         * (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+         */
+        isUnprotectedTrafficAllowed?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
          */
         primaryKey?: pulumi.Input<inputs.Core.CrossConnectMacsecPropertiesPrimaryKey>;
         /**
-         * The cross-connect's current state.
+         * (Updatable) Indicates whether or not MACsec is enabled.
          */
         state: pulumi.Input<string>;
     }
 
     export interface CrossConnectMacsecPropertiesPrimaryKey {
         /**
-         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+         * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+         *
+         * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationKeySecretId: pulumi.Input<string>;
         /**
@@ -11206,7 +11314,9 @@ export namespace Core {
          */
         connectivityAssociationKeySecretVersion?: pulumi.Input<string>;
         /**
-         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+         * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+         *
+         * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationNameSecretId: pulumi.Input<string>;
         /**
@@ -11363,7 +11473,11 @@ export namespace Core {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
          */
-        id: pulumi.Input<string>;
+        id?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+         */
+        ids?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * The IPSec connection that contains the attached IPSec tunnel.
          */
@@ -11378,7 +11492,15 @@ export namespace Core {
          */
         routeTableId?: pulumi.Input<string>;
         /**
-         * (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit's DRG attachment.
+         */
+        transportAttachmentId?: pulumi.Input<string>;
+        /**
+         * Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+         */
+        transportOnlyMode?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
          */
         type: pulumi.Input<string>;
         /**
@@ -12382,6 +12504,18 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetVirtualCircuitAssociatedTunnelsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVirtualCircuitAssociatedTunnelsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetVirtualCircuitBandwidthShapesFilter {
         /**
          * The name of the bandwidth shape.  Example: `10 Gbps`
@@ -13067,6 +13201,10 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails {
         /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        assignIpv6ip?: pulumi.Input<boolean>;
+        /**
          * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
@@ -13091,6 +13229,10 @@ export namespace Core {
          */
         hostnameLabel?: pulumi.Input<string>;
         /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -13106,6 +13248,17 @@ export namespace Core {
          * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         subnetId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+         */
+        ipv6address?: pulumi.Input<string>;
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions {
@@ -13147,6 +13300,10 @@ export namespace Core {
          * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          */
         areVirtualInstructionsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Instance Platform Configuration Configuration Map for flexible setting input.
+         */
+        configMap?: pulumi.Input<{[key: string]: any}>;
         /**
          * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
@@ -13649,6 +13806,10 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails {
         /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        assignIpv6ip?: pulumi.Input<boolean>;
+        /**
          * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
@@ -13673,6 +13834,10 @@ export namespace Core {
          */
         hostnameLabel?: pulumi.Input<string>;
         /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -13688,6 +13853,17 @@ export namespace Core {
          * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         subnetId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+         */
+        ipv6address?: pulumi.Input<string>;
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptions {
@@ -13887,6 +14063,10 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails {
         /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        assignIpv6ip?: pulumi.Input<boolean>;
+        /**
          * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
@@ -13911,6 +14091,10 @@ export namespace Core {
          */
         hostnameLabel?: pulumi.Input<string>;
         /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -13926,6 +14110,17 @@ export namespace Core {
          * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         subnetId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+         */
+        ipv6address?: pulumi.Input<string>;
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsSecondaryVnic {
@@ -13945,6 +14140,10 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails {
         /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        assignIpv6ip?: pulumi.Input<boolean>;
+        /**
          * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
@@ -13969,6 +14168,10 @@ export namespace Core {
          */
         hostnameLabel?: pulumi.Input<string>;
         /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -13986,10 +14189,24 @@ export namespace Core {
         subnetId?: pulumi.Input<string>;
     }
 
+    export interface InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+         */
+        ipv6address?: pulumi.Input<string>;
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
+    }
+
     export interface InstanceCreateVnicDetails {
         /**
-         * Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. The default value is true.  Example: `true`
-         *
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        assignIpv6ip?: pulumi.Input<boolean>;
+        /**
+         * Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. The default value is true.
          * If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
@@ -14022,6 +14239,10 @@ export namespace Core {
          */
         hostnameLabel?: pulumi.Input<string>;
         /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
          * (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
          *
          * If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -14053,6 +14274,11 @@ export namespace Core {
          * Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
          */
         vlanId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+        ipv6address?: pulumi.Input<string>;
+        ipv6subnetCidr?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceOptions {
@@ -14094,6 +14320,10 @@ export namespace Core {
          * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          */
         areVirtualInstructionsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Instance Platform Configuration Configuration Map for flexible setting input.
+         */
+        configMap?: pulumi.Input<{[key: string]: any}>;
         /**
          * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
@@ -14216,13 +14446,39 @@ export namespace Core {
          */
         faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
          */
-        primarySubnetId: pulumi.Input<string>;
+        primarySubnetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Details about the IPv6 primary subnet.
+         */
+        primaryVnicSubnets?: pulumi.Input<inputs.Core.InstancePoolPlacementConfigurationPrimaryVnicSubnets>;
         /**
          * (Updatable) The set of secondary VNIC data for instances in the pool.
          */
         secondaryVnicSubnets?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfigurationSecondaryVnicSubnet>[]>;
+    }
+
+    export interface InstancePoolPlacementConfigurationPrimaryVnicSubnets {
+        /**
+         * (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
+         * (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        isAssignIpv6ip?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+         */
+        subnetId: pulumi.Input<string>;
+    }
+
+    export interface InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
     }
 
     export interface InstancePoolPlacementConfigurationSecondaryVnicSubnet {
@@ -14231,9 +14487,24 @@ export namespace Core {
          */
         displayName?: pulumi.Input<string>;
         /**
+         * (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
+         * (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        isAssignIpv6ip?: pulumi.Input<boolean>;
+        /**
          * (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
          */
         subnetId: pulumi.Input<string>;
+    }
+
+    export interface InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
     }
 
     export interface InstancePreemptibleInstanceConfig {
@@ -14360,9 +14631,12 @@ export namespace Core {
     }
 
     export interface IpsecConnectionTunnelManagementBgpSessionInfo {
+        /**
+         * The state of the BGP IPv6 session.
+         */
         bgpIpv6state?: pulumi.Input<string>;
         /**
-         * the state of the BGP.
+         * The state of the BGP session.
          */
         bgpState?: pulumi.Input<string>;
         /**
@@ -14386,7 +14660,7 @@ export namespace Core {
          */
         customerInterfaceIp?: pulumi.Input<string>;
         /**
-         * This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+         * The Oracle BGP ASN.
          */
         oracleBgpAsn?: pulumi.Input<string>;
         /**
@@ -14869,6 +15143,10 @@ export namespace Core {
 
     export interface VnicAttachmentCreateVnicDetails {
         /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
+        assignIpv6ip?: pulumi.Input<boolean>;
+        /**
          * Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
          *
          * If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
@@ -14911,6 +15189,10 @@ export namespace Core {
          */
         hostnameLabel?: pulumi.Input<string>;
         /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
          * (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
          *
          * If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -14944,6 +15226,11 @@ export namespace Core {
          * Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
          */
         vlanId?: pulumi.Input<string>;
+    }
+
+    export interface VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+        ipv6Address?: pulumi.Input<string>;
+        ipv6SubnetCidr?: pulumi.Input<string>;
     }
 
     export interface VolumeAttachmentMultipathDevice {
@@ -21209,6 +21496,18 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetCloudAutonomousVmClusterAcdResourceUsagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetCloudAutonomousVmClustersFilter {
         /**
          * Name of the month of the year.
@@ -24065,6 +24364,17 @@ export namespace DatabaseMigration {
         vcnId: pulumi.Input<string>;
     }
 
+    export interface ConnectionReplicationCredentials {
+        /**
+         * (Updatable) Administrator password
+         */
+        password: pulumi.Input<string>;
+        /**
+         * (Updatable) Administrator username
+         */
+        username: pulumi.Input<string>;
+    }
+
     export interface ConnectionSshDetails {
         /**
          * (Updatable) Name of the host the SSH key is valid for.
@@ -24499,19 +24809,19 @@ export namespace DatabaseMigration {
         /**
          * (Updatable) Database Administrator Credentials details.
          */
-        sourceDbAdminCredentials: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsHubSourceDbAdminCredentials>;
+        sourceDbAdminCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsHubSourceDbAdminCredentials>;
         /**
          * (Updatable) Name of GoldenGate Microservices deployment to operate on source database
          */
-        sourceMicroservicesDeploymentName: pulumi.Input<string>;
+        sourceMicroservicesDeploymentName?: pulumi.Input<string>;
         /**
          * (Updatable) Database Administrator Credentials details.
          */
-        targetDbAdminCredentials: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsHubTargetDbAdminCredentials>;
+        targetDbAdminCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsHubTargetDbAdminCredentials>;
         /**
          * (Updatable) Name of GoldenGate Microservices deployment to operate on target database
          */
-        targetMicroservicesDeploymentName: pulumi.Input<string>;
+        targetMicroservicesDeploymentName?: pulumi.Input<string>;
         /**
          * (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
          */
@@ -24520,44 +24830,44 @@ export namespace DatabaseMigration {
 
     export interface MigrationGoldenGateDetailsHubRestAdminCredentials {
         /**
-         * (Updatable) Administrator password
+         * (Updatable) Database  password
          */
         password: pulumi.Input<string>;
         /**
-         * (Updatable) Administrator username
+         * (Updatable) Database username
          */
         username: pulumi.Input<string>;
     }
 
     export interface MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials {
         /**
-         * (Updatable) Administrator password
+         * (Updatable) Database  password
          */
         password: pulumi.Input<string>;
         /**
-         * (Updatable) Administrator username
+         * (Updatable) Database username
          */
         username: pulumi.Input<string>;
     }
 
     export interface MigrationGoldenGateDetailsHubSourceDbAdminCredentials {
         /**
-         * (Updatable) Administrator password
+         * (Updatable) Database  password
          */
         password: pulumi.Input<string>;
         /**
-         * (Updatable) Administrator username
+         * (Updatable) Database username
          */
         username: pulumi.Input<string>;
     }
 
     export interface MigrationGoldenGateDetailsHubTargetDbAdminCredentials {
         /**
-         * (Updatable) Administrator password
+         * (Updatable) Database  password
          */
         password: pulumi.Input<string>;
         /**
-         * (Updatable) Administrator username
+         * (Updatable) Database username
          */
         username: pulumi.Input<string>;
     }
@@ -24605,6 +24915,114 @@ export namespace DatabaseMigration {
          * (Updatable) Extract performance.
          */
         performanceProfile?: pulumi.Input<string>;
+    }
+
+    export interface MigrationGoldenGateServiceDetails {
+        /**
+         * Details about Oracle GoldenGate GGS Deployment.
+         */
+        ggsDeployments?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsGgsDeployment>[]>;
+        /**
+         * (Updatable) Optional settings for GoldenGate Microservices processes
+         */
+        settings?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSettings>;
+        /**
+         * (Updatable) Database Credentials details.
+         */
+        sourceContainerDbCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSourceContainerDbCredentials>;
+        /**
+         * (Updatable) Database Credentials details.
+         */
+        sourceDbCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSourceDbCredentials>;
+        /**
+         * (Updatable) Database Credentials details.
+         */
+        targetDbCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsTargetDbCredentials>;
+    }
+
+    export interface MigrationGoldenGateServiceDetailsGgsDeployment {
+        /**
+         * OCID of a GoldenGate Deployment
+         */
+        deploymentId?: pulumi.Input<string>;
+        /**
+         * OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+         */
+        ggsAdminCredentialsSecretId?: pulumi.Input<string>;
+    }
+
+    export interface MigrationGoldenGateServiceDetailsSettings {
+        /**
+         * (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+         */
+        acceptableLag?: pulumi.Input<number>;
+        /**
+         * (Updatable) Parameters for GoldenGate Extract processes.
+         */
+        extract?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSettingsExtract>;
+        /**
+         * (Updatable) Parameters for GoldenGate Replicat processes.
+         */
+        replicat?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSettingsReplicat>;
+    }
+
+    export interface MigrationGoldenGateServiceDetailsSettingsExtract {
+        /**
+         * (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+         */
+        longTransDuration?: pulumi.Input<number>;
+        /**
+         * (Updatable) Extract performance.
+         */
+        performanceProfile?: pulumi.Input<string>;
+    }
+
+    export interface MigrationGoldenGateServiceDetailsSettingsReplicat {
+        /**
+         * (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
+         */
+        mapParallelism?: pulumi.Input<number>;
+        /**
+         * (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+         */
+        maxApplyParallelism?: pulumi.Input<number>;
+        /**
+         * (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+         */
+        minApplyParallelism?: pulumi.Input<number>;
+    }
+
+    export interface MigrationGoldenGateServiceDetailsSourceContainerDbCredentials {
+        /**
+         * (Updatable) Database  password
+         */
+        password: pulumi.Input<string>;
+        /**
+         * (Updatable) Database username
+         */
+        username: pulumi.Input<string>;
+    }
+
+    export interface MigrationGoldenGateServiceDetailsSourceDbCredentials {
+        /**
+         * (Updatable) Database  password
+         */
+        password: pulumi.Input<string>;
+        /**
+         * (Updatable) Database username
+         */
+        username: pulumi.Input<string>;
+    }
+
+    export interface MigrationGoldenGateServiceDetailsTargetDbCredentials {
+        /**
+         * (Updatable) Database  password
+         */
+        password: pulumi.Input<string>;
+        /**
+         * (Updatable) Database username
+         */
+        username: pulumi.Input<string>;
     }
 
     export interface MigrationIncludeObject {
@@ -27979,21 +28397,29 @@ export namespace GoldenGate {
 
     export interface DeploymentOggData {
         /**
-         * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+         * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
          */
-        adminPassword: pulumi.Input<string>;
+        adminPassword?: pulumi.Input<string>;
         /**
          * (Updatable) The GoldenGate deployment console username.
          */
-        adminUsername: pulumi.Input<string>;
+        adminUsername?: pulumi.Input<string>;
         /**
          * (Updatable) A PEM-encoded SSL certificate.
          */
         certificate?: pulumi.Input<string>;
         /**
+         * (Updatable) The type of credential store for OGG.
+         */
+        credentialStore?: pulumi.Input<string>;
+        /**
          * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
          */
         deploymentName: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+         */
+        identityDomainId?: pulumi.Input<string>;
         /**
          * (Updatable) A PEM-encoded private key.
          */
@@ -28002,6 +28428,10 @@ export namespace GoldenGate {
          * (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
          */
         oggVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+         */
+        passwordSecretId?: pulumi.Input<string>;
     }
 
     export interface GetConnectionAssignmentsFilter {
@@ -52789,28 +53219,6 @@ export namespace Monitoring {
 }
 
 export namespace Mysql {
-    export interface AnalyticsClusterClusterNode {
-        /**
-         * The ID of the node within MySQL Analytics Cluster.
-         */
-        nodeId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        state?: pulumi.Input<string>;
-        /**
-         * The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-         */
-        timeUpdated?: pulumi.Input<string>;
-    }
-
     export interface ChannelSource {
         /**
          * (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -53670,30 +54078,6 @@ export namespace Mysql {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         waitTimeout?: pulumi.Input<number>;
-    }
-
-    export interface MysqlDbSystemAnalyticsCluster {
-        /**
-         * The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-         */
-        clusterSize?: pulumi.Input<number>;
-        /**
-         * (Updatable) The name of the shape. The shape determines the resources allocated
-         * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-         */
-        shapeName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-         */
-        state?: pulumi.Input<string>;
-        /**
-         * The date and time the DB System was created.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time the DB System was last updated.
-         */
-        timeUpdated?: pulumi.Input<string>;
     }
 
     export interface MysqlDbSystemBackupPolicy {

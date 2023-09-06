@@ -19,6 +19,8 @@ import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAss
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasePlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsagePlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
@@ -73,8 +75,12 @@ import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
 import com.pulumi.oci.Database.inputs.GetBackupDestinationsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetBackupsArgs;
 import com.pulumi.oci.Database.inputs.GetBackupsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
+import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
 import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterPlainArgs;
+import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
+import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsagePlainArgs;
 import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
 import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersPlainArgs;
 import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
@@ -236,6 +242,7 @@ import com.pulumi.oci.Database.outputs.GetApplicationVipsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousCharacterSetsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseResourceUsageResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseVersionsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesResult;
@@ -265,6 +272,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousVmClustersResult;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationResult;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationsResult;
 import com.pulumi.oci.Database.outputs.GetBackupsResult;
+import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterAcdResourceUsagesResult;
+import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterResourceUsageResult;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterResult;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClustersResult;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureResult;
@@ -1380,6 +1389,162 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociationsPlain(GetAutonomousContainerDatabaseDataguardAssociationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", TypeShape.of(GetAutonomousContainerDatabaseDataguardAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get resource usage details for the specified Autonomous Container Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseResourceUsage = DatabaseFunctions.getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs args) {
+        return getAutonomousContainerDatabaseResourceUsage(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get resource usage details for the specified Autonomous Container Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseResourceUsage = DatabaseFunctions.getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsagePlain(GetAutonomousContainerDatabaseResourceUsagePlainArgs args) {
+        return getAutonomousContainerDatabaseResourceUsagePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get resource usage details for the specified Autonomous Container Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseResourceUsage = DatabaseFunctions.getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", TypeShape.of(GetAutonomousContainerDatabaseResourceUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get resource usage details for the specified Autonomous Container Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseResourceUsage = DatabaseFunctions.getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsagePlain(GetAutonomousContainerDatabaseResourceUsagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", TypeShape.of(GetAutonomousContainerDatabaseResourceUsageResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
@@ -6314,6 +6479,326 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmClusterPlain(GetCloudAutonomousVmClusterPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", TypeShape.of(GetCloudAutonomousVmClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the list of resource usage details for all the Cloud Autonomous Container Database
+     * in the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs args) {
+        return getCloudAutonomousVmClusterAcdResourceUsages(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the list of resource usage details for all the Cloud Autonomous Container Database
+     * in the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsagesPlain(GetCloudAutonomousVmClusterAcdResourceUsagesPlainArgs args) {
+        return getCloudAutonomousVmClusterAcdResourceUsagesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the list of resource usage details for all the Cloud Autonomous Container Database
+     * in the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudAutonomousVmClusterAcdResourceUsages:getCloudAutonomousVmClusterAcdResourceUsages", TypeShape.of(GetCloudAutonomousVmClusterAcdResourceUsagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the list of resource usage details for all the Cloud Autonomous Container Database
+     * in the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsagesPlain(GetCloudAutonomousVmClusterAcdResourceUsagesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getCloudAutonomousVmClusterAcdResourceUsages:getCloudAutonomousVmClusterAcdResourceUsages", TypeShape.of(GetCloudAutonomousVmClusterAcdResourceUsagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterResourceUsage = DatabaseFunctions.getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs args) {
+        return getCloudAutonomousVmClusterResourceUsage(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterResourceUsage = DatabaseFunctions.getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsagePlain(GetCloudAutonomousVmClusterResourceUsagePlainArgs args) {
+        return getCloudAutonomousVmClusterResourceUsagePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterResourceUsage = DatabaseFunctions.getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", TypeShape.of(GetCloudAutonomousVmClusterResourceUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterResourceUsage = DatabaseFunctions.getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsagePlain(GetCloudAutonomousVmClusterResourceUsagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", TypeShape.of(GetCloudAutonomousVmClusterResourceUsageResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Cloud Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.

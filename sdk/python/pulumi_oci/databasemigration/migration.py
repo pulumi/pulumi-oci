@@ -31,6 +31,7 @@ class MigrationArgs:
                  exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  golden_gate_details: Optional[pulumi.Input['MigrationGoldenGateDetailsArgs']] = None,
+                 golden_gate_service_details: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']] = None,
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
                  vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None):
@@ -51,6 +52,7 @@ class MigrationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]] exclude_objects: (Updatable) Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input['MigrationGoldenGateDetailsArgs'] golden_gate_details: (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
+        :param pulumi.Input['MigrationGoldenGateServiceDetailsArgs'] golden_gate_service_details: (Updatable) Details about Oracle GoldenGate GGS Deployment.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]] include_objects: (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
         :param pulumi.Input['MigrationVaultDetailsArgs'] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
@@ -81,6 +83,8 @@ class MigrationArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if golden_gate_details is not None:
             pulumi.set(__self__, "golden_gate_details", golden_gate_details)
+        if golden_gate_service_details is not None:
+            pulumi.set(__self__, "golden_gate_service_details", golden_gate_service_details)
         if include_objects is not None:
             pulumi.set(__self__, "include_objects", include_objects)
         if source_container_database_connection_id is not None:
@@ -269,6 +273,18 @@ class MigrationArgs:
         pulumi.set(self, "golden_gate_details", value)
 
     @property
+    @pulumi.getter(name="goldenGateServiceDetails")
+    def golden_gate_service_details(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']]:
+        """
+        (Updatable) Details about Oracle GoldenGate GGS Deployment.
+        """
+        return pulumi.get(self, "golden_gate_service_details")
+
+    @golden_gate_service_details.setter
+    def golden_gate_service_details(self, value: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']]):
+        pulumi.set(self, "golden_gate_service_details", value)
+
+    @property
     @pulumi.getter(name="includeObjects")
     def include_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]:
         """
@@ -322,6 +338,7 @@ class _MigrationState:
                  executing_job_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  golden_gate_details: Optional[pulumi.Input['MigrationGoldenGateDetailsArgs']] = None,
+                 golden_gate_service_details: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']] = None,
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
@@ -351,6 +368,7 @@ class _MigrationState:
         :param pulumi.Input[str] executing_job_id: OCID of the current ODMS Job in execution for the Migration, if any.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input['MigrationGoldenGateDetailsArgs'] golden_gate_details: (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
+        :param pulumi.Input['MigrationGoldenGateServiceDetailsArgs'] golden_gate_service_details: (Updatable) Details about Oracle GoldenGate GGS Deployment.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]] include_objects: (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input[str] lifecycle_details: Additional status related to the execution and current state of the Migration.
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
@@ -393,6 +411,8 @@ class _MigrationState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if golden_gate_details is not None:
             pulumi.set(__self__, "golden_gate_details", golden_gate_details)
+        if golden_gate_service_details is not None:
+            pulumi.set(__self__, "golden_gate_service_details", golden_gate_service_details)
         if include_objects is not None:
             pulumi.set(__self__, "include_objects", include_objects)
         if lifecycle_details is not None:
@@ -589,6 +609,18 @@ class _MigrationState:
         pulumi.set(self, "golden_gate_details", value)
 
     @property
+    @pulumi.getter(name="goldenGateServiceDetails")
+    def golden_gate_service_details(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']]:
+        """
+        (Updatable) Details about Oracle GoldenGate GGS Deployment.
+        """
+        return pulumi.get(self, "golden_gate_service_details")
+
+    @golden_gate_service_details.setter
+    def golden_gate_service_details(self, value: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']]):
+        pulumi.set(self, "golden_gate_service_details", value)
+
+    @property
     @pulumi.getter(name="includeObjects")
     def include_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]:
         """
@@ -762,6 +794,7 @@ class Migration(pulumi.CustomResource):
                  exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationExcludeObjectArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  golden_gate_details: Optional[pulumi.Input[pulumi.InputType['MigrationGoldenGateDetailsArgs']]] = None,
+                 golden_gate_service_details: Optional[pulumi.Input[pulumi.InputType['MigrationGoldenGateServiceDetailsArgs']]] = None,
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]]] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
                  source_database_connection_id: Optional[pulumi.Input[str]] = None,
@@ -861,6 +894,12 @@ class Migration(pulumi.CustomResource):
                         password=var["migration_golden_gate_details_hub_rest_admin_credentials_password"],
                         username=var["migration_golden_gate_details_hub_rest_admin_credentials_username"],
                     ),
+                    url=var["migration_golden_gate_details_hub_url"],
+                    compute_id=oci_database_migration_compute["test_compute"]["id"],
+                    source_container_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs(
+                        password=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_password"],
+                        username=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_username"],
+                    ),
                     source_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs(
                         password=var["migration_golden_gate_details_hub_source_db_admin_credentials_password"],
                         username=var["migration_golden_gate_details_hub_source_db_admin_credentials_username"],
@@ -871,12 +910,6 @@ class Migration(pulumi.CustomResource):
                         username=var["migration_golden_gate_details_hub_target_db_admin_credentials_username"],
                     ),
                     target_microservices_deployment_name=oci_apigateway_deployment["test_deployment"]["name"],
-                    url=var["migration_golden_gate_details_hub_url"],
-                    compute_id=oci_database_migration_compute["test_compute"]["id"],
-                    source_container_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_username"],
-                    ),
                 ),
                 settings=oci.database_migration.MigrationGoldenGateDetailsSettingsArgs(
                     acceptable_lag=var["migration_golden_gate_details_settings_acceptable_lag"],
@@ -889,6 +922,32 @@ class Migration(pulumi.CustomResource):
                         max_apply_parallelism=var["migration_golden_gate_details_settings_replicat_max_apply_parallelism"],
                         min_apply_parallelism=var["migration_golden_gate_details_settings_replicat_min_apply_parallelism"],
                     ),
+                ),
+            ),
+            golden_gate_service_details=oci.database_migration.MigrationGoldenGateServiceDetailsArgs(
+                settings=oci.database_migration.MigrationGoldenGateServiceDetailsSettingsArgs(
+                    acceptable_lag=var["migration_golden_gate_service_details_settings_acceptable_lag"],
+                    extract=oci.database_migration.MigrationGoldenGateServiceDetailsSettingsExtractArgs(
+                        long_trans_duration=var["migration_golden_gate_service_details_settings_extract_long_trans_duration"],
+                        performance_profile=var["migration_golden_gate_service_details_settings_extract_performance_profile"],
+                    ),
+                    replicat=oci.database_migration.MigrationGoldenGateServiceDetailsSettingsReplicatArgs(
+                        map_parallelism=var["migration_golden_gate_service_details_settings_replicat_map_parallelism"],
+                        max_apply_parallelism=var["migration_golden_gate_service_details_settings_replicat_max_apply_parallelism"],
+                        min_apply_parallelism=var["migration_golden_gate_service_details_settings_replicat_min_apply_parallelism"],
+                    ),
+                ),
+                source_container_db_credentials=oci.database_migration.MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs(
+                    password=var["migration_golden_gate_service_details_source_container_db_credentials_password"],
+                    username=var["migration_golden_gate_service_details_source_container_db_credentials_username"],
+                ),
+                source_db_credentials=oci.database_migration.MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs(
+                    password=var["migration_golden_gate_service_details_source_db_credentials_password"],
+                    username=var["migration_golden_gate_service_details_source_db_credentials_username"],
+                ),
+                target_db_credentials=oci.database_migration.MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs(
+                    password=var["migration_golden_gate_service_details_target_db_credentials_password"],
+                    username=var["migration_golden_gate_service_details_target_db_credentials_username"],
                 ),
             ),
             include_objects=[oci.database_migration.MigrationIncludeObjectArgs(
@@ -927,6 +986,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationExcludeObjectArgs']]]] exclude_objects: (Updatable) Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[pulumi.InputType['MigrationGoldenGateDetailsArgs']] golden_gate_details: (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
+        :param pulumi.Input[pulumi.InputType['MigrationGoldenGateServiceDetailsArgs']] golden_gate_service_details: (Updatable) Details about Oracle GoldenGate GGS Deployment.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]] include_objects: (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
         :param pulumi.Input[str] source_database_connection_id: (Updatable) The OCID of the Source Database Connection.
@@ -1032,6 +1092,12 @@ class Migration(pulumi.CustomResource):
                         password=var["migration_golden_gate_details_hub_rest_admin_credentials_password"],
                         username=var["migration_golden_gate_details_hub_rest_admin_credentials_username"],
                     ),
+                    url=var["migration_golden_gate_details_hub_url"],
+                    compute_id=oci_database_migration_compute["test_compute"]["id"],
+                    source_container_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs(
+                        password=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_password"],
+                        username=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_username"],
+                    ),
                     source_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs(
                         password=var["migration_golden_gate_details_hub_source_db_admin_credentials_password"],
                         username=var["migration_golden_gate_details_hub_source_db_admin_credentials_username"],
@@ -1042,12 +1108,6 @@ class Migration(pulumi.CustomResource):
                         username=var["migration_golden_gate_details_hub_target_db_admin_credentials_username"],
                     ),
                     target_microservices_deployment_name=oci_apigateway_deployment["test_deployment"]["name"],
-                    url=var["migration_golden_gate_details_hub_url"],
-                    compute_id=oci_database_migration_compute["test_compute"]["id"],
-                    source_container_db_admin_credentials=oci.database_migration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs(
-                        password=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_password"],
-                        username=var["migration_golden_gate_details_hub_source_container_db_admin_credentials_username"],
-                    ),
                 ),
                 settings=oci.database_migration.MigrationGoldenGateDetailsSettingsArgs(
                     acceptable_lag=var["migration_golden_gate_details_settings_acceptable_lag"],
@@ -1060,6 +1120,32 @@ class Migration(pulumi.CustomResource):
                         max_apply_parallelism=var["migration_golden_gate_details_settings_replicat_max_apply_parallelism"],
                         min_apply_parallelism=var["migration_golden_gate_details_settings_replicat_min_apply_parallelism"],
                     ),
+                ),
+            ),
+            golden_gate_service_details=oci.database_migration.MigrationGoldenGateServiceDetailsArgs(
+                settings=oci.database_migration.MigrationGoldenGateServiceDetailsSettingsArgs(
+                    acceptable_lag=var["migration_golden_gate_service_details_settings_acceptable_lag"],
+                    extract=oci.database_migration.MigrationGoldenGateServiceDetailsSettingsExtractArgs(
+                        long_trans_duration=var["migration_golden_gate_service_details_settings_extract_long_trans_duration"],
+                        performance_profile=var["migration_golden_gate_service_details_settings_extract_performance_profile"],
+                    ),
+                    replicat=oci.database_migration.MigrationGoldenGateServiceDetailsSettingsReplicatArgs(
+                        map_parallelism=var["migration_golden_gate_service_details_settings_replicat_map_parallelism"],
+                        max_apply_parallelism=var["migration_golden_gate_service_details_settings_replicat_max_apply_parallelism"],
+                        min_apply_parallelism=var["migration_golden_gate_service_details_settings_replicat_min_apply_parallelism"],
+                    ),
+                ),
+                source_container_db_credentials=oci.database_migration.MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs(
+                    password=var["migration_golden_gate_service_details_source_container_db_credentials_password"],
+                    username=var["migration_golden_gate_service_details_source_container_db_credentials_username"],
+                ),
+                source_db_credentials=oci.database_migration.MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs(
+                    password=var["migration_golden_gate_service_details_source_db_credentials_password"],
+                    username=var["migration_golden_gate_service_details_source_db_credentials_username"],
+                ),
+                target_db_credentials=oci.database_migration.MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs(
+                    password=var["migration_golden_gate_service_details_target_db_credentials_password"],
+                    username=var["migration_golden_gate_service_details_target_db_credentials_username"],
                 ),
             ),
             include_objects=[oci.database_migration.MigrationIncludeObjectArgs(
@@ -1111,6 +1197,7 @@ class Migration(pulumi.CustomResource):
                  exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationExcludeObjectArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  golden_gate_details: Optional[pulumi.Input[pulumi.InputType['MigrationGoldenGateDetailsArgs']]] = None,
+                 golden_gate_service_details: Optional[pulumi.Input[pulumi.InputType['MigrationGoldenGateServiceDetailsArgs']]] = None,
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]]] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
                  source_database_connection_id: Optional[pulumi.Input[str]] = None,
@@ -1140,6 +1227,7 @@ class Migration(pulumi.CustomResource):
             __props__.__dict__["exclude_objects"] = exclude_objects
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["golden_gate_details"] = golden_gate_details
+            __props__.__dict__["golden_gate_service_details"] = golden_gate_service_details
             __props__.__dict__["include_objects"] = include_objects
             __props__.__dict__["source_container_database_connection_id"] = source_container_database_connection_id
             if source_database_connection_id is None and not opts.urn:
@@ -1185,6 +1273,7 @@ class Migration(pulumi.CustomResource):
             executing_job_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             golden_gate_details: Optional[pulumi.Input[pulumi.InputType['MigrationGoldenGateDetailsArgs']]] = None,
+            golden_gate_service_details: Optional[pulumi.Input[pulumi.InputType['MigrationGoldenGateServiceDetailsArgs']]] = None,
             include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
@@ -1219,6 +1308,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] executing_job_id: OCID of the current ODMS Job in execution for the Migration, if any.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[pulumi.InputType['MigrationGoldenGateDetailsArgs']] golden_gate_details: (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
+        :param pulumi.Input[pulumi.InputType['MigrationGoldenGateServiceDetailsArgs']] golden_gate_service_details: (Updatable) Details about Oracle GoldenGate GGS Deployment.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]] include_objects: (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input[str] lifecycle_details: Additional status related to the execution and current state of the Migration.
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
@@ -1251,6 +1341,7 @@ class Migration(pulumi.CustomResource):
         __props__.__dict__["executing_job_id"] = executing_job_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["golden_gate_details"] = golden_gate_details
+        __props__.__dict__["golden_gate_service_details"] = golden_gate_service_details
         __props__.__dict__["include_objects"] = include_objects
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["source_container_database_connection_id"] = source_container_database_connection_id
@@ -1377,6 +1468,14 @@ class Migration(pulumi.CustomResource):
         (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
         """
         return pulumi.get(self, "golden_gate_details")
+
+    @property
+    @pulumi.getter(name="goldenGateServiceDetails")
+    def golden_gate_service_details(self) -> pulumi.Output['outputs.MigrationGoldenGateServiceDetails']:
+        """
+        (Updatable) Details about Oracle GoldenGate GGS Deployment.
+        """
+        return pulumi.get(self, "golden_gate_service_details")
 
     @property
     @pulumi.getter(name="includeObjects")

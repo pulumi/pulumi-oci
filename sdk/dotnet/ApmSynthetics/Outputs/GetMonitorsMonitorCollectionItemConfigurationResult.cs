@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly bool IsCertificateValidationEnabled;
         /// <summary>
-        /// If disabled then auto snapshots are not collected.
+        /// If disabled, auto snapshots are not collected.
         /// </summary>
         public readonly bool IsDefaultSnapshotEnabled;
         /// <summary>

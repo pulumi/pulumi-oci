@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class GetMonitorConfigurationClientCertificateDetailResult
     {
         /// <summary>
-        /// Client certificate in pem format.
+        /// Client certificate in PEM format.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult> ClientCertificates;
         /// <summary>
-        /// The private key associated with the client certificate in pem format.
+        /// The private key associated with the client certificate in PEM format.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult> PrivateKeys;
 

@@ -61,13 +61,32 @@ namespace Pulumi.Oci.Core
     ///         PlacementConfiguration = new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationArgs
     ///         {
     ///             AvailabilityDomain = @var.Cluster_network_placement_configuration_availability_domain,
-    ///             PrimarySubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             PrimaryVnicSubnets = new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs
+    ///             {
+    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                 Ipv6addressIpv6subnetCidrPairDetails = new[]
+    ///                 {
+    ///                     new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs
+    ///                     {
+    ///                         Ipv6subnetCidr = @var.Cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                     },
+    ///                 },
+    ///                 IsAssignIpv6ip = @var.Cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
+    ///             },
     ///             SecondaryVnicSubnets = new[]
     ///             {
     ///                 new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs
     ///                 {
     ///                     SubnetId = oci_core_subnet.Test_subnet.Id,
     ///                     DisplayName = @var.Cluster_network_placement_configuration_secondary_vnic_subnets_display_name,
+    ///                     Ipv6addressIpv6subnetCidrPairDetails = new[]
+    ///                     {
+    ///                         new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs
+    ///                         {
+    ///                             Ipv6subnetCidr = @var.Cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                         },
+    ///                     },
+    ///                     IsAssignIpv6ip = @var.Cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
     ///                 },
     ///             },
     ///         },

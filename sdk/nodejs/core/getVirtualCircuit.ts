@@ -113,6 +113,10 @@ export interface GetVirtualCircuitResult {
      */
     readonly isBfdEnabled: boolean;
     /**
+     * Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     */
+    readonly isTransportMode: boolean;
+    /**
      * The Oracle BGP ASN.
      */
     readonly oracleBgpAsn: number;

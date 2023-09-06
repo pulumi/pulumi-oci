@@ -130,6 +130,8 @@ type Ipsec struct {
 	StaticRoutes pulumi.StringArrayOutput `pulumi:"staticRoutes"`
 	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The transport type used for the IPSec connection.
+	TransportType pulumi.StringOutput `pulumi:"transportType"`
 }
 
 // NewIpsec registers a new resource with the given unique name, arguments, and options.
@@ -211,6 +213,8 @@ type ipsecState struct {
 	StaticRoutes []string `pulumi:"staticRoutes"`
 	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The transport type used for the IPSec connection.
+	TransportType *string `pulumi:"transportType"`
 }
 
 type IpsecState struct {
@@ -251,6 +255,8 @@ type IpsecState struct {
 	StaticRoutes pulumi.StringArrayInput
 	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
+	// The transport type used for the IPSec connection.
+	TransportType pulumi.StringPtrInput
 }
 
 func (IpsecState) ElementType() reflect.Type {
@@ -485,6 +491,11 @@ func (o IpsecOutput) StaticRoutes() pulumi.StringArrayOutput {
 // The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o IpsecOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipsec) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The transport type used for the IPSec connection.
+func (o IpsecOutput) TransportType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Ipsec) pulumi.StringOutput { return v.TransportType }).(pulumi.StringOutput)
 }
 
 type IpsecArrayOutput struct{ *pulumi.OutputState }

@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetInstanceCreateVnicDetailResult
     {
+        public readonly bool AssignIpv6ip;
         public readonly bool AssignPrivateDnsRecord;
         public readonly string AssignPublicIp;
         /// <summary>
@@ -31,6 +32,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The hostname for the instance VNIC's primary private IP.
         /// </summary>
         public readonly string HostnameLabel;
+        public readonly ImmutableArray<Outputs.GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> Ipv6addressIpv6subnetCidrPairDetails;
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
         /// The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
@@ -42,6 +44,8 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetInstanceCreateVnicDetailResult(
+            bool assignIpv6ip,
+
             bool assignPrivateDnsRecord,
 
             string assignPublicIp,
@@ -54,6 +58,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string hostnameLabel,
 
+            ImmutableArray<Outputs.GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> ipv6addressIpv6subnetCidrPairDetails,
+
             ImmutableArray<string> nsgIds,
 
             string privateIp,
@@ -64,12 +70,14 @@ namespace Pulumi.Oci.Core.Outputs
 
             string vlanId)
         {
+            AssignIpv6ip = assignIpv6ip;
             AssignPrivateDnsRecord = assignPrivateDnsRecord;
             AssignPublicIp = assignPublicIp;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             HostnameLabel = hostnameLabel;
+            Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
             SkipSourceDestCheck = skipSourceDestCheck;

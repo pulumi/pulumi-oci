@@ -332,12 +332,14 @@ class VnicAttachment(pulumi.CustomResource):
 
         test_vnic_attachment = oci.core.VnicAttachment("testVnicAttachment",
             create_vnic_details=oci.core.VnicAttachmentCreateVnicDetailsArgs(
+                assign_ipv6ip=var["vnic_attachment_create_vnic_details_assign_ipv6ip"],
                 assign_private_dns_record=var["vnic_attachment_create_vnic_details_assign_private_dns_record"],
                 assign_public_ip=var["vnic_attachment_create_vnic_details_assign_public_ip"],
                 defined_tags=var["vnic_attachment_create_vnic_details_defined_tags"],
                 display_name=var["vnic_attachment_create_vnic_details_display_name"],
                 freeform_tags=var["vnic_attachment_create_vnic_details_freeform_tags"],
                 hostname_label=var["vnic_attachment_create_vnic_details_hostname_label"],
+                ipv6address_ipv6subnet_cidr_pair_details=var["vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details"],
                 nsg_ids=var["vnic_attachment_create_vnic_details_nsg_ids"],
                 private_ip=var["vnic_attachment_create_vnic_details_private_ip"],
                 skip_source_dest_check=var["vnic_attachment_create_vnic_details_skip_source_dest_check"],
@@ -389,12 +391,14 @@ class VnicAttachment(pulumi.CustomResource):
 
         test_vnic_attachment = oci.core.VnicAttachment("testVnicAttachment",
             create_vnic_details=oci.core.VnicAttachmentCreateVnicDetailsArgs(
+                assign_ipv6ip=var["vnic_attachment_create_vnic_details_assign_ipv6ip"],
                 assign_private_dns_record=var["vnic_attachment_create_vnic_details_assign_private_dns_record"],
                 assign_public_ip=var["vnic_attachment_create_vnic_details_assign_public_ip"],
                 defined_tags=var["vnic_attachment_create_vnic_details_defined_tags"],
                 display_name=var["vnic_attachment_create_vnic_details_display_name"],
                 freeform_tags=var["vnic_attachment_create_vnic_details_freeform_tags"],
                 hostname_label=var["vnic_attachment_create_vnic_details_hostname_label"],
+                ipv6address_ipv6subnet_cidr_pair_details=var["vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details"],
                 nsg_ids=var["vnic_attachment_create_vnic_details_nsg_ids"],
                 private_ip=var["vnic_attachment_create_vnic_details_private_ip"],
                 skip_source_dest_check=var["vnic_attachment_create_vnic_details_skip_source_dest_check"],

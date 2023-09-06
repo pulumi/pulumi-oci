@@ -76,6 +76,7 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         IpMtu = @var.Virtual_circuit_ip_mtu,
     ///         IsBfdEnabled = @var.Virtual_circuit_is_bfd_enabled,
+    ///         IsTransportMode = @var.Virtual_circuit_is_transport_mode,
     ///         GatewayId = oci_core_gateway.Test_gateway.Id,
     ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
     ///         ProviderServiceKeyName = @var.Virtual_circuit_provider_service_key_name,
@@ -193,6 +194,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("isBfdEnabled")]
         public Output<bool> IsBfdEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        /// </summary>
+        [Output("isTransportMode")]
+        public Output<bool> IsTransportMode { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle BGP ASN.
@@ -407,6 +414,12 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsBfdEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        /// </summary>
+        [Input("isTransportMode")]
+        public Input<bool>? IsTransportMode { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         /// </summary>
         [Input("providerServiceId")]
@@ -573,6 +586,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("isBfdEnabled")]
         public Input<bool>? IsBfdEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        /// </summary>
+        [Input("isTransportMode")]
+        public Input<bool>? IsTransportMode { get; set; }
 
         /// <summary>
         /// The Oracle BGP ASN.

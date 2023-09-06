@@ -87,6 +87,8 @@ type LookupConnectionResult struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// Oracle Cloud Infrastructure Private Endpoint configuration details.
 	PrivateEndpoints []GetConnectionPrivateEndpoint `pulumi:"privateEndpoints"`
+	// Database Administrator Credentials details.
+	ReplicationCredentials []GetConnectionReplicationCredential `pulumi:"replicationCredentials"`
 	// Details of the SSH key that will be used.
 	SshDetails []GetConnectionSshDetail `pulumi:"sshDetails"`
 	// The current state of the Connection resource.
@@ -213,6 +215,11 @@ func (o LookupConnectionResultOutput) NsgIds() pulumi.StringArrayOutput {
 // Oracle Cloud Infrastructure Private Endpoint configuration details.
 func (o LookupConnectionResultOutput) PrivateEndpoints() GetConnectionPrivateEndpointArrayOutput {
 	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionPrivateEndpoint { return v.PrivateEndpoints }).(GetConnectionPrivateEndpointArrayOutput)
+}
+
+// Database Administrator Credentials details.
+func (o LookupConnectionResultOutput) ReplicationCredentials() GetConnectionReplicationCredentialArrayOutput {
+	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionReplicationCredential { return v.ReplicationCredentials }).(GetConnectionReplicationCredentialArrayOutput)
 }
 
 // Details of the SSH key that will be used.

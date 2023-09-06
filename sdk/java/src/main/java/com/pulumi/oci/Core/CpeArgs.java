@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -107,9 +108,6 @@ public final class CpeArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The public IP address of the on-premises router.  Example: `203.0.113.2`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="ipAddress", required=true)
     private Output<String> ipAddress;
@@ -117,12 +115,30 @@ public final class CpeArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return The public IP address of the on-premises router.  Example: `203.0.113.2`
      * 
+     */
+    public Output<String> ipAddress() {
+        return this.ipAddress;
+    }
+
+    /**
+     * Indicates whether this CPE is of type `private` or not.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> ipAddress() {
-        return this.ipAddress;
+    @Import(name="isPrivate")
+    private @Nullable Output<Boolean> isPrivate;
+
+    /**
+     * @return Indicates whether this CPE is of type `private` or not.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Boolean>> isPrivate() {
+        return Optional.ofNullable(this.isPrivate);
     }
 
     private CpeArgs() {}
@@ -134,6 +150,7 @@ public final class CpeArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.ipAddress = $.ipAddress;
+        this.isPrivate = $.isPrivate;
     }
 
     public static Builder builder() {
@@ -274,9 +291,6 @@ public final class CpeArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ipAddress The public IP address of the on-premises router.  Example: `203.0.113.2`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -288,14 +302,38 @@ public final class CpeArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ipAddress The public IP address of the on-premises router.  Example: `203.0.113.2`
          * 
+         * @return builder
+         * 
+         */
+        public Builder ipAddress(String ipAddress) {
+            return ipAddress(Output.of(ipAddress));
+        }
+
+        /**
+         * @param isPrivate Indicates whether this CPE is of type `private` or not.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder ipAddress(String ipAddress) {
-            return ipAddress(Output.of(ipAddress));
+        public Builder isPrivate(@Nullable Output<Boolean> isPrivate) {
+            $.isPrivate = isPrivate;
+            return this;
+        }
+
+        /**
+         * @param isPrivate Indicates whether this CPE is of type `private` or not.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPrivate(Boolean isPrivate) {
+            return isPrivate(Output.of(isPrivate));
         }
 
         public CpeArgs build() {

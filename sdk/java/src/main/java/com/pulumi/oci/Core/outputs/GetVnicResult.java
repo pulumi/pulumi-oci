@@ -49,6 +49,11 @@ public final class GetVnicResult {
      */
     private String id;
     /**
+     * @return List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
+     * 
+     */
+    private List<String> ipv6addresses;
+    /**
      * @return Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
      * 
      */
@@ -151,6 +156,13 @@ public final class GetVnicResult {
         return this.id;
     }
     /**
+     * @return List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
+     * 
+     */
+    public List<String> ipv6addresses() {
+        return this.ipv6addresses;
+    }
+    /**
      * @return Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
      * 
      */
@@ -240,6 +252,7 @@ public final class GetVnicResult {
         private Map<String,Object> freeformTags;
         private String hostnameLabel;
         private String id;
+        private List<String> ipv6addresses;
         private Boolean isPrimary;
         private String macAddress;
         private List<String> nsgIds;
@@ -261,6 +274,7 @@ public final class GetVnicResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
+    	      this.ipv6addresses = defaults.ipv6addresses;
     	      this.isPrimary = defaults.isPrimary;
     	      this.macAddress = defaults.macAddress;
     	      this.nsgIds = defaults.nsgIds;
@@ -308,6 +322,14 @@ public final class GetVnicResult {
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
+        }
+        @CustomType.Setter
+        public Builder ipv6addresses(List<String> ipv6addresses) {
+            this.ipv6addresses = Objects.requireNonNull(ipv6addresses);
+            return this;
+        }
+        public Builder ipv6addresses(String... ipv6addresses) {
+            return ipv6addresses(List.of(ipv6addresses));
         }
         @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
@@ -376,6 +398,7 @@ public final class GetVnicResult {
             o.freeformTags = freeformTags;
             o.hostnameLabel = hostnameLabel;
             o.id = id;
+            o.ipv6addresses = ipv6addresses;
             o.isPrimary = isPrimary;
             o.macAddress = macAddress;
             o.nsgIds = nsgIds;

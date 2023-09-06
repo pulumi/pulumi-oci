@@ -90,6 +90,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/ipsecConnectionTunnelManagement:IpsecConnectionTunnelManagement")
 public class IpsecConnectionTunnelManagement extends com.pulumi.resources.CustomResource {
     /**
+     * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     * 
+     */
+    @Export(name="associatedVirtualCircuits", type=List.class, parameters={String.class})
+    private Output<List<String>> associatedVirtualCircuits;
+
+    /**
+     * @return The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     * 
+     */
+    public Output<List<String>> associatedVirtualCircuits() {
+        return this.associatedVirtualCircuits;
+    }
+    /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
      * 
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
@@ -108,28 +122,28 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
         return this.bgpSessionInfos;
     }
     /**
-     * The OCID of the compartment containing the tunnel.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the tunnel.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * The IP address of Cpe headend.  Example: `129.146.17.50`
+     * The IP address of the CPE device&#39;s VPN headend.  Example: `203.0.113.22`
      * 
      */
     @Export(name="cpeIp", type=String.class, parameters={})
     private Output<String> cpeIp;
 
     /**
-     * @return The IP address of Cpe headend.  Example: `129.146.17.50`
+     * @return The IP address of the CPE device&#39;s VPN headend.  Example: `203.0.113.22`
      * 
      */
     public Output<String> cpeIp() {

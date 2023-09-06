@@ -106,6 +106,7 @@ import (
 //						CapacityReservationId: pulumi.Any(oci_core_capacity_reservation.Test_capacity_reservation.Id),
 //						CompartmentId:         pulumi.Any(_var.Compartment_id),
 //						CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs{
+//							AssignIpv6ip:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip),
 //							AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record),
 //							AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip),
 //							DefinedTags: pulumi.AnyMap{
@@ -115,7 +116,13 @@ import (
 //							FreeformTags: pulumi.AnyMap{
 //								"Department": pulumi.Any("Finance"),
 //							},
-//							HostnameLabel:       pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label),
+//							HostnameLabel: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label),
+//							Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
+//								&core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
+//									Ipv6address:    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address),
+//									Ipv6subnetCidr: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//								},
+//							},
 //							NsgIds:              pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids),
 //							PrivateIp:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_private_ip),
 //							SkipSourceDestCheck: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check),
@@ -149,6 +156,7 @@ import (
 //						PlatformConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs{
 //							Type:                                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_type),
 //							AreVirtualInstructionsEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled),
+//							ConfigMap:                                pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_config_map),
 //							IsAccessControlServiceEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled),
 //							IsInputOutputMemoryManagementUnitEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled),
 //							IsMeasuredBootEnabled:                    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled),
@@ -249,6 +257,7 @@ import (
 //								CapacityReservationId: pulumi.Any(oci_core_capacity_reservation.Test_capacity_reservation.Id),
 //								CompartmentId:         pulumi.Any(_var.Compartment_id),
 //								CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs{
+//									AssignIpv6ip:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip),
 //									AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record),
 //									AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip),
 //									DefinedTags: pulumi.AnyMap{
@@ -258,7 +267,13 @@ import (
 //									FreeformTags: pulumi.AnyMap{
 //										"Department": pulumi.Any("Finance"),
 //									},
-//									HostnameLabel:       pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label),
+//									HostnameLabel: pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label),
+//									Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
+//										&core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
+//											Ipv6address:    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address),
+//											Ipv6subnetCidr: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//										},
+//									},
 //									NsgIds:              pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids),
 //									PrivateIp:           pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip),
 //									SkipSourceDestCheck: pulumi.Any(_var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check),
@@ -334,6 +349,7 @@ import (
 //							SecondaryVnics: core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicArray{
 //								&core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs{
 //									CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs{
+//										AssignIpv6ip:           pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip),
 //										AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record),
 //										AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip),
 //										DefinedTags: pulumi.AnyMap{
@@ -343,7 +359,13 @@ import (
 //										FreeformTags: pulumi.AnyMap{
 //											"Department": pulumi.Any("Finance"),
 //										},
-//										HostnameLabel:       pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label),
+//										HostnameLabel: pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label),
+//										Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
+//											&core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
+//												Ipv6address:    pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address),
+//												Ipv6subnetCidr: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//											},
+//										},
 //										NsgIds:              pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids),
 //										PrivateIp:           pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip),
 //										SkipSourceDestCheck: pulumi.Any(_var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check),

@@ -377,53 +377,43 @@ class DeploymentMaintenanceWindowArgs:
 @pulumi.input_type
 class DeploymentOggDataArgs:
     def __init__(__self__, *,
-                 admin_password: pulumi.Input[str],
-                 admin_username: pulumi.Input[str],
                  deployment_name: pulumi.Input[str],
+                 admin_password: Optional[pulumi.Input[str]] = None,
+                 admin_username: Optional[pulumi.Input[str]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
+                 credential_store: Optional[pulumi.Input[str]] = None,
+                 identity_domain_id: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
-                 ogg_version: Optional[pulumi.Input[str]] = None):
+                 ogg_version: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
-        :param pulumi.Input[str] admin_username: (Updatable) The GoldenGate deployment console username.
         :param pulumi.Input[str] deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param pulumi.Input[str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        :param pulumi.Input[str] admin_username: (Updatable) The GoldenGate deployment console username.
         :param pulumi.Input[str] certificate: (Updatable) A PEM-encoded SSL certificate.
+        :param pulumi.Input[str] credential_store: (Updatable) The type of credential store for OGG.
+        :param pulumi.Input[str] identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param pulumi.Input[str] key: (Updatable) A PEM-encoded private key.
         :param pulumi.Input[str] ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+        :param pulumi.Input[str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "deployment_name", deployment_name)
+        if admin_password is not None:
+            pulumi.set(__self__, "admin_password", admin_password)
+        if admin_username is not None:
+            pulumi.set(__self__, "admin_username", admin_username)
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
+        if credential_store is not None:
+            pulumi.set(__self__, "credential_store", credential_store)
+        if identity_domain_id is not None:
+            pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         if key is not None:
             pulumi.set(__self__, "key", key)
         if ogg_version is not None:
             pulumi.set(__self__, "ogg_version", ogg_version)
-
-    @property
-    @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
-        """
-        return pulumi.get(self, "admin_password")
-
-    @admin_password.setter
-    def admin_password(self, value: pulumi.Input[str]):
-        pulumi.set(self, "admin_password", value)
-
-    @property
-    @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The GoldenGate deployment console username.
-        """
-        return pulumi.get(self, "admin_username")
-
-    @admin_username.setter
-    def admin_username(self, value: pulumi.Input[str]):
-        pulumi.set(self, "admin_username", value)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="deploymentName")
@@ -438,6 +428,30 @@ class DeploymentOggDataArgs:
         pulumi.set(self, "deployment_name", value)
 
     @property
+    @pulumi.getter(name="adminPassword")
+    def admin_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        """
+        return pulumi.get(self, "admin_password")
+
+    @admin_password.setter
+    def admin_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "admin_password", value)
+
+    @property
+    @pulumi.getter(name="adminUsername")
+    def admin_username(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The GoldenGate deployment console username.
+        """
+        return pulumi.get(self, "admin_username")
+
+    @admin_username.setter
+    def admin_username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "admin_username", value)
+
+    @property
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input[str]]:
         """
@@ -448,6 +462,30 @@ class DeploymentOggDataArgs:
     @certificate.setter
     def certificate(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "certificate", value)
+
+    @property
+    @pulumi.getter(name="credentialStore")
+    def credential_store(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of credential store for OGG.
+        """
+        return pulumi.get(self, "credential_store")
+
+    @credential_store.setter
+    def credential_store(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_store", value)
+
+    @property
+    @pulumi.getter(name="identityDomainId")
+    def identity_domain_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+        """
+        return pulumi.get(self, "identity_domain_id")
+
+    @identity_domain_id.setter
+    def identity_domain_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "identity_domain_id", value)
 
     @property
     @pulumi.getter
@@ -472,6 +510,18 @@ class DeploymentOggDataArgs:
     @ogg_version.setter
     def ogg_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ogg_version", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
 
 
 @pulumi.input_type

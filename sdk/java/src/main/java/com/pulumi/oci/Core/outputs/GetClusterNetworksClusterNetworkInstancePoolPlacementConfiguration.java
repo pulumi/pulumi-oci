@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet;
 import java.lang.String;
 import java.util.List;
@@ -22,10 +23,15 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
      */
     private List<String> faultDomains;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
     private String primarySubnetId;
+    /**
+     * @return Details about the IPv6 primary subnet.
+     * 
+     */
+    private List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
     /**
      * @return The set of secondary VNIC data for instances in the pool.
      * 
@@ -48,11 +54,18 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
         return this.faultDomains;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
     public String primarySubnetId() {
         return this.primarySubnetId;
+    }
+    /**
+     * @return Details about the IPv6 primary subnet.
+     * 
+     */
+    public List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets() {
+        return this.primaryVnicSubnets;
     }
     /**
      * @return The set of secondary VNIC data for instances in the pool.
@@ -74,6 +87,7 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
         private String availabilityDomain;
         private List<String> faultDomains;
         private String primarySubnetId;
+        private List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
         private List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
         public Builder() {}
         public Builder(GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration defaults) {
@@ -81,6 +95,7 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.faultDomains = defaults.faultDomains;
     	      this.primarySubnetId = defaults.primarySubnetId;
+    	      this.primaryVnicSubnets = defaults.primaryVnicSubnets;
     	      this.secondaryVnicSubnets = defaults.secondaryVnicSubnets;
         }
 
@@ -103,6 +118,14 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
             return this;
         }
         @CustomType.Setter
+        public Builder primaryVnicSubnets(List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets) {
+            this.primaryVnicSubnets = Objects.requireNonNull(primaryVnicSubnets);
+            return this;
+        }
+        public Builder primaryVnicSubnets(GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet... primaryVnicSubnets) {
+            return primaryVnicSubnets(List.of(primaryVnicSubnets));
+        }
+        @CustomType.Setter
         public Builder secondaryVnicSubnets(List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
             this.secondaryVnicSubnets = Objects.requireNonNull(secondaryVnicSubnets);
             return this;
@@ -115,6 +138,7 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
             o.availabilityDomain = availabilityDomain;
             o.faultDomains = faultDomains;
             o.primarySubnetId = primarySubnetId;
+            o.primaryVnicSubnets = primaryVnicSubnets;
             o.secondaryVnicSubnets = secondaryVnicSubnets;
             return o;
         }

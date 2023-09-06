@@ -17,14 +17,14 @@ public final class ConfigConfigurationClientCertificateDetailsArgs extends com.p
     public static final ConfigConfigurationClientCertificateDetailsArgs Empty = new ConfigConfigurationClientCertificateDetailsArgs();
 
     /**
-     * (Updatable) Client certificate in pem format.
+     * (Updatable) Client certificate in PEM format.
      * 
      */
     @Import(name="clientCertificate")
     private @Nullable Output<ConfigConfigurationClientCertificateDetailsClientCertificateArgs> clientCertificate;
 
     /**
-     * @return (Updatable) Client certificate in pem format.
+     * @return (Updatable) Client certificate in PEM format.
      * 
      */
     public Optional<Output<ConfigConfigurationClientCertificateDetailsClientCertificateArgs>> clientCertificate() {
@@ -32,14 +32,14 @@ public final class ConfigConfigurationClientCertificateDetailsArgs extends com.p
     }
 
     /**
-     * (Updatable) The private key associated with the client certificate in pem format.
+     * (Updatable) The private key associated with the client certificate in PEM format.
      * 
      */
     @Import(name="privateKey")
     private @Nullable Output<ConfigConfigurationClientCertificateDetailsPrivateKeyArgs> privateKey;
 
     /**
-     * @return (Updatable) The private key associated with the client certificate in pem format.
+     * @return (Updatable) The private key associated with the client certificate in PEM format.
      * 
      */
     public Optional<Output<ConfigConfigurationClientCertificateDetailsPrivateKeyArgs>> privateKey() {
@@ -72,7 +72,7 @@ public final class ConfigConfigurationClientCertificateDetailsArgs extends com.p
         }
 
         /**
-         * @param clientCertificate (Updatable) Client certificate in pem format.
+         * @param clientCertificate (Updatable) Client certificate in PEM format.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ConfigConfigurationClientCertificateDetailsArgs extends com.p
         }
 
         /**
-         * @param clientCertificate (Updatable) Client certificate in pem format.
+         * @param clientCertificate (Updatable) Client certificate in PEM format.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ConfigConfigurationClientCertificateDetailsArgs extends com.p
         }
 
         /**
-         * @param privateKey (Updatable) The private key associated with the client certificate in pem format.
+         * @param privateKey (Updatable) The private key associated with the client certificate in PEM format.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ConfigConfigurationClientCertificateDetailsArgs extends com.p
         }
 
         /**
-         * @param privateKey (Updatable) The private key associated with the client certificate in pem format.
+         * @param privateKey (Updatable) The private key associated with the client certificate in PEM format.
          * 
          * @return builder
          * 

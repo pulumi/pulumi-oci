@@ -5,7 +5,6 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.oci.Mysql.inputs.MysqlDbSystemAnalyticsClusterArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemChannelArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemCurrentPlacementArgs;
@@ -58,21 +57,6 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<String>> adminUsername() {
         return Optional.ofNullable(this.adminUsername);
-    }
-
-    /**
-     * DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-     * 
-     */
-    @Import(name="analyticsClusters")
-    private @Nullable Output<List<MysqlDbSystemAnalyticsClusterArgs>> analyticsClusters;
-
-    /**
-     * @return DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-     * 
-     */
-    public Optional<Output<List<MysqlDbSystemAnalyticsClusterArgs>>> analyticsClusters() {
-        return Optional.ofNullable(this.analyticsClusters);
     }
 
     /**
@@ -370,21 +354,6 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     * 
-     */
-    @Import(name="isAnalyticsClusterAttached")
-    private @Nullable Output<Boolean> isAnalyticsClusterAttached;
-
-    /**
-     * @return DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     * 
-     */
-    public Optional<Output<Boolean>> isAnalyticsClusterAttached() {
-        return Optional.ofNullable(this.isAnalyticsClusterAttached);
-    }
-
-    /**
      * If the DB System has a HeatWave Cluster attached.
      * 
      */
@@ -626,7 +595,6 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     private MysqlDbSystemState(MysqlDbSystemState $) {
         this.adminPassword = $.adminPassword;
         this.adminUsername = $.adminUsername;
-        this.analyticsClusters = $.analyticsClusters;
         this.availabilityDomain = $.availabilityDomain;
         this.backupPolicy = $.backupPolicy;
         this.channels = $.channels;
@@ -645,7 +613,6 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         this.heatWaveClusters = $.heatWaveClusters;
         this.hostnameLabel = $.hostnameLabel;
         this.ipAddress = $.ipAddress;
-        this.isAnalyticsClusterAttached = $.isAnalyticsClusterAttached;
         this.isHeatWaveClusterAttached = $.isHeatWaveClusterAttached;
         this.isHighlyAvailable = $.isHighlyAvailable;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -721,37 +688,6 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder adminUsername(String adminUsername) {
             return adminUsername(Output.of(adminUsername));
-        }
-
-        /**
-         * @param analyticsClusters DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder analyticsClusters(@Nullable Output<List<MysqlDbSystemAnalyticsClusterArgs>> analyticsClusters) {
-            $.analyticsClusters = analyticsClusters;
-            return this;
-        }
-
-        /**
-         * @param analyticsClusters DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder analyticsClusters(List<MysqlDbSystemAnalyticsClusterArgs> analyticsClusters) {
-            return analyticsClusters(Output.of(analyticsClusters));
-        }
-
-        /**
-         * @param analyticsClusters DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder analyticsClusters(MysqlDbSystemAnalyticsClusterArgs... analyticsClusters) {
-            return analyticsClusters(List.of(analyticsClusters));
         }
 
         /**
@@ -1204,27 +1140,6 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
-        }
-
-        /**
-         * @param isAnalyticsClusterAttached DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isAnalyticsClusterAttached(@Nullable Output<Boolean> isAnalyticsClusterAttached) {
-            $.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-            return this;
-        }
-
-        /**
-         * @param isAnalyticsClusterAttached DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
-            return isAnalyticsClusterAttached(Output.of(isAnalyticsClusterAttached));
         }
 
         /**

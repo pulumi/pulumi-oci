@@ -31,7 +31,7 @@ class CrossConnectArgs:
         """
         The set of arguments for constructing a CrossConnect resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment to contain the cross-connect.
-        :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         :param pulumi.Input[str] port_speed_shape_name: The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
                
                
@@ -44,8 +44,8 @@ class CrossConnectArgs:
         :param pulumi.Input[str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
-        :param pulumi.Input['CrossConnectMacsecPropertiesArgs'] macsec_properties: Properties used for MACsec (if capable).
-        :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        :param pulumi.Input['CrossConnectMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "location_name", location_name)
@@ -85,7 +85,7 @@ class CrossConnectArgs:
     @pulumi.getter(name="locationName")
     def location_name(self) -> pulumi.Input[str]:
         """
-        The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         """
         return pulumi.get(self, "location_name")
 
@@ -197,7 +197,7 @@ class CrossConnectArgs:
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> Optional[pulumi.Input['CrossConnectMacsecPropertiesArgs']]:
         """
-        Properties used for MACsec (if capable).
+        (Updatable) Properties used to configure MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
 
@@ -209,7 +209,7 @@ class CrossConnectArgs:
     @pulumi.getter(name="nearCrossConnectOrCrossConnectGroupId")
     def near_cross_connect_or_cross_connect_group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         """
         return pulumi.get(self, "near_cross_connect_or_cross_connect_group_id")
 
@@ -248,9 +248,9 @@ class _CrossConnectState:
         :param pulumi.Input[str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
-        :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
-        :param pulumi.Input['CrossConnectMacsecPropertiesArgs'] macsec_properties: Properties used for MACsec (if capable).
-        :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        :param pulumi.Input['CrossConnectMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
         :param pulumi.Input[str] port_name: A string identifying the meet-me room port for this cross-connect.
@@ -259,7 +259,7 @@ class _CrossConnectState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The cross-connect's current state.
+        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
         :param pulumi.Input[str] time_created: The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
@@ -397,7 +397,7 @@ class _CrossConnectState:
     @pulumi.getter(name="locationName")
     def location_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         """
         return pulumi.get(self, "location_name")
 
@@ -409,7 +409,7 @@ class _CrossConnectState:
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> Optional[pulumi.Input['CrossConnectMacsecPropertiesArgs']]:
         """
-        Properties used for MACsec (if capable).
+        (Updatable) Properties used to configure MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
 
@@ -421,7 +421,7 @@ class _CrossConnectState:
     @pulumi.getter(name="nearCrossConnectOrCrossConnectGroupId")
     def near_cross_connect_or_cross_connect_group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         """
         return pulumi.get(self, "near_cross_connect_or_cross_connect_group_id")
 
@@ -485,7 +485,7 @@ class _CrossConnectState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The cross-connect's current state.
+        (Updatable) Indicates whether or not MACsec is enabled.
         """
         return pulumi.get(self, "state")
 
@@ -567,6 +567,15 @@ class CrossConnect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            macsec_properties=oci.core.CrossConnectMacsecPropertiesArgs(
+                state=var["cross_connect_macsec_properties_state"],
+                encryption_cipher=var["cross_connect_macsec_properties_encryption_cipher"],
+                is_unprotected_traffic_allowed=var["cross_connect_macsec_properties_is_unprotected_traffic_allowed"],
+                primary_key=oci.core.CrossConnectMacsecPropertiesPrimaryKeyArgs(
+                    connectivity_association_key_secret_id=oci_vault_secret["test_secret"]["id"],
+                    connectivity_association_name_secret_id=oci_vault_secret["test_secret"]["id"],
+                ),
+            ),
             near_cross_connect_or_cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
         ```
 
@@ -588,9 +597,9 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
-        :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
-        :param pulumi.Input[pulumi.InputType['CrossConnectMacsecPropertiesArgs']] macsec_properties: Properties used for MACsec (if capable).
-        :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        :param pulumi.Input[pulumi.InputType['CrossConnectMacsecPropertiesArgs']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[str] port_speed_shape_name: The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
                
                
@@ -646,6 +655,15 @@ class CrossConnect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            macsec_properties=oci.core.CrossConnectMacsecPropertiesArgs(
+                state=var["cross_connect_macsec_properties_state"],
+                encryption_cipher=var["cross_connect_macsec_properties_encryption_cipher"],
+                is_unprotected_traffic_allowed=var["cross_connect_macsec_properties_is_unprotected_traffic_allowed"],
+                primary_key=oci.core.CrossConnectMacsecPropertiesPrimaryKeyArgs(
+                    connectivity_association_key_secret_id=oci_vault_secret["test_secret"]["id"],
+                    connectivity_association_name_secret_id=oci_vault_secret["test_secret"]["id"],
+                ),
+            ),
             near_cross_connect_or_cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
         ```
 
@@ -758,9 +776,9 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
-        :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
-        :param pulumi.Input[pulumi.InputType['CrossConnectMacsecPropertiesArgs']] macsec_properties: Properties used for MACsec (if capable).
-        :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        :param pulumi.Input[pulumi.InputType['CrossConnectMacsecPropertiesArgs']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
         :param pulumi.Input[str] port_name: A string identifying the meet-me room port for this cross-connect.
@@ -769,7 +787,7 @@ class CrossConnect(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The cross-connect's current state.
+        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
         :param pulumi.Input[str] time_created: The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -863,7 +881,7 @@ class CrossConnect(pulumi.CustomResource):
     @pulumi.getter(name="locationName")
     def location_name(self) -> pulumi.Output[str]:
         """
-        The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         """
         return pulumi.get(self, "location_name")
 
@@ -871,7 +889,7 @@ class CrossConnect(pulumi.CustomResource):
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> pulumi.Output['outputs.CrossConnectMacsecProperties']:
         """
-        Properties used for MACsec (if capable).
+        (Updatable) Properties used to configure MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
 
@@ -879,7 +897,7 @@ class CrossConnect(pulumi.CustomResource):
     @pulumi.getter(name="nearCrossConnectOrCrossConnectGroupId")
     def near_cross_connect_or_cross_connect_group_id(self) -> pulumi.Output[str]:
         """
-        If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         """
         return pulumi.get(self, "near_cross_connect_or_cross_connect_group_id")
 
@@ -923,7 +941,7 @@ class CrossConnect(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The cross-connect's current state.
+        (Updatable) Indicates whether or not MACsec is enabled.
         """
         return pulumi.get(self, "state")
 

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet;
 import com.pulumi.oci.Core.outputs.ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet;
 import java.lang.String;
 import java.util.List;
@@ -24,10 +25,15 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
      */
     private @Nullable List<String> faultDomains;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
     private @Nullable String primarySubnetId;
+    /**
+     * @return Details about the IPv6 primary subnet.
+     * 
+     */
+    private @Nullable List<ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
     /**
      * @return The set of secondary VNIC data for instances in the pool.
      * 
@@ -50,11 +56,18 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
         return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
     public Optional<String> primarySubnetId() {
         return Optional.ofNullable(this.primarySubnetId);
+    }
+    /**
+     * @return Details about the IPv6 primary subnet.
+     * 
+     */
+    public List<ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets() {
+        return this.primaryVnicSubnets == null ? List.of() : this.primaryVnicSubnets;
     }
     /**
      * @return The set of secondary VNIC data for instances in the pool.
@@ -76,6 +89,7 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
         private @Nullable String availabilityDomain;
         private @Nullable List<String> faultDomains;
         private @Nullable String primarySubnetId;
+        private @Nullable List<ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
         private @Nullable List<ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
         public Builder() {}
         public Builder(ClusterNetworkInstancePoolPlacementConfiguration defaults) {
@@ -83,6 +97,7 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.faultDomains = defaults.faultDomains;
     	      this.primarySubnetId = defaults.primarySubnetId;
+    	      this.primaryVnicSubnets = defaults.primaryVnicSubnets;
     	      this.secondaryVnicSubnets = defaults.secondaryVnicSubnets;
         }
 
@@ -105,6 +120,14 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder primaryVnicSubnets(@Nullable List<ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets) {
+            this.primaryVnicSubnets = primaryVnicSubnets;
+            return this;
+        }
+        public Builder primaryVnicSubnets(ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet... primaryVnicSubnets) {
+            return primaryVnicSubnets(List.of(primaryVnicSubnets));
+        }
+        @CustomType.Setter
         public Builder secondaryVnicSubnets(@Nullable List<ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
             this.secondaryVnicSubnets = secondaryVnicSubnets;
             return this;
@@ -117,6 +140,7 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
             o.availabilityDomain = availabilityDomain;
             o.faultDomains = faultDomains;
             o.primarySubnetId = primarySubnetId;
+            o.primaryVnicSubnets = primaryVnicSubnets;
             o.secondaryVnicSubnets = secondaryVnicSubnets;
             return o;
         }

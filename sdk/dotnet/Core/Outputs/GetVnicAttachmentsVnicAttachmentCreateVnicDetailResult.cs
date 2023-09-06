@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult
     {
+        public readonly bool AssignIpv6ip;
         public readonly bool AssignPrivateDnsRecord;
         public readonly string AssignPublicIp;
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -22,6 +23,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string DisplayName;
         public readonly ImmutableDictionary<string, object> FreeformTags;
         public readonly string HostnameLabel;
+        public readonly ImmutableArray<Outputs.GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> Ipv6addressIpv6subnetCidrPairDetails;
         public readonly ImmutableArray<string> NsgIds;
         public readonly string PrivateIp;
         public readonly bool SkipSourceDestCheck;
@@ -36,6 +38,8 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(
+            bool assignIpv6ip,
+
             bool assignPrivateDnsRecord,
 
             string assignPublicIp,
@@ -48,6 +52,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string hostnameLabel,
 
+            ImmutableArray<Outputs.GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> ipv6addressIpv6subnetCidrPairDetails,
+
             ImmutableArray<string> nsgIds,
 
             string privateIp,
@@ -58,12 +64,14 @@ namespace Pulumi.Oci.Core.Outputs
 
             string vlanId)
         {
+            AssignIpv6ip = assignIpv6ip;
             AssignPrivateDnsRecord = assignPrivateDnsRecord;
             AssignPublicIp = assignPublicIp;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             HostnameLabel = hostnameLabel;
+            Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
             SkipSourceDestCheck = skipSourceDestCheck;

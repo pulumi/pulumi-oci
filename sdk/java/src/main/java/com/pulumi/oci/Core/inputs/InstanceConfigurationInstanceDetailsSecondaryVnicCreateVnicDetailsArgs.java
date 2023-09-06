@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -18,6 +19,21 @@ import javax.annotation.Nullable;
 public final class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs Empty = new InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs();
+
+    /**
+     * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    @Import(name="assignIpv6ip")
+    private @Nullable Output<Boolean> assignIpv6ip;
+
+    /**
+     * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    public Optional<Output<Boolean>> assignIpv6ip() {
+        return Optional.ofNullable(this.assignIpv6ip);
+    }
 
     /**
      * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -110,6 +126,21 @@ public final class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDe
     }
 
     /**
+     * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
+    @Import(name="ipv6addressIpv6subnetCidrPairDetails")
+    private @Nullable Output<List<InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>> ipv6addressIpv6subnetCidrPairDetails;
+
+    /**
+     * @return A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
+    public Optional<Output<List<InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>>> ipv6addressIpv6subnetCidrPairDetails() {
+        return Optional.ofNullable(this.ipv6addressIpv6subnetCidrPairDetails);
+    }
+
+    /**
      * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
@@ -172,12 +203,14 @@ public final class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDe
     private InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs() {}
 
     private InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs(InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs $) {
+        this.assignIpv6ip = $.assignIpv6ip;
         this.assignPrivateDnsRecord = $.assignPrivateDnsRecord;
         this.assignPublicIp = $.assignPublicIp;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.hostnameLabel = $.hostnameLabel;
+        this.ipv6addressIpv6subnetCidrPairDetails = $.ipv6addressIpv6subnetCidrPairDetails;
         this.nsgIds = $.nsgIds;
         this.privateIp = $.privateIp;
         this.skipSourceDestCheck = $.skipSourceDestCheck;
@@ -200,6 +233,27 @@ public final class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDe
 
         public Builder(InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs defaults) {
             $ = new InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param assignIpv6ip Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignIpv6ip(@Nullable Output<Boolean> assignIpv6ip) {
+            $.assignIpv6ip = assignIpv6ip;
+            return this;
+        }
+
+        /**
+         * @param assignIpv6ip Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignIpv6ip(Boolean assignIpv6ip) {
+            return assignIpv6ip(Output.of(assignIpv6ip));
         }
 
         /**
@@ -326,6 +380,37 @@ public final class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDe
          */
         public Builder hostnameLabel(String hostnameLabel) {
             return hostnameLabel(Output.of(hostnameLabel));
+        }
+
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable Output<List<InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>> ipv6addressIpv6subnetCidrPairDetails) {
+            $.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            return this;
+        }
+
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6addressIpv6subnetCidrPairDetails(List<InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs> ipv6addressIpv6subnetCidrPairDetails) {
+            return ipv6addressIpv6subnetCidrPairDetails(Output.of(ipv6addressIpv6subnetCidrPairDetails));
+        }
+
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6addressIpv6subnetCidrPairDetails(InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs... ipv6addressIpv6subnetCidrPairDetails) {
+            return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
         }
 
         /**

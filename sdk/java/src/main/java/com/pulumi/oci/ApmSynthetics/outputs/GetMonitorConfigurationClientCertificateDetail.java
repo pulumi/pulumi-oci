@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitorConfigurationClientCertificateDetail {
     /**
-     * @return Client certificate in pem format.
+     * @return Client certificate in PEM format.
      * 
      */
     private List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates;
     /**
-     * @return The private key associated with the client certificate in pem format.
+     * @return The private key associated with the client certificate in PEM format.
      * 
      */
     private List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys;
 
     private GetMonitorConfigurationClientCertificateDetail() {}
     /**
-     * @return Client certificate in pem format.
+     * @return Client certificate in PEM format.
      * 
      */
     public List<GetMonitorConfigurationClientCertificateDetailClientCertificate> clientCertificates() {
         return this.clientCertificates;
     }
     /**
-     * @return The private key associated with the client certificate in pem format.
+     * @return The private key associated with the client certificate in PEM format.
      * 
      */
     public List<GetMonitorConfigurationClientCertificateDetailPrivateKey> privateKeys() {

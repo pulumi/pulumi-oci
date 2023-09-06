@@ -51,6 +51,17 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         MacsecProperties = new Oci.Core.Inputs.CrossConnectGroupMacsecPropertiesArgs
+    ///         {
+    ///             State = @var.Cross_connect_group_macsec_properties_state,
+    ///             EncryptionCipher = @var.Cross_connect_group_macsec_properties_encryption_cipher,
+    ///             IsUnprotectedTrafficAllowed = @var.Cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+    ///             PrimaryKey = new Oci.Core.Inputs.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs
+    ///             {
+    ///                 ConnectivityAssociationKeySecretId = oci_vault_secret.Test_secret.Id,
+    ///                 ConnectivityAssociationNameSecretId = oci_vault_secret.Test_secret.Id,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -92,17 +103,13 @@ namespace Pulumi.Oci.Core
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Properties used for MACsec (if capable).
+        /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Output("macsecProperties")]
         public Output<Outputs.CrossConnectGroupMacsecProperties> MacsecProperties { get; private set; } = null!;
@@ -120,7 +127,11 @@ namespace Pulumi.Oci.Core
         public Output<string> OciPhysicalDeviceName { get; private set; } = null!;
 
         /// <summary>
-        /// The cross-connect group's current state.
+        /// (Updatable) Indicates whether or not MACsec is enabled.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -211,11 +222,7 @@ namespace Pulumi.Oci.Core
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -224,7 +231,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// Properties used for MACsec (if capable).
+        /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Input("macsecProperties")]
         public Input<Inputs.CrossConnectGroupMacsecPropertiesArgs>? MacsecProperties { get; set; }
@@ -271,11 +278,7 @@ namespace Pulumi.Oci.Core
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -284,7 +287,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// Properties used for MACsec (if capable).
+        /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Input("macsecProperties")]
         public Input<Inputs.CrossConnectGroupMacsecPropertiesGetArgs>? MacsecProperties { get; set; }
@@ -302,7 +305,11 @@ namespace Pulumi.Oci.Core
         public Input<string>? OciPhysicalDeviceName { get; set; }
 
         /// <summary>
-        /// The cross-connect group's current state.
+        /// (Updatable) Indicates whether or not MACsec is enabled.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -30,12 +30,14 @@ namespace Pulumi.Oci.Core
     ///     {
     ///         CreateVnicDetails = new Oci.Core.Inputs.VnicAttachmentCreateVnicDetailsArgs
     ///         {
+    ///             AssignIpv6ip = @var.Vnic_attachment_create_vnic_details_assign_ipv6ip,
     ///             AssignPrivateDnsRecord = @var.Vnic_attachment_create_vnic_details_assign_private_dns_record,
     ///             AssignPublicIp = @var.Vnic_attachment_create_vnic_details_assign_public_ip,
     ///             DefinedTags = @var.Vnic_attachment_create_vnic_details_defined_tags,
     ///             DisplayName = @var.Vnic_attachment_create_vnic_details_display_name,
     ///             FreeformTags = @var.Vnic_attachment_create_vnic_details_freeform_tags,
     ///             HostnameLabel = @var.Vnic_attachment_create_vnic_details_hostname_label,
+    ///             Ipv6addressIpv6subnetCidrPairDetails = @var.Vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details,
     ///             NsgIds = @var.Vnic_attachment_create_vnic_details_nsg_ids,
     ///             PrivateIp = @var.Vnic_attachment_create_vnic_details_private_ip,
     ///             SkipSourceDestCheck = @var.Vnic_attachment_create_vnic_details_skip_source_dest_check,

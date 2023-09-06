@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails
     {
         /// <summary>
+        /// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        /// </summary>
+        public readonly bool? AssignIpv6ip;
+        /// <summary>
         /// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         /// </summary>
         public readonly bool? AssignPrivateDnsRecord;
@@ -38,6 +42,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? HostnameLabel;
         /// <summary>
+        /// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> Ipv6addressIpv6subnetCidrPairDetails;
+        /// <summary>
         /// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
@@ -56,6 +64,8 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(
+            bool? assignIpv6ip,
+
             bool? assignPrivateDnsRecord,
 
             bool? assignPublicIp,
@@ -68,6 +78,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? hostnameLabel,
 
+            ImmutableArray<Outputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails,
+
             ImmutableArray<string> nsgIds,
 
             string? privateIp,
@@ -76,12 +88,14 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? subnetId)
         {
+            AssignIpv6ip = assignIpv6ip;
             AssignPrivateDnsRecord = assignPrivateDnsRecord;
             AssignPublicIp = assignPublicIp;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             HostnameLabel = hostnameLabel;
+            Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
             SkipSourceDestCheck = skipSourceDestCheck;

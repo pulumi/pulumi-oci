@@ -12,11 +12,11 @@ namespace Pulumi.Oci.GoldenGate.Inputs
 
     public sealed class DeploymentOggDataGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("adminPassword", required: true)]
+        [Input("adminPassword")]
         private Input<string>? _adminPassword;
 
         /// <summary>
-        /// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+        /// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         /// </summary>
         public Input<string>? AdminPassword
         {
@@ -31,8 +31,8 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         /// <summary>
         /// (Updatable) The GoldenGate deployment console username.
         /// </summary>
-        [Input("adminUsername", required: true)]
-        public Input<string> AdminUsername { get; set; } = null!;
+        [Input("adminUsername")]
+        public Input<string>? AdminUsername { get; set; }
 
         /// <summary>
         /// (Updatable) A PEM-encoded SSL certificate.
@@ -41,10 +41,22 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? Certificate { get; set; }
 
         /// <summary>
+        /// (Updatable) The type of credential store for OGG.
+        /// </summary>
+        [Input("credentialStore")]
+        public Input<string>? CredentialStore { get; set; }
+
+        /// <summary>
         /// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         /// </summary>
         [Input("deploymentName", required: true)]
         public Input<string> DeploymentName { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+        /// </summary>
+        [Input("identityDomainId")]
+        public Input<string>? IdentityDomainId { get; set; }
 
         /// <summary>
         /// (Updatable) A PEM-encoded private key.
@@ -57,6 +69,22 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         /// </summary>
         [Input("oggVersion")]
         public Input<string>? OggVersion { get; set; }
+
+        [Input("passwordSecretId")]
+        private Input<string>? _passwordSecretId;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+        /// </summary>
+        public Input<string>? PasswordSecretId
+        {
+            get => _passwordSecretId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _passwordSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public DeploymentOggDataGetArgs()
         {

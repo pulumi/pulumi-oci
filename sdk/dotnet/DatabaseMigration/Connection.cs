@@ -65,6 +65,11 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             SubnetId = oci_core_subnet.Test_subnet.Id,
     ///             VcnId = oci_core_vcn.Test_vcn.Id,
     ///         },
+    ///         ReplicationCredentials = new Oci.DatabaseMigration.Inputs.ConnectionReplicationCredentialsArgs
+    ///         {
+    ///             Password = @var.Connection_replication_credentials_password,
+    ///             Username = @var.Connection_replication_credentials_username,
+    ///         },
     ///         SshDetails = new Oci.DatabaseMigration.Inputs.ConnectionSshDetailsArgs
     ///         {
     ///             Host = @var.Connection_ssh_details_host,
@@ -167,6 +172,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Output("privateEndpoint")]
         public Output<Outputs.ConnectionPrivateEndpoint> PrivateEndpoint { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Database Administrator Credentials details.
+        /// </summary>
+        [Output("replicationCredentials")]
+        public Output<Outputs.ConnectionReplicationCredentials> ReplicationCredentials { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
@@ -347,6 +358,12 @@ namespace Pulumi.Oci.DatabaseMigration
         public Input<Inputs.ConnectionPrivateEndpointArgs>? PrivateEndpoint { get; set; }
 
         /// <summary>
+        /// (Updatable) Database Administrator Credentials details.
+        /// </summary>
+        [Input("replicationCredentials")]
+        public Input<Inputs.ConnectionReplicationCredentialsArgs>? ReplicationCredentials { get; set; }
+
+        /// <summary>
         /// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         /// </summary>
         [Input("sshDetails")]
@@ -473,6 +490,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("privateEndpoint")]
         public Input<Inputs.ConnectionPrivateEndpointGetArgs>? PrivateEndpoint { get; set; }
+
+        /// <summary>
+        /// (Updatable) Database Administrator Credentials details.
+        /// </summary>
+        [Input("replicationCredentials")]
+        public Input<Inputs.ConnectionReplicationCredentialsGetArgs>? ReplicationCredentials { get; set; }
 
         /// <summary>
         /// (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs;
 import java.lang.String;
 import java.util.List;
@@ -40,18 +41,33 @@ public final class ClusterNetworkPlacementConfigurationArgs extends com.pulumi.r
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
-    @Import(name="primarySubnetId", required=true)
-    private Output<String> primarySubnetId;
+    @Import(name="primarySubnetId")
+    private @Nullable Output<String> primarySubnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
-    public Output<String> primarySubnetId() {
-        return this.primarySubnetId;
+    public Optional<Output<String>> primarySubnetId() {
+        return Optional.ofNullable(this.primarySubnetId);
+    }
+
+    /**
+     * Details about the IPv6 primary subnet.
+     * 
+     */
+    @Import(name="primaryVnicSubnets")
+    private @Nullable Output<ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs> primaryVnicSubnets;
+
+    /**
+     * @return Details about the IPv6 primary subnet.
+     * 
+     */
+    public Optional<Output<ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs>> primaryVnicSubnets() {
+        return Optional.ofNullable(this.primaryVnicSubnets);
     }
 
     /**
@@ -75,6 +91,7 @@ public final class ClusterNetworkPlacementConfigurationArgs extends com.pulumi.r
         this.availabilityDomain = $.availabilityDomain;
         this.placementConstraint = $.placementConstraint;
         this.primarySubnetId = $.primarySubnetId;
+        this.primaryVnicSubnets = $.primaryVnicSubnets;
         this.secondaryVnicSubnets = $.secondaryVnicSubnets;
     }
 
@@ -127,24 +144,45 @@ public final class ClusterNetworkPlacementConfigurationArgs extends com.pulumi.r
         }
 
         /**
-         * @param primarySubnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         * @param primarySubnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
          * 
          * @return builder
          * 
          */
-        public Builder primarySubnetId(Output<String> primarySubnetId) {
+        public Builder primarySubnetId(@Nullable Output<String> primarySubnetId) {
             $.primarySubnetId = primarySubnetId;
             return this;
         }
 
         /**
-         * @param primarySubnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         * @param primarySubnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
          * 
          * @return builder
          * 
          */
         public Builder primarySubnetId(String primarySubnetId) {
             return primarySubnetId(Output.of(primarySubnetId));
+        }
+
+        /**
+         * @param primaryVnicSubnets Details about the IPv6 primary subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryVnicSubnets(@Nullable Output<ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs> primaryVnicSubnets) {
+            $.primaryVnicSubnets = primaryVnicSubnets;
+            return this;
+        }
+
+        /**
+         * @param primaryVnicSubnets Details about the IPv6 primary subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryVnicSubnets(ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs primaryVnicSubnets) {
+            return primaryVnicSubnets(Output.of(primaryVnicSubnets));
         }
 
         /**
@@ -180,7 +218,6 @@ public final class ClusterNetworkPlacementConfigurationArgs extends com.pulumi.r
 
         public ClusterNetworkPlacementConfigurationArgs build() {
             $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.primarySubnetId = Objects.requireNonNull($.primarySubnetId, "expected parameter 'primarySubnetId' to be non-null");
             return $;
         }
     }

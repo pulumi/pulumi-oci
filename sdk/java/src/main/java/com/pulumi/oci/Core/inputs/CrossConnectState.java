@@ -140,14 +140,14 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      * 
      */
     @Import(name="locationName")
     private @Nullable Output<String> locationName;
 
     /**
-     * @return The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+     * @return The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      * 
      */
     public Optional<Output<String>> locationName() {
@@ -155,14 +155,14 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Properties used for MACsec (if capable).
+     * (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
     @Import(name="macsecProperties")
     private @Nullable Output<CrossConnectMacsecPropertiesArgs> macsecProperties;
 
     /**
-     * @return Properties used for MACsec (if capable).
+     * @return (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
     public Optional<Output<CrossConnectMacsecPropertiesArgs>> macsecProperties() {
@@ -170,14 +170,14 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
     @Import(name="nearCrossConnectOrCrossConnectGroupId")
     private @Nullable Output<String> nearCrossConnectOrCrossConnectGroupId;
 
     /**
-     * @return If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+     * @return If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
     public Optional<Output<String>> nearCrossConnectOrCrossConnectGroupId() {
@@ -251,14 +251,14 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The cross-connect&#39;s current state.
+     * (Updatable) Indicates whether or not MACsec is enabled.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The cross-connect&#39;s current state.
+     * @return (Updatable) Indicates whether or not MACsec is enabled.
      * 
      */
     public Optional<Output<String>> state() {
@@ -489,7 +489,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param locationName The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+         * @param locationName The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param locationName The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+         * @param locationName The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
          * 
          * @return builder
          * 
@@ -510,7 +510,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param macsecProperties Properties used for MACsec (if capable).
+         * @param macsecProperties (Updatable) Properties used to configure MACsec (if capable).
          * 
          * @return builder
          * 
@@ -521,7 +521,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param macsecProperties Properties used for MACsec (if capable).
+         * @param macsecProperties (Updatable) Properties used to configure MACsec (if capable).
          * 
          * @return builder
          * 
@@ -531,7 +531,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nearCrossConnectOrCrossConnectGroupId If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+         * @param nearCrossConnectOrCrossConnectGroupId If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
          * 
          * @return builder
          * 
@@ -542,7 +542,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nearCrossConnectOrCrossConnectGroupId If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+         * @param nearCrossConnectOrCrossConnectGroupId If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
          * 
          * @return builder
          * 
@@ -642,7 +642,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The cross-connect&#39;s current state.
+         * @param state (Updatable) Indicates whether or not MACsec is enabled.
          * 
          * @return builder
          * 
@@ -653,7 +653,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The cross-connect&#39;s current state.
+         * @param state (Updatable) Indicates whether or not MACsec is enabled.
          * 
          * @return builder
          * 

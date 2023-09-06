@@ -28,6 +28,7 @@ class ConnectionArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint: Optional[pulumi.Input['ConnectionPrivateEndpointArgs']] = None,
+                 replication_credentials: Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']] = None,
                  ssh_details: Optional[pulumi.Input['ConnectionSshDetailsArgs']] = None,
                  tls_keystore: Optional[pulumi.Input[str]] = None,
                  tls_wallet: Optional[pulumi.Input[str]] = None):
@@ -45,6 +46,7 @@ class ConnectionArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input['ConnectionPrivateEndpointArgs'] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
+        :param pulumi.Input['ConnectionReplicationCredentialsArgs'] replication_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input['ConnectionSshDetailsArgs'] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         :param pulumi.Input[str] tls_keystore: (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
         :param pulumi.Input[str] tls_wallet: (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
@@ -69,6 +71,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint is not None:
             pulumi.set(__self__, "private_endpoint", private_endpoint)
+        if replication_credentials is not None:
+            pulumi.set(__self__, "replication_credentials", replication_credentials)
         if ssh_details is not None:
             pulumi.set(__self__, "ssh_details", ssh_details)
         if tls_keystore is not None:
@@ -221,6 +225,18 @@ class ConnectionArgs:
         pulumi.set(self, "private_endpoint", value)
 
     @property
+    @pulumi.getter(name="replicationCredentials")
+    def replication_credentials(self) -> Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']]:
+        """
+        (Updatable) Database Administrator Credentials details.
+        """
+        return pulumi.get(self, "replication_credentials")
+
+    @replication_credentials.setter
+    def replication_credentials(self, value: Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']]):
+        pulumi.set(self, "replication_credentials", value)
+
+    @property
     @pulumi.getter(name="sshDetails")
     def ssh_details(self) -> Optional[pulumi.Input['ConnectionSshDetailsArgs']]:
         """
@@ -273,6 +289,7 @@ class _ConnectionState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint: Optional[pulumi.Input['ConnectionPrivateEndpointArgs']] = None,
+                 replication_credentials: Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']] = None,
                  ssh_details: Optional[pulumi.Input['ConnectionSshDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -296,6 +313,7 @@ class _ConnectionState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input['ConnectionPrivateEndpointArgs'] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
+        :param pulumi.Input['ConnectionReplicationCredentialsArgs'] replication_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input['ConnectionSshDetailsArgs'] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         :param pulumi.Input[str] state: The current state of the Connection resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -331,6 +349,8 @@ class _ConnectionState:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint is not None:
             pulumi.set(__self__, "private_endpoint", private_endpoint)
+        if replication_credentials is not None:
+            pulumi.set(__self__, "replication_credentials", replication_credentials)
         if ssh_details is not None:
             pulumi.set(__self__, "ssh_details", ssh_details)
         if state is not None:
@@ -505,6 +525,18 @@ class _ConnectionState:
         pulumi.set(self, "private_endpoint", value)
 
     @property
+    @pulumi.getter(name="replicationCredentials")
+    def replication_credentials(self) -> Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']]:
+        """
+        (Updatable) Database Administrator Credentials details.
+        """
+        return pulumi.get(self, "replication_credentials")
+
+    @replication_credentials.setter
+    def replication_credentials(self, value: Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']]):
+        pulumi.set(self, "replication_credentials", value)
+
+    @property
     @pulumi.getter(name="sshDetails")
     def ssh_details(self) -> Optional[pulumi.Input['ConnectionSshDetailsArgs']]:
         """
@@ -617,6 +649,7 @@ class Connection(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint: Optional[pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']]] = None,
+                 replication_credentials: Optional[pulumi.Input[pulumi.InputType['ConnectionReplicationCredentialsArgs']]] = None,
                  ssh_details: Optional[pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']]] = None,
                  tls_keystore: Optional[pulumi.Input[str]] = None,
                  tls_wallet: Optional[pulumi.Input[str]] = None,
@@ -667,6 +700,10 @@ class Connection(pulumi.CustomResource):
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
                 vcn_id=oci_core_vcn["test_vcn"]["id"],
             ),
+            replication_credentials=oci.database_migration.ConnectionReplicationCredentialsArgs(
+                password=var["connection_replication_credentials_password"],
+                username=var["connection_replication_credentials_username"],
+            ),
             ssh_details=oci.database_migration.ConnectionSshDetailsArgs(
                 host=var["connection_ssh_details_host"],
                 sshkey=var["connection_ssh_details_sshkey"],
@@ -698,6 +735,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
+        :param pulumi.Input[pulumi.InputType['ConnectionReplicationCredentialsArgs']] replication_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         :param pulumi.Input[str] tls_keystore: (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
         :param pulumi.Input[str] tls_wallet: (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
@@ -754,6 +792,10 @@ class Connection(pulumi.CustomResource):
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
                 vcn_id=oci_core_vcn["test_vcn"]["id"],
             ),
+            replication_credentials=oci.database_migration.ConnectionReplicationCredentialsArgs(
+                password=var["connection_replication_credentials_password"],
+                username=var["connection_replication_credentials_username"],
+            ),
             ssh_details=oci.database_migration.ConnectionSshDetailsArgs(
                 host=var["connection_ssh_details_host"],
                 sshkey=var["connection_ssh_details_sshkey"],
@@ -798,6 +840,7 @@ class Connection(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint: Optional[pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']]] = None,
+                 replication_credentials: Optional[pulumi.Input[pulumi.InputType['ConnectionReplicationCredentialsArgs']]] = None,
                  ssh_details: Optional[pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']]] = None,
                  tls_keystore: Optional[pulumi.Input[str]] = None,
                  tls_wallet: Optional[pulumi.Input[str]] = None,
@@ -828,6 +871,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_endpoint"] = private_endpoint
+            __props__.__dict__["replication_credentials"] = replication_credentials
             __props__.__dict__["ssh_details"] = ssh_details
             __props__.__dict__["tls_keystore"] = tls_keystore
             __props__.__dict__["tls_wallet"] = tls_wallet
@@ -863,6 +907,7 @@ class Connection(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_endpoint: Optional[pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']]] = None,
+            replication_credentials: Optional[pulumi.Input[pulumi.InputType['ConnectionReplicationCredentialsArgs']]] = None,
             ssh_details: Optional[pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -891,6 +936,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
+        :param pulumi.Input[pulumi.InputType['ConnectionReplicationCredentialsArgs']] replication_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
         :param pulumi.Input[str] state: The current state of the Connection resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -917,6 +963,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["private_endpoint"] = private_endpoint
+        __props__.__dict__["replication_credentials"] = replication_credentials
         __props__.__dict__["ssh_details"] = ssh_details
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -1030,6 +1077,14 @@ class Connection(pulumi.CustomResource):
         (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         """
         return pulumi.get(self, "private_endpoint")
+
+    @property
+    @pulumi.getter(name="replicationCredentials")
+    def replication_credentials(self) -> pulumi.Output['outputs.ConnectionReplicationCredentials']:
+        """
+        (Updatable) Database Administrator Credentials details.
+        """
+        return pulumi.get(self, "replication_credentials")
 
     @property
     @pulumi.getter(name="sshDetails")

@@ -53,14 +53,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous VM Cluster.
      * 
      */
     @Import(name="computeModel")
     private @Nullable Output<String> computeModel;
 
     /**
-     * @return The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Autonomous VM Cluster.
      * 
      */
     public Optional<Output<String>> computeModel() {
@@ -218,14 +218,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     @Import(name="memoryPerOracleComputeUnitInGbs")
     private @Nullable Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     public Optional<Output<Integer>> memoryPerOracleComputeUnitInGbs() {
@@ -398,7 +398,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * @param computeModel The compute model of the Autonomous VM Cluster.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * @param computeModel The compute model of the Autonomous VM Cluster.
          * 
          * @return builder
          * 
@@ -649,7 +649,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU.
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU.
          * 
          * @return builder
          * 

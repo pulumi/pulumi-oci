@@ -22,7 +22,7 @@ class GetMigrationResult:
     """
     A collection of values returned by getMigration.
     """
-    def __init__(__self__, advisor_settings=None, agent_id=None, compartment_id=None, credentials_secret_id=None, csv_text=None, data_transfer_medium_details=None, datapump_settings=None, defined_tags=None, display_name=None, dump_transfer_details=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, golden_gate_details=None, id=None, include_objects=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, vault_details=None, wait_after=None):
+    def __init__(__self__, advisor_settings=None, agent_id=None, compartment_id=None, credentials_secret_id=None, csv_text=None, data_transfer_medium_details=None, datapump_settings=None, defined_tags=None, display_name=None, dump_transfer_details=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, golden_gate_details=None, golden_gate_service_details=None, id=None, include_objects=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, vault_details=None, wait_after=None):
         if advisor_settings and not isinstance(advisor_settings, list):
             raise TypeError("Expected argument 'advisor_settings' to be a list")
         pulumi.set(__self__, "advisor_settings", advisor_settings)
@@ -65,6 +65,9 @@ class GetMigrationResult:
         if golden_gate_details and not isinstance(golden_gate_details, list):
             raise TypeError("Expected argument 'golden_gate_details' to be a list")
         pulumi.set(__self__, "golden_gate_details", golden_gate_details)
+        if golden_gate_service_details and not isinstance(golden_gate_service_details, list):
+            raise TypeError("Expected argument 'golden_gate_service_details' to be a list")
+        pulumi.set(__self__, "golden_gate_service_details", golden_gate_service_details)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -221,6 +224,14 @@ class GetMigrationResult:
         return pulumi.get(self, "golden_gate_details")
 
     @property
+    @pulumi.getter(name="goldenGateServiceDetails")
+    def golden_gate_service_details(self) -> Sequence['outputs.GetMigrationGoldenGateServiceDetailResult']:
+        """
+        Details about Oracle GoldenGate GGS Deployment.
+        """
+        return pulumi.get(self, "golden_gate_service_details")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -358,6 +369,7 @@ class AwaitableGetMigrationResult(GetMigrationResult):
             executing_job_id=self.executing_job_id,
             freeform_tags=self.freeform_tags,
             golden_gate_details=self.golden_gate_details,
+            golden_gate_service_details=self.golden_gate_service_details,
             id=self.id,
             include_objects=self.include_objects,
             lifecycle_details=self.lifecycle_details,
@@ -414,6 +426,7 @@ def get_migration(migration_id: Optional[str] = None,
         executing_job_id=pulumi.get(__ret__, 'executing_job_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         golden_gate_details=pulumi.get(__ret__, 'golden_gate_details'),
+        golden_gate_service_details=pulumi.get(__ret__, 'golden_gate_service_details'),
         id=pulumi.get(__ret__, 'id'),
         include_objects=pulumi.get(__ret__, 'include_objects'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),

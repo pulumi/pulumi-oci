@@ -23,7 +23,7 @@ class GetMysqlDbSystemsResult:
     """
     A collection of values returned by getMysqlDbSystems.
     """
-    def __init__(__self__, compartment_id=None, configuration_id=None, db_system_id=None, db_systems=None, display_name=None, filters=None, id=None, is_analytics_cluster_attached=None, is_heat_wave_cluster_attached=None, is_up_to_date=None, state=None):
+    def __init__(__self__, compartment_id=None, configuration_id=None, db_system_id=None, db_systems=None, display_name=None, filters=None, id=None, is_heat_wave_cluster_attached=None, is_up_to_date=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -45,9 +45,6 @@ class GetMysqlDbSystemsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
-        if is_analytics_cluster_attached and not isinstance(is_analytics_cluster_attached, bool):
-            raise TypeError("Expected argument 'is_analytics_cluster_attached' to be a bool")
-        pulumi.set(__self__, "is_analytics_cluster_attached", is_analytics_cluster_attached)
         if is_heat_wave_cluster_attached and not isinstance(is_heat_wave_cluster_attached, bool):
             raise TypeError("Expected argument 'is_heat_wave_cluster_attached' to be a bool")
         pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
@@ -112,14 +109,6 @@ class GetMysqlDbSystemsResult:
         return pulumi.get(self, "id")
 
     @property
-    @pulumi.getter(name="isAnalyticsClusterAttached")
-    def is_analytics_cluster_attached(self) -> Optional[bool]:
-        """
-        DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-        """
-        return pulumi.get(self, "is_analytics_cluster_attached")
-
-    @property
     @pulumi.getter(name="isHeatWaveClusterAttached")
     def is_heat_wave_cluster_attached(self) -> Optional[bool]:
         """
@@ -154,7 +143,6 @@ class AwaitableGetMysqlDbSystemsResult(GetMysqlDbSystemsResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
-            is_analytics_cluster_attached=self.is_analytics_cluster_attached,
             is_heat_wave_cluster_attached=self.is_heat_wave_cluster_attached,
             is_up_to_date=self.is_up_to_date,
             state=self.state)
@@ -165,7 +153,6 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
                          db_system_id: Optional[str] = None,
                          display_name: Optional[str] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetMysqlDbSystemsFilterArgs']]] = None,
-                         is_analytics_cluster_attached: Optional[bool] = None,
                          is_heat_wave_cluster_attached: Optional[bool] = None,
                          is_up_to_date: Optional[bool] = None,
                          state: Optional[str] = None,
@@ -186,7 +173,6 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
         configuration_id=var["mysql_configuration_id"],
         db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
         display_name=var["mysql_db_system_display_name"],
-        is_analytics_cluster_attached=var["mysql_db_system_is_analytics_cluster_attached"],
         is_heat_wave_cluster_attached=var["mysql_db_system_is_heat_wave_cluster_attached"],
         is_up_to_date=var["mysql_db_system_is_up_to_date"],
         state=var["mysql_db_system_state"])
@@ -197,7 +183,6 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
     :param str configuration_id: The requested Configuration instance.
     :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param bool is_analytics_cluster_attached: DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
     :param bool is_heat_wave_cluster_attached: If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
     :param bool is_up_to_date: Filter instances if they are using the latest revision of the Configuration they are associated with.
     :param str state: DbSystem Lifecycle State
@@ -208,7 +193,6 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
     __args__['dbSystemId'] = db_system_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    __args__['isAnalyticsClusterAttached'] = is_analytics_cluster_attached
     __args__['isHeatWaveClusterAttached'] = is_heat_wave_cluster_attached
     __args__['isUpToDate'] = is_up_to_date
     __args__['state'] = state
@@ -223,7 +207,6 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
-        is_analytics_cluster_attached=pulumi.get(__ret__, 'is_analytics_cluster_attached'),
         is_heat_wave_cluster_attached=pulumi.get(__ret__, 'is_heat_wave_cluster_attached'),
         is_up_to_date=pulumi.get(__ret__, 'is_up_to_date'),
         state=pulumi.get(__ret__, 'state'))
@@ -235,7 +218,6 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMysqlDbSystemsFilterArgs']]]]] = None,
-                                is_analytics_cluster_attached: Optional[pulumi.Input[Optional[bool]]] = None,
                                 is_heat_wave_cluster_attached: Optional[pulumi.Input[Optional[bool]]] = None,
                                 is_up_to_date: Optional[pulumi.Input[Optional[bool]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -256,7 +238,6 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
         configuration_id=var["mysql_configuration_id"],
         db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
         display_name=var["mysql_db_system_display_name"],
-        is_analytics_cluster_attached=var["mysql_db_system_is_analytics_cluster_attached"],
         is_heat_wave_cluster_attached=var["mysql_db_system_is_heat_wave_cluster_attached"],
         is_up_to_date=var["mysql_db_system_is_up_to_date"],
         state=var["mysql_db_system_state"])
@@ -267,7 +248,6 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
     :param str configuration_id: The requested Configuration instance.
     :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param bool is_analytics_cluster_attached: DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
     :param bool is_heat_wave_cluster_attached: If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
     :param bool is_up_to_date: Filter instances if they are using the latest revision of the Configuration they are associated with.
     :param str state: DbSystem Lifecycle State

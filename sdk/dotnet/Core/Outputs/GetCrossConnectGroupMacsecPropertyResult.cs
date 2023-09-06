@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string EncryptionCipher;
         /// <summary>
+        /// Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+        /// </summary>
+        public readonly bool IsUnprotectedTrafficAllowed;
+        /// <summary>
         /// An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCrossConnectGroupMacsecPropertyPrimaryKeyResult> PrimaryKeys;
@@ -30,11 +34,14 @@ namespace Pulumi.Oci.Core.Outputs
         private GetCrossConnectGroupMacsecPropertyResult(
             string encryptionCipher,
 
+            bool isUnprotectedTrafficAllowed,
+
             ImmutableArray<Outputs.GetCrossConnectGroupMacsecPropertyPrimaryKeyResult> primaryKeys,
 
             string state)
         {
             EncryptionCipher = encryptionCipher;
+            IsUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
             PrimaryKeys = primaryKeys;
             State = state;
         }

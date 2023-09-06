@@ -23,14 +23,26 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string Certificate;
         /// <summary>
+        /// The type of credential store for OGG.
+        /// </summary>
+        public readonly string CredentialStore;
+        /// <summary>
         /// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         /// </summary>
         public readonly string DeploymentName;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+        /// </summary>
+        public readonly string IdentityDomainId;
         public readonly string Key;
         /// <summary>
         /// Version of OGG
         /// </summary>
         public readonly string OggVersion;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+        /// </summary>
+        public readonly string PasswordSecretId;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemOggDataResult(
@@ -40,18 +52,27 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string certificate,
 
+            string credentialStore,
+
             string deploymentName,
+
+            string identityDomainId,
 
             string key,
 
-            string oggVersion)
+            string oggVersion,
+
+            string passwordSecretId)
         {
             AdminPassword = adminPassword;
             AdminUsername = adminUsername;
             Certificate = certificate;
+            CredentialStore = credentialStore;
             DeploymentName = deploymentName;
+            IdentityDomainId = identityDomainId;
             Key = key;
             OggVersion = oggVersion;
+            PasswordSecretId = passwordSecretId;
         }
     }
 }

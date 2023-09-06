@@ -13,19 +13,29 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class CrossConnectGroupMacsecPropertiesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Type of encryption cipher suite to use for the MACsec connection.
+        /// (Updatable) Type of encryption cipher suite to use for the MACsec connection.
         /// </summary>
         [Input("encryptionCipher")]
         public Input<string>? EncryptionCipher { get; set; }
 
         /// <summary>
-        /// An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+        /// (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+        /// </summary>
+        [Input("isUnprotectedTrafficAllowed")]
+        public Input<bool>? IsUnprotectedTrafficAllowed { get; set; }
+
+        /// <summary>
+        /// (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
         /// </summary>
         [Input("primaryKey")]
         public Input<Inputs.CrossConnectGroupMacsecPropertiesPrimaryKeyGetArgs>? PrimaryKey { get; set; }
 
         /// <summary>
-        /// The cross-connect group's current state.
+        /// (Updatable) Indicates whether or not MACsec is enabled.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state", required: true)]
         public Input<string> State { get; set; } = null!;

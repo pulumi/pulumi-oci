@@ -85,21 +85,6 @@ public final class GetMysqlDbSystemsPlainArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-     * 
-     */
-    @Import(name="isAnalyticsClusterAttached")
-    private @Nullable Boolean isAnalyticsClusterAttached;
-
-    /**
-     * @return DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-     * 
-     */
-    public Optional<Boolean> isAnalyticsClusterAttached() {
-        return Optional.ofNullable(this.isAnalyticsClusterAttached);
-    }
-
-    /**
      * If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
      * 
      */
@@ -152,7 +137,6 @@ public final class GetMysqlDbSystemsPlainArgs extends com.pulumi.resources.Invok
         this.dbSystemId = $.dbSystemId;
         this.displayName = $.displayName;
         this.filters = $.filters;
-        this.isAnalyticsClusterAttached = $.isAnalyticsClusterAttached;
         this.isHeatWaveClusterAttached = $.isHeatWaveClusterAttached;
         this.isUpToDate = $.isUpToDate;
         this.state = $.state;
@@ -227,17 +211,6 @@ public final class GetMysqlDbSystemsPlainArgs extends com.pulumi.resources.Invok
 
         public Builder filters(GetMysqlDbSystemsFilter... filters) {
             return filters(List.of(filters));
-        }
-
-        /**
-         * @param isAnalyticsClusterAttached DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isAnalyticsClusterAttached(@Nullable Boolean isAnalyticsClusterAttached) {
-            $.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-            return this;
         }
 
         /**

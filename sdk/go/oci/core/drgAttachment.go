@@ -26,46 +26,6 @@ import (
 // For more information about compartments and access control, see
 // [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDrgAttachment(ctx, "testDrgAttachment", &Core.DrgAttachmentArgs{
-//				DrgId: pulumi.Any(oci_core_drg.Test_drg.Id),
-//				DefinedTags: pulumi.AnyMap{
-//					"Operations.CostCenter": pulumi.Any("42"),
-//				},
-//				DisplayName:     pulumi.Any(_var.Drg_attachment_display_name),
-//				DrgRouteTableId: pulumi.Any(oci_core_drg_route_table.Test_drg_route_table.Id),
-//				FreeformTags: pulumi.AnyMap{
-//					"Department": pulumi.Any("Finance"),
-//				},
-//				NetworkDetails: &core.DrgAttachmentNetworkDetailsArgs{
-//					Id:           pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//					Type:         pulumi.Any(_var.Drg_attachment_network_details_type),
-//					RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
-//					VcnRouteType: pulumi.Any(_var.Drg_attachment_network_details_vcn_route_type),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // DrgAttachments can be imported using the `id`, e.g.

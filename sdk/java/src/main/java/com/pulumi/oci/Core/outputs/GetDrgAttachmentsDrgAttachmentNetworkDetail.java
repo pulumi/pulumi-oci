@@ -4,7 +4,9 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -14,6 +16,11 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
      * 
      */
     private String id;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+     * 
+     */
+    private List<String> ids;
     /**
      * @return The IPSec connection that contains the attached IPSec tunnel.
      * 
@@ -25,7 +32,17 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
      */
     private String routeTableId;
     /**
-     * @return The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit&#39;s DRG attachment.
+     * 
+     */
+    private String transportAttachmentId;
+    /**
+     * @return Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+     * 
+     */
+    private Boolean transportOnlyMode;
+    /**
+     * @return The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
      * 
      */
     private String type;
@@ -44,6 +61,13 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
         return this.id;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+     * 
+     */
+    public List<String> ids() {
+        return this.ids;
+    }
+    /**
      * @return The IPSec connection that contains the attached IPSec tunnel.
      * 
      */
@@ -58,7 +82,21 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
         return this.routeTableId;
     }
     /**
-     * @return The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit&#39;s DRG attachment.
+     * 
+     */
+    public String transportAttachmentId() {
+        return this.transportAttachmentId;
+    }
+    /**
+     * @return Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+     * 
+     */
+    public Boolean transportOnlyMode() {
+        return this.transportOnlyMode;
+    }
+    /**
+     * @return The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
      * 
      */
     public String type() {
@@ -82,16 +120,22 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
     @CustomType.Builder
     public static final class Builder {
         private String id;
+        private List<String> ids;
         private String ipsecConnectionId;
         private String routeTableId;
+        private String transportAttachmentId;
+        private Boolean transportOnlyMode;
         private String type;
         private String vcnRouteType;
         public Builder() {}
         public Builder(GetDrgAttachmentsDrgAttachmentNetworkDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
+    	      this.ids = defaults.ids;
     	      this.ipsecConnectionId = defaults.ipsecConnectionId;
     	      this.routeTableId = defaults.routeTableId;
+    	      this.transportAttachmentId = defaults.transportAttachmentId;
+    	      this.transportOnlyMode = defaults.transportOnlyMode;
     	      this.type = defaults.type;
     	      this.vcnRouteType = defaults.vcnRouteType;
         }
@@ -102,6 +146,14 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder ids(List<String> ids) {
+            this.ids = Objects.requireNonNull(ids);
+            return this;
+        }
+        public Builder ids(String... ids) {
+            return ids(List.of(ids));
+        }
+        @CustomType.Setter
         public Builder ipsecConnectionId(String ipsecConnectionId) {
             this.ipsecConnectionId = Objects.requireNonNull(ipsecConnectionId);
             return this;
@@ -109,6 +161,16 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
         @CustomType.Setter
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = Objects.requireNonNull(routeTableId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder transportAttachmentId(String transportAttachmentId) {
+            this.transportAttachmentId = Objects.requireNonNull(transportAttachmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder transportOnlyMode(Boolean transportOnlyMode) {
+            this.transportOnlyMode = Objects.requireNonNull(transportOnlyMode);
             return this;
         }
         @CustomType.Setter
@@ -124,8 +186,11 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
         public GetDrgAttachmentsDrgAttachmentNetworkDetail build() {
             final var o = new GetDrgAttachmentsDrgAttachmentNetworkDetail();
             o.id = id;
+            o.ids = ids;
             o.ipsecConnectionId = ipsecConnectionId;
             o.routeTableId = routeTableId;
+            o.transportAttachmentId = transportAttachmentId;
+            o.transportOnlyMode = transportOnlyMode;
             o.type = type;
             o.vcnRouteType = vcnRouteType;
             return o;

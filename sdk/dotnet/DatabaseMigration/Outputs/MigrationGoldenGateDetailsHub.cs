@@ -28,19 +28,19 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// (Updatable) Database Administrator Credentials details.
         /// </summary>
-        public readonly Outputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentials SourceDbAdminCredentials;
+        public readonly Outputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentials? SourceDbAdminCredentials;
         /// <summary>
         /// (Updatable) Name of GoldenGate Microservices deployment to operate on source database
         /// </summary>
-        public readonly string SourceMicroservicesDeploymentName;
+        public readonly string? SourceMicroservicesDeploymentName;
         /// <summary>
         /// (Updatable) Database Administrator Credentials details.
         /// </summary>
-        public readonly Outputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentials TargetDbAdminCredentials;
+        public readonly Outputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentials? TargetDbAdminCredentials;
         /// <summary>
         /// (Updatable) Name of GoldenGate Microservices deployment to operate on target database
         /// </summary>
-        public readonly string TargetMicroservicesDeploymentName;
+        public readonly string? TargetMicroservicesDeploymentName;
         /// <summary>
         /// (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
         /// </summary>
@@ -54,13 +54,13 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             Outputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials? sourceContainerDbAdminCredentials,
 
-            Outputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentials sourceDbAdminCredentials,
+            Outputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentials? sourceDbAdminCredentials,
 
-            string sourceMicroservicesDeploymentName,
+            string? sourceMicroservicesDeploymentName,
 
-            Outputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentials targetDbAdminCredentials,
+            Outputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentials? targetDbAdminCredentials,
 
-            string targetMicroservicesDeploymentName,
+            string? targetMicroservicesDeploymentName,
 
             string url)
         {

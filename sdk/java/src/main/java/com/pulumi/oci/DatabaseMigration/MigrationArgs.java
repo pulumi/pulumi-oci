@@ -11,6 +11,7 @@ import com.pulumi.oci.DatabaseMigration.inputs.MigrationDatapumpSettingsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDumpTransferDetailsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationExcludeObjectArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateServiceDetailsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationIncludeObjectArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationVaultDetailsArgs;
 import java.lang.Object;
@@ -207,6 +208,21 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Details about Oracle GoldenGate GGS Deployment.
+     * 
+     */
+    @Import(name="goldenGateServiceDetails")
+    private @Nullable Output<MigrationGoldenGateServiceDetailsArgs> goldenGateServiceDetails;
+
+    /**
+     * @return (Updatable) Details about Oracle GoldenGate GGS Deployment.
+     * 
+     */
+    public Optional<Output<MigrationGoldenGateServiceDetailsArgs>> goldenGateServiceDetails() {
+        return Optional.ofNullable(this.goldenGateServiceDetails);
+    }
+
+    /**
      * (Updatable) Database objects to include from migration, cannot be specified alongside &#39;excludeObjects&#39;
      * 
      */
@@ -311,6 +327,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         this.excludeObjects = $.excludeObjects;
         this.freeformTags = $.freeformTags;
         this.goldenGateDetails = $.goldenGateDetails;
+        this.goldenGateServiceDetails = $.goldenGateServiceDetails;
         this.includeObjects = $.includeObjects;
         this.sourceContainerDatabaseConnectionId = $.sourceContainerDatabaseConnectionId;
         this.sourceDatabaseConnectionId = $.sourceDatabaseConnectionId;
@@ -597,6 +614,27 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder goldenGateDetails(MigrationGoldenGateDetailsArgs goldenGateDetails) {
             return goldenGateDetails(Output.of(goldenGateDetails));
+        }
+
+        /**
+         * @param goldenGateServiceDetails (Updatable) Details about Oracle GoldenGate GGS Deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder goldenGateServiceDetails(@Nullable Output<MigrationGoldenGateServiceDetailsArgs> goldenGateServiceDetails) {
+            $.goldenGateServiceDetails = goldenGateServiceDetails;
+            return this;
+        }
+
+        /**
+         * @param goldenGateServiceDetails (Updatable) Details about Oracle GoldenGate GGS Deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder goldenGateServiceDetails(MigrationGoldenGateServiceDetailsArgs goldenGateServiceDetails) {
+            return goldenGateServiceDetails(Output.of(goldenGateServiceDetails));
         }
 
         /**

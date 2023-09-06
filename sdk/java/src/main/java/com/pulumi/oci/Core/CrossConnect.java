@@ -50,6 +50,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Core.CrossConnect;
  * import com.pulumi.oci.Core.CrossConnectArgs;
+ * import com.pulumi.oci.Core.inputs.CrossConnectMacsecPropertiesArgs;
+ * import com.pulumi.oci.Core.inputs.CrossConnectMacsecPropertiesPrimaryKeyArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -73,6 +75,15 @@ import javax.annotation.Nullable;
  *             .displayName(var_.cross_connect_display_name())
  *             .farCrossConnectOrCrossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .macsecProperties(CrossConnectMacsecPropertiesArgs.builder()
+ *                 .state(var_.cross_connect_macsec_properties_state())
+ *                 .encryptionCipher(var_.cross_connect_macsec_properties_encryption_cipher())
+ *                 .isUnprotectedTrafficAllowed(var_.cross_connect_macsec_properties_is_unprotected_traffic_allowed())
+ *                 .primaryKey(CrossConnectMacsecPropertiesPrimaryKeyArgs.builder()
+ *                     .connectivityAssociationKeySecretId(oci_vault_secret.test_secret().id())
+ *                     .connectivityAssociationNameSecretId(oci_vault_secret.test_secret().id())
+ *                     .build())
+ *                 .build())
  *             .nearCrossConnectOrCrossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
  *             .build());
  * 
@@ -204,42 +215,42 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.isActive);
     }
     /**
-     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      * 
      */
     @Export(name="locationName", type=String.class, parameters={})
     private Output<String> locationName;
 
     /**
-     * @return The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+     * @return The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      * 
      */
     public Output<String> locationName() {
         return this.locationName;
     }
     /**
-     * Properties used for MACsec (if capable).
+     * (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
     @Export(name="macsecProperties", type=CrossConnectMacsecProperties.class, parameters={})
     private Output<CrossConnectMacsecProperties> macsecProperties;
 
     /**
-     * @return Properties used for MACsec (if capable).
+     * @return (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
     public Output<CrossConnectMacsecProperties> macsecProperties() {
         return this.macsecProperties;
     }
     /**
-     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
     @Export(name="nearCrossConnectOrCrossConnectGroupId", type=String.class, parameters={})
     private Output<String> nearCrossConnectOrCrossConnectGroupId;
 
     /**
-     * @return If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+     * @return If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
     public Output<String> nearCrossConnectOrCrossConnectGroupId() {
@@ -308,14 +319,14 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
         return this.portSpeedShapeName;
     }
     /**
-     * The cross-connect&#39;s current state.
+     * (Updatable) Indicates whether or not MACsec is enabled.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The cross-connect&#39;s current state.
+     * @return (Updatable) Indicates whether or not MACsec is enabled.
      * 
      */
     public Output<String> state() {

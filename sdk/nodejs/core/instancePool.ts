@@ -26,11 +26,22 @@ import * as utilities from "../utilities";
  *     instanceConfigurationId: oci_core_instance_configuration.test_instance_configuration.id,
  *     placementConfigurations: [{
  *         availabilityDomain: _var.instance_pool_placement_configurations_availability_domain,
- *         primarySubnetId: oci_core_subnet.test_subnet.id,
  *         faultDomains: _var.instance_pool_placement_configurations_fault_domains,
+ *         primarySubnetId: oci_core_subnet.test_subnet.id,
+ *         primaryVnicSubnets: {
+ *             subnetId: oci_core_subnet.test_subnet.id,
+ *             ipv6addressIpv6subnetCidrPairDetails: [{
+ *                 ipv6subnetCidr: _var.instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *             }],
+ *             isAssignIpv6ip: _var.instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
+ *         },
  *         secondaryVnicSubnets: [{
  *             subnetId: oci_core_subnet.test_subnet.id,
  *             displayName: _var.instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
+ *             ipv6addressIpv6subnetCidrPairDetails: [{
+ *                 ipv6subnetCidr: _var.instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *             }],
+ *             isAssignIpv6ip: _var.instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
  *         }],
  *     }],
  *     size: _var.instance_pool_size,

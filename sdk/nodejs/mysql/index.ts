@@ -5,20 +5,10 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export { AnalyticsClusterArgs, AnalyticsClusterState } from "./analyticsCluster";
-export type AnalyticsCluster = import("./analyticsCluster").AnalyticsCluster;
-export const AnalyticsCluster: typeof import("./analyticsCluster").AnalyticsCluster = null as any;
-utilities.lazyLoad(exports, ["AnalyticsCluster"], () => require("./analyticsCluster"));
-
 export { ChannelArgs, ChannelState } from "./channel";
 export type Channel = import("./channel").Channel;
 export const Channel: typeof import("./channel").Channel = null as any;
 utilities.lazyLoad(exports, ["Channel"], () => require("./channel"));
-
-export { GetAnalyticsClusterArgs, GetAnalyticsClusterResult, GetAnalyticsClusterOutputArgs } from "./getAnalyticsCluster";
-export const getAnalyticsCluster: typeof import("./getAnalyticsCluster").getAnalyticsCluster = null as any;
-export const getAnalyticsClusterOutput: typeof import("./getAnalyticsCluster").getAnalyticsClusterOutput = null as any;
-utilities.lazyLoad(exports, ["getAnalyticsCluster","getAnalyticsClusterOutput"], () => require("./getAnalyticsCluster"));
 
 export { GetChannelArgs, GetChannelResult, GetChannelOutputArgs } from "./getChannel";
 export const getChannel: typeof import("./getChannel").getChannel = null as any;
@@ -115,8 +105,6 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
-            case "oci:Mysql/analyticsCluster:AnalyticsCluster":
-                return new AnalyticsCluster(name, <any>undefined, { urn })
             case "oci:Mysql/channel:Channel":
                 return new Channel(name, <any>undefined, { urn })
             case "oci:Mysql/heatWaveCluster:HeatWaveCluster":
@@ -134,7 +122,6 @@ const _module = {
         }
     },
 };
-pulumi.runtime.registerResourceModule("oci", "Mysql/analyticsCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/channel", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/heatWaveCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/mysqlBackup", _module)

@@ -18,6 +18,24 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("ipv6addressIpv6subnetCidrPairDetails")]
+        private InputList<Inputs.ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailGetArgs>? _ipv6addressIpv6subnetCidrPairDetails;
+
+        /// <summary>
+        /// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        /// </summary>
+        public InputList<Inputs.ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailGetArgs> Ipv6addressIpv6subnetCidrPairDetails
+        {
+            get => _ipv6addressIpv6subnetCidrPairDetails ?? (_ipv6addressIpv6subnetCidrPairDetails = new InputList<Inputs.ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailGetArgs>());
+            set => _ipv6addressIpv6subnetCidrPairDetails = value;
+        }
+
+        /// <summary>
+        /// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        /// </summary>
+        [Input("isAssignIpv6ip")]
+        public Input<bool>? IsAssignIpv6ip { get; set; }
+
         /// <summary>
         /// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
         /// 

@@ -108,8 +108,6 @@ type MysqlDbSystem struct {
 	AdminPassword pulumi.StringOutput `pulumi:"adminPassword"`
 	// The username for the administrative user.
 	AdminUsername pulumi.StringOutput `pulumi:"adminUsername"`
-	// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-	AnalyticsClusters MysqlDbSystemAnalyticsClusterArrayOutput `pulumi:"analyticsClusters"`
 	// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 	//
 	// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -158,8 +156,6 @@ type MysqlDbSystem struct {
 	HostnameLabel pulumi.StringOutput `pulumi:"hostnameLabel"`
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
-	// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-	IsAnalyticsClusterAttached pulumi.BoolOutput `pulumi:"isAnalyticsClusterAttached"`
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached pulumi.BoolOutput `pulumi:"isHeatWaveClusterAttached"`
 	// (Updatable) Specifies if the DB System is highly available.
@@ -251,8 +247,6 @@ type mysqlDbSystemState struct {
 	AdminPassword *string `pulumi:"adminPassword"`
 	// The username for the administrative user.
 	AdminUsername *string `pulumi:"adminUsername"`
-	// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-	AnalyticsClusters []MysqlDbSystemAnalyticsCluster `pulumi:"analyticsClusters"`
 	// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 	//
 	// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -301,8 +295,6 @@ type mysqlDbSystemState struct {
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress *string `pulumi:"ipAddress"`
-	// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-	IsAnalyticsClusterAttached *bool `pulumi:"isAnalyticsClusterAttached"`
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached *bool `pulumi:"isHeatWaveClusterAttached"`
 	// (Updatable) Specifies if the DB System is highly available.
@@ -346,8 +338,6 @@ type MysqlDbSystemState struct {
 	AdminPassword pulumi.StringPtrInput
 	// The username for the administrative user.
 	AdminUsername pulumi.StringPtrInput
-	// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-	AnalyticsClusters MysqlDbSystemAnalyticsClusterArrayInput
 	// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 	//
 	// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -396,8 +386,6 @@ type MysqlDbSystemState struct {
 	HostnameLabel pulumi.StringPtrInput
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringPtrInput
-	// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-	IsAnalyticsClusterAttached pulumi.BoolPtrInput
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached pulumi.BoolPtrInput
 	// (Updatable) Specifies if the DB System is highly available.
@@ -684,11 +672,6 @@ func (o MysqlDbSystemOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.AdminUsername }).(pulumi.StringOutput)
 }
 
-// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-func (o MysqlDbSystemOutput) AnalyticsClusters() MysqlDbSystemAnalyticsClusterArrayOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemAnalyticsClusterArrayOutput { return v.AnalyticsClusters }).(MysqlDbSystemAnalyticsClusterArrayOutput)
-}
-
 // The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 //
 // In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -789,11 +772,6 @@ func (o MysqlDbSystemOutput) HostnameLabel() pulumi.StringOutput {
 // The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 func (o MysqlDbSystemOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
-}
-
-// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-func (o MysqlDbSystemOutput) IsAnalyticsClusterAttached() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.BoolOutput { return v.IsAnalyticsClusterAttached }).(pulumi.BoolOutput)
 }
 
 // If the DB System has a HeatWave Cluster attached.

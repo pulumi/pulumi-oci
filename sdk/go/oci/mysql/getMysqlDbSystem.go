@@ -60,8 +60,6 @@ type LookupMysqlDbSystemArgs struct {
 type LookupMysqlDbSystemResult struct {
 	AdminPassword string `pulumi:"adminPassword"`
 	AdminUsername string `pulumi:"adminUsername"`
-	// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-	AnalyticsClusters []GetMysqlDbSystemAnalyticsCluster `pulumi:"analyticsClusters"`
 	// The availability domain in which the DB System is placed.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
@@ -102,8 +100,6 @@ type LookupMysqlDbSystemResult struct {
 	Id string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
-	// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-	IsAnalyticsClusterAttached bool `pulumi:"isAnalyticsClusterAttached"`
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if the DB System is highly available.
@@ -179,11 +175,6 @@ func (o LookupMysqlDbSystemResultOutput) AdminPassword() pulumi.StringOutput {
 
 func (o LookupMysqlDbSystemResultOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.AdminUsername }).(pulumi.StringOutput)
-}
-
-// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-func (o LookupMysqlDbSystemResultOutput) AnalyticsClusters() GetMysqlDbSystemAnalyticsClusterArrayOutput {
-	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemAnalyticsCluster { return v.AnalyticsClusters }).(GetMysqlDbSystemAnalyticsClusterArrayOutput)
 }
 
 // The availability domain in which the DB System is placed.
@@ -284,11 +275,6 @@ func (o LookupMysqlDbSystemResultOutput) Id() pulumi.StringOutput {
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 func (o LookupMysqlDbSystemResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.IpAddress }).(pulumi.StringOutput)
-}
-
-// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-func (o LookupMysqlDbSystemResultOutput) IsAnalyticsClusterAttached() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupMysqlDbSystemResult) bool { return v.IsAnalyticsClusterAttached }).(pulumi.BoolOutput)
 }
 
 // If the DB System has a HeatWave Cluster attached.

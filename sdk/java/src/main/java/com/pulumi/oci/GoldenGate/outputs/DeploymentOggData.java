@@ -12,25 +12,35 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentOggData {
     /**
-     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
+     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
      * 
      */
-    private String adminPassword;
+    private @Nullable String adminPassword;
     /**
      * @return (Updatable) The GoldenGate deployment console username.
      * 
      */
-    private String adminUsername;
+    private @Nullable String adminUsername;
     /**
      * @return (Updatable) A PEM-encoded SSL certificate.
      * 
      */
     private @Nullable String certificate;
     /**
+     * @return (Updatable) The type of credential store for OGG.
+     * 
+     */
+    private @Nullable String credentialStore;
+    /**
      * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
     private String deploymentName;
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     * 
+     */
+    private @Nullable String identityDomainId;
     /**
      * @return (Updatable) A PEM-encoded private key.
      * 
@@ -41,21 +51,26 @@ public final class DeploymentOggData {
      * 
      */
     private @Nullable String oggVersion;
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     * 
+     */
+    private @Nullable String passwordSecretId;
 
     private DeploymentOggData() {}
     /**
-     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
+     * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
      * 
      */
-    public String adminPassword() {
-        return this.adminPassword;
+    public Optional<String> adminPassword() {
+        return Optional.ofNullable(this.adminPassword);
     }
     /**
      * @return (Updatable) The GoldenGate deployment console username.
      * 
      */
-    public String adminUsername() {
-        return this.adminUsername;
+    public Optional<String> adminUsername() {
+        return Optional.ofNullable(this.adminUsername);
     }
     /**
      * @return (Updatable) A PEM-encoded SSL certificate.
@@ -65,11 +80,25 @@ public final class DeploymentOggData {
         return Optional.ofNullable(this.certificate);
     }
     /**
+     * @return (Updatable) The type of credential store for OGG.
+     * 
+     */
+    public Optional<String> credentialStore() {
+        return Optional.ofNullable(this.credentialStore);
+    }
+    /**
      * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
     public String deploymentName() {
         return this.deploymentName;
+    }
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     * 
+     */
+    public Optional<String> identityDomainId() {
+        return Optional.ofNullable(this.identityDomainId);
     }
     /**
      * @return (Updatable) A PEM-encoded private key.
@@ -85,6 +114,13 @@ public final class DeploymentOggData {
     public Optional<String> oggVersion() {
         return Optional.ofNullable(this.oggVersion);
     }
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     * 
+     */
+    public Optional<String> passwordSecretId() {
+        return Optional.ofNullable(this.passwordSecretId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -95,31 +131,37 @@ public final class DeploymentOggData {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adminPassword;
-        private String adminUsername;
+        private @Nullable String adminPassword;
+        private @Nullable String adminUsername;
         private @Nullable String certificate;
+        private @Nullable String credentialStore;
         private String deploymentName;
+        private @Nullable String identityDomainId;
         private @Nullable String key;
         private @Nullable String oggVersion;
+        private @Nullable String passwordSecretId;
         public Builder() {}
         public Builder(DeploymentOggData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
     	      this.adminUsername = defaults.adminUsername;
     	      this.certificate = defaults.certificate;
+    	      this.credentialStore = defaults.credentialStore;
     	      this.deploymentName = defaults.deploymentName;
+    	      this.identityDomainId = defaults.identityDomainId;
     	      this.key = defaults.key;
     	      this.oggVersion = defaults.oggVersion;
+    	      this.passwordSecretId = defaults.passwordSecretId;
         }
 
         @CustomType.Setter
-        public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+        public Builder adminPassword(@Nullable String adminPassword) {
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder adminUsername(String adminUsername) {
-            this.adminUsername = Objects.requireNonNull(adminUsername);
+        public Builder adminUsername(@Nullable String adminUsername) {
+            this.adminUsername = adminUsername;
             return this;
         }
         @CustomType.Setter
@@ -128,8 +170,18 @@ public final class DeploymentOggData {
             return this;
         }
         @CustomType.Setter
+        public Builder credentialStore(@Nullable String credentialStore) {
+            this.credentialStore = credentialStore;
+            return this;
+        }
+        @CustomType.Setter
         public Builder deploymentName(String deploymentName) {
             this.deploymentName = Objects.requireNonNull(deploymentName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder identityDomainId(@Nullable String identityDomainId) {
+            this.identityDomainId = identityDomainId;
             return this;
         }
         @CustomType.Setter
@@ -142,14 +194,22 @@ public final class DeploymentOggData {
             this.oggVersion = oggVersion;
             return this;
         }
+        @CustomType.Setter
+        public Builder passwordSecretId(@Nullable String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            return this;
+        }
         public DeploymentOggData build() {
             final var o = new DeploymentOggData();
             o.adminPassword = adminPassword;
             o.adminUsername = adminUsername;
             o.certificate = certificate;
+            o.credentialStore = credentialStore;
             o.deploymentName = deploymentName;
+            o.identityDomainId = identityDomainId;
             o.key = key;
             o.oggVersion = oggVersion;
+            o.passwordSecretId = passwordSecretId;
             return o;
         }
     }

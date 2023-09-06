@@ -29,6 +29,7 @@ class VirtualCircuitArgs:
                  gateway_id: Optional[pulumi.Input[str]] = None,
                  ip_mtu: Optional[pulumi.Input[str]] = None,
                  is_bfd_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_transport_mode: Optional[pulumi.Input[bool]] = None,
                  provider_service_id: Optional[pulumi.Input[str]] = None,
                  provider_service_key_name: Optional[pulumi.Input[str]] = None,
                  public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
@@ -53,6 +54,7 @@ class VirtualCircuitArgs:
         :param pulumi.Input[str] gateway_id: (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         :param pulumi.Input[str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
         :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+        :param pulumi.Input[bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
@@ -86,6 +88,8 @@ class VirtualCircuitArgs:
             pulumi.set(__self__, "ip_mtu", ip_mtu)
         if is_bfd_enabled is not None:
             pulumi.set(__self__, "is_bfd_enabled", is_bfd_enabled)
+        if is_transport_mode is not None:
+            pulumi.set(__self__, "is_transport_mode", is_transport_mode)
         if provider_service_id is not None:
             pulumi.set(__self__, "provider_service_id", provider_service_id)
         if provider_service_key_name is not None:
@@ -261,6 +265,18 @@ class VirtualCircuitArgs:
         pulumi.set(self, "is_bfd_enabled", value)
 
     @property
+    @pulumi.getter(name="isTransportMode")
+    def is_transport_mode(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        """
+        return pulumi.get(self, "is_transport_mode")
+
+    @is_transport_mode.setter
+    def is_transport_mode(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_transport_mode", value)
+
+    @property
     @pulumi.getter(name="providerServiceId")
     def provider_service_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -339,6 +355,7 @@ class _VirtualCircuitState:
                  gateway_id: Optional[pulumi.Input[str]] = None,
                  ip_mtu: Optional[pulumi.Input[str]] = None,
                  is_bfd_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_transport_mode: Optional[pulumi.Input[bool]] = None,
                  oracle_bgp_asn: Optional[pulumi.Input[int]] = None,
                  provider_service_id: Optional[pulumi.Input[str]] = None,
                  provider_service_key_name: Optional[pulumi.Input[str]] = None,
@@ -368,6 +385,7 @@ class _VirtualCircuitState:
         :param pulumi.Input[str] gateway_id: (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         :param pulumi.Input[str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
         :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+        :param pulumi.Input[bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[int] oracle_bgp_asn: The Oracle BGP ASN.
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
@@ -421,6 +439,8 @@ class _VirtualCircuitState:
             pulumi.set(__self__, "ip_mtu", ip_mtu)
         if is_bfd_enabled is not None:
             pulumi.set(__self__, "is_bfd_enabled", is_bfd_enabled)
+        if is_transport_mode is not None:
+            pulumi.set(__self__, "is_transport_mode", is_transport_mode)
         if oracle_bgp_asn is not None:
             pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
         if provider_service_id is not None:
@@ -633,6 +653,18 @@ class _VirtualCircuitState:
         pulumi.set(self, "is_bfd_enabled", value)
 
     @property
+    @pulumi.getter(name="isTransportMode")
+    def is_transport_mode(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        """
+        return pulumi.get(self, "is_transport_mode")
+
+    @is_transport_mode.setter
+    def is_transport_mode(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_transport_mode", value)
+
+    @property
     @pulumi.getter(name="oracleBgpAsn")
     def oracle_bgp_asn(self) -> Optional[pulumi.Input[int]]:
         """
@@ -798,6 +830,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  gateway_id: Optional[pulumi.Input[str]] = None,
                  ip_mtu: Optional[pulumi.Input[str]] = None,
                  is_bfd_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_transport_mode: Optional[pulumi.Input[bool]] = None,
                  provider_service_id: Optional[pulumi.Input[str]] = None,
                  provider_service_key_name: Optional[pulumi.Input[str]] = None,
                  public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitPublicPrefixArgs']]]]] = None,
@@ -861,6 +894,7 @@ class VirtualCircuit(pulumi.CustomResource):
             },
             ip_mtu=var["virtual_circuit_ip_mtu"],
             is_bfd_enabled=var["virtual_circuit_is_bfd_enabled"],
+            is_transport_mode=var["virtual_circuit_is_transport_mode"],
             gateway_id=oci_core_gateway["test_gateway"]["id"],
             provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"],
             provider_service_key_name=var["virtual_circuit_provider_service_key_name"],
@@ -893,6 +927,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[str] gateway_id: (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         :param pulumi.Input[str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
         :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+        :param pulumi.Input[bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitPublicPrefixArgs']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
@@ -966,6 +1001,7 @@ class VirtualCircuit(pulumi.CustomResource):
             },
             ip_mtu=var["virtual_circuit_ip_mtu"],
             is_bfd_enabled=var["virtual_circuit_is_bfd_enabled"],
+            is_transport_mode=var["virtual_circuit_is_transport_mode"],
             gateway_id=oci_core_gateway["test_gateway"]["id"],
             provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"],
             provider_service_key_name=var["virtual_circuit_provider_service_key_name"],
@@ -1011,6 +1047,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  gateway_id: Optional[pulumi.Input[str]] = None,
                  ip_mtu: Optional[pulumi.Input[str]] = None,
                  is_bfd_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_transport_mode: Optional[pulumi.Input[bool]] = None,
                  provider_service_id: Optional[pulumi.Input[str]] = None,
                  provider_service_key_name: Optional[pulumi.Input[str]] = None,
                  public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitPublicPrefixArgs']]]]] = None,
@@ -1043,6 +1080,7 @@ class VirtualCircuit(pulumi.CustomResource):
             __props__.__dict__["gateway_id"] = gateway_id
             __props__.__dict__["ip_mtu"] = ip_mtu
             __props__.__dict__["is_bfd_enabled"] = is_bfd_enabled
+            __props__.__dict__["is_transport_mode"] = is_transport_mode
             __props__.__dict__["provider_service_id"] = provider_service_id
             __props__.__dict__["provider_service_key_name"] = provider_service_key_name
             __props__.__dict__["public_prefixes"] = public_prefixes
@@ -1085,6 +1123,7 @@ class VirtualCircuit(pulumi.CustomResource):
             gateway_id: Optional[pulumi.Input[str]] = None,
             ip_mtu: Optional[pulumi.Input[str]] = None,
             is_bfd_enabled: Optional[pulumi.Input[bool]] = None,
+            is_transport_mode: Optional[pulumi.Input[bool]] = None,
             oracle_bgp_asn: Optional[pulumi.Input[int]] = None,
             provider_service_id: Optional[pulumi.Input[str]] = None,
             provider_service_key_name: Optional[pulumi.Input[str]] = None,
@@ -1119,6 +1158,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[str] gateway_id: (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         :param pulumi.Input[str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
         :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+        :param pulumi.Input[bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[int] oracle_bgp_asn: The Oracle BGP ASN.
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
@@ -1155,6 +1195,7 @@ class VirtualCircuit(pulumi.CustomResource):
         __props__.__dict__["gateway_id"] = gateway_id
         __props__.__dict__["ip_mtu"] = ip_mtu
         __props__.__dict__["is_bfd_enabled"] = is_bfd_enabled
+        __props__.__dict__["is_transport_mode"] = is_transport_mode
         __props__.__dict__["oracle_bgp_asn"] = oracle_bgp_asn
         __props__.__dict__["provider_service_id"] = provider_service_id
         __props__.__dict__["provider_service_key_name"] = provider_service_key_name
@@ -1294,6 +1335,14 @@ class VirtualCircuit(pulumi.CustomResource):
         (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_bfd_enabled")
+
+    @property
+    @pulumi.getter(name="isTransportMode")
+    def is_transport_mode(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        """
+        return pulumi.get(self, "is_transport_mode")
 
     @property
     @pulumi.getter(name="oracleBgpAsn")

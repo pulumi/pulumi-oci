@@ -66,7 +66,6 @@ import javax.annotation.Nullable;
  * ```sh
  *  $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint &#34;resolverId/{resolverId}/name/{resolverEndpointName}&#34;
  * ```
- * 
  *  For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh

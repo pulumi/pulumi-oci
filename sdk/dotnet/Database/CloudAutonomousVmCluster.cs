@@ -90,6 +90,12 @@ namespace Pulumi.Oci.Database
     public partial class CloudAutonomousVmCluster : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+        /// </summary>
+        [Output("autonomousDataStoragePercentage")]
+        public Output<double> AutonomousDataStoragePercentage { get; private set; } = null!;
+
+        /// <summary>
         /// The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Output("autonomousDataStorageSizeInTbs")]
@@ -154,6 +160,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("cpuCoreCountPerNode")]
         public Output<int> CpuCoreCountPerNode { get; private set; } = null!;
+
+        /// <summary>
+        /// The percentage of total number of CPUs used in an Autonomous VM Cluster.
+        /// </summary>
+        [Output("cpuPercentage")]
+        public Output<double> CpuPercentage { get; private set; } = null!;
 
         /// <summary>
         /// The total data storage allocated, in gigabytes (GB).
@@ -260,7 +272,7 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.CloudAutonomousVmClusterMaintenanceWindow>> MaintenanceWindows { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         [Output("memoryPerOracleComputeUnitInGbs")]
         public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
@@ -284,6 +296,12 @@ namespace Pulumi.Oci.Database
         public Output<int> NodeCount { get; private set; } = null!;
 
         /// <summary>
+        /// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+        /// </summary>
+        [Output("nonProvisionableAutonomousContainerDatabases")]
+        public Output<int> NonProvisionableAutonomousContainerDatabases { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
@@ -297,12 +315,36 @@ namespace Pulumi.Oci.Database
         public Output<double> OcpuCount { get; private set; } = null!;
 
         /// <summary>
+        /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+        /// </summary>
+        [Output("provisionableAutonomousContainerDatabases")]
+        public Output<int> ProvisionableAutonomousContainerDatabases { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+        /// </summary>
+        [Output("provisionedAutonomousContainerDatabases")]
+        public Output<int> ProvisionedAutonomousContainerDatabases { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of CPUs provisioned in an Autonomous VM Cluster.
+        /// </summary>
+        [Output("provisionedCpus")]
+        public Output<double> ProvisionedCpus { get; private set; } = null!;
+
+        /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         [Output("reclaimableCpus")]
         public Output<double> ReclaimableCpus { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of CPUs reserved in an Autonomous VM Cluster.
+        /// </summary>
+        [Output("reservedCpus")]
+        public Output<double> ReservedCpus { get; private set; } = null!;
 
         /// <summary>
         /// The SCAN Listener Non TLS port. Default is 1521.
@@ -347,6 +389,12 @@ namespace Pulumi.Oci.Database
         public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
+        /// The total data disk group size for Autonomous Databases, in TBs.
+        /// </summary>
+        [Output("totalAutonomousDataStorageInTbs")]
+        public Output<double> TotalAutonomousDataStorageInTbs { get; private set; } = null!;
+
+        /// <summary>
         /// The total number of Autonomous Container Databases that can be created.
         /// 
         /// ** IMPORTANT **
@@ -354,6 +402,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("totalContainerDatabases")]
         public Output<int> TotalContainerDatabases { get; private set; } = null!;
+
+        /// <summary>
+        /// The total number of CPUs in an Autonomous VM Cluster.
+        /// </summary>
+        [Output("totalCpus")]
+        public Output<double> TotalCpus { get; private set; } = null!;
 
 
         /// <summary>
@@ -506,7 +560,7 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs>? MaintenanceWindowDetails { get; set; }
 
         /// <summary>
-        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         [Input("memoryPerOracleComputeUnitInGbs")]
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
@@ -565,6 +619,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class CloudAutonomousVmClusterState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+        /// </summary>
+        [Input("autonomousDataStoragePercentage")]
+        public Input<double>? AutonomousDataStoragePercentage { get; set; }
+
         /// <summary>
         /// The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
@@ -630,6 +690,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cpuCoreCountPerNode")]
         public Input<int>? CpuCoreCountPerNode { get; set; }
+
+        /// <summary>
+        /// The percentage of total number of CPUs used in an Autonomous VM Cluster.
+        /// </summary>
+        [Input("cpuPercentage")]
+        public Input<double>? CpuPercentage { get; set; }
 
         /// <summary>
         /// The total data storage allocated, in gigabytes (GB).
@@ -760,7 +826,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         [Input("memoryPerOracleComputeUnitInGbs")]
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
@@ -783,6 +849,12 @@ namespace Pulumi.Oci.Database
         [Input("nodeCount")]
         public Input<int>? NodeCount { get; set; }
 
+        /// <summary>
+        /// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+        /// </summary>
+        [Input("nonProvisionableAutonomousContainerDatabases")]
+        public Input<int>? NonProvisionableAutonomousContainerDatabases { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
@@ -803,12 +875,36 @@ namespace Pulumi.Oci.Database
         public Input<double>? OcpuCount { get; set; }
 
         /// <summary>
+        /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+        /// </summary>
+        [Input("provisionableAutonomousContainerDatabases")]
+        public Input<int>? ProvisionableAutonomousContainerDatabases { get; set; }
+
+        /// <summary>
+        /// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+        /// </summary>
+        [Input("provisionedAutonomousContainerDatabases")]
+        public Input<int>? ProvisionedAutonomousContainerDatabases { get; set; }
+
+        /// <summary>
+        /// The number of CPUs provisioned in an Autonomous VM Cluster.
+        /// </summary>
+        [Input("provisionedCpus")]
+        public Input<double>? ProvisionedCpus { get; set; }
+
+        /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         [Input("reclaimableCpus")]
         public Input<double>? ReclaimableCpus { get; set; }
+
+        /// <summary>
+        /// The number of CPUs reserved in an Autonomous VM Cluster.
+        /// </summary>
+        [Input("reservedCpus")]
+        public Input<double>? ReservedCpus { get; set; }
 
         /// <summary>
         /// The SCAN Listener Non TLS port. Default is 1521.
@@ -853,6 +949,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
+        /// The total data disk group size for Autonomous Databases, in TBs.
+        /// </summary>
+        [Input("totalAutonomousDataStorageInTbs")]
+        public Input<double>? TotalAutonomousDataStorageInTbs { get; set; }
+
+        /// <summary>
         /// The total number of Autonomous Container Databases that can be created.
         /// 
         /// ** IMPORTANT **
@@ -860,6 +962,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("totalContainerDatabases")]
         public Input<int>? TotalContainerDatabases { get; set; }
+
+        /// <summary>
+        /// The total number of CPUs in an Autonomous VM Cluster.
+        /// </summary>
+        [Input("totalCpus")]
+        public Input<double>? TotalCpus { get; set; }
 
         public CloudAutonomousVmClusterState()
         {

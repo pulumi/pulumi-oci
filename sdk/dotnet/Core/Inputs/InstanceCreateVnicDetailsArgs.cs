@@ -13,8 +13,13 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class InstanceCreateVnicDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. The default value is true.  Example: `true`
-        /// 
+        /// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        /// </summary>
+        [Input("assignIpv6ip")]
+        public Input<bool>? AssignIpv6ip { get; set; }
+
+        /// <summary>
+        /// Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. The default value is true.
         /// If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
         /// </summary>
         [Input("assignPrivateDnsRecord")]
@@ -69,6 +74,18 @@ namespace Pulumi.Oci.Core.Inputs
         /// </summary>
         [Input("hostnameLabel")]
         public Input<string>? HostnameLabel { get; set; }
+
+        [Input("ipv6addressIpv6subnetCidrPairDetails")]
+        private InputList<Inputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>? _ipv6addressIpv6subnetCidrPairDetails;
+
+        /// <summary>
+        /// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        /// </summary>
+        public InputList<Inputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs> Ipv6addressIpv6subnetCidrPairDetails
+        {
+            get => _ipv6addressIpv6subnetCidrPairDetails ?? (_ipv6addressIpv6subnetCidrPairDetails = new InputList<Inputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>());
+            set => _ipv6addressIpv6subnetCidrPairDetails = value;
+        }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;

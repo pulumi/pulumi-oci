@@ -4017,14 +4017,6 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "Mysql/analyticsCluster",
-  "fqn": "pulumi_oci.mysql",
-  "classes": {
-   "oci:Mysql/analyticsCluster:AnalyticsCluster": "AnalyticsCluster"
-  }
- },
- {
-  "pkg": "oci",
   "mod": "Mysql/channel",
   "fqn": "pulumi_oci.mysql",
   "classes": {

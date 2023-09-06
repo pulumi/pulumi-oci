@@ -95,6 +95,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
     }
 
     /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     */
+    public /*out*/ readonly autonomousDataStoragePercentage!: pulumi.Output<number>;
+    /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
     public readonly autonomousDataStorageSizeInTbs!: pulumi.Output<number>;
@@ -138,6 +142,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      * The number of CPU cores to be enabled per VM cluster node.
      */
     public readonly cpuCoreCountPerNode!: pulumi.Output<number>;
+    /**
+     * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     */
+    public /*out*/ readonly cpuPercentage!: pulumi.Output<number>;
     /**
      * The total data storage allocated, in gigabytes (GB).
      */
@@ -209,7 +217,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.CloudAutonomousVmClusterMaintenanceWindow[]>;
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     public readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
     /**
@@ -225,6 +233,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly nodeCount!: pulumi.Output<number>;
     /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    public /*out*/ readonly nonProvisionableAutonomousContainerDatabases!: pulumi.Output<number>;
+    /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
@@ -234,11 +246,27 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly ocpuCount!: pulumi.Output<number>;
     /**
+     * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    public /*out*/ readonly provisionableAutonomousContainerDatabases!: pulumi.Output<number>;
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    public /*out*/ readonly provisionedAutonomousContainerDatabases!: pulumi.Output<number>;
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     */
+    public /*out*/ readonly provisionedCpus!: pulumi.Output<number>;
+    /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
     public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     */
+    public /*out*/ readonly reservedCpus!: pulumi.Output<number>;
     /**
      * The SCAN Listener Non TLS port. Default is 1521.
      */
@@ -268,12 +296,20 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
+     * The total data disk group size for Autonomous Databases, in TBs.
+     */
+    public /*out*/ readonly totalAutonomousDataStorageInTbs!: pulumi.Output<number>;
+    /**
      * The total number of Autonomous Container Databases that can be created.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly totalContainerDatabases!: pulumi.Output<number>;
+    /**
+     * The total number of CPUs in an Autonomous VM Cluster.
+     */
+    public /*out*/ readonly totalCpus!: pulumi.Output<number>;
 
     /**
      * Create a CloudAutonomousVmCluster resource with the given unique name, arguments, and options.
@@ -288,6 +324,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudAutonomousVmClusterState | undefined;
+            resourceInputs["autonomousDataStoragePercentage"] = state ? state.autonomousDataStoragePercentage : undefined;
             resourceInputs["autonomousDataStorageSizeInTbs"] = state ? state.autonomousDataStorageSizeInTbs : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["availableAutonomousDataStorageSizeInTbs"] = state ? state.availableAutonomousDataStorageSizeInTbs : undefined;
@@ -299,6 +336,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["cpuCoreCountPerNode"] = state ? state.cpuCoreCountPerNode : undefined;
+            resourceInputs["cpuPercentage"] = state ? state.cpuPercentage : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
@@ -320,9 +358,14 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
+            resourceInputs["nonProvisionableAutonomousContainerDatabases"] = state ? state.nonProvisionableAutonomousContainerDatabases : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
+            resourceInputs["provisionableAutonomousContainerDatabases"] = state ? state.provisionableAutonomousContainerDatabases : undefined;
+            resourceInputs["provisionedAutonomousContainerDatabases"] = state ? state.provisionedAutonomousContainerDatabases : undefined;
+            resourceInputs["provisionedCpus"] = state ? state.provisionedCpus : undefined;
             resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
+            resourceInputs["reservedCpus"] = state ? state.reservedCpus : undefined;
             resourceInputs["scanListenerPortNonTls"] = state ? state.scanListenerPortNonTls : undefined;
             resourceInputs["scanListenerPortTls"] = state ? state.scanListenerPortTls : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
@@ -330,7 +373,9 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["totalAutonomousDataStorageInTbs"] = state ? state.totalAutonomousDataStorageInTbs : undefined;
             resourceInputs["totalContainerDatabases"] = state ? state.totalContainerDatabases : undefined;
+            resourceInputs["totalCpus"] = state ? state.totalCpus : undefined;
         } else {
             const args = argsOrState as CloudAutonomousVmClusterArgs | undefined;
             if ((!args || args.cloudExadataInfrastructureId === undefined) && !opts.urn) {
@@ -366,11 +411,13 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["timeUpdated"] = args ? args.timeUpdated : undefined;
             resourceInputs["totalContainerDatabases"] = args ? args.totalContainerDatabases : undefined;
+            resourceInputs["autonomousDataStoragePercentage"] = undefined /*out*/;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableAutonomousDataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["availableContainerDatabases"] = undefined /*out*/;
             resourceInputs["availableCpus"] = undefined /*out*/;
             resourceInputs["cpuCoreCount"] = undefined /*out*/;
+            resourceInputs["cpuPercentage"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInGb"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
@@ -383,11 +430,18 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["nodeCount"] = undefined /*out*/;
+            resourceInputs["nonProvisionableAutonomousContainerDatabases"] = undefined /*out*/;
             resourceInputs["ocpuCount"] = undefined /*out*/;
+            resourceInputs["provisionableAutonomousContainerDatabases"] = undefined /*out*/;
+            resourceInputs["provisionedAutonomousContainerDatabases"] = undefined /*out*/;
+            resourceInputs["provisionedCpus"] = undefined /*out*/;
             resourceInputs["reclaimableCpus"] = undefined /*out*/;
+            resourceInputs["reservedCpus"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["totalAutonomousDataStorageInTbs"] = undefined /*out*/;
+            resourceInputs["totalCpus"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudAutonomousVmCluster.__pulumiType, name, resourceInputs, opts);
@@ -398,6 +452,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CloudAutonomousVmCluster resources.
  */
 export interface CloudAutonomousVmClusterState {
+    /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     */
+    autonomousDataStoragePercentage?: pulumi.Input<number>;
     /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
@@ -442,6 +500,10 @@ export interface CloudAutonomousVmClusterState {
      * The number of CPU cores to be enabled per VM cluster node.
      */
     cpuCoreCountPerNode?: pulumi.Input<number>;
+    /**
+     * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     */
+    cpuPercentage?: pulumi.Input<number>;
     /**
      * The total data storage allocated, in gigabytes (GB).
      */
@@ -513,7 +575,7 @@ export interface CloudAutonomousVmClusterState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindow>[]>;
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -529,6 +591,10 @@ export interface CloudAutonomousVmClusterState {
      */
     nodeCount?: pulumi.Input<number>;
     /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    nonProvisionableAutonomousContainerDatabases?: pulumi.Input<number>;
+    /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
@@ -538,11 +604,27 @@ export interface CloudAutonomousVmClusterState {
      */
     ocpuCount?: pulumi.Input<number>;
     /**
+     * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    provisionableAutonomousContainerDatabases?: pulumi.Input<number>;
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    provisionedAutonomousContainerDatabases?: pulumi.Input<number>;
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     */
+    provisionedCpus?: pulumi.Input<number>;
+    /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
     reclaimableCpus?: pulumi.Input<number>;
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     */
+    reservedCpus?: pulumi.Input<number>;
     /**
      * The SCAN Listener Non TLS port. Default is 1521.
      */
@@ -572,12 +654,20 @@ export interface CloudAutonomousVmClusterState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
+     * The total data disk group size for Autonomous Databases, in TBs.
+     */
+    totalAutonomousDataStorageInTbs?: pulumi.Input<number>;
+    /**
      * The total number of Autonomous Container Databases that can be created.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     totalContainerDatabases?: pulumi.Input<number>;
+    /**
+     * The total number of CPUs in an Autonomous VM Cluster.
+     */
+    totalCpus?: pulumi.Input<number>;
 }
 
 /**
@@ -643,7 +733,7 @@ export interface CloudAutonomousVmClusterArgs {
      */
     maintenanceWindowDetails?: pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowDetails>;
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**

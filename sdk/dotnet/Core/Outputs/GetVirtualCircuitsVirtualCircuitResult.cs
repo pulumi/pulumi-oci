@@ -78,6 +78,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool IsBfdEnabled;
         /// <summary>
+        /// Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        /// </summary>
+        public readonly bool IsTransportMode;
+        /// <summary>
         /// The Oracle BGP ASN.
         /// </summary>
         public readonly int OracleBgpAsn;
@@ -161,6 +165,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isBfdEnabled,
 
+            bool isTransportMode,
+
             int oracleBgpAsn,
 
             string providerServiceId,
@@ -203,6 +209,7 @@ namespace Pulumi.Oci.Core.Outputs
             Id = id;
             IpMtu = ipMtu;
             IsBfdEnabled = isBfdEnabled;
+            IsTransportMode = isTransportMode;
             OracleBgpAsn = oracleBgpAsn;
             ProviderServiceId = providerServiceId;
             ProviderServiceKeyName = providerServiceKeyName;

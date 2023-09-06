@@ -31,14 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetMysqlDbSystems(ctx, &mysql.GetMysqlDbSystemsArgs{
-//				CompartmentId:              _var.Compartment_id,
-//				ConfigurationId:            pulumi.StringRef(_var.Mysql_configuration_id),
-//				DbSystemId:                 pulumi.StringRef(oci_mysql_mysql_db_system.Test_db_system.Id),
-//				DisplayName:                pulumi.StringRef(_var.Mysql_db_system_display_name),
-//				IsAnalyticsClusterAttached: pulumi.BoolRef(_var.Mysql_db_system_is_analytics_cluster_attached),
-//				IsHeatWaveClusterAttached:  pulumi.BoolRef(_var.Mysql_db_system_is_heat_wave_cluster_attached),
-//				IsUpToDate:                 pulumi.BoolRef(_var.Mysql_db_system_is_up_to_date),
-//				State:                      pulumi.StringRef(_var.Mysql_db_system_state),
+//				CompartmentId:             _var.Compartment_id,
+//				ConfigurationId:           pulumi.StringRef(_var.Mysql_configuration_id),
+//				DbSystemId:                pulumi.StringRef(oci_mysql_mysql_db_system.Test_db_system.Id),
+//				DisplayName:               pulumi.StringRef(_var.Mysql_db_system_display_name),
+//				IsHeatWaveClusterAttached: pulumi.BoolRef(_var.Mysql_db_system_is_heat_wave_cluster_attached),
+//				IsUpToDate:                pulumi.BoolRef(_var.Mysql_db_system_is_up_to_date),
+//				State:                     pulumi.StringRef(_var.Mysql_db_system_state),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -69,8 +68,6 @@ type GetMysqlDbSystemsArgs struct {
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetMysqlDbSystemsFilter `pulumi:"filters"`
-	// DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-	IsAnalyticsClusterAttached *bool `pulumi:"isAnalyticsClusterAttached"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 	IsHeatWaveClusterAttached *bool `pulumi:"isHeatWaveClusterAttached"`
 	// Filter instances if they are using the latest revision of the Configuration they are associated with.
@@ -94,8 +91,6 @@ type GetMysqlDbSystemsResult struct {
 	Filters     []GetMysqlDbSystemsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-	IsAnalyticsClusterAttached *bool `pulumi:"isAnalyticsClusterAttached"`
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached *bool `pulumi:"isHeatWaveClusterAttached"`
 	IsUpToDate                *bool `pulumi:"isUpToDate"`
@@ -127,8 +122,6 @@ type GetMysqlDbSystemsOutputArgs struct {
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringPtrInput             `pulumi:"displayName"`
 	Filters     GetMysqlDbSystemsFilterArrayInput `pulumi:"filters"`
-	// DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-	IsAnalyticsClusterAttached pulumi.BoolPtrInput `pulumi:"isAnalyticsClusterAttached"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 	IsHeatWaveClusterAttached pulumi.BoolPtrInput `pulumi:"isHeatWaveClusterAttached"`
 	// Filter instances if they are using the latest revision of the Configuration they are associated with.
@@ -188,11 +181,6 @@ func (o GetMysqlDbSystemsResultOutput) Filters() GetMysqlDbSystemsFilterArrayOut
 // The provider-assigned unique ID for this managed resource.
 func (o GetMysqlDbSystemsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsResult) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-func (o GetMysqlDbSystemsResultOutput) IsAnalyticsClusterAttached() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsResult) *bool { return v.IsAnalyticsClusterAttached }).(pulumi.BoolPtrOutput)
 }
 
 // If the DB System has a HeatWave Cluster attached.

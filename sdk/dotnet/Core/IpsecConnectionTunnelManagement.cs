@@ -69,6 +69,12 @@ namespace Pulumi.Oci.Core
     public partial class IpsecConnectionTunnelManagement : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+        /// </summary>
+        [Output("associatedVirtualCircuits")]
+        public Output<ImmutableArray<string>> AssociatedVirtualCircuits { get; private set; } = null!;
+
+        /// <summary>
         /// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
         /// 
         /// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
@@ -77,13 +83,13 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementBgpSessionInfo>> BgpSessionInfos { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the compartment containing the tunnel.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The IP address of Cpe headend.  Example: `129.146.17.50`
+        /// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
         /// </summary>
         [Output("cpeIp")]
         public Output<string> CpeIp { get; private set; } = null!;
@@ -299,6 +305,18 @@ namespace Pulumi.Oci.Core
 
     public sealed class IpsecConnectionTunnelManagementState : global::Pulumi.ResourceArgs
     {
+        [Input("associatedVirtualCircuits")]
+        private InputList<string>? _associatedVirtualCircuits;
+
+        /// <summary>
+        /// The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+        /// </summary>
+        public InputList<string> AssociatedVirtualCircuits
+        {
+            get => _associatedVirtualCircuits ?? (_associatedVirtualCircuits = new InputList<string>());
+            set => _associatedVirtualCircuits = value;
+        }
+
         [Input("bgpSessionInfos")]
         private InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoGetArgs>? _bgpSessionInfos;
 
@@ -314,13 +332,13 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The OCID of the compartment containing the tunnel.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The IP address of Cpe headend.  Example: `129.146.17.50`
+        /// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
         /// </summary>
         [Input("cpeIp")]
         public Input<string>? CpeIp { get; set; }

@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.CpeArgs;
 import com.pulumi.oci.Core.inputs.CpeState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -63,6 +64,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.cpe_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isPrivate(var_.cpe_is_private())
  *             .build());
  * 
  *     }
@@ -165,9 +167,6 @@ public class Cpe extends com.pulumi.resources.CustomResource {
     /**
      * The public IP address of the on-premises router.  Example: `203.0.113.2`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="ipAddress", type=String.class, parameters={})
     private Output<String> ipAddress;
@@ -175,12 +174,29 @@ public class Cpe extends com.pulumi.resources.CustomResource {
     /**
      * @return The public IP address of the on-premises router.  Example: `203.0.113.2`
      * 
+     */
+    public Output<String> ipAddress() {
+        return this.ipAddress;
+    }
+    /**
+     * Indicates whether this CPE is of type `private` or not.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> ipAddress() {
-        return this.ipAddress;
+    @Export(name="isPrivate", type=Boolean.class, parameters={})
+    private Output<Boolean> isPrivate;
+
+    /**
+     * @return Indicates whether this CPE is of type `private` or not.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Boolean> isPrivate() {
+        return this.isPrivate;
     }
     /**
      * The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

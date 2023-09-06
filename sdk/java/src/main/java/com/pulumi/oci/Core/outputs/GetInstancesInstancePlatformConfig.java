@@ -6,7 +6,9 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -16,6 +18,11 @@ public final class GetInstancesInstancePlatformConfig {
      * 
      */
     private Boolean areVirtualInstructionsEnabled;
+    /**
+     * @return Instance Platform Configuration Configuration Map for flexible setting input.
+     * 
+     */
+    private Map<String,Object> configMap;
     /**
      * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
      * 
@@ -74,6 +81,13 @@ public final class GetInstancesInstancePlatformConfig {
      */
     public Boolean areVirtualInstructionsEnabled() {
         return this.areVirtualInstructionsEnabled;
+    }
+    /**
+     * @return Instance Platform Configuration Configuration Map for flexible setting input.
+     * 
+     */
+    public Map<String,Object> configMap() {
+        return this.configMap;
     }
     /**
      * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
@@ -156,6 +170,7 @@ public final class GetInstancesInstancePlatformConfig {
     @CustomType.Builder
     public static final class Builder {
         private Boolean areVirtualInstructionsEnabled;
+        private Map<String,Object> configMap;
         private Boolean isAccessControlServiceEnabled;
         private Boolean isInputOutputMemoryManagementUnitEnabled;
         private Boolean isMeasuredBootEnabled;
@@ -170,6 +185,7 @@ public final class GetInstancesInstancePlatformConfig {
         public Builder(GetInstancesInstancePlatformConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areVirtualInstructionsEnabled = defaults.areVirtualInstructionsEnabled;
+    	      this.configMap = defaults.configMap;
     	      this.isAccessControlServiceEnabled = defaults.isAccessControlServiceEnabled;
     	      this.isInputOutputMemoryManagementUnitEnabled = defaults.isInputOutputMemoryManagementUnitEnabled;
     	      this.isMeasuredBootEnabled = defaults.isMeasuredBootEnabled;
@@ -185,6 +201,11 @@ public final class GetInstancesInstancePlatformConfig {
         @CustomType.Setter
         public Builder areVirtualInstructionsEnabled(Boolean areVirtualInstructionsEnabled) {
             this.areVirtualInstructionsEnabled = Objects.requireNonNull(areVirtualInstructionsEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configMap(Map<String,Object> configMap) {
+            this.configMap = Objects.requireNonNull(configMap);
             return this;
         }
         @CustomType.Setter
@@ -240,6 +261,7 @@ public final class GetInstancesInstancePlatformConfig {
         public GetInstancesInstancePlatformConfig build() {
             final var o = new GetInstancesInstancePlatformConfig();
             o.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+            o.configMap = configMap;
             o.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
             o.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
             o.isMeasuredBootEnabled = isMeasuredBootEnabled;

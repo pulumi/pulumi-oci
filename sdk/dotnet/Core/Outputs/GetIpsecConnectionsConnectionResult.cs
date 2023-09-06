@@ -61,6 +61,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The transport type used for the IPSec connection.
+        /// </summary>
+        public readonly string TransportType;
 
         [OutputConstructor]
         private GetIpsecConnectionsConnectionResult(
@@ -86,7 +90,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<string> staticRoutes,
 
-            string timeCreated)
+            string timeCreated,
+
+            string transportType)
         {
             CompartmentId = compartmentId;
             CpeId = cpeId;
@@ -100,6 +106,7 @@ namespace Pulumi.Oci.Core.Outputs
             State = state;
             StaticRoutes = staticRoutes;
             TimeCreated = timeCreated;
+            TransportType = transportType;
         }
     }
 }

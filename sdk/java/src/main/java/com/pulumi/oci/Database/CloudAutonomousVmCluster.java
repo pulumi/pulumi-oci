@@ -104,6 +104,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster")
 public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResource {
     /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="autonomousDataStoragePercentage", type=Double.class, parameters={})
+    private Output<Double> autonomousDataStoragePercentage;
+
+    /**
+     * @return The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * 
+     */
+    public Output<Double> autonomousDataStoragePercentage() {
+        return this.autonomousDataStoragePercentage;
+    }
+    /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
@@ -256,6 +270,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Integer> cpuCoreCountPerNode() {
         return this.cpuCoreCountPerNode;
+    }
+    /**
+     * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="cpuPercentage", type=Double.class, parameters={})
+    private Output<Double> cpuPercentage;
+
+    /**
+     * @return The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     * 
+     */
+    public Output<Double> cpuPercentage() {
+        return this.cpuPercentage;
     }
     /**
      * The total data storage allocated, in gigabytes (GB).
@@ -500,14 +528,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.maintenanceWindows;
     }
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", type=Integer.class, parameters={})
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     public Output<Integer> memoryPerOracleComputeUnitInGbs() {
@@ -556,6 +584,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.nodeCount;
     }
     /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="nonProvisionableAutonomousContainerDatabases", type=Integer.class, parameters={})
+    private Output<Integer> nonProvisionableAutonomousContainerDatabases;
+
+    /**
+     * @return The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    public Output<Integer> nonProvisionableAutonomousContainerDatabases() {
+        return this.nonProvisionableAutonomousContainerDatabases;
+    }
+    /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
@@ -586,9 +628,51 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.ocpuCount;
     }
     /**
+     * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="provisionableAutonomousContainerDatabases", type=Integer.class, parameters={})
+    private Output<Integer> provisionableAutonomousContainerDatabases;
+
+    /**
+     * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    public Output<Integer> provisionableAutonomousContainerDatabases() {
+        return this.provisionableAutonomousContainerDatabases;
+    }
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="provisionedAutonomousContainerDatabases", type=Integer.class, parameters={})
+    private Output<Integer> provisionedAutonomousContainerDatabases;
+
+    /**
+     * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    public Output<Integer> provisionedAutonomousContainerDatabases() {
+        return this.provisionedAutonomousContainerDatabases;
+    }
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="provisionedCpus", type=Double.class, parameters={})
+    private Output<Double> provisionedCpus;
+
+    /**
+     * @return The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
+    public Output<Double> provisionedCpus() {
+        return this.provisionedCpus;
+    }
+    /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     @Export(name="reclaimableCpus", type=Double.class, parameters={})
@@ -597,11 +681,25 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     public Output<Double> reclaimableCpus() {
         return this.reclaimableCpus;
+    }
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="reservedCpus", type=Double.class, parameters={})
+    private Output<Double> reservedCpus;
+
+    /**
+     * @return The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
+    public Output<Double> reservedCpus() {
+        return this.reservedCpus;
     }
     /**
      * The SCAN Listener Non TLS port. Default is 1521.
@@ -702,6 +800,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return Codegen.optional(this.timeUpdated);
     }
     /**
+     * The total data disk group size for Autonomous Databases, in TBs.
+     * 
+     */
+    @Export(name="totalAutonomousDataStorageInTbs", type=Double.class, parameters={})
+    private Output<Double> totalAutonomousDataStorageInTbs;
+
+    /**
+     * @return The total data disk group size for Autonomous Databases, in TBs.
+     * 
+     */
+    public Output<Double> totalAutonomousDataStorageInTbs() {
+        return this.totalAutonomousDataStorageInTbs;
+    }
+    /**
      * The total number of Autonomous Container Databases that can be created.
      * 
      * ** IMPORTANT **
@@ -720,6 +832,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Integer> totalContainerDatabases() {
         return this.totalContainerDatabases;
+    }
+    /**
+     * The total number of CPUs in an Autonomous VM Cluster.
+     * 
+     */
+    @Export(name="totalCpus", type=Double.class, parameters={})
+    private Output<Double> totalCpus;
+
+    /**
+     * @return The total number of CPUs in an Autonomous VM Cluster.
+     * 
+     */
+    public Output<Double> totalCpus() {
+        return this.totalCpus;
     }
 
     /**

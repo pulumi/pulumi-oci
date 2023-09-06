@@ -12,6 +12,7 @@ import com.pulumi.oci.DatabaseMigration.inputs.ConnectionState;
 import com.pulumi.oci.DatabaseMigration.outputs.ConnectionAdminCredentials;
 import com.pulumi.oci.DatabaseMigration.outputs.ConnectionConnectDescriptor;
 import com.pulumi.oci.DatabaseMigration.outputs.ConnectionPrivateEndpoint;
+import com.pulumi.oci.DatabaseMigration.outputs.ConnectionReplicationCredentials;
 import com.pulumi.oci.DatabaseMigration.outputs.ConnectionSshDetails;
 import com.pulumi.oci.DatabaseMigration.outputs.ConnectionVaultDetails;
 import com.pulumi.oci.Utilities;
@@ -40,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DatabaseMigration.inputs.ConnectionVaultDetailsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.ConnectionConnectDescriptorArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.ConnectionPrivateEndpointArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.ConnectionReplicationCredentialsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.ConnectionSshDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -82,6 +84,10 @@ import javax.annotation.Nullable;
  *                 .compartmentId(var_.compartment_id())
  *                 .subnetId(oci_core_subnet.test_subnet().id())
  *                 .vcnId(oci_core_vcn.test_vcn().id())
+ *                 .build())
+ *             .replicationCredentials(ConnectionReplicationCredentialsArgs.builder()
+ *                 .password(var_.connection_replication_credentials_password())
+ *                 .username(var_.connection_replication_credentials_username())
  *                 .build())
  *             .sshDetails(ConnectionSshDetailsArgs.builder()
  *                 .host(var_.connection_ssh_details_host())
@@ -289,6 +295,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<ConnectionPrivateEndpoint> privateEndpoint() {
         return this.privateEndpoint;
+    }
+    /**
+     * (Updatable) Database Administrator Credentials details.
+     * 
+     */
+    @Export(name="replicationCredentials", type=ConnectionReplicationCredentials.class, parameters={})
+    private Output<ConnectionReplicationCredentials> replicationCredentials;
+
+    /**
+     * @return (Updatable) Database Administrator Credentials details.
+     * 
+     */
+    public Output<ConnectionReplicationCredentials> replicationCredentials() {
+        return this.replicationCredentials;
     }
     /**
      * (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.

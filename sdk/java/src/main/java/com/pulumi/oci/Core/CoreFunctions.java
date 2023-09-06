@@ -248,6 +248,8 @@ import com.pulumi.oci.Core.inputs.GetVcnPlainArgs;
 import com.pulumi.oci.Core.inputs.GetVcnsArgs;
 import com.pulumi.oci.Core.inputs.GetVcnsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
+import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
+import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
 import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesPlainArgs;
 import com.pulumi.oci.Core.inputs.GetVirtualCircuitPlainArgs;
@@ -410,6 +412,7 @@ import com.pulumi.oci.Core.outputs.GetSubnetsResult;
 import com.pulumi.oci.Core.outputs.GetTunnelSecurityAssociationsResult;
 import com.pulumi.oci.Core.outputs.GetVcnResult;
 import com.pulumi.oci.Core.outputs.GetVcnsResult;
+import com.pulumi.oci.Core.outputs.GetVirtualCircuitAssociatedTunnelsResult;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitBandwidthShapesResult;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitPublicPrefixesResult;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitResult;
@@ -22021,6 +22024,162 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetVirtualCircuitResult> getVirtualCircuitPlain(GetVirtualCircuitPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVirtualCircuit:getVirtualCircuit", TypeShape.of(GetVirtualCircuitResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified virtual circuit&#39;s associatedTunnelsInfo.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs args) {
+        return getVirtualCircuitAssociatedTunnels(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified virtual circuit&#39;s associatedTunnelsInfo.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnelsPlain(GetVirtualCircuitAssociatedTunnelsPlainArgs args) {
+        return getVirtualCircuitAssociatedTunnelsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified virtual circuit&#39;s associatedTunnelsInfo.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", TypeShape.of(GetVirtualCircuitAssociatedTunnelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified virtual circuit&#39;s associatedTunnelsInfo.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnelsPlain(GetVirtualCircuitAssociatedTunnelsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", TypeShape.of(GetVirtualCircuitAssociatedTunnelsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.

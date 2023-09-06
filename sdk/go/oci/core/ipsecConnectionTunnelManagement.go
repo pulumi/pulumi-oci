@@ -74,13 +74,15 @@ import (
 type IpsecConnectionTunnelManagement struct {
 	pulumi.CustomResourceState
 
+	// The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+	AssociatedVirtualCircuits pulumi.StringArrayOutput `pulumi:"associatedVirtualCircuits"`
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	//
 	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput `pulumi:"bgpSessionInfos"`
-	// The OCID of the compartment containing the tunnel.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The IP address of Cpe headend.  Example: `129.146.17.50`
+	// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
 	CpeIp pulumi.StringOutput `pulumi:"cpeIp"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName     pulumi.StringOutput                                 `pulumi:"displayName"`
@@ -154,13 +156,15 @@ func GetIpsecConnectionTunnelManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering IpsecConnectionTunnelManagement resources.
 type ipsecConnectionTunnelManagementState struct {
+	// The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+	AssociatedVirtualCircuits []string `pulumi:"associatedVirtualCircuits"`
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	//
 	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 	BgpSessionInfos []IpsecConnectionTunnelManagementBgpSessionInfo `pulumi:"bgpSessionInfos"`
-	// The OCID of the compartment containing the tunnel.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The IP address of Cpe headend.  Example: `129.146.17.50`
+	// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
 	CpeIp *string `pulumi:"cpeIp"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName     *string                                    `pulumi:"displayName"`
@@ -196,13 +200,15 @@ type ipsecConnectionTunnelManagementState struct {
 }
 
 type IpsecConnectionTunnelManagementState struct {
+	// The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+	AssociatedVirtualCircuits pulumi.StringArrayInput
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	//
 	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayInput
-	// The OCID of the compartment containing the tunnel.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
 	CompartmentId pulumi.StringPtrInput
-	// The IP address of Cpe headend.  Example: `129.146.17.50`
+	// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
 	CpeIp pulumi.StringPtrInput
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName     pulumi.StringPtrInput
@@ -373,6 +379,11 @@ func (o IpsecConnectionTunnelManagementOutput) ToIpsecConnectionTunnelManagement
 	return o
 }
 
+// The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+func (o IpsecConnectionTunnelManagementOutput) AssociatedVirtualCircuits() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringArrayOutput { return v.AssociatedVirtualCircuits }).(pulumi.StringArrayOutput)
+}
+
 // Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 //
 // If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
@@ -382,12 +393,12 @@ func (o IpsecConnectionTunnelManagementOutput) BgpSessionInfos() IpsecConnection
 	}).(IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput)
 }
 
-// The OCID of the compartment containing the tunnel.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
 func (o IpsecConnectionTunnelManagementOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The IP address of Cpe headend.  Example: `129.146.17.50`
+// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
 func (o IpsecConnectionTunnelManagementOutput) CpeIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.CpeIp }).(pulumi.StringOutput)
 }

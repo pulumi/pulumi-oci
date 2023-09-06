@@ -62,6 +62,7 @@ import * as utilities from "../utilities";
  *     },
  *     ipMtu: _var.virtual_circuit_ip_mtu,
  *     isBfdEnabled: _var.virtual_circuit_is_bfd_enabled,
+ *     isTransportMode: _var.virtual_circuit_is_transport_mode,
  *     gatewayId: oci_core_gateway.test_gateway.id,
  *     providerServiceId: data.oci_core_fast_connect_provider_services.test_fast_connect_provider_services.fast_connect_provider_services[0].id,
  *     providerServiceKeyName: _var.virtual_circuit_provider_service_key_name,
@@ -174,6 +175,10 @@ export class VirtualCircuit extends pulumi.CustomResource {
      */
     public readonly isBfdEnabled!: pulumi.Output<boolean>;
     /**
+     * (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     */
+    public readonly isTransportMode!: pulumi.Output<boolean>;
+    /**
      * The Oracle BGP ASN.
      */
     public /*out*/ readonly oracleBgpAsn!: pulumi.Output<number>;
@@ -254,6 +259,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
             resourceInputs["gatewayId"] = state ? state.gatewayId : undefined;
             resourceInputs["ipMtu"] = state ? state.ipMtu : undefined;
             resourceInputs["isBfdEnabled"] = state ? state.isBfdEnabled : undefined;
+            resourceInputs["isTransportMode"] = state ? state.isTransportMode : undefined;
             resourceInputs["oracleBgpAsn"] = state ? state.oracleBgpAsn : undefined;
             resourceInputs["providerServiceId"] = state ? state.providerServiceId : undefined;
             resourceInputs["providerServiceKeyName"] = state ? state.providerServiceKeyName : undefined;
@@ -286,6 +292,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
             resourceInputs["gatewayId"] = args ? args.gatewayId : undefined;
             resourceInputs["ipMtu"] = args ? args.ipMtu : undefined;
             resourceInputs["isBfdEnabled"] = args ? args.isBfdEnabled : undefined;
+            resourceInputs["isTransportMode"] = args ? args.isTransportMode : undefined;
             resourceInputs["providerServiceId"] = args ? args.providerServiceId : undefined;
             resourceInputs["providerServiceKeyName"] = args ? args.providerServiceKeyName : undefined;
             resourceInputs["publicPrefixes"] = args ? args.publicPrefixes : undefined;
@@ -375,6 +382,10 @@ export interface VirtualCircuitState {
      * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      */
     isBfdEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     */
+    isTransportMode?: pulumi.Input<boolean>;
     /**
      * The Oracle BGP ASN.
      */
@@ -483,6 +494,10 @@ export interface VirtualCircuitArgs {
      * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      */
     isBfdEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     */
+    isTransportMode?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      */

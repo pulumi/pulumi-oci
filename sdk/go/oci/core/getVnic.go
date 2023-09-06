@@ -75,6 +75,8 @@ type GetVnicResult struct {
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
+	Ipv6addresses []string `pulumi:"ipv6addresses"`
 	// Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
 	IsPrimary bool `pulumi:"isPrimary"`
 	// The MAC address of the VNIC.
@@ -169,6 +171,11 @@ func (o GetVnicResultOutput) HostnameLabel() pulumi.StringOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetVnicResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVnicResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
+func (o GetVnicResultOutput) Ipv6addresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVnicResult) []string { return v.Ipv6addresses }).(pulumi.StringArrayOutput)
 }
 
 // Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).

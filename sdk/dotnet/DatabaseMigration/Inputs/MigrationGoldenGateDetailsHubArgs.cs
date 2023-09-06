@@ -33,26 +33,26 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         /// <summary>
         /// (Updatable) Database Administrator Credentials details.
         /// </summary>
-        [Input("sourceDbAdminCredentials", required: true)]
-        public Input<Inputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs> SourceDbAdminCredentials { get; set; } = null!;
+        [Input("sourceDbAdminCredentials")]
+        public Input<Inputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs>? SourceDbAdminCredentials { get; set; }
 
         /// <summary>
         /// (Updatable) Name of GoldenGate Microservices deployment to operate on source database
         /// </summary>
-        [Input("sourceMicroservicesDeploymentName", required: true)]
-        public Input<string> SourceMicroservicesDeploymentName { get; set; } = null!;
+        [Input("sourceMicroservicesDeploymentName")]
+        public Input<string>? SourceMicroservicesDeploymentName { get; set; }
 
         /// <summary>
         /// (Updatable) Database Administrator Credentials details.
         /// </summary>
-        [Input("targetDbAdminCredentials", required: true)]
-        public Input<Inputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs> TargetDbAdminCredentials { get; set; } = null!;
+        [Input("targetDbAdminCredentials")]
+        public Input<Inputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs>? TargetDbAdminCredentials { get; set; }
 
         /// <summary>
         /// (Updatable) Name of GoldenGate Microservices deployment to operate on target database
         /// </summary>
-        [Input("targetMicroservicesDeploymentName", required: true)]
-        public Input<string> TargetMicroservicesDeploymentName { get; set; } = null!;
+        [Input("targetMicroservicesDeploymentName")]
+        public Input<string>? TargetMicroservicesDeploymentName { get; set; }
 
         /// <summary>
         /// (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA

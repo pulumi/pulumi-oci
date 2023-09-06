@@ -15,8 +15,20 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
         /// </summary>
-        [Input("id", required: true)]
-        public Input<string> Id { get; set; } = null!;
+        [Input("id")]
+        public Input<string>? Id { get; set; }
+
+        [Input("ids")]
+        private InputList<string>? _ids;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+        /// </summary>
+        public InputList<string> Ids
+        {
+            get => _ids ?? (_ids = new InputList<string>());
+            set => _ids = value;
+        }
 
         /// <summary>
         /// The IPSec connection that contains the attached IPSec tunnel.
@@ -36,7 +48,19 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? RouteTableId { get; set; }
 
         /// <summary>
-        /// (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit's DRG attachment.
+        /// </summary>
+        [Input("transportAttachmentId")]
+        public Input<string>? TransportAttachmentId { get; set; }
+
+        /// <summary>
+        /// Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+        /// </summary>
+        [Input("transportOnlyMode")]
+        public Input<bool>? TransportOnlyMode { get; set; }
+
+        /// <summary>
+        /// (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

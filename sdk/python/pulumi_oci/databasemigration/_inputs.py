@@ -13,6 +13,7 @@ __all__ = [
     'ConnectionAdminCredentialsArgs',
     'ConnectionConnectDescriptorArgs',
     'ConnectionPrivateEndpointArgs',
+    'ConnectionReplicationCredentialsArgs',
     'ConnectionSshDetailsArgs',
     'ConnectionVaultDetailsArgs',
     'JobProgressArgs',
@@ -43,6 +44,14 @@ __all__ = [
     'MigrationGoldenGateDetailsSettingsArgs',
     'MigrationGoldenGateDetailsSettingsExtractArgs',
     'MigrationGoldenGateDetailsSettingsReplicatArgs',
+    'MigrationGoldenGateServiceDetailsArgs',
+    'MigrationGoldenGateServiceDetailsGgsDeploymentArgs',
+    'MigrationGoldenGateServiceDetailsSettingsArgs',
+    'MigrationGoldenGateServiceDetailsSettingsExtractArgs',
+    'MigrationGoldenGateServiceDetailsSettingsReplicatArgs',
+    'MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs',
+    'MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs',
+    'MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs',
     'MigrationIncludeObjectArgs',
     'MigrationVaultDetailsArgs',
     'GetAgentImagesFilterArgs',
@@ -226,6 +235,43 @@ class ConnectionPrivateEndpointArgs:
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+
+@pulumi.input_type
+class ConnectionReplicationCredentialsArgs:
+    def __init__(__self__, *,
+                 password: pulumi.Input[str],
+                 username: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] password: (Updatable) Administrator password
+        :param pulumi.Input[str] username: (Updatable) Administrator username
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Administrator password
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[str]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Administrator username
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[str]):
+        pulumi.set(self, "username", value)
 
 
 @pulumi.input_type
@@ -1478,33 +1524,37 @@ class MigrationGoldenGateDetailsArgs:
 class MigrationGoldenGateDetailsHubArgs:
     def __init__(__self__, *,
                  rest_admin_credentials: pulumi.Input['MigrationGoldenGateDetailsHubRestAdminCredentialsArgs'],
-                 source_db_admin_credentials: pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs'],
-                 source_microservices_deployment_name: pulumi.Input[str],
-                 target_db_admin_credentials: pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs'],
-                 target_microservices_deployment_name: pulumi.Input[str],
                  url: pulumi.Input[str],
                  compute_id: Optional[pulumi.Input[str]] = None,
-                 source_container_db_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs']] = None):
+                 source_container_db_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs']] = None,
+                 source_db_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs']] = None,
+                 source_microservices_deployment_name: Optional[pulumi.Input[str]] = None,
+                 target_db_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs']] = None,
+                 target_microservices_deployment_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input['MigrationGoldenGateDetailsHubRestAdminCredentialsArgs'] rest_admin_credentials: (Updatable) Database Administrator Credentials details.
+        :param pulumi.Input[str] url: (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
+        :param pulumi.Input[str] compute_id: (Updatable) OCID of GoldenGate Microservices compute instance.
+        :param pulumi.Input['MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs'] source_container_db_admin_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs'] source_db_admin_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input[str] source_microservices_deployment_name: (Updatable) Name of GoldenGate Microservices deployment to operate on source database
         :param pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs'] target_db_admin_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input[str] target_microservices_deployment_name: (Updatable) Name of GoldenGate Microservices deployment to operate on target database
-        :param pulumi.Input[str] url: (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
-        :param pulumi.Input[str] compute_id: (Updatable) OCID of GoldenGate Microservices compute instance.
-        :param pulumi.Input['MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs'] source_container_db_admin_credentials: (Updatable) Database Administrator Credentials details.
         """
         pulumi.set(__self__, "rest_admin_credentials", rest_admin_credentials)
-        pulumi.set(__self__, "source_db_admin_credentials", source_db_admin_credentials)
-        pulumi.set(__self__, "source_microservices_deployment_name", source_microservices_deployment_name)
-        pulumi.set(__self__, "target_db_admin_credentials", target_db_admin_credentials)
-        pulumi.set(__self__, "target_microservices_deployment_name", target_microservices_deployment_name)
         pulumi.set(__self__, "url", url)
         if compute_id is not None:
             pulumi.set(__self__, "compute_id", compute_id)
         if source_container_db_admin_credentials is not None:
             pulumi.set(__self__, "source_container_db_admin_credentials", source_container_db_admin_credentials)
+        if source_db_admin_credentials is not None:
+            pulumi.set(__self__, "source_db_admin_credentials", source_db_admin_credentials)
+        if source_microservices_deployment_name is not None:
+            pulumi.set(__self__, "source_microservices_deployment_name", source_microservices_deployment_name)
+        if target_db_admin_credentials is not None:
+            pulumi.set(__self__, "target_db_admin_credentials", target_db_admin_credentials)
+        if target_microservices_deployment_name is not None:
+            pulumi.set(__self__, "target_microservices_deployment_name", target_microservices_deployment_name)
 
     @property
     @pulumi.getter(name="restAdminCredentials")
@@ -1517,54 +1567,6 @@ class MigrationGoldenGateDetailsHubArgs:
     @rest_admin_credentials.setter
     def rest_admin_credentials(self, value: pulumi.Input['MigrationGoldenGateDetailsHubRestAdminCredentialsArgs']):
         pulumi.set(self, "rest_admin_credentials", value)
-
-    @property
-    @pulumi.getter(name="sourceDbAdminCredentials")
-    def source_db_admin_credentials(self) -> pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs']:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
-        return pulumi.get(self, "source_db_admin_credentials")
-
-    @source_db_admin_credentials.setter
-    def source_db_admin_credentials(self, value: pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs']):
-        pulumi.set(self, "source_db_admin_credentials", value)
-
-    @property
-    @pulumi.getter(name="sourceMicroservicesDeploymentName")
-    def source_microservices_deployment_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of GoldenGate Microservices deployment to operate on source database
-        """
-        return pulumi.get(self, "source_microservices_deployment_name")
-
-    @source_microservices_deployment_name.setter
-    def source_microservices_deployment_name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "source_microservices_deployment_name", value)
-
-    @property
-    @pulumi.getter(name="targetDbAdminCredentials")
-    def target_db_admin_credentials(self) -> pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs']:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
-        return pulumi.get(self, "target_db_admin_credentials")
-
-    @target_db_admin_credentials.setter
-    def target_db_admin_credentials(self, value: pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs']):
-        pulumi.set(self, "target_db_admin_credentials", value)
-
-    @property
-    @pulumi.getter(name="targetMicroservicesDeploymentName")
-    def target_microservices_deployment_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of GoldenGate Microservices deployment to operate on target database
-        """
-        return pulumi.get(self, "target_microservices_deployment_name")
-
-    @target_microservices_deployment_name.setter
-    def target_microservices_deployment_name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "target_microservices_deployment_name", value)
 
     @property
     @pulumi.getter
@@ -1602,6 +1604,54 @@ class MigrationGoldenGateDetailsHubArgs:
     def source_container_db_admin_credentials(self, value: Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs']]):
         pulumi.set(self, "source_container_db_admin_credentials", value)
 
+    @property
+    @pulumi.getter(name="sourceDbAdminCredentials")
+    def source_db_admin_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs']]:
+        """
+        (Updatable) Database Administrator Credentials details.
+        """
+        return pulumi.get(self, "source_db_admin_credentials")
+
+    @source_db_admin_credentials.setter
+    def source_db_admin_credentials(self, value: Optional[pulumi.Input['MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs']]):
+        pulumi.set(self, "source_db_admin_credentials", value)
+
+    @property
+    @pulumi.getter(name="sourceMicroservicesDeploymentName")
+    def source_microservices_deployment_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of GoldenGate Microservices deployment to operate on source database
+        """
+        return pulumi.get(self, "source_microservices_deployment_name")
+
+    @source_microservices_deployment_name.setter
+    def source_microservices_deployment_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_microservices_deployment_name", value)
+
+    @property
+    @pulumi.getter(name="targetDbAdminCredentials")
+    def target_db_admin_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs']]:
+        """
+        (Updatable) Database Administrator Credentials details.
+        """
+        return pulumi.get(self, "target_db_admin_credentials")
+
+    @target_db_admin_credentials.setter
+    def target_db_admin_credentials(self, value: Optional[pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs']]):
+        pulumi.set(self, "target_db_admin_credentials", value)
+
+    @property
+    @pulumi.getter(name="targetMicroservicesDeploymentName")
+    def target_microservices_deployment_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of GoldenGate Microservices deployment to operate on target database
+        """
+        return pulumi.get(self, "target_microservices_deployment_name")
+
+    @target_microservices_deployment_name.setter
+    def target_microservices_deployment_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_microservices_deployment_name", value)
+
 
 @pulumi.input_type
 class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs:
@@ -1609,8 +1659,8 @@ class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs:
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] password: (Updatable) Administrator password
-        :param pulumi.Input[str] username: (Updatable) Administrator username
+        :param pulumi.Input[str] password: (Updatable) Database  password
+        :param pulumi.Input[str] username: (Updatable) Database username
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
@@ -1619,7 +1669,7 @@ class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
         """
-        (Updatable) Administrator password
+        (Updatable) Database  password
         """
         return pulumi.get(self, "password")
 
@@ -1631,7 +1681,7 @@ class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs:
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
         """
-        (Updatable) Administrator username
+        (Updatable) Database username
         """
         return pulumi.get(self, "username")
 
@@ -1646,8 +1696,8 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs:
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] password: (Updatable) Administrator password
-        :param pulumi.Input[str] username: (Updatable) Administrator username
+        :param pulumi.Input[str] password: (Updatable) Database  password
+        :param pulumi.Input[str] username: (Updatable) Database username
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
@@ -1656,7 +1706,7 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
         """
-        (Updatable) Administrator password
+        (Updatable) Database  password
         """
         return pulumi.get(self, "password")
 
@@ -1668,7 +1718,7 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs:
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
         """
-        (Updatable) Administrator username
+        (Updatable) Database username
         """
         return pulumi.get(self, "username")
 
@@ -1683,8 +1733,8 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs:
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] password: (Updatable) Administrator password
-        :param pulumi.Input[str] username: (Updatable) Administrator username
+        :param pulumi.Input[str] password: (Updatable) Database  password
+        :param pulumi.Input[str] username: (Updatable) Database username
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
@@ -1693,7 +1743,7 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
         """
-        (Updatable) Administrator password
+        (Updatable) Database  password
         """
         return pulumi.get(self, "password")
 
@@ -1705,7 +1755,7 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs:
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
         """
-        (Updatable) Administrator username
+        (Updatable) Database username
         """
         return pulumi.get(self, "username")
 
@@ -1720,8 +1770,8 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs:
                  password: pulumi.Input[str],
                  username: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] password: (Updatable) Administrator password
-        :param pulumi.Input[str] username: (Updatable) Administrator username
+        :param pulumi.Input[str] password: (Updatable) Database  password
+        :param pulumi.Input[str] username: (Updatable) Database username
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
@@ -1730,7 +1780,7 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
         """
-        (Updatable) Administrator password
+        (Updatable) Database  password
         """
         return pulumi.get(self, "password")
 
@@ -1742,7 +1792,7 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs:
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
         """
-        (Updatable) Administrator username
+        (Updatable) Database username
         """
         return pulumi.get(self, "username")
 
@@ -1914,6 +1964,392 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
     @performance_profile.setter
     def performance_profile(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "performance_profile", value)
+
+
+@pulumi.input_type
+class MigrationGoldenGateServiceDetailsArgs:
+    def __init__(__self__, *,
+                 ggs_deployments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationGoldenGateServiceDetailsGgsDeploymentArgs']]]] = None,
+                 settings: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsArgs']] = None,
+                 source_container_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs']] = None,
+                 source_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs']] = None,
+                 target_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs']] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['MigrationGoldenGateServiceDetailsGgsDeploymentArgs']]] ggs_deployments: Details about Oracle GoldenGate GGS Deployment.
+        :param pulumi.Input['MigrationGoldenGateServiceDetailsSettingsArgs'] settings: (Updatable) Optional settings for GoldenGate Microservices processes
+        :param pulumi.Input['MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs'] source_container_db_credentials: (Updatable) Database Credentials details.
+        :param pulumi.Input['MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs'] source_db_credentials: (Updatable) Database Credentials details.
+        :param pulumi.Input['MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs'] target_db_credentials: (Updatable) Database Credentials details.
+        """
+        if ggs_deployments is not None:
+            pulumi.set(__self__, "ggs_deployments", ggs_deployments)
+        if settings is not None:
+            pulumi.set(__self__, "settings", settings)
+        if source_container_db_credentials is not None:
+            pulumi.set(__self__, "source_container_db_credentials", source_container_db_credentials)
+        if source_db_credentials is not None:
+            pulumi.set(__self__, "source_db_credentials", source_db_credentials)
+        if target_db_credentials is not None:
+            pulumi.set(__self__, "target_db_credentials", target_db_credentials)
+
+    @property
+    @pulumi.getter(name="ggsDeployments")
+    def ggs_deployments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationGoldenGateServiceDetailsGgsDeploymentArgs']]]]:
+        """
+        Details about Oracle GoldenGate GGS Deployment.
+        """
+        return pulumi.get(self, "ggs_deployments")
+
+    @ggs_deployments.setter
+    def ggs_deployments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationGoldenGateServiceDetailsGgsDeploymentArgs']]]]):
+        pulumi.set(self, "ggs_deployments", value)
+
+    @property
+    @pulumi.getter
+    def settings(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsArgs']]:
+        """
+        (Updatable) Optional settings for GoldenGate Microservices processes
+        """
+        return pulumi.get(self, "settings")
+
+    @settings.setter
+    def settings(self, value: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsArgs']]):
+        pulumi.set(self, "settings", value)
+
+    @property
+    @pulumi.getter(name="sourceContainerDbCredentials")
+    def source_container_db_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs']]:
+        """
+        (Updatable) Database Credentials details.
+        """
+        return pulumi.get(self, "source_container_db_credentials")
+
+    @source_container_db_credentials.setter
+    def source_container_db_credentials(self, value: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs']]):
+        pulumi.set(self, "source_container_db_credentials", value)
+
+    @property
+    @pulumi.getter(name="sourceDbCredentials")
+    def source_db_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs']]:
+        """
+        (Updatable) Database Credentials details.
+        """
+        return pulumi.get(self, "source_db_credentials")
+
+    @source_db_credentials.setter
+    def source_db_credentials(self, value: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs']]):
+        pulumi.set(self, "source_db_credentials", value)
+
+    @property
+    @pulumi.getter(name="targetDbCredentials")
+    def target_db_credentials(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs']]:
+        """
+        (Updatable) Database Credentials details.
+        """
+        return pulumi.get(self, "target_db_credentials")
+
+    @target_db_credentials.setter
+    def target_db_credentials(self, value: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs']]):
+        pulumi.set(self, "target_db_credentials", value)
+
+
+@pulumi.input_type
+class MigrationGoldenGateServiceDetailsGgsDeploymentArgs:
+    def __init__(__self__, *,
+                 deployment_id: Optional[pulumi.Input[str]] = None,
+                 ggs_admin_credentials_secret_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] deployment_id: OCID of a GoldenGate Deployment
+        :param pulumi.Input[str] ggs_admin_credentials_secret_id: OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+        """
+        if deployment_id is not None:
+            pulumi.set(__self__, "deployment_id", deployment_id)
+        if ggs_admin_credentials_secret_id is not None:
+            pulumi.set(__self__, "ggs_admin_credentials_secret_id", ggs_admin_credentials_secret_id)
+
+    @property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        OCID of a GoldenGate Deployment
+        """
+        return pulumi.get(self, "deployment_id")
+
+    @deployment_id.setter
+    def deployment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deployment_id", value)
+
+    @property
+    @pulumi.getter(name="ggsAdminCredentialsSecretId")
+    def ggs_admin_credentials_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+        """
+        return pulumi.get(self, "ggs_admin_credentials_secret_id")
+
+    @ggs_admin_credentials_secret_id.setter
+    def ggs_admin_credentials_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ggs_admin_credentials_secret_id", value)
+
+
+@pulumi.input_type
+class MigrationGoldenGateServiceDetailsSettingsArgs:
+    def __init__(__self__, *,
+                 acceptable_lag: Optional[pulumi.Input[int]] = None,
+                 extract: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsExtractArgs']] = None,
+                 replicat: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsReplicatArgs']] = None):
+        """
+        :param pulumi.Input[int] acceptable_lag: (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+        :param pulumi.Input['MigrationGoldenGateServiceDetailsSettingsExtractArgs'] extract: (Updatable) Parameters for GoldenGate Extract processes.
+        :param pulumi.Input['MigrationGoldenGateServiceDetailsSettingsReplicatArgs'] replicat: (Updatable) Parameters for GoldenGate Replicat processes.
+        """
+        if acceptable_lag is not None:
+            pulumi.set(__self__, "acceptable_lag", acceptable_lag)
+        if extract is not None:
+            pulumi.set(__self__, "extract", extract)
+        if replicat is not None:
+            pulumi.set(__self__, "replicat", replicat)
+
+    @property
+    @pulumi.getter(name="acceptableLag")
+    def acceptable_lag(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+        """
+        return pulumi.get(self, "acceptable_lag")
+
+    @acceptable_lag.setter
+    def acceptable_lag(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "acceptable_lag", value)
+
+    @property
+    @pulumi.getter
+    def extract(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsExtractArgs']]:
+        """
+        (Updatable) Parameters for GoldenGate Extract processes.
+        """
+        return pulumi.get(self, "extract")
+
+    @extract.setter
+    def extract(self, value: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsExtractArgs']]):
+        pulumi.set(self, "extract", value)
+
+    @property
+    @pulumi.getter
+    def replicat(self) -> Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsReplicatArgs']]:
+        """
+        (Updatable) Parameters for GoldenGate Replicat processes.
+        """
+        return pulumi.get(self, "replicat")
+
+    @replicat.setter
+    def replicat(self, value: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsReplicatArgs']]):
+        pulumi.set(self, "replicat", value)
+
+
+@pulumi.input_type
+class MigrationGoldenGateServiceDetailsSettingsExtractArgs:
+    def __init__(__self__, *,
+                 long_trans_duration: Optional[pulumi.Input[int]] = None,
+                 performance_profile: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] long_trans_duration: (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+        :param pulumi.Input[str] performance_profile: (Updatable) Extract performance.
+        """
+        if long_trans_duration is not None:
+            pulumi.set(__self__, "long_trans_duration", long_trans_duration)
+        if performance_profile is not None:
+            pulumi.set(__self__, "performance_profile", performance_profile)
+
+    @property
+    @pulumi.getter(name="longTransDuration")
+    def long_trans_duration(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+        """
+        return pulumi.get(self, "long_trans_duration")
+
+    @long_trans_duration.setter
+    def long_trans_duration(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "long_trans_duration", value)
+
+    @property
+    @pulumi.getter(name="performanceProfile")
+    def performance_profile(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Extract performance.
+        """
+        return pulumi.get(self, "performance_profile")
+
+    @performance_profile.setter
+    def performance_profile(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "performance_profile", value)
+
+
+@pulumi.input_type
+class MigrationGoldenGateServiceDetailsSettingsReplicatArgs:
+    def __init__(__self__, *,
+                 map_parallelism: Optional[pulumi.Input[int]] = None,
+                 max_apply_parallelism: Optional[pulumi.Input[int]] = None,
+                 min_apply_parallelism: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] map_parallelism: (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
+        :param pulumi.Input[int] max_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        :param pulumi.Input[int] min_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        """
+        if map_parallelism is not None:
+            pulumi.set(__self__, "map_parallelism", map_parallelism)
+        if max_apply_parallelism is not None:
+            pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
+        if min_apply_parallelism is not None:
+            pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
+
+    @property
+    @pulumi.getter(name="mapParallelism")
+    def map_parallelism(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
+        """
+        return pulumi.get(self, "map_parallelism")
+
+    @map_parallelism.setter
+    def map_parallelism(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "map_parallelism", value)
+
+    @property
+    @pulumi.getter(name="maxApplyParallelism")
+    def max_apply_parallelism(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        """
+        return pulumi.get(self, "max_apply_parallelism")
+
+    @max_apply_parallelism.setter
+    def max_apply_parallelism(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_apply_parallelism", value)
+
+    @property
+    @pulumi.getter(name="minApplyParallelism")
+    def min_apply_parallelism(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        """
+        return pulumi.get(self, "min_apply_parallelism")
+
+    @min_apply_parallelism.setter
+    def min_apply_parallelism(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_apply_parallelism", value)
+
+
+@pulumi.input_type
+class MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs:
+    def __init__(__self__, *,
+                 password: pulumi.Input[str],
+                 username: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] password: (Updatable) Database  password
+        :param pulumi.Input[str] username: (Updatable) Database username
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Database  password
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[str]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Database username
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[str]):
+        pulumi.set(self, "username", value)
+
+
+@pulumi.input_type
+class MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs:
+    def __init__(__self__, *,
+                 password: pulumi.Input[str],
+                 username: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] password: (Updatable) Database  password
+        :param pulumi.Input[str] username: (Updatable) Database username
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Database  password
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[str]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Database username
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[str]):
+        pulumi.set(self, "username", value)
+
+
+@pulumi.input_type
+class MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs:
+    def __init__(__self__, *,
+                 password: pulumi.Input[str],
+                 username: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] password: (Updatable) Database  password
+        :param pulumi.Input[str] username: (Updatable) Database username
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Database  password
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[str]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Database username
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[str]):
+        pulumi.set(self, "username", value)
 
 
 @pulumi.input_type

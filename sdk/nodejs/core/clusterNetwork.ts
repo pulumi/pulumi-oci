@@ -46,10 +46,20 @@ import * as utilities from "../utilities";
  *     }],
  *     placementConfiguration: {
  *         availabilityDomain: _var.cluster_network_placement_configuration_availability_domain,
- *         primarySubnetId: oci_core_subnet.test_subnet.id,
+ *         primaryVnicSubnets: {
+ *             subnetId: oci_core_subnet.test_subnet.id,
+ *             ipv6addressIpv6subnetCidrPairDetails: [{
+ *                 ipv6subnetCidr: _var.cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *             }],
+ *             isAssignIpv6ip: _var.cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
+ *         },
  *         secondaryVnicSubnets: [{
  *             subnetId: oci_core_subnet.test_subnet.id,
  *             displayName: _var.cluster_network_placement_configuration_secondary_vnic_subnets_display_name,
+ *             ipv6addressIpv6subnetCidrPairDetails: [{
+ *                 ipv6subnetCidr: _var.cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *             }],
+ *             isAssignIpv6ip: _var.cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
  *         }],
  *     },
  *     clusterConfiguration: {

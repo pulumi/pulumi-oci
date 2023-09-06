@@ -38,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.InstancePool;
  * import com.pulumi.oci.Core.InstancePoolArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolLoadBalancerArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -57,11 +58,22 @@ import javax.annotation.Nullable;
  *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
  *             .placementConfigurations(InstancePoolPlacementConfigurationArgs.builder()
  *                 .availabilityDomain(var_.instance_pool_placement_configurations_availability_domain())
- *                 .primarySubnetId(oci_core_subnet.test_subnet().id())
  *                 .faultDomains(var_.instance_pool_placement_configurations_fault_domains())
+ *                 .primarySubnetId(oci_core_subnet.test_subnet().id())
+ *                 .primaryVnicSubnets(InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs.builder()
+ *                     .subnetId(oci_core_subnet.test_subnet().id())
+ *                     .ipv6addressIpv6subnetCidrPairDetails(InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs.builder()
+ *                         .ipv6subnetCidr(var_.instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr())
+ *                         .build())
+ *                     .isAssignIpv6ip(var_.instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip())
+ *                     .build())
  *                 .secondaryVnicSubnets(InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs.builder()
  *                     .subnetId(oci_core_subnet.test_subnet().id())
  *                     .displayName(var_.instance_pool_placement_configurations_secondary_vnic_subnets_display_name())
+ *                     .ipv6addressIpv6subnetCidrPairDetails(InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs.builder()
+ *                         .ipv6subnetCidr(var_.instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr())
+ *                         .build())
+ *                     .isAssignIpv6ip(var_.instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip())
  *                     .build())
  *                 .build())
  *             .size(var_.instance_pool_size())

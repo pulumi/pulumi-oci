@@ -39,7 +39,7 @@ public final class GetMonitorConfiguration {
      */
     private Boolean isCertificateValidationEnabled;
     /**
-     * @return If disabled then auto snapshots are not collected.
+     * @return If disabled, auto snapshots are not collected.
      * 
      */
     private Boolean isDefaultSnapshotEnabled;
@@ -134,7 +134,7 @@ public final class GetMonitorConfiguration {
         return this.isCertificateValidationEnabled;
     }
     /**
-     * @return If disabled then auto snapshots are not collected.
+     * @return If disabled, auto snapshots are not collected.
      * 
      */
     public Boolean isDefaultSnapshotEnabled() {

@@ -24,41 +24,6 @@ namespace Pulumi.Oci.Core
     /// For more information about compartments and access control, see
     /// [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testDrgAttachment = new Oci.Core.DrgAttachment("testDrgAttachment", new()
-    ///     {
-    ///         DrgId = oci_core_drg.Test_drg.Id,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         DisplayName = @var.Drg_attachment_display_name,
-    ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         NetworkDetails = new Oci.Core.Inputs.DrgAttachmentNetworkDetailsArgs
-    ///         {
-    ///             Id = oci_core_vcn.Test_vcn.Id,
-    ///             Type = @var.Drg_attachment_network_details_type,
-    ///             RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///             VcnRouteType = @var.Drg_attachment_network_details_vcn_route_type,
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// DrgAttachments can be imported using the `id`, e.g.

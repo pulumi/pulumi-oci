@@ -557,6 +557,162 @@ func (o ConnectionPrivateEndpointPtrOutput) VcnId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type ConnectionReplicationCredentials struct {
+	// (Updatable) Administrator password
+	Password string `pulumi:"password"`
+	// (Updatable) Administrator username
+	Username string `pulumi:"username"`
+}
+
+// ConnectionReplicationCredentialsInput is an input type that accepts ConnectionReplicationCredentialsArgs and ConnectionReplicationCredentialsOutput values.
+// You can construct a concrete instance of `ConnectionReplicationCredentialsInput` via:
+//
+//	ConnectionReplicationCredentialsArgs{...}
+type ConnectionReplicationCredentialsInput interface {
+	pulumi.Input
+
+	ToConnectionReplicationCredentialsOutput() ConnectionReplicationCredentialsOutput
+	ToConnectionReplicationCredentialsOutputWithContext(context.Context) ConnectionReplicationCredentialsOutput
+}
+
+type ConnectionReplicationCredentialsArgs struct {
+	// (Updatable) Administrator password
+	Password pulumi.StringInput `pulumi:"password"`
+	// (Updatable) Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (ConnectionReplicationCredentialsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionReplicationCredentials)(nil)).Elem()
+}
+
+func (i ConnectionReplicationCredentialsArgs) ToConnectionReplicationCredentialsOutput() ConnectionReplicationCredentialsOutput {
+	return i.ToConnectionReplicationCredentialsOutputWithContext(context.Background())
+}
+
+func (i ConnectionReplicationCredentialsArgs) ToConnectionReplicationCredentialsOutputWithContext(ctx context.Context) ConnectionReplicationCredentialsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionReplicationCredentialsOutput)
+}
+
+func (i ConnectionReplicationCredentialsArgs) ToConnectionReplicationCredentialsPtrOutput() ConnectionReplicationCredentialsPtrOutput {
+	return i.ToConnectionReplicationCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i ConnectionReplicationCredentialsArgs) ToConnectionReplicationCredentialsPtrOutputWithContext(ctx context.Context) ConnectionReplicationCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionReplicationCredentialsOutput).ToConnectionReplicationCredentialsPtrOutputWithContext(ctx)
+}
+
+// ConnectionReplicationCredentialsPtrInput is an input type that accepts ConnectionReplicationCredentialsArgs, ConnectionReplicationCredentialsPtr and ConnectionReplicationCredentialsPtrOutput values.
+// You can construct a concrete instance of `ConnectionReplicationCredentialsPtrInput` via:
+//
+//	        ConnectionReplicationCredentialsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConnectionReplicationCredentialsPtrInput interface {
+	pulumi.Input
+
+	ToConnectionReplicationCredentialsPtrOutput() ConnectionReplicationCredentialsPtrOutput
+	ToConnectionReplicationCredentialsPtrOutputWithContext(context.Context) ConnectionReplicationCredentialsPtrOutput
+}
+
+type connectionReplicationCredentialsPtrType ConnectionReplicationCredentialsArgs
+
+func ConnectionReplicationCredentialsPtr(v *ConnectionReplicationCredentialsArgs) ConnectionReplicationCredentialsPtrInput {
+	return (*connectionReplicationCredentialsPtrType)(v)
+}
+
+func (*connectionReplicationCredentialsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConnectionReplicationCredentials)(nil)).Elem()
+}
+
+func (i *connectionReplicationCredentialsPtrType) ToConnectionReplicationCredentialsPtrOutput() ConnectionReplicationCredentialsPtrOutput {
+	return i.ToConnectionReplicationCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i *connectionReplicationCredentialsPtrType) ToConnectionReplicationCredentialsPtrOutputWithContext(ctx context.Context) ConnectionReplicationCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionReplicationCredentialsPtrOutput)
+}
+
+type ConnectionReplicationCredentialsOutput struct{ *pulumi.OutputState }
+
+func (ConnectionReplicationCredentialsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionReplicationCredentials)(nil)).Elem()
+}
+
+func (o ConnectionReplicationCredentialsOutput) ToConnectionReplicationCredentialsOutput() ConnectionReplicationCredentialsOutput {
+	return o
+}
+
+func (o ConnectionReplicationCredentialsOutput) ToConnectionReplicationCredentialsOutputWithContext(ctx context.Context) ConnectionReplicationCredentialsOutput {
+	return o
+}
+
+func (o ConnectionReplicationCredentialsOutput) ToConnectionReplicationCredentialsPtrOutput() ConnectionReplicationCredentialsPtrOutput {
+	return o.ToConnectionReplicationCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (o ConnectionReplicationCredentialsOutput) ToConnectionReplicationCredentialsPtrOutputWithContext(ctx context.Context) ConnectionReplicationCredentialsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectionReplicationCredentials) *ConnectionReplicationCredentials {
+		return &v
+	}).(ConnectionReplicationCredentialsPtrOutput)
+}
+
+// (Updatable) Administrator password
+func (o ConnectionReplicationCredentialsOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v ConnectionReplicationCredentials) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// (Updatable) Administrator username
+func (o ConnectionReplicationCredentialsOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v ConnectionReplicationCredentials) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type ConnectionReplicationCredentialsPtrOutput struct{ *pulumi.OutputState }
+
+func (ConnectionReplicationCredentialsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConnectionReplicationCredentials)(nil)).Elem()
+}
+
+func (o ConnectionReplicationCredentialsPtrOutput) ToConnectionReplicationCredentialsPtrOutput() ConnectionReplicationCredentialsPtrOutput {
+	return o
+}
+
+func (o ConnectionReplicationCredentialsPtrOutput) ToConnectionReplicationCredentialsPtrOutputWithContext(ctx context.Context) ConnectionReplicationCredentialsPtrOutput {
+	return o
+}
+
+func (o ConnectionReplicationCredentialsPtrOutput) Elem() ConnectionReplicationCredentialsOutput {
+	return o.ApplyT(func(v *ConnectionReplicationCredentials) ConnectionReplicationCredentials {
+		if v != nil {
+			return *v
+		}
+		var ret ConnectionReplicationCredentials
+		return ret
+	}).(ConnectionReplicationCredentialsOutput)
+}
+
+// (Updatable) Administrator password
+func (o ConnectionReplicationCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionReplicationCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Administrator username
+func (o ConnectionReplicationCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionReplicationCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
 type ConnectionSshDetails struct {
 	// (Updatable) Name of the host the SSH key is valid for.
 	Host string `pulumi:"host"`
@@ -4016,13 +4172,13 @@ type MigrationGoldenGateDetailsHub struct {
 	// (Updatable) Database Administrator Credentials details.
 	SourceContainerDbAdminCredentials *MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials `pulumi:"sourceContainerDbAdminCredentials"`
 	// (Updatable) Database Administrator Credentials details.
-	SourceDbAdminCredentials MigrationGoldenGateDetailsHubSourceDbAdminCredentials `pulumi:"sourceDbAdminCredentials"`
+	SourceDbAdminCredentials *MigrationGoldenGateDetailsHubSourceDbAdminCredentials `pulumi:"sourceDbAdminCredentials"`
 	// (Updatable) Name of GoldenGate Microservices deployment to operate on source database
-	SourceMicroservicesDeploymentName string `pulumi:"sourceMicroservicesDeploymentName"`
+	SourceMicroservicesDeploymentName *string `pulumi:"sourceMicroservicesDeploymentName"`
 	// (Updatable) Database Administrator Credentials details.
-	TargetDbAdminCredentials MigrationGoldenGateDetailsHubTargetDbAdminCredentials `pulumi:"targetDbAdminCredentials"`
+	TargetDbAdminCredentials *MigrationGoldenGateDetailsHubTargetDbAdminCredentials `pulumi:"targetDbAdminCredentials"`
 	// (Updatable) Name of GoldenGate Microservices deployment to operate on target database
-	TargetMicroservicesDeploymentName string `pulumi:"targetMicroservicesDeploymentName"`
+	TargetMicroservicesDeploymentName *string `pulumi:"targetMicroservicesDeploymentName"`
 	// (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
 	Url string `pulumi:"url"`
 }
@@ -4046,13 +4202,13 @@ type MigrationGoldenGateDetailsHubArgs struct {
 	// (Updatable) Database Administrator Credentials details.
 	SourceContainerDbAdminCredentials MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrInput `pulumi:"sourceContainerDbAdminCredentials"`
 	// (Updatable) Database Administrator Credentials details.
-	SourceDbAdminCredentials MigrationGoldenGateDetailsHubSourceDbAdminCredentialsInput `pulumi:"sourceDbAdminCredentials"`
+	SourceDbAdminCredentials MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrInput `pulumi:"sourceDbAdminCredentials"`
 	// (Updatable) Name of GoldenGate Microservices deployment to operate on source database
-	SourceMicroservicesDeploymentName pulumi.StringInput `pulumi:"sourceMicroservicesDeploymentName"`
+	SourceMicroservicesDeploymentName pulumi.StringPtrInput `pulumi:"sourceMicroservicesDeploymentName"`
 	// (Updatable) Database Administrator Credentials details.
-	TargetDbAdminCredentials MigrationGoldenGateDetailsHubTargetDbAdminCredentialsInput `pulumi:"targetDbAdminCredentials"`
+	TargetDbAdminCredentials MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrInput `pulumi:"targetDbAdminCredentials"`
 	// (Updatable) Name of GoldenGate Microservices deployment to operate on target database
-	TargetMicroservicesDeploymentName pulumi.StringInput `pulumi:"targetMicroservicesDeploymentName"`
+	TargetMicroservicesDeploymentName pulumi.StringPtrInput `pulumi:"targetMicroservicesDeploymentName"`
 	// (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
 	Url pulumi.StringInput `pulumi:"url"`
 }
@@ -4154,27 +4310,27 @@ func (o MigrationGoldenGateDetailsHubOutput) SourceContainerDbAdminCredentials()
 }
 
 // (Updatable) Database Administrator Credentials details.
-func (o MigrationGoldenGateDetailsHubOutput) SourceDbAdminCredentials() MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput {
-	return o.ApplyT(func(v MigrationGoldenGateDetailsHub) MigrationGoldenGateDetailsHubSourceDbAdminCredentials {
+func (o MigrationGoldenGateDetailsHubOutput) SourceDbAdminCredentials() MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateDetailsHub) *MigrationGoldenGateDetailsHubSourceDbAdminCredentials {
 		return v.SourceDbAdminCredentials
-	}).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput)
+	}).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput)
 }
 
 // (Updatable) Name of GoldenGate Microservices deployment to operate on source database
-func (o MigrationGoldenGateDetailsHubOutput) SourceMicroservicesDeploymentName() pulumi.StringOutput {
-	return o.ApplyT(func(v MigrationGoldenGateDetailsHub) string { return v.SourceMicroservicesDeploymentName }).(pulumi.StringOutput)
+func (o MigrationGoldenGateDetailsHubOutput) SourceMicroservicesDeploymentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateDetailsHub) *string { return v.SourceMicroservicesDeploymentName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Database Administrator Credentials details.
-func (o MigrationGoldenGateDetailsHubOutput) TargetDbAdminCredentials() MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput {
-	return o.ApplyT(func(v MigrationGoldenGateDetailsHub) MigrationGoldenGateDetailsHubTargetDbAdminCredentials {
+func (o MigrationGoldenGateDetailsHubOutput) TargetDbAdminCredentials() MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateDetailsHub) *MigrationGoldenGateDetailsHubTargetDbAdminCredentials {
 		return v.TargetDbAdminCredentials
-	}).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput)
+	}).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput)
 }
 
 // (Updatable) Name of GoldenGate Microservices deployment to operate on target database
-func (o MigrationGoldenGateDetailsHubOutput) TargetMicroservicesDeploymentName() pulumi.StringOutput {
-	return o.ApplyT(func(v MigrationGoldenGateDetailsHub) string { return v.TargetMicroservicesDeploymentName }).(pulumi.StringOutput)
+func (o MigrationGoldenGateDetailsHubOutput) TargetMicroservicesDeploymentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateDetailsHub) *string { return v.TargetMicroservicesDeploymentName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
@@ -4242,7 +4398,7 @@ func (o MigrationGoldenGateDetailsHubPtrOutput) SourceDbAdminCredentials() Migra
 		if v == nil {
 			return nil
 		}
-		return &v.SourceDbAdminCredentials
+		return v.SourceDbAdminCredentials
 	}).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput)
 }
 
@@ -4252,7 +4408,7 @@ func (o MigrationGoldenGateDetailsHubPtrOutput) SourceMicroservicesDeploymentNam
 		if v == nil {
 			return nil
 		}
-		return &v.SourceMicroservicesDeploymentName
+		return v.SourceMicroservicesDeploymentName
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4262,7 +4418,7 @@ func (o MigrationGoldenGateDetailsHubPtrOutput) TargetDbAdminCredentials() Migra
 		if v == nil {
 			return nil
 		}
-		return &v.TargetDbAdminCredentials
+		return v.TargetDbAdminCredentials
 	}).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput)
 }
 
@@ -4272,7 +4428,7 @@ func (o MigrationGoldenGateDetailsHubPtrOutput) TargetMicroservicesDeploymentNam
 		if v == nil {
 			return nil
 		}
-		return &v.TargetMicroservicesDeploymentName
+		return v.TargetMicroservicesDeploymentName
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4287,9 +4443,9 @@ func (o MigrationGoldenGateDetailsHubPtrOutput) Url() pulumi.StringPtrOutput {
 }
 
 type MigrationGoldenGateDetailsHubRestAdminCredentials struct {
-	// (Updatable) Administrator password
+	// (Updatable) Database  password
 	Password string `pulumi:"password"`
-	// (Updatable) Administrator username
+	// (Updatable) Database username
 	Username string `pulumi:"username"`
 }
 
@@ -4305,9 +4461,9 @@ type MigrationGoldenGateDetailsHubRestAdminCredentialsInput interface {
 }
 
 type MigrationGoldenGateDetailsHubRestAdminCredentialsArgs struct {
-	// (Updatable) Administrator password
+	// (Updatable) Database  password
 	Password pulumi.StringInput `pulumi:"password"`
-	// (Updatable) Administrator username
+	// (Updatable) Database username
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -4388,12 +4544,12 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) ToMigrationGold
 	}).(MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput)
 }
 
-// (Updatable) Administrator password
+// (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubRestAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// (Updatable) Administrator username
+// (Updatable) Database username
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubRestAdminCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -4422,7 +4578,7 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Elem() Migra
 	}).(MigrationGoldenGateDetailsHubRestAdminCredentialsOutput)
 }
 
-// (Updatable) Administrator password
+// (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubRestAdminCredentials) *string {
 		if v == nil {
@@ -4432,7 +4588,7 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Password() p
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Administrator username
+// (Updatable) Database username
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubRestAdminCredentials) *string {
 		if v == nil {
@@ -4443,9 +4599,9 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Username() p
 }
 
 type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials struct {
-	// (Updatable) Administrator password
+	// (Updatable) Database  password
 	Password string `pulumi:"password"`
-	// (Updatable) Administrator username
+	// (Updatable) Database username
 	Username string `pulumi:"username"`
 }
 
@@ -4461,9 +4617,9 @@ type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsInput interfa
 }
 
 type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs struct {
-	// (Updatable) Administrator password
+	// (Updatable) Database  password
 	Password pulumi.StringInput `pulumi:"password"`
-	// (Updatable) Administrator username
+	// (Updatable) Database username
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -4544,12 +4700,12 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) To
 	}).(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 }
 
-// (Updatable) Administrator password
+// (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// (Updatable) Administrator username
+// (Updatable) Database username
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -4578,7 +4734,7 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 	}).(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput)
 }
 
-// (Updatable) Administrator password
+// (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials) *string {
 		if v == nil {
@@ -4588,7 +4744,7 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Administrator username
+// (Updatable) Database username
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials) *string {
 		if v == nil {
@@ -4599,9 +4755,9 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 }
 
 type MigrationGoldenGateDetailsHubSourceDbAdminCredentials struct {
-	// (Updatable) Administrator password
+	// (Updatable) Database  password
 	Password string `pulumi:"password"`
-	// (Updatable) Administrator username
+	// (Updatable) Database username
 	Username string `pulumi:"username"`
 }
 
@@ -4617,9 +4773,9 @@ type MigrationGoldenGateDetailsHubSourceDbAdminCredentialsInput interface {
 }
 
 type MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs struct {
-	// (Updatable) Administrator password
+	// (Updatable) Database  password
 	Password pulumi.StringInput `pulumi:"password"`
-	// (Updatable) Administrator username
+	// (Updatable) Database username
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -4700,12 +4856,12 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) ToMigration
 	}).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput)
 }
 
-// (Updatable) Administrator password
+// (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceDbAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// (Updatable) Administrator username
+// (Updatable) Database username
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceDbAdminCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -4734,7 +4890,7 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Elem() M
 	}).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput)
 }
 
-// (Updatable) Administrator password
+// (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubSourceDbAdminCredentials) *string {
 		if v == nil {
@@ -4744,7 +4900,7 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Password
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Administrator username
+// (Updatable) Database username
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubSourceDbAdminCredentials) *string {
 		if v == nil {
@@ -4755,9 +4911,9 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Username
 }
 
 type MigrationGoldenGateDetailsHubTargetDbAdminCredentials struct {
-	// (Updatable) Administrator password
+	// (Updatable) Database  password
 	Password string `pulumi:"password"`
-	// (Updatable) Administrator username
+	// (Updatable) Database username
 	Username string `pulumi:"username"`
 }
 
@@ -4773,9 +4929,9 @@ type MigrationGoldenGateDetailsHubTargetDbAdminCredentialsInput interface {
 }
 
 type MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs struct {
-	// (Updatable) Administrator password
+	// (Updatable) Database  password
 	Password pulumi.StringInput `pulumi:"password"`
-	// (Updatable) Administrator username
+	// (Updatable) Database username
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -4856,12 +5012,12 @@ func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) ToMigration
 	}).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput)
 }
 
-// (Updatable) Administrator password
+// (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubTargetDbAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// (Updatable) Administrator username
+// (Updatable) Database username
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubTargetDbAdminCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -4890,7 +5046,7 @@ func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) Elem() M
 	}).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput)
 }
 
-// (Updatable) Administrator password
+// (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubTargetDbAdminCredentials) *string {
 		if v == nil {
@@ -4900,7 +5056,7 @@ func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) Password
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Administrator username
+// (Updatable) Database username
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubTargetDbAdminCredentials) *string {
 		if v == nil {
@@ -5436,6 +5592,1313 @@ func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) PerformanceProfile(
 			return nil
 		}
 		return v.PerformanceProfile
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetails struct {
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments []MigrationGoldenGateServiceDetailsGgsDeployment `pulumi:"ggsDeployments"`
+	// (Updatable) Optional settings for GoldenGate Microservices processes
+	Settings *MigrationGoldenGateServiceDetailsSettings `pulumi:"settings"`
+	// (Updatable) Database Credentials details.
+	SourceContainerDbCredentials *MigrationGoldenGateServiceDetailsSourceContainerDbCredentials `pulumi:"sourceContainerDbCredentials"`
+	// (Updatable) Database Credentials details.
+	SourceDbCredentials *MigrationGoldenGateServiceDetailsSourceDbCredentials `pulumi:"sourceDbCredentials"`
+	// (Updatable) Database Credentials details.
+	TargetDbCredentials *MigrationGoldenGateServiceDetailsTargetDbCredentials `pulumi:"targetDbCredentials"`
+}
+
+// MigrationGoldenGateServiceDetailsInput is an input type that accepts MigrationGoldenGateServiceDetailsArgs and MigrationGoldenGateServiceDetailsOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsInput` via:
+//
+//	MigrationGoldenGateServiceDetailsArgs{...}
+type MigrationGoldenGateServiceDetailsInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsOutput() MigrationGoldenGateServiceDetailsOutput
+	ToMigrationGoldenGateServiceDetailsOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsOutput
+}
+
+type MigrationGoldenGateServiceDetailsArgs struct {
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments MigrationGoldenGateServiceDetailsGgsDeploymentArrayInput `pulumi:"ggsDeployments"`
+	// (Updatable) Optional settings for GoldenGate Microservices processes
+	Settings MigrationGoldenGateServiceDetailsSettingsPtrInput `pulumi:"settings"`
+	// (Updatable) Database Credentials details.
+	SourceContainerDbCredentials MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrInput `pulumi:"sourceContainerDbCredentials"`
+	// (Updatable) Database Credentials details.
+	SourceDbCredentials MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrInput `pulumi:"sourceDbCredentials"`
+	// (Updatable) Database Credentials details.
+	TargetDbCredentials MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrInput `pulumi:"targetDbCredentials"`
+}
+
+func (MigrationGoldenGateServiceDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetails)(nil)).Elem()
+}
+
+func (i MigrationGoldenGateServiceDetailsArgs) ToMigrationGoldenGateServiceDetailsOutput() MigrationGoldenGateServiceDetailsOutput {
+	return i.ToMigrationGoldenGateServiceDetailsOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsArgs) ToMigrationGoldenGateServiceDetailsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsOutput)
+}
+
+func (i MigrationGoldenGateServiceDetailsArgs) ToMigrationGoldenGateServiceDetailsPtrOutput() MigrationGoldenGateServiceDetailsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsArgs) ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsOutput).ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(ctx)
+}
+
+// MigrationGoldenGateServiceDetailsPtrInput is an input type that accepts MigrationGoldenGateServiceDetailsArgs, MigrationGoldenGateServiceDetailsPtr and MigrationGoldenGateServiceDetailsPtrOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsPtrInput` via:
+//
+//	        MigrationGoldenGateServiceDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGoldenGateServiceDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsPtrOutput() MigrationGoldenGateServiceDetailsPtrOutput
+	ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsPtrOutput
+}
+
+type migrationGoldenGateServiceDetailsPtrType MigrationGoldenGateServiceDetailsArgs
+
+func MigrationGoldenGateServiceDetailsPtr(v *MigrationGoldenGateServiceDetailsArgs) MigrationGoldenGateServiceDetailsPtrInput {
+	return (*migrationGoldenGateServiceDetailsPtrType)(v)
+}
+
+func (*migrationGoldenGateServiceDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetails)(nil)).Elem()
+}
+
+func (i *migrationGoldenGateServiceDetailsPtrType) ToMigrationGoldenGateServiceDetailsPtrOutput() MigrationGoldenGateServiceDetailsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGoldenGateServiceDetailsPtrType) ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetails)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsOutput) ToMigrationGoldenGateServiceDetailsOutput() MigrationGoldenGateServiceDetailsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsOutput) ToMigrationGoldenGateServiceDetailsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsOutput) ToMigrationGoldenGateServiceDetailsPtrOutput() MigrationGoldenGateServiceDetailsPtrOutput {
+	return o.ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGoldenGateServiceDetailsOutput) ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetails {
+		return &v
+	}).(MigrationGoldenGateServiceDetailsPtrOutput)
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o MigrationGoldenGateServiceDetailsOutput) GgsDeployments() MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetails) []MigrationGoldenGateServiceDetailsGgsDeployment {
+		return v.GgsDeployments
+	}).(MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput)
+}
+
+// (Updatable) Optional settings for GoldenGate Microservices processes
+func (o MigrationGoldenGateServiceDetailsOutput) Settings() MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetailsSettings {
+		return v.Settings
+	}).(MigrationGoldenGateServiceDetailsSettingsPtrOutput)
+}
+
+// (Updatable) Database Credentials details.
+func (o MigrationGoldenGateServiceDetailsOutput) SourceContainerDbCredentials() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetailsSourceContainerDbCredentials {
+		return v.SourceContainerDbCredentials
+	}).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput)
+}
+
+// (Updatable) Database Credentials details.
+func (o MigrationGoldenGateServiceDetailsOutput) SourceDbCredentials() MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetailsSourceDbCredentials {
+		return v.SourceDbCredentials
+	}).(MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput)
+}
+
+// (Updatable) Database Credentials details.
+func (o MigrationGoldenGateServiceDetailsOutput) TargetDbCredentials() MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetailsTargetDbCredentials {
+		return v.TargetDbCredentials
+	}).(MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetails)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsPtrOutput) ToMigrationGoldenGateServiceDetailsPtrOutput() MigrationGoldenGateServiceDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsPtrOutput) ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsPtrOutput) Elem() MigrationGoldenGateServiceDetailsOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetails) MigrationGoldenGateServiceDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGoldenGateServiceDetails
+		return ret
+	}).(MigrationGoldenGateServiceDetailsOutput)
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o MigrationGoldenGateServiceDetailsPtrOutput) GgsDeployments() MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetails) []MigrationGoldenGateServiceDetailsGgsDeployment {
+		if v == nil {
+			return nil
+		}
+		return v.GgsDeployments
+	}).(MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput)
+}
+
+// (Updatable) Optional settings for GoldenGate Microservices processes
+func (o MigrationGoldenGateServiceDetailsPtrOutput) Settings() MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetailsSettings {
+		if v == nil {
+			return nil
+		}
+		return v.Settings
+	}).(MigrationGoldenGateServiceDetailsSettingsPtrOutput)
+}
+
+// (Updatable) Database Credentials details.
+func (o MigrationGoldenGateServiceDetailsPtrOutput) SourceContainerDbCredentials() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetailsSourceContainerDbCredentials {
+		if v == nil {
+			return nil
+		}
+		return v.SourceContainerDbCredentials
+	}).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput)
+}
+
+// (Updatable) Database Credentials details.
+func (o MigrationGoldenGateServiceDetailsPtrOutput) SourceDbCredentials() MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetailsSourceDbCredentials {
+		if v == nil {
+			return nil
+		}
+		return v.SourceDbCredentials
+	}).(MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput)
+}
+
+// (Updatable) Database Credentials details.
+func (o MigrationGoldenGateServiceDetailsPtrOutput) TargetDbCredentials() MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetailsTargetDbCredentials {
+		if v == nil {
+			return nil
+		}
+		return v.TargetDbCredentials
+	}).(MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsGgsDeployment struct {
+	// OCID of a GoldenGate Deployment
+	DeploymentId *string `pulumi:"deploymentId"`
+	// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+	GgsAdminCredentialsSecretId *string `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+// MigrationGoldenGateServiceDetailsGgsDeploymentInput is an input type that accepts MigrationGoldenGateServiceDetailsGgsDeploymentArgs and MigrationGoldenGateServiceDetailsGgsDeploymentOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsGgsDeploymentInput` via:
+//
+//	MigrationGoldenGateServiceDetailsGgsDeploymentArgs{...}
+type MigrationGoldenGateServiceDetailsGgsDeploymentInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsGgsDeploymentOutput() MigrationGoldenGateServiceDetailsGgsDeploymentOutput
+	ToMigrationGoldenGateServiceDetailsGgsDeploymentOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsGgsDeploymentOutput
+}
+
+type MigrationGoldenGateServiceDetailsGgsDeploymentArgs struct {
+	// OCID of a GoldenGate Deployment
+	DeploymentId pulumi.StringPtrInput `pulumi:"deploymentId"`
+	// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+	GgsAdminCredentialsSecretId pulumi.StringPtrInput `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+func (MigrationGoldenGateServiceDetailsGgsDeploymentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsGgsDeployment)(nil)).Elem()
+}
+
+func (i MigrationGoldenGateServiceDetailsGgsDeploymentArgs) ToMigrationGoldenGateServiceDetailsGgsDeploymentOutput() MigrationGoldenGateServiceDetailsGgsDeploymentOutput {
+	return i.ToMigrationGoldenGateServiceDetailsGgsDeploymentOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsGgsDeploymentArgs) ToMigrationGoldenGateServiceDetailsGgsDeploymentOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsGgsDeploymentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsGgsDeploymentOutput)
+}
+
+// MigrationGoldenGateServiceDetailsGgsDeploymentArrayInput is an input type that accepts MigrationGoldenGateServiceDetailsGgsDeploymentArray and MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsGgsDeploymentArrayInput` via:
+//
+//	MigrationGoldenGateServiceDetailsGgsDeploymentArray{ MigrationGoldenGateServiceDetailsGgsDeploymentArgs{...} }
+type MigrationGoldenGateServiceDetailsGgsDeploymentArrayInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput() MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput
+	ToMigrationGoldenGateServiceDetailsGgsDeploymentArrayOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput
+}
+
+type MigrationGoldenGateServiceDetailsGgsDeploymentArray []MigrationGoldenGateServiceDetailsGgsDeploymentInput
+
+func (MigrationGoldenGateServiceDetailsGgsDeploymentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationGoldenGateServiceDetailsGgsDeployment)(nil)).Elem()
+}
+
+func (i MigrationGoldenGateServiceDetailsGgsDeploymentArray) ToMigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput() MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput {
+	return i.ToMigrationGoldenGateServiceDetailsGgsDeploymentArrayOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsGgsDeploymentArray) ToMigrationGoldenGateServiceDetailsGgsDeploymentArrayOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput)
+}
+
+type MigrationGoldenGateServiceDetailsGgsDeploymentOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsGgsDeploymentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsGgsDeployment)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsGgsDeploymentOutput) ToMigrationGoldenGateServiceDetailsGgsDeploymentOutput() MigrationGoldenGateServiceDetailsGgsDeploymentOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsGgsDeploymentOutput) ToMigrationGoldenGateServiceDetailsGgsDeploymentOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsGgsDeploymentOutput {
+	return o
+}
+
+// OCID of a GoldenGate Deployment
+func (o MigrationGoldenGateServiceDetailsGgsDeploymentOutput) DeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsGgsDeployment) *string { return v.DeploymentId }).(pulumi.StringPtrOutput)
+}
+
+// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+func (o MigrationGoldenGateServiceDetailsGgsDeploymentOutput) GgsAdminCredentialsSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsGgsDeployment) *string { return v.GgsAdminCredentialsSecretId }).(pulumi.StringPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationGoldenGateServiceDetailsGgsDeployment)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput) ToMigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput() MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput) ToMigrationGoldenGateServiceDetailsGgsDeploymentArrayOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput) Index(i pulumi.IntInput) MigrationGoldenGateServiceDetailsGgsDeploymentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationGoldenGateServiceDetailsGgsDeployment {
+		return vs[0].([]MigrationGoldenGateServiceDetailsGgsDeployment)[vs[1].(int)]
+	}).(MigrationGoldenGateServiceDetailsGgsDeploymentOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSettings struct {
+	// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag *int `pulumi:"acceptableLag"`
+	// (Updatable) Parameters for GoldenGate Extract processes.
+	Extract *MigrationGoldenGateServiceDetailsSettingsExtract `pulumi:"extract"`
+	// (Updatable) Parameters for GoldenGate Replicat processes.
+	Replicat *MigrationGoldenGateServiceDetailsSettingsReplicat `pulumi:"replicat"`
+}
+
+// MigrationGoldenGateServiceDetailsSettingsInput is an input type that accepts MigrationGoldenGateServiceDetailsSettingsArgs and MigrationGoldenGateServiceDetailsSettingsOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSettingsInput` via:
+//
+//	MigrationGoldenGateServiceDetailsSettingsArgs{...}
+type MigrationGoldenGateServiceDetailsSettingsInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSettingsOutput() MigrationGoldenGateServiceDetailsSettingsOutput
+	ToMigrationGoldenGateServiceDetailsSettingsOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSettingsOutput
+}
+
+type MigrationGoldenGateServiceDetailsSettingsArgs struct {
+	// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag pulumi.IntPtrInput `pulumi:"acceptableLag"`
+	// (Updatable) Parameters for GoldenGate Extract processes.
+	Extract MigrationGoldenGateServiceDetailsSettingsExtractPtrInput `pulumi:"extract"`
+	// (Updatable) Parameters for GoldenGate Replicat processes.
+	Replicat MigrationGoldenGateServiceDetailsSettingsReplicatPtrInput `pulumi:"replicat"`
+}
+
+func (MigrationGoldenGateServiceDetailsSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettings)(nil)).Elem()
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsArgs) ToMigrationGoldenGateServiceDetailsSettingsOutput() MigrationGoldenGateServiceDetailsSettingsOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSettingsOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsArgs) ToMigrationGoldenGateServiceDetailsSettingsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsOutput)
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsArgs) ToMigrationGoldenGateServiceDetailsSettingsPtrOutput() MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsArgs) ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsOutput).ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(ctx)
+}
+
+// MigrationGoldenGateServiceDetailsSettingsPtrInput is an input type that accepts MigrationGoldenGateServiceDetailsSettingsArgs, MigrationGoldenGateServiceDetailsSettingsPtr and MigrationGoldenGateServiceDetailsSettingsPtrOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSettingsPtrInput` via:
+//
+//	        MigrationGoldenGateServiceDetailsSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGoldenGateServiceDetailsSettingsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSettingsPtrOutput() MigrationGoldenGateServiceDetailsSettingsPtrOutput
+	ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSettingsPtrOutput
+}
+
+type migrationGoldenGateServiceDetailsSettingsPtrType MigrationGoldenGateServiceDetailsSettingsArgs
+
+func MigrationGoldenGateServiceDetailsSettingsPtr(v *MigrationGoldenGateServiceDetailsSettingsArgs) MigrationGoldenGateServiceDetailsSettingsPtrInput {
+	return (*migrationGoldenGateServiceDetailsSettingsPtrType)(v)
+}
+
+func (*migrationGoldenGateServiceDetailsSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSettings)(nil)).Elem()
+}
+
+func (i *migrationGoldenGateServiceDetailsSettingsPtrType) ToMigrationGoldenGateServiceDetailsSettingsPtrOutput() MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGoldenGateServiceDetailsSettingsPtrType) ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSettingsOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettings)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsOutput) ToMigrationGoldenGateServiceDetailsSettingsOutput() MigrationGoldenGateServiceDetailsSettingsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsOutput) ToMigrationGoldenGateServiceDetailsSettingsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsOutput) ToMigrationGoldenGateServiceDetailsSettingsPtrOutput() MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return o.ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsOutput) ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetailsSettings) *MigrationGoldenGateServiceDetailsSettings {
+		return &v
+	}).(MigrationGoldenGateServiceDetailsSettingsPtrOutput)
+}
+
+// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o MigrationGoldenGateServiceDetailsSettingsOutput) AcceptableLag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSettings) *int { return v.AcceptableLag }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Extract processes.
+func (o MigrationGoldenGateServiceDetailsSettingsOutput) Extract() MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSettings) *MigrationGoldenGateServiceDetailsSettingsExtract {
+		return v.Extract
+	}).(MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Replicat processes.
+func (o MigrationGoldenGateServiceDetailsSettingsOutput) Replicat() MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSettings) *MigrationGoldenGateServiceDetailsSettingsReplicat {
+		return v.Replicat
+	}).(MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSettings)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) ToMigrationGoldenGateServiceDetailsSettingsPtrOutput() MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) Elem() MigrationGoldenGateServiceDetailsSettingsOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettings) MigrationGoldenGateServiceDetailsSettings {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGoldenGateServiceDetailsSettings
+		return ret
+	}).(MigrationGoldenGateServiceDetailsSettingsOutput)
+}
+
+// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) AcceptableLag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AcceptableLag
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Extract processes.
+func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) Extract() MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettings) *MigrationGoldenGateServiceDetailsSettingsExtract {
+		if v == nil {
+			return nil
+		}
+		return v.Extract
+	}).(MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Replicat processes.
+func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) Replicat() MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettings) *MigrationGoldenGateServiceDetailsSettingsReplicat {
+		if v == nil {
+			return nil
+		}
+		return v.Replicat
+	}).(MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSettingsExtract struct {
+	// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration *int `pulumi:"longTransDuration"`
+	// (Updatable) Extract performance.
+	PerformanceProfile *string `pulumi:"performanceProfile"`
+}
+
+// MigrationGoldenGateServiceDetailsSettingsExtractInput is an input type that accepts MigrationGoldenGateServiceDetailsSettingsExtractArgs and MigrationGoldenGateServiceDetailsSettingsExtractOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSettingsExtractInput` via:
+//
+//	MigrationGoldenGateServiceDetailsSettingsExtractArgs{...}
+type MigrationGoldenGateServiceDetailsSettingsExtractInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSettingsExtractOutput() MigrationGoldenGateServiceDetailsSettingsExtractOutput
+	ToMigrationGoldenGateServiceDetailsSettingsExtractOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSettingsExtractOutput
+}
+
+type MigrationGoldenGateServiceDetailsSettingsExtractArgs struct {
+	// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration pulumi.IntPtrInput `pulumi:"longTransDuration"`
+	// (Updatable) Extract performance.
+	PerformanceProfile pulumi.StringPtrInput `pulumi:"performanceProfile"`
+}
+
+func (MigrationGoldenGateServiceDetailsSettingsExtractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsExtract)(nil)).Elem()
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsExtractArgs) ToMigrationGoldenGateServiceDetailsSettingsExtractOutput() MigrationGoldenGateServiceDetailsSettingsExtractOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSettingsExtractOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsExtractArgs) ToMigrationGoldenGateServiceDetailsSettingsExtractOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsExtractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsExtractOutput)
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsExtractArgs) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutput() MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsExtractArgs) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsExtractOutput).ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(ctx)
+}
+
+// MigrationGoldenGateServiceDetailsSettingsExtractPtrInput is an input type that accepts MigrationGoldenGateServiceDetailsSettingsExtractArgs, MigrationGoldenGateServiceDetailsSettingsExtractPtr and MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSettingsExtractPtrInput` via:
+//
+//	        MigrationGoldenGateServiceDetailsSettingsExtractArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGoldenGateServiceDetailsSettingsExtractPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutput() MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput
+	ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput
+}
+
+type migrationGoldenGateServiceDetailsSettingsExtractPtrType MigrationGoldenGateServiceDetailsSettingsExtractArgs
+
+func MigrationGoldenGateServiceDetailsSettingsExtractPtr(v *MigrationGoldenGateServiceDetailsSettingsExtractArgs) MigrationGoldenGateServiceDetailsSettingsExtractPtrInput {
+	return (*migrationGoldenGateServiceDetailsSettingsExtractPtrType)(v)
+}
+
+func (*migrationGoldenGateServiceDetailsSettingsExtractPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSettingsExtract)(nil)).Elem()
+}
+
+func (i *migrationGoldenGateServiceDetailsSettingsExtractPtrType) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutput() MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGoldenGateServiceDetailsSettingsExtractPtrType) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSettingsExtractOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSettingsExtractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsExtract)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsExtractOutput) ToMigrationGoldenGateServiceDetailsSettingsExtractOutput() MigrationGoldenGateServiceDetailsSettingsExtractOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsExtractOutput) ToMigrationGoldenGateServiceDetailsSettingsExtractOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsExtractOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsExtractOutput) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutput() MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return o.ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsExtractOutput) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetailsSettingsExtract) *MigrationGoldenGateServiceDetailsSettingsExtract {
+		return &v
+	}).(MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput)
+}
+
+// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o MigrationGoldenGateServiceDetailsSettingsExtractOutput) LongTransDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSettingsExtract) *int { return v.LongTransDuration }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Extract performance.
+func (o MigrationGoldenGateServiceDetailsSettingsExtractOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSettingsExtract) *string { return v.PerformanceProfile }).(pulumi.StringPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSettingsExtract)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutput() MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) Elem() MigrationGoldenGateServiceDetailsSettingsExtractOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettingsExtract) MigrationGoldenGateServiceDetailsSettingsExtract {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGoldenGateServiceDetailsSettingsExtract
+		return ret
+	}).(MigrationGoldenGateServiceDetailsSettingsExtractOutput)
+}
+
+// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) LongTransDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettingsExtract) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LongTransDuration
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Extract performance.
+func (o MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettingsExtract) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PerformanceProfile
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSettingsReplicat struct {
+	// (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
+	MapParallelism *int `pulumi:"mapParallelism"`
+	// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MaxApplyParallelism *int `pulumi:"maxApplyParallelism"`
+	// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MinApplyParallelism *int `pulumi:"minApplyParallelism"`
+}
+
+// MigrationGoldenGateServiceDetailsSettingsReplicatInput is an input type that accepts MigrationGoldenGateServiceDetailsSettingsReplicatArgs and MigrationGoldenGateServiceDetailsSettingsReplicatOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSettingsReplicatInput` via:
+//
+//	MigrationGoldenGateServiceDetailsSettingsReplicatArgs{...}
+type MigrationGoldenGateServiceDetailsSettingsReplicatInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSettingsReplicatOutput() MigrationGoldenGateServiceDetailsSettingsReplicatOutput
+	ToMigrationGoldenGateServiceDetailsSettingsReplicatOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSettingsReplicatOutput
+}
+
+type MigrationGoldenGateServiceDetailsSettingsReplicatArgs struct {
+	// (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
+	MapParallelism pulumi.IntPtrInput `pulumi:"mapParallelism"`
+	// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MaxApplyParallelism pulumi.IntPtrInput `pulumi:"maxApplyParallelism"`
+	// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MinApplyParallelism pulumi.IntPtrInput `pulumi:"minApplyParallelism"`
+}
+
+func (MigrationGoldenGateServiceDetailsSettingsReplicatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsReplicat)(nil)).Elem()
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsReplicatArgs) ToMigrationGoldenGateServiceDetailsSettingsReplicatOutput() MigrationGoldenGateServiceDetailsSettingsReplicatOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSettingsReplicatOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsReplicatArgs) ToMigrationGoldenGateServiceDetailsSettingsReplicatOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsReplicatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsReplicatOutput)
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsReplicatArgs) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput() MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSettingsReplicatArgs) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsReplicatOutput).ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(ctx)
+}
+
+// MigrationGoldenGateServiceDetailsSettingsReplicatPtrInput is an input type that accepts MigrationGoldenGateServiceDetailsSettingsReplicatArgs, MigrationGoldenGateServiceDetailsSettingsReplicatPtr and MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSettingsReplicatPtrInput` via:
+//
+//	        MigrationGoldenGateServiceDetailsSettingsReplicatArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGoldenGateServiceDetailsSettingsReplicatPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput() MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput
+	ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput
+}
+
+type migrationGoldenGateServiceDetailsSettingsReplicatPtrType MigrationGoldenGateServiceDetailsSettingsReplicatArgs
+
+func MigrationGoldenGateServiceDetailsSettingsReplicatPtr(v *MigrationGoldenGateServiceDetailsSettingsReplicatArgs) MigrationGoldenGateServiceDetailsSettingsReplicatPtrInput {
+	return (*migrationGoldenGateServiceDetailsSettingsReplicatPtrType)(v)
+}
+
+func (*migrationGoldenGateServiceDetailsSettingsReplicatPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSettingsReplicat)(nil)).Elem()
+}
+
+func (i *migrationGoldenGateServiceDetailsSettingsReplicatPtrType) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput() MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGoldenGateServiceDetailsSettingsReplicatPtrType) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSettingsReplicatOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSettingsReplicatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsReplicat)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatOutput) ToMigrationGoldenGateServiceDetailsSettingsReplicatOutput() MigrationGoldenGateServiceDetailsSettingsReplicatOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatOutput) ToMigrationGoldenGateServiceDetailsSettingsReplicatOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsReplicatOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatOutput) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput() MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return o.ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatOutput) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetailsSettingsReplicat) *MigrationGoldenGateServiceDetailsSettingsReplicat {
+		return &v
+	}).(MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput)
+}
+
+// (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatOutput) MapParallelism() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSettingsReplicat) *int { return v.MapParallelism }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatOutput) MaxApplyParallelism() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSettingsReplicat) *int { return v.MaxApplyParallelism }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatOutput) MinApplyParallelism() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSettingsReplicat) *int { return v.MinApplyParallelism }).(pulumi.IntPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSettingsReplicat)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput() MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) Elem() MigrationGoldenGateServiceDetailsSettingsReplicatOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettingsReplicat) MigrationGoldenGateServiceDetailsSettingsReplicat {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGoldenGateServiceDetailsSettingsReplicat
+		return ret
+	}).(MigrationGoldenGateServiceDetailsSettingsReplicatOutput)
+}
+
+// (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) MapParallelism() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettingsReplicat) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MapParallelism
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) MaxApplyParallelism() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettingsReplicat) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxApplyParallelism
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) MinApplyParallelism() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSettingsReplicat) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MinApplyParallelism
+	}).(pulumi.IntPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSourceContainerDbCredentials struct {
+	// (Updatable) Database  password
+	Password string `pulumi:"password"`
+	// (Updatable) Database username
+	Username string `pulumi:"username"`
+}
+
+// MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsInput is an input type that accepts MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs and MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsInput` via:
+//
+//	MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs{...}
+type MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput
+	ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput
+}
+
+type MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs struct {
+	// (Updatable) Database  password
+	Password pulumi.StringInput `pulumi:"password"`
+	// (Updatable) Database username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSourceContainerDbCredentials)(nil)).Elem()
+}
+
+func (i MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput)
+}
+
+func (i MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput).ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(ctx)
+}
+
+// MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrInput is an input type that accepts MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs, MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtr and MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrInput` via:
+//
+//	        MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput
+	ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput
+}
+
+type migrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrType MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs
+
+func MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtr(v *MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrInput {
+	return (*migrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrType)(v)
+}
+
+func (*migrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSourceContainerDbCredentials)(nil)).Elem()
+}
+
+func (i *migrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrType) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrType) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSourceContainerDbCredentials)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return o.ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetailsSourceContainerDbCredentials) *MigrationGoldenGateServiceDetailsSourceContainerDbCredentials {
+		return &v
+	}).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput)
+}
+
+// (Updatable) Database  password
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSourceContainerDbCredentials) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// (Updatable) Database username
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSourceContainerDbCredentials) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSourceContainerDbCredentials)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) Elem() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSourceContainerDbCredentials) MigrationGoldenGateServiceDetailsSourceContainerDbCredentials {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGoldenGateServiceDetailsSourceContainerDbCredentials
+		return ret
+	}).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput)
+}
+
+// (Updatable) Database  password
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSourceContainerDbCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Database username
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSourceContainerDbCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSourceDbCredentials struct {
+	// (Updatable) Database  password
+	Password string `pulumi:"password"`
+	// (Updatable) Database username
+	Username string `pulumi:"username"`
+}
+
+// MigrationGoldenGateServiceDetailsSourceDbCredentialsInput is an input type that accepts MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs and MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSourceDbCredentialsInput` via:
+//
+//	MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs{...}
+type MigrationGoldenGateServiceDetailsSourceDbCredentialsInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSourceDbCredentialsOutput() MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput
+	ToMigrationGoldenGateServiceDetailsSourceDbCredentialsOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput
+}
+
+type MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs struct {
+	// (Updatable) Database  password
+	Password pulumi.StringInput `pulumi:"password"`
+	// (Updatable) Database username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSourceDbCredentials)(nil)).Elem()
+}
+
+func (i MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsOutput() MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSourceDbCredentialsOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput)
+}
+
+func (i MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput).ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(ctx)
+}
+
+// MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrInput is an input type that accepts MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs, MigrationGoldenGateServiceDetailsSourceDbCredentialsPtr and MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrInput` via:
+//
+//	        MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput
+	ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput
+}
+
+type migrationGoldenGateServiceDetailsSourceDbCredentialsPtrType MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs
+
+func MigrationGoldenGateServiceDetailsSourceDbCredentialsPtr(v *MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs) MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrInput {
+	return (*migrationGoldenGateServiceDetailsSourceDbCredentialsPtrType)(v)
+}
+
+func (*migrationGoldenGateServiceDetailsSourceDbCredentialsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSourceDbCredentials)(nil)).Elem()
+}
+
+func (i *migrationGoldenGateServiceDetailsSourceDbCredentialsPtrType) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGoldenGateServiceDetailsSourceDbCredentialsPtrType) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsSourceDbCredentials)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsOutput() MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return o.ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetailsSourceDbCredentials) *MigrationGoldenGateServiceDetailsSourceDbCredentials {
+		return &v
+	}).(MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput)
+}
+
+// (Updatable) Database  password
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSourceDbCredentials) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// (Updatable) Database username
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSourceDbCredentials) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsSourceDbCredentials)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) Elem() MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSourceDbCredentials) MigrationGoldenGateServiceDetailsSourceDbCredentials {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGoldenGateServiceDetailsSourceDbCredentials
+		return ret
+	}).(MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput)
+}
+
+// (Updatable) Database  password
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSourceDbCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Database username
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsSourceDbCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsTargetDbCredentials struct {
+	// (Updatable) Database  password
+	Password string `pulumi:"password"`
+	// (Updatable) Database username
+	Username string `pulumi:"username"`
+}
+
+// MigrationGoldenGateServiceDetailsTargetDbCredentialsInput is an input type that accepts MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs and MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsTargetDbCredentialsInput` via:
+//
+//	MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs{...}
+type MigrationGoldenGateServiceDetailsTargetDbCredentialsInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsTargetDbCredentialsOutput() MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput
+	ToMigrationGoldenGateServiceDetailsTargetDbCredentialsOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput
+}
+
+type MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs struct {
+	// (Updatable) Database  password
+	Password pulumi.StringInput `pulumi:"password"`
+	// (Updatable) Database username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsTargetDbCredentials)(nil)).Elem()
+}
+
+func (i MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsOutput() MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput {
+	return i.ToMigrationGoldenGateServiceDetailsTargetDbCredentialsOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput)
+}
+
+func (i MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput).ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(ctx)
+}
+
+// MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrInput is an input type that accepts MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs, MigrationGoldenGateServiceDetailsTargetDbCredentialsPtr and MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput values.
+// You can construct a concrete instance of `MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrInput` via:
+//
+//	        MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput
+	ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(context.Context) MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput
+}
+
+type migrationGoldenGateServiceDetailsTargetDbCredentialsPtrType MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs
+
+func MigrationGoldenGateServiceDetailsTargetDbCredentialsPtr(v *MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs) MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrInput {
+	return (*migrationGoldenGateServiceDetailsTargetDbCredentialsPtrType)(v)
+}
+
+func (*migrationGoldenGateServiceDetailsTargetDbCredentialsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsTargetDbCredentials)(nil)).Elem()
+}
+
+func (i *migrationGoldenGateServiceDetailsTargetDbCredentialsPtrType) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return i.ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGoldenGateServiceDetailsTargetDbCredentialsPtrType) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput)
+}
+
+type MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGoldenGateServiceDetailsTargetDbCredentials)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsOutput() MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return o.ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetailsTargetDbCredentials) *MigrationGoldenGateServiceDetailsTargetDbCredentials {
+		return &v
+	}).(MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput)
+}
+
+// (Updatable) Database  password
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsTargetDbCredentials) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// (Updatable) Database username
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsTargetDbCredentials) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGoldenGateServiceDetailsTargetDbCredentials)(nil)).Elem()
+}
+
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
+	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) Elem() MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsTargetDbCredentials) MigrationGoldenGateServiceDetailsTargetDbCredentials {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGoldenGateServiceDetailsTargetDbCredentials
+		return ret
+	}).(MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput)
+}
+
+// (Updatable) Database  password
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsTargetDbCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Database username
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateServiceDetailsTargetDbCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -6821,6 +8284,109 @@ func (o GetConnectionPrivateEndpointArrayOutput) Index(i pulumi.IntInput) GetCon
 	}).(GetConnectionPrivateEndpointOutput)
 }
 
+type GetConnectionReplicationCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetConnectionReplicationCredentialInput is an input type that accepts GetConnectionReplicationCredentialArgs and GetConnectionReplicationCredentialOutput values.
+// You can construct a concrete instance of `GetConnectionReplicationCredentialInput` via:
+//
+//	GetConnectionReplicationCredentialArgs{...}
+type GetConnectionReplicationCredentialInput interface {
+	pulumi.Input
+
+	ToGetConnectionReplicationCredentialOutput() GetConnectionReplicationCredentialOutput
+	ToGetConnectionReplicationCredentialOutputWithContext(context.Context) GetConnectionReplicationCredentialOutput
+}
+
+type GetConnectionReplicationCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetConnectionReplicationCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionReplicationCredential)(nil)).Elem()
+}
+
+func (i GetConnectionReplicationCredentialArgs) ToGetConnectionReplicationCredentialOutput() GetConnectionReplicationCredentialOutput {
+	return i.ToGetConnectionReplicationCredentialOutputWithContext(context.Background())
+}
+
+func (i GetConnectionReplicationCredentialArgs) ToGetConnectionReplicationCredentialOutputWithContext(ctx context.Context) GetConnectionReplicationCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionReplicationCredentialOutput)
+}
+
+// GetConnectionReplicationCredentialArrayInput is an input type that accepts GetConnectionReplicationCredentialArray and GetConnectionReplicationCredentialArrayOutput values.
+// You can construct a concrete instance of `GetConnectionReplicationCredentialArrayInput` via:
+//
+//	GetConnectionReplicationCredentialArray{ GetConnectionReplicationCredentialArgs{...} }
+type GetConnectionReplicationCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionReplicationCredentialArrayOutput() GetConnectionReplicationCredentialArrayOutput
+	ToGetConnectionReplicationCredentialArrayOutputWithContext(context.Context) GetConnectionReplicationCredentialArrayOutput
+}
+
+type GetConnectionReplicationCredentialArray []GetConnectionReplicationCredentialInput
+
+func (GetConnectionReplicationCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionReplicationCredential)(nil)).Elem()
+}
+
+func (i GetConnectionReplicationCredentialArray) ToGetConnectionReplicationCredentialArrayOutput() GetConnectionReplicationCredentialArrayOutput {
+	return i.ToGetConnectionReplicationCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionReplicationCredentialArray) ToGetConnectionReplicationCredentialArrayOutputWithContext(ctx context.Context) GetConnectionReplicationCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionReplicationCredentialArrayOutput)
+}
+
+type GetConnectionReplicationCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionReplicationCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionReplicationCredential)(nil)).Elem()
+}
+
+func (o GetConnectionReplicationCredentialOutput) ToGetConnectionReplicationCredentialOutput() GetConnectionReplicationCredentialOutput {
+	return o
+}
+
+func (o GetConnectionReplicationCredentialOutput) ToGetConnectionReplicationCredentialOutputWithContext(ctx context.Context) GetConnectionReplicationCredentialOutput {
+	return o
+}
+
+func (o GetConnectionReplicationCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionReplicationCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetConnectionReplicationCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionReplicationCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetConnectionReplicationCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionReplicationCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionReplicationCredential)(nil)).Elem()
+}
+
+func (o GetConnectionReplicationCredentialArrayOutput) ToGetConnectionReplicationCredentialArrayOutput() GetConnectionReplicationCredentialArrayOutput {
+	return o
+}
+
+func (o GetConnectionReplicationCredentialArrayOutput) ToGetConnectionReplicationCredentialArrayOutputWithContext(ctx context.Context) GetConnectionReplicationCredentialArrayOutput {
+	return o
+}
+
+func (o GetConnectionReplicationCredentialArrayOutput) Index(i pulumi.IntInput) GetConnectionReplicationCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionReplicationCredential {
+		return vs[0].([]GetConnectionReplicationCredential)[vs[1].(int)]
+	}).(GetConnectionReplicationCredentialOutput)
+}
+
 type GetConnectionSshDetail struct {
 	// Name of the host the SSH key is valid for.
 	Host   string `pulumi:"host"`
@@ -7180,6 +8746,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// Oracle Cloud Infrastructure Private Endpoint configuration details.
 	PrivateEndpoints []GetConnectionsConnectionCollectionItemPrivateEndpoint `pulumi:"privateEndpoints"`
+	// Database Administrator Credentials details.
+	ReplicationCredentials []GetConnectionsConnectionCollectionItemReplicationCredential `pulumi:"replicationCredentials"`
 	// Details of the SSH key that will be used.
 	SshDetails []GetConnectionsConnectionCollectionItemSshDetail `pulumi:"sshDetails"`
 	// The current state of the Database Migration Deployment.
@@ -7236,6 +8804,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Oracle Cloud Infrastructure Private Endpoint configuration details.
 	PrivateEndpoints GetConnectionsConnectionCollectionItemPrivateEndpointArrayInput `pulumi:"privateEndpoints"`
+	// Database Administrator Credentials details.
+	ReplicationCredentials GetConnectionsConnectionCollectionItemReplicationCredentialArrayInput `pulumi:"replicationCredentials"`
 	// Details of the SSH key that will be used.
 	SshDetails GetConnectionsConnectionCollectionItemSshDetailArrayInput `pulumi:"sshDetails"`
 	// The current state of the Database Migration Deployment.
@@ -7377,6 +8947,13 @@ func (o GetConnectionsConnectionCollectionItemOutput) PrivateEndpoints() GetConn
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemPrivateEndpoint {
 		return v.PrivateEndpoints
 	}).(GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput)
+}
+
+// Database Administrator Credentials details.
+func (o GetConnectionsConnectionCollectionItemOutput) ReplicationCredentials() GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemReplicationCredential {
+		return v.ReplicationCredentials
+	}).(GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput)
 }
 
 // Details of the SSH key that will be used.
@@ -7790,6 +9367,109 @@ func (o GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemPrivateEndpoint {
 		return vs[0].([]GetConnectionsConnectionCollectionItemPrivateEndpoint)[vs[1].(int)]
 	}).(GetConnectionsConnectionCollectionItemPrivateEndpointOutput)
+}
+
+type GetConnectionsConnectionCollectionItemReplicationCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetConnectionsConnectionCollectionItemReplicationCredentialInput is an input type that accepts GetConnectionsConnectionCollectionItemReplicationCredentialArgs and GetConnectionsConnectionCollectionItemReplicationCredentialOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemReplicationCredentialInput` via:
+//
+//	GetConnectionsConnectionCollectionItemReplicationCredentialArgs{...}
+type GetConnectionsConnectionCollectionItemReplicationCredentialInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemReplicationCredentialOutput() GetConnectionsConnectionCollectionItemReplicationCredentialOutput
+	ToGetConnectionsConnectionCollectionItemReplicationCredentialOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemReplicationCredentialOutput
+}
+
+type GetConnectionsConnectionCollectionItemReplicationCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetConnectionsConnectionCollectionItemReplicationCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemReplicationCredential)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemReplicationCredentialArgs) ToGetConnectionsConnectionCollectionItemReplicationCredentialOutput() GetConnectionsConnectionCollectionItemReplicationCredentialOutput {
+	return i.ToGetConnectionsConnectionCollectionItemReplicationCredentialOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemReplicationCredentialArgs) ToGetConnectionsConnectionCollectionItemReplicationCredentialOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemReplicationCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemReplicationCredentialOutput)
+}
+
+// GetConnectionsConnectionCollectionItemReplicationCredentialArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemReplicationCredentialArray and GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemReplicationCredentialArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemReplicationCredentialArray{ GetConnectionsConnectionCollectionItemReplicationCredentialArgs{...} }
+type GetConnectionsConnectionCollectionItemReplicationCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput() GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput
+	ToGetConnectionsConnectionCollectionItemReplicationCredentialArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemReplicationCredentialArray []GetConnectionsConnectionCollectionItemReplicationCredentialInput
+
+func (GetConnectionsConnectionCollectionItemReplicationCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemReplicationCredential)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemReplicationCredentialArray) ToGetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput() GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemReplicationCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemReplicationCredentialArray) ToGetConnectionsConnectionCollectionItemReplicationCredentialArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemReplicationCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemReplicationCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemReplicationCredential)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemReplicationCredentialOutput) ToGetConnectionsConnectionCollectionItemReplicationCredentialOutput() GetConnectionsConnectionCollectionItemReplicationCredentialOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemReplicationCredentialOutput) ToGetConnectionsConnectionCollectionItemReplicationCredentialOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemReplicationCredentialOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemReplicationCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemReplicationCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetConnectionsConnectionCollectionItemReplicationCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemReplicationCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemReplicationCredential)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput) ToGetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput() GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput) ToGetConnectionsConnectionCollectionItemReplicationCredentialArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemReplicationCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemReplicationCredential {
+		return vs[0].([]GetConnectionsConnectionCollectionItemReplicationCredential)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemReplicationCredentialOutput)
 }
 
 type GetConnectionsConnectionCollectionItemSshDetail struct {
@@ -11095,6 +12775,895 @@ func (o GetMigrationGoldenGateDetailSettingReplicatArrayOutput) Index(i pulumi.I
 	}).(GetMigrationGoldenGateDetailSettingReplicatOutput)
 }
 
+type GetMigrationGoldenGateServiceDetail struct {
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments []GetMigrationGoldenGateServiceDetailGgsDeployment `pulumi:"ggsDeployments"`
+	// Optional settings for Oracle GoldenGate processes
+	Settings                     []GetMigrationGoldenGateServiceDetailSetting                     `pulumi:"settings"`
+	SourceContainerDbCredentials []GetMigrationGoldenGateServiceDetailSourceContainerDbCredential `pulumi:"sourceContainerDbCredentials"`
+	SourceDbCredentials          []GetMigrationGoldenGateServiceDetailSourceDbCredential          `pulumi:"sourceDbCredentials"`
+	TargetDbCredentials          []GetMigrationGoldenGateServiceDetailTargetDbCredential          `pulumi:"targetDbCredentials"`
+}
+
+// GetMigrationGoldenGateServiceDetailInput is an input type that accepts GetMigrationGoldenGateServiceDetailArgs and GetMigrationGoldenGateServiceDetailOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailArgs{...}
+type GetMigrationGoldenGateServiceDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailOutput() GetMigrationGoldenGateServiceDetailOutput
+	ToGetMigrationGoldenGateServiceDetailOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailOutput
+}
+
+type GetMigrationGoldenGateServiceDetailArgs struct {
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments GetMigrationGoldenGateServiceDetailGgsDeploymentArrayInput `pulumi:"ggsDeployments"`
+	// Optional settings for Oracle GoldenGate processes
+	Settings                     GetMigrationGoldenGateServiceDetailSettingArrayInput                     `pulumi:"settings"`
+	SourceContainerDbCredentials GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayInput `pulumi:"sourceContainerDbCredentials"`
+	SourceDbCredentials          GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayInput          `pulumi:"sourceDbCredentials"`
+	TargetDbCredentials          GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayInput          `pulumi:"targetDbCredentials"`
+}
+
+func (GetMigrationGoldenGateServiceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetail)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailArgs) ToGetMigrationGoldenGateServiceDetailOutput() GetMigrationGoldenGateServiceDetailOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailArgs) ToGetMigrationGoldenGateServiceDetailOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailOutput)
+}
+
+// GetMigrationGoldenGateServiceDetailArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailArray and GetMigrationGoldenGateServiceDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailArrayInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailArray{ GetMigrationGoldenGateServiceDetailArgs{...} }
+type GetMigrationGoldenGateServiceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailArrayOutput() GetMigrationGoldenGateServiceDetailArrayOutput
+	ToGetMigrationGoldenGateServiceDetailArrayOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailArrayOutput
+}
+
+type GetMigrationGoldenGateServiceDetailArray []GetMigrationGoldenGateServiceDetailInput
+
+func (GetMigrationGoldenGateServiceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetail)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailArray) ToGetMigrationGoldenGateServiceDetailArrayOutput() GetMigrationGoldenGateServiceDetailArrayOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailArray) ToGetMigrationGoldenGateServiceDetailArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetail)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailOutput) ToGetMigrationGoldenGateServiceDetailOutput() GetMigrationGoldenGateServiceDetailOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailOutput) ToGetMigrationGoldenGateServiceDetailOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailOutput {
+	return o
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o GetMigrationGoldenGateServiceDetailOutput) GgsDeployments() GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetail) []GetMigrationGoldenGateServiceDetailGgsDeployment {
+		return v.GgsDeployments
+	}).(GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput)
+}
+
+// Optional settings for Oracle GoldenGate processes
+func (o GetMigrationGoldenGateServiceDetailOutput) Settings() GetMigrationGoldenGateServiceDetailSettingArrayOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetail) []GetMigrationGoldenGateServiceDetailSetting {
+		return v.Settings
+	}).(GetMigrationGoldenGateServiceDetailSettingArrayOutput)
+}
+
+func (o GetMigrationGoldenGateServiceDetailOutput) SourceContainerDbCredentials() GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetail) []GetMigrationGoldenGateServiceDetailSourceContainerDbCredential {
+		return v.SourceContainerDbCredentials
+	}).(GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput)
+}
+
+func (o GetMigrationGoldenGateServiceDetailOutput) SourceDbCredentials() GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetail) []GetMigrationGoldenGateServiceDetailSourceDbCredential {
+		return v.SourceDbCredentials
+	}).(GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput)
+}
+
+func (o GetMigrationGoldenGateServiceDetailOutput) TargetDbCredentials() GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetail) []GetMigrationGoldenGateServiceDetailTargetDbCredential {
+		return v.TargetDbCredentials
+	}).(GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetail)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailArrayOutput) ToGetMigrationGoldenGateServiceDetailArrayOutput() GetMigrationGoldenGateServiceDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailArrayOutput) ToGetMigrationGoldenGateServiceDetailArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateServiceDetail {
+		return vs[0].([]GetMigrationGoldenGateServiceDetail)[vs[1].(int)]
+	}).(GetMigrationGoldenGateServiceDetailOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailGgsDeployment struct {
+	// OCID of a GoldenGate Deployment
+	DeploymentId string `pulumi:"deploymentId"`
+	// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+	GgsAdminCredentialsSecretId string `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+// GetMigrationGoldenGateServiceDetailGgsDeploymentInput is an input type that accepts GetMigrationGoldenGateServiceDetailGgsDeploymentArgs and GetMigrationGoldenGateServiceDetailGgsDeploymentOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailGgsDeploymentInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailGgsDeploymentArgs{...}
+type GetMigrationGoldenGateServiceDetailGgsDeploymentInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailGgsDeploymentOutput() GetMigrationGoldenGateServiceDetailGgsDeploymentOutput
+	ToGetMigrationGoldenGateServiceDetailGgsDeploymentOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailGgsDeploymentOutput
+}
+
+type GetMigrationGoldenGateServiceDetailGgsDeploymentArgs struct {
+	// OCID of a GoldenGate Deployment
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+	// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+	GgsAdminCredentialsSecretId pulumi.StringInput `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+func (GetMigrationGoldenGateServiceDetailGgsDeploymentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailGgsDeployment)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailGgsDeploymentArgs) ToGetMigrationGoldenGateServiceDetailGgsDeploymentOutput() GetMigrationGoldenGateServiceDetailGgsDeploymentOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailGgsDeploymentOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailGgsDeploymentArgs) ToGetMigrationGoldenGateServiceDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailGgsDeploymentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailGgsDeploymentOutput)
+}
+
+// GetMigrationGoldenGateServiceDetailGgsDeploymentArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailGgsDeploymentArray and GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailGgsDeploymentArrayInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailGgsDeploymentArray{ GetMigrationGoldenGateServiceDetailGgsDeploymentArgs{...} }
+type GetMigrationGoldenGateServiceDetailGgsDeploymentArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput() GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput
+	ToGetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput
+}
+
+type GetMigrationGoldenGateServiceDetailGgsDeploymentArray []GetMigrationGoldenGateServiceDetailGgsDeploymentInput
+
+func (GetMigrationGoldenGateServiceDetailGgsDeploymentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailGgsDeployment)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailGgsDeploymentArray) ToGetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput() GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailGgsDeploymentArray) ToGetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailGgsDeploymentOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailGgsDeploymentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailGgsDeployment)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailGgsDeploymentOutput) ToGetMigrationGoldenGateServiceDetailGgsDeploymentOutput() GetMigrationGoldenGateServiceDetailGgsDeploymentOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailGgsDeploymentOutput) ToGetMigrationGoldenGateServiceDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailGgsDeploymentOutput {
+	return o
+}
+
+// OCID of a GoldenGate Deployment
+func (o GetMigrationGoldenGateServiceDetailGgsDeploymentOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailGgsDeployment) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+func (o GetMigrationGoldenGateServiceDetailGgsDeploymentOutput) GgsAdminCredentialsSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailGgsDeployment) string { return v.GgsAdminCredentialsSecretId }).(pulumi.StringOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailGgsDeployment)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput) ToGetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput() GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput) ToGetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailGgsDeploymentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateServiceDetailGgsDeployment {
+		return vs[0].([]GetMigrationGoldenGateServiceDetailGgsDeployment)[vs[1].(int)]
+	}).(GetMigrationGoldenGateServiceDetailGgsDeploymentOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSetting struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag int `pulumi:"acceptableLag"`
+	// Parameters for Extract processes.
+	Extracts []GetMigrationGoldenGateServiceDetailSettingExtract `pulumi:"extracts"`
+	// Parameters for Replicat processes.
+	Replicats []GetMigrationGoldenGateServiceDetailSettingReplicat `pulumi:"replicats"`
+}
+
+// GetMigrationGoldenGateServiceDetailSettingInput is an input type that accepts GetMigrationGoldenGateServiceDetailSettingArgs and GetMigrationGoldenGateServiceDetailSettingOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSettingInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSettingArgs{...}
+type GetMigrationGoldenGateServiceDetailSettingInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSettingOutput() GetMigrationGoldenGateServiceDetailSettingOutput
+	ToGetMigrationGoldenGateServiceDetailSettingOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSettingOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSettingArgs struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag pulumi.IntInput `pulumi:"acceptableLag"`
+	// Parameters for Extract processes.
+	Extracts GetMigrationGoldenGateServiceDetailSettingExtractArrayInput `pulumi:"extracts"`
+	// Parameters for Replicat processes.
+	Replicats GetMigrationGoldenGateServiceDetailSettingReplicatArrayInput `pulumi:"replicats"`
+}
+
+func (GetMigrationGoldenGateServiceDetailSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSetting)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingArgs) ToGetMigrationGoldenGateServiceDetailSettingOutput() GetMigrationGoldenGateServiceDetailSettingOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSettingOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingArgs) ToGetMigrationGoldenGateServiceDetailSettingOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingOutput)
+}
+
+// GetMigrationGoldenGateServiceDetailSettingArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSettingArray and GetMigrationGoldenGateServiceDetailSettingArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSettingArrayInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSettingArray{ GetMigrationGoldenGateServiceDetailSettingArgs{...} }
+type GetMigrationGoldenGateServiceDetailSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSettingArrayOutput() GetMigrationGoldenGateServiceDetailSettingArrayOutput
+	ToGetMigrationGoldenGateServiceDetailSettingArrayOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSettingArrayOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSettingArray []GetMigrationGoldenGateServiceDetailSettingInput
+
+func (GetMigrationGoldenGateServiceDetailSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSetting)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingArray) ToGetMigrationGoldenGateServiceDetailSettingArrayOutput() GetMigrationGoldenGateServiceDetailSettingArrayOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingArray) ToGetMigrationGoldenGateServiceDetailSettingArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSettingOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSetting)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingOutput) ToGetMigrationGoldenGateServiceDetailSettingOutput() GetMigrationGoldenGateServiceDetailSettingOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingOutput) ToGetMigrationGoldenGateServiceDetailSettingOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingOutput {
+	return o
+}
+
+// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o GetMigrationGoldenGateServiceDetailSettingOutput) AcceptableLag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSetting) int { return v.AcceptableLag }).(pulumi.IntOutput)
+}
+
+// Parameters for Extract processes.
+func (o GetMigrationGoldenGateServiceDetailSettingOutput) Extracts() GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSetting) []GetMigrationGoldenGateServiceDetailSettingExtract {
+		return v.Extracts
+	}).(GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput)
+}
+
+// Parameters for Replicat processes.
+func (o GetMigrationGoldenGateServiceDetailSettingOutput) Replicats() GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSetting) []GetMigrationGoldenGateServiceDetailSettingReplicat {
+		return v.Replicats
+	}).(GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSetting)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingArrayOutput) ToGetMigrationGoldenGateServiceDetailSettingArrayOutput() GetMigrationGoldenGateServiceDetailSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingArrayOutput) ToGetMigrationGoldenGateServiceDetailSettingArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateServiceDetailSetting {
+		return vs[0].([]GetMigrationGoldenGateServiceDetailSetting)[vs[1].(int)]
+	}).(GetMigrationGoldenGateServiceDetailSettingOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSettingExtract struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration int `pulumi:"longTransDuration"`
+	// Extract performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationGoldenGateServiceDetailSettingExtractInput is an input type that accepts GetMigrationGoldenGateServiceDetailSettingExtractArgs and GetMigrationGoldenGateServiceDetailSettingExtractOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSettingExtractInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSettingExtractArgs{...}
+type GetMigrationGoldenGateServiceDetailSettingExtractInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSettingExtractOutput() GetMigrationGoldenGateServiceDetailSettingExtractOutput
+	ToGetMigrationGoldenGateServiceDetailSettingExtractOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSettingExtractOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSettingExtractArgs struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration pulumi.IntInput `pulumi:"longTransDuration"`
+	// Extract performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationGoldenGateServiceDetailSettingExtractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingExtract)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingExtractArgs) ToGetMigrationGoldenGateServiceDetailSettingExtractOutput() GetMigrationGoldenGateServiceDetailSettingExtractOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSettingExtractOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingExtractArgs) ToGetMigrationGoldenGateServiceDetailSettingExtractOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingExtractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingExtractOutput)
+}
+
+// GetMigrationGoldenGateServiceDetailSettingExtractArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSettingExtractArray and GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSettingExtractArrayInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSettingExtractArray{ GetMigrationGoldenGateServiceDetailSettingExtractArgs{...} }
+type GetMigrationGoldenGateServiceDetailSettingExtractArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSettingExtractArrayOutput() GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput
+	ToGetMigrationGoldenGateServiceDetailSettingExtractArrayOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSettingExtractArray []GetMigrationGoldenGateServiceDetailSettingExtractInput
+
+func (GetMigrationGoldenGateServiceDetailSettingExtractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSettingExtract)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingExtractArray) ToGetMigrationGoldenGateServiceDetailSettingExtractArrayOutput() GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSettingExtractArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingExtractArray) ToGetMigrationGoldenGateServiceDetailSettingExtractArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSettingExtractOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSettingExtractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingExtract)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingExtractOutput) ToGetMigrationGoldenGateServiceDetailSettingExtractOutput() GetMigrationGoldenGateServiceDetailSettingExtractOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingExtractOutput) ToGetMigrationGoldenGateServiceDetailSettingExtractOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingExtractOutput {
+	return o
+}
+
+// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o GetMigrationGoldenGateServiceDetailSettingExtractOutput) LongTransDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSettingExtract) int { return v.LongTransDuration }).(pulumi.IntOutput)
+}
+
+// Extract performance.
+func (o GetMigrationGoldenGateServiceDetailSettingExtractOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSettingExtract) string { return v.PerformanceProfile }).(pulumi.StringOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSettingExtract)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput) ToGetMigrationGoldenGateServiceDetailSettingExtractArrayOutput() GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput) ToGetMigrationGoldenGateServiceDetailSettingExtractArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSettingExtractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateServiceDetailSettingExtract {
+		return vs[0].([]GetMigrationGoldenGateServiceDetailSettingExtract)[vs[1].(int)]
+	}).(GetMigrationGoldenGateServiceDetailSettingExtractOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSettingReplicat struct {
+	// Number of threads used to read trail files (valid for Parallel Replicat)
+	MapParallelism int `pulumi:"mapParallelism"`
+	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MaxApplyParallelism int `pulumi:"maxApplyParallelism"`
+	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MinApplyParallelism int `pulumi:"minApplyParallelism"`
+}
+
+// GetMigrationGoldenGateServiceDetailSettingReplicatInput is an input type that accepts GetMigrationGoldenGateServiceDetailSettingReplicatArgs and GetMigrationGoldenGateServiceDetailSettingReplicatOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSettingReplicatInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSettingReplicatArgs{...}
+type GetMigrationGoldenGateServiceDetailSettingReplicatInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSettingReplicatOutput() GetMigrationGoldenGateServiceDetailSettingReplicatOutput
+	ToGetMigrationGoldenGateServiceDetailSettingReplicatOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSettingReplicatOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSettingReplicatArgs struct {
+	// Number of threads used to read trail files (valid for Parallel Replicat)
+	MapParallelism pulumi.IntInput `pulumi:"mapParallelism"`
+	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MaxApplyParallelism pulumi.IntInput `pulumi:"maxApplyParallelism"`
+	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MinApplyParallelism pulumi.IntInput `pulumi:"minApplyParallelism"`
+}
+
+func (GetMigrationGoldenGateServiceDetailSettingReplicatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingReplicatArgs) ToGetMigrationGoldenGateServiceDetailSettingReplicatOutput() GetMigrationGoldenGateServiceDetailSettingReplicatOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSettingReplicatOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingReplicatArgs) ToGetMigrationGoldenGateServiceDetailSettingReplicatOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingReplicatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingReplicatOutput)
+}
+
+// GetMigrationGoldenGateServiceDetailSettingReplicatArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSettingReplicatArray and GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSettingReplicatArrayInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSettingReplicatArray{ GetMigrationGoldenGateServiceDetailSettingReplicatArgs{...} }
+type GetMigrationGoldenGateServiceDetailSettingReplicatArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput() GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput
+	ToGetMigrationGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSettingReplicatArray []GetMigrationGoldenGateServiceDetailSettingReplicatInput
+
+func (GetMigrationGoldenGateServiceDetailSettingReplicatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSettingReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingReplicatArray) ToGetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput() GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSettingReplicatArray) ToGetMigrationGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSettingReplicatOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSettingReplicatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatOutput) ToGetMigrationGoldenGateServiceDetailSettingReplicatOutput() GetMigrationGoldenGateServiceDetailSettingReplicatOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatOutput) ToGetMigrationGoldenGateServiceDetailSettingReplicatOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingReplicatOutput {
+	return o
+}
+
+// Number of threads used to read trail files (valid for Parallel Replicat)
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatOutput) MapParallelism() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSettingReplicat) int { return v.MapParallelism }).(pulumi.IntOutput)
+}
+
+// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatOutput) MaxApplyParallelism() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSettingReplicat) int { return v.MaxApplyParallelism }).(pulumi.IntOutput)
+}
+
+// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatOutput) MinApplyParallelism() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSettingReplicat) int { return v.MinApplyParallelism }).(pulumi.IntOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSettingReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput) ToGetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput() GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput) ToGetMigrationGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSettingReplicatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateServiceDetailSettingReplicat {
+		return vs[0].([]GetMigrationGoldenGateServiceDetailSettingReplicat)[vs[1].(int)]
+	}).(GetMigrationGoldenGateServiceDetailSettingReplicatOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSourceContainerDbCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialInput is an input type that accepts GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs and GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs{...}
+type GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput() GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput
+	ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSourceContainerDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput() GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput)
+}
+
+// GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray and GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray{ GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs{...} }
+type GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput() GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput
+	ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray []GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialInput
+
+func (GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSourceContainerDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput() GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSourceContainerDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput() GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSourceContainerDbCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSourceContainerDbCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSourceContainerDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput() GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateServiceDetailSourceContainerDbCredential {
+		return vs[0].([]GetMigrationGoldenGateServiceDetailSourceContainerDbCredential)[vs[1].(int)]
+	}).(GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSourceDbCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetMigrationGoldenGateServiceDetailSourceDbCredentialInput is an input type that accepts GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs and GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSourceDbCredentialInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs{...}
+type GetMigrationGoldenGateServiceDetailSourceDbCredentialInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSourceDbCredentialOutput() GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput
+	ToGetMigrationGoldenGateServiceDetailSourceDbCredentialOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSourceDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialOutput() GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSourceDbCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput)
+}
+
+// GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSourceDbCredentialArray and GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailSourceDbCredentialArray{ GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs{...} }
+type GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput() GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput
+	ToGetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput
+}
+
+type GetMigrationGoldenGateServiceDetailSourceDbCredentialArray []GetMigrationGoldenGateServiceDetailSourceDbCredentialInput
+
+func (GetMigrationGoldenGateServiceDetailSourceDbCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSourceDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailSourceDbCredentialArray) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput() GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailSourceDbCredentialArray) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSourceDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialOutput() GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSourceDbCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailSourceDbCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailSourceDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput() GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateServiceDetailSourceDbCredential {
+		return vs[0].([]GetMigrationGoldenGateServiceDetailSourceDbCredential)[vs[1].(int)]
+	}).(GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailTargetDbCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetMigrationGoldenGateServiceDetailTargetDbCredentialInput is an input type that accepts GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs and GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailTargetDbCredentialInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs{...}
+type GetMigrationGoldenGateServiceDetailTargetDbCredentialInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailTargetDbCredentialOutput() GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput
+	ToGetMigrationGoldenGateServiceDetailTargetDbCredentialOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput
+}
+
+type GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailTargetDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialOutput() GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailTargetDbCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput)
+}
+
+// GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailTargetDbCredentialArray and GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayInput` via:
+//
+//	GetMigrationGoldenGateServiceDetailTargetDbCredentialArray{ GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs{...} }
+type GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput() GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput
+	ToGetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(context.Context) GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput
+}
+
+type GetMigrationGoldenGateServiceDetailTargetDbCredentialArray []GetMigrationGoldenGateServiceDetailTargetDbCredentialInput
+
+func (GetMigrationGoldenGateServiceDetailTargetDbCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailTargetDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationGoldenGateServiceDetailTargetDbCredentialArray) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput() GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return i.ToGetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGoldenGateServiceDetailTargetDbCredentialArray) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGoldenGateServiceDetailTargetDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialOutput() GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailTargetDbCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateServiceDetailTargetDbCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGoldenGateServiceDetailTargetDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput() GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateServiceDetailTargetDbCredential {
+		return vs[0].([]GetMigrationGoldenGateServiceDetailTargetDbCredential)[vs[1].(int)]
+	}).(GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput)
+}
+
 type GetMigrationIncludeObject struct {
 	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
 	IsOmitExcludedTableFromReplication bool `pulumi:"isOmitExcludedTableFromReplication"`
@@ -11870,6 +14439,8 @@ type GetMigrationsMigrationCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Details about Oracle GoldenGate Microservices.
 	GoldenGateDetails []GetMigrationsMigrationCollectionItemGoldenGateDetail `pulumi:"goldenGateDetails"`
+	// Details about Oracle GoldenGate GGS Deployment.
+	GoldenGateServiceDetails []GetMigrationsMigrationCollectionItemGoldenGateServiceDetail `pulumi:"goldenGateServiceDetails"`
 	// The OCID of the resource
 	Id string `pulumi:"id"`
 	// Database objects to include from migration.
@@ -11939,6 +14510,8 @@ type GetMigrationsMigrationCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Details about Oracle GoldenGate Microservices.
 	GoldenGateDetails GetMigrationsMigrationCollectionItemGoldenGateDetailArrayInput `pulumi:"goldenGateDetails"`
+	// Details about Oracle GoldenGate GGS Deployment.
+	GoldenGateServiceDetails GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayInput `pulumi:"goldenGateServiceDetails"`
 	// The OCID of the resource
 	Id pulumi.StringInput `pulumi:"id"`
 	// Database objects to include from migration.
@@ -12099,6 +14672,13 @@ func (o GetMigrationsMigrationCollectionItemOutput) GoldenGateDetails() GetMigra
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) []GetMigrationsMigrationCollectionItemGoldenGateDetail {
 		return v.GoldenGateDetails
 	}).(GetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutput)
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o GetMigrationsMigrationCollectionItemOutput) GoldenGateServiceDetails() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) []GetMigrationsMigrationCollectionItemGoldenGateServiceDetail {
+		return v.GoldenGateServiceDetails
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput)
 }
 
 // The OCID of the resource
@@ -14896,6 +17476,921 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray
 	}).(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput)
 }
 
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetail struct {
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment `pulumi:"ggsDeployments"`
+	// Optional settings for Oracle GoldenGate processes
+	Settings                     []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting                     `pulumi:"settings"`
+	SourceContainerDbCredentials []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential `pulumi:"sourceContainerDbCredentials"`
+	SourceDbCredentials          []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential          `pulumi:"sourceDbCredentials"`
+	TargetDbCredentials          []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential          `pulumi:"targetDbCredentials"`
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs{...}
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs struct {
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayInput `pulumi:"ggsDeployments"`
+	// Optional settings for Oracle GoldenGate processes
+	Settings                     GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayInput                     `pulumi:"settings"`
+	SourceContainerDbCredentials GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayInput `pulumi:"sourceContainerDbCredentials"`
+	SourceDbCredentials          GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayInput          `pulumi:"sourceDbCredentials"`
+	TargetDbCredentials          GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayInput          `pulumi:"targetDbCredentials"`
+}
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput)
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray{ GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs{...} }
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailInput
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput {
+	return o
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) GgsDeployments() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetail) []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment {
+		return v.GgsDeployments
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput)
+}
+
+// Optional settings for Oracle GoldenGate processes
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) Settings() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetail) []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting {
+		return v.Settings
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput)
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) SourceContainerDbCredentials() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetail) []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential {
+		return v.SourceContainerDbCredentials
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput)
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) SourceDbCredentials() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetail) []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential {
+		return v.SourceDbCredentials
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput)
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) TargetDbCredentials() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetail) []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential {
+		return v.TargetDbCredentials
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateServiceDetail {
+		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateServiceDetail)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment struct {
+	// OCID of a GoldenGate Deployment
+	DeploymentId string `pulumi:"deploymentId"`
+	// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+	GgsAdminCredentialsSecretId string `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs{...}
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs struct {
+	// OCID of a GoldenGate Deployment
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+	// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+	GgsAdminCredentialsSecretId pulumi.StringInput `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput)
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArray{ GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs{...} }
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArray []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentInput
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput {
+	return o
+}
+
+// OCID of a GoldenGate Deployment
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment) string {
+		return v.DeploymentId
+	}).(pulumi.StringOutput)
+}
+
+// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput) GgsAdminCredentialsSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment) string {
+		return v.GgsAdminCredentialsSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment {
+		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag int `pulumi:"acceptableLag"`
+	// Parameters for Extract processes.
+	Extracts []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract `pulumi:"extracts"`
+	// Parameters for Replicat processes.
+	Replicats []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat `pulumi:"replicats"`
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs{...}
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag pulumi.IntInput `pulumi:"acceptableLag"`
+	// Parameters for Extract processes.
+	Extracts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayInput `pulumi:"extracts"`
+	// Parameters for Replicat processes.
+	Replicats GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayInput `pulumi:"replicats"`
+}
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput)
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray{ GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs{...} }
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingInput
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput {
+	return o
+}
+
+// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput) AcceptableLag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting) int { return v.AcceptableLag }).(pulumi.IntOutput)
+}
+
+// Parameters for Extract processes.
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput) Extracts() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting) []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract {
+		return v.Extracts
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput)
+}
+
+// Parameters for Replicat processes.
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput) Replicats() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting) []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat {
+		return v.Replicats
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting {
+		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration int `pulumi:"longTransDuration"`
+	// Extract performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs{...}
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration pulumi.IntInput `pulumi:"longTransDuration"`
+	// Extract performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput)
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArray{ GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs{...} }
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArray []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractInput
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput {
+	return o
+}
+
+// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput) LongTransDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract) int {
+		return v.LongTransDuration
+	}).(pulumi.IntOutput)
+}
+
+// Extract performance.
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract) string {
+		return v.PerformanceProfile
+	}).(pulumi.StringOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract {
+		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat struct {
+	// Number of threads used to read trail files (valid for Parallel Replicat)
+	MapParallelism int `pulumi:"mapParallelism"`
+	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MaxApplyParallelism int `pulumi:"maxApplyParallelism"`
+	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MinApplyParallelism int `pulumi:"minApplyParallelism"`
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs{...}
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs struct {
+	// Number of threads used to read trail files (valid for Parallel Replicat)
+	MapParallelism pulumi.IntInput `pulumi:"mapParallelism"`
+	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MaxApplyParallelism pulumi.IntInput `pulumi:"maxApplyParallelism"`
+	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+	MinApplyParallelism pulumi.IntInput `pulumi:"minApplyParallelism"`
+}
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput)
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArray{ GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs{...} }
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArray []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatInput
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput {
+	return o
+}
+
+// Number of threads used to read trail files (valid for Parallel Replicat)
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput) MapParallelism() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat) int {
+		return v.MapParallelism
+	}).(pulumi.IntOutput)
+}
+
+// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput) MaxApplyParallelism() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat) int {
+		return v.MaxApplyParallelism
+	}).(pulumi.IntOutput)
+}
+
+// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput) MinApplyParallelism() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat) int {
+		return v.MinApplyParallelism
+	}).(pulumi.IntOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat {
+		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArgs and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArgs{...}
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput)
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArgs{...} }
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArray []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialInput
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential {
+		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArgs and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArgs{...}
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput)
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArgs{...} }
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArray []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialInput
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential {
+		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArgs and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArgs{...}
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArgs) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput)
+}
+
+// GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArgs{...} }
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput
+	ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArray []GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialInput
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArray) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput() GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential {
+		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput)
+}
+
 type GetMigrationsMigrationCollectionItemIncludeObject struct {
 	// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
 	IsOmitExcludedTableFromReplication bool `pulumi:"isOmitExcludedTableFromReplication"`
@@ -15144,6 +18639,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionConnectDescriptorPtrInput)(nil)).Elem(), ConnectionConnectDescriptorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionPrivateEndpointInput)(nil)).Elem(), ConnectionPrivateEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionPrivateEndpointPtrInput)(nil)).Elem(), ConnectionPrivateEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionReplicationCredentialsInput)(nil)).Elem(), ConnectionReplicationCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionReplicationCredentialsPtrInput)(nil)).Elem(), ConnectionReplicationCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionSshDetailsInput)(nil)).Elem(), ConnectionSshDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionSshDetailsPtrInput)(nil)).Elem(), ConnectionSshDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionVaultDetailsInput)(nil)).Elem(), ConnectionVaultDetailsArgs{})
@@ -15204,6 +18701,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateDetailsSettingsExtractPtrInput)(nil)).Elem(), MigrationGoldenGateDetailsSettingsExtractArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateDetailsSettingsReplicatInput)(nil)).Elem(), MigrationGoldenGateDetailsSettingsReplicatArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateDetailsSettingsReplicatPtrInput)(nil)).Elem(), MigrationGoldenGateDetailsSettingsReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsPtrInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsGgsDeploymentInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsGgsDeploymentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsGgsDeploymentArrayInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsGgsDeploymentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsPtrInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsExtractInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSettingsExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsExtractPtrInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSettingsExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsReplicatInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSettingsReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSettingsReplicatPtrInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSettingsReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSourceDbCredentialsInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsTargetDbCredentialsInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrInput)(nil)).Elem(), MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationIncludeObjectInput)(nil)).Elem(), MigrationIncludeObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationIncludeObjectArrayInput)(nil)).Elem(), MigrationIncludeObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationVaultDetailsInput)(nil)).Elem(), MigrationVaultDetailsArgs{})
@@ -15226,6 +18739,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionConnectDescriptorArrayInput)(nil)).Elem(), GetConnectionConnectDescriptorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionPrivateEndpointInput)(nil)).Elem(), GetConnectionPrivateEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionPrivateEndpointArrayInput)(nil)).Elem(), GetConnectionPrivateEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionReplicationCredentialInput)(nil)).Elem(), GetConnectionReplicationCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionReplicationCredentialArrayInput)(nil)).Elem(), GetConnectionReplicationCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionSshDetailInput)(nil)).Elem(), GetConnectionSshDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionSshDetailArrayInput)(nil)).Elem(), GetConnectionSshDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionVaultDetailInput)(nil)).Elem(), GetConnectionVaultDetailArgs{})
@@ -15240,6 +18755,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemConnectDescriptorArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemConnectDescriptorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemPrivateEndpointInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemPrivateEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemPrivateEndpointArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemPrivateEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemReplicationCredentialInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemReplicationCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemReplicationCredentialArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemReplicationCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemSshDetailInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemSshDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemSshDetailArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemSshDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemVaultDetailInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemVaultDetailArgs{})
@@ -15298,6 +18815,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateDetailSettingExtractArrayInput)(nil)).Elem(), GetMigrationGoldenGateDetailSettingExtractArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateDetailSettingReplicatInput)(nil)).Elem(), GetMigrationGoldenGateDetailSettingReplicatArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateDetailSettingReplicatArrayInput)(nil)).Elem(), GetMigrationGoldenGateDetailSettingReplicatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailArrayInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailGgsDeploymentInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailGgsDeploymentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailGgsDeploymentArrayInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailGgsDeploymentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingArrayInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingExtractInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSettingExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingExtractArrayInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSettingExtractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingReplicatInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSettingReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSettingReplicatArrayInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSettingReplicatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSourceDbCredentialInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailSourceDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailTargetDbCredentialInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayInput)(nil)).Elem(), GetMigrationGoldenGateServiceDetailTargetDbCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationIncludeObjectInput)(nil)).Elem(), GetMigrationIncludeObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationIncludeObjectArrayInput)(nil)).Elem(), GetMigrationIncludeObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesFilterInput)(nil)).Elem(), GetMigrationObjectTypesFilterArgs{})
@@ -15360,6 +18893,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemIncludeObjectInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemIncludeObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemIncludeObjectArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemIncludeObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemVaultDetailInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemVaultDetailArgs{})
@@ -15370,6 +18919,8 @@ func init() {
 	pulumi.RegisterOutputType(ConnectionConnectDescriptorPtrOutput{})
 	pulumi.RegisterOutputType(ConnectionPrivateEndpointOutput{})
 	pulumi.RegisterOutputType(ConnectionPrivateEndpointPtrOutput{})
+	pulumi.RegisterOutputType(ConnectionReplicationCredentialsOutput{})
+	pulumi.RegisterOutputType(ConnectionReplicationCredentialsPtrOutput{})
 	pulumi.RegisterOutputType(ConnectionSshDetailsOutput{})
 	pulumi.RegisterOutputType(ConnectionSshDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ConnectionVaultDetailsOutput{})
@@ -15430,6 +18981,22 @@ func init() {
 	pulumi.RegisterOutputType(MigrationGoldenGateDetailsSettingsExtractPtrOutput{})
 	pulumi.RegisterOutputType(MigrationGoldenGateDetailsSettingsReplicatOutput{})
 	pulumi.RegisterOutputType(MigrationGoldenGateDetailsSettingsReplicatPtrOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsGgsDeploymentOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSettingsOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSettingsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSettingsExtractOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSettingsReplicatOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput{})
+	pulumi.RegisterOutputType(MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput{})
 	pulumi.RegisterOutputType(MigrationIncludeObjectOutput{})
 	pulumi.RegisterOutputType(MigrationIncludeObjectArrayOutput{})
 	pulumi.RegisterOutputType(MigrationVaultDetailsOutput{})
@@ -15452,6 +19019,8 @@ func init() {
 	pulumi.RegisterOutputType(GetConnectionConnectDescriptorArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionPrivateEndpointOutput{})
 	pulumi.RegisterOutputType(GetConnectionPrivateEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionReplicationCredentialOutput{})
+	pulumi.RegisterOutputType(GetConnectionReplicationCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionSshDetailOutput{})
 	pulumi.RegisterOutputType(GetConnectionSshDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionVaultDetailOutput{})
@@ -15466,6 +19035,8 @@ func init() {
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemConnectDescriptorArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemPrivateEndpointOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemReplicationCredentialOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemSshDetailOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemSshDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemVaultDetailOutput{})
@@ -15524,6 +19095,22 @@ func init() {
 	pulumi.RegisterOutputType(GetMigrationGoldenGateDetailSettingExtractArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationGoldenGateDetailSettingReplicatOutput{})
 	pulumi.RegisterOutputType(GetMigrationGoldenGateDetailSettingReplicatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailGgsDeploymentOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSettingOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSettingExtractOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSettingReplicatOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput{})
+	pulumi.RegisterOutputType(GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationIncludeObjectOutput{})
 	pulumi.RegisterOutputType(GetMigrationIncludeObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationObjectTypesFilterOutput{})
@@ -15586,6 +19173,22 @@ func init() {
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemIncludeObjectOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemIncludeObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemVaultDetailOutput{})

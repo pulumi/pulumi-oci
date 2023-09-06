@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,11 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
      * 
      */
     private String encryptionCipher;
+    /**
+     * @return Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+     * 
+     */
+    private Boolean isUnprotectedTrafficAllowed;
     /**
      * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
      * 
@@ -34,6 +40,13 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
      */
     public String encryptionCipher() {
         return this.encryptionCipher;
+    }
+    /**
+     * @return Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+     * 
+     */
+    public Boolean isUnprotectedTrafficAllowed() {
+        return this.isUnprotectedTrafficAllowed;
     }
     /**
      * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
@@ -60,12 +73,14 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
     @CustomType.Builder
     public static final class Builder {
         private String encryptionCipher;
+        private Boolean isUnprotectedTrafficAllowed;
         private List<GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey> primaryKeys;
         private String state;
         public Builder() {}
         public Builder(GetCrossConnectGroupsCrossConnectGroupMacsecProperty defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.encryptionCipher = defaults.encryptionCipher;
+    	      this.isUnprotectedTrafficAllowed = defaults.isUnprotectedTrafficAllowed;
     	      this.primaryKeys = defaults.primaryKeys;
     	      this.state = defaults.state;
         }
@@ -73,6 +88,11 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
         @CustomType.Setter
         public Builder encryptionCipher(String encryptionCipher) {
             this.encryptionCipher = Objects.requireNonNull(encryptionCipher);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isUnprotectedTrafficAllowed(Boolean isUnprotectedTrafficAllowed) {
+            this.isUnprotectedTrafficAllowed = Objects.requireNonNull(isUnprotectedTrafficAllowed);
             return this;
         }
         @CustomType.Setter
@@ -91,6 +111,7 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
         public GetCrossConnectGroupsCrossConnectGroupMacsecProperty build() {
             final var o = new GetCrossConnectGroupsCrossConnectGroupMacsecProperty();
             o.encryptionCipher = encryptionCipher;
+            o.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
             o.primaryKeys = primaryKeys;
             o.state = state;
             return o;

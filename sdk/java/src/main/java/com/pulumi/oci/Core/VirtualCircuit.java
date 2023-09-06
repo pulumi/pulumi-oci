@@ -91,6 +91,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .ipMtu(var_.virtual_circuit_ip_mtu())
  *             .isBfdEnabled(var_.virtual_circuit_is_bfd_enabled())
+ *             .isTransportMode(var_.virtual_circuit_is_transport_mode())
  *             .gatewayId(oci_core_gateway.test_gateway().id())
  *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
  *             .providerServiceKeyName(var_.virtual_circuit_provider_service_key_name())
@@ -333,6 +334,20 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isBfdEnabled() {
         return this.isBfdEnabled;
+    }
+    /**
+     * (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     * 
+     */
+    @Export(name="isTransportMode", type=Boolean.class, parameters={})
+    private Output<Boolean> isTransportMode;
+
+    /**
+     * @return (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     * 
+     */
+    public Output<Boolean> isTransportMode() {
+        return this.isTransportMode;
     }
     /**
      * The Oracle BGP ASN.

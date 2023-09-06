@@ -749,6 +749,11 @@ export const getVirtualCircuit: typeof import("./getVirtualCircuit").getVirtualC
 export const getVirtualCircuitOutput: typeof import("./getVirtualCircuit").getVirtualCircuitOutput = null as any;
 utilities.lazyLoad(exports, ["getVirtualCircuit","getVirtualCircuitOutput"], () => require("./getVirtualCircuit"));
 
+export { GetVirtualCircuitAssociatedTunnelsArgs, GetVirtualCircuitAssociatedTunnelsResult, GetVirtualCircuitAssociatedTunnelsOutputArgs } from "./getVirtualCircuitAssociatedTunnels";
+export const getVirtualCircuitAssociatedTunnels: typeof import("./getVirtualCircuitAssociatedTunnels").getVirtualCircuitAssociatedTunnels = null as any;
+export const getVirtualCircuitAssociatedTunnelsOutput: typeof import("./getVirtualCircuitAssociatedTunnels").getVirtualCircuitAssociatedTunnelsOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualCircuitAssociatedTunnels","getVirtualCircuitAssociatedTunnelsOutput"], () => require("./getVirtualCircuitAssociatedTunnels"));
+
 export { GetVirtualCircuitBandwidthShapesArgs, GetVirtualCircuitBandwidthShapesResult, GetVirtualCircuitBandwidthShapesOutputArgs } from "./getVirtualCircuitBandwidthShapes";
 export const getVirtualCircuitBandwidthShapes: typeof import("./getVirtualCircuitBandwidthShapes").getVirtualCircuitBandwidthShapes = null as any;
 export const getVirtualCircuitBandwidthShapesOutput: typeof import("./getVirtualCircuitBandwidthShapes").getVirtualCircuitBandwidthShapesOutput = null as any;

@@ -87,6 +87,7 @@ import * as utilities from "../utilities";
  *             capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
  *             compartmentId: _var.compartment_id,
  *             createVnicDetails: {
+ *                 assignIpv6ip: _var.instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
  *                 assignPrivateDnsRecord: _var.instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record,
  *                 assignPublicIp: _var.instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip,
  *                 definedTags: {
@@ -97,6 +98,10 @@ import * as utilities from "../utilities";
  *                     Department: "Finance",
  *                 },
  *                 hostnameLabel: _var.instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label,
+ *                 ipv6addressIpv6subnetCidrPairDetails: [{
+ *                     ipv6address: _var.instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+ *                     ipv6subnetCidr: _var.instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *                 }],
  *                 nsgIds: _var.instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids,
  *                 privateIp: _var.instance_configuration_instance_details_launch_details_create_vnic_details_private_ip,
  *                 skipSourceDestCheck: _var.instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check,
@@ -130,6 +135,7 @@ import * as utilities from "../utilities";
  *             platformConfig: {
  *                 type: _var.instance_configuration_instance_details_launch_details_platform_config_type,
  *                 areVirtualInstructionsEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled,
+ *                 configMap: _var.instance_configuration_instance_details_launch_details_platform_config_config_map,
  *                 isAccessControlServiceEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled,
  *                 isInputOutputMemoryManagementUnitEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
  *                 isMeasuredBootEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled,
@@ -223,6 +229,7 @@ import * as utilities from "../utilities";
  *                 capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
  *                 compartmentId: _var.compartment_id,
  *                 createVnicDetails: {
+ *                     assignIpv6ip: _var.instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
  *                     assignPrivateDnsRecord: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record,
  *                     assignPublicIp: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip,
  *                     definedTags: {
@@ -233,6 +240,10 @@ import * as utilities from "../utilities";
  *                         Department: "Finance",
  *                     },
  *                     hostnameLabel: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label,
+ *                     ipv6addressIpv6subnetCidrPairDetails: [{
+ *                         ipv6address: _var.instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+ *                         ipv6subnetCidr: _var.instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *                     }],
  *                     nsgIds: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids,
  *                     privateIp: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip,
  *                     skipSourceDestCheck: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check,
@@ -307,6 +318,7 @@ import * as utilities from "../utilities";
  *             },
  *             secondaryVnics: [{
  *                 createVnicDetails: {
+ *                     assignIpv6ip: _var.instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip,
  *                     assignPrivateDnsRecord: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record,
  *                     assignPublicIp: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip,
  *                     definedTags: {
@@ -317,6 +329,10 @@ import * as utilities from "../utilities";
  *                         Department: "Finance",
  *                     },
  *                     hostnameLabel: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label,
+ *                     ipv6addressIpv6subnetCidrPairDetails: [{
+ *                         ipv6address: _var.instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+ *                         ipv6subnetCidr: _var.instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *                     }],
  *                     nsgIds: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids,
  *                     privateIp: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip,
  *                     skipSourceDestCheck: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check,

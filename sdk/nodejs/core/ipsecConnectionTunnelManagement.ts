@@ -79,17 +79,21 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
     }
 
     /**
+     * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     */
+    public /*out*/ readonly associatedVirtualCircuits!: pulumi.Output<string[]>;
+    /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
      *
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      */
     public readonly bgpSessionInfos!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo[]>;
     /**
-     * The OCID of the compartment containing the tunnel.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The IP address of Cpe headend.  Example: `129.146.17.50`
+     * The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
      */
     public /*out*/ readonly cpeIp!: pulumi.Output<string>;
     /**
@@ -161,6 +165,7 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IpsecConnectionTunnelManagementState | undefined;
+            resourceInputs["associatedVirtualCircuits"] = state ? state.associatedVirtualCircuits : undefined;
             resourceInputs["bgpSessionInfos"] = state ? state.bgpSessionInfos : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpeIp"] = state ? state.cpeIp : undefined;
@@ -203,6 +208,7 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
             resourceInputs["routing"] = args ? args.routing : undefined;
             resourceInputs["sharedSecret"] = args ? args.sharedSecret : undefined;
             resourceInputs["tunnelId"] = args ? args.tunnelId : undefined;
+            resourceInputs["associatedVirtualCircuits"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["cpeIp"] = undefined /*out*/;
             resourceInputs["dpdMode"] = undefined /*out*/;
@@ -227,17 +233,21 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
  */
 export interface IpsecConnectionTunnelManagementState {
     /**
+     * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     */
+    associatedVirtualCircuits?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
      *
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      */
     bgpSessionInfos?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo>[]>;
     /**
-     * The OCID of the compartment containing the tunnel.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The IP address of Cpe headend.  Example: `129.146.17.50`
+     * The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
      */
     cpeIp?: pulumi.Input<string>;
     /**

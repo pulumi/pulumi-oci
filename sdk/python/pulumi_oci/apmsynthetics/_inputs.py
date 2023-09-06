@@ -101,7 +101,7 @@ class ConfigConfigurationArgs:
         :param pulumi.Input[str] config_type: (Updatable) Type of configuration.
         :param pulumi.Input['ConfigConfigurationDnsConfigurationArgs'] dns_configuration: (Updatable) Information about the DNS settings.
         :param pulumi.Input[bool] is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
-        :param pulumi.Input[bool] is_default_snapshot_enabled: (Updatable) If disabled then auto snapshots are not collected.
+        :param pulumi.Input[bool] is_default_snapshot_enabled: (Updatable) If disabled, auto snapshots are not collected.
         :param pulumi.Input[bool] is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
         :param pulumi.Input[bool] is_redirection_enabled: (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         :param pulumi.Input['ConfigConfigurationNetworkConfigurationArgs'] network_configuration: (Updatable) Details of the network configuration.
@@ -202,7 +202,7 @@ class ConfigConfigurationArgs:
     @pulumi.getter(name="isDefaultSnapshotEnabled")
     def is_default_snapshot_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If disabled then auto snapshots are not collected.
+        (Updatable) If disabled, auto snapshots are not collected.
         """
         return pulumi.get(self, "is_default_snapshot_enabled")
 
@@ -361,8 +361,8 @@ class ConfigConfigurationClientCertificateDetailsArgs:
                  client_certificate: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs']] = None,
                  private_key: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs']] = None):
         """
-        :param pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs'] client_certificate: (Updatable) Client certificate in pem format.
-        :param pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs'] private_key: (Updatable) The private key associated with the client certificate in pem format.
+        :param pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs'] client_certificate: (Updatable) Client certificate in PEM format.
+        :param pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs'] private_key: (Updatable) The private key associated with the client certificate in PEM format.
         """
         if client_certificate is not None:
             pulumi.set(__self__, "client_certificate", client_certificate)
@@ -373,7 +373,7 @@ class ConfigConfigurationClientCertificateDetailsArgs:
     @pulumi.getter(name="clientCertificate")
     def client_certificate(self) -> Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs']]:
         """
-        (Updatable) Client certificate in pem format.
+        (Updatable) Client certificate in PEM format.
         """
         return pulumi.get(self, "client_certificate")
 
@@ -385,7 +385,7 @@ class ConfigConfigurationClientCertificateDetailsArgs:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs']]:
         """
-        (Updatable) The private key associated with the client certificate in pem format.
+        (Updatable) The private key associated with the client certificate in PEM format.
         """
         return pulumi.get(self, "private_key")
 

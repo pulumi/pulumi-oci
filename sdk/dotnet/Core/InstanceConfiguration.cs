@@ -120,6 +120,7 @@ namespace Pulumi.Oci.Core
     ///                 CompartmentId = @var.Compartment_id,
     ///                 CreateVnicDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs
     ///                 {
+    ///                     AssignIpv6ip = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
     ///                     AssignPrivateDnsRecord = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record,
     ///                     AssignPublicIp = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip,
     ///                     DefinedTags = 
@@ -132,6 +133,14 @@ namespace Pulumi.Oci.Core
     ///                         { "Department", "Finance" },
     ///                     },
     ///                     HostnameLabel = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label,
+    ///                     Ipv6addressIpv6subnetCidrPairDetails = new[]
+    ///                     {
+    ///                         new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
+    ///                         {
+    ///                             Ipv6address = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+    ///                             Ipv6subnetCidr = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                         },
+    ///                     },
     ///                     NsgIds = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids,
     ///                     PrivateIp = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_private_ip,
     ///                     SkipSourceDestCheck = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check,
@@ -170,6 +179,7 @@ namespace Pulumi.Oci.Core
     ///                 {
     ///                     Type = @var.Instance_configuration_instance_details_launch_details_platform_config_type,
     ///                     AreVirtualInstructionsEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled,
+    ///                     ConfigMap = @var.Instance_configuration_instance_details_launch_details_platform_config_config_map,
     ///                     IsAccessControlServiceEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled,
     ///                     IsInputOutputMemoryManagementUnitEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
     ///                     IsMeasuredBootEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled,
@@ -292,6 +302,7 @@ namespace Pulumi.Oci.Core
     ///                         CompartmentId = @var.Compartment_id,
     ///                         CreateVnicDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs
     ///                         {
+    ///                             AssignIpv6ip = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
     ///                             AssignPrivateDnsRecord = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record,
     ///                             AssignPublicIp = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip,
     ///                             DefinedTags = 
@@ -304,6 +315,14 @@ namespace Pulumi.Oci.Core
     ///                                 { "Department", "Finance" },
     ///                             },
     ///                             HostnameLabel = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label,
+    ///                             Ipv6addressIpv6subnetCidrPairDetails = new[]
+    ///                             {
+    ///                                 new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
+    ///                                 {
+    ///                                     Ipv6address = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+    ///                                     Ipv6subnetCidr = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                                 },
+    ///                             },
     ///                             NsgIds = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids,
     ///                             PrivateIp = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip,
     ///                             SkipSourceDestCheck = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check,
@@ -392,6 +411,7 @@ namespace Pulumi.Oci.Core
     ///                         {
     ///                             CreateVnicDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs
     ///                             {
+    ///                                 AssignIpv6ip = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip,
     ///                                 AssignPrivateDnsRecord = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record,
     ///                                 AssignPublicIp = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip,
     ///                                 DefinedTags = 
@@ -404,6 +424,14 @@ namespace Pulumi.Oci.Core
     ///                                     { "Department", "Finance" },
     ///                                 },
     ///                                 HostnameLabel = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label,
+    ///                                 Ipv6addressIpv6subnetCidrPairDetails = new[]
+    ///                                 {
+    ///                                     new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
+    ///                                     {
+    ///                                         Ipv6address = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+    ///                                         Ipv6subnetCidr = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                                     },
+    ///                                 },
     ///                                 NsgIds = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids,
     ///                                 PrivateIp = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip,
     ///                                 SkipSourceDestCheck = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check,

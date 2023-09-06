@@ -52,6 +52,7 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsPrivate = @var.Cpe_is_private,
     ///     });
     /// 
     /// });
@@ -105,14 +106,20 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The public IP address of the on-premises router.  Example: `203.0.113.2` 
+        /// The public IP address of the on-premises router.  Example: `203.0.113.2`
+        /// </summary>
+        [Output("ipAddress")]
+        public Output<string> IpAddress { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether this CPE is of type `private` or not. 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("ipAddress")]
-        public Output<string> IpAddress { get; private set; } = null!;
+        [Output("isPrivate")]
+        public Output<bool> IsPrivate { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -215,14 +222,20 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The public IP address of the on-premises router.  Example: `203.0.113.2` 
+        /// The public IP address of the on-premises router.  Example: `203.0.113.2`
+        /// </summary>
+        [Input("ipAddress", required: true)]
+        public Input<string> IpAddress { get; set; } = null!;
+
+        /// <summary>
+        /// Indicates whether this CPE is of type `private` or not. 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("ipAddress", required: true)]
-        public Input<string> IpAddress { get; set; } = null!;
+        [Input("isPrivate")]
+        public Input<bool>? IsPrivate { get; set; }
 
         public CpeArgs()
         {
@@ -281,14 +294,20 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The public IP address of the on-premises router.  Example: `203.0.113.2` 
+        /// The public IP address of the on-premises router.  Example: `203.0.113.2`
+        /// </summary>
+        [Input("ipAddress")]
+        public Input<string>? IpAddress { get; set; }
+
+        /// <summary>
+        /// Indicates whether this CPE is of type `private` or not. 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("ipAddress")]
-        public Input<string>? IpAddress { get; set; }
+        [Input("isPrivate")]
+        public Input<bool>? IsPrivate { get; set; }
 
         /// <summary>
         /// The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

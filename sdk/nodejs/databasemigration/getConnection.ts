@@ -102,6 +102,10 @@ export interface GetConnectionResult {
      */
     readonly privateEndpoints: outputs.DatabaseMigration.GetConnectionPrivateEndpoint[];
     /**
+     * Database Administrator Credentials details.
+     */
+    readonly replicationCredentials: outputs.DatabaseMigration.GetConnectionReplicationCredential[];
+    /**
      * Details of the SSH key that will be used.
      */
     readonly sshDetails: outputs.DatabaseMigration.GetConnectionSshDetail[];

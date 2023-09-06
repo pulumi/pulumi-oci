@@ -49,6 +49,15 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     macsecProperties: {
+ *         state: _var.cross_connect_macsec_properties_state,
+ *         encryptionCipher: _var.cross_connect_macsec_properties_encryption_cipher,
+ *         isUnprotectedTrafficAllowed: _var.cross_connect_macsec_properties_is_unprotected_traffic_allowed,
+ *         primaryKey: {
+ *             connectivityAssociationKeySecretId: oci_vault_secret.test_secret.id,
+ *             connectivityAssociationNameSecretId: oci_vault_secret.test_secret.id,
+ *         },
+ *     },
  *     nearCrossConnectOrCrossConnectGroupId: oci_core_cross_connect_group.test_cross_connect_group.id,
  * });
  * ```
@@ -122,15 +131,15 @@ export class CrossConnect extends pulumi.CustomResource {
      */
     public readonly isActive!: pulumi.Output<boolean | undefined>;
     /**
-     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      */
     public readonly locationName!: pulumi.Output<string>;
     /**
-     * Properties used for MACsec (if capable).
+     * (Updatable) Properties used to configure MACsec (if capable).
      */
     public readonly macsecProperties!: pulumi.Output<outputs.Core.CrossConnectMacsecProperties>;
     /**
-     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
     public readonly nearCrossConnectOrCrossConnectGroupId!: pulumi.Output<string>;
     /**
@@ -154,7 +163,7 @@ export class CrossConnect extends pulumi.CustomResource {
      */
     public readonly portSpeedShapeName!: pulumi.Output<string>;
     /**
-     * The cross-connect's current state.
+     * (Updatable) Indicates whether or not MACsec is enabled.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -263,15 +272,15 @@ export interface CrossConnectState {
      */
     isActive?: pulumi.Input<boolean>;
     /**
-     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      */
     locationName?: pulumi.Input<string>;
     /**
-     * Properties used for MACsec (if capable).
+     * (Updatable) Properties used to configure MACsec (if capable).
      */
     macsecProperties?: pulumi.Input<inputs.Core.CrossConnectMacsecProperties>;
     /**
-     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
     nearCrossConnectOrCrossConnectGroupId?: pulumi.Input<string>;
     /**
@@ -295,7 +304,7 @@ export interface CrossConnectState {
      */
     portSpeedShapeName?: pulumi.Input<string>;
     /**
-     * The cross-connect's current state.
+     * (Updatable) Indicates whether or not MACsec is enabled.
      */
     state?: pulumi.Input<string>;
     /**
@@ -341,15 +350,15 @@ export interface CrossConnectArgs {
      */
     isActive?: pulumi.Input<boolean>;
     /**
-     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+     * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      */
     locationName: pulumi.Input<string>;
     /**
-     * Properties used for MACsec (if capable).
+     * (Updatable) Properties used to configure MACsec (if capable).
      */
     macsecProperties?: pulumi.Input<inputs.Core.CrossConnectMacsecProperties>;
     /**
-     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+     * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
     nearCrossConnectOrCrossConnectGroupId?: pulumi.Input<string>;
     /**

@@ -21,7 +21,7 @@ class GetVnicResult:
     """
     A collection of values returned by getVnic.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, is_primary=None, mac_address=None, nsg_ids=None, private_ip_address=None, public_ip_address=None, skip_source_dest_check=None, state=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ipv6addresses=None, is_primary=None, mac_address=None, nsg_ids=None, private_ip_address=None, public_ip_address=None, skip_source_dest_check=None, state=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -43,6 +43,9 @@ class GetVnicResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if ipv6addresses and not isinstance(ipv6addresses, list):
+            raise TypeError("Expected argument 'ipv6addresses' to be a list")
+        pulumi.set(__self__, "ipv6addresses", ipv6addresses)
         if is_primary and not isinstance(is_primary, bool):
             raise TypeError("Expected argument 'is_primary' to be a bool")
         pulumi.set(__self__, "is_primary", is_primary)
@@ -132,6 +135,14 @@ class GetVnicResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def ipv6addresses(self) -> Sequence[str]:
+        """
+        List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
+        """
+        return pulumi.get(self, "ipv6addresses")
 
     @property
     @pulumi.getter(name="isPrimary")
@@ -232,6 +243,7 @@ class AwaitableGetVnicResult(GetVnicResult):
             freeform_tags=self.freeform_tags,
             hostname_label=self.hostname_label,
             id=self.id,
+            ipv6addresses=self.ipv6addresses,
             is_primary=self.is_primary,
             mac_address=self.mac_address,
             nsg_ids=self.nsg_ids,
@@ -280,6 +292,7 @@ def get_vnic(vnic_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         hostname_label=pulumi.get(__ret__, 'hostname_label'),
         id=pulumi.get(__ret__, 'id'),
+        ipv6addresses=pulumi.get(__ret__, 'ipv6addresses'),
         is_primary=pulumi.get(__ret__, 'is_primary'),
         mac_address=pulumi.get(__ret__, 'mac_address'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),

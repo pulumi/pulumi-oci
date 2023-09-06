@@ -164,6 +164,7 @@ __all__ = [
     'GetAutonomousContainerDatabaseMaintenanceWindowMonthResult',
     'GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigResult',
     'GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
+    'GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult',
     'GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionResult',
     'GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedAppResult',
     'GetAutonomousContainerDatabaseVersionsFilterResult',
@@ -279,12 +280,17 @@ __all__ = [
     'GetBackupDestinationsFilterResult',
     'GetBackupsBackupResult',
     'GetBackupsFilterResult',
+    'GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageResult',
+    'GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult',
+    'GetCloudAutonomousVmClusterAcdResourceUsagesFilterResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowDetailResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowMonthResult',
+    'GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult',
+    'GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult',
@@ -11470,6 +11476,79 @@ class GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigB
 
 
 @pulumi.output_type
+class GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str,
+                 provisioned_cpus: float,
+                 reclaimable_cpus: float,
+                 reserved_cpus: float,
+                 used_cpus: float):
+        """
+        :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+        :param float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
+        :param float reclaimable_cpus: CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        :param float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+        :param float used_cpus: CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        pulumi.set(__self__, "reserved_cpus", reserved_cpus)
+        pulumi.set(__self__, "used_cpus", used_cpus)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> float:
+        """
+        CPUs / cores assigned to ADBs in the Autonomous Container Database.
+        """
+        return pulumi.get(self, "provisioned_cpus")
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> float:
+        """
+        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> float:
+        """
+        CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+        """
+        return pulumi.get(self, "reserved_cpus")
+
+    @property
+    @pulumi.getter(name="usedCpus")
+    def used_cpus(self) -> float:
+        """
+        CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+        """
+        return pulumi.get(self, "used_cpus")
+
+
+@pulumi.output_type
 class GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionResult(dict):
     def __init__(__self__, *,
                  details: str,
@@ -11612,6 +11691,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  key_store_id: str,
                  key_store_wallet_name: str,
                  kms_key_id: str,
+                 largest_provisionable_autonomous_database_in_cpus: float,
                  last_maintenance_run_id: str,
                  lifecycle_details: str,
                  maintenance_window_details: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailResult'],
@@ -11629,7 +11709,9 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  peer_db_unique_name: str,
                  protection_mode: str,
                  provisionable_cpuses: Sequence[float],
+                 provisioned_cpus: float,
                  reclaimable_cpus: float,
+                 reserved_cpus: float,
                  role: str,
                  rotate_key_trigger: bool,
                  service_level_agreement_type: str,
@@ -11644,11 +11726,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-        :param float available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param float available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs'] backup_configs: Backup options for the Autonomous Container Database.
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param str compute_model: The compute model of the Autonomous VM Cluster.
         :param str db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param str db_version: Oracle Database version of the Autonomous Container Database.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -11660,24 +11742,27 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param float largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param str patch_model: Database patch model preference.
-        :param Sequence[float] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.\\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param Sequence[float] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        :param float provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
         :param float reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        :param float reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
         :param int standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time the Autonomous Container Database was created.
         :param str time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-        :param int total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param int total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str version_preference: The next maintenance version preference.
         """
@@ -11703,6 +11788,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "largest_provisionable_autonomous_database_in_cpus", largest_provisionable_autonomous_database_in_cpus)
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
@@ -11720,7 +11806,9 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "peer_db_unique_name", peer_db_unique_name)
         pulumi.set(__self__, "protection_mode", protection_mode)
         pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
+        pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         pulumi.set(__self__, "service_level_agreement_type", service_level_agreement_type)
@@ -11760,7 +11848,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
         """
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -11792,7 +11880,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Autonomous VM Cluster.
         """
         return pulumi.get(self, "compute_model")
 
@@ -11900,6 +11988,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "kms_key_id")
 
     @property
+    @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
+    def largest_provisionable_autonomous_database_in_cpus(self) -> float:
+        """
+        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        """
+        return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
+
+    @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> str:
         """
@@ -11932,7 +12028,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -12004,9 +12100,17 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[float]:
         """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "provisionable_cpuses")
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> float:
+        """
+        The number of CPUs provisioned in an Autonomous Container Database.
+        """
+        return pulumi.get(self, "provisioned_cpus")
 
     @property
     @pulumi.getter(name="reclaimableCpus")
@@ -12014,9 +12118,17 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         """
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> float:
+        """
+        The number of CPUs reserved in an Autonomous Container Database.
+        """
+        return pulumi.get(self, "reserved_cpus")
 
     @property
     @pulumi.getter
@@ -12075,7 +12187,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> int:
         """
-        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "total_cpus")
 
@@ -14233,7 +14345,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.  For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -14282,7 +14394,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -14562,7 +14674,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="computeCount")
     def compute_count(self) -> float:
         """
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.  For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         """
         return pulumi.get(self, "compute_count")
 
@@ -14964,7 +15076,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The amount of memory (in GBs) enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -16082,7 +16194,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.  For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -16135,7 +16247,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -16376,7 +16488,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="computeCount")
     def compute_count(self) -> float:
         """
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.  For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         """
         return pulumi.get(self, "compute_count")
 
@@ -16772,7 +16884,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The amount of memory (in GBs) enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -19535,7 +19647,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param int available_cpus: The numnber of CPU cores available.
         :param float available_data_storage_size_in_tbs: **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param str compute_model: The compute model of the Autonomous VM Cluster.
         :param int cpu_core_count_per_node: The number of CPU cores enabled per VM cluster node.
         :param int cpus_enabled: The number of enabled CPU cores.
         :param float data_storage_size_in_gb: The total data storage allocated in GBs.
@@ -19553,14 +19665,14 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param str license_model: The Oracle license model that applies to the Autonomous VM cluster. The default is LICENSE_INCLUDED.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param int node_count: The number of nodes in the Autonomous VM Cluster.
         :param float ocpus_enabled: The number of enabled OCPU cores.
         :param int reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param int scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param int scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -19664,7 +19776,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Autonomous VM Cluster.
         """
         return pulumi.get(self, "compute_model")
 
@@ -19813,7 +19925,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -19855,7 +19967,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         """
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -20859,6 +20971,245 @@ class GetBackupsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageResult(dict):
+    def __init__(__self__, *,
+                 autonomous_container_database_vm_usages: Sequence['outputs.GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult'],
+                 available_cpus: float,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 largest_provisionable_autonomous_database_in_cpus: float,
+                 provisionable_cpuses: Sequence[float],
+                 provisioned_cpus: float,
+                 reclaimable_cpus: float,
+                 reserved_cpus: float,
+                 used_cpus: float):
+        """
+        :param Sequence['GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs'] autonomous_container_database_vm_usages: List of autonomous container database resource usage per autonomous virtual machine.
+        :param float available_cpus: CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+        :param float largest_provisionable_autonomous_database_in_cpus: Largest provisionable ADB in the Autonomous Container Database.
+        :param Sequence[float] provisionable_cpuses: Valid list of provisionable CPUs / cores for ADB creation.
+        :param float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
+        :param float reclaimable_cpus: CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        :param float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+        :param float used_cpus: CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+        """
+        pulumi.set(__self__, "autonomous_container_database_vm_usages", autonomous_container_database_vm_usages)
+        pulumi.set(__self__, "available_cpus", available_cpus)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "largest_provisionable_autonomous_database_in_cpus", largest_provisionable_autonomous_database_in_cpus)
+        pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
+        pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        pulumi.set(__self__, "reserved_cpus", reserved_cpus)
+        pulumi.set(__self__, "used_cpus", used_cpus)
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseVmUsages")
+    def autonomous_container_database_vm_usages(self) -> Sequence['outputs.GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult']:
+        """
+        List of autonomous container database resource usage per autonomous virtual machine.
+        """
+        return pulumi.get(self, "autonomous_container_database_vm_usages")
+
+    @property
+    @pulumi.getter(name="availableCpus")
+    def available_cpus(self) -> float:
+        """
+        CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+        """
+        return pulumi.get(self, "available_cpus")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
+    def largest_provisionable_autonomous_database_in_cpus(self) -> float:
+        """
+        Largest provisionable ADB in the Autonomous Container Database.
+        """
+        return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
+
+    @property
+    @pulumi.getter(name="provisionableCpuses")
+    def provisionable_cpuses(self) -> Sequence[float]:
+        """
+        Valid list of provisionable CPUs / cores for ADB creation.
+        """
+        return pulumi.get(self, "provisionable_cpuses")
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> float:
+        """
+        CPUs / cores assigned to ADBs in the Autonomous Container Database.
+        """
+        return pulumi.get(self, "provisioned_cpus")
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> float:
+        """
+        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> float:
+        """
+        CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+        """
+        return pulumi.get(self, "reserved_cpus")
+
+    @property
+    @pulumi.getter(name="usedCpus")
+    def used_cpus(self) -> float:
+        """
+        CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+        """
+        return pulumi.get(self, "used_cpus")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str,
+                 provisioned_cpus: float,
+                 reclaimable_cpus: float,
+                 reserved_cpus: float,
+                 used_cpus: float):
+        """
+        :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+        :param float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
+        :param float reclaimable_cpus: CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        :param float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+        :param float used_cpus: CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        pulumi.set(__self__, "reserved_cpus", reserved_cpus)
+        pulumi.set(__self__, "used_cpus", used_cpus)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> float:
+        """
+        CPUs / cores assigned to ADBs in the Autonomous Container Database.
+        """
+        return pulumi.get(self, "provisioned_cpus")
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> float:
+        """
+        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> float:
+        """
+        CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+        """
+        return pulumi.get(self, "reserved_cpus")
+
+    @property
+    @pulumi.getter(name="usedCpus")
+    def used_cpus(self) -> float:
+        """
+        CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+        """
+        return pulumi.get(self, "used_cpus")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClusterAcdResourceUsagesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetCloudAutonomousVmClusterMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: int,
@@ -21169,8 +21520,188 @@ class GetCloudAutonomousVmClusterMaintenanceWindowMonthResult(dict):
 
 
 @pulumi.output_type
+class GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult(dict):
+    def __init__(__self__, *,
+                 autonomous_container_database_usages: Sequence['outputs.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageResult'],
+                 available_cpus: float,
+                 display_name: str,
+                 id: str,
+                 provisioned_cpus: float,
+                 reclaimable_cpus: float,
+                 reserved_cpus: float,
+                 used_cpus: float):
+        """
+        :param Sequence['GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArgs'] autonomous_container_database_usages: Associated Autonomous Container Database Usages.
+        :param float available_cpus: The number of CPU cores available.
+        :param str display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+        :param float provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
+        :param float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
+        :param float used_cpus: The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+        """
+        pulumi.set(__self__, "autonomous_container_database_usages", autonomous_container_database_usages)
+        pulumi.set(__self__, "available_cpus", available_cpus)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        pulumi.set(__self__, "reserved_cpus", reserved_cpus)
+        pulumi.set(__self__, "used_cpus", used_cpus)
+
+    @property
+    @pulumi.getter(name="autonomousContainerDatabaseUsages")
+    def autonomous_container_database_usages(self) -> Sequence['outputs.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageResult']:
+        """
+        Associated Autonomous Container Database Usages.
+        """
+        return pulumi.get(self, "autonomous_container_database_usages")
+
+    @property
+    @pulumi.getter(name="availableCpus")
+    def available_cpus(self) -> float:
+        """
+        The number of CPU cores available.
+        """
+        return pulumi.get(self, "available_cpus")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> float:
+        """
+        The number of CPUs provisioned in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "provisioned_cpus")
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> float:
+        """
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> float:
+        """
+        The number of CPUs reserved in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "reserved_cpus")
+
+    @property
+    @pulumi.getter(name="usedCpus")
+    def used_cpus(self) -> float:
+        """
+        The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+        """
+        return pulumi.get(self, "used_cpus")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageResult(dict):
+    def __init__(__self__, *,
+                 available_cpus: float,
+                 display_name: str,
+                 id: str,
+                 provisioned_cpus: float,
+                 reclaimable_cpus: float,
+                 reserved_cpus: float,
+                 used_cpus: float):
+        """
+        :param float available_cpus: The number of CPU cores available.
+        :param str display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+        :param float provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
+        :param float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
+        :param float used_cpus: The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+        """
+        pulumi.set(__self__, "available_cpus", available_cpus)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        pulumi.set(__self__, "reserved_cpus", reserved_cpus)
+        pulumi.set(__self__, "used_cpus", used_cpus)
+
+    @property
+    @pulumi.getter(name="availableCpus")
+    def available_cpus(self) -> float:
+        """
+        The number of CPU cores available.
+        """
+        return pulumi.get(self, "available_cpus")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> float:
+        """
+        The number of CPUs provisioned in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "provisioned_cpus")
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> float:
+        """
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> float:
+        """
+        The number of CPUs reserved in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "reserved_cpus")
+
+    @property
+    @pulumi.getter(name="usedCpus")
+    def used_cpus(self) -> float:
+        """
+        The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+        """
+        return pulumi.get(self, "used_cpus")
+
+
+@pulumi.output_type
 class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     def __init__(__self__, *,
+                 autonomous_data_storage_percentage: float,
                  autonomous_data_storage_size_in_tbs: float,
                  availability_domain: str,
                  available_autonomous_data_storage_size_in_tbs: float,
@@ -21182,6 +21713,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  compute_model: str,
                  cpu_core_count: int,
                  cpu_core_count_per_node: int,
+                 cpu_percentage: float,
                  data_storage_size_in_gb: float,
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
@@ -21204,9 +21736,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  memory_size_in_gbs: int,
                  next_maintenance_run_id: str,
                  node_count: int,
+                 non_provisionable_autonomous_container_databases: int,
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
+                 provisionable_autonomous_container_databases: int,
+                 provisioned_autonomous_container_databases: int,
+                 provisioned_cpus: float,
                  reclaimable_cpus: float,
+                 reserved_cpus: float,
                  scan_listener_port_non_tls: int,
                  scan_listener_port_tls: int,
                  shape: str,
@@ -21214,8 +21751,11 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  subnet_id: str,
                  time_created: str,
                  time_updated: str,
-                 total_container_databases: int):
+                 total_autonomous_data_storage_in_tbs: float,
+                 total_container_databases: int,
+                 total_cpus: float):
         """
+        :param float autonomous_data_storage_percentage: The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
         :param float autonomous_data_storage_size_in_tbs: The data disk group size allocated for Autonomous Databases, in TBs.
         :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
         :param float available_autonomous_data_storage_size_in_tbs: The data disk group size available for Autonomous Databases, in TBs.
@@ -21224,9 +21764,10 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
         :param str cluster_time_zone: The time zone of the Cloud Autonomous VM Cluster.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str compute_model: The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param str compute_model: The compute model of the Cloud Autonomous VM Cluster.
         :param int cpu_core_count: The number of CPU cores on the cloud Autonomous VM cluster.
         :param int cpu_core_count_per_node: The number of CPU cores enabled per VM cluster node.
+        :param float cpu_percentage: The percentage of total number of CPUs used in an Autonomous VM Cluster.
         :param float data_storage_size_in_gb: The total data storage allocated, in gigabytes (GB).
         :param float data_storage_size_in_tbs: The total data storage allocated, in terabytes (TB).
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
@@ -21244,16 +21785,21 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param int node_count: The number of database servers in the cloud VM cluster.
+        :param int non_provisionable_autonomous_container_databases: The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param float ocpu_count: The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param int provisionable_autonomous_container_databases: The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+        :param int provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+        :param float provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
         :param float reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        :param float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param int scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param int scan_listener_port_tls: The SCAN Listenenr TLS port. Default is 2484.
         :param str shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -21261,8 +21807,11 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param str time_created: The date and time that the cloud Autonomous VM cluster was created.
         :param str time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
+        :param float total_autonomous_data_storage_in_tbs: The total data disk group size for Autonomous Databases, in TBs.
         :param int total_container_databases: The total number of Autonomous Container Databases that can be created with the allocated local storage.
+        :param float total_cpus: The total number of CPUs in an Autonomous VM Cluster.
         """
+        pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "available_autonomous_data_storage_size_in_tbs", available_autonomous_data_storage_size_in_tbs)
@@ -21274,6 +21823,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
+        pulumi.set(__self__, "cpu_percentage", cpu_percentage)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
@@ -21296,9 +21846,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "node_count", node_count)
+        pulumi.set(__self__, "non_provisionable_autonomous_container_databases", non_provisionable_autonomous_container_databases)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
+        pulumi.set(__self__, "provisionable_autonomous_container_databases", provisionable_autonomous_container_databases)
+        pulumi.set(__self__, "provisioned_autonomous_container_databases", provisioned_autonomous_container_databases)
+        pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         pulumi.set(__self__, "shape", shape)
@@ -21306,7 +21861,17 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_autonomous_data_storage_in_tbs", total_autonomous_data_storage_in_tbs)
         pulumi.set(__self__, "total_container_databases", total_container_databases)
+        pulumi.set(__self__, "total_cpus", total_cpus)
+
+    @property
+    @pulumi.getter(name="autonomousDataStoragePercentage")
+    def autonomous_data_storage_percentage(self) -> float:
+        """
+        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "autonomous_data_storage_percentage")
 
     @property
     @pulumi.getter(name="autonomousDataStorageSizeInTbs")
@@ -21376,7 +21941,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Cloud Autonomous VM Cluster.
         """
         return pulumi.get(self, "compute_model")
 
@@ -21395,6 +21960,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         The number of CPU cores enabled per VM cluster node.
         """
         return pulumi.get(self, "cpu_core_count_per_node")
+
+    @property
+    @pulumi.getter(name="cpuPercentage")
+    def cpu_percentage(self) -> float:
+        """
+        The percentage of total number of CPUs used in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "cpu_percentage")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -21541,7 +22114,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The amount of memory (in GBs) enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -21570,6 +22143,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "node_count")
 
     @property
+    @pulumi.getter(name="nonProvisionableAutonomousContainerDatabases")
+    def non_provisionable_autonomous_container_databases(self) -> int:
+        """
+        The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "non_provisionable_autonomous_container_databases")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -21587,14 +22168,46 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "ocpu_count")
 
     @property
+    @pulumi.getter(name="provisionableAutonomousContainerDatabases")
+    def provisionable_autonomous_container_databases(self) -> int:
+        """
+        The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "provisionable_autonomous_container_databases")
+
+    @property
+    @pulumi.getter(name="provisionedAutonomousContainerDatabases")
+    def provisioned_autonomous_container_databases(self) -> int:
+        """
+        The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "provisioned_autonomous_container_databases")
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> float:
+        """
+        The number of CPUs provisioned in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "provisioned_cpus")
+
+    @property
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> float:
+        """
+        The number of CPUs reserved in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "reserved_cpus")
 
     @property
     @pulumi.getter(name="scanListenerPortNonTls")
@@ -21653,12 +22266,28 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="totalAutonomousDataStorageInTbs")
+    def total_autonomous_data_storage_in_tbs(self) -> float:
+        """
+        The total data disk group size for Autonomous Databases, in TBs.
+        """
+        return pulumi.get(self, "total_autonomous_data_storage_in_tbs")
+
+    @property
     @pulumi.getter(name="totalContainerDatabases")
     def total_container_databases(self) -> int:
         """
         The total number of Autonomous Container Databases that can be created with the allocated local storage.
         """
         return pulumi.get(self, "total_container_databases")
+
+    @property
+    @pulumi.getter(name="totalCpus")
+    def total_cpus(self) -> float:
+        """
+        The total number of CPUs in an Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "total_cpus")
 
 
 @pulumi.output_type
@@ -28403,7 +29032,7 @@ class GetDbNodesDbNodeResult(dict):
                  vnic_id: str):
         """
         :param str additional_details: Additional information about the planned maintenance.
-        :param str backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        :param str backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
         :param str backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         :param str backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         :param int cpu_core_count: The number of CPU cores enabled on the Db node.
@@ -28411,7 +29040,7 @@ class GetDbNodesDbNodeResult(dict):
         :param str db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
         :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
         :param str fault_domain: The name of the Fault Domain the instance is contained in.
-        :param str host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        :param str host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
         :param str hostname: The host name for the database node.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
         :param str maintenance_type: The type of database node maintenance.
@@ -28459,7 +29088,7 @@ class GetDbNodesDbNodeResult(dict):
     @pulumi.getter(name="backupIpId")
     def backup_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
         """
         return pulumi.get(self, "backup_ip_id")
 
@@ -28528,7 +29157,7 @@ class GetDbNodesDbNodeResult(dict):
     @pulumi.getter(name="hostIpId")
     def host_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
         """
         return pulumi.get(self, "host_ip_id")
 

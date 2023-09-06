@@ -30,9 +30,13 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<string> FaultDomains;
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         /// </summary>
-        public readonly string PrimarySubnetId;
+        public readonly string? PrimarySubnetId;
+        /// <summary>
+        /// (Updatable) Details about the IPv6 primary subnet.
+        /// </summary>
+        public readonly Outputs.InstancePoolPlacementConfigurationPrimaryVnicSubnets? PrimaryVnicSubnets;
         /// <summary>
         /// (Updatable) The set of secondary VNIC data for instances in the pool.
         /// </summary>
@@ -44,13 +48,16 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<string> faultDomains,
 
-            string primarySubnetId,
+            string? primarySubnetId,
+
+            Outputs.InstancePoolPlacementConfigurationPrimaryVnicSubnets? primaryVnicSubnets,
 
             ImmutableArray<Outputs.InstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets)
         {
             AvailabilityDomain = availabilityDomain;
             FaultDomains = faultDomains;
             PrimarySubnetId = primarySubnetId;
+            PrimaryVnicSubnets = primaryVnicSubnets;
             SecondaryVnicSubnets = secondaryVnicSubnets;
         }
     }

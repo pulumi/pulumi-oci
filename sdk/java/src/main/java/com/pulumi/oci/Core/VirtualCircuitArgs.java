@@ -211,6 +211,21 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     * 
+     */
+    @Import(name="isTransportMode")
+    private @Nullable Output<Boolean> isTransportMode;
+
+    /**
+     * @return (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+     * 
+     */
+    public Optional<Output<Boolean>> isTransportMode() {
+        return Optional.ofNullable(this.isTransportMode);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you&#39;re connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      * 
      */
@@ -321,6 +336,7 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         this.gatewayId = $.gatewayId;
         this.ipMtu = $.ipMtu;
         this.isBfdEnabled = $.isBfdEnabled;
+        this.isTransportMode = $.isTransportMode;
         this.providerServiceId = $.providerServiceId;
         this.providerServiceKeyName = $.providerServiceKeyName;
         this.publicPrefixes = $.publicPrefixes;
@@ -615,6 +631,27 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder isBfdEnabled(Boolean isBfdEnabled) {
             return isBfdEnabled(Output.of(isBfdEnabled));
+        }
+
+        /**
+         * @param isTransportMode (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTransportMode(@Nullable Output<Boolean> isTransportMode) {
+            $.isTransportMode = isTransportMode;
+            return this;
+        }
+
+        /**
+         * @param isTransportMode (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTransportMode(Boolean isTransportMode) {
+            return isTransportMode(Output.of(isTransportMode));
         }
 
         /**

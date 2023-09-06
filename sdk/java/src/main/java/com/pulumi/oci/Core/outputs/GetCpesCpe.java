@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -46,6 +47,11 @@ public final class GetCpesCpe {
      * 
      */
     private String ipAddress;
+    /**
+     * @return Indicates whether this CPE is of type `private` or not.
+     * 
+     */
+    private Boolean isPrivate;
     /**
      * @return The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -103,6 +109,13 @@ public final class GetCpesCpe {
         return this.ipAddress;
     }
     /**
+     * @return Indicates whether this CPE is of type `private` or not.
+     * 
+     */
+    public Boolean isPrivate() {
+        return this.isPrivate;
+    }
+    /**
      * @return The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -126,6 +139,7 @@ public final class GetCpesCpe {
         private Map<String,Object> freeformTags;
         private String id;
         private String ipAddress;
+        private Boolean isPrivate;
         private String timeCreated;
         public Builder() {}
         public Builder(GetCpesCpe defaults) {
@@ -137,6 +151,7 @@ public final class GetCpesCpe {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.isPrivate = defaults.isPrivate;
     	      this.timeCreated = defaults.timeCreated;
         }
 
@@ -176,6 +191,11 @@ public final class GetCpesCpe {
             return this;
         }
         @CustomType.Setter
+        public Builder isPrivate(Boolean isPrivate) {
+            this.isPrivate = Objects.requireNonNull(isPrivate);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
@@ -189,6 +209,7 @@ public final class GetCpesCpe {
             o.freeformTags = freeformTags;
             o.id = id;
             o.ipAddress = ipAddress;
+            o.isPrivate = isPrivate;
             o.timeCreated = timeCreated;
             return o;
         }

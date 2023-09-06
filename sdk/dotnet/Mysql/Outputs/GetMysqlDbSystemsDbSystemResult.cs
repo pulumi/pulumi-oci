@@ -16,10 +16,6 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly string AdminPassword;
         public readonly string AdminUsername;
         /// <summary>
-        /// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemAnalyticsClusterResult> AnalyticsClusters;
-        /// <summary>
         /// The availability domain in which the DB System is placed.
         /// </summary>
         public readonly string AvailabilityDomain;
@@ -96,10 +92,6 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-        /// </summary>
-        public readonly bool IsAnalyticsClusterAttached;
-        /// <summary>
         /// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
         /// </summary>
         public readonly bool IsHeatWaveClusterAttached;
@@ -163,8 +155,6 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string adminUsername,
 
-            ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemAnalyticsClusterResult> analyticsClusters,
-
             string availabilityDomain,
 
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemBackupPolicyResult> backupPolicies,
@@ -203,8 +193,6 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string ipAddress,
 
-            bool isAnalyticsClusterAttached,
-
             bool isHeatWaveClusterAttached,
 
             bool isHighlyAvailable,
@@ -237,7 +225,6 @@ namespace Pulumi.Oci.Mysql.Outputs
         {
             AdminPassword = adminPassword;
             AdminUsername = adminUsername;
-            AnalyticsClusters = analyticsClusters;
             AvailabilityDomain = availabilityDomain;
             BackupPolicies = backupPolicies;
             Channels = channels;
@@ -257,7 +244,6 @@ namespace Pulumi.Oci.Mysql.Outputs
             HostnameLabel = hostnameLabel;
             Id = id;
             IpAddress = ipAddress;
-            IsAnalyticsClusterAttached = isAnalyticsClusterAttached;
             IsHeatWaveClusterAttached = isHeatWaveClusterAttached;
             IsHighlyAvailable = isHighlyAvailable;
             LifecycleDetails = lifecycleDetails;

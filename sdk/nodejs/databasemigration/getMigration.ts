@@ -98,6 +98,10 @@ export interface GetMigrationResult {
      */
     readonly goldenGateDetails: outputs.DatabaseMigration.GetMigrationGoldenGateDetail[];
     /**
+     * Details about Oracle GoldenGate GGS Deployment.
+     */
+    readonly goldenGateServiceDetails: outputs.DatabaseMigration.GetMigrationGoldenGateServiceDetail[];
+    /**
      * The OCID of the resource
      */
     readonly id: string;

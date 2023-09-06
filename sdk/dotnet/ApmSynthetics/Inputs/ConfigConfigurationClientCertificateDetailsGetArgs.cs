@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
     public sealed class ConfigConfigurationClientCertificateDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Client certificate in pem format.
+        /// (Updatable) Client certificate in PEM format.
         /// </summary>
         [Input("clientCertificate")]
         public Input<Inputs.ConfigConfigurationClientCertificateDetailsClientCertificateGetArgs>? ClientCertificate { get; set; }
 
         /// <summary>
-        /// (Updatable) The private key associated with the client certificate in pem format.
+        /// (Updatable) The private key associated with the client certificate in PEM format.
         /// </summary>
         [Input("privateKey")]
         public Input<Inputs.ConfigConfigurationClientCertificateDetailsPrivateKeyGetArgs>? PrivateKey { get; set; }

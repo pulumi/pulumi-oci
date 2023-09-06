@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string CustomerBgpPeeringIpv6;
         /// <summary>
-        /// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+        /// The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31 subnet mask. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
         /// </summary>
         public readonly string OracleBgpPeeringIp;
         /// <summary>

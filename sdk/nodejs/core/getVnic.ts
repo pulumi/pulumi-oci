@@ -74,6 +74,10 @@ export interface GetVnicResult {
      */
     readonly id: string;
     /**
+     * List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
+     */
+    readonly ipv6addresses: string[];
+    /**
      * Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
      */
     readonly isPrimary: boolean;

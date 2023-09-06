@@ -18,6 +18,11 @@ import java.util.Objects;
 @CustomType
 public final class GetCloudAutonomousVmClusterResult {
     /**
+     * @return The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * 
+     */
+    private Double autonomousDataStoragePercentage;
+    /**
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
      */
@@ -59,7 +64,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String compartmentId;
     /**
-     * @return The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Cloud Autonomous VM Cluster.
      * 
      */
     private String computeModel;
@@ -73,6 +78,11 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private Integer cpuCoreCountPerNode;
+    /**
+     * @return The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     * 
+     */
+    private Double cpuPercentage;
     /**
      * @return The total data storage allocated, in gigabytes (GB).
      * 
@@ -160,7 +170,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -180,6 +190,11 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Integer nodeCount;
     /**
+     * @return The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    private Integer nonProvisionableAutonomousContainerDatabases;
+    /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
@@ -191,12 +206,32 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Double ocpuCount;
     /**
+     * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    private Integer provisionableAutonomousContainerDatabases;
+    /**
+     * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    private Integer provisionedAutonomousContainerDatabases;
+    /**
+     * @return The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
+    private Double provisionedCpus;
+    /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     private Double reclaimableCpus;
+    /**
+     * @return The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
+    private Double reservedCpus;
     /**
      * @return The SCAN Listener Non TLS port. Default is 1521.
      * 
@@ -233,12 +268,29 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String timeUpdated;
     /**
+     * @return The total data disk group size for Autonomous Databases, in TBs.
+     * 
+     */
+    private Double totalAutonomousDataStorageInTbs;
+    /**
      * @return The total number of Autonomous Container Databases that can be created with the allocated local storage.
      * 
      */
     private Integer totalContainerDatabases;
+    /**
+     * @return The total number of CPUs in an Autonomous VM Cluster.
+     * 
+     */
+    private Double totalCpus;
 
     private GetCloudAutonomousVmClusterResult() {}
+    /**
+     * @return The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * 
+     */
+    public Double autonomousDataStoragePercentage() {
+        return this.autonomousDataStoragePercentage;
+    }
     /**
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
@@ -299,7 +351,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.compartmentId;
     }
     /**
-     * @return The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Cloud Autonomous VM Cluster.
      * 
      */
     public String computeModel() {
@@ -318,6 +370,13 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     public Integer cpuCoreCountPerNode() {
         return this.cpuCoreCountPerNode;
+    }
+    /**
+     * @return The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     * 
+     */
+    public Double cpuPercentage() {
+        return this.cpuPercentage;
     }
     /**
      * @return The total data storage allocated, in gigabytes (GB).
@@ -442,7 +501,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.maintenanceWindows;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -470,6 +529,13 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.nodeCount;
     }
     /**
+     * @return The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    public Integer nonProvisionableAutonomousContainerDatabases() {
+        return this.nonProvisionableAutonomousContainerDatabases;
+    }
+    /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
@@ -485,13 +551,41 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.ocpuCount;
     }
     /**
+     * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    public Integer provisionableAutonomousContainerDatabases() {
+        return this.provisionableAutonomousContainerDatabases;
+    }
+    /**
+     * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
+    public Integer provisionedAutonomousContainerDatabases() {
+        return this.provisionedAutonomousContainerDatabases;
+    }
+    /**
+     * @return The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
+    public Double provisionedCpus() {
+        return this.provisionedCpus;
+    }
+    /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     public Double reclaimableCpus() {
         return this.reclaimableCpus;
+    }
+    /**
+     * @return The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
+    public Double reservedCpus() {
+        return this.reservedCpus;
     }
     /**
      * @return The SCAN Listener Non TLS port. Default is 1521.
@@ -543,11 +637,25 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.timeUpdated;
     }
     /**
+     * @return The total data disk group size for Autonomous Databases, in TBs.
+     * 
+     */
+    public Double totalAutonomousDataStorageInTbs() {
+        return this.totalAutonomousDataStorageInTbs;
+    }
+    /**
      * @return The total number of Autonomous Container Databases that can be created with the allocated local storage.
      * 
      */
     public Integer totalContainerDatabases() {
         return this.totalContainerDatabases;
+    }
+    /**
+     * @return The total number of CPUs in an Autonomous VM Cluster.
+     * 
+     */
+    public Double totalCpus() {
+        return this.totalCpus;
     }
 
     public static Builder builder() {
@@ -559,6 +667,7 @@ public final class GetCloudAutonomousVmClusterResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Double autonomousDataStoragePercentage;
         private Double autonomousDataStorageSizeInTbs;
         private String availabilityDomain;
         private Double availableAutonomousDataStorageSizeInTbs;
@@ -571,6 +680,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private String computeModel;
         private Integer cpuCoreCount;
         private Integer cpuCoreCountPerNode;
+        private Double cpuPercentage;
         private Double dataStorageSizeInGb;
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
@@ -593,9 +703,14 @@ public final class GetCloudAutonomousVmClusterResult {
         private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
         private Integer nodeCount;
+        private Integer nonProvisionableAutonomousContainerDatabases;
         private List<String> nsgIds;
         private Double ocpuCount;
+        private Integer provisionableAutonomousContainerDatabases;
+        private Integer provisionedAutonomousContainerDatabases;
+        private Double provisionedCpus;
         private Double reclaimableCpus;
+        private Double reservedCpus;
         private Integer scanListenerPortNonTls;
         private Integer scanListenerPortTls;
         private String shape;
@@ -603,10 +718,13 @@ public final class GetCloudAutonomousVmClusterResult {
         private String subnetId;
         private String timeCreated;
         private String timeUpdated;
+        private Double totalAutonomousDataStorageInTbs;
         private Integer totalContainerDatabases;
+        private Double totalCpus;
         public Builder() {}
         public Builder(GetCloudAutonomousVmClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.autonomousDataStoragePercentage = defaults.autonomousDataStoragePercentage;
     	      this.autonomousDataStorageSizeInTbs = defaults.autonomousDataStorageSizeInTbs;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availableAutonomousDataStorageSizeInTbs = defaults.availableAutonomousDataStorageSizeInTbs;
@@ -619,6 +737,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.cpuCoreCountPerNode = defaults.cpuCoreCountPerNode;
+    	      this.cpuPercentage = defaults.cpuPercentage;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
@@ -641,9 +760,14 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.nodeCount = defaults.nodeCount;
+    	      this.nonProvisionableAutonomousContainerDatabases = defaults.nonProvisionableAutonomousContainerDatabases;
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
+    	      this.provisionableAutonomousContainerDatabases = defaults.provisionableAutonomousContainerDatabases;
+    	      this.provisionedAutonomousContainerDatabases = defaults.provisionedAutonomousContainerDatabases;
+    	      this.provisionedCpus = defaults.provisionedCpus;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
+    	      this.reservedCpus = defaults.reservedCpus;
     	      this.scanListenerPortNonTls = defaults.scanListenerPortNonTls;
     	      this.scanListenerPortTls = defaults.scanListenerPortTls;
     	      this.shape = defaults.shape;
@@ -651,9 +775,16 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.totalAutonomousDataStorageInTbs = defaults.totalAutonomousDataStorageInTbs;
     	      this.totalContainerDatabases = defaults.totalContainerDatabases;
+    	      this.totalCpus = defaults.totalCpus;
         }
 
+        @CustomType.Setter
+        public Builder autonomousDataStoragePercentage(Double autonomousDataStoragePercentage) {
+            this.autonomousDataStoragePercentage = Objects.requireNonNull(autonomousDataStoragePercentage);
+            return this;
+        }
         @CustomType.Setter
         public Builder autonomousDataStorageSizeInTbs(Double autonomousDataStorageSizeInTbs) {
             this.autonomousDataStorageSizeInTbs = Objects.requireNonNull(autonomousDataStorageSizeInTbs);
@@ -712,6 +843,11 @@ public final class GetCloudAutonomousVmClusterResult {
         @CustomType.Setter
         public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
             this.cpuCoreCountPerNode = Objects.requireNonNull(cpuCoreCountPerNode);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cpuPercentage(Double cpuPercentage) {
+            this.cpuPercentage = Objects.requireNonNull(cpuPercentage);
             return this;
         }
         @CustomType.Setter
@@ -834,6 +970,11 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder nonProvisionableAutonomousContainerDatabases(Integer nonProvisionableAutonomousContainerDatabases) {
+            this.nonProvisionableAutonomousContainerDatabases = Objects.requireNonNull(nonProvisionableAutonomousContainerDatabases);
+            return this;
+        }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -847,8 +988,28 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder provisionableAutonomousContainerDatabases(Integer provisionableAutonomousContainerDatabases) {
+            this.provisionableAutonomousContainerDatabases = Objects.requireNonNull(provisionableAutonomousContainerDatabases);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder provisionedAutonomousContainerDatabases(Integer provisionedAutonomousContainerDatabases) {
+            this.provisionedAutonomousContainerDatabases = Objects.requireNonNull(provisionedAutonomousContainerDatabases);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder provisionedCpus(Double provisionedCpus) {
+            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+            return this;
+        }
+        @CustomType.Setter
         public Builder reclaimableCpus(Double reclaimableCpus) {
             this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder reservedCpus(Double reservedCpus) {
+            this.reservedCpus = Objects.requireNonNull(reservedCpus);
             return this;
         }
         @CustomType.Setter
@@ -887,12 +1048,23 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder totalAutonomousDataStorageInTbs(Double totalAutonomousDataStorageInTbs) {
+            this.totalAutonomousDataStorageInTbs = Objects.requireNonNull(totalAutonomousDataStorageInTbs);
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalContainerDatabases(Integer totalContainerDatabases) {
             this.totalContainerDatabases = Objects.requireNonNull(totalContainerDatabases);
             return this;
         }
+        @CustomType.Setter
+        public Builder totalCpus(Double totalCpus) {
+            this.totalCpus = Objects.requireNonNull(totalCpus);
+            return this;
+        }
         public GetCloudAutonomousVmClusterResult build() {
             final var o = new GetCloudAutonomousVmClusterResult();
+            o.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
             o.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
             o.availabilityDomain = availabilityDomain;
             o.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
@@ -905,6 +1077,7 @@ public final class GetCloudAutonomousVmClusterResult {
             o.computeModel = computeModel;
             o.cpuCoreCount = cpuCoreCount;
             o.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            o.cpuPercentage = cpuPercentage;
             o.dataStorageSizeInGb = dataStorageSizeInGb;
             o.dataStorageSizeInTbs = dataStorageSizeInTbs;
             o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
@@ -927,9 +1100,14 @@ public final class GetCloudAutonomousVmClusterResult {
             o.memorySizeInGbs = memorySizeInGbs;
             o.nextMaintenanceRunId = nextMaintenanceRunId;
             o.nodeCount = nodeCount;
+            o.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             o.nsgIds = nsgIds;
             o.ocpuCount = ocpuCount;
+            o.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
+            o.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+            o.provisionedCpus = provisionedCpus;
             o.reclaimableCpus = reclaimableCpus;
+            o.reservedCpus = reservedCpus;
             o.scanListenerPortNonTls = scanListenerPortNonTls;
             o.scanListenerPortTls = scanListenerPortTls;
             o.shape = shape;
@@ -937,7 +1115,9 @@ public final class GetCloudAutonomousVmClusterResult {
             o.subnetId = subnetId;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;
+            o.totalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
             o.totalContainerDatabases = totalContainerDatabases;
+            o.totalCpus = totalCpus;
             return o;
         }
     }

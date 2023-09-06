@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
+        /// Indicates whether this CPE is of type `private` or not.
+        /// </summary>
+        public readonly bool IsPrivate;
+        /// <summary>
         /// The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string ipAddress,
 
+            bool isPrivate,
+
             string timeCreated)
         {
             CompartmentId = compartmentId;
@@ -71,6 +77,7 @@ namespace Pulumi.Oci.Core.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IpAddress = ipAddress;
+            IsPrivate = isPrivate;
             TimeCreated = timeCreated;
         }
     }

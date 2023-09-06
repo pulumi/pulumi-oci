@@ -142,6 +142,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
+        /// </summary>
+        public readonly ImmutableArray<string> Ipv6addresses;
+        /// <summary>
         /// Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
         /// </summary>
         public readonly bool IsPrimary;
@@ -199,6 +203,8 @@ namespace Pulumi.Oci.Core
 
             string id,
 
+            ImmutableArray<string> ipv6addresses,
+
             bool isPrimary,
 
             string macAddress,
@@ -228,6 +234,7 @@ namespace Pulumi.Oci.Core
             FreeformTags = freeformTags;
             HostnameLabel = hostnameLabel;
             Id = id;
+            Ipv6addresses = ipv6addresses;
             IsPrimary = isPrimary;
             MacAddress = macAddress;
             NsgIds = nsgIds;

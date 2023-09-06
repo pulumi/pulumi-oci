@@ -49,7 +49,7 @@ public final class GetAutonomousVmClusterResult {
      */
     private String compartmentId;
     /**
-     * @return The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Autonomous VM Cluster.
      * 
      */
     private String computeModel;
@@ -140,7 +140,7 @@ public final class GetAutonomousVmClusterResult {
      */
     private List<GetAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
     /**
-     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -167,7 +167,7 @@ public final class GetAutonomousVmClusterResult {
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     private Integer reclaimableCpus;
@@ -264,7 +264,7 @@ public final class GetAutonomousVmClusterResult {
         return this.compartmentId;
     }
     /**
-     * @return The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Autonomous VM Cluster.
      * 
      */
     public String computeModel() {
@@ -393,7 +393,7 @@ public final class GetAutonomousVmClusterResult {
         return this.maintenanceWindows;
     }
     /**
-     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -430,7 +430,7 @@ public final class GetAutonomousVmClusterResult {
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     public Integer reclaimableCpus() {

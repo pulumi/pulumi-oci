@@ -14,15 +14,19 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class CrossConnectMacsecProperties
     {
         /// <summary>
-        /// Type of encryption cipher suite to use for the MACsec connection.
+        /// (Updatable) Type of encryption cipher suite to use for the MACsec connection.
         /// </summary>
         public readonly string? EncryptionCipher;
         /// <summary>
-        /// An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+        /// (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+        /// </summary>
+        public readonly bool? IsUnprotectedTrafficAllowed;
+        /// <summary>
+        /// (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
         /// </summary>
         public readonly Outputs.CrossConnectMacsecPropertiesPrimaryKey? PrimaryKey;
         /// <summary>
-        /// The cross-connect's current state.
+        /// (Updatable) Indicates whether or not MACsec is enabled.
         /// </summary>
         public readonly string State;
 
@@ -30,11 +34,14 @@ namespace Pulumi.Oci.Core.Outputs
         private CrossConnectMacsecProperties(
             string? encryptionCipher,
 
+            bool? isUnprotectedTrafficAllowed,
+
             Outputs.CrossConnectMacsecPropertiesPrimaryKey? primaryKey,
 
             string state)
         {
             EncryptionCipher = encryptionCipher;
+            IsUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
             PrimaryKey = primaryKey;
             State = state;
         }

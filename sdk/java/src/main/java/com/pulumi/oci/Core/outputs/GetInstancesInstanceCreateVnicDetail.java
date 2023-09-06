@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -13,6 +14,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetInstancesInstanceCreateVnicDetail {
+    private Boolean assignIpv6ip;
     private Boolean assignPrivateDnsRecord;
     private String assignPublicIp;
     /**
@@ -31,6 +33,7 @@ public final class GetInstancesInstanceCreateVnicDetail {
      */
     private Map<String,Object> freeformTags;
     private String hostnameLabel;
+    private List<GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
     private List<String> nsgIds;
     private String privateIp;
     private Boolean skipSourceDestCheck;
@@ -38,6 +41,9 @@ public final class GetInstancesInstanceCreateVnicDetail {
     private String vlanId;
 
     private GetInstancesInstanceCreateVnicDetail() {}
+    public Boolean assignIpv6ip() {
+        return this.assignIpv6ip;
+    }
     public Boolean assignPrivateDnsRecord() {
         return this.assignPrivateDnsRecord;
     }
@@ -68,6 +74,9 @@ public final class GetInstancesInstanceCreateVnicDetail {
     public String hostnameLabel() {
         return this.hostnameLabel;
     }
+    public List<GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails() {
+        return this.ipv6addressIpv6subnetCidrPairDetails;
+    }
     public List<String> nsgIds() {
         return this.nsgIds;
     }
@@ -93,12 +102,14 @@ public final class GetInstancesInstanceCreateVnicDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean assignIpv6ip;
         private Boolean assignPrivateDnsRecord;
         private String assignPublicIp;
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String hostnameLabel;
+        private List<GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private List<String> nsgIds;
         private String privateIp;
         private Boolean skipSourceDestCheck;
@@ -107,12 +118,14 @@ public final class GetInstancesInstanceCreateVnicDetail {
         public Builder() {}
         public Builder(GetInstancesInstanceCreateVnicDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.assignIpv6ip = defaults.assignIpv6ip;
     	      this.assignPrivateDnsRecord = defaults.assignPrivateDnsRecord;
     	      this.assignPublicIp = defaults.assignPublicIp;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostnameLabel = defaults.hostnameLabel;
+    	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
@@ -120,6 +133,11 @@ public final class GetInstancesInstanceCreateVnicDetail {
     	      this.vlanId = defaults.vlanId;
         }
 
+        @CustomType.Setter
+        public Builder assignIpv6ip(Boolean assignIpv6ip) {
+            this.assignIpv6ip = Objects.requireNonNull(assignIpv6ip);
+            return this;
+        }
         @CustomType.Setter
         public Builder assignPrivateDnsRecord(Boolean assignPrivateDnsRecord) {
             this.assignPrivateDnsRecord = Objects.requireNonNull(assignPrivateDnsRecord);
@@ -151,6 +169,14 @@ public final class GetInstancesInstanceCreateVnicDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder ipv6addressIpv6subnetCidrPairDetails(List<GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+            this.ipv6addressIpv6subnetCidrPairDetails = Objects.requireNonNull(ipv6addressIpv6subnetCidrPairDetails);
+            return this;
+        }
+        public Builder ipv6addressIpv6subnetCidrPairDetails(GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
+            return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
+        }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -180,12 +206,14 @@ public final class GetInstancesInstanceCreateVnicDetail {
         }
         public GetInstancesInstanceCreateVnicDetail build() {
             final var o = new GetInstancesInstanceCreateVnicDetail();
+            o.assignIpv6ip = assignIpv6ip;
             o.assignPrivateDnsRecord = assignPrivateDnsRecord;
             o.assignPublicIp = assignPublicIp;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.hostnameLabel = hostnameLabel;
+            o.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             o.nsgIds = nsgIds;
             o.privateIp = privateIp;
             o.skipSourceDestCheck = skipSourceDestCheck;

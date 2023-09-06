@@ -16,6 +16,11 @@ import java.util.Objects;
 @CustomType
 public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     /**
+     * @return The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     * 
+     */
+    private List<String> associatedVirtualCircuits;
+    /**
      * @return Information for establishing a BGP session for the IPSec tunnel.
      * 
      */
@@ -112,6 +117,13 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     private String vpnIp;
 
     private GetIpsecConnectionTunnelsIpSecConnectionTunnel() {}
+    /**
+     * @return The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     * 
+     */
+    public List<String> associatedVirtualCircuits() {
+        return this.associatedVirtualCircuits;
+    }
     /**
      * @return Information for establishing a BGP session for the IPSec tunnel.
      * 
@@ -255,6 +267,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> associatedVirtualCircuits;
         private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
         private String compartmentId;
         private String cpeIp;
@@ -277,6 +290,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelsIpSecConnectionTunnel defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.associatedVirtualCircuits = defaults.associatedVirtualCircuits;
     	      this.bgpSessionInfos = defaults.bgpSessionInfos;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpeIp = defaults.cpeIp;
@@ -298,6 +312,14 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     	      this.vpnIp = defaults.vpnIp;
         }
 
+        @CustomType.Setter
+        public Builder associatedVirtualCircuits(List<String> associatedVirtualCircuits) {
+            this.associatedVirtualCircuits = Objects.requireNonNull(associatedVirtualCircuits);
+            return this;
+        }
+        public Builder associatedVirtualCircuits(String... associatedVirtualCircuits) {
+            return associatedVirtualCircuits(List.of(associatedVirtualCircuits));
+        }
         @CustomType.Setter
         public Builder bgpSessionInfos(List<GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo> bgpSessionInfos) {
             this.bgpSessionInfos = Objects.requireNonNull(bgpSessionInfos);
@@ -407,6 +429,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         }
         public GetIpsecConnectionTunnelsIpSecConnectionTunnel build() {
             final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnel();
+            o.associatedVirtualCircuits = associatedVirtualCircuits;
             o.bgpSessionInfos = bgpSessionInfos;
             o.compartmentId = compartmentId;
             o.cpeIp = cpeIp;

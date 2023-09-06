@@ -77,6 +77,7 @@ import (
 //				},
 //				IpMtu:                  pulumi.Any(_var.Virtual_circuit_ip_mtu),
 //				IsBfdEnabled:           pulumi.Any(_var.Virtual_circuit_is_bfd_enabled),
+//				IsTransportMode:        pulumi.Any(_var.Virtual_circuit_is_transport_mode),
 //				GatewayId:              pulumi.Any(oci_core_gateway.Test_gateway.Id),
 //				ProviderServiceId:      pulumi.Any(data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id),
 //				ProviderServiceKeyName: pulumi.Any(_var.Virtual_circuit_provider_service_key_name),
@@ -143,6 +144,8 @@ type VirtualCircuit struct {
 	IpMtu pulumi.StringOutput `pulumi:"ipMtu"`
 	// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 	IsBfdEnabled pulumi.BoolOutput `pulumi:"isBfdEnabled"`
+	// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+	IsTransportMode pulumi.BoolOutput `pulumi:"isTransportMode"`
 	// The Oracle BGP ASN.
 	OracleBgpAsn pulumi.IntOutput `pulumi:"oracleBgpAsn"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
@@ -242,6 +245,8 @@ type virtualCircuitState struct {
 	IpMtu *string `pulumi:"ipMtu"`
 	// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 	IsBfdEnabled *bool `pulumi:"isBfdEnabled"`
+	// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+	IsTransportMode *bool `pulumi:"isTransportMode"`
 	// The Oracle BGP ASN.
 	OracleBgpAsn *int `pulumi:"oracleBgpAsn"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
@@ -306,6 +311,8 @@ type VirtualCircuitState struct {
 	IpMtu pulumi.StringPtrInput
 	// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 	IsBfdEnabled pulumi.BoolPtrInput
+	// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+	IsTransportMode pulumi.BoolPtrInput
 	// The Oracle BGP ASN.
 	OracleBgpAsn pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
@@ -366,6 +373,8 @@ type virtualCircuitArgs struct {
 	IpMtu *string `pulumi:"ipMtu"`
 	// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 	IsBfdEnabled *bool `pulumi:"isBfdEnabled"`
+	// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+	IsTransportMode *bool `pulumi:"isTransportMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId *string `pulumi:"providerServiceId"`
 	// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
@@ -411,6 +420,8 @@ type VirtualCircuitArgs struct {
 	IpMtu pulumi.StringPtrInput
 	// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 	IsBfdEnabled pulumi.BoolPtrInput
+	// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+	IsTransportMode pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId pulumi.StringPtrInput
 	// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
@@ -592,6 +603,11 @@ func (o VirtualCircuitOutput) IpMtu() pulumi.StringOutput {
 // (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 func (o VirtualCircuitOutput) IsBfdEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.BoolOutput { return v.IsBfdEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+func (o VirtualCircuitOutput) IsTransportMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.BoolOutput { return v.IsTransportMode }).(pulumi.BoolOutput)
 }
 
 // The Oracle BGP ASN.

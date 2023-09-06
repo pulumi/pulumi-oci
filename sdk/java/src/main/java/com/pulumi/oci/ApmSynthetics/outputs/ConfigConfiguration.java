@@ -41,7 +41,7 @@ public final class ConfigConfiguration {
      */
     private @Nullable Boolean isCertificateValidationEnabled;
     /**
-     * @return (Updatable) If disabled then auto snapshots are not collected.
+     * @return (Updatable) If disabled, auto snapshots are not collected.
      * 
      */
     private @Nullable Boolean isDefaultSnapshotEnabled;
@@ -136,7 +136,7 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.isCertificateValidationEnabled);
     }
     /**
-     * @return (Updatable) If disabled then auto snapshots are not collected.
+     * @return (Updatable) If disabled, auto snapshots are not collected.
      * 
      */
     public Optional<Boolean> isDefaultSnapshotEnabled() {

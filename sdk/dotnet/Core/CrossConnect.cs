@@ -59,6 +59,17 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         MacsecProperties = new Oci.Core.Inputs.CrossConnectMacsecPropertiesArgs
+    ///         {
+    ///             State = @var.Cross_connect_macsec_properties_state,
+    ///             EncryptionCipher = @var.Cross_connect_macsec_properties_encryption_cipher,
+    ///             IsUnprotectedTrafficAllowed = @var.Cross_connect_macsec_properties_is_unprotected_traffic_allowed,
+    ///             PrimaryKey = new Oci.Core.Inputs.CrossConnectMacsecPropertiesPrimaryKeyArgs
+    ///             {
+    ///                 ConnectivityAssociationKeySecretId = oci_vault_secret.Test_secret.Id,
+    ///                 ConnectivityAssociationNameSecretId = oci_vault_secret.Test_secret.Id,
+    ///             },
+    ///         },
     ///         NearCrossConnectOrCrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
     ///     });
     /// 
@@ -125,19 +136,19 @@ namespace Pulumi.Oci.Core
         public Output<bool?> IsActive { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        /// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         /// </summary>
         [Output("locationName")]
         public Output<string> LocationName { get; private set; } = null!;
 
         /// <summary>
-        /// Properties used for MACsec (if capable).
+        /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Output("macsecProperties")]
         public Output<Outputs.CrossConnectMacsecProperties> MacsecProperties { get; private set; } = null!;
 
         /// <summary>
-        /// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        /// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         /// </summary>
         [Output("nearCrossConnectOrCrossConnectGroupId")]
         public Output<string> NearCrossConnectOrCrossConnectGroupId { get; private set; } = null!;
@@ -171,7 +182,7 @@ namespace Pulumi.Oci.Core
         public Output<string> PortSpeedShapeName { get; private set; } = null!;
 
         /// <summary>
-        /// The cross-connect's current state.
+        /// (Updatable) Indicates whether or not MACsec is enabled.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -289,19 +300,19 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsActive { get; set; }
 
         /// <summary>
-        /// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        /// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         /// </summary>
         [Input("locationName", required: true)]
         public Input<string> LocationName { get; set; } = null!;
 
         /// <summary>
-        /// Properties used for MACsec (if capable).
+        /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Input("macsecProperties")]
         public Input<Inputs.CrossConnectMacsecPropertiesArgs>? MacsecProperties { get; set; }
 
         /// <summary>
-        /// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        /// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         /// </summary>
         [Input("nearCrossConnectOrCrossConnectGroupId")]
         public Input<string>? NearCrossConnectOrCrossConnectGroupId { get; set; }
@@ -385,19 +396,19 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsActive { get; set; }
 
         /// <summary>
-        /// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
+        /// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         /// </summary>
         [Input("locationName")]
         public Input<string>? LocationName { get; set; }
 
         /// <summary>
-        /// Properties used for MACsec (if capable).
+        /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Input("macsecProperties")]
         public Input<Inputs.CrossConnectMacsecPropertiesGetArgs>? MacsecProperties { get; set; }
 
         /// <summary>
-        /// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+        /// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         /// </summary>
         [Input("nearCrossConnectOrCrossConnectGroupId")]
         public Input<string>? NearCrossConnectOrCrossConnectGroupId { get; set; }
@@ -431,7 +442,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? PortSpeedShapeName { get; set; }
 
         /// <summary>
-        /// The cross-connect's current state.
+        /// (Updatable) Indicates whether or not MACsec is enabled.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

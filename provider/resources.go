@@ -848,7 +848,6 @@ func Provider() tfbridge.ProviderInfo {
 
 			"oci_monitoring_alarm": {Tok: tfbridge.MakeResource(mainPkg, monitoringMod, "Alarm")},
 
-			"oci_mysql_analytics_cluster":   {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "AnalyticsCluster")},
 			"oci_mysql_mysql_configuration": {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlConfiguration")},
 			"oci_mysql_channel":             {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "Channel")},
 			"oci_mysql_heat_wave_cluster":   {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "HeatWaveCluster")},

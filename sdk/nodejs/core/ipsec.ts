@@ -155,6 +155,10 @@ export class Ipsec extends pulumi.CustomResource {
      * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The transport type used for the IPSec connection.
+     */
+    public /*out*/ readonly transportType!: pulumi.Output<string>;
 
     /**
      * Create a Ipsec resource with the given unique name, arguments, and options.
@@ -180,6 +184,7 @@ export class Ipsec extends pulumi.CustomResource {
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["staticRoutes"] = state ? state.staticRoutes : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["transportType"] = state ? state.transportType : undefined;
         } else {
             const args = argsOrState as IpsecArgs | undefined;
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
@@ -205,6 +210,7 @@ export class Ipsec extends pulumi.CustomResource {
             resourceInputs["staticRoutes"] = args ? args.staticRoutes : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["transportType"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Ipsec.__pulumiType, name, resourceInputs, opts);
@@ -275,6 +281,10 @@ export interface IpsecState {
      * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The transport type used for the IPSec connection.
+     */
+    transportType?: pulumi.Input<string>;
 }
 
 /**

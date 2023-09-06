@@ -51,6 +51,10 @@ import * as utilities from "../utilities";
  *         subnetId: oci_core_subnet.test_subnet.id,
  *         vcnId: oci_core_vcn.test_vcn.id,
  *     },
+ *     replicationCredentials: {
+ *         password: _var.connection_replication_credentials_password,
+ *         username: _var.connection_replication_credentials_username,
+ *     },
  *     sshDetails: {
  *         host: _var.connection_ssh_details_host,
  *         sshkey: _var.connection_ssh_details_sshkey,
@@ -151,6 +155,10 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly privateEndpoint!: pulumi.Output<outputs.DatabaseMigration.ConnectionPrivateEndpoint>;
     /**
+     * (Updatable) Database Administrator Credentials details.
+     */
+    public readonly replicationCredentials!: pulumi.Output<outputs.DatabaseMigration.ConnectionReplicationCredentials>;
+    /**
      * (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
      */
     public readonly sshDetails!: pulumi.Output<outputs.DatabaseMigration.ConnectionSshDetails>;
@@ -209,6 +217,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["privateEndpoint"] = state ? state.privateEndpoint : undefined;
+            resourceInputs["replicationCredentials"] = state ? state.replicationCredentials : undefined;
             resourceInputs["sshDetails"] = state ? state.sshDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -242,6 +251,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["privateEndpoint"] = args ? args.privateEndpoint : undefined;
+            resourceInputs["replicationCredentials"] = args ? args.replicationCredentials : undefined;
             resourceInputs["sshDetails"] = args ? args.sshDetails : undefined;
             resourceInputs["tlsKeystore"] = args ? args.tlsKeystore : undefined;
             resourceInputs["tlsWallet"] = args ? args.tlsWallet : undefined;
@@ -314,6 +324,10 @@ export interface ConnectionState {
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      */
     privateEndpoint?: pulumi.Input<inputs.DatabaseMigration.ConnectionPrivateEndpoint>;
+    /**
+     * (Updatable) Database Administrator Credentials details.
+     */
+    replicationCredentials?: pulumi.Input<inputs.DatabaseMigration.ConnectionReplicationCredentials>;
     /**
      * (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
      */
@@ -396,6 +410,10 @@ export interface ConnectionArgs {
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      */
     privateEndpoint?: pulumi.Input<inputs.DatabaseMigration.ConnectionPrivateEndpoint>;
+    /**
+     * (Updatable) Database Administrator Credentials details.
+     */
+    replicationCredentials?: pulumi.Input<inputs.DatabaseMigration.ConnectionReplicationCredentials>;
     /**
      * (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
      */

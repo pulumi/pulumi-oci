@@ -49,6 +49,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.ClusterNetworkArgs;
  * import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolArgs;
  * import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationArgs;
+ * import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs;
  * import com.pulumi.oci.Core.inputs.ClusterNetworkClusterConfigurationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -74,10 +75,20 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .placementConfiguration(ClusterNetworkPlacementConfigurationArgs.builder()
  *                 .availabilityDomain(var_.cluster_network_placement_configuration_availability_domain())
- *                 .primarySubnetId(oci_core_subnet.test_subnet().id())
+ *                 .primaryVnicSubnets(ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs.builder()
+ *                     .subnetId(oci_core_subnet.test_subnet().id())
+ *                     .ipv6addressIpv6subnetCidrPairDetails(ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs.builder()
+ *                         .ipv6subnetCidr(var_.cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr())
+ *                         .build())
+ *                     .isAssignIpv6ip(var_.cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip())
+ *                     .build())
  *                 .secondaryVnicSubnets(ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs.builder()
  *                     .subnetId(oci_core_subnet.test_subnet().id())
  *                     .displayName(var_.cluster_network_placement_configuration_secondary_vnic_subnets_display_name())
+ *                     .ipv6addressIpv6subnetCidrPairDetails(ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs.builder()
+ *                         .ipv6subnetCidr(var_.cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr())
+ *                         .build())
+ *                     .isAssignIpv6ip(var_.cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip())
  *                     .build())
  *                 .build())
  *             .clusterConfiguration(ClusterNetworkClusterConfigurationArgs.builder()

@@ -154,6 +154,7 @@ from .get_tunnel_security_associations import *
 from .get_vcn import *
 from .get_vcns import *
 from .get_virtual_circuit import *
+from .get_virtual_circuit_associated_tunnels import *
 from .get_virtual_circuit_bandwidth_shapes import *
 from .get_virtual_circuit_public_prefixes import *
 from .get_virtual_circuits import *

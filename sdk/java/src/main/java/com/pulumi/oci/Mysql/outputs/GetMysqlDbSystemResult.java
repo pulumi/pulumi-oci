@@ -4,7 +4,6 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemAnalyticsCluster;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemCurrentPlacement;
@@ -26,11 +25,6 @@ import java.util.Objects;
 public final class GetMysqlDbSystemResult {
     private String adminPassword;
     private String adminUsername;
-    /**
-     * @return DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-     * 
-     */
-    private List<GetMysqlDbSystemAnalyticsCluster> analyticsClusters;
     /**
      * @return The availability domain in which the DB System is placed.
      * 
@@ -132,11 +126,6 @@ public final class GetMysqlDbSystemResult {
      */
     private String ipAddress;
     /**
-     * @return DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     * 
-     */
-    private Boolean isAnalyticsClusterAttached;
-    /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
      */
@@ -214,13 +203,6 @@ public final class GetMysqlDbSystemResult {
     }
     public String adminUsername() {
         return this.adminUsername;
-    }
-    /**
-     * @return DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-     * 
-     */
-    public List<GetMysqlDbSystemAnalyticsCluster> analyticsClusters() {
-        return this.analyticsClusters;
     }
     /**
      * @return The availability domain in which the DB System is placed.
@@ -363,13 +345,6 @@ public final class GetMysqlDbSystemResult {
         return this.ipAddress;
     }
     /**
-     * @return DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-     * 
-     */
-    public Boolean isAnalyticsClusterAttached() {
-        return this.isAnalyticsClusterAttached;
-    }
-    /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
      */
@@ -482,7 +457,6 @@ public final class GetMysqlDbSystemResult {
     public static final class Builder {
         private String adminPassword;
         private String adminUsername;
-        private List<GetMysqlDbSystemAnalyticsCluster> analyticsClusters;
         private String availabilityDomain;
         private List<GetMysqlDbSystemBackupPolicy> backupPolicies;
         private List<GetMysqlDbSystemChannel> channels;
@@ -503,7 +477,6 @@ public final class GetMysqlDbSystemResult {
         private String hostnameLabel;
         private String id;
         private String ipAddress;
-        private Boolean isAnalyticsClusterAttached;
         private Boolean isHeatWaveClusterAttached;
         private Boolean isHighlyAvailable;
         private String lifecycleDetails;
@@ -524,7 +497,6 @@ public final class GetMysqlDbSystemResult {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
     	      this.adminUsername = defaults.adminUsername;
-    	      this.analyticsClusters = defaults.analyticsClusters;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupPolicies = defaults.backupPolicies;
     	      this.channels = defaults.channels;
@@ -545,7 +517,6 @@ public final class GetMysqlDbSystemResult {
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
-    	      this.isAnalyticsClusterAttached = defaults.isAnalyticsClusterAttached;
     	      this.isHeatWaveClusterAttached = defaults.isHeatWaveClusterAttached;
     	      this.isHighlyAvailable = defaults.isHighlyAvailable;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -572,14 +543,6 @@ public final class GetMysqlDbSystemResult {
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = Objects.requireNonNull(adminUsername);
             return this;
-        }
-        @CustomType.Setter
-        public Builder analyticsClusters(List<GetMysqlDbSystemAnalyticsCluster> analyticsClusters) {
-            this.analyticsClusters = Objects.requireNonNull(analyticsClusters);
-            return this;
-        }
-        public Builder analyticsClusters(GetMysqlDbSystemAnalyticsCluster... analyticsClusters) {
-            return analyticsClusters(List.of(analyticsClusters));
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
@@ -700,11 +663,6 @@ public final class GetMysqlDbSystemResult {
             return this;
         }
         @CustomType.Setter
-        public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
-            this.isAnalyticsClusterAttached = Objects.requireNonNull(isAnalyticsClusterAttached);
-            return this;
-        }
-        @CustomType.Setter
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
             this.isHeatWaveClusterAttached = Objects.requireNonNull(isHeatWaveClusterAttached);
             return this;
@@ -792,7 +750,6 @@ public final class GetMysqlDbSystemResult {
             final var o = new GetMysqlDbSystemResult();
             o.adminPassword = adminPassword;
             o.adminUsername = adminUsername;
-            o.analyticsClusters = analyticsClusters;
             o.availabilityDomain = availabilityDomain;
             o.backupPolicies = backupPolicies;
             o.channels = channels;
@@ -813,7 +770,6 @@ public final class GetMysqlDbSystemResult {
             o.hostnameLabel = hostnameLabel;
             o.id = id;
             o.ipAddress = ipAddress;
-            o.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
             o.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             o.isHighlyAvailable = isHighlyAvailable;
             o.lifecycleDetails = lifecycleDetails;

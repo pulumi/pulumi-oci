@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigConfigurationClientCertificateDetails {
     /**
-     * @return (Updatable) Client certificate in pem format.
+     * @return (Updatable) Client certificate in PEM format.
      * 
      */
     private @Nullable ConfigConfigurationClientCertificateDetailsClientCertificate clientCertificate;
     /**
-     * @return (Updatable) The private key associated with the client certificate in pem format.
+     * @return (Updatable) The private key associated with the client certificate in PEM format.
      * 
      */
     private @Nullable ConfigConfigurationClientCertificateDetailsPrivateKey privateKey;
 
     private ConfigConfigurationClientCertificateDetails() {}
     /**
-     * @return (Updatable) Client certificate in pem format.
+     * @return (Updatable) Client certificate in PEM format.
      * 
      */
     public Optional<ConfigConfigurationClientCertificateDetailsClientCertificate> clientCertificate() {
         return Optional.ofNullable(this.clientCertificate);
     }
     /**
-     * @return (Updatable) The private key associated with the client certificate in pem format.
+     * @return (Updatable) The private key associated with the client certificate in PEM format.
      * 
      */
     public Optional<ConfigConfigurationClientCertificateDetailsPrivateKey> privateKey() {

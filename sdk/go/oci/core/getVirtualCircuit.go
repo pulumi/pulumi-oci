@@ -94,6 +94,8 @@ type LookupVirtualCircuitResult struct {
 	IpMtu string `pulumi:"ipMtu"`
 	// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 	IsBfdEnabled bool `pulumi:"isBfdEnabled"`
+	// Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+	IsTransportMode bool `pulumi:"isTransportMode"`
 	// The Oracle BGP ASN.
 	OracleBgpAsn int `pulumi:"oracleBgpAsn"`
 	// The OCID of the service offered by the provider (if the customer is connecting via a provider).
@@ -243,6 +245,11 @@ func (o LookupVirtualCircuitResultOutput) IpMtu() pulumi.StringOutput {
 // Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 func (o LookupVirtualCircuitResultOutput) IsBfdEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVirtualCircuitResult) bool { return v.IsBfdEnabled }).(pulumi.BoolOutput)
+}
+
+// Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+func (o LookupVirtualCircuitResultOutput) IsTransportMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupVirtualCircuitResult) bool { return v.IsTransportMode }).(pulumi.BoolOutput)
 }
 
 // The Oracle BGP ASN.

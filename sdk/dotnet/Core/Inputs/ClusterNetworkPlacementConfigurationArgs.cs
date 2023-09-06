@@ -22,10 +22,16 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? PlacementConstraint { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         /// </summary>
-        [Input("primarySubnetId", required: true)]
-        public Input<string> PrimarySubnetId { get; set; } = null!;
+        [Input("primarySubnetId")]
+        public Input<string>? PrimarySubnetId { get; set; }
+
+        /// <summary>
+        /// Details about the IPv6 primary subnet.
+        /// </summary>
+        [Input("primaryVnicSubnets")]
+        public Input<Inputs.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs>? PrimaryVnicSubnets { get; set; }
 
         [Input("secondaryVnicSubnets")]
         private InputList<Inputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs>? _secondaryVnicSubnets;

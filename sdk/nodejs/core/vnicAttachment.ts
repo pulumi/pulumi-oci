@@ -21,12 +21,14 @@ import * as utilities from "../utilities";
  *
  * const testVnicAttachment = new oci.core.VnicAttachment("testVnicAttachment", {
  *     createVnicDetails: {
+ *         assignIpv6ip: _var.vnic_attachment_create_vnic_details_assign_ipv6ip,
  *         assignPrivateDnsRecord: _var.vnic_attachment_create_vnic_details_assign_private_dns_record,
  *         assignPublicIp: _var.vnic_attachment_create_vnic_details_assign_public_ip,
  *         definedTags: _var.vnic_attachment_create_vnic_details_defined_tags,
  *         displayName: _var.vnic_attachment_create_vnic_details_display_name,
  *         freeformTags: _var.vnic_attachment_create_vnic_details_freeform_tags,
  *         hostnameLabel: _var.vnic_attachment_create_vnic_details_hostname_label,
+ *         ipv6addressIpv6subnetCidrPairDetails: _var.vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details,
  *         nsgIds: _var.vnic_attachment_create_vnic_details_nsg_ids,
  *         privateIp: _var.vnic_attachment_create_vnic_details_private_ip,
  *         skipSourceDestCheck: _var.vnic_attachment_create_vnic_details_skip_source_dest_check,

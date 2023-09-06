@@ -26,9 +26,15 @@ __all__ = [
     'ClusterNetworkInstancePoolArgs',
     'ClusterNetworkInstancePoolLoadBalancerArgs',
     'ClusterNetworkInstancePoolPlacementConfigurationArgs',
+    'ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs',
+    'ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs',
     'ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs',
+    'ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs',
     'ClusterNetworkPlacementConfigurationArgs',
+    'ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs',
+    'ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs',
     'ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs',
+    'ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs',
     'ComputeCapacityReportShapeAvailabilityArgs',
     'ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs',
     'ComputeCapacityReservationInstanceReservationConfigArgs',
@@ -76,6 +82,7 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs',
+    'InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs',
@@ -96,6 +103,7 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs',
@@ -106,16 +114,22 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs',
     'InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs',
     'InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs',
     'InstanceConfigurationInstanceDetailsSecondaryVnicArgs',
     'InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs',
+    'InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs',
     'InstanceCreateVnicDetailsArgs',
+    'InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs',
     'InstanceInstanceOptionsArgs',
     'InstanceLaunchOptionsArgs',
     'InstancePlatformConfigArgs',
     'InstancePoolInstanceLoadBalancerBackendArgs',
     'InstancePoolLoadBalancerArgs',
     'InstancePoolPlacementConfigurationArgs',
+    'InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs',
+    'InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs',
     'InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs',
+    'InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs',
     'InstancePreemptibleInstanceConfigArgs',
     'InstancePreemptibleInstanceConfigPreemptionActionArgs',
     'InstanceShapeConfigArgs',
@@ -152,6 +166,7 @@ __all__ = [
     'VirtualCircuitPublicPrefixArgs',
     'VirtualNetworkByoipv6cidrDetailArgs',
     'VnicAttachmentCreateVnicDetailsArgs',
+    'VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs',
     'VolumeAttachmentMultipathDeviceArgs',
     'VolumeAutotunePolicyArgs',
     'VolumeBackupPolicyScheduleArgs',
@@ -235,6 +250,7 @@ __all__ = [
     'GetSubnetsFilterArgs',
     'GetTunnelSecurityAssociationsFilterArgs',
     'GetVcnsFilterArgs',
+    'GetVirtualCircuitAssociatedTunnelsFilterArgs',
     'GetVirtualCircuitBandwidthShapesFilterArgs',
     'GetVirtualCircuitPublicPrefixesFilterArgs',
     'GetVirtualCircuitsFilterArgs',
@@ -1242,11 +1258,13 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  primary_subnet_id: Optional[pulumi.Input[str]] = None,
+                 primary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]]] = None,
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
         """
         :param pulumi.Input[str] availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: The fault domains to place instances.
-        :param pulumi.Input[str] primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+        :param pulumi.Input[str] primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
         if availability_domain is not None:
@@ -1255,6 +1273,8 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
             pulumi.set(__self__, "fault_domains", fault_domains)
         if primary_subnet_id is not None:
             pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
+        if primary_vnic_subnets is not None:
+            pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
         if secondary_vnic_subnets is not None:
             pulumi.set(__self__, "secondary_vnic_subnets", secondary_vnic_subnets)
 
@@ -1286,13 +1306,25 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         """
         return pulumi.get(self, "primary_subnet_id")
 
     @primary_subnet_id.setter
     def primary_subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "primary_subnet_id", value)
+
+    @property
+    @pulumi.getter(name="primaryVnicSubnets")
+    def primary_vnic_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]]]:
+        """
+        Details about the IPv6 primary subnet.
+        """
+        return pulumi.get(self, "primary_vnic_subnets")
+
+    @primary_vnic_subnets.setter
+    def primary_vnic_subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]]]):
+        pulumi.set(self, "primary_vnic_subnets", value)
 
     @property
     @pulumi.getter(name="secondaryVnicSubnets")
@@ -1308,34 +1340,50 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
 
 
 @pulumi.input_type
-class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
+class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
+                 is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        if is_assign_ipv6ip is not None:
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[str]]:
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
         """
-        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         """
-        return pulumi.get(self, "display_name")
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
-    @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "display_name", value)
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
+    @pulumi.getter(name="isAssignIpv6ip")
+    def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "is_assign_ipv6ip")
+
+    @is_assign_ipv6ip.setter
+    def is_assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_assign_ipv6ip", value)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -1355,21 +1403,151 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
 
 
 @pulumi.input_type
+class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
+
+
+@pulumi.input_type
+class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
+                 is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
+                 subnet_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        if is_assign_ipv6ip is not None:
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
+    @pulumi.getter(name="isAssignIpv6ip")
+    def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "is_assign_ipv6ip")
+
+    @is_assign_ipv6ip.setter
+    def is_assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_assign_ipv6ip", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet_id", value)
+
+
+@pulumi.input_type
+class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
+
+
+@pulumi.input_type
 class ClusterNetworkPlacementConfigurationArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
-                 primary_subnet_id: pulumi.Input[str],
                  placement_constraint: Optional[pulumi.Input[str]] = None,
+                 primary_subnet_id: Optional[pulumi.Input[str]] = None,
+                 primary_vnic_subnets: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs']] = None,
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
         """
         :param pulumi.Input[str] availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+        :param pulumi.Input[str] primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+        :param pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
         if placement_constraint is not None:
             pulumi.set(__self__, "placement_constraint", placement_constraint)
+        if primary_subnet_id is not None:
+            pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
+        if primary_vnic_subnets is not None:
+            pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
         if secondary_vnic_subnets is not None:
             pulumi.set(__self__, "secondary_vnic_subnets", secondary_vnic_subnets)
 
@@ -1386,18 +1564,6 @@ class ClusterNetworkPlacementConfigurationArgs:
         pulumi.set(self, "availability_domain", value)
 
     @property
-    @pulumi.getter(name="primarySubnetId")
-    def primary_subnet_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
-        """
-        return pulumi.get(self, "primary_subnet_id")
-
-    @primary_subnet_id.setter
-    def primary_subnet_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "primary_subnet_id", value)
-
-    @property
     @pulumi.getter(name="placementConstraint")
     def placement_constraint(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "placement_constraint")
@@ -1405,6 +1571,30 @@ class ClusterNetworkPlacementConfigurationArgs:
     @placement_constraint.setter
     def placement_constraint(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "placement_constraint", value)
+
+    @property
+    @pulumi.getter(name="primarySubnetId")
+    def primary_subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+        """
+        return pulumi.get(self, "primary_subnet_id")
+
+    @primary_subnet_id.setter
+    def primary_subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "primary_subnet_id", value)
+
+    @property
+    @pulumi.getter(name="primaryVnicSubnets")
+    def primary_vnic_subnets(self) -> Optional[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs']]:
+        """
+        Details about the IPv6 primary subnet.
+        """
+        return pulumi.get(self, "primary_vnic_subnets")
+
+    @primary_vnic_subnets.setter
+    def primary_vnic_subnets(self, value: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs']]):
+        pulumi.set(self, "primary_vnic_subnets", value)
 
     @property
     @pulumi.getter(name="secondaryVnicSubnets")
@@ -1420,10 +1610,97 @@ class ClusterNetworkPlacementConfigurationArgs:
 
 
 @pulumi.input_type
+class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs:
+    def __init__(__self__, *,
+                 subnet_id: pulumi.Input[str],
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
+                 is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        if is_assign_ipv6ip is not None:
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[str]:
+        """
+        The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
+    @pulumi.getter(name="isAssignIpv6ip")
+    def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "is_assign_ipv6ip")
+
+    @is_assign_ipv6ip.setter
+    def is_assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_assign_ipv6ip", value)
+
+
+@pulumi.input_type
+class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
+
+
+@pulumi.input_type
 class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
     def __init__(__self__, *,
                  subnet_id: pulumi.Input[str],
-                 display_name: Optional[pulumi.Input[str]] = None):
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
+                 is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
                
@@ -1431,10 +1708,16 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        if is_assign_ipv6ip is not None:
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -1463,6 +1746,53 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
+    @pulumi.getter(name="isAssignIpv6ip")
+    def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "is_assign_ipv6ip")
+
+    @is_assign_ipv6ip.setter
+    def is_assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_assign_ipv6ip", value)
+
+
+@pulumi.input_type
+class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
 
 
 @pulumi.input_type
@@ -1825,15 +2155,23 @@ class CrossConnectGroupMacsecPropertiesArgs:
     def __init__(__self__, *,
                  state: pulumi.Input[str],
                  encryption_cipher: Optional[pulumi.Input[str]] = None,
+                 is_unprotected_traffic_allowed: Optional[pulumi.Input[bool]] = None,
                  primary_key: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs']] = None):
         """
-        :param pulumi.Input[str] state: The cross-connect group's current state.
-        :param pulumi.Input[str] encryption_cipher: Type of encryption cipher suite to use for the MACsec connection.
-        :param pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs'] primary_key: An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
+        :param pulumi.Input[bool] is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+        :param pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs'] primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
         """
         pulumi.set(__self__, "state", state)
         if encryption_cipher is not None:
             pulumi.set(__self__, "encryption_cipher", encryption_cipher)
+        if is_unprotected_traffic_allowed is not None:
+            pulumi.set(__self__, "is_unprotected_traffic_allowed", is_unprotected_traffic_allowed)
         if primary_key is not None:
             pulumi.set(__self__, "primary_key", primary_key)
 
@@ -1841,7 +2179,11 @@ class CrossConnectGroupMacsecPropertiesArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[str]:
         """
-        The cross-connect group's current state.
+        (Updatable) Indicates whether or not MACsec is enabled.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -1853,7 +2195,7 @@ class CrossConnectGroupMacsecPropertiesArgs:
     @pulumi.getter(name="encryptionCipher")
     def encryption_cipher(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of encryption cipher suite to use for the MACsec connection.
+        (Updatable) Type of encryption cipher suite to use for the MACsec connection.
         """
         return pulumi.get(self, "encryption_cipher")
 
@@ -1862,10 +2204,22 @@ class CrossConnectGroupMacsecPropertiesArgs:
         pulumi.set(self, "encryption_cipher", value)
 
     @property
+    @pulumi.getter(name="isUnprotectedTrafficAllowed")
+    def is_unprotected_traffic_allowed(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+        """
+        return pulumi.get(self, "is_unprotected_traffic_allowed")
+
+    @is_unprotected_traffic_allowed.setter
+    def is_unprotected_traffic_allowed(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_unprotected_traffic_allowed", value)
+
+    @property
     @pulumi.getter(name="primaryKey")
     def primary_key(self) -> Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs']]:
         """
-        An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+        (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
         """
         return pulumi.get(self, "primary_key")
 
@@ -1882,8 +2236,12 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
                  connectivity_association_key_secret_version: Optional[pulumi.Input[str]] = None,
                  connectivity_association_name_secret_version: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] connectivity_association_key_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-        :param pulumi.Input[str] connectivity_association_name_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+        :param pulumi.Input[str] connectivity_association_key_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+               
+               NOTE: Only the latest secret version will be used.
+        :param pulumi.Input[str] connectivity_association_name_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+               
+               NOTE: Only the latest secret version will be used.
         :param pulumi.Input[str] connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
         :param pulumi.Input[str] connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
         """
@@ -1898,7 +2256,9 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
     @pulumi.getter(name="connectivityAssociationKeySecretId")
     def connectivity_association_key_secret_id(self) -> pulumi.Input[str]:
         """
-        Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+
+        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_key_secret_id")
 
@@ -1910,7 +2270,9 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
     @pulumi.getter(name="connectivityAssociationNameSecretId")
     def connectivity_association_name_secret_id(self) -> pulumi.Input[str]:
         """
-        Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+
+        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_name_secret_id")
 
@@ -1948,15 +2310,19 @@ class CrossConnectMacsecPropertiesArgs:
     def __init__(__self__, *,
                  state: pulumi.Input[str],
                  encryption_cipher: Optional[pulumi.Input[str]] = None,
+                 is_unprotected_traffic_allowed: Optional[pulumi.Input[bool]] = None,
                  primary_key: Optional[pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs']] = None):
         """
-        :param pulumi.Input[str] state: The cross-connect's current state.
-        :param pulumi.Input[str] encryption_cipher: Type of encryption cipher suite to use for the MACsec connection.
-        :param pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs'] primary_key: An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
+        :param pulumi.Input[str] encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
+        :param pulumi.Input[bool] is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+        :param pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs'] primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
         """
         pulumi.set(__self__, "state", state)
         if encryption_cipher is not None:
             pulumi.set(__self__, "encryption_cipher", encryption_cipher)
+        if is_unprotected_traffic_allowed is not None:
+            pulumi.set(__self__, "is_unprotected_traffic_allowed", is_unprotected_traffic_allowed)
         if primary_key is not None:
             pulumi.set(__self__, "primary_key", primary_key)
 
@@ -1964,7 +2330,7 @@ class CrossConnectMacsecPropertiesArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[str]:
         """
-        The cross-connect's current state.
+        (Updatable) Indicates whether or not MACsec is enabled.
         """
         return pulumi.get(self, "state")
 
@@ -1976,7 +2342,7 @@ class CrossConnectMacsecPropertiesArgs:
     @pulumi.getter(name="encryptionCipher")
     def encryption_cipher(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of encryption cipher suite to use for the MACsec connection.
+        (Updatable) Type of encryption cipher suite to use for the MACsec connection.
         """
         return pulumi.get(self, "encryption_cipher")
 
@@ -1985,10 +2351,22 @@ class CrossConnectMacsecPropertiesArgs:
         pulumi.set(self, "encryption_cipher", value)
 
     @property
+    @pulumi.getter(name="isUnprotectedTrafficAllowed")
+    def is_unprotected_traffic_allowed(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+        """
+        return pulumi.get(self, "is_unprotected_traffic_allowed")
+
+    @is_unprotected_traffic_allowed.setter
+    def is_unprotected_traffic_allowed(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_unprotected_traffic_allowed", value)
+
+    @property
     @pulumi.getter(name="primaryKey")
     def primary_key(self) -> Optional[pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs']]:
         """
-        An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+        (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
         """
         return pulumi.get(self, "primary_key")
 
@@ -2005,8 +2383,12 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
                  connectivity_association_key_secret_version: Optional[pulumi.Input[str]] = None,
                  connectivity_association_name_secret_version: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] connectivity_association_key_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-        :param pulumi.Input[str] connectivity_association_name_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+        :param pulumi.Input[str] connectivity_association_key_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+               
+               NOTE: Only the latest secret version will be used.
+        :param pulumi.Input[str] connectivity_association_name_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+               
+               NOTE: Only the latest secret version will be used.
         :param pulumi.Input[str] connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
         :param pulumi.Input[str] connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
         """
@@ -2021,7 +2403,9 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
     @pulumi.getter(name="connectivityAssociationKeySecretId")
     def connectivity_association_key_secret_id(self) -> pulumi.Input[str]:
         """
-        Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+
+        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_key_secret_id")
 
@@ -2033,7 +2417,9 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
     @pulumi.getter(name="connectivityAssociationNameSecretId")
     def connectivity_association_name_secret_id(self) -> pulumi.Input[str]:
         """
-        Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+
+        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_name_secret_id")
 
@@ -2890,14 +3276,18 @@ class DrgAttachmentManagementNetworkDetailsArgs:
 @pulumi.input_type
 class DrgAttachmentNetworkDetailsArgs:
     def __init__(__self__, *,
-                 id: pulumi.Input[str],
                  type: pulumi.Input[str],
+                 id: Optional[pulumi.Input[str]] = None,
+                 ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ipsec_connection_id: Optional[pulumi.Input[str]] = None,
                  route_table_id: Optional[pulumi.Input[str]] = None,
+                 transport_attachment_id: Optional[pulumi.Input[str]] = None,
+                 transport_only_mode: Optional[pulumi.Input[bool]] = None,
                  vcn_route_type: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] type: (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
-        :param pulumi.Input[str] type: (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
         :param pulumi.Input[str] ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
         :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
                
@@ -2905,40 +3295,61 @@ class DrgAttachmentNetworkDetailsArgs:
                * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
                * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
                This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
+        :param pulumi.Input[str] transport_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit's DRG attachment.
+        :param pulumi.Input[bool] transport_only_mode: Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
         :param pulumi.Input[str] vcn_route_type: (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
         """
-        pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if ids is not None:
+            pulumi.set(__self__, "ids", ids)
         if ipsec_connection_id is not None:
             pulumi.set(__self__, "ipsec_connection_id", ipsec_connection_id)
         if route_table_id is not None:
             pulumi.set(__self__, "route_table_id", route_table_id)
+        if transport_attachment_id is not None:
+            pulumi.set(__self__, "transport_attachment_id", transport_attachment_id)
+        if transport_only_mode is not None:
+            pulumi.set(__self__, "transport_only_mode", transport_only_mode)
         if vcn_route_type is not None:
             pulumi.set(__self__, "vcn_route_type", vcn_route_type)
 
     @property
     @pulumi.getter
-    def id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
-        """
-        return pulumi.get(self, "id")
-
-    @id.setter
-    def id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "id", value)
-
-    @property
-    @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+        (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
         """
         return pulumi.get(self, "type")
 
     @type.setter
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+        """
+        return pulumi.get(self, "ids")
+
+    @ids.setter
+    def ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ids", value)
 
     @property
     @pulumi.getter(name="ipsecConnectionId")
@@ -2968,6 +3379,30 @@ class DrgAttachmentNetworkDetailsArgs:
     @route_table_id.setter
     def route_table_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "route_table_id", value)
+
+    @property
+    @pulumi.getter(name="transportAttachmentId")
+    def transport_attachment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit's DRG attachment.
+        """
+        return pulumi.get(self, "transport_attachment_id")
+
+    @transport_attachment_id.setter
+    def transport_attachment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transport_attachment_id", value)
+
+    @property
+    @pulumi.getter(name="transportOnlyMode")
+    def transport_only_mode(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+        """
+        return pulumi.get(self, "transport_only_mode")
+
+    @transport_only_mode.setter
+    def transport_only_mode(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "transport_only_mode", value)
 
     @property
     @pulumi.getter(name="vcnRouteType")
@@ -4861,28 +5296,34 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs:
 @pulumi.input_type
 class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     def __init__(__self__, *,
+                 assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
                  assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
                  assign_public_ip: Optional[pulumi.Input[bool]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
+        if assign_ipv6ip is not None:
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
@@ -4895,6 +5336,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
             pulumi.set(__self__, "hostname_label", hostname_label)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
@@ -4903,6 +5346,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @assign_ipv6ip.setter
+    def assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_ipv6ip", value)
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
@@ -4977,6 +5432,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
         pulumi.set(self, "hostname_label", value)
 
     @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -5023,6 +5490,45 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6address: Optional[pulumi.Input[str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6address", value)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
 
 
 @pulumi.input_type
@@ -5156,6 +5662,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  are_virtual_instructions_enabled: Optional[pulumi.Input[bool]] = None,
+                 config_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_access_control_service_enabled: Optional[pulumi.Input[bool]] = None,
                  is_input_output_memory_management_unit_enabled: Optional[pulumi.Input[bool]] = None,
                  is_measured_boot_enabled: Optional[pulumi.Input[bool]] = None,
@@ -5168,6 +5675,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
         """
         :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        :param pulumi.Input[Mapping[str, Any]] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param pulumi.Input[bool] is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -5185,6 +5693,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
             pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        if config_map is not None:
+            pulumi.set(__self__, "config_map", config_map)
         if is_access_control_service_enabled is not None:
             pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         if is_input_output_memory_management_unit_enabled is not None:
@@ -5227,6 +5737,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @are_virtual_instructions_enabled.setter
     def are_virtual_instructions_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "are_virtual_instructions_enabled", value)
+
+    @property
+    @pulumi.getter(name="configMap")
+    def config_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Instance Platform Configuration Configuration Map for flexible setting input.
+        """
+        return pulumi.get(self, "config_map")
+
+    @config_map.setter
+    def config_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "config_map", value)
 
     @property
     @pulumi.getter(name="isAccessControlServiceEnabled")
@@ -6930,28 +7452,34 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigA
 @pulumi.input_type
 class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs:
     def __init__(__self__, *,
+                 assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
                  assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
                  assign_public_ip: Optional[pulumi.Input[bool]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
+        if assign_ipv6ip is not None:
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
@@ -6964,6 +7492,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
             pulumi.set(__self__, "hostname_label", hostname_label)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
@@ -6972,6 +7502,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @assign_ipv6ip.setter
+    def assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_ipv6ip", value)
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
@@ -7046,6 +7588,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
         pulumi.set(self, "hostname_label", value)
 
     @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -7092,6 +7646,45 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6address: Optional[pulumi.Input[str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6address", value)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
 
 
 @pulumi.input_type
@@ -7813,28 +8406,34 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs:
 @pulumi.input_type
 class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs:
     def __init__(__self__, *,
+                 assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
                  assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
                  assign_public_ip: Optional[pulumi.Input[bool]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
+        if assign_ipv6ip is not None:
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
@@ -7847,6 +8446,8 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
             pulumi.set(__self__, "hostname_label", hostname_label)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
@@ -7855,6 +8456,18 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @assign_ipv6ip.setter
+    def assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_ipv6ip", value)
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
@@ -7929,6 +8542,18 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
         pulumi.set(self, "hostname_label", value)
 
     @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -7975,6 +8600,45 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6address: Optional[pulumi.Input[str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6address", value)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
 
 
 @pulumi.input_type
@@ -8035,28 +8699,34 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicArgs:
 @pulumi.input_type
 class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     def __init__(__self__, *,
+                 assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
                  assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
                  assign_public_ip: Optional[pulumi.Input[bool]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
+        if assign_ipv6ip is not None:
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
@@ -8069,6 +8739,8 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
             pulumi.set(__self__, "hostname_label", hostname_label)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
@@ -8077,6 +8749,18 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @assign_ipv6ip.setter
+    def assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_ipv6ip", value)
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
@@ -8151,6 +8835,18 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
         pulumi.set(self, "hostname_label", value)
 
     @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -8200,22 +8896,63 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
 
 
 @pulumi.input_type
+class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6address: Optional[pulumi.Input[str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6address", value)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
+
+
+@pulumi.input_type
 class InstanceCreateVnicDetailsArgs:
     def __init__(__self__, *,
+                 assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
                  assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
                  assign_public_ip: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. The default value is true.  Example: `true`
-               
+        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. The default value is true.
                If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
         :param pulumi.Input[str] assign_public_ip: (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
                
@@ -8230,6 +8967,7 @@ class InstanceCreateVnicDetailsArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
                
                If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -8248,6 +8986,8 @@ class InstanceCreateVnicDetailsArgs:
                
                Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
+        if assign_ipv6ip is not None:
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
@@ -8260,6 +9000,8 @@ class InstanceCreateVnicDetailsArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
             pulumi.set(__self__, "hostname_label", hostname_label)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
@@ -8272,11 +9014,22 @@ class InstanceCreateVnicDetailsArgs:
             pulumi.set(__self__, "vlan_id", vlan_id)
 
     @property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @assign_ipv6ip.setter
+    def assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_ipv6ip", value)
+
+    @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. The default value is true.  Example: `true`
-
+        Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. The default value is true.
         If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
         """
         return pulumi.get(self, "assign_private_dns_record")
@@ -8354,6 +9107,18 @@ class InstanceCreateVnicDetailsArgs:
         pulumi.set(self, "hostname_label", value)
 
     @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -8424,6 +9189,35 @@ class InstanceCreateVnicDetailsArgs:
     @vlan_id.setter
     def vlan_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vlan_id", value)
+
+
+@pulumi.input_type
+class InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6address: Optional[pulumi.Input[str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6address", value)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
 
 
 @pulumi.input_type
@@ -8557,6 +9351,7 @@ class InstancePlatformConfigArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  are_virtual_instructions_enabled: Optional[pulumi.Input[bool]] = None,
+                 config_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_access_control_service_enabled: Optional[pulumi.Input[bool]] = None,
                  is_input_output_memory_management_unit_enabled: Optional[pulumi.Input[bool]] = None,
                  is_measured_boot_enabled: Optional[pulumi.Input[bool]] = None,
@@ -8569,6 +9364,7 @@ class InstancePlatformConfigArgs:
         """
         :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        :param pulumi.Input[Mapping[str, Any]] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param pulumi.Input[bool] is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -8586,6 +9382,8 @@ class InstancePlatformConfigArgs:
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
             pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        if config_map is not None:
+            pulumi.set(__self__, "config_map", config_map)
         if is_access_control_service_enabled is not None:
             pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         if is_input_output_memory_management_unit_enabled is not None:
@@ -8628,6 +9426,18 @@ class InstancePlatformConfigArgs:
     @are_virtual_instructions_enabled.setter
     def are_virtual_instructions_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "are_virtual_instructions_enabled", value)
+
+    @property
+    @pulumi.getter(name="configMap")
+    def config_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Instance Platform Configuration Configuration Map for flexible setting input.
+        """
+        return pulumi.get(self, "config_map")
+
+    @config_map.setter
+    def config_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "config_map", value)
 
     @property
     @pulumi.getter(name="isAccessControlServiceEnabled")
@@ -8956,12 +9766,12 @@ class InstancePoolLoadBalancerArgs:
 class InstancePoolPlacementConfigurationArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
-                 primary_subnet_id: pulumi.Input[str],
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 primary_subnet_id: Optional[pulumi.Input[str]] = None,
+                 primary_vnic_subnets: Optional[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs']] = None,
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
         """
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] primary_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: (Updatable) The fault domains to place instances.
                
                If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
@@ -8971,12 +9781,17 @@ class InstancePoolPlacementConfigurationArgs:
                To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
                
                Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
+        :param pulumi.Input[str] primary_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+        :param pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs'] primary_vnic_subnets: (Updatable) Details about the IPv6 primary subnet.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: (Updatable) The set of secondary VNIC data for instances in the pool.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
+        if primary_subnet_id is not None:
+            pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
+        if primary_vnic_subnets is not None:
+            pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
         if secondary_vnic_subnets is not None:
             pulumi.set(__self__, "secondary_vnic_subnets", secondary_vnic_subnets)
 
@@ -8991,18 +9806,6 @@ class InstancePoolPlacementConfigurationArgs:
     @availability_domain.setter
     def availability_domain(self, value: pulumi.Input[str]):
         pulumi.set(self, "availability_domain", value)
-
-    @property
-    @pulumi.getter(name="primarySubnetId")
-    def primary_subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances.
-        """
-        return pulumi.get(self, "primary_subnet_id")
-
-    @primary_subnet_id.setter
-    def primary_subnet_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "primary_subnet_id", value)
 
     @property
     @pulumi.getter(name="faultDomains")
@@ -9025,6 +9828,30 @@ class InstancePoolPlacementConfigurationArgs:
         pulumi.set(self, "fault_domains", value)
 
     @property
+    @pulumi.getter(name="primarySubnetId")
+    def primary_subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+        """
+        return pulumi.get(self, "primary_subnet_id")
+
+    @primary_subnet_id.setter
+    def primary_subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "primary_subnet_id", value)
+
+    @property
+    @pulumi.getter(name="primaryVnicSubnets")
+    def primary_vnic_subnets(self) -> Optional[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs']]:
+        """
+        (Updatable) Details about the IPv6 primary subnet.
+        """
+        return pulumi.get(self, "primary_vnic_subnets")
+
+    @primary_vnic_subnets.setter
+    def primary_vnic_subnets(self, value: Optional[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs']]):
+        pulumi.set(self, "primary_vnic_subnets", value)
+
+    @property
     @pulumi.getter(name="secondaryVnicSubnets")
     def secondary_vnic_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]]:
         """
@@ -9038,17 +9865,102 @@ class InstancePoolPlacementConfigurationArgs:
 
 
 @pulumi.input_type
+class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
+    def __init__(__self__, *,
+                 subnet_id: pulumi.Input[str],
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
+                 is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] subnet_id: (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        :param pulumi.Input[bool] is_assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        if is_assign_ipv6ip is not None:
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
+    @pulumi.getter(name="isAssignIpv6ip")
+    def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "is_assign_ipv6ip")
+
+    @is_assign_ipv6ip.setter
+    def is_assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_assign_ipv6ip", value)
+
+
+@pulumi.input_type
+class InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6subnet_cidr: (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
+
+
+@pulumi.input_type
 class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     def __init__(__self__, *,
                  subnet_id: pulumi.Input[str],
-                 display_name: Optional[pulumi.Input[str]] = None):
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
+                 is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] subnet_id: (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        :param pulumi.Input[bool] is_assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        if is_assign_ipv6ip is not None:
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -9073,6 +9985,53 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
+    @pulumi.getter(name="isAssignIpv6ip")
+    def is_assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "is_assign_ipv6ip")
+
+    @is_assign_ipv6ip.setter
+    def is_assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_assign_ipv6ip", value)
+
+
+@pulumi.input_type
+class InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ipv6subnet_cidr: (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
 
 
 @pulumi.input_type
@@ -9540,7 +10499,8 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
                  oracle_bgp_asn: Optional[pulumi.Input[str]] = None,
                  oracle_interface_ip: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] bgp_state: the state of the BGP.
+        :param pulumi.Input[str] bgp_ipv6state: The state of the BGP IPv6 session.
+        :param pulumi.Input[str] bgp_state: The state of the BGP session.
         :param pulumi.Input[str] customer_bgp_asn: If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
                
                If the tunnel's `routing` attribute is set to `STATIC`, the `customerBgpAsn` must be null.
@@ -9555,7 +10515,7 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
                The value must be a /30 or /31.
                
                Example: `10.0.0.5/31`
-        :param pulumi.Input[str] oracle_bgp_asn: This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+        :param pulumi.Input[str] oracle_bgp_asn: The Oracle BGP ASN.
         :param pulumi.Input[str] oracle_interface_ip: The IP address for the Oracle end of the inside tunnel interface.
                
                If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
@@ -9582,6 +10542,9 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     @property
     @pulumi.getter(name="bgpIpv6state")
     def bgp_ipv6state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The state of the BGP IPv6 session.
+        """
         return pulumi.get(self, "bgp_ipv6state")
 
     @bgp_ipv6state.setter
@@ -9592,7 +10555,7 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     @pulumi.getter(name="bgpState")
     def bgp_state(self) -> Optional[pulumi.Input[str]]:
         """
-        the state of the BGP.
+        The state of the BGP session.
         """
         return pulumi.get(self, "bgp_state")
 
@@ -9640,7 +10603,7 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     @pulumi.getter(name="oracleBgpAsn")
     def oracle_bgp_asn(self) -> Optional[pulumi.Input[str]]:
         """
-        This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+        The Oracle BGP ASN.
         """
         return pulumi.get(self, "oracle_bgp_asn")
 
@@ -11459,18 +12422,21 @@ class VirtualNetworkByoipv6cidrDetailArgs:
 @pulumi.input_type
 class VnicAttachmentCreateVnicDetailsArgs:
     def __init__(__self__, *,
+                 assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
                  assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
                  assign_public_ip: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
                
                If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
@@ -11495,6 +12461,7 @@ class VnicAttachmentCreateVnicDetailsArgs:
                Example: `bminstance1`
                
                If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+        :param pulumi.Input[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
                
                If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -11515,6 +12482,8 @@ class VnicAttachmentCreateVnicDetailsArgs:
                
                Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
+        if assign_ipv6ip is not None:
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
@@ -11527,6 +12496,8 @@ class VnicAttachmentCreateVnicDetailsArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
             pulumi.set(__self__, "hostname_label", hostname_label)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
@@ -11537,6 +12508,18 @@ class VnicAttachmentCreateVnicDetailsArgs:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
             pulumi.set(__self__, "vlan_id", vlan_id)
+
+    @property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @assign_ipv6ip.setter
+    def assign_ipv6ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_ipv6ip", value)
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
@@ -11629,6 +12612,18 @@ class VnicAttachmentCreateVnicDetailsArgs:
         pulumi.set(self, "hostname_label", value)
 
     @property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -11701,6 +12696,35 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @vlan_id.setter
     def vlan_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vlan_id", value)
+
+
+@pulumi.input_type
+class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6_address: Optional[pulumi.Input[str]] = None,
+                 ipv6_subnet_cidr: Optional[pulumi.Input[str]] = None):
+        if ipv6_address is not None:
+            pulumi.set(__self__, "ipv6_address", ipv6_address)
+        if ipv6_subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6_subnet_cidr", ipv6_subnet_cidr)
+
+    @property
+    @pulumi.getter(name="ipv6Address")
+    def ipv6_address(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ipv6_address")
+
+    @ipv6_address.setter
+    def ipv6_address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6_address", value)
+
+    @property
+    @pulumi.getter(name="ipv6SubnetCidr")
+    def ipv6_subnet_cidr(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ipv6_subnet_cidr")
+
+    @ipv6_subnet_cidr.setter
+    def ipv6_subnet_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6_subnet_cidr", value)
 
 
 @pulumi.input_type
@@ -15266,6 +16290,45 @@ class GetTunnelSecurityAssociationsFilterArgs:
 
 @pulumi.input_type
 class GetVcnsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetVirtualCircuitAssociatedTunnelsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

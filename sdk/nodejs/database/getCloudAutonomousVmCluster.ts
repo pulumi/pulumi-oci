@@ -45,6 +45,10 @@ export interface GetCloudAutonomousVmClusterArgs {
  */
 export interface GetCloudAutonomousVmClusterResult {
     /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     */
+    readonly autonomousDataStoragePercentage: number;
+    /**
      * The data disk group size allocated for Autonomous Databases, in TBs.
      */
     readonly autonomousDataStorageSizeInTbs: number;
@@ -78,7 +82,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly compartmentId: string;
     /**
-     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Cloud Autonomous VM Cluster.
      */
     readonly computeModel: string;
     /**
@@ -89,6 +93,10 @@ export interface GetCloudAutonomousVmClusterResult {
      * The number of CPU cores enabled per VM cluster node.
      */
     readonly cpuCoreCountPerNode: number;
+    /**
+     * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     */
+    readonly cpuPercentage: number;
     /**
      * The total data storage allocated, in gigabytes (GB).
      */
@@ -159,7 +167,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly maintenanceWindows: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindow[];
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) enabled per OCPU or ECPU.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**
@@ -175,6 +183,10 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly nodeCount: number;
     /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    readonly nonProvisionableAutonomousContainerDatabases: number;
+    /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
@@ -184,11 +196,27 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly ocpuCount: number;
     /**
+     * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    readonly provisionableAutonomousContainerDatabases: number;
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    readonly provisionedAutonomousContainerDatabases: number;
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     */
+    readonly provisionedCpus: number;
+    /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
     readonly reclaimableCpus: number;
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     */
+    readonly reservedCpus: number;
     /**
      * The SCAN Listener Non TLS port. Default is 1521.
      */
@@ -218,9 +246,17 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly timeUpdated: string;
     /**
+     * The total data disk group size for Autonomous Databases, in TBs.
+     */
+    readonly totalAutonomousDataStorageInTbs: number;
+    /**
      * The total number of Autonomous Container Databases that can be created with the allocated local storage.
      */
     readonly totalContainerDatabases: number;
+    /**
+     * The total number of CPUs in an Autonomous VM Cluster.
+     */
+    readonly totalCpus: number;
 }
 /**
  * This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.

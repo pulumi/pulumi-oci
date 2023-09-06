@@ -470,11 +470,22 @@ class InstancePool(pulumi.CustomResource):
             instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
             placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
                 availability_domain=var["instance_pool_placement_configurations_availability_domain"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
                 fault_domains=var["instance_pool_placement_configurations_fault_domains"],
+                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
+                primary_vnic_subnets=oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs(
+                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
+                        ipv6subnet_cidr=var["instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                    )],
+                    is_assign_ipv6ip=var["instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip"],
+                ),
                 secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
                     subnet_id=oci_core_subnet["test_subnet"]["id"],
                     display_name=var["instance_pool_placement_configurations_secondary_vnic_subnets_display_name"],
+                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
+                        ipv6subnet_cidr=var["instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                    )],
+                    is_assign_ipv6ip=var["instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip"],
                 )],
             )],
             size=var["instance_pool_size"],
@@ -549,11 +560,22 @@ class InstancePool(pulumi.CustomResource):
             instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
             placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
                 availability_domain=var["instance_pool_placement_configurations_availability_domain"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
                 fault_domains=var["instance_pool_placement_configurations_fault_domains"],
+                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
+                primary_vnic_subnets=oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs(
+                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
+                        ipv6subnet_cidr=var["instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                    )],
+                    is_assign_ipv6ip=var["instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip"],
+                ),
                 secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
                     subnet_id=oci_core_subnet["test_subnet"]["id"],
                     display_name=var["instance_pool_placement_configurations_secondary_vnic_subnets_display_name"],
+                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
+                        ipv6subnet_cidr=var["instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                    )],
+                    is_assign_ipv6ip=var["instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip"],
                 )],
             )],
             size=var["instance_pool_size"],

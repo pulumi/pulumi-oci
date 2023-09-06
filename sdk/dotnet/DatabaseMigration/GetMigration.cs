@@ -159,6 +159,10 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMigrationGoldenGateDetailResult> GoldenGateDetails;
         /// <summary>
+        /// Details about Oracle GoldenGate GGS Deployment.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMigrationGoldenGateServiceDetailResult> GoldenGateServiceDetails;
+        /// <summary>
         /// The OCID of the resource
         /// </summary>
         public readonly string Id;
@@ -246,6 +250,8 @@ namespace Pulumi.Oci.DatabaseMigration
 
             ImmutableArray<Outputs.GetMigrationGoldenGateDetailResult> goldenGateDetails,
 
+            ImmutableArray<Outputs.GetMigrationGoldenGateServiceDetailResult> goldenGateServiceDetails,
+
             string id,
 
             ImmutableArray<Outputs.GetMigrationIncludeObjectResult> includeObjects,
@@ -290,6 +296,7 @@ namespace Pulumi.Oci.DatabaseMigration
             ExecutingJobId = executingJobId;
             FreeformTags = freeformTags;
             GoldenGateDetails = goldenGateDetails;
+            GoldenGateServiceDetails = goldenGateServiceDetails;
             Id = id;
             IncludeObjects = includeObjects;
             LifecycleDetails = lifecycleDetails;

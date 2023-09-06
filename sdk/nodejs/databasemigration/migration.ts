@@ -98,6 +98,12 @@ import * as utilities from "../utilities";
  *                 password: _var.migration_golden_gate_details_hub_rest_admin_credentials_password,
  *                 username: _var.migration_golden_gate_details_hub_rest_admin_credentials_username,
  *             },
+ *             url: _var.migration_golden_gate_details_hub_url,
+ *             computeId: oci_database_migration_compute.test_compute.id,
+ *             sourceContainerDbAdminCredentials: {
+ *                 password: _var.migration_golden_gate_details_hub_source_container_db_admin_credentials_password,
+ *                 username: _var.migration_golden_gate_details_hub_source_container_db_admin_credentials_username,
+ *             },
  *             sourceDbAdminCredentials: {
  *                 password: _var.migration_golden_gate_details_hub_source_db_admin_credentials_password,
  *                 username: _var.migration_golden_gate_details_hub_source_db_admin_credentials_username,
@@ -108,12 +114,6 @@ import * as utilities from "../utilities";
  *                 username: _var.migration_golden_gate_details_hub_target_db_admin_credentials_username,
  *             },
  *             targetMicroservicesDeploymentName: oci_apigateway_deployment.test_deployment.name,
- *             url: _var.migration_golden_gate_details_hub_url,
- *             computeId: oci_database_migration_compute.test_compute.id,
- *             sourceContainerDbAdminCredentials: {
- *                 password: _var.migration_golden_gate_details_hub_source_container_db_admin_credentials_password,
- *                 username: _var.migration_golden_gate_details_hub_source_container_db_admin_credentials_username,
- *             },
  *         },
  *         settings: {
  *             acceptableLag: _var.migration_golden_gate_details_settings_acceptable_lag,
@@ -126,6 +126,32 @@ import * as utilities from "../utilities";
  *                 maxApplyParallelism: _var.migration_golden_gate_details_settings_replicat_max_apply_parallelism,
  *                 minApplyParallelism: _var.migration_golden_gate_details_settings_replicat_min_apply_parallelism,
  *             },
+ *         },
+ *     },
+ *     goldenGateServiceDetails: {
+ *         settings: {
+ *             acceptableLag: _var.migration_golden_gate_service_details_settings_acceptable_lag,
+ *             extract: {
+ *                 longTransDuration: _var.migration_golden_gate_service_details_settings_extract_long_trans_duration,
+ *                 performanceProfile: _var.migration_golden_gate_service_details_settings_extract_performance_profile,
+ *             },
+ *             replicat: {
+ *                 mapParallelism: _var.migration_golden_gate_service_details_settings_replicat_map_parallelism,
+ *                 maxApplyParallelism: _var.migration_golden_gate_service_details_settings_replicat_max_apply_parallelism,
+ *                 minApplyParallelism: _var.migration_golden_gate_service_details_settings_replicat_min_apply_parallelism,
+ *             },
+ *         },
+ *         sourceContainerDbCredentials: {
+ *             password: _var.migration_golden_gate_service_details_source_container_db_credentials_password,
+ *             username: _var.migration_golden_gate_service_details_source_container_db_credentials_username,
+ *         },
+ *         sourceDbCredentials: {
+ *             password: _var.migration_golden_gate_service_details_source_db_credentials_password,
+ *             username: _var.migration_golden_gate_service_details_source_db_credentials_username,
+ *         },
+ *         targetDbCredentials: {
+ *             password: _var.migration_golden_gate_service_details_target_db_credentials_password,
+ *             username: _var.migration_golden_gate_service_details_target_db_credentials_username,
  *         },
  *     },
  *     includeObjects: [{
@@ -236,6 +262,10 @@ export class Migration extends pulumi.CustomResource {
      */
     public readonly goldenGateDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationGoldenGateDetails>;
     /**
+     * (Updatable) Details about Oracle GoldenGate GGS Deployment.
+     */
+    public readonly goldenGateServiceDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationGoldenGateServiceDetails>;
+    /**
      * (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */
     public readonly includeObjects!: pulumi.Output<outputs.DatabaseMigration.MigrationIncludeObject[]>;
@@ -315,6 +345,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["executingJobId"] = state ? state.executingJobId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["goldenGateDetails"] = state ? state.goldenGateDetails : undefined;
+            resourceInputs["goldenGateServiceDetails"] = state ? state.goldenGateServiceDetails : undefined;
             resourceInputs["includeObjects"] = state ? state.includeObjects : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["sourceContainerDatabaseConnectionId"] = state ? state.sourceContainerDatabaseConnectionId : undefined;
@@ -354,6 +385,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["excludeObjects"] = args ? args.excludeObjects : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["goldenGateDetails"] = args ? args.goldenGateDetails : undefined;
+            resourceInputs["goldenGateServiceDetails"] = args ? args.goldenGateServiceDetails : undefined;
             resourceInputs["includeObjects"] = args ? args.includeObjects : undefined;
             resourceInputs["sourceContainerDatabaseConnectionId"] = args ? args.sourceContainerDatabaseConnectionId : undefined;
             resourceInputs["sourceDatabaseConnectionId"] = args ? args.sourceDatabaseConnectionId : undefined;
@@ -435,6 +467,10 @@ export interface MigrationState {
      * (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
      */
     goldenGateDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetails>;
+    /**
+     * (Updatable) Details about Oracle GoldenGate GGS Deployment.
+     */
+    goldenGateServiceDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetails>;
     /**
      * (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */
@@ -541,6 +577,10 @@ export interface MigrationArgs {
      * (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
      */
     goldenGateDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetails>;
+    /**
+     * (Updatable) Details about Oracle GoldenGate GGS Deployment.
+     */
+    goldenGateServiceDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetails>;
     /**
      * (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */

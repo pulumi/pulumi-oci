@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -15,6 +16,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails {
+    /**
+     * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    private @Nullable Boolean assignIpv6ip;
     /**
      * @return Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
@@ -46,6 +52,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
      */
     private @Nullable String hostnameLabel;
     /**
+     * @return A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
+    private @Nullable List<InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
+    /**
      * @return A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
@@ -67,6 +78,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
     private @Nullable String subnetId;
 
     private InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails() {}
+    /**
+     * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    public Optional<Boolean> assignIpv6ip() {
+        return Optional.ofNullable(this.assignIpv6ip);
+    }
     /**
      * @return Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
@@ -110,6 +128,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
         return Optional.ofNullable(this.hostnameLabel);
     }
     /**
+     * @return A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
+    public List<InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails() {
+        return this.ipv6addressIpv6subnetCidrPairDetails == null ? List.of() : this.ipv6addressIpv6subnetCidrPairDetails;
+    }
+    /**
      * @return A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
@@ -147,12 +172,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean assignIpv6ip;
         private @Nullable Boolean assignPrivateDnsRecord;
         private @Nullable Boolean assignPublicIp;
         private @Nullable Map<String,Object> definedTags;
         private @Nullable String displayName;
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable String hostnameLabel;
+        private @Nullable List<InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private @Nullable List<String> nsgIds;
         private @Nullable String privateIp;
         private @Nullable Boolean skipSourceDestCheck;
@@ -160,18 +187,25 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
         public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.assignIpv6ip = defaults.assignIpv6ip;
     	      this.assignPrivateDnsRecord = defaults.assignPrivateDnsRecord;
     	      this.assignPublicIp = defaults.assignPublicIp;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostnameLabel = defaults.hostnameLabel;
+    	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder assignIpv6ip(@Nullable Boolean assignIpv6ip) {
+            this.assignIpv6ip = assignIpv6ip;
+            return this;
+        }
         @CustomType.Setter
         public Builder assignPrivateDnsRecord(@Nullable Boolean assignPrivateDnsRecord) {
             this.assignPrivateDnsRecord = assignPrivateDnsRecord;
@@ -203,6 +237,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
             return this;
         }
         @CustomType.Setter
+        public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable List<InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+            this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            return this;
+        }
+        public Builder ipv6addressIpv6subnetCidrPairDetails(InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
+            return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
+        }
+        @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
             this.nsgIds = nsgIds;
             return this;
@@ -227,12 +269,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
         }
         public InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails build() {
             final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails();
+            o.assignIpv6ip = assignIpv6ip;
             o.assignPrivateDnsRecord = assignPrivateDnsRecord;
             o.assignPublicIp = assignPublicIp;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.hostnameLabel = hostnameLabel;
+            o.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             o.nsgIds = nsgIds;
             o.privateIp = privateIp;
             o.skipSourceDestCheck = skipSourceDestCheck;

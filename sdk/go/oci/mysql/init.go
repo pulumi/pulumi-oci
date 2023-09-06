@@ -21,8 +21,6 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
-	case "oci:Mysql/analyticsCluster:AnalyticsCluster":
-		r = &AnalyticsCluster{}
 	case "oci:Mysql/channel:Channel":
 		r = &Channel{}
 	case "oci:Mysql/heatWaveCluster:HeatWaveCluster":
@@ -48,11 +46,6 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
-	pulumi.RegisterResourceModule(
-		"oci",
-		"Mysql/analyticsCluster",
-		&module{version},
-	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Mysql/channel",

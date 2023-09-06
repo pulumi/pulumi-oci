@@ -213,6 +213,21 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.timeCreated);
     }
 
+    /**
+     * The transport type used for the IPSec connection.
+     * 
+     */
+    @Import(name="transportType")
+    private @Nullable Output<String> transportType;
+
+    /**
+     * @return The transport type used for the IPSec connection.
+     * 
+     */
+    public Optional<Output<String>> transportType() {
+        return Optional.ofNullable(this.transportType);
+    }
+
     private IpsecState() {}
 
     private IpsecState(IpsecState $) {
@@ -227,6 +242,7 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
         this.state = $.state;
         this.staticRoutes = $.staticRoutes;
         this.timeCreated = $.timeCreated;
+        this.transportType = $.transportType;
     }
 
     public static Builder builder() {
@@ -523,6 +539,27 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param transportType The transport type used for the IPSec connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportType(@Nullable Output<String> transportType) {
+            $.transportType = transportType;
+            return this;
+        }
+
+        /**
+         * @param transportType The transport type used for the IPSec connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportType(String transportType) {
+            return transportType(Output.of(transportType));
         }
 
         public IpsecState build() {

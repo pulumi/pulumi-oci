@@ -166,6 +166,12 @@ namespace Pulumi.Oci.Core
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
+        /// <summary>
+        /// The transport type used for the IPSec connection.
+        /// </summary>
+        [Output("transportType")]
+        public Output<string> TransportType { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a Ipsec resource with the given unique name, arguments, and options.
@@ -407,6 +413,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The transport type used for the IPSec connection.
+        /// </summary>
+        [Input("transportType")]
+        public Input<string>? TransportType { get; set; }
 
         public IpsecState()
         {

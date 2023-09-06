@@ -22,7 +22,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, admin_credentials=None, certificate_tdn=None, compartment_id=None, connect_descriptors=None, connection_id=None, credentials_secret_id=None, database_id=None, database_type=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, private_endpoints=None, ssh_details=None, state=None, system_tags=None, time_created=None, time_updated=None, tls_keystore=None, tls_wallet=None, vault_details=None):
+    def __init__(__self__, admin_credentials=None, certificate_tdn=None, compartment_id=None, connect_descriptors=None, connection_id=None, credentials_secret_id=None, database_id=None, database_type=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, private_endpoints=None, replication_credentials=None, ssh_details=None, state=None, system_tags=None, time_created=None, time_updated=None, tls_keystore=None, tls_wallet=None, vault_details=None):
         if admin_credentials and not isinstance(admin_credentials, list):
             raise TypeError("Expected argument 'admin_credentials' to be a list")
         pulumi.set(__self__, "admin_credentials", admin_credentials)
@@ -68,6 +68,9 @@ class GetConnectionResult:
         if private_endpoints and not isinstance(private_endpoints, list):
             raise TypeError("Expected argument 'private_endpoints' to be a list")
         pulumi.set(__self__, "private_endpoints", private_endpoints)
+        if replication_credentials and not isinstance(replication_credentials, list):
+            raise TypeError("Expected argument 'replication_credentials' to be a list")
+        pulumi.set(__self__, "replication_credentials", replication_credentials)
         if ssh_details and not isinstance(ssh_details, list):
             raise TypeError("Expected argument 'ssh_details' to be a list")
         pulumi.set(__self__, "ssh_details", ssh_details)
@@ -211,6 +214,14 @@ class GetConnectionResult:
         return pulumi.get(self, "private_endpoints")
 
     @property
+    @pulumi.getter(name="replicationCredentials")
+    def replication_credentials(self) -> Sequence['outputs.GetConnectionReplicationCredentialResult']:
+        """
+        Database Administrator Credentials details.
+        """
+        return pulumi.get(self, "replication_credentials")
+
+    @property
     @pulumi.getter(name="sshDetails")
     def ssh_details(self) -> Sequence['outputs.GetConnectionSshDetailResult']:
         """
@@ -290,6 +301,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             lifecycle_details=self.lifecycle_details,
             nsg_ids=self.nsg_ids,
             private_endpoints=self.private_endpoints,
+            replication_credentials=self.replication_credentials,
             ssh_details=self.ssh_details,
             state=self.state,
             system_tags=self.system_tags,
@@ -340,6 +352,7 @@ def get_connection(connection_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_endpoints=pulumi.get(__ret__, 'private_endpoints'),
+        replication_credentials=pulumi.get(__ret__, 'replication_credentials'),
         ssh_details=pulumi.get(__ret__, 'ssh_details'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),

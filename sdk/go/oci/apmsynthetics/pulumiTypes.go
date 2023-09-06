@@ -178,7 +178,7 @@ type ConfigConfiguration struct {
 	DnsConfiguration *ConfigConfigurationDnsConfiguration `pulumi:"dnsConfiguration"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled *bool `pulumi:"isCertificateValidationEnabled"`
-	// (Updatable) If disabled then auto snapshots are not collected.
+	// (Updatable) If disabled, auto snapshots are not collected.
 	IsDefaultSnapshotEnabled *bool `pulumi:"isDefaultSnapshotEnabled"`
 	// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried *bool `pulumi:"isFailureRetried"`
@@ -226,7 +226,7 @@ type ConfigConfigurationArgs struct {
 	DnsConfiguration ConfigConfigurationDnsConfigurationPtrInput `pulumi:"dnsConfiguration"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolPtrInput `pulumi:"isCertificateValidationEnabled"`
-	// (Updatable) If disabled then auto snapshots are not collected.
+	// (Updatable) If disabled, auto snapshots are not collected.
 	IsDefaultSnapshotEnabled pulumi.BoolPtrInput `pulumi:"isDefaultSnapshotEnabled"`
 	// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried pulumi.BoolPtrInput `pulumi:"isFailureRetried"`
@@ -353,7 +353,7 @@ func (o ConfigConfigurationOutput) IsCertificateValidationEnabled() pulumi.BoolP
 	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) If disabled then auto snapshots are not collected.
+// (Updatable) If disabled, auto snapshots are not collected.
 func (o ConfigConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -484,7 +484,7 @@ func (o ConfigConfigurationPtrOutput) IsCertificateValidationEnabled() pulumi.Bo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) If disabled then auto snapshots are not collected.
+// (Updatable) If disabled, auto snapshots are not collected.
 func (o ConfigConfigurationPtrOutput) IsDefaultSnapshotEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *bool {
 		if v == nil {
@@ -615,9 +615,9 @@ func (o ConfigConfigurationPtrOutput) VerifyTexts() ConfigConfigurationVerifyTex
 }
 
 type ConfigConfigurationClientCertificateDetails struct {
-	// (Updatable) Client certificate in pem format.
+	// (Updatable) Client certificate in PEM format.
 	ClientCertificate *ConfigConfigurationClientCertificateDetailsClientCertificate `pulumi:"clientCertificate"`
-	// (Updatable) The private key associated with the client certificate in pem format.
+	// (Updatable) The private key associated with the client certificate in PEM format.
 	PrivateKey *ConfigConfigurationClientCertificateDetailsPrivateKey `pulumi:"privateKey"`
 }
 
@@ -633,9 +633,9 @@ type ConfigConfigurationClientCertificateDetailsInput interface {
 }
 
 type ConfigConfigurationClientCertificateDetailsArgs struct {
-	// (Updatable) Client certificate in pem format.
+	// (Updatable) Client certificate in PEM format.
 	ClientCertificate ConfigConfigurationClientCertificateDetailsClientCertificatePtrInput `pulumi:"clientCertificate"`
-	// (Updatable) The private key associated with the client certificate in pem format.
+	// (Updatable) The private key associated with the client certificate in PEM format.
 	PrivateKey ConfigConfigurationClientCertificateDetailsPrivateKeyPtrInput `pulumi:"privateKey"`
 }
 
@@ -716,14 +716,14 @@ func (o ConfigConfigurationClientCertificateDetailsOutput) ToConfigConfiguration
 	}).(ConfigConfigurationClientCertificateDetailsPtrOutput)
 }
 
-// (Updatable) Client certificate in pem format.
+// (Updatable) Client certificate in PEM format.
 func (o ConfigConfigurationClientCertificateDetailsOutput) ClientCertificate() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetailsClientCertificate {
 		return v.ClientCertificate
 	}).(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput)
 }
 
-// (Updatable) The private key associated with the client certificate in pem format.
+// (Updatable) The private key associated with the client certificate in PEM format.
 func (o ConfigConfigurationClientCertificateDetailsOutput) PrivateKey() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetailsPrivateKey {
 		return v.PrivateKey
@@ -754,7 +754,7 @@ func (o ConfigConfigurationClientCertificateDetailsPtrOutput) Elem() ConfigConfi
 	}).(ConfigConfigurationClientCertificateDetailsOutput)
 }
 
-// (Updatable) Client certificate in pem format.
+// (Updatable) Client certificate in PEM format.
 func (o ConfigConfigurationClientCertificateDetailsPtrOutput) ClientCertificate() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetailsClientCertificate {
 		if v == nil {
@@ -764,7 +764,7 @@ func (o ConfigConfigurationClientCertificateDetailsPtrOutput) ClientCertificate(
 	}).(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput)
 }
 
-// (Updatable) The private key associated with the client certificate in pem format.
+// (Updatable) The private key associated with the client certificate in PEM format.
 func (o ConfigConfigurationClientCertificateDetailsPtrOutput) PrivateKey() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetailsPrivateKey {
 		if v == nil {
@@ -4389,7 +4389,7 @@ type GetMonitorConfiguration struct {
 	DnsConfigurations []GetMonitorConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
-	// If disabled then auto snapshots are not collected.
+	// If disabled, auto snapshots are not collected.
 	IsDefaultSnapshotEnabled bool `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried bool `pulumi:"isFailureRetried"`
@@ -4437,7 +4437,7 @@ type GetMonitorConfigurationArgs struct {
 	DnsConfigurations GetMonitorConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
-	// If disabled then auto snapshots are not collected.
+	// If disabled, auto snapshots are not collected.
 	IsDefaultSnapshotEnabled pulumi.BoolInput `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried pulumi.BoolInput `pulumi:"isFailureRetried"`
@@ -4538,7 +4538,7 @@ func (o GetMonitorConfigurationOutput) IsCertificateValidationEnabled() pulumi.B
 	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolOutput)
 }
 
-// If disabled then auto snapshots are not collected.
+// If disabled, auto snapshots are not collected.
 func (o GetMonitorConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolOutput)
 }
@@ -4630,9 +4630,9 @@ func (o GetMonitorConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorC
 }
 
 type GetMonitorConfigurationClientCertificateDetail struct {
-	// Client certificate in pem format.
+	// Client certificate in PEM format.
 	ClientCertificates []GetMonitorConfigurationClientCertificateDetailClientCertificate `pulumi:"clientCertificates"`
-	// The private key associated with the client certificate in pem format.
+	// The private key associated with the client certificate in PEM format.
 	PrivateKeys []GetMonitorConfigurationClientCertificateDetailPrivateKey `pulumi:"privateKeys"`
 }
 
@@ -4648,9 +4648,9 @@ type GetMonitorConfigurationClientCertificateDetailInput interface {
 }
 
 type GetMonitorConfigurationClientCertificateDetailArgs struct {
-	// Client certificate in pem format.
+	// Client certificate in PEM format.
 	ClientCertificates GetMonitorConfigurationClientCertificateDetailClientCertificateArrayInput `pulumi:"clientCertificates"`
-	// The private key associated with the client certificate in pem format.
+	// The private key associated with the client certificate in PEM format.
 	PrivateKeys GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayInput `pulumi:"privateKeys"`
 }
 
@@ -4705,14 +4705,14 @@ func (o GetMonitorConfigurationClientCertificateDetailOutput) ToGetMonitorConfig
 	return o
 }
 
-// Client certificate in pem format.
+// Client certificate in PEM format.
 func (o GetMonitorConfigurationClientCertificateDetailOutput) ClientCertificates() GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput {
 	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetail) []GetMonitorConfigurationClientCertificateDetailClientCertificate {
 		return v.ClientCertificates
 	}).(GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput)
 }
 
-// The private key associated with the client certificate in pem format.
+// The private key associated with the client certificate in PEM format.
 func (o GetMonitorConfigurationClientCertificateDetailOutput) PrivateKeys() GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput {
 	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetail) []GetMonitorConfigurationClientCertificateDetailPrivateKey {
 		return v.PrivateKeys
@@ -6460,7 +6460,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	ScriptParameters []GetMonitorsMonitorCollectionItemScriptParameter `pulumi:"scriptParameters"`
 	// A filter to return only monitors that match the status given.
 	Status string `pulumi:"status"`
-	// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+	// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 	Target string `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
@@ -6522,7 +6522,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	ScriptParameters GetMonitorsMonitorCollectionItemScriptParameterArrayInput `pulumi:"scriptParameters"`
 	// A filter to return only monitors that match the status given.
 	Status pulumi.StringInput `pulumi:"status"`
-	// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+	// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 	Target pulumi.StringInput `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -6685,7 +6685,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 func (o GetMonitorsMonitorCollectionItemOutput) Target() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Target }).(pulumi.StringOutput)
 }
@@ -6856,7 +6856,7 @@ type GetMonitorsMonitorCollectionItemConfiguration struct {
 	DnsConfigurations []GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
-	// If disabled then auto snapshots are not collected.
+	// If disabled, auto snapshots are not collected.
 	IsDefaultSnapshotEnabled bool `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried bool `pulumi:"isFailureRetried"`
@@ -6904,7 +6904,7 @@ type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
 	DnsConfigurations GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
-	// If disabled then auto snapshots are not collected.
+	// If disabled, auto snapshots are not collected.
 	IsDefaultSnapshotEnabled pulumi.BoolInput `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried pulumi.BoolInput `pulumi:"isFailureRetried"`
@@ -7007,7 +7007,7 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsCertificateValida
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolOutput)
 }
 
-// If disabled then auto snapshots are not collected.
+// If disabled, auto snapshots are not collected.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolOutput)
 }
@@ -7103,9 +7103,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationArrayOutput) Index(i pulumi
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail struct {
-	// Client certificate in pem format.
+	// Client certificate in PEM format.
 	ClientCertificates []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate `pulumi:"clientCertificates"`
-	// The private key associated with the client certificate in pem format.
+	// The private key associated with the client certificate in PEM format.
 	PrivateKeys []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey `pulumi:"privateKeys"`
 }
 
@@ -7121,9 +7121,9 @@ type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailInput i
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs struct {
-	// Client certificate in pem format.
+	// Client certificate in PEM format.
 	ClientCertificates GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayInput `pulumi:"clientCertificates"`
-	// The private key associated with the client certificate in pem format.
+	// The private key associated with the client certificate in PEM format.
 	PrivateKeys GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayInput `pulumi:"privateKeys"`
 }
 
@@ -7178,14 +7178,14 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutp
 	return o
 }
 
-// Client certificate in pem format.
+// Client certificate in PEM format.
 func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) ClientCertificates() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail) []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate {
 		return v.ClientCertificates
 	}).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput)
 }
 
-// The private key associated with the client certificate in pem format.
+// The private key associated with the client certificate in PEM format.
 func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) PrivateKeys() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail) []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey {
 		return v.PrivateKeys

@@ -10,7 +10,6 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
-    'AnalyticsClusterClusterNodeArgs',
     'ChannelSourceArgs',
     'ChannelSourceAnonymousTransactionsHandlingArgs',
     'ChannelSourceSslCaCertificateArgs',
@@ -25,7 +24,6 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotMaintenanceArgs',
     'MysqlConfigurationInitVariablesArgs',
     'MysqlConfigurationVariablesArgs',
-    'MysqlDbSystemAnalyticsClusterArgs',
     'MysqlDbSystemBackupPolicyArgs',
     'MysqlDbSystemBackupPolicyPitrPolicyArgs',
     'MysqlDbSystemChannelArgs',
@@ -49,83 +47,6 @@ __all__ = [
     'GetReplicasFilterArgs',
     'GetShapesFilterArgs',
 ]
-
-@pulumi.input_type
-class AnalyticsClusterClusterNodeArgs:
-    def __init__(__self__, *,
-                 node_id: Optional[pulumi.Input[str]] = None,
-                 state: Optional[pulumi.Input[str]] = None,
-                 time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] node_id: The ID of the node within MySQL Analytics Cluster.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        if node_id is not None:
-            pulumi.set(__self__, "node_id", node_id)
-        if state is not None:
-            pulumi.set(__self__, "state", state)
-        if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
-        if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
-
-    @property
-    @pulumi.getter(name="nodeId")
-    def node_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ID of the node within MySQL Analytics Cluster.
-        """
-        return pulumi.get(self, "node_id")
-
-    @node_id.setter
-    def node_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "node_id", value)
-
-    @property
-    @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "state")
-
-    @state.setter
-    def state(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "state", value)
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        return pulumi.get(self, "time_created")
-
-    @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "time_created", value)
-
-    @property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        return pulumi.get(self, "time_updated")
-
-    @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "time_updated", value)
-
 
 @pulumi.input_type
 class ChannelSourceArgs:
@@ -2891,95 +2812,6 @@ class MysqlConfigurationVariablesArgs:
     @wait_timeout.setter
     def wait_timeout(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "wait_timeout", value)
-
-
-@pulumi.input_type
-class MysqlDbSystemAnalyticsClusterArgs:
-    def __init__(__self__, *,
-                 cluster_size: Optional[pulumi.Input[int]] = None,
-                 shape_name: Optional[pulumi.Input[str]] = None,
-                 state: Optional[pulumi.Input[str]] = None,
-                 time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
-               * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-        :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-        :param pulumi.Input[str] time_created: The date and time the DB System was created.
-        :param pulumi.Input[str] time_updated: The time the DB System was last updated.
-        """
-        if cluster_size is not None:
-            pulumi.set(__self__, "cluster_size", cluster_size)
-        if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
-        if state is not None:
-            pulumi.set(__self__, "state", state)
-        if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
-        if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
-
-    @property
-    @pulumi.getter(name="clusterSize")
-    def cluster_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        """
-        return pulumi.get(self, "cluster_size")
-
-    @cluster_size.setter
-    def cluster_size(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "cluster_size", value)
-
-    @property
-    @pulumi.getter(name="shapeName")
-    def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the shape. The shape determines the resources allocated
-        * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-        """
-        return pulumi.get(self, "shape_name")
-
-    @shape_name.setter
-    def shape_name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "shape_name", value)
-
-    @property
-    @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-        """
-        return pulumi.get(self, "state")
-
-    @state.setter
-    def state(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "state", value)
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the DB System was created.
-        """
-        return pulumi.get(self, "time_created")
-
-    @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "time_created", value)
-
-    @property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the DB System was last updated.
-        """
-        return pulumi.get(self, "time_updated")
-
-    @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "time_updated", value)
 
 
 @pulumi.input_type

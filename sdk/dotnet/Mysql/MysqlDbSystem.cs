@@ -116,12 +116,6 @@ namespace Pulumi.Oci.Mysql
         public Output<string> AdminUsername { get; private set; } = null!;
 
         /// <summary>
-        /// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-        /// </summary>
-        [Output("analyticsClusters")]
-        public Output<ImmutableArray<Outputs.MysqlDbSystemAnalyticsCluster>> AnalyticsClusters { get; private set; } = null!;
-
-        /// <summary>
         /// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         /// 
         /// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -240,12 +234,6 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("ipAddress")]
         public Output<string> IpAddress { get; private set; } = null!;
-
-        /// <summary>
-        /// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-        /// </summary>
-        [Output("isAnalyticsClusterAttached")]
-        public Output<bool> IsAnalyticsClusterAttached { get; private set; } = null!;
 
         /// <summary>
         /// If the DB System has a HeatWave Cluster attached.
@@ -625,18 +613,6 @@ namespace Pulumi.Oci.Mysql
         [Input("adminUsername")]
         public Input<string>? AdminUsername { get; set; }
 
-        [Input("analyticsClusters")]
-        private InputList<Inputs.MysqlDbSystemAnalyticsClusterGetArgs>? _analyticsClusters;
-
-        /// <summary>
-        /// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-        /// </summary>
-        public InputList<Inputs.MysqlDbSystemAnalyticsClusterGetArgs> AnalyticsClusters
-        {
-            get => _analyticsClusters ?? (_analyticsClusters = new InputList<Inputs.MysqlDbSystemAnalyticsClusterGetArgs>());
-            set => _analyticsClusters = value;
-        }
-
         /// <summary>
         /// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         /// 
@@ -798,12 +774,6 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
-
-        /// <summary>
-        /// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-        /// </summary>
-        [Input("isAnalyticsClusterAttached")]
-        public Input<bool>? IsAnalyticsClusterAttached { get; set; }
 
         /// <summary>
         /// If the DB System has a HeatWave Cluster attached.

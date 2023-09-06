@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseMigration.inputs.ConnectionAdminCredentialsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.ConnectionConnectDescriptorArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.ConnectionPrivateEndpointArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.ConnectionReplicationCredentialsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.ConnectionSshDetailsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.ConnectionVaultDetailsArgs;
 import java.lang.Object;
@@ -219,6 +220,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Database Administrator Credentials details.
+     * 
+     */
+    @Import(name="replicationCredentials")
+    private @Nullable Output<ConnectionReplicationCredentialsArgs> replicationCredentials;
+
+    /**
+     * @return (Updatable) Database Administrator Credentials details.
+     * 
+     */
+    public Optional<Output<ConnectionReplicationCredentialsArgs>> replicationCredentials() {
+        return Optional.ofNullable(this.replicationCredentials);
+    }
+
+    /**
      * (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
      * 
      */
@@ -354,6 +370,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleDetails = $.lifecycleDetails;
         this.nsgIds = $.nsgIds;
         this.privateEndpoint = $.privateEndpoint;
+        this.replicationCredentials = $.replicationCredentials;
         this.sshDetails = $.sshDetails;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -663,6 +680,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder privateEndpoint(ConnectionPrivateEndpointArgs privateEndpoint) {
             return privateEndpoint(Output.of(privateEndpoint));
+        }
+
+        /**
+         * @param replicationCredentials (Updatable) Database Administrator Credentials details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationCredentials(@Nullable Output<ConnectionReplicationCredentialsArgs> replicationCredentials) {
+            $.replicationCredentials = replicationCredentials;
+            return this;
+        }
+
+        /**
+         * @param replicationCredentials (Updatable) Database Administrator Credentials details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationCredentials(ConnectionReplicationCredentialsArgs replicationCredentials) {
+            return replicationCredentials(Output.of(replicationCredentials));
         }
 
         /**

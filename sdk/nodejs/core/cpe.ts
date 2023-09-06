@@ -40,6 +40,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isPrivate: _var.cpe_is_private,
  * });
  * ```
  *
@@ -106,13 +107,17 @@ export class Cpe extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The public IP address of the on-premises router.  Example: `203.0.113.2` 
+     * The public IP address of the on-premises router.  Example: `203.0.113.2`
+     */
+    public readonly ipAddress!: pulumi.Output<string>;
+    /**
+     * Indicates whether this CPE is of type `private` or not. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly ipAddress!: pulumi.Output<string>;
+    public readonly isPrivate!: pulumi.Output<boolean>;
     /**
      * The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -137,6 +142,7 @@ export class Cpe extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
+            resourceInputs["isPrivate"] = state ? state.isPrivate : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
             const args = argsOrState as CpeArgs | undefined;
@@ -152,6 +158,7 @@ export class Cpe extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
+            resourceInputs["isPrivate"] = args ? args.isPrivate : undefined;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -190,13 +197,17 @@ export interface CpeState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The public IP address of the on-premises router.  Example: `203.0.113.2` 
+     * The public IP address of the on-premises router.  Example: `203.0.113.2`
+     */
+    ipAddress?: pulumi.Input<string>;
+    /**
+     * Indicates whether this CPE is of type `private` or not. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    ipAddress?: pulumi.Input<string>;
+    isPrivate?: pulumi.Input<boolean>;
     /**
      * The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -234,11 +245,15 @@ export interface CpeArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The public IP address of the on-premises router.  Example: `203.0.113.2` 
+     * The public IP address of the on-premises router.  Example: `203.0.113.2`
+     */
+    ipAddress: pulumi.Input<string>;
+    /**
+     * Indicates whether this CPE is of type `private` or not. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    ipAddress: pulumi.Input<string>;
+    isPrivate?: pulumi.Input<boolean>;
 }

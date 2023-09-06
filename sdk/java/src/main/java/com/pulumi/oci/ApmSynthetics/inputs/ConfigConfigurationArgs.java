@@ -85,14 +85,14 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) If disabled then auto snapshots are not collected.
+     * (Updatable) If disabled, auto snapshots are not collected.
      * 
      */
     @Import(name="isDefaultSnapshotEnabled")
     private @Nullable Output<Boolean> isDefaultSnapshotEnabled;
 
     /**
-     * @return (Updatable) If disabled then auto snapshots are not collected.
+     * @return (Updatable) If disabled, auto snapshots are not collected.
      * 
      */
     public Optional<Output<Boolean>> isDefaultSnapshotEnabled() {
@@ -404,7 +404,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isDefaultSnapshotEnabled (Updatable) If disabled then auto snapshots are not collected.
+         * @param isDefaultSnapshotEnabled (Updatable) If disabled, auto snapshots are not collected.
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isDefaultSnapshotEnabled (Updatable) If disabled then auto snapshots are not collected.
+         * @param isDefaultSnapshotEnabled (Updatable) If disabled, auto snapshots are not collected.
          * 
          * @return builder
          * 

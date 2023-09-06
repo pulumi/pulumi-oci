@@ -115,6 +115,12 @@ import (
 //							Password: pulumi.Any(_var.Migration_golden_gate_details_hub_rest_admin_credentials_password),
 //							Username: pulumi.Any(_var.Migration_golden_gate_details_hub_rest_admin_credentials_username),
 //						},
+//						Url:       pulumi.Any(_var.Migration_golden_gate_details_hub_url),
+//						ComputeId: pulumi.Any(oci_database_migration_compute.Test_compute.Id),
+//						SourceContainerDbAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs{
+//							Password: pulumi.Any(_var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_password),
+//							Username: pulumi.Any(_var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_username),
+//						},
 //						SourceDbAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs{
 //							Password: pulumi.Any(_var.Migration_golden_gate_details_hub_source_db_admin_credentials_password),
 //							Username: pulumi.Any(_var.Migration_golden_gate_details_hub_source_db_admin_credentials_username),
@@ -125,12 +131,6 @@ import (
 //							Username: pulumi.Any(_var.Migration_golden_gate_details_hub_target_db_admin_credentials_username),
 //						},
 //						TargetMicroservicesDeploymentName: pulumi.Any(oci_apigateway_deployment.Test_deployment.Name),
-//						Url:                               pulumi.Any(_var.Migration_golden_gate_details_hub_url),
-//						ComputeId:                         pulumi.Any(oci_database_migration_compute.Test_compute.Id),
-//						SourceContainerDbAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs{
-//							Password: pulumi.Any(_var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_password),
-//							Username: pulumi.Any(_var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_username),
-//						},
 //					},
 //					Settings: &databasemigration.MigrationGoldenGateDetailsSettingsArgs{
 //						AcceptableLag: pulumi.Any(_var.Migration_golden_gate_details_settings_acceptable_lag),
@@ -143,6 +143,32 @@ import (
 //							MaxApplyParallelism: pulumi.Any(_var.Migration_golden_gate_details_settings_replicat_max_apply_parallelism),
 //							MinApplyParallelism: pulumi.Any(_var.Migration_golden_gate_details_settings_replicat_min_apply_parallelism),
 //						},
+//					},
+//				},
+//				GoldenGateServiceDetails: &databasemigration.MigrationGoldenGateServiceDetailsArgs{
+//					Settings: &databasemigration.MigrationGoldenGateServiceDetailsSettingsArgs{
+//						AcceptableLag: pulumi.Any(_var.Migration_golden_gate_service_details_settings_acceptable_lag),
+//						Extract: &databasemigration.MigrationGoldenGateServiceDetailsSettingsExtractArgs{
+//							LongTransDuration:  pulumi.Any(_var.Migration_golden_gate_service_details_settings_extract_long_trans_duration),
+//							PerformanceProfile: pulumi.Any(_var.Migration_golden_gate_service_details_settings_extract_performance_profile),
+//						},
+//						Replicat: &databasemigration.MigrationGoldenGateServiceDetailsSettingsReplicatArgs{
+//							MapParallelism:      pulumi.Any(_var.Migration_golden_gate_service_details_settings_replicat_map_parallelism),
+//							MaxApplyParallelism: pulumi.Any(_var.Migration_golden_gate_service_details_settings_replicat_max_apply_parallelism),
+//							MinApplyParallelism: pulumi.Any(_var.Migration_golden_gate_service_details_settings_replicat_min_apply_parallelism),
+//						},
+//					},
+//					SourceContainerDbCredentials: &databasemigration.MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs{
+//						Password: pulumi.Any(_var.Migration_golden_gate_service_details_source_container_db_credentials_password),
+//						Username: pulumi.Any(_var.Migration_golden_gate_service_details_source_container_db_credentials_username),
+//					},
+//					SourceDbCredentials: &databasemigration.MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs{
+//						Password: pulumi.Any(_var.Migration_golden_gate_service_details_source_db_credentials_password),
+//						Username: pulumi.Any(_var.Migration_golden_gate_service_details_source_db_credentials_username),
+//					},
+//					TargetDbCredentials: &databasemigration.MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs{
+//						Password: pulumi.Any(_var.Migration_golden_gate_service_details_target_db_credentials_password),
+//						Username: pulumi.Any(_var.Migration_golden_gate_service_details_target_db_credentials_username),
 //					},
 //				},
 //				IncludeObjects: databasemigration.MigrationIncludeObjectArray{
@@ -209,6 +235,8 @@ type Migration struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
 	GoldenGateDetails MigrationGoldenGateDetailsOutput `pulumi:"goldenGateDetails"`
+	// (Updatable) Details about Oracle GoldenGate GGS Deployment.
+	GoldenGateServiceDetails MigrationGoldenGateServiceDetailsOutput `pulumi:"goldenGateServiceDetails"`
 	// (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
 	IncludeObjects MigrationIncludeObjectArrayOutput `pulumi:"includeObjects"`
 	// Additional status related to the execution and current state of the Migration.
@@ -307,6 +335,8 @@ type migrationState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
 	GoldenGateDetails *MigrationGoldenGateDetails `pulumi:"goldenGateDetails"`
+	// (Updatable) Details about Oracle GoldenGate GGS Deployment.
+	GoldenGateServiceDetails *MigrationGoldenGateServiceDetails `pulumi:"goldenGateServiceDetails"`
 	// (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
 	IncludeObjects []MigrationIncludeObject `pulumi:"includeObjects"`
 	// Additional status related to the execution and current state of the Migration.
@@ -364,6 +394,8 @@ type MigrationState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
 	GoldenGateDetails MigrationGoldenGateDetailsPtrInput
+	// (Updatable) Details about Oracle GoldenGate GGS Deployment.
+	GoldenGateServiceDetails MigrationGoldenGateServiceDetailsPtrInput
 	// (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
 	IncludeObjects MigrationIncludeObjectArrayInput
 	// Additional status related to the execution and current state of the Migration.
@@ -421,6 +453,8 @@ type migrationArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
 	GoldenGateDetails *MigrationGoldenGateDetails `pulumi:"goldenGateDetails"`
+	// (Updatable) Details about Oracle GoldenGate GGS Deployment.
+	GoldenGateServiceDetails *MigrationGoldenGateServiceDetails `pulumi:"goldenGateServiceDetails"`
 	// (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
 	IncludeObjects []MigrationIncludeObject `pulumi:"includeObjects"`
 	// (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
@@ -461,6 +495,8 @@ type MigrationArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
 	GoldenGateDetails MigrationGoldenGateDetailsPtrInput
+	// (Updatable) Details about Oracle GoldenGate GGS Deployment.
+	GoldenGateServiceDetails MigrationGoldenGateServiceDetailsPtrInput
 	// (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
 	IncludeObjects MigrationIncludeObjectArrayInput
 	// (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
@@ -630,6 +666,11 @@ func (o MigrationOutput) FreeformTags() pulumi.MapOutput {
 // (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
 func (o MigrationOutput) GoldenGateDetails() MigrationGoldenGateDetailsOutput {
 	return o.ApplyT(func(v *Migration) MigrationGoldenGateDetailsOutput { return v.GoldenGateDetails }).(MigrationGoldenGateDetailsOutput)
+}
+
+// (Updatable) Details about Oracle GoldenGate GGS Deployment.
+func (o MigrationOutput) GoldenGateServiceDetails() MigrationGoldenGateServiceDetailsOutput {
+	return o.ApplyT(func(v *Migration) MigrationGoldenGateServiceDetailsOutput { return v.GoldenGateServiceDetails }).(MigrationGoldenGateServiceDetailsOutput)
 }
 
 // (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'

@@ -15,6 +15,7 @@ import com.pulumi.oci.DatabaseMigration.outputs.MigrationDatapumpSettings;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationDumpTransferDetails;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationExcludeObject;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationGoldenGateDetails;
+import com.pulumi.oci.DatabaseMigration.outputs.MigrationGoldenGateServiceDetails;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationIncludeObject;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationVaultDetails;
 import com.pulumi.oci.Utilities;
@@ -56,12 +57,19 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubRestAdminCredentialsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs;
- * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsSettingsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsSettingsExtractArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsSettingsReplicatArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateServiceDetailsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateServiceDetailsSettingsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateServiceDetailsSettingsExtractArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateServiceDetailsSettingsReplicatArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationIncludeObjectArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationVaultDetailsArgs;
  * import java.util.List;
@@ -152,6 +160,12 @@ import javax.annotation.Nullable;
  *                         .password(var_.migration_golden_gate_details_hub_rest_admin_credentials_password())
  *                         .username(var_.migration_golden_gate_details_hub_rest_admin_credentials_username())
  *                         .build())
+ *                     .url(var_.migration_golden_gate_details_hub_url())
+ *                     .computeId(oci_database_migration_compute.test_compute().id())
+ *                     .sourceContainerDbAdminCredentials(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs.builder()
+ *                         .password(var_.migration_golden_gate_details_hub_source_container_db_admin_credentials_password())
+ *                         .username(var_.migration_golden_gate_details_hub_source_container_db_admin_credentials_username())
+ *                         .build())
  *                     .sourceDbAdminCredentials(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs.builder()
  *                         .password(var_.migration_golden_gate_details_hub_source_db_admin_credentials_password())
  *                         .username(var_.migration_golden_gate_details_hub_source_db_admin_credentials_username())
@@ -162,12 +176,6 @@ import javax.annotation.Nullable;
  *                         .username(var_.migration_golden_gate_details_hub_target_db_admin_credentials_username())
  *                         .build())
  *                     .targetMicroservicesDeploymentName(oci_apigateway_deployment.test_deployment().name())
- *                     .url(var_.migration_golden_gate_details_hub_url())
- *                     .computeId(oci_database_migration_compute.test_compute().id())
- *                     .sourceContainerDbAdminCredentials(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs.builder()
- *                         .password(var_.migration_golden_gate_details_hub_source_container_db_admin_credentials_password())
- *                         .username(var_.migration_golden_gate_details_hub_source_container_db_admin_credentials_username())
- *                         .build())
  *                     .build())
  *                 .settings(MigrationGoldenGateDetailsSettingsArgs.builder()
  *                     .acceptableLag(var_.migration_golden_gate_details_settings_acceptable_lag())
@@ -180,6 +188,32 @@ import javax.annotation.Nullable;
  *                         .maxApplyParallelism(var_.migration_golden_gate_details_settings_replicat_max_apply_parallelism())
  *                         .minApplyParallelism(var_.migration_golden_gate_details_settings_replicat_min_apply_parallelism())
  *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .goldenGateServiceDetails(MigrationGoldenGateServiceDetailsArgs.builder()
+ *                 .settings(MigrationGoldenGateServiceDetailsSettingsArgs.builder()
+ *                     .acceptableLag(var_.migration_golden_gate_service_details_settings_acceptable_lag())
+ *                     .extract(MigrationGoldenGateServiceDetailsSettingsExtractArgs.builder()
+ *                         .longTransDuration(var_.migration_golden_gate_service_details_settings_extract_long_trans_duration())
+ *                         .performanceProfile(var_.migration_golden_gate_service_details_settings_extract_performance_profile())
+ *                         .build())
+ *                     .replicat(MigrationGoldenGateServiceDetailsSettingsReplicatArgs.builder()
+ *                         .mapParallelism(var_.migration_golden_gate_service_details_settings_replicat_map_parallelism())
+ *                         .maxApplyParallelism(var_.migration_golden_gate_service_details_settings_replicat_max_apply_parallelism())
+ *                         .minApplyParallelism(var_.migration_golden_gate_service_details_settings_replicat_min_apply_parallelism())
+ *                         .build())
+ *                     .build())
+ *                 .sourceContainerDbCredentials(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs.builder()
+ *                     .password(var_.migration_golden_gate_service_details_source_container_db_credentials_password())
+ *                     .username(var_.migration_golden_gate_service_details_source_container_db_credentials_username())
+ *                     .build())
+ *                 .sourceDbCredentials(MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs.builder()
+ *                     .password(var_.migration_golden_gate_service_details_source_db_credentials_password())
+ *                     .username(var_.migration_golden_gate_service_details_source_db_credentials_username())
+ *                     .build())
+ *                 .targetDbCredentials(MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs.builder()
+ *                     .password(var_.migration_golden_gate_service_details_target_db_credentials_password())
+ *                     .username(var_.migration_golden_gate_service_details_target_db_credentials_username())
  *                     .build())
  *                 .build())
  *             .includeObjects(MigrationIncludeObjectArgs.builder()
@@ -406,6 +440,20 @@ public class Migration extends com.pulumi.resources.CustomResource {
      */
     public Output<MigrationGoldenGateDetails> goldenGateDetails() {
         return this.goldenGateDetails;
+    }
+    /**
+     * (Updatable) Details about Oracle GoldenGate GGS Deployment.
+     * 
+     */
+    @Export(name="goldenGateServiceDetails", type=MigrationGoldenGateServiceDetails.class, parameters={})
+    private Output<MigrationGoldenGateServiceDetails> goldenGateServiceDetails;
+
+    /**
+     * @return (Updatable) Details about Oracle GoldenGate GGS Deployment.
+     * 
+     */
+    public Output<MigrationGoldenGateServiceDetails> goldenGateServiceDetails() {
+        return this.goldenGateServiceDetails;
     }
     /**
      * (Updatable) Database objects to include from migration, cannot be specified alongside &#39;excludeObjects&#39;

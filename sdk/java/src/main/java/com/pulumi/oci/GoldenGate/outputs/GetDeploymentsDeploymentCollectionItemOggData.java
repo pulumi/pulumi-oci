@@ -21,16 +21,31 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
      */
     private String certificate;
     /**
+     * @return The type of credential store for OGG.
+     * 
+     */
+    private String credentialStore;
+    /**
      * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
     private String deploymentName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     * 
+     */
+    private String identityDomainId;
     private String key;
     /**
      * @return Version of OGG
      * 
      */
     private String oggVersion;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     * 
+     */
+    private String passwordSecretId;
 
     private GetDeploymentsDeploymentCollectionItemOggData() {}
     public String adminPassword() {
@@ -51,11 +66,25 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
         return this.certificate;
     }
     /**
+     * @return The type of credential store for OGG.
+     * 
+     */
+    public String credentialStore() {
+        return this.credentialStore;
+    }
+    /**
      * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
     public String deploymentName() {
         return this.deploymentName;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     * 
+     */
+    public String identityDomainId() {
+        return this.identityDomainId;
     }
     public String key() {
         return this.key;
@@ -66,6 +95,13 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
      */
     public String oggVersion() {
         return this.oggVersion;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     * 
+     */
+    public String passwordSecretId() {
+        return this.passwordSecretId;
     }
 
     public static Builder builder() {
@@ -80,18 +116,24 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
         private String adminPassword;
         private String adminUsername;
         private String certificate;
+        private String credentialStore;
         private String deploymentName;
+        private String identityDomainId;
         private String key;
         private String oggVersion;
+        private String passwordSecretId;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemOggData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
     	      this.adminUsername = defaults.adminUsername;
     	      this.certificate = defaults.certificate;
+    	      this.credentialStore = defaults.credentialStore;
     	      this.deploymentName = defaults.deploymentName;
+    	      this.identityDomainId = defaults.identityDomainId;
     	      this.key = defaults.key;
     	      this.oggVersion = defaults.oggVersion;
+    	      this.passwordSecretId = defaults.passwordSecretId;
         }
 
         @CustomType.Setter
@@ -110,8 +152,18 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
             return this;
         }
         @CustomType.Setter
+        public Builder credentialStore(String credentialStore) {
+            this.credentialStore = Objects.requireNonNull(credentialStore);
+            return this;
+        }
+        @CustomType.Setter
         public Builder deploymentName(String deploymentName) {
             this.deploymentName = Objects.requireNonNull(deploymentName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder identityDomainId(String identityDomainId) {
+            this.identityDomainId = Objects.requireNonNull(identityDomainId);
             return this;
         }
         @CustomType.Setter
@@ -124,14 +176,22 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
             this.oggVersion = Objects.requireNonNull(oggVersion);
             return this;
         }
+        @CustomType.Setter
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+            return this;
+        }
         public GetDeploymentsDeploymentCollectionItemOggData build() {
             final var o = new GetDeploymentsDeploymentCollectionItemOggData();
             o.adminPassword = adminPassword;
             o.adminUsername = adminUsername;
             o.certificate = certificate;
+            o.credentialStore = credentialStore;
             o.deploymentName = deploymentName;
+            o.identityDomainId = identityDomainId;
             o.key = key;
             o.oggVersion = oggVersion;
+            o.passwordSecretId = passwordSecretId;
             return o;
         }
     }

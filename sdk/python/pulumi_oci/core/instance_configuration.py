@@ -402,6 +402,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
                     compartment_id=var["compartment_id"],
                     create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs(
+                        assign_ipv6ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip"],
                         assign_private_dns_record=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record"],
                         assign_public_ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip"],
                         defined_tags={
@@ -412,6 +413,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "Department": "Finance",
                         },
                         hostname_label=var["instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label"],
+                        ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
+                            ipv6address=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
+                            ipv6subnet_cidr=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        )],
                         nsg_ids=var["instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids"],
                         private_ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_private_ip"],
                         skip_source_dest_check=var["instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check"],
@@ -445,6 +450,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     platform_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs(
                         type=var["instance_configuration_instance_details_launch_details_platform_config_type"],
                         are_virtual_instructions_enabled=var["instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled"],
+                        config_map=var["instance_configuration_instance_details_launch_details_platform_config_config_map"],
                         is_access_control_service_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled"],
                         is_input_output_memory_management_unit_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled"],
                         is_measured_boot_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled"],
@@ -538,6 +544,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
                         compartment_id=var["compartment_id"],
                         create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs(
+                            assign_ipv6ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip"],
                             assign_private_dns_record=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record"],
                             assign_public_ip=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip"],
                             defined_tags={
@@ -548,6 +555,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                                 "Department": "Finance",
                             },
                             hostname_label=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label"],
+                            ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
+                                ipv6address=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
+                                ipv6subnet_cidr=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                            )],
                             nsg_ids=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids"],
                             private_ip=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip"],
                             skip_source_dest_check=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check"],
@@ -622,6 +633,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     ),
                     secondary_vnics=[oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs(
                         create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs(
+                            assign_ipv6ip=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip"],
                             assign_private_dns_record=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record"],
                             assign_public_ip=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip"],
                             defined_tags={
@@ -632,6 +644,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                                 "Department": "Finance",
                             },
                             hostname_label=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label"],
+                            ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
+                                ipv6address=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
+                                ipv6subnet_cidr=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                            )],
                             nsg_ids=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids"],
                             private_ip=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip"],
                             skip_source_dest_check=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check"],
@@ -778,6 +794,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
                     compartment_id=var["compartment_id"],
                     create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs(
+                        assign_ipv6ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip"],
                         assign_private_dns_record=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record"],
                         assign_public_ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip"],
                         defined_tags={
@@ -788,6 +805,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "Department": "Finance",
                         },
                         hostname_label=var["instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label"],
+                        ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
+                            ipv6address=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
+                            ipv6subnet_cidr=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        )],
                         nsg_ids=var["instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids"],
                         private_ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_private_ip"],
                         skip_source_dest_check=var["instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check"],
@@ -821,6 +842,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     platform_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs(
                         type=var["instance_configuration_instance_details_launch_details_platform_config_type"],
                         are_virtual_instructions_enabled=var["instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled"],
+                        config_map=var["instance_configuration_instance_details_launch_details_platform_config_config_map"],
                         is_access_control_service_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled"],
                         is_input_output_memory_management_unit_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled"],
                         is_measured_boot_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled"],
@@ -914,6 +936,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
                         compartment_id=var["compartment_id"],
                         create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs(
+                            assign_ipv6ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip"],
                             assign_private_dns_record=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record"],
                             assign_public_ip=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip"],
                             defined_tags={
@@ -924,6 +947,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                                 "Department": "Finance",
                             },
                             hostname_label=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label"],
+                            ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
+                                ipv6address=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
+                                ipv6subnet_cidr=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                            )],
                             nsg_ids=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids"],
                             private_ip=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip"],
                             skip_source_dest_check=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check"],
@@ -998,6 +1025,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     ),
                     secondary_vnics=[oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs(
                         create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs(
+                            assign_ipv6ip=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip"],
                             assign_private_dns_record=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record"],
                             assign_public_ip=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip"],
                             defined_tags={
@@ -1008,6 +1036,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                                 "Department": "Finance",
                             },
                             hostname_label=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label"],
+                            ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
+                                ipv6address=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
+                                ipv6subnet_cidr=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                            )],
                             nsg_ids=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids"],
                             private_ip=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip"],
                             skip_source_dest_check=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check"],

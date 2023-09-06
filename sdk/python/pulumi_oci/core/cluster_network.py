@@ -399,10 +399,20 @@ class ClusterNetwork(pulumi.CustomResource):
             )],
             placement_configuration=oci.core.ClusterNetworkPlacementConfigurationArgs(
                 availability_domain=var["cluster_network_placement_configuration_availability_domain"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
+                primary_vnic_subnets=oci.core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs(
+                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
+                        ipv6subnet_cidr=var["cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                    )],
+                    is_assign_ipv6ip=var["cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip"],
+                ),
                 secondary_vnic_subnets=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs(
                     subnet_id=oci_core_subnet["test_subnet"]["id"],
                     display_name=var["cluster_network_placement_configuration_secondary_vnic_subnets_display_name"],
+                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
+                        ipv6subnet_cidr=var["cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                    )],
+                    is_assign_ipv6ip=var["cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip"],
                 )],
             ),
             cluster_configuration=oci.core.ClusterNetworkClusterConfigurationArgs(
@@ -486,10 +496,20 @@ class ClusterNetwork(pulumi.CustomResource):
             )],
             placement_configuration=oci.core.ClusterNetworkPlacementConfigurationArgs(
                 availability_domain=var["cluster_network_placement_configuration_availability_domain"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
+                primary_vnic_subnets=oci.core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs(
+                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
+                        ipv6subnet_cidr=var["cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                    )],
+                    is_assign_ipv6ip=var["cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip"],
+                ),
                 secondary_vnic_subnets=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs(
                     subnet_id=oci_core_subnet["test_subnet"]["id"],
                     display_name=var["cluster_network_placement_configuration_secondary_vnic_subnets_display_name"],
+                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
+                        ipv6subnet_cidr=var["cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                    )],
+                    is_assign_ipv6ip=var["cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip"],
                 )],
             ),
             cluster_configuration=oci.core.ClusterNetworkClusterConfigurationArgs(

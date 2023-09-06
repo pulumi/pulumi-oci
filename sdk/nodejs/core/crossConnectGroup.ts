@@ -41,6 +41,15 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     macsecProperties: {
+ *         state: _var.cross_connect_group_macsec_properties_state,
+ *         encryptionCipher: _var.cross_connect_group_macsec_properties_encryption_cipher,
+ *         isUnprotectedTrafficAllowed: _var.cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+ *         primaryKey: {
+ *             connectivityAssociationKeySecretId: oci_vault_secret.test_secret.id,
+ *             connectivityAssociationNameSecretId: oci_vault_secret.test_secret.id,
+ *         },
+ *     },
  * });
  * ```
  *
@@ -97,15 +106,11 @@ export class CrossConnectGroup extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Properties used for MACsec (if capable).
+     * (Updatable) Properties used to configure MACsec (if capable).
      */
     public readonly macsecProperties!: pulumi.Output<outputs.Core.CrossConnectGroupMacsecProperties>;
     /**
@@ -117,7 +122,11 @@ export class CrossConnectGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly ociPhysicalDeviceName!: pulumi.Output<string>;
     /**
-     * The cross-connect group's current state.
+     * (Updatable) Indicates whether or not MACsec is enabled.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -190,15 +199,11 @@ export interface CrossConnectGroupState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Properties used for MACsec (if capable).
+     * (Updatable) Properties used to configure MACsec (if capable).
      */
     macsecProperties?: pulumi.Input<inputs.Core.CrossConnectGroupMacsecProperties>;
     /**
@@ -210,7 +215,11 @@ export interface CrossConnectGroupState {
      */
     ociPhysicalDeviceName?: pulumi.Input<string>;
     /**
-     * The cross-connect group's current state.
+     * (Updatable) Indicates whether or not MACsec is enabled.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string>;
     /**
@@ -240,15 +249,11 @@ export interface CrossConnectGroupArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Properties used for MACsec (if capable).
+     * (Updatable) Properties used to configure MACsec (if capable).
      */
     macsecProperties?: pulumi.Input<inputs.Core.CrossConnectGroupMacsecProperties>;
 }

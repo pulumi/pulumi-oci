@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.CrossConnectMacsecPropertiesPrimaryKeyArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,14 +18,14 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
     public static final CrossConnectMacsecPropertiesArgs Empty = new CrossConnectMacsecPropertiesArgs();
 
     /**
-     * Type of encryption cipher suite to use for the MACsec connection.
+     * (Updatable) Type of encryption cipher suite to use for the MACsec connection.
      * 
      */
     @Import(name="encryptionCipher")
     private @Nullable Output<String> encryptionCipher;
 
     /**
-     * @return Type of encryption cipher suite to use for the MACsec connection.
+     * @return (Updatable) Type of encryption cipher suite to use for the MACsec connection.
      * 
      */
     public Optional<Output<String>> encryptionCipher() {
@@ -32,14 +33,29 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
     }
 
     /**
-     * An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+     * (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+     * 
+     */
+    @Import(name="isUnprotectedTrafficAllowed")
+    private @Nullable Output<Boolean> isUnprotectedTrafficAllowed;
+
+    /**
+     * @return (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+     * 
+     */
+    public Optional<Output<Boolean>> isUnprotectedTrafficAllowed() {
+        return Optional.ofNullable(this.isUnprotectedTrafficAllowed);
+    }
+
+    /**
+     * (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
      * 
      */
     @Import(name="primaryKey")
     private @Nullable Output<CrossConnectMacsecPropertiesPrimaryKeyArgs> primaryKey;
 
     /**
-     * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+     * @return (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
      * 
      */
     public Optional<Output<CrossConnectMacsecPropertiesPrimaryKeyArgs>> primaryKey() {
@@ -47,14 +63,14 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
     }
 
     /**
-     * The cross-connect&#39;s current state.
+     * (Updatable) Indicates whether or not MACsec is enabled.
      * 
      */
     @Import(name="state", required=true)
     private Output<String> state;
 
     /**
-     * @return The cross-connect&#39;s current state.
+     * @return (Updatable) Indicates whether or not MACsec is enabled.
      * 
      */
     public Output<String> state() {
@@ -65,6 +81,7 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
 
     private CrossConnectMacsecPropertiesArgs(CrossConnectMacsecPropertiesArgs $) {
         this.encryptionCipher = $.encryptionCipher;
+        this.isUnprotectedTrafficAllowed = $.isUnprotectedTrafficAllowed;
         this.primaryKey = $.primaryKey;
         this.state = $.state;
     }
@@ -88,7 +105,7 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param encryptionCipher Type of encryption cipher suite to use for the MACsec connection.
+         * @param encryptionCipher (Updatable) Type of encryption cipher suite to use for the MACsec connection.
          * 
          * @return builder
          * 
@@ -99,7 +116,7 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param encryptionCipher Type of encryption cipher suite to use for the MACsec connection.
+         * @param encryptionCipher (Updatable) Type of encryption cipher suite to use for the MACsec connection.
          * 
          * @return builder
          * 
@@ -109,7 +126,28 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param primaryKey An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+         * @param isUnprotectedTrafficAllowed (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUnprotectedTrafficAllowed(@Nullable Output<Boolean> isUnprotectedTrafficAllowed) {
+            $.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
+            return this;
+        }
+
+        /**
+         * @param isUnprotectedTrafficAllowed (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUnprotectedTrafficAllowed(Boolean isUnprotectedTrafficAllowed) {
+            return isUnprotectedTrafficAllowed(Output.of(isUnprotectedTrafficAllowed));
+        }
+
+        /**
+         * @param primaryKey (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
          * 
          * @return builder
          * 
@@ -120,7 +158,7 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param primaryKey An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+         * @param primaryKey (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
          * 
          * @return builder
          * 
@@ -130,7 +168,7 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param state The cross-connect&#39;s current state.
+         * @param state (Updatable) Indicates whether or not MACsec is enabled.
          * 
          * @return builder
          * 
@@ -141,7 +179,7 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param state The cross-connect&#39;s current state.
+         * @param state (Updatable) Indicates whether or not MACsec is enabled.
          * 
          * @return builder
          * 

@@ -22,16 +22,13 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, admin_password=None, admin_username=None, analytics_clusters=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, data_storage_size_in_gb=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_analytics_cluster_attached=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, data_storage_size_in_gb=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
         if admin_password and not isinstance(admin_password, str):
             raise TypeError("Expected argument 'admin_password' to be a str")
         pulumi.set(__self__, "admin_password", admin_password)
         if admin_username and not isinstance(admin_username, str):
             raise TypeError("Expected argument 'admin_username' to be a str")
         pulumi.set(__self__, "admin_username", admin_username)
-        if analytics_clusters and not isinstance(analytics_clusters, list):
-            raise TypeError("Expected argument 'analytics_clusters' to be a list")
-        pulumi.set(__self__, "analytics_clusters", analytics_clusters)
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -92,9 +89,6 @@ class GetMysqlDbSystemResult:
         if ip_address and not isinstance(ip_address, str):
             raise TypeError("Expected argument 'ip_address' to be a str")
         pulumi.set(__self__, "ip_address", ip_address)
-        if is_analytics_cluster_attached and not isinstance(is_analytics_cluster_attached, bool):
-            raise TypeError("Expected argument 'is_analytics_cluster_attached' to be a bool")
-        pulumi.set(__self__, "is_analytics_cluster_attached", is_analytics_cluster_attached)
         if is_heat_wave_cluster_attached and not isinstance(is_heat_wave_cluster_attached, bool):
             raise TypeError("Expected argument 'is_heat_wave_cluster_attached' to be a bool")
         pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
@@ -150,14 +144,6 @@ class GetMysqlDbSystemResult:
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> str:
         return pulumi.get(self, "admin_username")
-
-    @property
-    @pulumi.getter(name="analyticsClusters")
-    def analytics_clusters(self) -> Sequence['outputs.GetMysqlDbSystemAnalyticsClusterResult']:
-        """
-        DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-        """
-        return pulumi.get(self, "analytics_clusters")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -320,14 +306,6 @@ class GetMysqlDbSystemResult:
         return pulumi.get(self, "ip_address")
 
     @property
-    @pulumi.getter(name="isAnalyticsClusterAttached")
-    def is_analytics_cluster_attached(self) -> bool:
-        """
-        DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-        """
-        return pulumi.get(self, "is_analytics_cluster_attached")
-
-    @property
     @pulumi.getter(name="isHeatWaveClusterAttached")
     def is_heat_wave_cluster_attached(self) -> bool:
         """
@@ -453,7 +431,6 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
         return GetMysqlDbSystemResult(
             admin_password=self.admin_password,
             admin_username=self.admin_username,
-            analytics_clusters=self.analytics_clusters,
             availability_domain=self.availability_domain,
             backup_policies=self.backup_policies,
             channels=self.channels,
@@ -474,7 +451,6 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             hostname_label=self.hostname_label,
             id=self.id,
             ip_address=self.ip_address,
-            is_analytics_cluster_attached=self.is_analytics_cluster_attached,
             is_heat_wave_cluster_attached=self.is_heat_wave_cluster_attached,
             is_highly_available=self.is_highly_available,
             lifecycle_details=self.lifecycle_details,
@@ -519,7 +495,6 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
     return AwaitableGetMysqlDbSystemResult(
         admin_password=pulumi.get(__ret__, 'admin_password'),
         admin_username=pulumi.get(__ret__, 'admin_username'),
-        analytics_clusters=pulumi.get(__ret__, 'analytics_clusters'),
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         backup_policies=pulumi.get(__ret__, 'backup_policies'),
         channels=pulumi.get(__ret__, 'channels'),
@@ -540,7 +515,6 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         hostname_label=pulumi.get(__ret__, 'hostname_label'),
         id=pulumi.get(__ret__, 'id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
-        is_analytics_cluster_attached=pulumi.get(__ret__, 'is_analytics_cluster_attached'),
         is_heat_wave_cluster_attached=pulumi.get(__ret__, 'is_heat_wave_cluster_attached'),
         is_highly_available=pulumi.get(__ret__, 'is_highly_available'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),

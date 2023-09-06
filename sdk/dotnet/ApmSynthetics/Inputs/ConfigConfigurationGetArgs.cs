@@ -37,7 +37,7 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public Input<bool>? IsCertificateValidationEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) If disabled then auto snapshots are not collected.
+        /// (Updatable) If disabled, auto snapshots are not collected.
         /// </summary>
         [Input("isDefaultSnapshotEnabled")]
         public Input<bool>? IsDefaultSnapshotEnabled { get; set; }

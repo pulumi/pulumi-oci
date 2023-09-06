@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseMigration.outputs.GetConnectionAdminCredential;
 import com.pulumi.oci.DatabaseMigration.outputs.GetConnectionConnectDescriptor;
 import com.pulumi.oci.DatabaseMigration.outputs.GetConnectionPrivateEndpoint;
+import com.pulumi.oci.DatabaseMigration.outputs.GetConnectionReplicationCredential;
 import com.pulumi.oci.DatabaseMigration.outputs.GetConnectionSshDetail;
 import com.pulumi.oci.DatabaseMigration.outputs.GetConnectionVaultDetail;
 import java.lang.Object;
@@ -88,6 +89,11 @@ public final class GetConnectionResult {
      * 
      */
     private List<GetConnectionPrivateEndpoint> privateEndpoints;
+    /**
+     * @return Database Administrator Credentials details.
+     * 
+     */
+    private List<GetConnectionReplicationCredential> replicationCredentials;
     /**
      * @return Details of the SSH key that will be used.
      * 
@@ -224,6 +230,13 @@ public final class GetConnectionResult {
         return this.privateEndpoints;
     }
     /**
+     * @return Database Administrator Credentials details.
+     * 
+     */
+    public List<GetConnectionReplicationCredential> replicationCredentials() {
+        return this.replicationCredentials;
+    }
+    /**
      * @return Details of the SSH key that will be used.
      * 
      */
@@ -296,6 +309,7 @@ public final class GetConnectionResult {
         private String lifecycleDetails;
         private List<String> nsgIds;
         private List<GetConnectionPrivateEndpoint> privateEndpoints;
+        private List<GetConnectionReplicationCredential> replicationCredentials;
         private List<GetConnectionSshDetail> sshDetails;
         private String state;
         private Map<String,Object> systemTags;
@@ -322,6 +336,7 @@ public final class GetConnectionResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateEndpoints = defaults.privateEndpoints;
+    	      this.replicationCredentials = defaults.replicationCredentials;
     	      this.sshDetails = defaults.sshDetails;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -420,6 +435,14 @@ public final class GetConnectionResult {
             return privateEndpoints(List.of(privateEndpoints));
         }
         @CustomType.Setter
+        public Builder replicationCredentials(List<GetConnectionReplicationCredential> replicationCredentials) {
+            this.replicationCredentials = Objects.requireNonNull(replicationCredentials);
+            return this;
+        }
+        public Builder replicationCredentials(GetConnectionReplicationCredential... replicationCredentials) {
+            return replicationCredentials(List.of(replicationCredentials));
+        }
+        @CustomType.Setter
         public Builder sshDetails(List<GetConnectionSshDetail> sshDetails) {
             this.sshDetails = Objects.requireNonNull(sshDetails);
             return this;
@@ -482,6 +505,7 @@ public final class GetConnectionResult {
             o.lifecycleDetails = lifecycleDetails;
             o.nsgIds = nsgIds;
             o.privateEndpoints = privateEndpoints;
+            o.replicationCredentials = replicationCredentials;
             o.sshDetails = sshDetails;
             o.state = state;
             o.systemTags = systemTags;

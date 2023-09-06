@@ -441,14 +441,20 @@ class DeploymentOggData(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "adminPassword":
+        if key == "deploymentName":
+            suggest = "deployment_name"
+        elif key == "adminPassword":
             suggest = "admin_password"
         elif key == "adminUsername":
             suggest = "admin_username"
-        elif key == "deploymentName":
-            suggest = "deployment_name"
+        elif key == "credentialStore":
+            suggest = "credential_store"
+        elif key == "identityDomainId":
+            suggest = "identity_domain_id"
         elif key == "oggVersion":
             suggest = "ogg_version"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DeploymentOggData. Access the value via the '{suggest}' property getter instead.")
@@ -462,45 +468,43 @@ class DeploymentOggData(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 admin_password: str,
-                 admin_username: str,
                  deployment_name: str,
+                 admin_password: Optional[str] = None,
+                 admin_username: Optional[str] = None,
                  certificate: Optional[str] = None,
+                 credential_store: Optional[str] = None,
+                 identity_domain_id: Optional[str] = None,
                  key: Optional[str] = None,
-                 ogg_version: Optional[str] = None):
+                 ogg_version: Optional[str] = None,
+                 password_secret_id: Optional[str] = None):
         """
-        :param str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
-        :param str admin_username: (Updatable) The GoldenGate deployment console username.
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        :param str admin_username: (Updatable) The GoldenGate deployment console username.
         :param str certificate: (Updatable) A PEM-encoded SSL certificate.
+        :param str credential_store: (Updatable) The type of credential store for OGG.
+        :param str identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param str key: (Updatable) A PEM-encoded private key.
         :param str ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+        :param str password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "deployment_name", deployment_name)
+        if admin_password is not None:
+            pulumi.set(__self__, "admin_password", admin_password)
+        if admin_username is not None:
+            pulumi.set(__self__, "admin_username", admin_username)
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
+        if credential_store is not None:
+            pulumi.set(__self__, "credential_store", credential_store)
+        if identity_domain_id is not None:
+            pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         if key is not None:
             pulumi.set(__self__, "key", key)
         if ogg_version is not None:
             pulumi.set(__self__, "ogg_version", ogg_version)
-
-    @property
-    @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> str:
-        """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
-        """
-        return pulumi.get(self, "admin_password")
-
-    @property
-    @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> str:
-        """
-        (Updatable) The GoldenGate deployment console username.
-        """
-        return pulumi.get(self, "admin_username")
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="deploymentName")
@@ -511,12 +515,44 @@ class DeploymentOggData(dict):
         return pulumi.get(self, "deployment_name")
 
     @property
+    @pulumi.getter(name="adminPassword")
+    def admin_password(self) -> Optional[str]:
+        """
+        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        """
+        return pulumi.get(self, "admin_password")
+
+    @property
+    @pulumi.getter(name="adminUsername")
+    def admin_username(self) -> Optional[str]:
+        """
+        (Updatable) The GoldenGate deployment console username.
+        """
+        return pulumi.get(self, "admin_username")
+
+    @property
     @pulumi.getter
     def certificate(self) -> Optional[str]:
         """
         (Updatable) A PEM-encoded SSL certificate.
         """
         return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="credentialStore")
+    def credential_store(self) -> Optional[str]:
+        """
+        (Updatable) The type of credential store for OGG.
+        """
+        return pulumi.get(self, "credential_store")
+
+    @property
+    @pulumi.getter(name="identityDomainId")
+    def identity_domain_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+        """
+        return pulumi.get(self, "identity_domain_id")
 
     @property
     @pulumi.getter
@@ -533,6 +569,14 @@ class DeploymentOggData(dict):
         (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
         """
         return pulumi.get(self, "ogg_version")
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
 
 
 @pulumi.output_type
@@ -2380,21 +2424,30 @@ class GetDeploymentOggDataResult(dict):
                  admin_password: str,
                  admin_username: str,
                  certificate: str,
+                 credential_store: str,
                  deployment_name: str,
+                 identity_domain_id: str,
                  key: str,
-                 ogg_version: str):
+                 ogg_version: str,
+                 password_secret_id: str):
         """
         :param str admin_username: The GoldenGate deployment console username.
         :param str certificate: A PEM-encoded SSL certificate.
+        :param str credential_store: The type of credential store for OGG.
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param str ogg_version: Version of OGG
+        :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "credential_store", credential_store)
         pulumi.set(__self__, "deployment_name", deployment_name)
+        pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -2418,12 +2471,28 @@ class GetDeploymentOggDataResult(dict):
         return pulumi.get(self, "certificate")
 
     @property
+    @pulumi.getter(name="credentialStore")
+    def credential_store(self) -> str:
+        """
+        The type of credential store for OGG.
+        """
+        return pulumi.get(self, "credential_store")
+
+    @property
     @pulumi.getter(name="deploymentName")
     def deployment_name(self) -> str:
         """
         The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         """
         return pulumi.get(self, "deployment_name")
+
+    @property
+    @pulumi.getter(name="identityDomainId")
+    def identity_domain_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+        """
+        return pulumi.get(self, "identity_domain_id")
 
     @property
     @pulumi.getter
@@ -2437,6 +2506,14 @@ class GetDeploymentOggDataResult(dict):
         Version of OGG
         """
         return pulumi.get(self, "ogg_version")
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
 
 
 @pulumi.output_type
@@ -3724,21 +3801,30 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
                  admin_password: str,
                  admin_username: str,
                  certificate: str,
+                 credential_store: str,
                  deployment_name: str,
+                 identity_domain_id: str,
                  key: str,
-                 ogg_version: str):
+                 ogg_version: str,
+                 password_secret_id: str):
         """
         :param str admin_username: The GoldenGate deployment console username.
         :param str certificate: A PEM-encoded SSL certificate.
+        :param str credential_store: The type of credential store for OGG.
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param str ogg_version: Version of OGG
+        :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "credential_store", credential_store)
         pulumi.set(__self__, "deployment_name", deployment_name)
+        pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -3762,12 +3848,28 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         return pulumi.get(self, "certificate")
 
     @property
+    @pulumi.getter(name="credentialStore")
+    def credential_store(self) -> str:
+        """
+        The type of credential store for OGG.
+        """
+        return pulumi.get(self, "credential_store")
+
+    @property
     @pulumi.getter(name="deploymentName")
     def deployment_name(self) -> str:
         """
         The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         """
         return pulumi.get(self, "deployment_name")
+
+    @property
+    @pulumi.getter(name="identityDomainId")
+    def identity_domain_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+        """
+        return pulumi.get(self, "identity_domain_id")
 
     @property
     @pulumi.getter
@@ -3781,6 +3883,14 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         Version of OGG
         """
         return pulumi.get(self, "ogg_version")
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
 
 
 @pulumi.output_type

@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         public readonly double AvailableCpus;
         /// <summary>
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// The compute model of the Autonomous VM Cluster.
         /// </summary>
         public readonly string ComputeModel;
         /// <summary>
@@ -186,6 +186,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>
+        /// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        /// </summary>
+        public readonly double LargestProvisionableAutonomousDatabaseInCpus;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         public readonly string LastMaintenanceRunId;
@@ -199,7 +203,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
@@ -223,15 +227,23 @@ namespace Pulumi.Oci.Database
         public readonly string PeerDbUniqueName;
         public readonly string ProtectionMode;
         /// <summary>
-        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.\  For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         public readonly ImmutableArray<double> ProvisionableCpuses;
         /// <summary>
+        /// The number of CPUs provisioned in an Autonomous Container Database.
+        /// </summary>
+        public readonly double ProvisionedCpus;
+        /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         public readonly double ReclaimableCpus;
+        /// <summary>
+        /// The number of CPUs reserved in an Autonomous Container Database.
+        /// </summary>
+        public readonly double ReservedCpus;
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
@@ -258,7 +270,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeSnapshotStandbyRevert;
         /// <summary>
-        /// The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         public readonly int TotalCpus;
         /// <summary>
@@ -318,6 +330,8 @@ namespace Pulumi.Oci.Database
 
             string kmsKeyId,
 
+            double largestProvisionableAutonomousDatabaseInCpus,
+
             string lastMaintenanceRunId,
 
             string lifecycleDetails,
@@ -352,7 +366,11 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<double> provisionableCpuses,
 
+            double provisionedCpus,
+
             double reclaimableCpus,
+
+            double reservedCpus,
 
             string role,
 
@@ -397,6 +415,7 @@ namespace Pulumi.Oci.Database
             KeyStoreId = keyStoreId;
             KeyStoreWalletName = keyStoreWalletName;
             KmsKeyId = kmsKeyId;
+            LargestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             LastMaintenanceRunId = lastMaintenanceRunId;
             LifecycleDetails = lifecycleDetails;
             MaintenanceWindowDetails = maintenanceWindowDetails;
@@ -414,7 +433,9 @@ namespace Pulumi.Oci.Database
             PeerDbUniqueName = peerDbUniqueName;
             ProtectionMode = protectionMode;
             ProvisionableCpuses = provisionableCpuses;
+            ProvisionedCpus = provisionedCpus;
             ReclaimableCpus = reclaimableCpus;
+            ReservedCpus = reservedCpus;
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;
             ServiceLevelAgreementType = serviceLevelAgreementType;

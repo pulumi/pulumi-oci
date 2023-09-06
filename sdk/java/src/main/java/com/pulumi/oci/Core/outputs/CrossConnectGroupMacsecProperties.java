@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.CrossConnectGroupMacsecPropertiesPrimaryKey;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -13,38 +14,56 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CrossConnectGroupMacsecProperties {
     /**
-     * @return Type of encryption cipher suite to use for the MACsec connection.
+     * @return (Updatable) Type of encryption cipher suite to use for the MACsec connection.
      * 
      */
     private @Nullable String encryptionCipher;
     /**
-     * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+     * @return (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+     * 
+     */
+    private @Nullable Boolean isUnprotectedTrafficAllowed;
+    /**
+     * @return (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
      * 
      */
     private @Nullable CrossConnectGroupMacsecPropertiesPrimaryKey primaryKey;
     /**
-     * @return The cross-connect group&#39;s current state.
+     * @return (Updatable) Indicates whether or not MACsec is enabled.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String state;
 
     private CrossConnectGroupMacsecProperties() {}
     /**
-     * @return Type of encryption cipher suite to use for the MACsec connection.
+     * @return (Updatable) Type of encryption cipher suite to use for the MACsec connection.
      * 
      */
     public Optional<String> encryptionCipher() {
         return Optional.ofNullable(this.encryptionCipher);
     }
     /**
-     * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
+     * @return (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+     * 
+     */
+    public Optional<Boolean> isUnprotectedTrafficAllowed() {
+        return Optional.ofNullable(this.isUnprotectedTrafficAllowed);
+    }
+    /**
+     * @return (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
      * 
      */
     public Optional<CrossConnectGroupMacsecPropertiesPrimaryKey> primaryKey() {
         return Optional.ofNullable(this.primaryKey);
     }
     /**
-     * @return The cross-connect group&#39;s current state.
+     * @return (Updatable) Indicates whether or not MACsec is enabled.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String state() {
@@ -61,12 +80,14 @@ public final class CrossConnectGroupMacsecProperties {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String encryptionCipher;
+        private @Nullable Boolean isUnprotectedTrafficAllowed;
         private @Nullable CrossConnectGroupMacsecPropertiesPrimaryKey primaryKey;
         private String state;
         public Builder() {}
         public Builder(CrossConnectGroupMacsecProperties defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.encryptionCipher = defaults.encryptionCipher;
+    	      this.isUnprotectedTrafficAllowed = defaults.isUnprotectedTrafficAllowed;
     	      this.primaryKey = defaults.primaryKey;
     	      this.state = defaults.state;
         }
@@ -74,6 +95,11 @@ public final class CrossConnectGroupMacsecProperties {
         @CustomType.Setter
         public Builder encryptionCipher(@Nullable String encryptionCipher) {
             this.encryptionCipher = encryptionCipher;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isUnprotectedTrafficAllowed(@Nullable Boolean isUnprotectedTrafficAllowed) {
+            this.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
             return this;
         }
         @CustomType.Setter
@@ -89,6 +115,7 @@ public final class CrossConnectGroupMacsecProperties {
         public CrossConnectGroupMacsecProperties build() {
             final var o = new CrossConnectGroupMacsecProperties();
             o.encryptionCipher = encryptionCipher;
+            o.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
             o.primaryKey = primaryKey;
             o.state = state;
             return o;

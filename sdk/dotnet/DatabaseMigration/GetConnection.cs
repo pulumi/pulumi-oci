@@ -163,6 +163,10 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionPrivateEndpointResult> PrivateEndpoints;
         /// <summary>
+        /// Database Administrator Credentials details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConnectionReplicationCredentialResult> ReplicationCredentials;
+        /// <summary>
         /// Details of the SSH key that will be used.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionSshDetailResult> SshDetails;
@@ -221,6 +225,8 @@ namespace Pulumi.Oci.DatabaseMigration
 
             ImmutableArray<Outputs.GetConnectionPrivateEndpointResult> privateEndpoints,
 
+            ImmutableArray<Outputs.GetConnectionReplicationCredentialResult> replicationCredentials,
+
             ImmutableArray<Outputs.GetConnectionSshDetailResult> sshDetails,
 
             string state,
@@ -252,6 +258,7 @@ namespace Pulumi.Oci.DatabaseMigration
             LifecycleDetails = lifecycleDetails;
             NsgIds = nsgIds;
             PrivateEndpoints = privateEndpoints;
+            ReplicationCredentials = replicationCredentials;
             SshDetails = sshDetails;
             State = state;
             SystemTags = systemTags;

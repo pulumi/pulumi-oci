@@ -86,21 +86,6 @@ public final class GetMysqlDbSystemsArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-     * 
-     */
-    @Import(name="isAnalyticsClusterAttached")
-    private @Nullable Output<Boolean> isAnalyticsClusterAttached;
-
-    /**
-     * @return DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-     * 
-     */
-    public Optional<Output<Boolean>> isAnalyticsClusterAttached() {
-        return Optional.ofNullable(this.isAnalyticsClusterAttached);
-    }
-
-    /**
      * If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
      * 
      */
@@ -153,7 +138,6 @@ public final class GetMysqlDbSystemsArgs extends com.pulumi.resources.InvokeArgs
         this.dbSystemId = $.dbSystemId;
         this.displayName = $.displayName;
         this.filters = $.filters;
-        this.isAnalyticsClusterAttached = $.isAnalyticsClusterAttached;
         this.isHeatWaveClusterAttached = $.isHeatWaveClusterAttached;
         this.isUpToDate = $.isUpToDate;
         this.state = $.state;
@@ -272,27 +256,6 @@ public final class GetMysqlDbSystemsArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder filters(GetMysqlDbSystemsFilterArgs... filters) {
             return filters(List.of(filters));
-        }
-
-        /**
-         * @param isAnalyticsClusterAttached DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isAnalyticsClusterAttached(@Nullable Output<Boolean> isAnalyticsClusterAttached) {
-            $.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-            return this;
-        }
-
-        /**
-         * @param isAnalyticsClusterAttached DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
-            return isAnalyticsClusterAttached(Output.of(isAnalyticsClusterAttached));
         }
 
         /**

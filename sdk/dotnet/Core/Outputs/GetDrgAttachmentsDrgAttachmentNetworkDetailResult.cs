@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
+        /// </summary>
+        public readonly ImmutableArray<string> Ids;
+        /// <summary>
         /// The IPSec connection that contains the attached IPSec tunnel.
         /// </summary>
         public readonly string IpsecConnectionId;
@@ -26,7 +30,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string RouteTableId;
         /// <summary>
-        /// The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit's DRG attachment.
+        /// </summary>
+        public readonly string TransportAttachmentId;
+        /// <summary>
+        /// Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+        /// </summary>
+        public readonly bool TransportOnlyMode;
+        /// <summary>
+        /// The type can be one of these values: `IPSEC_TUNNEL`, `LOOPBACK`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
         /// </summary>
         public readonly string Type;
         /// <summary>
@@ -38,17 +50,26 @@ namespace Pulumi.Oci.Core.Outputs
         private GetDrgAttachmentsDrgAttachmentNetworkDetailResult(
             string id,
 
+            ImmutableArray<string> ids,
+
             string ipsecConnectionId,
 
             string routeTableId,
+
+            string transportAttachmentId,
+
+            bool transportOnlyMode,
 
             string type,
 
             string vcnRouteType)
         {
             Id = id;
+            Ids = ids;
             IpsecConnectionId = ipsecConnectionId;
             RouteTableId = routeTableId;
+            TransportAttachmentId = transportAttachmentId;
+            TransportOnlyMode = transportOnlyMode;
             Type = type;
             VcnRouteType = vcnRouteType;
         }

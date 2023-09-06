@@ -108,10 +108,6 @@ namespace Pulumi.Oci.Mysql
         public readonly string AdminPassword;
         public readonly string AdminUsername;
         /// <summary>
-        /// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetMysqlDbSystemAnalyticsClusterResult> AnalyticsClusters;
-        /// <summary>
         /// The availability domain in which the DB System is placed.
         /// </summary>
         public readonly string AvailabilityDomain;
@@ -192,10 +188,6 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
-        /// </summary>
-        public readonly bool IsAnalyticsClusterAttached;
-        /// <summary>
         /// If the DB System has a HeatWave Cluster attached.
         /// </summary>
         public readonly bool IsHeatWaveClusterAttached;
@@ -259,8 +251,6 @@ namespace Pulumi.Oci.Mysql
 
             string adminUsername,
 
-            ImmutableArray<Outputs.GetMysqlDbSystemAnalyticsClusterResult> analyticsClusters,
-
             string availabilityDomain,
 
             ImmutableArray<Outputs.GetMysqlDbSystemBackupPolicyResult> backupPolicies,
@@ -301,8 +291,6 @@ namespace Pulumi.Oci.Mysql
 
             string ipAddress,
 
-            bool isAnalyticsClusterAttached,
-
             bool isHeatWaveClusterAttached,
 
             bool isHighlyAvailable,
@@ -335,7 +323,6 @@ namespace Pulumi.Oci.Mysql
         {
             AdminPassword = adminPassword;
             AdminUsername = adminUsername;
-            AnalyticsClusters = analyticsClusters;
             AvailabilityDomain = availabilityDomain;
             BackupPolicies = backupPolicies;
             Channels = channels;
@@ -356,7 +343,6 @@ namespace Pulumi.Oci.Mysql
             HostnameLabel = hostnameLabel;
             Id = id;
             IpAddress = ipAddress;
-            IsAnalyticsClusterAttached = isAnalyticsClusterAttached;
             IsHeatWaveClusterAttached = isHeatWaveClusterAttached;
             IsHighlyAvailable = isHighlyAvailable;
             LifecycleDetails = lifecycleDetails;

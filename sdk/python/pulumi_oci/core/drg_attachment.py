@@ -487,30 +487,6 @@ class DrgAttachment(pulumi.CustomResource):
         For more information about compartments and access control, see
         [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_drg_attachment = oci.core.DrgAttachment("testDrgAttachment",
-            drg_id=oci_core_drg["test_drg"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["drg_attachment_display_name"],
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            network_details=oci.core.DrgAttachmentNetworkDetailsArgs(
-                id=oci_core_vcn["test_vcn"]["id"],
-                type=var["drg_attachment_network_details_type"],
-                route_table_id=oci_core_route_table["test_route_table"]["id"],
-                vcn_route_type=var["drg_attachment_network_details_vcn_route_type"],
-            ))
-        ```
-
         ## Import
 
         DrgAttachments can be imported using the `id`, e.g.
@@ -563,30 +539,6 @@ class DrgAttachment(pulumi.CustomResource):
         For the purposes of access control, the DRG attachment is automatically placed into the currently selected compartment.
         For more information about compartments and access control, see
         [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_drg_attachment = oci.core.DrgAttachment("testDrgAttachment",
-            drg_id=oci_core_drg["test_drg"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["drg_attachment_display_name"],
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            network_details=oci.core.DrgAttachmentNetworkDetailsArgs(
-                id=oci_core_vcn["test_vcn"]["id"],
-                type=var["drg_attachment_network_details_type"],
-                route_table_id=oci_core_route_table["test_route_table"]["id"],
-                vcn_route_type=var["drg_attachment_network_details_vcn_route_type"],
-            ))
-        ```
 
         ## Import
 

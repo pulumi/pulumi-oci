@@ -14,14 +14,14 @@ public final class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs ext
     public static final MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs Empty = new MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs();
 
     /**
-     * (Updatable) Administrator password
+     * (Updatable) Database  password
      * 
      */
     @Import(name="password", required=true)
     private Output<String> password;
 
     /**
-     * @return (Updatable) Administrator password
+     * @return (Updatable) Database  password
      * 
      */
     public Output<String> password() {
@@ -29,14 +29,14 @@ public final class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs ext
     }
 
     /**
-     * (Updatable) Administrator username
+     * (Updatable) Database username
      * 
      */
     @Import(name="username", required=true)
     private Output<String> username;
 
     /**
-     * @return (Updatable) Administrator username
+     * @return (Updatable) Database username
      * 
      */
     public Output<String> username() {
@@ -69,7 +69,7 @@ public final class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs ext
         }
 
         /**
-         * @param password (Updatable) Administrator password
+         * @param password (Updatable) Database  password
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs ext
         }
 
         /**
-         * @param password (Updatable) Administrator password
+         * @param password (Updatable) Database  password
          * 
          * @return builder
          * 
@@ -90,7 +90,7 @@ public final class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs ext
         }
 
         /**
-         * @param username (Updatable) Administrator username
+         * @param username (Updatable) Database username
          * 
          * @return builder
          * 
@@ -101,7 +101,7 @@ public final class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs ext
         }
 
         /**
-         * @param username (Updatable) Administrator username
+         * @param username (Updatable) Database username
          * 
          * @return builder
          * 

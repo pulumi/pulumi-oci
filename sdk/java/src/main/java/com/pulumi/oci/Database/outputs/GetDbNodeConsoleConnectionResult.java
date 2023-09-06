@@ -4,7 +4,9 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -25,16 +27,36 @@ public final class GetDbNodeConsoleConnectionResult {
      */
     private String dbNodeId;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The SSH public key fingerprint for the console connection.
      * 
      */
     private String fingerprint;
     /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
+    /**
      * @return The OCID of the console connection.
      * 
      */
     private String id;
+    /**
+     * @return Information about the current lifecycle state.
+     * 
+     */
+    private String lifecycleDetails;
     private String publicKey;
+    /**
+     * @return The SSH public key&#39;s fingerprint for the console connection service host.
+     * 
+     */
+    private String serviceHostKeyFingerprint;
     /**
      * @return The current state of the console connection.
      * 
@@ -64,11 +86,25 @@ public final class GetDbNodeConsoleConnectionResult {
         return this.dbNodeId;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The SSH public key fingerprint for the console connection.
      * 
      */
     public String fingerprint() {
         return this.fingerprint;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The OCID of the console connection.
@@ -77,8 +113,22 @@ public final class GetDbNodeConsoleConnectionResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Information about the current lifecycle state.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
     public String publicKey() {
         return this.publicKey;
+    }
+    /**
+     * @return The SSH public key&#39;s fingerprint for the console connection service host.
+     * 
+     */
+    public String serviceHostKeyFingerprint() {
+        return this.serviceHostKeyFingerprint;
     }
     /**
      * @return The current state of the console connection.
@@ -100,9 +150,13 @@ public final class GetDbNodeConsoleConnectionResult {
         private String compartmentId;
         private String connectionString;
         private String dbNodeId;
+        private Map<String,Object> definedTags;
         private String fingerprint;
+        private Map<String,Object> freeformTags;
         private String id;
+        private String lifecycleDetails;
         private String publicKey;
+        private String serviceHostKeyFingerprint;
         private String state;
         public Builder() {}
         public Builder(GetDbNodeConsoleConnectionResult defaults) {
@@ -110,9 +164,13 @@ public final class GetDbNodeConsoleConnectionResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionString = defaults.connectionString;
     	      this.dbNodeId = defaults.dbNodeId;
+    	      this.definedTags = defaults.definedTags;
     	      this.fingerprint = defaults.fingerprint;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.publicKey = defaults.publicKey;
+    	      this.serviceHostKeyFingerprint = defaults.serviceHostKeyFingerprint;
     	      this.state = defaults.state;
         }
 
@@ -132,8 +190,18 @@ public final class GetDbNodeConsoleConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            this.definedTags = Objects.requireNonNull(definedTags);
+            return this;
+        }
+        @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = Objects.requireNonNull(fingerprint);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
         @CustomType.Setter
@@ -142,8 +210,18 @@ public final class GetDbNodeConsoleConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            return this;
+        }
+        @CustomType.Setter
         public Builder publicKey(String publicKey) {
             this.publicKey = Objects.requireNonNull(publicKey);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceHostKeyFingerprint(String serviceHostKeyFingerprint) {
+            this.serviceHostKeyFingerprint = Objects.requireNonNull(serviceHostKeyFingerprint);
             return this;
         }
         @CustomType.Setter
@@ -156,9 +234,13 @@ public final class GetDbNodeConsoleConnectionResult {
             o.compartmentId = compartmentId;
             o.connectionString = connectionString;
             o.dbNodeId = dbNodeId;
+            o.definedTags = definedTags;
             o.fingerprint = fingerprint;
+            o.freeformTags = freeformTags;
             o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
             o.publicKey = publicKey;
+            o.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
             o.state = state;
             return o;
         }

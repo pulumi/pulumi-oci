@@ -67,11 +67,19 @@ type LookupDbNodeConsoleConnectionResult struct {
 	ConnectionString string `pulumi:"connectionString"`
 	// The OCID of the database node.
 	DbNodeId string `pulumi:"dbNodeId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The SSH public key fingerprint for the console connection.
 	Fingerprint string `pulumi:"fingerprint"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the console connection.
-	Id        string `pulumi:"id"`
-	PublicKey string `pulumi:"publicKey"`
+	Id string `pulumi:"id"`
+	// Information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	PublicKey        string `pulumi:"publicKey"`
+	// The SSH public key's fingerprint for the console connection service host.
+	ServiceHostKeyFingerprint string `pulumi:"serviceHostKeyFingerprint"`
 	// The current state of the console connection.
 	State string `pulumi:"state"`
 }
@@ -131,9 +139,19 @@ func (o LookupDbNodeConsoleConnectionResultOutput) DbNodeId() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.DbNodeId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupDbNodeConsoleConnectionResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The SSH public key fingerprint for the console connection.
 func (o LookupDbNodeConsoleConnectionResultOutput) Fingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.Fingerprint }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o LookupDbNodeConsoleConnectionResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The OCID of the console connection.
@@ -141,8 +159,18 @@ func (o LookupDbNodeConsoleConnectionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Information about the current lifecycle state.
+func (o LookupDbNodeConsoleConnectionResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
 func (o LookupDbNodeConsoleConnectionResultOutput) PublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.PublicKey }).(pulumi.StringOutput)
+}
+
+// The SSH public key's fingerprint for the console connection service host.
+func (o LookupDbNodeConsoleConnectionResultOutput) ServiceHostKeyFingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.ServiceHostKeyFingerprint }).(pulumi.StringOutput)
 }
 
 // The current state of the console connection.

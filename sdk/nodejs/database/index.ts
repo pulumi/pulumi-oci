@@ -140,6 +140,11 @@ export type DbHome = import("./dbHome").DbHome;
 export const DbHome: typeof import("./dbHome").DbHome = null as any;
 utilities.lazyLoad(exports, ["DbHome"], () => require("./dbHome"));
 
+export { DbNodeArgs, DbNodeState } from "./dbNode";
+export type DbNode = import("./dbNode").DbNode;
+export const DbNode: typeof import("./dbNode").DbNode = null as any;
+utilities.lazyLoad(exports, ["DbNode"], () => require("./dbNode"));
+
 export { DbNodeConsoleConnectionArgs, DbNodeConsoleConnectionState } from "./dbNodeConsoleConnection";
 export type DbNodeConsoleConnection = import("./dbNodeConsoleConnection").DbNodeConsoleConnection;
 export const DbNodeConsoleConnection: typeof import("./dbNodeConsoleConnection").DbNodeConsoleConnection = null as any;
@@ -928,6 +933,8 @@ const _module = {
                 return new DatabaseUpgrade(name, <any>undefined, { urn })
             case "oci:Database/dbHome:DbHome":
                 return new DbHome(name, <any>undefined, { urn })
+            case "oci:Database/dbNode:DbNode":
+                return new DbNode(name, <any>undefined, { urn })
             case "oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection":
                 return new DbNodeConsoleConnection(name, <any>undefined, { urn })
             case "oci:Database/dbSystem:DbSystem":
@@ -1020,6 +1027,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/database", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseSoftwareImage", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseUpgrade", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbHome", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/dbNode", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbNodeConsoleConnection", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystem", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystemsUpgrade", _module)

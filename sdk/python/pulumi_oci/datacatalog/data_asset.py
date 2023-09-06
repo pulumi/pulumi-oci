@@ -113,6 +113,7 @@ class _DataAssetState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_key: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -129,6 +130,7 @@ class _DataAssetState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] external_key: External URI that can be used to reference the object. Format will differ based on the type of object.
         :param pulumi.Input[str] key: Unique data asset key that is immutable.
+        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
         :param pulumi.Input[Mapping[str, Any]] properties: A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         :param pulumi.Input[str] state: The current state of the data asset.
         :param pulumi.Input[str] time_created: The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -154,6 +156,8 @@ class _DataAssetState:
             pulumi.set(__self__, "external_key", external_key)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
         if state is not None:
@@ -242,6 +246,18 @@ class _DataAssetState:
     @key.setter
     def key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
 
     @property
     @pulumi.getter
@@ -470,6 +486,7 @@ class DataAsset(pulumi.CustomResource):
             __props__.__dict__["created_by_id"] = None
             __props__.__dict__["external_key"] = None
             __props__.__dict__["key"] = None
+            __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_harvested"] = None
@@ -492,6 +509,7 @@ class DataAsset(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             external_key: Optional[pulumi.Input[str]] = None,
             key: Optional[pulumi.Input[str]] = None,
+            lifecycle_details: Optional[pulumi.Input[str]] = None,
             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -513,6 +531,7 @@ class DataAsset(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] external_key: External URI that can be used to reference the object. Format will differ based on the type of object.
         :param pulumi.Input[str] key: Unique data asset key that is immutable.
+        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
         :param pulumi.Input[Mapping[str, Any]] properties: A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         :param pulumi.Input[str] state: The current state of the data asset.
         :param pulumi.Input[str] time_created: The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -536,6 +555,7 @@ class DataAsset(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["external_key"] = external_key
         __props__.__dict__["key"] = key
+        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["properties"] = properties
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
@@ -593,6 +613,14 @@ class DataAsset(pulumi.CustomResource):
         Unique data asset key that is immutable.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter

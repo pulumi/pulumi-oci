@@ -358,7 +358,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int MaxCpuCoreCount;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per OCPU or ECPU.
+        /// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>

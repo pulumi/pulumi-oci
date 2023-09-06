@@ -55,11 +55,9 @@ export interface GetAutonomousContainerDatabaseResult {
     readonly autonomousVmClusterId: string;
     /**
      * The availability domain of the Autonomous Container Database.
+     * <<<<<<< HEAD
      */
     readonly availabilityDomain: string;
-    /**
-     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-     */
     readonly availableCpus: number;
     /**
      * Backup options for the Autonomous Container Database.

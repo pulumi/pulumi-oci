@@ -85,6 +85,10 @@ export class DataAsset extends pulumi.CustomResource {
      */
     public /*out*/ readonly key!: pulumi.Output<string>;
     /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+     */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
      * A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
      */
     public readonly properties!: pulumi.Output<{[key: string]: any}>;
@@ -140,6 +144,7 @@ export class DataAsset extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["externalKey"] = state ? state.externalKey : undefined;
             resourceInputs["key"] = state ? state.key : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["properties"] = state ? state.properties : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -167,6 +172,7 @@ export class DataAsset extends pulumi.CustomResource {
             resourceInputs["createdById"] = undefined /*out*/;
             resourceInputs["externalKey"] = undefined /*out*/;
             resourceInputs["key"] = undefined /*out*/;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeHarvested"] = undefined /*out*/;
@@ -207,6 +213,10 @@ export interface DataAssetState {
      * Unique data asset key that is immutable.
      */
     key?: pulumi.Input<string>;
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+     */
+    lifecycleDetails?: pulumi.Input<string>;
     /**
      * A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
      */

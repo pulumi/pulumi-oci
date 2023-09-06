@@ -38,6 +38,10 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
+        /// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+        /// </summary>
+        public readonly string LifecycleDetails;
+        /// <summary>
         /// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> Properties;
@@ -84,6 +88,8 @@ namespace Pulumi.Oci.DataCatalog.Outputs
 
             string key,
 
+            string lifecycleDetails,
+
             ImmutableDictionary<string, object> properties,
 
             string state,
@@ -106,6 +112,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
             DisplayName = displayName;
             ExternalKey = externalKey;
             Key = key;
+            LifecycleDetails = lifecycleDetails;
             Properties = properties;
             State = state;
             TimeCreated = timeCreated;

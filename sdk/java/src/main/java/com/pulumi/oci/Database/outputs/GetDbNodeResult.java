@@ -5,7 +5,9 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -52,12 +54,22 @@ public final class GetDbNodeResult {
      */
     private String dbSystemId;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The name of the Fault Domain the instance is contained in.
      * 
      */
     private String faultDomain;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
     private String hostIpId;
@@ -67,10 +79,15 @@ public final class GetDbNodeResult {
      */
     private String hostname;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
      * 
      */
     private String id;
+    /**
+     * @return Information about the current lifecycle state.
+     * 
+     */
+    private String lifecycleDetails;
     /**
      * @return The type of database node maintenance.
      * 
@@ -178,6 +195,13 @@ public final class GetDbNodeResult {
         return this.dbSystemId;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The name of the Fault Domain the instance is contained in.
      * 
      */
@@ -185,7 +209,14 @@ public final class GetDbNodeResult {
         return this.faultDomain;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
     public String hostIpId() {
@@ -199,11 +230,18 @@ public final class GetDbNodeResult {
         return this.hostname;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
      * 
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Information about the current lifecycle state.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
     }
     /**
      * @return The type of database node maintenance.
@@ -287,10 +325,13 @@ public final class GetDbNodeResult {
         private Integer dbNodeStorageSizeInGbs;
         private String dbServerId;
         private String dbSystemId;
+        private Map<String,Object> definedTags;
         private String faultDomain;
+        private Map<String,Object> freeformTags;
         private String hostIpId;
         private String hostname;
         private String id;
+        private String lifecycleDetails;
         private String maintenanceType;
         private Integer memorySizeInGbs;
         private Integer softwareStorageSizeInGb;
@@ -312,10 +353,13 @@ public final class GetDbNodeResult {
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
     	      this.dbServerId = defaults.dbServerId;
     	      this.dbSystemId = defaults.dbSystemId;
+    	      this.definedTags = defaults.definedTags;
     	      this.faultDomain = defaults.faultDomain;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.hostIpId = defaults.hostIpId;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceType = defaults.maintenanceType;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.softwareStorageSizeInGb = defaults.softwareStorageSizeInGb;
@@ -373,8 +417,18 @@ public final class GetDbNodeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            this.definedTags = Objects.requireNonNull(definedTags);
+            return this;
+        }
+        @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
         @CustomType.Setter
@@ -390,6 +444,11 @@ public final class GetDbNodeResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
         @CustomType.Setter
@@ -448,10 +507,13 @@ public final class GetDbNodeResult {
             o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             o.dbServerId = dbServerId;
             o.dbSystemId = dbSystemId;
+            o.definedTags = definedTags;
             o.faultDomain = faultDomain;
+            o.freeformTags = freeformTags;
             o.hostIpId = hostIpId;
             o.hostname = hostname;
             o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
             o.maintenanceType = maintenanceType;
             o.memorySizeInGbs = memorySizeInGbs;
             o.softwareStorageSizeInGb = softwareStorageSizeInGb;

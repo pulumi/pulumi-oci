@@ -2241,6 +2241,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/dbNode",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/dbNode:DbNode": "DbNode"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/dbNodeConsoleConnection",
   "fqn": "pulumi_oci.database",
   "classes": {

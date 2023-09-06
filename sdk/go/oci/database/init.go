@@ -75,6 +75,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DatabaseUpgrade{}
 	case "oci:Database/dbHome:DbHome":
 		r = &DbHome{}
+	case "oci:Database/dbNode:DbNode":
+		r = &DbNode{}
 	case "oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection":
 		r = &DbNodeConsoleConnection{}
 	case "oci:Database/dbSystem:DbSystem":
@@ -281,6 +283,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/dbHome",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/dbNode",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

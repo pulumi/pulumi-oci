@@ -30,6 +30,11 @@ namespace Pulumi.Oci.Database
     ///     {
     ///         DbNodeId = oci_database_db_node.Test_db_node.Id,
     ///         PublicKey = @var.Db_node_console_connection_public_key,
+    ///         DefinedTags = @var.Db_node_console_connection_defined_tags,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
     ///     });
     /// 
     /// });
@@ -65,10 +70,28 @@ namespace Pulumi.Oci.Database
         public Output<string> DbNodeId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        [Output("definedTags")]
+        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
         /// The SSH public key fingerprint for the console connection.
         /// </summary>
         [Output("fingerprint")]
         public Output<string> Fingerprint { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        [Output("freeformTags")]
+        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Information about the current lifecycle state.
+        /// </summary>
+        [Output("lifecycleDetails")]
+        public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The SSH public key used to authenticate the console connection.
@@ -79,6 +102,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("publicKey")]
         public Output<string> PublicKey { get; private set; } = null!;
+
+        /// <summary>
+        /// The SSH public key's fingerprint for the console connection service host.
+        /// </summary>
+        [Output("serviceHostKeyFingerprint")]
+        public Output<string> ServiceHostKeyFingerprint { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the console connection.
@@ -138,6 +167,30 @@ namespace Pulumi.Oci.Database
         [Input("dbNodeId", required: true)]
         public Input<string> DbNodeId { get; set; } = null!;
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
+
         /// <summary>
         /// The SSH public key used to authenticate the console connection.
         /// 
@@ -174,11 +227,41 @@ namespace Pulumi.Oci.Database
         [Input("dbNodeId")]
         public Input<string>? DbNodeId { get; set; }
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// The SSH public key fingerprint for the console connection.
         /// </summary>
         [Input("fingerprint")]
         public Input<string>? Fingerprint { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
+
+        /// <summary>
+        /// Information about the current lifecycle state.
+        /// </summary>
+        [Input("lifecycleDetails")]
+        public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
         /// The SSH public key used to authenticate the console connection.
@@ -189,6 +272,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("publicKey")]
         public Input<string>? PublicKey { get; set; }
+
+        /// <summary>
+        /// The SSH public key's fingerprint for the console connection service host.
+        /// </summary>
+        [Input("serviceHostKeyFingerprint")]
+        public Input<string>? ServiceHostKeyFingerprint { get; set; }
 
         /// <summary>
         /// The current state of the console connection.

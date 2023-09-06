@@ -139,11 +139,19 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The name of the Fault Domain the instance is contained in.
         /// </summary>
         public readonly string FaultDomain;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         /// </summary>
         public readonly string HostIpId;
         /// <summary>
@@ -151,9 +159,13 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Hostname;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Information about the current lifecycle state.
+        /// </summary>
+        public readonly string LifecycleDetails;
         /// <summary>
         /// The type of database node maintenance.
         /// </summary>
@@ -211,13 +223,19 @@ namespace Pulumi.Oci.Database
 
             string dbSystemId,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string faultDomain,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string hostIpId,
 
             string hostname,
 
             string id,
+
+            string lifecycleDetails,
 
             string maintenanceType,
 
@@ -246,10 +264,13 @@ namespace Pulumi.Oci.Database
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             DbServerId = dbServerId;
             DbSystemId = dbSystemId;
+            DefinedTags = definedTags;
             FaultDomain = faultDomain;
+            FreeformTags = freeformTags;
             HostIpId = hostIpId;
             Hostname = hostname;
             Id = id;
+            LifecycleDetails = lifecycleDetails;
             MaintenanceType = maintenanceType;
             MemorySizeInGbs = memorySizeInGbs;
             SoftwareStorageSizeInGb = softwareStorageSizeInGb;

@@ -295,7 +295,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly maxCpuCoreCount: number;
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**

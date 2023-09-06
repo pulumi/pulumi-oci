@@ -64,9 +64,9 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId string `pulumi:"autonomousVmClusterId"`
 	// The availability domain of the Autonomous Container Database.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-	AvailableCpus float64 `pulumi:"availableCpus"`
+	// <<<<<<< HEAD
+	AvailabilityDomain string  `pulumi:"availabilityDomain"`
+	AvailableCpus      float64 `pulumi:"availableCpus"`
 	// Backup options for the Autonomous Container Database.
 	BackupConfigs []GetAutonomousContainerDatabaseBackupConfig `pulumi:"backupConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -209,11 +209,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousVmClusterId() p
 }
 
 // The availability domain of the Autonomous Container Database.
+// <<<<<<< HEAD
 func (o LookupAutonomousContainerDatabaseResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 func (o LookupAutonomousContainerDatabaseResultOutput) AvailableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
 }

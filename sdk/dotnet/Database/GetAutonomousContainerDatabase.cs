@@ -116,11 +116,9 @@ namespace Pulumi.Oci.Database
         public readonly string AutonomousVmClusterId;
         /// <summary>
         /// The availability domain of the Autonomous Container Database.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
         /// </summary>
         public readonly string AvailabilityDomain;
-        /// <summary>
-        /// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        /// </summary>
         public readonly double AvailableCpus;
         /// <summary>
         /// Backup options for the Autonomous Container Database.

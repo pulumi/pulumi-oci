@@ -15,7 +15,9 @@ __all__ = ['DbNodeConsoleConnectionArgs', 'DbNodeConsoleConnection']
 class DbNodeConsoleConnectionArgs:
     def __init__(__self__, *,
                  db_node_id: pulumi.Input[str],
-                 public_key: pulumi.Input[str]):
+                 public_key: pulumi.Input[str],
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a DbNodeConsoleConnection resource.
         :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -24,9 +26,15 @@ class DbNodeConsoleConnectionArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "db_node_id", db_node_id)
         pulumi.set(__self__, "public_key", public_key)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="dbNodeId")
@@ -56,6 +64,30 @@ class DbNodeConsoleConnectionArgs:
     def public_key(self, value: pulumi.Input[str]):
         pulumi.set(self, "public_key", value)
 
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
 
 @pulumi.input_type
 class _DbNodeConsoleConnectionState:
@@ -63,20 +95,28 @@ class _DbNodeConsoleConnectionState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
                  db_node_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  fingerprint: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  public_key: Optional[pulumi.Input[str]] = None,
+                 service_host_key_fingerprint: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DbNodeConsoleConnection resources.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to contain the console connection.
         :param pulumi.Input[str] connection_string: The SSH connection string for the console connection.
         :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] fingerprint: The SSH public key fingerprint for the console connection.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] lifecycle_details: Information about the current lifecycle state.
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] service_host_key_fingerprint: The SSH public key's fingerprint for the console connection service host.
         :param pulumi.Input[str] state: The current state of the console connection.
         """
         if compartment_id is not None:
@@ -85,10 +125,18 @@ class _DbNodeConsoleConnectionState:
             pulumi.set(__self__, "connection_string", connection_string)
         if db_node_id is not None:
             pulumi.set(__self__, "db_node_id", db_node_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if fingerprint is not None:
             pulumi.set(__self__, "fingerprint", fingerprint)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if public_key is not None:
             pulumi.set(__self__, "public_key", public_key)
+        if service_host_key_fingerprint is not None:
+            pulumi.set(__self__, "service_host_key_fingerprint", service_host_key_fingerprint)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -129,6 +177,18 @@ class _DbNodeConsoleConnectionState:
         pulumi.set(self, "db_node_id", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter
     def fingerprint(self) -> Optional[pulumi.Input[str]]:
         """
@@ -139,6 +199,30 @@ class _DbNodeConsoleConnectionState:
     @fingerprint.setter
     def fingerprint(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "fingerprint", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
 
     @property
     @pulumi.getter(name="publicKey")
@@ -155,6 +239,18 @@ class _DbNodeConsoleConnectionState:
     @public_key.setter
     def public_key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "public_key", value)
+
+    @property
+    @pulumi.getter(name="serviceHostKeyFingerprint")
+    def service_host_key_fingerprint(self) -> Optional[pulumi.Input[str]]:
+        """
+        The SSH public key's fingerprint for the console connection service host.
+        """
+        return pulumi.get(self, "service_host_key_fingerprint")
+
+    @service_host_key_fingerprint.setter
+    def service_host_key_fingerprint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_host_key_fingerprint", value)
 
     @property
     @pulumi.getter
@@ -175,6 +271,8 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  db_node_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  public_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -192,7 +290,11 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
 
         test_db_node_console_connection = oci.database.DbNodeConsoleConnection("testDbNodeConsoleConnection",
             db_node_id=oci_database_db_node["test_db_node"]["id"],
-            public_key=var["db_node_console_connection_public_key"])
+            public_key=var["db_node_console_connection_public_key"],
+            defined_tags=var["db_node_console_connection_defined_tags"],
+            freeform_tags={
+                "Department": "Finance",
+            })
         ```
 
         ## Import
@@ -206,6 +308,8 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
                
                
@@ -233,7 +337,11 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
 
         test_db_node_console_connection = oci.database.DbNodeConsoleConnection("testDbNodeConsoleConnection",
             db_node_id=oci_database_db_node["test_db_node"]["id"],
-            public_key=var["db_node_console_connection_public_key"])
+            public_key=var["db_node_console_connection_public_key"],
+            defined_tags=var["db_node_console_connection_defined_tags"],
+            freeform_tags={
+                "Department": "Finance",
+            })
         ```
 
         ## Import
@@ -260,6 +368,8 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  db_node_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  public_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -273,12 +383,16 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
             if db_node_id is None and not opts.urn:
                 raise TypeError("Missing required property 'db_node_id'")
             __props__.__dict__["db_node_id"] = db_node_id
+            __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["freeform_tags"] = freeform_tags
             if public_key is None and not opts.urn:
                 raise TypeError("Missing required property 'public_key'")
             __props__.__dict__["public_key"] = public_key
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["connection_string"] = None
             __props__.__dict__["fingerprint"] = None
+            __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["service_host_key_fingerprint"] = None
             __props__.__dict__["state"] = None
         super(DbNodeConsoleConnection, __self__).__init__(
             'oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection',
@@ -293,8 +407,12 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_string: Optional[pulumi.Input[str]] = None,
             db_node_id: Optional[pulumi.Input[str]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             fingerprint: Optional[pulumi.Input[str]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            lifecycle_details: Optional[pulumi.Input[str]] = None,
             public_key: Optional[pulumi.Input[str]] = None,
+            service_host_key_fingerprint: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None) -> 'DbNodeConsoleConnection':
         """
         Get an existing DbNodeConsoleConnection resource's state with the given name, id, and optional extra
@@ -306,12 +424,16 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to contain the console connection.
         :param pulumi.Input[str] connection_string: The SSH connection string for the console connection.
         :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] fingerprint: The SSH public key fingerprint for the console connection.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] lifecycle_details: Information about the current lifecycle state.
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] service_host_key_fingerprint: The SSH public key's fingerprint for the console connection service host.
         :param pulumi.Input[str] state: The current state of the console connection.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -321,8 +443,12 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["connection_string"] = connection_string
         __props__.__dict__["db_node_id"] = db_node_id
+        __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["fingerprint"] = fingerprint
+        __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["public_key"] = public_key
+        __props__.__dict__["service_host_key_fingerprint"] = service_host_key_fingerprint
         __props__.__dict__["state"] = state
         return DbNodeConsoleConnection(resource_name, opts=opts, __props__=__props__)
 
@@ -351,12 +477,36 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         return pulumi.get(self, "db_node_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def fingerprint(self) -> pulumi.Output[str]:
         """
         The SSH public key fingerprint for the console connection.
         """
         return pulumi.get(self, "fingerprint")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        Information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="publicKey")
@@ -369,6 +519,14 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_key")
+
+    @property
+    @pulumi.getter(name="serviceHostKeyFingerprint")
+    def service_host_key_fingerprint(self) -> pulumi.Output[str]:
+        """
+        The SSH public key's fingerprint for the console connection service host.
+        """
+        return pulumi.get(self, "service_host_key_fingerprint")
 
     @property
     @pulumi.getter

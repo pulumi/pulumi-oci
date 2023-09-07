@@ -5,7 +5,9 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -61,6 +63,21 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
      * The SSH public key fingerprint for the console connection.
      * 
      */
@@ -73,6 +90,36 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
      */
     public Optional<Output<String>> fingerprint() {
         return Optional.ofNullable(this.fingerprint);
+    }
+
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * Information about the current lifecycle state.
+     * 
+     */
+    @Import(name="lifecycleDetails")
+    private @Nullable Output<String> lifecycleDetails;
+
+    /**
+     * @return Information about the current lifecycle state.
+     * 
+     */
+    public Optional<Output<String>> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
 
     /**
@@ -97,6 +144,21 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
     }
 
     /**
+     * The SSH public key&#39;s fingerprint for the console connection service host.
+     * 
+     */
+    @Import(name="serviceHostKeyFingerprint")
+    private @Nullable Output<String> serviceHostKeyFingerprint;
+
+    /**
+     * @return The SSH public key&#39;s fingerprint for the console connection service host.
+     * 
+     */
+    public Optional<Output<String>> serviceHostKeyFingerprint() {
+        return Optional.ofNullable(this.serviceHostKeyFingerprint);
+    }
+
+    /**
      * The current state of the console connection.
      * 
      */
@@ -117,8 +179,12 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
         this.compartmentId = $.compartmentId;
         this.connectionString = $.connectionString;
         this.dbNodeId = $.dbNodeId;
+        this.definedTags = $.definedTags;
         this.fingerprint = $.fingerprint;
+        this.freeformTags = $.freeformTags;
+        this.lifecycleDetails = $.lifecycleDetails;
         this.publicKey = $.publicKey;
+        this.serviceHostKeyFingerprint = $.serviceHostKeyFingerprint;
         this.state = $.state;
     }
 
@@ -204,6 +270,27 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
         }
 
         /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,Object> definedTags) {
+            return definedTags(Output.of(definedTags));
+        }
+
+        /**
          * @param fingerprint The SSH public key fingerprint for the console connection.
          * 
          * @return builder
@@ -222,6 +309,48 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
          */
         public Builder fingerprint(String fingerprint) {
             return fingerprint(Output.of(fingerprint));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param lifecycleDetails Information about the current lifecycle state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(@Nullable Output<String> lifecycleDetails) {
+            $.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+
+        /**
+         * @param lifecycleDetails Information about the current lifecycle state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
         /**
@@ -249,6 +378,27 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
          */
         public Builder publicKey(String publicKey) {
             return publicKey(Output.of(publicKey));
+        }
+
+        /**
+         * @param serviceHostKeyFingerprint The SSH public key&#39;s fingerprint for the console connection service host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceHostKeyFingerprint(@Nullable Output<String> serviceHostKeyFingerprint) {
+            $.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
+            return this;
+        }
+
+        /**
+         * @param serviceHostKeyFingerprint The SSH public key&#39;s fingerprint for the console connection service host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceHostKeyFingerprint(String serviceHostKeyFingerprint) {
+            return serviceHostKeyFingerprint(Output.of(serviceHostKeyFingerprint));
         }
 
         /**

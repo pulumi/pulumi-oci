@@ -1543,6 +1543,8 @@ type GetDataAssetsDataAssetCollectionItem struct {
 	ExternalKey string `pulumi:"externalKey"`
 	// Unique data asset key that is immutable.
 	Key string `pulumi:"key"`
+	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties map[string]interface{} `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -1585,6 +1587,8 @@ type GetDataAssetsDataAssetCollectionItemArgs struct {
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
 	// Unique data asset key that is immutable.
 	Key pulumi.StringInput `pulumi:"key"`
+	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties pulumi.MapInput `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -1682,6 +1686,11 @@ func (o GetDataAssetsDataAssetCollectionItemOutput) ExternalKey() pulumi.StringO
 // Unique data asset key that is immutable.
 func (o GetDataAssetsDataAssetCollectionItemOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+func (o GetDataAssetsDataAssetCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`

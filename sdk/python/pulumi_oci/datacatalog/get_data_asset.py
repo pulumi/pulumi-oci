@@ -21,7 +21,7 @@ class GetDataAssetResult:
     """
     A collection of values returned by getDataAsset.
     """
-    def __init__(__self__, catalog_id=None, created_by_id=None, data_asset_key=None, description=None, display_name=None, external_key=None, fields=None, id=None, key=None, properties=None, state=None, time_created=None, time_harvested=None, time_updated=None, type_key=None, updated_by_id=None, uri=None):
+    def __init__(__self__, catalog_id=None, created_by_id=None, data_asset_key=None, description=None, display_name=None, external_key=None, fields=None, id=None, key=None, lifecycle_details=None, properties=None, state=None, time_created=None, time_harvested=None, time_updated=None, type_key=None, updated_by_id=None, uri=None):
         if catalog_id and not isinstance(catalog_id, str):
             raise TypeError("Expected argument 'catalog_id' to be a str")
         pulumi.set(__self__, "catalog_id", catalog_id)
@@ -49,6 +49,9 @@ class GetDataAssetResult:
         if key and not isinstance(key, str):
             raise TypeError("Expected argument 'key' to be a str")
         pulumi.set(__self__, "key", key)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if properties and not isinstance(properties, dict):
             raise TypeError("Expected argument 'properties' to be a dict")
         pulumi.set(__self__, "properties", properties)
@@ -138,6 +141,14 @@ class GetDataAssetResult:
         return pulumi.get(self, "key")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter
     def properties(self) -> Mapping[str, Any]:
         """
@@ -217,6 +228,7 @@ class AwaitableGetDataAssetResult(GetDataAssetResult):
             fields=self.fields,
             id=self.id,
             key=self.key,
+            lifecycle_details=self.lifecycle_details,
             properties=self.properties,
             state=self.state,
             time_created=self.time_created,
@@ -269,6 +281,7 @@ def get_data_asset(catalog_id: Optional[str] = None,
         fields=pulumi.get(__ret__, 'fields'),
         id=pulumi.get(__ret__, 'id'),
         key=pulumi.get(__ret__, 'key'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         properties=pulumi.get(__ret__, 'properties'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),

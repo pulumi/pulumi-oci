@@ -42,6 +42,11 @@ public final class GetDataAssetsDataAssetCollectionItem {
      */
     private String key;
     /**
+     * @return A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+     * 
+     */
+    private String lifecycleDetails;
+    /**
      * @return A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}`
      * 
      */
@@ -126,6 +131,13 @@ public final class GetDataAssetsDataAssetCollectionItem {
         return this.key;
     }
     /**
+     * @return A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * @return A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}`
      * 
      */
@@ -197,6 +209,7 @@ public final class GetDataAssetsDataAssetCollectionItem {
         private String displayName;
         private String externalKey;
         private String key;
+        private String lifecycleDetails;
         private Map<String,Object> properties;
         private String state;
         private String timeCreated;
@@ -214,6 +227,7 @@ public final class GetDataAssetsDataAssetCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.externalKey = defaults.externalKey;
     	      this.key = defaults.key;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.properties = defaults.properties;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -252,6 +266,11 @@ public final class GetDataAssetsDataAssetCollectionItem {
         @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
         @CustomType.Setter
@@ -302,6 +321,7 @@ public final class GetDataAssetsDataAssetCollectionItem {
             o.displayName = displayName;
             o.externalKey = externalKey;
             o.key = key;
+            o.lifecycleDetails = lifecycleDetails;
             o.properties = properties;
             o.state = state;
             o.timeCreated = timeCreated;

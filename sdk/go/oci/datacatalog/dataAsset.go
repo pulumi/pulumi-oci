@@ -70,6 +70,8 @@ type DataAsset struct {
 	ExternalKey pulumi.StringOutput `pulumi:"externalKey"`
 	// Unique data asset key that is immutable.
 	Key pulumi.StringOutput `pulumi:"key"`
+	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties pulumi.MapOutput `pulumi:"properties"`
 	// The current state of the data asset.
@@ -142,6 +144,8 @@ type dataAssetState struct {
 	ExternalKey *string `pulumi:"externalKey"`
 	// Unique data asset key that is immutable.
 	Key *string `pulumi:"key"`
+	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties map[string]interface{} `pulumi:"properties"`
 	// The current state of the data asset.
@@ -176,6 +180,8 @@ type DataAssetState struct {
 	ExternalKey pulumi.StringPtrInput
 	// Unique data asset key that is immutable.
 	Key pulumi.StringPtrInput
+	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+	LifecycleDetails pulumi.StringPtrInput
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties pulumi.MapInput
 	// The current state of the data asset.
@@ -349,6 +355,11 @@ func (o DataAssetOutput) ExternalKey() pulumi.StringOutput {
 // Unique data asset key that is immutable.
 func (o DataAssetOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+func (o DataAssetOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`

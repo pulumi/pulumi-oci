@@ -212,15 +212,13 @@ class GetAutonomousContainerDatabaseResult:
     def availability_domain(self) -> str:
         """
         The availability domain of the Autonomous Container Database.
+        <<<<<<< HEAD
         """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
-        """
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
         return pulumi.get(self, "available_cpus")
 
     @property

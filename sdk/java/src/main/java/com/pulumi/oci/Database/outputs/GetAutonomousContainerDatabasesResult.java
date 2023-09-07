@@ -31,6 +31,7 @@ public final class GetAutonomousContainerDatabasesResult {
     private @Nullable String autonomousVmClusterId;
     /**
      * @return The availability domain of the Autonomous Container Database.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     private @Nullable String availabilityDomain;
@@ -95,6 +96,7 @@ public final class GetAutonomousContainerDatabasesResult {
     }
     /**
      * @return The availability domain of the Autonomous Container Database.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     public Optional<String> availabilityDomain() {

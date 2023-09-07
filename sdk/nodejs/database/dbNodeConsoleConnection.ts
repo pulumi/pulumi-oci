@@ -20,6 +20,10 @@ import * as utilities from "../utilities";
  * const testDbNodeConsoleConnection = new oci.database.DbNodeConsoleConnection("testDbNodeConsoleConnection", {
  *     dbNodeId: oci_database_db_node.test_db_node.id,
  *     publicKey: _var.db_node_console_connection_public_key,
+ *     definedTags: _var.db_node_console_connection_defined_tags,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  * });
  * ```
  *
@@ -72,9 +76,21 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
      */
     public readonly dbNodeId!: pulumi.Output<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The SSH public key fingerprint for the console connection.
      */
     public /*out*/ readonly fingerprint!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * Information about the current lifecycle state.
+     */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * The SSH public key used to authenticate the console connection.
      *
@@ -83,6 +99,10 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly publicKey!: pulumi.Output<string>;
+    /**
+     * The SSH public key's fingerprint for the console connection service host.
+     */
+    public /*out*/ readonly serviceHostKeyFingerprint!: pulumi.Output<string>;
     /**
      * The current state of the console connection.
      */
@@ -104,8 +124,12 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["connectionString"] = state ? state.connectionString : undefined;
             resourceInputs["dbNodeId"] = state ? state.dbNodeId : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["fingerprint"] = state ? state.fingerprint : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["publicKey"] = state ? state.publicKey : undefined;
+            resourceInputs["serviceHostKeyFingerprint"] = state ? state.serviceHostKeyFingerprint : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
         } else {
             const args = argsOrState as DbNodeConsoleConnectionArgs | undefined;
@@ -116,10 +140,14 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
                 throw new Error("Missing required property 'publicKey'");
             }
             resourceInputs["dbNodeId"] = args ? args.dbNodeId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["publicKey"] = args ? args.publicKey : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionString"] = undefined /*out*/;
             resourceInputs["fingerprint"] = undefined /*out*/;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["serviceHostKeyFingerprint"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -144,9 +172,21 @@ export interface DbNodeConsoleConnectionState {
      */
     dbNodeId?: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The SSH public key fingerprint for the console connection.
      */
     fingerprint?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Information about the current lifecycle state.
+     */
+    lifecycleDetails?: pulumi.Input<string>;
     /**
      * The SSH public key used to authenticate the console connection.
      *
@@ -155,6 +195,10 @@ export interface DbNodeConsoleConnectionState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     publicKey?: pulumi.Input<string>;
+    /**
+     * The SSH public key's fingerprint for the console connection service host.
+     */
+    serviceHostKeyFingerprint?: pulumi.Input<string>;
     /**
      * The current state of the console connection.
      */
@@ -169,6 +213,14 @@ export interface DbNodeConsoleConnectionArgs {
      * The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbNodeId: pulumi.Input<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The SSH public key used to authenticate the console connection.
      *

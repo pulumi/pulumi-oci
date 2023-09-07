@@ -569,6 +569,7 @@
         "database/databaseSoftwareImage.ts",
         "database/databaseUpgrade.ts",
         "database/dbHome.ts",
+        "database/dbNode.ts",
         "database/dbNodeConsoleConnection.ts",
         "database/dbSystem.ts",
         "database/dbSystemsUpgrade.ts",

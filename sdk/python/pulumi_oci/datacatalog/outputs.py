@@ -772,6 +772,7 @@ class GetDataAssetsDataAssetCollectionItemResult(dict):
                  display_name: str,
                  external_key: str,
                  key: str,
+                 lifecycle_details: str,
                  properties: Mapping[str, Any],
                  state: str,
                  time_created: str,
@@ -787,6 +788,7 @@ class GetDataAssetsDataAssetCollectionItemResult(dict):
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str external_key: Unique external identifier of this resource in the external source system.
         :param str key: Unique data asset key that is immutable.
+        :param str lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
         :param Mapping[str, Any] properties: A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param str time_created: Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -802,6 +804,7 @@ class GetDataAssetsDataAssetCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "external_key", external_key)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "properties", properties)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -858,6 +861,14 @@ class GetDataAssetsDataAssetCollectionItemResult(dict):
         Unique data asset key that is immutable.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter

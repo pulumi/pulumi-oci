@@ -21,7 +21,7 @@ class GetDbNodeResult:
     """
     A collection of values returned by getDbNode.
     """
-    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_vnic2id=None, backup_vnic_id=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, fault_domain=None, host_ip_id=None, hostname=None, id=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, vnic2id=None, vnic_id=None):
+    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_vnic2id=None, backup_vnic_id=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, vnic2id=None, vnic_id=None):
         if additional_details and not isinstance(additional_details, str):
             raise TypeError("Expected argument 'additional_details' to be a str")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -49,9 +49,15 @@ class GetDbNodeResult:
         if db_system_id and not isinstance(db_system_id, str):
             raise TypeError("Expected argument 'db_system_id' to be a str")
         pulumi.set(__self__, "db_system_id", db_system_id)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if fault_domain and not isinstance(fault_domain, str):
             raise TypeError("Expected argument 'fault_domain' to be a str")
         pulumi.set(__self__, "fault_domain", fault_domain)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_ip_id and not isinstance(host_ip_id, str):
             raise TypeError("Expected argument 'host_ip_id' to be a str")
         pulumi.set(__self__, "host_ip_id", host_ip_id)
@@ -61,6 +67,9 @@ class GetDbNodeResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance_type and not isinstance(maintenance_type, str):
             raise TypeError("Expected argument 'maintenance_type' to be a str")
         pulumi.set(__self__, "maintenance_type", maintenance_type)
@@ -159,6 +168,14 @@ class GetDbNodeResult:
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> str:
         """
@@ -167,10 +184,18 @@ class GetDbNodeResult:
         return pulumi.get(self, "fault_domain")
 
     @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
     @pulumi.getter(name="hostIpId")
     def host_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         """
         return pulumi.get(self, "host_ip_id")
 
@@ -186,9 +211,17 @@ class GetDbNodeResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceType")
@@ -278,10 +311,13 @@ class AwaitableGetDbNodeResult(GetDbNodeResult):
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
             db_server_id=self.db_server_id,
             db_system_id=self.db_system_id,
+            defined_tags=self.defined_tags,
             fault_domain=self.fault_domain,
+            freeform_tags=self.freeform_tags,
             host_ip_id=self.host_ip_id,
             hostname=self.hostname,
             id=self.id,
+            lifecycle_details=self.lifecycle_details,
             maintenance_type=self.maintenance_type,
             memory_size_in_gbs=self.memory_size_in_gbs,
             software_storage_size_in_gb=self.software_storage_size_in_gb,
@@ -327,10 +363,13 @@ def get_db_node(db_node_id: Optional[str] = None,
         db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
         db_server_id=pulumi.get(__ret__, 'db_server_id'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         fault_domain=pulumi.get(__ret__, 'fault_domain'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         host_ip_id=pulumi.get(__ret__, 'host_ip_id'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenance_type=pulumi.get(__ret__, 'maintenance_type'),
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         software_storage_size_in_gb=pulumi.get(__ret__, 'software_storage_size_in_gb'),

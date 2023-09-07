@@ -11726,7 +11726,6 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-        :param float available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs'] backup_configs: Backup options for the Autonomous Container Database.
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -11847,9 +11846,6 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @property
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
-        """
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
         return pulumi.get(self, "available_cpus")
 
     @property
@@ -28904,24 +28900,36 @@ class GetDbNodeConsoleConnectionsConsoleConnectionResult(dict):
                  compartment_id: str,
                  connection_string: str,
                  db_node_id: str,
+                 defined_tags: Mapping[str, Any],
                  fingerprint: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
+                 lifecycle_details: str,
                  public_key: str,
+                 service_host_key_fingerprint: str,
                  state: str):
         """
         :param str compartment_id: The OCID of the compartment to contain the console connection.
         :param str connection_string: The SSH connection string for the console connection.
         :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str fingerprint: The SSH public key fingerprint for the console connection.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the console connection.
+        :param str lifecycle_details: Information about the current lifecycle state.
+        :param str service_host_key_fingerprint: The SSH public key's fingerprint for the console connection service host.
         :param str state: The current state of the console connection.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_string", connection_string)
         pulumi.set(__self__, "db_node_id", db_node_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "fingerprint", fingerprint)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "public_key", public_key)
+        pulumi.set(__self__, "service_host_key_fingerprint", service_host_key_fingerprint)
         pulumi.set(__self__, "state", state)
 
     @property
@@ -28949,12 +28957,28 @@ class GetDbNodeConsoleConnectionsConsoleConnectionResult(dict):
         return pulumi.get(self, "db_node_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def fingerprint(self) -> str:
         """
         The SSH public key fingerprint for the console connection.
         """
         return pulumi.get(self, "fingerprint")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -28965,9 +28989,25 @@ class GetDbNodeConsoleConnectionsConsoleConnectionResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter(name="publicKey")
     def public_key(self) -> str:
         return pulumi.get(self, "public_key")
+
+    @property
+    @pulumi.getter(name="serviceHostKeyFingerprint")
+    def service_host_key_fingerprint(self) -> str:
+        """
+        The SSH public key's fingerprint for the console connection service host.
+        """
+        return pulumi.get(self, "service_host_key_fingerprint")
 
     @property
     @pulumi.getter
@@ -29017,10 +29057,13 @@ class GetDbNodesDbNodeResult(dict):
                  db_node_storage_size_in_gbs: int,
                  db_server_id: str,
                  db_system_id: str,
+                 defined_tags: Mapping[str, Any],
                  fault_domain: str,
+                 freeform_tags: Mapping[str, Any],
                  host_ip_id: str,
                  hostname: str,
                  id: str,
+                 lifecycle_details: str,
                  maintenance_type: str,
                  memory_size_in_gbs: int,
                  software_storage_size_in_gb: int,
@@ -29039,10 +29082,13 @@ class GetDbNodesDbNodeResult(dict):
         :param int db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db node.
         :param str db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
         :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str fault_domain: The name of the Fault Domain the instance is contained in.
-        :param str host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         :param str hostname: The host name for the database node.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
+        :param str lifecycle_details: Information about the current lifecycle state.
         :param str maintenance_type: The type of database node maintenance.
         :param int memory_size_in_gbs: The allocated memory in GBs on the Db node.
         :param int software_storage_size_in_gb: The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
@@ -29062,10 +29108,13 @@ class GetDbNodesDbNodeResult(dict):
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         pulumi.set(__self__, "db_server_id", db_server_id)
         pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "fault_domain", fault_domain)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "host_ip_id", host_ip_id)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_type", maintenance_type)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "software_storage_size_in_gb", software_storage_size_in_gb)
@@ -29146,6 +29195,14 @@ class GetDbNodesDbNodeResult(dict):
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> str:
         """
@@ -29154,10 +29211,18 @@ class GetDbNodesDbNodeResult(dict):
         return pulumi.get(self, "fault_domain")
 
     @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
     @pulumi.getter(name="hostIpId")
     def host_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         """
         return pulumi.get(self, "host_ip_id")
 
@@ -29176,6 +29241,14 @@ class GetDbNodesDbNodeResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceType")

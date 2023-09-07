@@ -337,7 +337,7 @@ public final class GetAutonomousDatabaseResult {
      */
     private Integer maxCpuCoreCount;
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -1016,7 +1016,7 @@ public final class GetAutonomousDatabaseResult {
         return this.maxCpuCoreCount;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {

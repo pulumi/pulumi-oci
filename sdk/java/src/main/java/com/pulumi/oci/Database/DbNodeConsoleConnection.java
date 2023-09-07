@@ -10,7 +10,9 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.DbNodeConsoleConnectionArgs;
 import com.pulumi.oci.Database.inputs.DbNodeConsoleConnectionState;
 import com.pulumi.oci.Utilities;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
@@ -45,6 +47,8 @@ import javax.annotation.Nullable;
  *         var testDbNodeConsoleConnection = new DbNodeConsoleConnection(&#34;testDbNodeConsoleConnection&#34;, DbNodeConsoleConnectionArgs.builder()        
  *             .dbNodeId(oci_database_db_node.test_db_node().id())
  *             .publicKey(var_.db_node_console_connection_public_key())
+ *             .definedTags(var_.db_node_console_connection_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 
  *     }
@@ -105,6 +109,20 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
         return this.dbNodeId;
     }
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    private Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Output<Map<String,Object>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * The SSH public key fingerprint for the console connection.
      * 
      */
@@ -117,6 +135,34 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      */
     public Output<String> fingerprint() {
         return this.fingerprint;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    private Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> freeformTags() {
+        return this.freeformTags;
+    }
+    /**
+     * Information about the current lifecycle state.
+     * 
+     */
+    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    private Output<String> lifecycleDetails;
+
+    /**
+     * @return Information about the current lifecycle state.
+     * 
+     */
+    public Output<String> lifecycleDetails() {
+        return this.lifecycleDetails;
     }
     /**
      * The SSH public key used to authenticate the console connection.
@@ -137,6 +183,20 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      */
     public Output<String> publicKey() {
         return this.publicKey;
+    }
+    /**
+     * The SSH public key&#39;s fingerprint for the console connection service host.
+     * 
+     */
+    @Export(name="serviceHostKeyFingerprint", type=String.class, parameters={})
+    private Output<String> serviceHostKeyFingerprint;
+
+    /**
+     * @return The SSH public key&#39;s fingerprint for the console connection service host.
+     * 
+     */
+    public Output<String> serviceHostKeyFingerprint() {
+        return this.serviceHostKeyFingerprint;
     }
     /**
      * The current state of the console connection.
